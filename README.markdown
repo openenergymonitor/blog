@@ -1,8 +1,8 @@
-# OpenEnergyMonitor Guide Website
+# OpenEnergyMonitor Blog
 
-[![Build Status](https://travis-ci.org/openenergymonitor/guide.svg?branch=master)](https://travis-ci.org/openenergymonitor/guide)
+[![Build Status](https://travis-ci.org/openenergymonitor/blog.svg?branch=master)](https://travis-ci.org/openenergymonitor/blog)
 
-A clean responsive user guide website for OpenEnergyMonitor
+A fast clean responsive blog
 
 Using all the shiny new toys: powered by Jekyll and the Oscalite theme. Hosted by GitHub and served over SSL/TSL by CloudFlare.
 
@@ -28,8 +28,8 @@ $ gem install bundler
 ```
 
 ```bash
-$ git clone --recursive https://github.com/openenergymonitor/guide.git
-$ cd guide
+$ git clone --recursive https://github.com/openenergymonitor/blog.git
+$ cd blog
 $ bundle
 ```
 
@@ -49,11 +49,11 @@ Once Octopress and rake Jekyll as been setup as described to generate the html a
 
 In a few moments site will be live:
 
-[http://openenergymonitor.github.io/guide](http://openenergymonitor.github.io/guide)
+[http://openenergymonitor.github.io/blog](http://openenergymonitor.github.io/blog)
 
 We then use [CloudFlare](https://www.cloudflare.com) as the DNS which serves the pages via secure HTTPS. On our domain (see custom domain below)
 
-[https://guide.openenergymonitor.org](https://guide.openenergymonitor.org)
+[https://blog.openenergymonitor.org](https://blog.openenergymonitor.org)
 
 
 ### Auto deploy on commit trigger
