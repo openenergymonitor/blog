@@ -1,0 +1,13 @@
+---
+layout: post
+title: Emoncms time-series feed engine documentation
+date: '2014-06-19T04:46:00.003-07:00'
+author: Trystan Lea
+categories:
+- emoncms
+modified_time: '2014-11-05T00:18:12.917-08:00'
+blogger_id: tag:blogger.com,1999:blog-2472065242652647619.post-8241699368284845209
+blogger_orig_url: http://openenergymonitor.blogspot.com/2014/06/emoncms-time-series-feed-engine.html
+---
+
+I've been working over the last few days on writing documentation on  how the emoncms time-series feed engines work (phpfiwa, phpfina and  phptimeseries). The documentation is an early draft at this stage and I  would very much welcome comments.<br /><br /> <a href="https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries">https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries</a><br /> <br />&nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/history.md">Emoncms time series database development history</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/variableinterval.md">Variable interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedinterval.md">Fixed interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedintervalaveraging.md">Fixed interval with averaging time series</a><br /> <br />On a related note out of an interest in creating a version of emoncms  that will run and log to SD cards without wearing them out so fast I've  started to look at how the write load created by the emoncms feed  engines can be reduced through in memory buffering and writing in larger  blocks to disk, initial testing suggests that it could be reduced by  potentially more than a 1000x on systems with 30+ feeds, maybe several  100x on systems with only a few feeds.<br /><br />See forum post: <a href="http://openenergymonitor.org/emon/node/5319">http://openenergymonitor.org/emon/node/5319 </a>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: Experiments with a hall effect current sensor
+date: '2009-09-02T14:58:00.000-07:00'
+author: Trystan Lea
+categories:
+- energy monitor
+- DC
+- hall effect
+modified_time: '2009-09-02T15:21:31.662-07:00'
+thumbnail: http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s72-c/hall.JPG
+blogger_id: tag:blogger.com,1999:blog-2472065242652647619.post-3648771602996514275
+blogger_orig_url: http://openenergymonitor.blogspot.com/2009/09/experiments-with-hall-effect-current.html
+---
+
+Thought Id have a go at using a hall effect sensor to measure current. A hall effect sensor can measure DC and AC current, Ive had a go at the DC and it seems to work quite nicely, its also quite a bit cheaper than the other DC current measuring method I detail <a href="http://openenergymonitor.org/emon/node/31">here</a>, which is always good!<br /><br />Here's a pic of the setup:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s1600-h/hall.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s400/hall.JPG" alt="" id="BLOGGER_PHOTO_ID_5376994279608168786" border="0" /></a><br />I bought the hall sensor from farnell <a href="http://uk.farnell.com/jsp/search/productdetail.jsp?CMP=i-ddd7-00001003&amp;sku=1082269">here</a>.<br /><br />It requires a supply voltage of between 6 and 12. Its output is centred around Vcc/2. The output voltage increases about 50mV per Amp when the supply voltage is 12V. When measuring DC current the output looks like this:<br />0.0A - 6.0V<br />1.0A - 6.05V<br />2.0A - 6.10V<br />...<br /><br />I've used an inverting amplifier to invert the signal about a set voltage so that the voltage going to the Arduino's analog in is between 0 and 5V. I will upload the circuit diagram and further details soon when I get a chance.<br /><br />So far it looks like a promising method.
