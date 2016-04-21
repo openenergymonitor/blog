@@ -1,0 +1,769 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/32/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/32/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/03/18/reducing-noise-adding-capacitor/">Reducing noise, adding a capacitor</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-03-18T10:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/03/18/reducing-noise-adding-capacitor/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>I recently bought a new laptop and when I plugged it in to the mains and connected up the energy monitor via usb and monitored the current of one light the current value it read was much higher than what my reference meter said it should be. I got the following results:</p><p><b><span class="Apple-style-span"  style="font-size:medium;">Load description:</span></b><span class="Apple-style-span"  style="font-size:medium;"> One light<br /></span><b><span class="Apple-style-span"  style="font-size:medium;">Energy monitor power supply:</span></b><span class="Apple-style-span"  style="font-size:medium;"> Laptop mains connected.<br /></span><b><span class="Apple-style-span"  style="font-size:medium;">Energy monitor:</span></b><span class="Apple-style-span"  style="font-size:medium;"> 1050mA  </span><b><span class="Apple-style-span"  style="font-size:medium;">reference meter:</span></b><span class="Apple-style-span"  style="font-size:medium;"> 189mA</span></p><p><b>Load description</b>: One light<br /><b>Energy monitor power supply:</b> Laptop running off battery.<br /><b>Energy monitor:</b> 186mA  <b>reference meter:</b> 189mA</p><p>I loaded up the waveform sampler program to see what was going wrong and saw this when the laptop was connected to the mains:</p><p><a href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR_F_QnI/AAAAAAAABk0/9BHwhjPBonU/s1600-h/noiseless.png"></a><a href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR9aNjyI/AAAAAAAABks/PwBKFa9kIeA/s1600-h/noise.png"><img src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR9aNjyI/AAAAAAAABks/PwBKFa9kIeA/s400/noise.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921006637256482" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 220px; " /></a></p><p>When the laptop was not connected to the mains the fluctuations largely disappeared.</p><p>I then checked to see what the energy monitor would read when powered by an external supply rather than the laptop supply. The energy monitor was now a lot closer to the reference meter than before:</p><p><b>Load description</b>: One light<br /><b>Energy monitor power supply:</b> External power supply<br /><b>Energy monitor:</b> 225mA  <b>reference meter:</b> 191mA<br />The laptop is not connected to the mains here.</p><p><b>Load description:</b> One light<br /><b>Energy monitor power supply:</b> External power supply<br /><b>Energy monitor:</b> 215mA  <b>reference meter:</b> 191mA<br />The laptop is connected to the mains here but on a separate plug socket.</p><p>Interestingly the laptop still produces an effect even when its plugged into another socket not part of the measuring setup. The other thing to note is that the energy monitor current is higher by about 20-35mA with the external power supply than when powered by the laptop running off its battery.</p><p>It would clearly be nice to get rid of the noise when the laptop is connected to the mains and the difference in measured current between the different power supplies.</p><p>Reading through the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc2566.pdf">Atmel AVR465 application note</a>, they use a 10uF capacitor across the biasing voltage divider to stabilise the DC level. I added the capacitor and low and behold the noise and difference in power supplies disappeared and now the results are much better :) The energy monitor now reads</p><p>Load description: One light</p><p><b>Energy monitor power supply:</b> Laptop mains connected.<br /><b>Energy monitor:</b> 194mA <b>Reference meter:</b> 191mA</p><p><b>Energy monitor power supply:</b> Laptop running off battery.<br /><b>Energy monitor</b>: 194mA <b>Reference meter</b>:  191mA</p><p><b>Energy monitor power supply:</b> External power supply.<br /><b>Energy monitor:</b> 193mA <b>Reference meter:</b>  191mA<br />The laptop is not connected to the mains here.</p><p><b>Energy monitor power supply:</b> External power supply.<br /><b>Energy monitor:</b> 193mA <b>Reference meter:</b>  191mA<br />The laptop is connected to the mains here but on a separate plug socket.</p><p>The variation between power supplies and the effect of the noisy laptop power supply is significantly reduced. </p><p>Here's a screenshot measuring the same lamp as I was measuring above with the energy monitor powered from the laptop connected to the mains but now with the 10uF capacitor across the 2.5V bias:<br /></p><p><span class="Apple-style-span" style="color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; "><img src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR_F_QnI/AAAAAAAABk0/9BHwhjPBonU/s400/noiseless.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921007089304178" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 220px; " /></span></p><p>Very steppy but this is due to the small magnitude of the signal versus the ADC resolution which is expected, the large noise fluctuations have disappeared. </p><p>Here's the new circuit diagram:</p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S6ICSHoj12I/AAAAAAAABk8/f8-g6JuPYYM/s1600-h/circuit.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 218px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S6ICSHoj12I/AAAAAAAABk8/f8-g6JuPYYM/s400/circuit.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921009381791586" /></a><p><b>Component values</b></p><p><b>CT sensor</b> turns ratio –  for the efergy sensor seems to be 1:1500 which means the current in the   secondary windings will be 1500 times less than the current in the mains primary winding.</p><p><b>RsensI -</b> Dictates the range that the current can be read over.<br /></p><ul><li>56Ohms gives a current range of 0 to 47Amps (with efergy CT, turns ratio: 1500)</li><li>100Ohms gives a current range of 0 to 26Amps (with efergy CT, turns ratio: 1500)</li></ul><p></p><p><b>C1 – </b>The bias stabilizing capacitor.<br /></p><ul><li>Noise decreases as the capacitor size increases. </li><li>Energy monitor start-up time increases as capacitor size increases – this is the time taken for the capacitor to charge, measured as the time it takes for the current measurement to reach within 20mA of the final value. Only a noticeable delay the first time you put the energy monitor on.</li><li>Atmel recommends a 10uF capacitor in their AVR465 app note.</li><li>10uF works well, I tried a couple of other values and there doesn't seem to be a very noticeable difference at 4.7uF, 1uF, 0.1uF, needs further testing to establish exactly how much difference there is between the values.</li></ul><p></p><p><b>Rvd –</b> 2x equal sized voltage divider resistors<br /></p><ul><li>Increasing the resistor size decreases current consumption in the voltage divider.</li><li>Increasing the resistor size increases noise due to high impedance.</li><li>Increasing the resistor size increases the energy monitor start-up time due to charging of C1.</li><li>2x 100k resistors and a C1 of 10uF gives a start-up time of 16s.</li><li>2x 10k resistors and a C1 of 10uF gives a start-up time of 4s.</li></ul><p></p><p>I've also removed the 100Ohm current limiting resistor from the above circuit as I'm not sure that it was really doing anything, I put it in there out of general practice, feel free to use one if you like.</p><p>Its also worth adding a 10uF capacitor on to the voltage measurement circuit in the same place. I will discuss that in more detail soon along with some other changes to the voltage measurement electronics.</p>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/03/11/application-notes/">Application Notes</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-03-11T14:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/03/11/application-notes/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Been realising what a great source of information application notes are, when I started this project I didn't really know were to look to get good information on energy monitoring but I think I'm slowly getting better at it now :) I've put together a page here:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/51">http://openenergymonitor.org/emon/node/51</a></div><div><br /></div><div>which is full of links to application notes. Thanks to Danny for the link to the AVR-465 note on creating an energy monitor with an atmel micro. Its even got open source firmware details there and an interesting use of opamps to increase accuracy at low current ranges which I'd like to try at some point.</div><div><br /></div><div>If you know of any other good resources, Id be interested in knowing about them, please post them below, thanks!</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/03/10/maker-faire-newcastle/">Maker Faire Newcastle</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-03-10T22:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/03/10/maker-faire-newcastle/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S5giG--YsMI/AAAAAAAABeU/IDo2hijs0XA/s1600-h/collage.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 262px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S5giG--YsMI/AAAAAAAABeU/IDo2hijs0XA/s320/collage.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5447141252683837634" /></a><br />I will be at Maker Faire 2010 in Newcastle this coming weekend (March the 13th-14th) and will be exhibiting the energy monitor, should be a fun event! drop by if your in the area.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/02/15/arduinopower-ade7753/">ArduinoPower - ADE7753</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-02-15T09:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/02/15/arduinopower-ade7753/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Last year I met James Devine at <a href="http://homecamp.org.uk/">homecamp</a> a home hacking, automation and green technology unconference in London. He has been developing an arduino energy monitor based on an Analogue Devices ADE 7753 IC which is a custom energy meter IC for use with CT sensors. The ADE7753 looks like a really good way of doing the measurement, it communicates with the arduino via SPI and does all the energy metering calculations itself, therefore freeing up the arduino for other tasks. </div><div><div><br /></div><div>Here's a mockup picture from his site of the energy metering arduino shield that he is developing:</div><div><br /></div></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://arduinopower.pbworks.com/f/DSC_00746.jpg"><img style="display:block; margin:0px auto 10px; text-align:left;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://arduinopower.pbworks.com/f/DSC_00746.jpg" border="0" alt="" /></a><br /><div><div>His project aim is to create an accurate desktop scale power meter, suitable for measuring individual power usage at a desk, the power meter then communicates with a PC I think via the arduino bluetooth shield and it's all open source, have a look: <a href="http://arduinopower.pbworks.com/">http://arduinopower.pbworks.com/</a></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/02/03/forums/">Forums!!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-02-03T10:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/02/03/forums/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S2lW9vRKP-I/AAAAAAAABbI/jw1OhQ4RHTY/s1600-h/Forums.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 170px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S2lW9vRKP-I/AAAAAAAABbI/jw1OhQ4RHTY/s320/Forums.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5433970044059664354" /></a><div><br /></div><div>I've just set up a forum here:</div><div><br /></div><a href="http://forums.openenergymonitor.org/">http://forums.openenergymonitor.org/</a><div><div><br /></div><div>It might be easier to use than the comment pages on the website and a bit easier to see what's going on.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/02/02/calibration/">Calibration</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-02-02T14:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/02/02/calibration/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've updated the calibration information for the voltage and current measurement board and also done some accuracy and precision testing. Both can be found here:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/42">http://openenergymonitor.org/emon/node/42</a><br /><div><br /></div><div><br /><div><br /></div></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/01/28/documentation-finished/">Documentation finished</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-01-28T19:17:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/01/28/documentation-finished/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The documentation for the whole home energy monitor is finished and can be found here:<div><br /><a href="http://openenergymonitor.org/emon/node/43">How to build a whole home energy monitor</a></div><div><br /></div><div>The main addition's are:</div><div><ul><li>Full Arduino sketches uploaded</li><li>Hardware wiring diagram</li><li>Full part list and cost breakdown</li></ul></div><div><br /></div><div><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/01/27/arduino-ethernet-shield-perl-mysql-flot/">Arduino Ethernet Shield + perl + mysql + Flot based graphing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-01-27T21:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/01/27/arduino-ethernet-shield-perl-mysql-flot/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Finished another section:<br /><br /><a href="http://openenergymonitor.org/emon/node/48">How to look at your energy consumption on the web</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/01/26/xbee-documentation/">Xbee documentation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-01-26T10:17:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/01/26/xbee-documentation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Just finished the Xbee documentation it can be found here:<br /><br /><a href="http://openenergymonitor.org/emon/node/47">How to add an Xbee wireless link</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/01/23/display-documentation/">Display documentation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-01-23T23:31:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/01/23/display-documentation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The Display documentation is finished and can be found here:<br /><br /><a href="http://openenergymonitor.org/emon/node/45">How to add a Display</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/33">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/31">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

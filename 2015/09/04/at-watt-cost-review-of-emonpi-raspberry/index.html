@@ -1,0 +1,220 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>At Watt Cost? A review of the emonPi Raspberry Pi based energy monitor - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2015/09/04/at-watt-cost-review-of-emonpi-raspberry/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="At Watt Cost? A review of the emonPi Raspberry Pi based energy monitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2015/09/04/at-watt-cost-review-of-emonpi-raspberry/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="At Watt Cost? A review of the emonPi Raspberry Pi based energy monitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">At Watt Cost? A review of the emonPi Raspberry Pi based energy monitor</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-09-04T15:10:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 13 minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">At Watt Cost ?</span></div><h3 style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.6667px; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><i>A review of the emonPi, a Raspberry Pi based energy monitoring system developed by OpenEnergyMonitor, by <a href="https://twitter.com/irlionel">Lionel Smith</a> : </i></span></h3><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><br /></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><i><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.6667px; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Measurement is the first step that leads to control and eventually to improvement</span><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.6667px; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">. If you can’t measure something, you can’t understand it. If you can’t understand it, you can’t control it. If you can’t control it, you can’t improve it.” </span></i><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><br class="kix-line-break" /></span><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">― H. James Harrington</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="emoncms_solarPV_laptop_mobile.png" height="335px;" src="https://lh4.googleusercontent.com/FSDua1EX8hwKoqYpyipDLNH-c9JjigVa5wmOBUH8XwV0xqRBNCk5M4C0DhrYIxBcrvP0ENLcnKr-Ps4voKdXI_QM_MKFkDwz4NSBWv3V_VzLe5XtS0U14VkJx4J0Q3zL6kSiCJw" style="border: none; transform: rotate(0rad);" width="602px;" /></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Do we know how much electricity can be saved by using low energy lighting such as LED's or how much electricity is saved by turning off lighting when not in use?</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Finding out how much electricity is being used by one or all of your appliances, is the first step in being able to cut down on consumption, and in doing so spend less on electricity. It goes without saying that reducing your consumption equates to doing your bit towards creating a sustainable world. </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Glyn Hudson, Trystan Lea and the rest of the team at </span><a href="http://openenergymonitor.org/" style="text-decoration: none;"><span style="background-color: transparent; color: #1155cc; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;">OpenEnergyMonitor.org</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> have developed some monitoring technology to help us understand and optimise our energy consumption and generation. This allows us to approach the problem of energy consumption in a logical and informed way.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The Raspberry Pi isn't great at measuring analogue voltages, so various Arduino based measurement boards have been developed which process and digitise the inputs and transfer them to the Pi. </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">In early 2014 an idea was born to create a shield which plugged directly onto a Raspberry Pi to make a single unit energy monitoring solution, primarily aimed at domestic users. A whole bunch of discussions and a fair amount of blood, sweat and tears culminated in a </span><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon" style="text-decoration: none;"><span style="background-color: transparent; color: #1155cc; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;">Kickstarter campaign</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> which raised £24,723 to help bring the project to life</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">This piece of kit is dubbed the emonPi, which is a Raspberry Pi based, open-source, web-connected, energy &amp; environmental monitor. This unit gives you the ability to measure home energy, solar PV, heatpump generation and temperature.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="emonPi_MyElectric_Daffs.JPG" height="452px;" src="https://lh5.googleusercontent.com/eiPQWuAtp9R9R8VOjaSv2TPwYXRj2D9vtDQUJl2p7qYykBRrpGLpn4PKgt3riBqPC-SAFr1Kwt-8rnaD8W_M1lDoVEys_urRtx3dYhaFKrb1YtpqTb8usAUM1pdNtNCnDO4Yg9Fk" style="border: none; transform: rotate(0rad);" width="602px;" /></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Everything on the site is fully open-source, which means you are free to tinker and improve to suit your needs. There is a very active community so help is readily available.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Aside from the obvious current and voltage values, temperature and humidity can also be measured by adding the appropriate nodes. All this information is then formatted on the Pi and either stored locally or uploaded via an Internet connection to a hosted application called EmonCMS. </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Once you've built up some data, various visualisations can be applied to create some really informative graphs. </span><br /><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><br /></span><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-5Zvy6qVObaM/VemzJ06LFOI/AAAAAAABdWY/EIVz8qafdio/s1600/emoncms_dashboards.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="297" src="http://4.bp.blogspot.com/-5Zvy6qVObaM/VemzJ06LFOI/AAAAAAABdWY/EIVz8qafdio/s640/emoncms_dashboards.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms MyElectric and SolarPV Dashboards</td></tr></tbody></table></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The emonPi is available in both kit form or as a complete unit. Complete units are housed in a professional looking case sourced from Lincoln Binns. Even if you can’t resist the urge to experiment and order your system in kit form, it is highly recommended that you order the aluminium case to house the finished unit in. Aside from protecting everything inside, the case really gives the unit a polished, professional look.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Inside the case you will find a standard Raspberry Pi 2, the GPIO serial connected Arduino measurement shield and an I2C connected 2 x 16-character display.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="Emonpibare (1).png" height="322" src="https://lh5.googleusercontent.com/yA_duDSWg-ocGt9Rolim0p7rdi5sMTZtLtR6WX_jc62IiRBvw2r1yfZ8sFPvUYl--9tP0ImpYc2HgNl9K-_34HeQJ4qCm6O8aabOZUwlKCvKasCE55HGIjn8MpJ7n0GDQm1Kym-ZJns7EyO7" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="400" /></span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The unit contains built in 433Mhz low power RF which is used for communicating with its external nodes. These nodes can be used to add additional power readings (emonTx) or remote temperature and humidity (emonTH) . </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Fire up the system with a LAN cable plugged in and the on board display conveniently displays its IP address. Punch that into your favourite browser ( on a PC in the same LAN ) and you get to the login page. Once logged in, you are able to setup the WiFi if you have added an external USB WiFi adapter.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The built in 16 x 2 display will also confirm the status of connected devices. In order to measure temperature, an optional DS18B20 temperature sensor needs to be connected. The emonPi can talk to multiple (up to 6) of these sensors as they are individually addressable. </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Power can be measured using a clip-on CT current sensor and a 9VAC reference supply. You can cheat and omit the 9VAC supply input resulting in the AC voltage being fixed in the software, but then you are not reading true Real Power or Power Factor, so this is not recommended. If measuring solar PV two clip-on CT sensors are required and the 9VAC voltage input is essential as it's required to tell the unit if you generating or consuming power. The second CT can be used to isolate a particular load and see how much that draws. As an example CT 1 could be measuring the total of your house while CT 2 could tell you how much just your water heater or stove uses.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Another method to measure power is to use an optical pulse counter sensor that picks up the LED flashes generated by most modern electricity and gas meters.</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Being able to visualise the power used by your appliances gives a whole new insight into the power needed to run them. The author used the system to evaluate the claims made by the supplier of a hot water boiler control unit that only allows the boiler to heat the water 3 times a day based on your predicted usage. Using the emonPi and Emoncms system it was easy to see exactly how much saving was achieved after installing the control unit. </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The emonPi is a fantastic piece of kit and well worth having if you would like to contribute towards a greener future.</span></div><b style="font-weight: normal;"><br /></b><br /><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Weblinks for more information:</span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Home Page –<a href="https://www.blogger.com/goog_615289264"><span id="goog_615289265"></span> </a></span><a href="https://www.blogger.com/"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://openenergymonitor.org/</span><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> <span id="goog_615289266"></span></span></a></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">emonPi User Guide - </span><a href="http://openenergymonitor.org/emon/modules/emonpi" style="text-decoration: none;"><span style="background-color: transparent; color: #1155cc; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;">http://openenergymonitor.org/emon/modules/emonpi</span></a></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Wiki - </span><a href="http://wiki.openenergymonitor.org/" style="text-decoration: none;"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://wiki.openenergymonitor.org</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Shop - </span><a href="http://shop.openenergymonitor.com/" style="text-decoration: none;"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://shop.openenergymonitor.com/</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">User Forum - </span><a href="http://openenergymonitor.org/emon/forum" style="text-decoration: none;"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://openenergymonitor.org/emon/forum</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Blog - </span><a href="http://openenergymonitor.blogspot.com/" style="text-decoration: none;"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://openenergymonitor.blogspot.com/</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span></div><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Emoncms - </span><a href="http://emoncms.org/" style="text-decoration: none;"><span style="background-color: transparent; color: #666600; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">http://emoncms.org</span></a><span style="background-color: transparent; color: black; font-family: Calibri; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span></div><b style="font-weight: normal;"><br /></b><br /><div dir="ltr" style="line-height: 1.295; margin-bottom: 8pt; margin-top: 0pt;"><span style="background-color: transparent; color: red; font-family: Calibri; font-size: 14.6667px; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><b>Safety Warning: Interfacing with mains voltages can be potentially lethal. If you are not competent, or not sure of what you are doing rather seek the assistance of a qualified professional.</b></span></div><br />
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+  
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

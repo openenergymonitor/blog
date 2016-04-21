@@ -1,0 +1,220 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Development update: EmonHub, Emoncms&MQTT, Application guides - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2014/05/24/development-update-emonhub-emoncms/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Development update: EmonHub, Emoncms&MQTT, Application guides">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2014/05/24/development-update-emonhub-emoncms/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Development update: EmonHub, Emoncms&MQTT, Application guides">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Development update: EmonHub, Emoncms&MQTT, Application guides</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-05-24T15:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  There's been a lot of development happening recently but not being blogged about so here's a short overview with links to where to find out more:<br /><b><br /></b><b>EmonHub (The next version of the oem_gateway)</b><br /><a href="http://openenergymonitor.org/emon/node/5203">http://openenergymonitor.org/emon/node/5203</a><br />Paul (pb66), Jerome, Dave McCraw and I have been discussing the best way to integrate the ability to listen and dispatch data with different datatypes and how best to integrate threading so that dispatchers cant block the other dispatchers and listeners.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/emonhub.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://openenergymonitor.org/emon/sites/default/files/emonhub.png" height="258" width="400" /></a></div><br /><br /><b>Using MQTT with Emoncms to make a more extensible flexible system.</b><br />We've discussed the idea of using MQTT within emoncms several times before but the idea came up again during discussion about the best way to implement node decoding in emonhub. Emoncms could provide some of the same features of emonhub ie multiple listeners and multiple dispatchers in an elegant way if it incorporated mqtt message queues. It would also provide benefits for control as initially explored here last December <a href="https://github.com/emoncms/development/tree/master/experimental/control/nodejs_websocket_thermostat">https://github.com/emoncms/development/tree/master/experimental/control/nodejs_websocket_thermostat</a><br /><br />Here's a system diagram of how it could look like:<br /><b><br /></b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://cloud.githubusercontent.com/assets/503186/3026547/c6c29cc6-e016-11e3-8082-dfc15745f4f0.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="452" src="https://cloud.githubusercontent.com/assets/503186/3026547/c6c29cc6-e016-11e3-8082-dfc15745f4f0.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">and here's an initial working concept, with step by step setup guide: <a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md">https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This approach needs a fair bit of work to make it a really nice solution, If you think this is the way to go it would be great to get some help with making it happen, in particular:</div><ul><li>Integrating the event module by running it as its own process subscribed to the applicable mqtt topics.</li><li>Writing a process for the emonhub style dispatcher for sending data to other services such as a remote emoncms or another service entirely such as PVOutput or ThingSpeak</li><li>Creating raspberrypi module style emoncms gui for the new python based listener setting the rfm12pi radio settings. </li><li>Managing all these processes, a process status interface in emoncms?</li></ul>Richard Hatfield and I have also been doing work on setting up Emoncms + MQTT + scheduler for heating control, the raspberrypi software setup guide for the configuration so far is here:<br /><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md">https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md </a><br /><b><br /></b>There are also some new related MQTT mini examples in the emoncms/development repository: <a href="https://github.com/emoncms/development">https://github.com/emoncms/development</a><br /><br />I've created a forum thread for discussing emoncms + mqtt here:<br /><a href="http://openenergymonitor.org/emon/node/5207">http://openenergymonitor.org/emon/node/5207 </a><br /><b><br /></b><b>New Application Guides</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://github.com/openenergymonitor/documentation/raw/master/Applications/HeatpumpMonitorHDD/files/system.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="190" src="https://github.com/openenergymonitor/documentation/raw/master/Applications/HeatpumpMonitorHDD/files/system.jpg" width="640" /></a></div><br />An ongoing project for some time now is the writing of new application guides that go through step by step system building for home energy monitoring, heatpump monitoring, solar pv and thermal performance monitoring, integrating some of the new features for counting watt-hours on the emontx and using some of the new emoncms features such as myelectric. There's a new github repository in which to develop these guides. The table of content so far is:<br /><br /><br /><br /><article class="markdown-body entry-content" itemprop="mainContentOfPage"><h2><a class="anchor" href="https://github.com/openenergymonitor/documentation#applications" name="user-content-applications"><span class="octicon octicon-link"></span></a>Applications</h2>Open, downloadable, editable documentation (via git).<br />  <b>Home Energy Monitor</b><br />  <ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HomeEnergyMonitor/HomeEnergyMonitor.md">Home Energy Monitor (posting to emoncms.org)</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HomeEnergyMonitorHDD/HomeEnergyMonitorHDD.md">Home Energy Monitor (with emoncms running locally on a harddrive)</a></li></ul><b>Heatpump Monitor</b> <br />  <ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HeatpumpMonitorHDD/HeatpumpMonitorHDD.md">Heatpump Monitor (with emoncms running locally on a harddrive)</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HeatpumpMonitorSerialGSM/HeatpumpMonitorSerialGSM.md">Heatpump Monitor (direct serial emontx -&gt; RPi + GSM</a></li></ul><h2><a class="anchor" href="https://github.com/openenergymonitor/documentation#modules" name="user-content-modules"></a>Modules</h2><h3><a class="anchor" href="https://github.com/openenergymonitor/documentation#raspberrypi" name="user-content-raspberrypi"></a>RaspberryPI</h3><ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/Gateway/gateway.md">Gateway</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md">Full Stack HDD</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md">Full Stack HDD + scheduler</a></li></ul></article><br />Help with testing and github pull requests with changes to these guides would be most appreciated and if youd like to submit a guide for an application or configuration that you dont think has been covered well that would also be welcome. Please get in touch on the forums if you've got any question's about development and how to get involved.
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+  
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

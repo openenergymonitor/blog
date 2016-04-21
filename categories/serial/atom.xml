@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: serial | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/serial/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-21T23:25:44+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Software improvement and examples]]></title>
+    <link href="http://blog.openenergymonitor.org/2009/06/25/software-improvement-and-examples/"/>
+    <updated>2009-06-25T22:02:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2009/06/25/software-improvement-and-examples</id>
+    <content type="html"><![CDATA[<p>I have made a start on rewriting parts of the software to make the code a bit more object orientated and easier to use. I was finding that every time I needed to adapt the software for a different use it was a bit messy.<br /><br />In the process of doing a the re-write I will be adding examples of each significant part of the whole program working independently.<br /><br />Have a look on the <a href="http://openenergymonitor.org/emon/node/3">software page</a> for part 01 - Reading data from the Arduino and conversion of the data to a useful form.</p>
+]]></content>
+  </entry>
+  
+</feed>

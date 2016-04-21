@@ -1,0 +1,230 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pebble Smart Watch Emoncms Heating Control Demo - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2014/08/01/pebble-smart-watch-emoncms-heating/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Pebble Smart Watch Emoncms Heating Control Demo">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2014/08/01/pebble-smart-watch-emoncms-heating/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Pebble Smart Watch Emoncms Heating Control Demo">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Pebble Smart Watch Emoncms Heating Control Demo</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-08-01T15:50:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/control/'>control</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/heating/'>heating</a></li>
+      
+        <li><a class='category' href='/categories/pebble/'>pebble</a></li>
+      
+        <li><a class='category' href='/categories/smartwatch/'>smartwatch</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  This post follows on my post a while back on&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html">Emoncms heating control</a>, and links in with my previous post on using Tasker to display Emoncms notifications. For details of the hardware and overview of the heating control setup, see the Emoncms heating control post linked above.<br><br>The Pebble is a Bluetooth connected smart watch which works with Apple and Android smartphones. Using an e-ink display the Pebble watches achieves a week of battery life. Very impressive from a hardware point of view. I've been using a Pebble with my Android phone for the past couple of weeks and found the Pebble to be useful for keeping up with <a href="http://openenergymonitor.blogspot.com/2014/08/android-tasker-pebble-smartwatch.html">notifications</a> while out out and about and&nbsp;especially for <a href="https://play.google.com/store/apps/details?id=ca.rebootsramblings.musicboss&amp;hl=en_GB">controlling music</a>, <a href="https://play.google.com/store/apps/details?id=com.batescorp.pebble.nav&amp;hl=en_GB">navigation directions</a> and <a href="https://play.google.com/store/apps/details?id=com.strava&amp;hl=en_GB">activity tracking</a> while out biking, running, driving and even swimming!<br><br>The thought occurred to me that the Pebble could potentially be a super convenient way to quickly control my heating. I've got working a simple demo to turn my heating on and off, the could easily be extended to allow setting a set point.<br><br>When the Pebble was first released my friend Ryan Brooks put together a <a href="http://openenergymonitor.blogspot.com/2014/02/pebble-smart-watch-emoncms-display.html">demo to display feed data from Emoncms on the pebble</a>. The code for this demo is up on GitHub, however since then things have moved on, Pebble have released SDK 2.0 and launched the pebble app store allowing many applications to be easily loaded onto the Pebble. One of the more powerful applications is <a href="https://play.google.com/store/apps/details?id=com.kodek.pebbletasker&amp;hl=en_GB">Pebble Tasker</a>, when linked with the <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">main Tasker App</a> on an Android phone the possibles are endless. See my previous <a href="http://openenergymonitor.blogspot.com/2014/08/android-tasker-pebble-smartwatch.html">blog post on using Tasker to display Emoncms notification on an Android phone</a>. Taking inspiration from <a href="http://nathan.chantrell.net/home-automation/">Nathan Chantrell's home automation setup</a> using Pebble and Tasker I decided to have a go at directly controlling my heating from my Pebble, here is the result:<br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-_SSMd3zwwb4/U9p1Vm5zYDI/AAAAAAAA4ns/QS82TULGXx8/s1600/P1050327.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-_SSMd3zwwb4/U9p1Vm5zYDI/AAAAAAAA4ns/QS82TULGXx8/s1600/P1050327.JPG" height="240" width="320"></a></div><br><br><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/yRyeDhEQVkg" width="560"></iframe> <br><div class="separator" style="clear: both; text-align: center;"></div><br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-sJ0ArawyZgQ/U9p1WUgL-7I/AAAAAAAA4nw/SUXXwndvDN4/s1600/P1050328.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-sJ0ArawyZgQ/U9p1WUgL-7I/AAAAAAAA4nw/SUXXwndvDN4/s1600/P1050328.JPG" height="240" width="320"></a></div><div class="separator" style="clear: both; text-align: center;"><br></div><div class="separator" style="clear: both; text-align: left;">Here are the steps to replicate this system:</div><h3 style="clear: both; text-align: left;">1. Install Emoncms on a Raspberry Pi and enable RF12 Packetgen Module&nbsp;</h3><div class="separator" style="clear: both; text-align: left;">I used the new pre-built SD card image for the low write version of emoncms, downloadable from the link below. This is soon to become our default Raspberry Pi pre-built image once testing is complete</div><div class="separator" style="clear: both; text-align: left;"><a href="https://github.com/emoncms/emoncms/tree/bufferedwrite">https://github.com/emoncms/emoncms/tree/bufferedwrite</a></div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: left;">Following the setup guide enable local logging and configure emonHub</div><div class="separator" style="clear: both; text-align: left;"><a href="https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/setup.md">https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/setup.md</a></div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: left;">The heating control setup requires the emoncms Packetgen module. Follow the steps to enable packetgen to work with emonHub.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/emonhubmod.md">https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/emonhubmod.md</a></div><div class="separator" style="clear: both; text-align: left;">More info on packetgen module can be found: <a href="https://github.com/emoncms/packetgen">https://github.com/emoncms/packetgen</a></div><h3 style="clear: both; text-align: left;">2. Setup RFM12B receiver and control relay&nbsp;</h3><div>To perform the actual control of the boiler you will need to setup an RFM12B receiver node with a relay or similar. The actual hardware setup will depend on what you want to control, a JeeLink or partially populated emonTx V2 work well as a good base for the control hardware. See my <a href="http://openenergymonitor.blogspot.com/2013/12/emoncms-early-heating-control-demo.html">previous post on heating control</a> for more info regarding the hardware. The packetgen module will provide an example Arduino sketch to upload.&nbsp;</div><div><br></div><h3>3. Install and Configure Tasker on your Android Phone&nbsp;</h3><div><a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm</a><br><br><div>The emoncms API to set a packetgen variable is as follows:<br><br><i>http://YOUR_EMONCMS_SERVER_IP_OR_HOSTNAME/emoncms/packetgen/update.json?id=4&amp;value=1&amp;apikey="YOUR_RW_APIKEY"</i></div><div><br>ID is the id of the packetgen variable (they start at 0) and value is the value to be set, the example above will turn the heating on setting variable 4 which in my setup is a boolean control variable to '1'. You can test if this is working by calling the API in your browser.<br><br></div>I've created a Tasker template task which calls the above API which can be downloaded from Github and imported into Tasker, follow instructions on Github Readme. Variables should be self-explanatory.<br><br><a href="https://github.com/emoncms/AndroidTasker">https://github.com/emoncms/AndroidTasker</a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-cUl9ckQsfuY/U9uzvgik16I/AAAAAAAA4s0/L8JNp-rUeE8/s1600/2014-08-01+15.32.06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-cUl9ckQsfuY/U9uzvgik16I/AAAAAAAA4s0/L8JNp-rUeE8/s1600/2014-08-01+15.32.06.png" height="640" width="400"></a></div><div class="separator" style="clear: both; text-align: center;"><br></div><div class="separator" style="clear: both; text-align: left;">If a successful response is received from the Emoncms server a 'success' notification is displayed, else a fail notification is activated.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-PqdqiEaQ0IU/U9u0XAshGiI/AAAAAAAA4tA/U4Z2b-S7LmU/s1600/2014-08-01+15.32.51.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-PqdqiEaQ0IU/U9u0XAshGiI/AAAAAAAA4tA/U4Z2b-S7LmU/s1600/2014-08-01+15.32.51.png" height="400" width="225"></a></div><div class="separator" style="clear: both; text-align: center;"><br></div><br>Home screen Tasker task shortcut widgets can be created on your Android home screen to allow Tasker tasks to be easily activated, or profiles can be setup to turn the heating on as you arrive home / leave work or certain times per day. The possibles are endless! Just make sure your system has some hardware fail-safe so you don't get home to a house like a sauna or worse!<br><br></div><div><br>If you are setting up Tasker yourself from scratch setup GET requst as follows:</div><div><br><i>New Task &gt; + new action &gt; net &gt; HTTP GET &gt; enter HTTP API above into host and (optionally) write output to log file&nbsp;</i></div><h3><br>4. Install &amp; configure Pebble Tasker on the Pebble Watch</h3><div class="separator" style="clear: both; text-align: left;"><a href="https://play.google.com/store/apps/details?id=com.kodek.pebbletasker&amp;hl=en_GB">https://play.google.com/store/apps/details?id=com.kodek.pebbletasker&amp;hl=en_GB</a></div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: left;">To map Tasker tasks to allow easy control from a Pebble&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-d7UrLZR3-qU/U9umjLXlyEI/AAAAAAAA4sY/aLp4ph6XcXw/s1600/2014-07-31+17.10.26.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-d7UrLZR3-qU/U9umjLXlyEI/AAAAAAAA4sY/aLp4ph6XcXw/s1600/2014-07-31+17.10.26.png" height="400" width="225"></a></div><div class="separator" style="clear: both; text-align: center;"><br></div><h3 style="clear: both; text-align: left;">Other Pebble Tweaks I've found useful</h3><div style="clear: both; text-align: left;">While not directly relevant to heating control here are some further details of my Pebble smartwatch setup:&nbsp;</div><div style="clear: both; text-align: left;"><br></div><div style="clear: both; text-align: left;"></div><ul><li>Using <a href="http://pebblebits.com/">PebbleBits firmware</a> on the pebble to quickly launch pebble apps from the watch face</li><li>Using <a href="https://github.com/emoncms/AndroidTasker/blob/master/Strava_Start___Stop.tsk.xml">Tasker to Stop / Start Strava&nbsp;</a></li><li><a href="http://www.mypebblefaces.com/apps/1486/1299/">Modern Watchface</a> is my favourite watch face (shown in demo above)</li><li><a href="https://play.google.com/store/apps/details?id=ca.rebootsramblings.musicboss&amp;hl=en_GB">Music Boss </a>is great for controlling music and starting podcasts while driving or biking</li><li><a href="https://play.google.com/store/apps/details?id=com.batescorp.pebble.nav&amp;hl=en_GB">NavMe</a> is great for directions on the Pebble while on the bike &nbsp;</li><li>Tasker can be used to send commonly sent SMS's and call favourite contacts direct from the Pebble&nbsp;</li></ul><br><div style="clear: both; text-align: left;"><br></div><div style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: left;"><br></div><br><br>
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+  
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

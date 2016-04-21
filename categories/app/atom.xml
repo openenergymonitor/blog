@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: app | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/app/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-21T23:25:44+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Android App]]></title>
+    <link href="http://blog.openenergymonitor.org/2015/12/17/emoncms-android-app/"/>
+    <updated>2015-12-17T10:47:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2015/12/17/emoncms-android-app</id>
+    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">
+  <p><span style="text-align: left;"><br /></span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app. </span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span style="text-align: left;"><br /></span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s1600/unnamed1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s640/unnamed1.png" width="355" /></a><span style="text-align: left;"><br /></span>&lt;/div&gt;&lt;div class="" style="clear: both; text-align: left;"&gt;<span style="text-align: left;"><br /></span><span style="text-align: left;">The app is now available on Google Play</span><sup style="background-color: white; color: #444444; font-family: Roboto, sans-serif; font-size: 8px; line-height: 0;">TM</sup>. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" height="65" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" width="200" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="" style="clear: both; text-align: left;"&gt;<span style="text-align: left;">What’s even more exciting is that this app has been developed almost solely by a member of the </span><span style="text-align: left;">community </span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>).    &lt;/div&gt;&lt;h3 style="clear: both; text-align: left;"&gt;Features:&lt;/h3&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Emoncms MyElectric dashboard  &lt;/li&gt;&lt;li&gt;Supports <a href="http://emoncms.org/">http://emoncms.org</a> and any other Emoncms server &lt;/li&gt;&lt;li&gt;Power or currency view toggle&lt;/li&gt;&lt;li&gt;Multiple currency support &lt;/li&gt;&lt;li&gt;Unit cost config (e.g £/Kwh)&lt;/li&gt;&lt;li&gt;Pinch &amp; zoom on real-time power graph&lt;/li&gt;&lt;li&gt;Number of KWh days displayed is based on screen resolution, rotation to horizontal or viewing on a large tabet results in more KWh day values displayed (see below for Nexus 10 screenshot) &lt;/li&gt;&lt;li&gt;MySolar support in development &lt;/li&gt;&lt;li&gt;Fully open-source (<a href="https://github.com/emoncms/AndroidApp">GitHub Repo</a>)&lt;/li&gt;&lt;li&gt;Developed by the community with input from the community (<a href="http://openenergymonitor.org/emon/node/11260#comment-37116">development forum thread</a>)&lt;/li&gt;&lt;/ul&gt;<br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s1600/unnamed.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s640/unnamed.png" width="640" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s1600/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="568" src="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s640/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" width="640" /></a>&lt;/div&gt;<br /></p>
+</div>
+]]></content>
+  </entry>
+  
+</feed>

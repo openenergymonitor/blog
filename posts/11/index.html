@@ -1,0 +1,862 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/11/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/11/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/11/08/improving-emoncms-performance-with-8/">Improving emoncms performance with Redis plus interesting consequences for SD cards.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-08T16:08:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> nine minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/11/08/improving-emoncms-performance-with-8/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-azlnE7xK9UU/Unzhu8qmTFI/AAAAAAAACys/4BJJiI9HsRY/s1600/index.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="149" src="http://3.bp.blogspot.com/-azlnE7xK9UU/Unzhu8qmTFI/AAAAAAAACys/4BJJiI9HsRY/s200/index.jpeg" width="200" /></a></div><br />As part of recent work to improve the performance of emoncms because of high load's on emoncms.org there is now an emoncms branch that uses redis to store feed and input meta data including last feed time and value fields which where causing significant write load on the server.<br /><br />Using redis in this way leads to quite a big performance improvement and potentially could lengthen the lifespan of raspberrypi SD card systems significantly.<br /><br />I've been working on the redis implementation with Ynyr Edwards a good friend and an experienced software developer who recently joined Glyn and I helping us with development and running the shop. Ynyr had been telling me about the usefulness of in memory databases and caching for improving performance for long time. There appeared to be a significant amount of waiting on io going on on emoncms.org and the mysql processlist was full of last time and value updates to the feeds meta data table.<br /><br />In order to compare the use of mysql versus redis for storing input and feed meta data in emoncms a test was created that was representative of the typical kind of data input seen in emoncms.<br /><br />The test consisted of a node posting 3 power values, with each value being “logged to a feed” processed into kwh/d data and histogram data. So 9 feeds in total, three of them timestore and 6 mysql based.<br /><br />The node post rate was set to once a second and the time taken for each request was measured. After single request time's where measured a second test was carried out which involved sending request continuously and measuring the time taken to make 100 sequential requests from which the average requests per second value is determined.<br /><br />Its important to note that the following results are for <i>sequential</i> requests rather than concurrent requests. Its possible to achieve significantly higher request rates with concurrent requests which spawn many parallel apache processes. Sequantial requests give us a good base line test to work with.<br /><br />The CPU on the test machine was set to 2.0 GHz x 4 cores<br /><style type="text/css">P { margin-bottom: 0.21cm; }A:link {  }</style>  <br /><h3 style="margin-bottom: 0cm;">Testing Mysql</h3><div style="margin-bottom: 0cm;">The following results show the effect of turing off last input and feed time and value meta data entries in the pure mysql implementation: </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Mysql with all metadata switched on:</b></div><div style="margin-bottom: 0cm;">10x sequential posts, 31ms to 79ms @ 4x 2GHz, average 20 sequential req/s.  </div><div style="margin-bottom: 0cm;">With the processor set to 0.8GHz on all 4 cores the request rate was 10 sequential req/s</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">With a single poster process free-running the CPU is 7.4 us and wait is 11.5 wa</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Mysql without input last time value being saved:</b></div><div style="margin-bottom: 0cm;">10x sequential, posts 26ms to 64ms, average: 25 sequential req/s</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Mysql without input or feed last value but still histogram last value:</b></div><div style="margin-bottom: 0cm;">10x sequential posts: 18ms to 31ms, average: 46-48 req/s</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Mysql without input or feed last value or histogram last value:</b></div><div style="margin-bottom: 0cm;">10x sequential posts: 10ms to 11ms, average 94-95 req/s</div><h3 style="margin-bottom: 0cm;">Redis&nbsp;</h3><div style="margin-bottom: 0cm;">Here are the results with the redis implementation that's up on github here: </div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/emoncms/tree/redismetadata"><span style="font-weight: normal;">https://github.com/emoncms/emoncms/tree/redismetadata</span></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">All meta data enabled 11-14ms, 94-95req/s @ 2.0GHz</div><div style="margin-bottom: 0cm;">CPU us 22us, 0.0wa</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>CPU Performance:</b></div><div style="font-weight: normal; margin-bottom: 0cm;">In the redis test the CPU utilisation was around 22%, the mysql CPU utilisation was around 7.4%. Idle CPU us is around 0.2%. Redis is however handling 4.7x the number of requests, if it where handling the same number of requests the cpu us may be around 22/4.7  ~4.7% us.</div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; margin-bottom: 0cm;"><b>Wait</b>  </div><div style="font-weight: normal; margin-bottom: 0cm;">We can see a significant reduction in the amount of time spent by the system waiting. With mysql every time a feed was updated, the time and value of the update was written to the mysql feeds table. The first idea was that this waiting was caused by waiting on mysql table locks, testing however with both MYISAM and InnoDB showed similar overall performance even through InnoDB is row locking while MyIsam table level locking. Looking at the disk write rate with vmstat and iotop however showed a really high write rate with mysql so it may be that the waiting was just waiting because the disk was working so hard, see more on this below.  </div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>IO Disk write rate:</b></div><div style="font-weight: normal; margin-bottom: 0cm;">Here is the output from vmstat with the apache access and redis logs turned off.</div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Redis</b></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu---- </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">2  0      0 4282700 352236 2002508    0    0     0     0 1670 44128 20  7 72  0 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4281496 352236 2002976    0    0     0    43 1622 44148 20  7 73  0 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4280636 352236 2003440    0    0     0     0 1651 44424 21  7 72  0 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4280096 352236 2003952    0    0     0  1793 1678 43999 21  6 72  0 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"> 1  0      0 4279316 352236 2004416    0    0     0    49 1658 44106 20  7 73  0 </span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>MySQL</b></div><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu---- </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4264420 352244 2041008    0    0     0  4280 1695 14833  7  3 79 11 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4264904 352248 2039972    0    0     0  4296 1777 15615  8  3 78 11 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4264664 352252 2040312    0    0     0  4477 1713 15072  7  3 79 12 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1  0      0 4264440 352264 2040420    0    0     0  4355 1700 14982  7  2 79 11 </span></div><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span><br /><div style="margin-bottom: 0cm;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">0  1      0 4267364 352284 2037604    0    0     0  4332 1712 15012  7  2 79 12</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; margin-bottom: 0cm;">Using a larger number of vm readings than the 5 listed above the average redis input was 215kb/s and mysql 4430kb/s, idle being 4kb/s. First its surprising how high the mysql write rate is and then second its surprising how large the reduction in the amount of disk writing done is, about 21x less and that's with 4.7 times the post rate. The reduction in the amount of writing could therefore be as much as 100x. The quanitiy of writes cannot only be explained by the kind of writes that are being done in emoncms, most of it appears to be due to ext4 filesystem journaling (61.16% of write capacity) while mysql is only responsible for a couple of percent.</div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; margin-bottom: 0cm;"><b>MySQL iotop </b></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-q8q8RbkJbDU/Unze5PlCgqI/AAAAAAAACyY/bC36YEUi5rY/s1600/iotop_mysql.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="118" src="http://1.bp.blogspot.com/-q8q8RbkJbDU/Unze5PlCgqI/AAAAAAAACyY/bC36YEUi5rY/s640/iotop_mysql.png" width="640" /></a></div><b>Redis iotop&nbsp; </b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-T61dmob77lE/Unze8J4DB6I/AAAAAAAACyg/Ig6EkJFipEg/s1600/iotop_redis.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="118" src="http://2.bp.blogspot.com/-T61dmob77lE/Unze8J4DB6I/AAAAAAAACyg/Ig6EkJFipEg/s640/iotop_redis.png" width="640" /></a></div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; margin-bottom: 0cm;"><b>Journaling</b><br /><i>"</i><i>A journaling file system is a file system that keeps track of the changes that will be made in a journal  (usually a circular log in a dedicated area of the file system) before  committing them to the main file system. In the event of a system crash  or power failure, such file systems are quicker to bring back online and  less likely to become corrupted" - <a href="http://en.wikipedia.org/wiki/Journaling_file_system.">http://en.wikipedia.org/wiki/Journaling_file_system.</a></i><br /><i>         <style type="text/css">P { margin-bottom: 0.21cm; }A:link {  }</style>  </i><br /><div style="font-weight: normal; margin-bottom: 0cm;"><a href="https://help.ubuntu.com/community/LinuxFilesystemsExplained">https://help.ubuntu.com/community/LinuxFilesystemsExplained</a></div><br /><b>Raspberry PI SD card installation</b></div><div style="font-weight: normal; margin-bottom: 0cm;">The problem with running emoncms on SD cards was that we where wearing the SD cards out in only a few months. If redis reduces the amount of writing by around 100x then this could mean a significantly longer SD card life span.<br /><br /></div><div style="font-weight: normal; margin-bottom: 0cm;">If in addition to using redis a filesystem without journaling is used the lifespan could be extended even further, although this does increase the risk of data corruption from power failure, but then if such failures are recoverable with a disk check on startup then that’s much better than a worn out SD card.<br /><br />To potentially improve things further the IPE Debian operating system could be put on a read only partition as is currently done with the oem gateway and the data could be placed on a write partition which could use the ext2 or fat32 filesystem both of which are non-journaling.&nbsp; <br /><br /></div><div style="font-weight: normal; margin-bottom: 0cm;"><b>Redis branch on github </b></div><div style="font-weight: normal; margin-bottom: 0cm;">If you'd like to try out the redis branch its up on github here: </div><div style="font-weight: normal; margin-bottom: 0cm;"><a href="https://github.com/emoncms/emoncms/tree/redismetadata">https://github.com/emoncms/emoncms/tree/redismetadata</a></div><div style="font-weight: normal; margin-bottom: 0cm;">You will need redis-server installed and phpredis: </div><div style="font-weight: normal; margin-bottom: 0cm;"><a href="https://github.com/nicolasff/phpredis">https://github.com/nicolasff/phpredis </a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/11/04/bulk-sd-card-loading/">Bulk SD Card Loading </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-04T11:12:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/linux/'>linux</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/11/04/bulk-sd-card-loading/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Here's a neat little trick which should be useful for anyone needing to flash the same SD card .img onto lots of SD cards in parallel. We have been using it to load up the <a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi pre-loaded emoncms gateway SD cards</a>. Thanks to&nbsp;<a href="https://twitter.com/dpslwk">@dpslwk</a>&nbsp;for the initial idea. <br /><br />Tested on Ubuntu Linux 13.10 64-bit<br /><br />First install <a href="http://dcfldd.sourceforge.net/">dcfldd</a> which is an enhanced version of dd<br /><br /><i>$ sudo apt-get install&nbsp;dcfldd</i><br /><br />I used a USB hub with five SD card readers<br /><i><br /></i><i>$ sudo fdisk -l&nbsp;</i><br /><br />can be used to determine the drive letter of the SD cards, depending on your hard disk configuration it will usually be something like /dev/sdx where x is b-f. &nbsp;Make sure you check this carefully, selecting the wrong disk can result in one of your hard drives being wiped! dd is not nicknamed 'delete disk' for nothing!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VGZEhCM3mws/Und_IN4bgSI/AAAAAAAAmwg/TmQ50UQDycs/s1600/20131104_105215_Ffordd+Y+Parc.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-VGZEhCM3mws/Und_IN4bgSI/AAAAAAAAmwg/TmQ50UQDycs/s320/20131104_105215_Ffordd+Y+Parc.jpg" width="320" /></a></div><br /><br />Finally run dcfld selecting each SD card as the output file:<br /><br /><i>$ sudo dcfldd if=SD_CARD_IMAGE.img bs=4M sizeprobe=if of=/dev/sdb of=/dev/sdc of=/dev/sdd of=/dev/sde of=/dev/sdf</i><br /><br />Flashing five SD cards with a 2GB image takes about 4 min for me:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-tRreIhTiEPI/UneBAA1GlgI/AAAAAAAAmws/XP3dcwYxTCA/s1600/Selection_006.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="114" src="http://3.bp.blogspot.com/-tRreIhTiEPI/UneBAA1GlgI/AAAAAAAAmws/XP3dcwYxTCA/s640/Selection_006.png" width="640" /></a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/31/new-office-space-and-new-units/">New office space and new hardware units</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-31T09:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/oem-labs/'>OEM Labs</a></li>
+      
+        <li><a class='category' href='/categories/shop/'>shop</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/31/new-office-space-and-new-units/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Thanks a lot for everyone's support, it feel like we're on the verge of starting a new chapter.<br /><div><br />The next chapter sees us transferring from self-assembly through-hole kits to pre-assembled ready to go hardware units. This is a step change for us, making it easier to get systems up and running and onto the application (data visualisation and analysis) stage faster. From a<a href="http://megni.co.uk/"> Megni</a> (business) point of view we're moving into a new office space and have got some extra pairs of hands helping us out.&nbsp;</div><div><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-7Srn3JSAwCQ/Um6DfHPu1uI/AAAAAAAAmlQ/qMXfq6KC1GY/s1600/2013-10-27+14.55.51.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://1.bp.blogspot.com/-7Srn3JSAwCQ/Um6DfHPu1uI/AAAAAAAAmlQ/qMXfq6KC1GY/s320/2013-10-27+14.55.51.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Our new office space :-D</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-FusN9czfgpw/Um6DfI4CocI/AAAAAAAAmlU/Jkv5vs_NI-4/s1600/2013-10-27+14.53.57.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="160" src="http://4.bp.blogspot.com/-FusN9czfgpw/Um6DfI4CocI/AAAAAAAAmlU/Jkv5vs_NI-4/s320/2013-10-27+14.53.57.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="https://plus.google.com/114424977493521882459/posts/R2JanBULNm8">See here to view a cool 360 degree photosphere of our new space</a>&nbsp;</td></tr></tbody></table><br /></div><div>The OpenEnergyMonitor system as a whole can be thought of &nbsp;as a toolkit for exploring sustainable and efficient energy in our buildings; a toolkit that helps us make informed decisions based on real data and in depth understanding rather than hear-say and overstated product brochures.</div><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-6xcrqx5UmJA/Ul-kNEaYNPI/AAAAAAAAmMs/5C9mLhEWSeI/s1600/PhotoGrid_1380621877488.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://1.bp.blogspot.com/-6xcrqx5UmJA/Ul-kNEaYNPI/AAAAAAAAmMs/5C9mLhEWSeI/s320/PhotoGrid_1380621877488.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://openenergymonitor.blogspot.co.uk/search/label/emonTx">emonTx V3 pre-assembled SMT due to launch in shop beginning December</a></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-3FXxqatGC7k/UmEpYLZT7WI/AAAAAAAAmSM/lPtUH9PEGFI/s1600/emonTH.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-3FXxqatGC7k/UmEpYLZT7WI/AAAAAAAAmSM/lPtUH9PEGFI/s1600/emonTH.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://openenergymonitor.blogspot.co.uk/search/label/emonTH">emonTH temperature and humidity node due to launch in shop beginning December&nbsp;</a></td></tr></tbody></table><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-nDKApuDa6xw/UnImdCPwHHI/AAAAAAAAmqI/-aVZy3NKowM/s1600/emontxshield.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="217" src="http://3.bp.blogspot.com/-nDKApuDa6xw/UnImdCPwHHI/AAAAAAAAmqI/-aVZy3NKowM/s320/emontxshield.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://openenergymonitor.blogspot.co.uk/search/label/emonTxShield">emonTx Arduino Shield V2 SMT due to launch in the shop beginning of December</a></td></tr></tbody></table><br />OpenEnergyMonitor fits into and is part of the realisation of the smart, efficient low energy home vision.</div><div><br /></div><div>The toolkit involves sensor nodes that are placed around a building that record data about the building's operation: its use of electricity, its thermal performance and humidity. The data from these sensors feed directly into visualisation tools as well as being integrated into <a href="http://openenergymonitor.blogspot.co.uk/2013/09/measuring-building-thermal-performance.html">building energy models that help make sense of this data</a>.</div><div><br /></div><div>The first part of this work is the monitoring and modelling layer providing you with information that can inform action, whether that's changing a fridge or lighting technology or adjusting heating patterns.</div><div><br /></div><div>The second part is to integrate control, e.g. <a href="http://www.emoncms.org/openbem/heatingexplorer">controlling a heat pump to heat a building using the most efficient heating pattern</a>. That said, the first part is also control in a sense as it involves informing the user to then instigate some action.<br /><br />Lots of exciting things to work on in 2014 and beyond! Let's finish with a nostalgic look back at our old lab space where the project was first conceived back in 2009..lots of happy memories:<br /><br /><br /></div><!-- Place this tag where you want the widget to render. --> <br /><div class="g-post" data-href="https://plus.google.com/114424977493521882459/posts/R2JanBULNm8"></div><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/e19ClmQmql8" width="560"></iframe><br /><br />In the next couple of weeks I will be travelling to Cambridge and Nottingham in the UK to oversee the SMT assembly of our new units, I will try and do some blogging as I go. Fingers crossed this all should go smoothly! If all goes well the new units should be in the <a href="http://shop.openenergymonitor.com/">shop</a> at the end of November / beginning of December 2013.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/22/raspberry-pi-new-type-of-ram/">Raspberry Pi - A new type of RAM</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-22T15:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+      
+        <li><a class='category' href='/categories/n/'>n</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/22/raspberry-pi-new-type-of-ram/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    If you've had trouble booting up your Raspberry Pi then read on...<br /><br />The latest batch of <a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi's we have been selling through the shop</a> (manufactured in South Wales, UK) have use a new type of RAM chip.<br /><br />Previously the Pi used a Samsung chip, they have now switched to using a chip manufactured by Micron marked with 3KA18 D9QHN and an 'M' logo. This chip is visible in the middle of the photo below mounted on top of the processor using their cleaver package-on-package technology. This RAM chip is still 512Mb in size<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-hi1o4excuDg/UmaYiLZRV3I/AAAAAAAAmYM/eXeI6tSf-o4/s1600/20131022_104438.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://1.bp.blogspot.com/-hi1o4excuDg/UmaYiLZRV3I/AAAAAAAAmYM/eXeI6tSf-o4/s400/20131022_104438.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi with new type of RAM chip</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-6oxbmc7qi08/UmacKTOlt1I/AAAAAAAAmYc/lVnng72YWEg/s1600/RPI_SOC_03.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="173" src="http://3.bp.blogspot.com/-6oxbmc7qi08/UmacKTOlt1I/AAAAAAAAmYc/lVnng72YWEg/s320/RPI_SOC_03.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Older Samsung RAM chip</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">To my knowledge there has been no evidence that the new chip give any performance benefit, the change is probably due to cost or logistic reasons.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><b>This new chip requires a firmware update to work. Our current SD card images (e.g oemgateway_24sep2013.img) won't boot with the new RAM; static red PWR LED and nothing else.&nbsp;</b><br /><b><br /></b><b>To make the Raspberry Pi boot you will need to download the following files and put them in the SD cards FAT (boot) partition overwriting the older files:&nbsp;</b><br /><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin">https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup_cd.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup_cd.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup_x.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup_x.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/kernel_emergency.img">https://github.com/raspberrypi/firmware/raw/master/boot/kernel_emergency.img</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/kernel.img">https://github.com/raspberrypi/firmware/raw/master/boot/kernel.img</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start_cd.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start_cd.elf</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start.elf</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start_x.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start_x.elf</a><br /><br />Alternative you could download the whole Raspberry Pi firmware repository (95.6Mb) and copy out the files from the boot directory <a href="https://github.com/raspberrypi/firmware/archive/master.zip">https://github.com/raspberrypi/firmware/archive/master.zip</a><br /><br />I'm currently working on getting a new ready-to-go SD card image download uploaded with the changes above included. This should be available to download soon from:&nbsp;<a href="http://emoncms.org/site/docs/raspberrypigateway">http://emoncms.org/site/docs/raspberrypigateway</a>. Look for the 22nd Oct 2013 image.<br /><br />All SD cards purchased in the shop after today will have the new image which works on the Raspberry Pi's with the new RAM.<br /><div><br /></div><div>Onwards!&nbsp;</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/18/aa-battery-considerations/">AA Battery Considerations</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/batteries/'>batteries</a></li>
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/18/aa-battery-considerations/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The manufacture of batteries is a very energy intensive process often using many types of heavy metals, it makes total sense to use rechargeable batteries where possible and always recycle old batteries. When it comes to low power sensing nodes I'm as guilty as anyone else when it comes to just sticking in some cheap alkaline batteries, always believing that the performance of rechargeable batteries was much lower. This is not the case anymore.<br /><br />If rechargeable batteries are used (which they should be) the self-discharge rate can be significant. The self-discharge rate of NiMH batteries is high: around 30% per month at room temperature. This problem can be almost eliminated by using low-self discharge NiMH cells such as Eneloop, they have a discharge rate of about 5% per year. If non-rechargeable alkaline batteries are used they have a self-discharge rate of less than 2% per year.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-xQFMH8ye2Sg/UmEWYHb3rmI/AAAAAAAAmRo/JVNwB4P1FwY/s1600/sd.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="328" src="http://1.bp.blogspot.com/-xQFMH8ye2Sg/UmEWYHb3rmI/AAAAAAAAmRo/JVNwB4P1FwY/s640/sd.gif" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Rechargable batteries self-discharge graph from batterydata.com</td></tr></tbody></table>If you care about the environment (which we all should do) we highly recommend the use of Sanyo Eneloop rechargeable AA's in the emonTH and emonTx. They are a bit more expensive (about £2 each) but over their lifetime (they can be recharged 2100 times!) they will work out cheaper. The Eneloop cells are cadmium free and arrive fully charged and ready to use. Sanyo states that this charge is supplied by their solar PV system in Japan!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Ab76FVPyOF4/UmEbIOMDxDI/AAAAAAAAmR0/0dOljN0n3GQ/s1600/eneloop.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://3.bp.blogspot.com/-Ab76FVPyOF4/UmEbIOMDxDI/AAAAAAAAmR0/0dOljN0n3GQ/s200/eneloop.jpg" width="186" /></a></div><br />An excellent setup (as recommended by JCW of JeeLabs.org) is a spare set of Eneloop AA's (Apple AA's are rebranded Eneloops) permanently plugged in an Apple AA charger which he measured using 0W when the batteries are fully charged! This way you always have a set ready to go:&nbsp;<a href="http://jeelabs.org/2010/08/19/new-aa-battery-option/">http://jeelabs.org/2010/08/19/new-aa-battery-option/</a><br /><br />Update: I've just discovered iGogreen's Alkaline Rechargeable batteries which claim to hold their charge for 7 years and contain no heavy metals : Mercury, Cadmium, Lead or Nickel. They do fall down for high power draw applications but this is not an issue here, maybe a perfect match for long term low power nodes? They are also cheaper than Eneloops. The only draw back is they they need a special charger, iGo do a reasonably priced nice looking USB charger which will also charge standard NiMH<br /><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://images.igo.com/igo2/ac050590001/ac050590001.yz/large.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://images.igo.com/igo2/ac050590001/ac050590001.yz/large.png" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">iGogreen Alkaline Rechargeable Batteries</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://images.igo.com/igo2/ac051050001/ac051050001.yz/large.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://images.igo.com/igo2/ac051050001/ac051050001.yz/large.png" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">USB Alkaline Rechargeable / NiMH charger</td></tr></tbody></table>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/18/emonth-update-software-power/">emonTH Update - Software and Power Consumption</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/18/emonth-update-software-power/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Today I have spent some time writing the software for the emonTH. The goal for the emonTH is for it to last as long as possible from batteries (2 x AA's). The boost converter circuit as highlighted in my previous post will go someway to increasing battery life, however most gains in battery life will come from the software (ATmega328 Arduino sketch) .<br /><br />The emonTH supports both the DHT22 (humidity and temperature) and DS18B20 either onboard or remote temperature sensor. The default software will search for the presence of either sensor at startup. If both sensors are found it will return humidity from the DHT22 and temperature from the DS128B20. If only the DHT22 is found it will return both humidity and temperature readings from this sensor, finally if only the DS18B20 is found only temperature readings will be returned. In the future I would like to expand the code to support multiple DS18B20 sensors on the one-wire bus.<br /><br />I have implemented many of the power saving tricks as <a href="http://harizanov.com/2013/08/every-%CE%BCa-counts/">Martin Harizanov</a> has used in his <a href="https://github.com/mharizanov/new_Funky/blob/master/examples/Funky_DS18B20_plus_powersave/Funky_DS18B20_plus_powersave.ino">Funky Sensor code</a>, in particular the his&nbsp;<a href="http://harizanov.com/2013/07/optimizing-ds18b20-code-for-low-power-applications/">DS18B20 power saving tweaks</a>. Martin has done some great work optimising power and designing some very small low power nodes, his blog is well worth a read.<br /><br />The emonTH code (in beta) is now up on Github:&nbsp;<a href="https://github.com/openenergymonitor/emonth">https://github.com/openenergymonitor/emonth</a><br /><br />The power consumption results are as follows, assuming one reading is taken per min and using this <a href="http://oregonembedded.com/batterycalc.htm">battery estimation tool</a>&nbsp;assuming AA capacity of 2200mAh and not taking into account AA self-discharge*<br /><br /><h3>emonTH with DS18b20 temperature only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s1600/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s640/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DS18B20 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><i>Sleep Current:</i> 0.12mA<br /><i>On current: </i>9.7mA for 70ms then peaking to 26mA for 2.8ms for RFM12B transmission, giving average of 10.2mA for 9.8ms<br /><br /><i><u>Approximate battery life of 3.5 years*</u></i><br /><br /><h3>emonTH with DHT22 (temperature &amp; humidity) only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s1600/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s640/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DHT22 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><b><br /></b><i>Sleep Current: </i>0.12mA<br /><i>On current:&nbsp;</i>9.5mA for 1700ms then peaking to 26mA for 2.8 ms for RFM12B transmission giving average of 9.525mA for 1703ms<br /><br /><i><u>Approximate battery life of 1.1 years*</u></i><br /><b><br /></b> <br />*Stay tuned for the next post on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">AA battery considerations including how to deal with self-discharge issues</a>...
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/18/emonth-update-hardware/">emonTH Update - Hardware </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/18/emonth-update-hardware/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Since my <a href="http://openenergymonitor.blogspot.co.uk/2013/06/emonth-prototype.html">last post on the emonTH</a>&nbsp;wireless Temperature and Humidity monitoring node good progress has been made.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s1600/P1030255.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s320/P1030255.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH cased up</td></tr></tbody></table><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH - unboxed</td></tr></tbody></table><br />The most significant hardware change has been the addition of a DC-DC step-up boost converter to step-up the voltage from discharging AA batteries to a steady 3.3V. The boost converter circuit consists of a tiny (SC-70 package) LTC3525-3.3 chip a 10uH inductor and a couple of small 1uF capacitors. The step-up converter is essential for the DHT22 as this sensor does not perform well with varying supply voltage, &nbsp;specifically once below 3.3V. The addition of the converter will also significantly increase battery life. The LTC3525 was chosen because of its low quiescent power consumption of 7uA and high conversion efficiency of up to 95%. <br /><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s1600/Boost.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s320/Boost.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH LTC3525 DC-DC boost converter circuit</td></tr></tbody></table><br /></div><div>The boost circuit is very impressive, given a minimum input voltage of 0.7V it boosts up to a steady 3.3V.</div><div><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s1600/Vin=2V.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="192" src="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s320/Vin=2V.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: small; text-align: start;">Using scope with AC coupled probe to examine boost converter&nbsp;output&nbsp;when stepping 2V up to 3.3V with no load: output exhibited 9.3mV RMS ripple at 333Khz</span></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s1600/2013-09-28+16.26.59.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s320/2013-09-28+16.26.59.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing &nbsp;emonTH external DS18B20 temperature sensor terminal block connection</td></tr></tbody></table><br /></div><div>We hope to have the emonTH in the shop by December.<br /><br /></div><div>Stay tuned after the break for update on<a href="http://openenergymonitor.blogspot.com/2013/10/emonth-update-software-power.html"> emonTH software, power consumption and batteries</a>...</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/15/carboncoop-openenergymonitor-build/">CarbonCoop & OpenEnergyMonitor build weekend, November 16 & 17th</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-15T21:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2013/10/15/carboncoop-openenergymonitor-build/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    After much re-arranging we've got the new date for the energy monitoring build weekend that we're hosting with Carbon Coop at MadLab in Manchester. Its now on the 16th and 17th of November.<br /><br /><b>Meetup page:</b><br /><a href="http://www.meetup.com/Eco-Home-Lab-Manchester/events/140046162/">http://www.meetup.com/Eco-Home-Lab-Manchester/events/140046162/&nbsp; </a><br /><br />As before there will be three main parts to the weekend: <br /><b><br />Build an OpenEnergyMonitor system (Saturday 10AM - 6PM + Completion on Sunday if needed)  </b><br /><br /><img src="http://photos4.meetupstatic.com/photos/event/7/2/c/6/600_284849382.jpeg" /> <br /><br />This is a chance to build a monitoring system with the support of others who have built systems before, <a href="http://www.meetup.com/Eco-Home-Lab-Manchester/members/61999412/">Matt Fawcett</a> and I will be on hand to help, we will walk through building the emontx energy monitoring sensor node and how to setup a raspberrypi basestation running emoncms. <br /><br />With this you can explore and track changes in home electricity use over time via a web dashboard. <br /><br /><img src="http://photos2.meetupstatic.com/photos/event/7/b/2/c/600_284851532.jpeg" /> <br /><br />If you've already got an OpenEnergyMonitor system but need some help getting it to work your also welcome to attend this workshop, please bring your monitor along. <br /><br />To complete the build you will need: <br /><br />• <a href="http://shop.openenergymonitor.com/emontx-868mhz-kit-europe-only/">Emontx 868Mhz</a> <br />• <a href="http://shop.openenergymonitor.com/programmer-usb-to-serial-uart/">Programmer - USB to serial UART</a> <br />• <a href="http://shop.openenergymonitor.com/mini-usb-cable/">Mini USB cable</a> <br />• <a href="http://shop.openenergymonitor.com/usb-power-adapter-uk-plug/">USB power adapter</a><br /><a href="http://shop.openenergymonitor.com/ac-ac-adapter-uk-plug/">• AC-AC Adapter - AC voltage sensor</a> <br />• <a href="http://shop.openenergymonitor.com/raspberry-pi-model-b/">Raspberry Pi - model B</a>   <br />• <a href="http://shop.openenergymonitor.com/rfm12pi-v2-pre-assembled-raspberry-pi-expansion-board-868-mhz-europe-only/">RFM12Pi Raspberry Pi Expansion board kit 868Mhz</a> <br />• <a href="http://shop.openenergymonitor.com/micro-usb-cable/">Micro USB Cable</a> <br />• <a href="http://shop.openenergymonitor.com/usb-power-adapter-worldwide-plug/">USB Power supply for RaspberryPI</a> <br />• Sandisk SD card for the Raspberrypi<br />• 1 mtr cat-5 cable <br /><br />The total build price if you get everything from the OpenEnergyMonitor shop is £121.5 inc VAT. <br /><br />If you already have a raspberry pi and spare USB Power supplies, micro and mini USB cables (they often come with newer mobile phones) you can do the whole build for £68.50. <br /><br />There will be a limited number of these kits available on the day (at the same cost), to make sure you can build please order these beforehand. <br /><br />Put a note in your order message that you need the kits for the weekend so that we can make sure you have them. <br /><br />If you want to read-up on the build guides and learn more about the system before the event take a look here: <br /><br /><a href="http://openenergymonitor.org/emon/guide">http://openenergymonitor.org/emon/guide</a> <br /><br /><b>Show and tell</b><br />&nbsp; <br />Were excited that Robin Emley will be joining us to demonstrate his Solar PV Diverter on the Saturday:&nbsp; <br /><a href="http://openenergymonitor.org/emon/mk2">http://openenergymonitor.org/emon/mk2</a><br /><br />If youd like to come and show what you've been working on around open source monitoring and control please do, get in contact to let us know if you are coming.<br /><b><br />Hackathon</b><br />There will be a table dedicated to just developing something new, hardware or software. For example editing or amending the monitor's <a href="http://emoncms.org/site/docs/dashboards">online display dashboards</a> or improving energy modelling tools such as <a href="http://emoncms.org/sap">OpenSAP</a>.<br /><br /><b>Sign up on the meetup page</b><br />Please add your name to the meetup page if your coming so that we have an idea about numbers and let us know how much of the kit you want for the build as above.<br /><a href="http://www.meetup.com/Eco-Home-Lab-Manchester/events/140046162/">http://www.meetup.com/Eco-Home-Lab-Manchester/events/140046162/ </a><br /><br />We look forward to seeing you there! please get in contact if you have any questions:<br /><br /><i>trystanlea@openenergymonitor.org or matt@carbon.coop </i>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/10/01/website-backup/">Website Backup</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-01T10:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/backup/'>backup</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/10/01/website-backup/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    In the interest of open-source I thought I would share the backup setup we have running for the OpenEnergyMonitor website. I'm relatively new to sys-admin tasks and writing bash scripts so please suggest if you think if something could be implemented better.<br /><br />Backing up our Drupal SQL databases which contain the user credentials and all the forum and text content of the website was relatively easy since the disk space they take up is relatively small. A nightly SQL dump then a scheduled secure FTP bash script running as a nightly cronjob on a Raspberry Pi with external hard drive to download the zipped SQL database does the trick. The FTP login credentials are stored away from prying eyes in .netrc file (with chmod 600), two sets of credentials are required and the relevant .netrc file is copied to the home folder when needed.<br /> <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script> <br /><pre class="prettyprint">cp netrc/.netrc1 .netrc<br />today=$(date +"%d-%b-%Y")<br />ftp -vp -z secure $HOST &lt;&lt; EOT<br />ascii<br />cd /LOCATION OF SQL DUMP ON SERVER<br />get $db_name-$today_backup.gz $LOCAL_BACKUP/$db_name-$today_backup.gz<br />bye<br />EOT<br />rm .netrc<br /><br /></pre><br />&nbsp;Backing up the files (images, documents etc) is a bit more of an issue since the ever increasing size of the content mean it's impractical and would unnecessary load the server and bandwidth to download a full snapshot every night.<br /><br />I found wget has many customisable options. A nightly scheduled bash script running on a Raspberry Pi with an external hard drive with the following wget options looks at files have been created or modified since the last time the command was run and only downloads the changes. Once the initial download is done the command only takes less then a minute to execute and often only downloads a few Mb of data. The option '-N' tells wget only to download new or modified files<br /><br /><pre class="prettyprint">cp netrc/.netrc2 .netrc<br />wget -m -nv -N -l 0 -P $LOCAL_BACKUP ftp://$HOST/public_html/FILES_LOCATION -o $LOCAL_BACKUP/filelog=$today.txt<br />rm .netrc<br /># This is what the other options do:<br /># -l 0 infinite level of recursive (folder depth)<br /># -m mirror<br /># -N only download new files<br /># -o logfile<br /># -b run in the background<br /># -q turn off logs<br /># -nv non-verbose logs<br /></pre>This setup seems to be working well. It has a few weak points and limitations that I can think of:<br /><ul><li>The wget files backup script only downloads new and modified files, it does not mirror the fact that a file could have been deleted on the server, the file would remain in the backup.&nbsp;</li></ul><ul><li>The wget script does not keep historical snapshots meaning that if something bad was to happen it would not be possible to rollback to a certain date in history. <i>Update: I have since had recommend to me Rsnapshot which is a backup utility based on Rsync. Rsnapshot looks great and can work over FTPS. My friend <a href="https://twitter.com/spikeheap">Ryan Brooks</a> wrote a good blog post on how to <a href="http://www.ryanbrooks.co.uk//blog/2013/08/22/simple-rsnapshot-backup-over-ftps/">set up Rsnapshot over FTPS</a>.&nbsp;</i></li></ul><ul><li>Currently the Raspberry Pi only has the one external 1TB hard drive used for backup, ideally this would be two hard drives in a raid array for double safety Backups are only done nightly, this is plenty good enough for us at the moment but might need to be improved in the future.&nbsp;</li></ul><br />I think it's amazing that a little £25 Raspberry Pi is powerful enough to handle backup for several websites. the Pi with an external 1TB hard drive connected through a USB hub consumes only 5.7W making it not too bad to leave on 24/7.<br /><br />&nbsp;One issue that I had initially with the Pi is that the external hard driver would move from /dev/sdb to /dev/sdc therefore loosing it's mount point. I think this was caused by the HDD momentarily losing power. Switching to using a<a href="http://shop.pimoroni.com/products/pihub"> Pimoroni PiHub</a> to power the setup and mounting the drive by it's UUID instead of /dev/xxx reference in fstab fixed the problem:&nbsp; <br /><br /><pre class="prettyprint">UUID=2921-FCE8 /home/pi/1TB vfat  user,umask=0000   0   0</pre><br />I would be interested to hear if you think how the backup could be implemented more efficiently or more securely.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/09/30/backing-up-your-raspberrypi-emoncms-or/">Backing up your raspberrypi emoncms or emoncms.org account</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-09-30T20:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/backup/'>backup</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/09/30/backing-up-your-raspberrypi-emoncms-or/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">I've added a couple of scripts to the emoncms usefulscripts directory that makes backing up an emoncms account whether on a local raspberrypi or emoncms.org much easier than the sync module solution, although still not as easy as I would like it to be, I would like setting up a backup to be as easy as installing a dropbox client.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The scripts work with Linux at the moment, hopefully soon I'l get a solution running on Windows. I would highly recommend keeping your own backup of your data, a backup of your emoncms data on your main computer can also be useful for both quicker access to the data and doing additional analysis of the data.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s1600/backup.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s640/backup.png" width="640" /></a></div><b>1) Install emoncms</b> <b>on your backup machine</b> following the guide here:&nbsp;<a href="http://emoncms.org/site/docs/installlinux">http://emoncms.org/site/docs/installlinux</a><br />Create an account and note down your mysql credentials.<br /><br /><b>2) Download the usefulscripts repository</b><br /><a href="https://github.com/emoncms/usefulscripts">https://github.com/emoncms/usefulscripts</a><br /><br />There are two scripts available under usefulscripts/replication<br /><br /><ul><li>import_full.php</li><li>import_inputs.php</li></ul><br />3) Try<b> importing your inputs</b> first to test that it works: Open to edit <i>import_inputs.php</i>.<br />Set your mysql database name, username and password, the same credentials as for the settings.php step of the emoncms installation. Set the $server variable to the location of the raspberrypi or emoncms.org account you want to backup and set the $apikey to the write apikey of that account.<br /><br />In terminal, goto the usefulscripts/replication directory. Run import_inputs.php:<br /><br />&nbsp; &nbsp; php import_inputs.php<br /><br />If successful you should now see your input list and all input processing information backed up in your local emoncms account.<br /><br /><b>4) Backup all your feed data:</b><br /><br />As for importing inputs open import_full.php and set the database credentials and remote emoncms account details.<br /><br />Run the backup script with <b>sudo</b><br /><b><br /></b>&nbsp; &nbsp; sudo php import_full.php<br /><br />That's it, it should now work through all your feeds whether mysql or timestore (no phptimeseries support yet) making a local backup. When you first run this script it can take a long time. When you run this script again it will only download the most recent data and so will complete much faster. I run this script once every few days to keep an up-to-date backup.
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/12">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/10">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

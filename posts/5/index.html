@@ -1,0 +1,833 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/5/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/5/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/06/11/hourly-energy-model-example-1-variable/">Hourly energy model example 1: Variable Supply</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-11T09:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2015/06/11/hourly-energy-model-example-1-variable/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    This first example in the hourly energy modelling tool model's the hourly output of a given installed  capacity of wind, wave, tidal or solar. The model really isn’t doing  much its just loading the capacity factors for every hour from the 10  year dataset and multiplying the capacity factor by the installed  capacity.<br /><br />The total electricity generated is calculated as the sum of  the electricity generation in each hour and printed along with the  capacity factor at the end.<br /><br />This example is useful for just seeing what the <a href="http://openenergymonitor.org/energymodel/#dataset">ZeroCarbonBritain renewable capacity factor dataset</a> looks like, you can zoom and pan through the datasets for onshore wind, offshore wind, tidal, wave and solar pv, click on the link below to open the tool:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-T7q21zj15Vo/VXlOl1119MI/AAAAAAAASbc/3WNsO_O2ayo/s1600/variablesupply.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="454" src="http://2.bp.blogspot.com/-T7q21zj15Vo/VXlOl1119MI/AAAAAAAASbc/3WNsO_O2ayo/s640/variablesupply.png" width="640" /></a></div>&nbsp;&nbsp; <br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>1. variable supply</i><br /><br />The units are really not important the example could just as  well be in MW's or GW's. kW's where chosen as the other model examples in the series are  focused around building a hourly model that's relatable to an average  households energy demand. The kW's of installed capacity could just  relate to a small share of a much larger wind turbine, solar farm, wave  or tidal power installation.<br /><br />Running the model for each of these generation types with the same installed capacity the results are as follows:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.0kW</td><td>1.0kW</td><td>1.0kW</td><td>1.0kW</td><td>1.0kW</td>    </tr><tr>        <td>Annual generation</td>        <td>2834 kWh</td><td>4204 kWh</td><td>2482 kWh</td><td>2092 kWh</td><td>826 kWh</td>     </tr><tr>        <td>Capacity factor</td>        <td>32%</td><td>47%</td><td>28%</td><td>23%</td><td>9%</td>     </tr></tbody></table><br />In all of the examples above the installed capacity of the renewable generator was the same (1.0kW) but we can see straight away that there is a significant difference in the total electricity generated by each type. A unit of offshore wind generates just over 5 times as much energy as a unit of solar pv using the <a href="http://openenergymonitor.org/energymodel/#dataset">zerocarbonbritain dataset</a>. By itself this is not enough information to evaluate the effectiveness of a technology, we would need to compare the costs per unit of installed capacity, embodied energy per unit of installed capacity, how well a particular solution matches demand, the land areas required, the availability of the resource to name just a few of the many factors that need to be weighed up but it does highlight one of the important factors.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of python versions of the examples which are simpler to follow as they dont include all the code to create the visual output, they just print out the main results at the end.<br /><br />The following 19 lines of python code are all you need to load the ZeroCarbonBritain dataset and run through all 87,648 hours, calculating the power output for each hour and accumulating the total energy supplied over the 10 year model period:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 4<br /><br />installed_capacity = 1.0 # kW<br /><br /># Load dataset<br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br /><br />total_supply = 0<br /><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />print "Installed capacity: %s kW" % installed_capacity<br />print "Total supply: %d kWh" % total_supply<br />print "Capacity factor: %0.2f%%" % capacity_factor</span><br /><br /><b>Next:</b> Variable supply and flat demand - investigating the degree of supply/demand matching
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/06/10/modelling-hourly-demand-and-supply-for/">Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-10T07:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2015/06/10/modelling-hourly-demand-and-supply-for/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s1600/model.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="340" src="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s640/model.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s1600/intro.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s640/intro.png" width="640" /></a></div>Earlier this year I did some work with Philip James from the Centre for Alternative Technology and a researcher on the ZeroCarbonBritain project on creating an open source online zero carbon energy modelling tool based on the ZeroCarbonBritain energy model which is one of the Uk's leading energy scenarios outlining a positive, aspirational 100% renewable zero carbon energy future.<br /><br />This first tool is available online <a href="http://zerocarbonbritain.org/energy_model/">here</a> and <a href="http://openenergymonitor.blogspot.co.uk/2015/02/an-open-source-hourly-zero-carbon.html">blog post</a>, using it it is possible to explore how its possible to supply energy demands such as space heating and electric vehicles from a variable renewable supply consisting of wind, solar, tide and wave power and a mix of storage technologies. The tool models supply and demand on an hourly basis which is a significant improvement over simpler annual approach.<br /><br /><b>Understanding its workings</b><br />I had been wanting to dig down deeper into the workings of the model and unpick the effect of the different components, the full model has so many different things going on that its hard to see how each component such as space heating demand from heatpumps, space heating profiles, electric vehicle charging profiles, water heating, or different generation technologies affects the bigger picture of the overall supply/demand balance and resulting storage requirements and so over the last month and a half I've spent some time looking into this in more detail. <br /><br /><b>Python and javascript example models</b><br />I started by writing a series of python models that modelled many of the key components in turn using the full 10 year hourly dataset used in the ZeroCarbonBritain spreadsheet model, exploring the level of supply/demand matching for each generation technology. As I started to model some of the more complex demands such as space heating from heatpumps, including the effect of solar and internal gains, I needed to be able to see what was going on in more detail so I converted the models to javascript and wrote a data viewer using flot.<br /><br /><b>Online visual tool</b><br />I've put all these model examples together into an online tool and added alongside each model a brief analysis and extended results of the many model run's I ran with different parameters. The tool also includes an introduction and overview of the uk energy context which is intended to help put the model examples which focus on domestic traditional electricity demand, space heating and electric transport in context. This tool is now available online here:<br /><br /><br />Launch online zero carbon energy system example models: <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a><br /><br />and its all open source with the code and full website on github here:<br /><a href="https://github.com/TrystanLea/zcem">https://github.com/TrystanLea/zcem</a><br /><br />The tool covers the following model examples and context pages:<br /><br />&nbsp;&nbsp;&nbsp; Introduction<br />&nbsp;&nbsp;&nbsp; Energy Overview<br />&nbsp;&nbsp;&nbsp; 1. Variable supply<br />&nbsp;&nbsp;&nbsp; 2. Variable supply and flat demand<br />&nbsp;&nbsp;&nbsp; 3. Variable supply, traditional electricity demand and oversupply<br />&nbsp;&nbsp;&nbsp; 4. Mixed supply and flat demand<br />&nbsp;&nbsp;&nbsp; 5. Variable supply and space heating demand<br />&nbsp;&nbsp;&nbsp; 6. Electric Vehicles<br />&nbsp;&nbsp;&nbsp; 7. All<br />&nbsp;&nbsp;&nbsp; Aggregation<br />&nbsp;&nbsp;&nbsp; ZCB Dataset<br />&nbsp;&nbsp;&nbsp; ZCB web model<br />&nbsp;&nbsp;&nbsp; Python models <br /><br />I have found it really interesting doing this work, but it also feels like a chapter early on in a large book. There is a lot more I'd like to understand in more detail and expand on which I hope to continue with over time. <br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/06/06/emontx-v25-and-throughhole-kits/">EmonTx v2.5 and throughhole kits</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-06T10:29:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2015/06/06/emontx-v25-and-throughhole-kits/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    We've had quite a few people ask about the throughhole emontx v2 and  emonGLCD's designs since we've moved away from stocking them in the shop  and developed the pre assembled units. I've also had several  conversations with people offline who said how much they enjoyed  building the kits and encouraged us to keep supporting and stocking  them. The challenge is the complexity of running an online shop with  many different product lines and the additional workload of kiting and  stock ordering - but it seems like it might be worthwhile for us to look  into a way to make it possible.<br /> <br />The emontx v2 currently uses different 3.5mm jacks to the emontx v3  and emontx shield, It also required a different case which needed  milling to use. To try and standardise on the components required I've  been working on a new version that is designed to fit in the emonTH case  that doesn't require milling and uses the higher quality 3.5mm jacks  used on the emontx v3 and emontx shield.<br /> <br />As I got stuck in to the design I thought Id add the powering via AC  circuitry that's on the emontx v3 and find a way of ensuring all spare  IO is available + the addition of a row of terminal blocks with power,  ADC's and digital IO breakout in much the same style the EmonTH.<br /> <br />The first revision of this new design is now available on github here:<br /><a href="https://github.com/openenergymonitor/Hardware/tree/master/emonTxV2.5" title="https://github.com/openenergymonitor/Hardware/tree/master/emonTxV2.5">https://github.com/openenergymonitor/Hardware/tree/master/emonTxV2.5</a><br /> <br />and looks like this (im really quite pleased with how it turned out,  there's something quite satisfying about designing and routing together a  pcb, trying to find neat layouts and so on):<br /><br /> <a href="http://openenergymonitor.org/emon/sites/default/files/board_0.png"><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/board_0.png" style="height: 584px; width: 500px;" /></a><br /> <br />The main features are:<br /> <ul><li>2x CT sensor inputs using higher quality 3.5mm jacks used on the EmonTx v3 and emontx shield</li><li>1x ACAC Voltage sensing and power input</li><li>Terminal block power, ADC's and Digital IO breakout + full spare IO breakout.</li><li>Onboard DS18B20 footprint</li><li>Based around ATmega328 + RFM69 core</li><li>Fits in emonTH enclosure</li></ul>The main downside perhaps of this design is that in order to get it  into the emonTH case I needed to drop the number of CT inputs down from 3  to 2, the thinking being that most applications are house consumption +  solar pv. But Im aware that this does make is unsuitable for 3 phase  application, we do want to develop a dedicated 3 phase board design with  voltage sensing on each phase so perhaps that's the better option for 3  phase application than using the emontx.<br /> <br />I've sent off for a first prototype PCB from ragworm so will be  building and testing this design hopefully next week. Id welcome  thoughts on the design and any suggestions and may do another revision  before getting these made in quantity.<br /><br /> <strong>Common component kit</strong><br /><br /> The other idea we've had is that since the emonglcd and emontx kit  share so many of the same resistors and capacitors we could potentially  offer a general openenergymonitor throughhole component kit with enough  of the common components to build an emonglcd or several emontx kits.  Then alongside the common component kit would be the PCB and  emontx/emonglcd specific components such as the LCD, connectors and  perhaps the atmega. We're' just working out the pricing for this. This  could be quite a good option for people who have good home electronics  stocks of different resistors/capacitors and could simplify the kitting  for us with just one kit with 10x 20x of all the different resistors and  capacitors. Interested in hearing people's thoughts on the idea.<br /><br />This blog post is a repost from the forum thread here: http://openenergymonitor.org/emon/node/10802 <br /> 
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/06/01/investigating-embodied-energy-of-emonpi/">Investigating the embodied energy of the EmonPi & OSCEDays London 12-14th June.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-01T17:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2015/06/01/investigating-embodied-energy-of-emonpi/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    On the 12th – 14th of June there is an event happening called Open Source Circular Economy Days in many cities around the world, including in London <a href="https://oscedays.org/london/">https://oscedays.org/london/ </a>which we will be attending. I first found out about the event from Lars Zimmerman who is on the core organising team and I met last year at OuiShare, Lars runs <a href="http://openitagency.eu/">http://openitagency.eu</a> encouraging and helping people incorporate open source in their businesses, organisations and projects. The aim of Open Source Circular Economy Days is to bring open source thinking to the circular economy. The energy associated with manufacturing is a large part of our overall energy consumption and the question of embodied energy especially in the zero carbon energy sector is particularly important to understand better. There is quite a bit of discussion at the moment about the level of energy return on energy invested EROI required from the zero carbon energy sector as a whole in order to sustain a certain level of technological society.<br /><br />My impression of trying to look into embodied energy and life cycle analysis is that it seems that the measurement of embodied energy and other impacts associated with manufacturing our stuff and then the understanding of what solutions are available to reduce this embodied energy, especially in electronics is still in its infancy compared with other energy demands that we are more familiar with like the solutions available for space heating and transport, both of which have solutions that can achieve 70-90% energy reductions without reducing the level of comfort or distance travelled <a href="http://openenergymonitor.org/emon/sustainable-energy.">http://openenergymonitor.org/emon/sustainable-energy.</a><br /><br />We're particular conscious of this question at OpenEnergyMonitor as we get our hardware manufactured and see the quantity of stuff involved in the production of our equipment. It has always been interesting to read about developments from other projects and companies who have been looking at this for sometime but in different fields predominantly outdoor clothing: <a href="http://www.patagonia.com/us/footprint">http://www.patagonia.com/us/footprint</a> and <a href="http://www.howies.co.uk/">http://www.howies.co.uk</a>. They have often achieved quite substantial improvements by looking at their materials, and supply chains in detail.<br /><br />With Open Source Circular Economy Days coming up and after talking to Erica Purvis of <a href="http://technicalnature.org.uk/">http://technicalnature.org.uk/</a> who is one of the organisers of the London even we decided to try and sketch out a draft initial analysis of the embodied energy associated with the emonpi to take along with us. I emphasised its initial status there because I don’t have a high confidence in the reliability&nbsp; of the data at the moment but I think it does provide a useful start on which further detailed research can be done.<br /><br /><b>Embodied Energy Audit Process</b><br /><br />With a little research I found an example of an embodied energy analysis for an LED light with an accompanying dataset for the embodied energy of different components here: <a href="http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf">http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf</a> this example referenced data from the European commission project&nbsp; Eco-design of energy-using products: <a href="http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.">http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.</a><br /><br />I then calculated an estimate for embodied energy by using the embodied energy dataset from these two sources and a detailed list of components for the emonpi including the weight of each component. The spreadsheet with the calculation can be downloaded here on the EmonPI open hardware github repository:<br /><br /><a href="https://github.com/openenergymonitor/Hardware/raw/master/emonPi/emonPi_V1_5/emonpi_embodiedenergy.ods">https://github.com/openenergymonitor/Hardware/raw/master/emonPi/emonPi_V1_5/emonpi_embodiedenergy.ods </a><br /><br />here's a screenshot of what it looks like:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-lABYn1a7cMM/VWyZvr5dIKI/AAAAAAAAR8k/d_QjLgYKRXk/s1600/emodiedenergycalc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="284" src="http://2.bp.blogspot.com/-lABYn1a7cMM/VWyZvr5dIKI/AAAAAAAAR8k/d_QjLgYKRXk/s640/emodiedenergycalc.png" width="640" /></a></div><br /><br />I have summarised the main results in these two graphics:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WhIT__7XvzI/VWyZordmN9I/AAAAAAAAR8c/8-9FteeWTz8/s1600/emonpiembodiedenergy01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="289" src="http://3.bp.blogspot.com/-WhIT__7XvzI/VWyZordmN9I/AAAAAAAAR8c/8-9FteeWTz8/s640/emonpiembodiedenergy01.png" width="640" /></a></div>Interestingly the application of the embodied energy values in the dataset suggest that at least for the parts that we are most involved in the custom design of (The EmonPi Shield and the aluminium enclosure) the embodied energy is dominated first by the enclosure at 10.1 kWh and then by the manufacturing of the printed circuit board (2.2 kWh) and the assembly of the unit (1.6 kWh). The integrated circuits only account for a relatively small percentage at 0.2 kWh.<br /><br /><b>Aluminium enclosures</b><br />The estimate for the embodied energy of the aluminium enclosure is based on the 40 kWh/kg figure in Sustainable Energy without the hot air. This equates to 144 MJ/kg which is lower than a couple of other figures I could find for standard aluminium embodied energy. The Wikipedia figure is 155MJ/kg and is based on a 33% recycling rate. The figures I could find for the embodied energy for aluminium from bauxite where between 191MJ/kg and 342MJ/kg. The enclosure made from aluminium from bauxite could at the higher end use 24 kWh and at the lower end require 16 kWh. 100% Recycled aluminium however only requires between 11.35MJ/kg and 17MJ/kg. The EmonPi manufactured from 100% recycled aluminium would therefore only need between 0.9 - 1.3 kWh to manufacture. The EmonTH ABS plastic case is about a third of the size of the EmonPI case and weighs 32g it had an embodied energy of around 1.0 kWh (111MJ/kg). A plastic EmonPi case might weight about 3x this (~90 grams) and so may use around 3.0 kWh. The aluminium would need have been recycled around 7-8 times to achieve the same level of embodied energy as an ABS plastic enclosure. There are also lower embodied energy plastics available such as Polypropylene (64-94MJ/kg) and recycled PET&nbsp; may use around 42-55MJ/kg and then perhaps there are even more options in the design of enclosures to minimise the amount of material used.<br /><b><br />Manufacture of printed circuit boards and assembly</b><br />Beyond learning more about enclosure options it would be useful to focus on getting a better idea for the reliability of the data for printed circuit board manufacturing and assembly and what options exist to lower their embodied energy requirements.<br /><br /><b>OSCEDays</b><br />If your interested in learning more about the Open Source Circular Economy days event or joining us at the event in London have a look at the event pages here:<br /><a href="https://oscedays.org/">https://oscedays.org</a><br /><a href="https://oscedays.org/london">https://oscedays.org/london</a><br /><b><br />Useful links and references:</b><br /><ul><li><a href="http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf">http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf</a></li><li><a href="http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.">http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.</a></li><li><a href="http://energy-solution.com/wp-content/uploads/2015/01/What-We-Know-and-Don---t-Know-about-Embodied-Energy-and-Greenhouse_Energy-Solutions_ACEEE-2012.pdf">http://energy-solution.com/wp-content/uploads/2015/01/What-We-Know-and-Don---t-Know-about-Embodied-Energy-and-Greenhouse_Energy-Solutions_ACEEE-2012.pdf</a></li><li><a href="http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml">http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml</a></li><li><a href="http://www.appropedia.org/Life_cycle_analysis_of_polymer_recycling_literature_review">http://www.appropedia.org/Life_cycle_analysis_of_polymer_recycling_literature_review</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2013/08/ethical-and-sustainable-electronics.html">http://openenergymonitor.blogspot.co.uk/2013/08/ethical-and-sustainable-electronics.html</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2013/09/faire-maus.html">http://openenergymonitor.blogspot.co.uk/2013/09/faire-maus.html</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2012/05/embodied-energy-of-electronic-enclosure.html">http://openenergymonitor.blogspot.co.uk/2012/05/embodied-energy-of-electronic-enclosure.html</a></li></ul>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/05/11/introducing-emonth-v15/">Introducing emonTH V1.5</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-05-11T13:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/05/11/introducing-emonth-v15/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The emonTH Temperature and Humidity wireless sensing room node is back in stock in the shop today with an updated version to V1.5.<br /><br /><a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/</a><br /><br />V1.5 is a minor hardware update adds support for <a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">RFM69CW</a> radio and includes a DIP -switch which allows setting four RF node ID's (19-22) easily and quickly. <a href="http://wiki.openenergymonitor.org/index.php/EmonTH_V1.5#DIP_Switch_node_ID">See emonTH wiki for updated documentation</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-ssubwpabD_I/VVC0lmHVdRI/AAAAAAABIdc/P3NanJAr2WY/s1600/IMG_7496.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="348" src="http://3.bp.blogspot.com/-ssubwpabD_I/VVC0lmHVdRI/AAAAAAABIdc/P3NanJAr2WY/s400/IMG_7496.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH V1.5 with DT22 Temperature and Humidity Sensor</td></tr></tbody></table><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-c43pUNU0Z2Y/VVC0ltK_4MI/AAAAAAABIdg/qRDmVltkOvA/s1600/IMG_7494.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="361" src="http://3.bp.blogspot.com/-c43pUNU0Z2Y/VVC0ltK_4MI/AAAAAAABIdg/qRDmVltkOvA/s400/IMG_7494.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH V1.5 with RF node ID DIP switch and RFM69CW</td></tr></tbody></table></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEXA/ZZA1WQO3imI/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="425" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEXA/ZZA1WQO3imI/s640/IMG_5000.JPG" width="640" /></a></div><br /><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/04/11/emonpi-vs-emontx-v3-comparison/">emonPi Vs emonTx V3 Comparison</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-04-11T08:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/04/11/emonpi-vs-emontx-v3-comparison/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Here's a quick comparison table comparing the <a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">emonPi (currently active on Kickstarter!)</a> to our existing <a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3</a> energy monitoring unit:</div><div class="separator" style="clear: both; text-align: left;"><br></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-R2YsCBGjAAc/VSjaJ0YRMcI/AAAAAAABGyk/u6qtbAIU_oU/s1600/emonPi%2BVs%2BemonTx%2BComparison%2B(1).png" imageanchor="1"><img border="0" src="http://1.bp.blogspot.com/-R2YsCBGjAAc/VSjaJ0YRMcI/AAAAAAABGyk/u6qtbAIU_oU/s1600/emonPi%2BVs%2BemonTx%2BComparison%2B(1).png" height="486" width="640"></a></div><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-Fl_EYQafcOw/VSjZU3Q1T_I/AAAAAAABGyQ/KQtfLrmGri8/s1600/emonPi_montage_white.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-Fl_EYQafcOw/VSjZU3Q1T_I/AAAAAAABGyQ/KQtfLrmGri8/s1600/emonPi_montage_white.JPG" height="340" width="640"></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">emonPi</a></td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://cdn2.bigcommerce.com/server4400/98a75/products/108/images/609/top_front_34__92258.1418912875.1280.1280.png?c=2" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://cdn2.bigcommerce.com/server4400/98a75/products/108/images/609/top_front_34__92258.1418912875.1280.1280.png?c=2" height="400" width="313"></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br></div><div class="separator" style="clear: both; text-align: center;"><br></div><div class="separator" style="clear: both; text-align: center;"></div>It is no secret that there is much similarity between the two units, both are cut from the same cloth. Both units use the same ATmega328 Arduino IDE compatible microcontroller and front-end CT channel signal processing which gives identical monitoring accuracy.&nbsp;<div><br></div><div>The emonPi is most suitable over the e<a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">monTx V3</a> for home or small business whole circuit energy monitoring and also solar PV where Ethernet or WIFI can reach the consumer unit. Being a one-box-solution and with its status LCD the emonPi is quick and simple to install and maintain.&nbsp;</div><div><br></div><div>For larger systems where there could be multiple transmitter nodes and more channels to be monitored the emonTx V3 could be most suitable. The emonTx V3 transmits it's readings via RF (433Mhz) to an emonBase web-connected base station (<a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi + RFM69Pi)</a>. Multiple emonTx V3's can be used with a single emonBase</div><div><br></div><div>The emonTx V3 has the edge over the emonPi when it comes to powering the unit, the emonTx V3 can be powered directly from the AC-AC adapter while also taking an AC voltage waveform sample. Due to the higher power requirements of the Raspberry Pi the emonPi requires an additional 5V DC USB adapter.&nbsp;</div><div><br></div><div>Struggling to decide? It's also worth noting that the emonPi and emonTx V3 can work together. emonPi by default also functions as an emonBase; as well as local monitoring the emonPi can receive data via RF from multiple emonTx V3 and other remote nodes such as <a href="http://shop.openenergymonitor.com/temperature-humidity-nodes/">emonTH</a> temperature and humidity room node.&nbsp;</div><div><br></div><div>For further details of the units see the <a href="http://wiki.openenergymonitor.org/">Technical Wiki documentation pages</a>.</div><div><div class="separator" style="clear: both; text-align: center;"><br></div><br></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/04/03/introducing-emonpi-raspberry-pi-based/">Introducing emonPi: Raspberry Pi based energy monitor</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-04-03T08:56:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/kickstarter/'>kickstarter</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/04/03/introducing-emonpi-raspberry-pi-based/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><span style="margin-left: auto; margin-right: auto;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon"><img border="0" src="http://2.bp.blogspot.com/-R78CtsoQVj8/VR6fPdKID6I/AAAAAAABGjg/ki6B-GmzTvY/s1600/emonpiKS.png" height="285" width="400" /></a></span></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">emonPi Raspberry Pi based energy monitor Kickstarter</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It's an exciting time for us; this week (on the 1st April, unfortunate timing!) we launched a <a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">Kickstarter crowd funding campaign for our emonPi Raspberry Pi based energy monitoring unit</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: left;">The emonPi has been in development for the past 12 months or so, if you have been lurking on the forums you have probably seen activity on the <a href="http://openenergymonitor.org/emon/node/3937">emonPi's open development forum thread</a>. Thank you everyone who contributed.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The emonPi has been developed with input from the community, merging the monitoring unit and web-connected base station into a single easy to install and setup energy monitoring solution.&nbsp;</div><div><br />The emonPi is fully open source hardware and software. It's been designed for maximum hackability and customisation being built on a fusion of two popular open source hardware platforms Arduino and Raspberry Pi. <br /><h3 style="clear: both;">emonPi Technical Features&nbsp;</h3><div class="separator" style="clear: both;"></div><ul><li>Two channel CT monitoring with AC sample input&nbsp;</li><li>Compatible with Raspberry Pi model A, model B, model B+ and Pi 2&nbsp;</li><li>Arduino compatible ATmega328 with ability to remotely upload sketches vis Raspberry Pi Serial&nbsp;</li><li>RJ45 DS18B20 on-wire temperature bus to allow many temperature sensors to easily be added using a RJ45 breakout board for heat pump monitoring applications&nbsp;</li><li>PWM and IRQ I/O's on RJ45&nbsp;</li><li>Status LCD with function push button</li><li>Raspberry Pi shutdown button</li><li>RFM12B / RFM69CW with SMA antenna to receive or transmit data from other sensor nodes</li><li>Option to add OOK (on-off keying) transmitter footprint for controlling remote plugs etc.&nbsp;</li><li>Option to add EEPROM to enable <a href="http://www.raspberrypi.org/introducing-raspberry-pi-hats/">Raspberry Pi HAT compatibility</a> (please get in contact if you have experience setting up Linux device tree).&nbsp;</li><li>Open-source hardware, firmware and software&nbsp;</li><li>High quality custom made, wall mountable enclosure</li></ul><div>See the&nbsp;<a href="http://wiki.openenergymonitor.org/index.php/EmonPi">emonPi wiki</a> for more technical info (currently under development).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-1M7Pm310ZVA/VR6y3ljrW4I/AAAAAAABGkA/ehdi8cOc6xg/s1600/emonPi_montage_white.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-1M7Pm310ZVA/VR6y3ljrW4I/AAAAAAABGkA/ehdi8cOc6xg/s1600/emonPi_montage_white.png" height="340" width="640" /></a></div><br /></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-DTDPgWIcmEU/VR6fhjccEII/AAAAAAABGjo/nckjdu7irD0/s1600/emonpibare%2B(1).png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-DTDPgWIcmEU/VR6fhjccEII/AAAAAAABGjo/nckjdu7irD0/s1600/emonpibare%2B(1).png" height="513" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-xS4iy5O4f-o/VR6ga8lJ_rI/AAAAAAABGjw/lwsBuy0pcmI/s1600/emonP_V1.5_brd_track_blacks.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-xS4iy5O4f-o/VR6ga8lJ_rI/AAAAAAABGjw/lwsBuy0pcmI/s1600/emonP_V1.5_brd_track_blacks.png" height="472" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">We had fun filming a Kickstarter promo video, demonstrating some applications of the emonPi, Emoncms and the OpenEnergyMonitor system installed around where we are based in the mountain of North Wales, UK. &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/E1M2uLSiQy0/0.jpg" frameborder="0" height="266" src="http://www.youtube.com/embed/E1M2uLSiQy0?feature=player_embedded" width="320"></iframe></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here's a video showing the emonPi installed and talking through how setup will work in practice. Having the LCD to show local IP address, status and uptime etc will no doubt make the system much more user friendly and accessible.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/6SB4fRYQjno/0.jpg" frameborder="0" height="266" src="http://www.youtube.com/embed/6SB4fRYQjno?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;"><br /></div>The Kickstarter will be running until Apr 20 2015 9:46 PM BST, if we haven't reach our funding goal by then we will get nothing! Please help us share and spread the word :-)<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><span style="margin-left: auto; margin-right: auto;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon"><img border="0" src="http://1.bp.blogspot.com/-jjWEG6g3hu8/VR6fNaUiEAI/AAAAAAABGjY/be9rdgK8MKY/s1600/emonpi_text.png" height="248" width="640" /></a></span></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">Please help us by sharing our Kickstarter page with interested parties</a></td></tr></tbody></table><br /><i style="background-color: white; border: 0px; color: #0f2105; font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 16px; font-stretch: inherit; line-height: 24px; margin: 0px; padding: 0px; vertical-align: baseline;"><b style="border: 0px; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">We believe the opportunities and benefits of taking an open-source approach to smart monitoring and control challenges are significant; we hope to encourage others to start projects &amp; businesses that also work towards a zero carbon future in an open way.&nbsp;</b></i><br /><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/03/19/energy-display-options/">Energy Display Options...</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-03-19T11:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories//'>.</a></li>
+      
+        <li><a class='category' href='/categories/display/'>display</a></li>
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/03/19/energy-display-options/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Sadly as of last week we have run out of emonGLCD kits in the shop and have decided to discontinue the emonGLCD for the moment. Preparing the through-hole kits is very labour intensive and the time and skill required to solder assemble is lagging behind our other pre-assembled SMT units.<br /><br />Work has begun on a SMT pre-assembled replacement (<a href="http://openenergymonitor.org/emon/node/5374">see forum thread</a>). However this would probably require significant investment in injection moulding tooling and commitment to high volume production. This would not would be a problem if we were sure on the design. However, I'm not sure if a standalone display is the right avenue to go down...<br /><br />I am aware there that there is certainly value in an 'always on' wall mount / coffee table energy display. Being able to easily glance at the display throughout the day when your home really does remind me to switch off lights and appliances when not in use. As well as checking everything is turned off (base level energy consumption) when leaving the house. An always on display gives users a 'feel' for how much energy various devices use as the display increases or decreases in real-time as a device is switched on or turned off.<br /><br />The future is mobile, everyone has at least one mobile device and increasingly as these devices are upgraded there are a large number of perfectly working just a bit slow older devices which could easily be given a second life as an energy display. This could help reduce the number of devices which end up being recycled or worse put into landfill, therefore helping to save energy in more ways the one! Old second hand Android phones or tablets can be picked up on Ebay for less than we could make an emonGLCD!<br /><br />I recently repurposed an old Nexus 7 tablet (2012 model) with a cracked screen as a home energy display displaying Emoncms MyElectric. I installed <a href="https://play.google.com/store/apps/details?id=com.nbondarchuk.android.keepscn&amp;hl=en">an app</a>&nbsp;to keep the screen on all the time when plugged in charging. The tablet uses 5W of power. An added advantage of using a mobile device as an energy display is they are 'mobile'! The display can easily be moved around the house to support investigation power consumption of various appliances.<br /><br />Much work could be done on the software side to make a really nice packaged Android app for Emoncms which would support an energy display mode, useful features might be:<br /><br /><ul><li>Intelligent screen-on-off e.g the display could turn off at night, when energy falls to base level consumption indicating the house is unoccupied&nbsp;</li><li>Using the tablets motion / proximity / light sensor to sense movement to turn screen on-off</li><li>If device has an&nbsp;AMOLED display only certain pixels could be lit up to save power, like on the <a href="http://www.androidcentral.com/moto-x-best-feature-active-display">Moto-x Active Display&nbsp;</a></li><li>Auto start at startup and full screen mode&nbsp;</li><li>Home screen widget to be used if user does not want to decicate a devices solely as an energy display or to be placed on current mobile home screen to enable quick checking of power consumption / temperature etc when out and about. &nbsp; &nbsp;</li></ul><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-CrEw0VbSe2Y/VQqrwBhpBZI/AAAAAAABF6A/LcUyS_41CF4/s1600/CAN-eRQWcAAP8y0.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-CrEw0VbSe2Y/VQqrwBhpBZI/AAAAAAABF6A/LcUyS_41CF4/s1600/CAN-eRQWcAAP8y0.jpg" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms MyElectric on Nexus 7 with cracked screen</td></tr></tbody></table><br />A super low power alternative could be to use an old e-reader with an E-ink display. Here's Emoncms MyElectric running on a hacked Nook Touch.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-G1QTijq_mqA/VQqr710ke7I/AAAAAAABF6I/M4yq4Fwchtk/s1600/2014-11-13%2B08.10.28-1.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-G1QTijq_mqA/VQqr710ke7I/AAAAAAABF6I/M4yq4Fwchtk/s1600/2014-11-13%2B08.10.28-1.jpg" height="336" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: 12.8000001907349px;">Emoncms MyElectric on Nook Touch</span></td></tr></tbody></table>Head over to the forums and let us know what you think...<br /><div>Discussion Thread: <a href="http://openenergymonitor.org/emon/node/10353">http://openenergymonitor.org/emon/node/10353</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/02/27/real-world-emonth-battery-life/">Real World emonTH Battery Life </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-02-27T10:07:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/02/27/real-world-emonth-battery-life/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" height="266" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The battery on my home <a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">emonTH Temperature &amp; Humidity Node</a> has just died for the second time in 14 months. Each set of batteries lasted exactly 221 days (7 months and 9 days)! The 2 x AA alkaline battery voltage started at 3.1V and the emonTH stopped working just after the voltage dropped below 1.2V (final dying breath was at a battery voltage of 0.8V!). &nbsp;The two AA batteries installed were low cost alkaline batteries <a href="http://www.espares.co.uk/product/es1660092/espares-ultra-alkaline-aa-batteries---pack-of?ApplianceTypeId=1090&amp;ManufacturerId=596">unbranded from e-spares</a>. Battery life would not doubt be longer from some quality cells.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I recommend using rechargeable alkaline batteries if possible in the emonTH, for least environmental impact. See my previous posts on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">emonTH battery selection</a> and <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">power consumption optimisation</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My emonTH had a DHT22 temperature and humidity sensor connected and was set to the default post rate of one minute in-between samples. The unit was running V1.0 firmware (the firmware is now at V1.2, there have been a couple of minor battery life improvements).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It's very impressive how the DC-DC boost converter onboard the emonTH continues to boost the depleting battery voltage to 3.3V, using this method allows the battery to be drained much further than powering the unit directly.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" height="356" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" height="300" width="640" /></a></div><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/02/23/rfm69cw-power-consumption/">RFM69CW Power Consumption </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-02-23T13:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm69/'>RFM69</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/02/23/rfm69cw-power-consumption/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Following on from my <a href="http://openenergymonitor.blogspot.co.uk/2013/07/new-oscilloscope.html">post on RFM12B power consumption</a>&nbsp;here's the same measurements for the RFM69CW&nbsp;(<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see RFM69CW intro blog post</a>).<br /><br />Current consumption was measured in the same way as explained in the RFM12B post back in July 2013. Voltage drop was measured across 10R current shunt resistor.<br /><br />A fully populated emonTx V3.4 with a 433Mhz RFM69CW running <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM69CW/emonTxV3_RFM69CW_DiscreteSampling/emonTxV3_RFM69CW_DiscreteSampling.ino">discrete sampling code </a>with a single CT connected was used in the test. The V3.4 was powered directly with 3.3V DC from bench PSU.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 with RFM69CW Test Setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test setup illustration</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test Bench</td></tr></tbody></table><i>Please excuse my photos of the scope traces rather than screen captures, for some reason the USB socket on the scope did not seem to be working today :-(</i><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Full sample and RFM69CW transmit trace capture</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">When an AC-AC adapter is not connected the emonTx goes to sleep in between readings. The above current trace shows the ATmega328 waking up for 295ms to sample from one CT channel the spike at the end is the RFM69CW transmitting. The trace below is a zoomed in capture of the RFM69CW transmission and LED.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM69CW transmission current consumption&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><b>The current trace above shows the RFM69CW transmission: 33mA @ 3.3V&nbsp;(109mW) for 4ms. The current spike at the end (up to 39mA) is the emonTx LED. </b>In this test the emonTx was running the standard discrete sampling firmware transmitting a JeeLib packet structure with six integers. Since we were only sampling from one CT four out of the five integers will be zero.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This equates to a 15 bytes payload plus 9 byte overhead&nbsp;@ 48kb/s. See J<a href="http://jeelabs.org/2011/06/09/rf12-packet-format-and-design/">eeLib packet structure</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In comparison I measured the RFM12B to consume 25.5mA @ 3.3V (84.2mW)&nbsp;for 3ms.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My measurements pretty much agree with the datasheets, here's a comparison table compiled by Low Power Labs:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="142" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Even though the RFM69CW does consume more power while it's transmitting it does have a lower sleep consumption than the RFM12B. This increased transmission power should result in an increased transmission range.</div><br />I've started a forum thread for discussion:&nbsp;<a href="http://openenergymonitor.org/emon/node/10210">http://openenergymonitor.org/emon/node/10210</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/6">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/4">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

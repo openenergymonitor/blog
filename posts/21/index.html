@@ -1,0 +1,877 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/21/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/21/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/08/01/configurable-single-to-3-phase/">Configurable single to 3-phase interrupt based EmonTX code by Pcunha</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-01T19:54:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/three-phase/'>three phase</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/08/01/configurable-single-to-3-phase/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Some great work I'd like to flag up by <a href="http://openenergymonitor.org/emon/user/754">Pcunha</a>, who has developed a super configurable single to 3-phase interrupt based firmware for the EmonTX.<br /><br />Its up on github here:<br /><a href="https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts">https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts</a><br /><br />and there is more about it in the forum thread here:<br /><a href="http://openenergymonitor.org/emon/node/467#comment-5481">http://openenergymonitor.org/emon/node/467#comment-5481</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/29/emonglcd-template-based-displays/">EmonGLCD Template based display's</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-29T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/29/emonglcd-template-based-displays/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><div>I have been thinking about how it could be possible to program an EmonGLCD display remotely or at least specify which displays are shown i.e if you could construct a command to tell the display to:</div><div><br /></div><div><i>display solar pv page as page 1, use the solar power value from node 10.&nbsp;</i></div><div><i><br /></i></div><div>Skipping for now the how the commands are sent and interpreted, I think the first part of creating these specifiable displays is to convert the current display code into template functions which should be of benefit whether the displays are remotely programmed or not.</div><div><br /></div><div>Here's my first attempt at this:</div><div><br /></div><b>draw_power_page( "POWER" ,use, "USE", usekwh);</b><br /><div><b>draw_temperature_time_footer(temp, mintemp, maxtemp, hour,minute);</b></div><div>draws the following page:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" /></a></div><div><br /></div><div><br /></div><div><b>draw_solar_page(use, usekwh, gen, 2050, genkwh, temp, mintemp, maxtemp,&nbsp;hour,minute<span class="Apple-style-span">);</span></b></div><div><span class="Apple-style-span">draws:</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" /></a></div><div><span class="Apple-style-span"><br /></span></div><div>(thanks to drsdre for <a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-icons-by-drsdre.html">the icons!</a>)</div><div><br /></div><div>This is what the full code looks like:</div><div><br /></div><pre>#include&nbsp;&lt;JeeLib.h&gt;<br />#include&nbsp;&lt;GLCD_ST7565.h&gt;<br />#include&nbsp;&lt;avr/pgmspace.h&gt;<br />GLCD_ST7565&nbsp;glcd;<br /><br /><span style="color: #cc6600;">unsigned</span> <span style="color: #cc6600;">long</span> fast_update;<br /><br /><span style="color: #7e7e7e;">//&nbsp;Fixed&nbsp;values&nbsp;for&nbsp;this&nbsp;example</span><br /><span style="color: #cc6600;">double</span> temp = 17.4 ,maxtemp = 19 ,mintemp = 16;<br /><span style="color: #cc6600;">int</span> hour = 23, minute = 43;<br /><span style="color: #cc6600;">double</span> use = 252, usekwh = 2.5;<br /><span style="color: #cc6600;">double</span> gen = 1760, genkwh = 4.8;<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>setup</b></span>()<br />{<br />&nbsp;&nbsp;glcd.<span style="color: #cc6600;">begin</span>(0x20);<br />&nbsp;&nbsp;glcd.backLight(200);<br />}<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>loop</b></span>()<br />{<br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">// Display update every 200ms</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #cc6600;">if</span> ((<span style="color: #cc6600;">millis</span>()-fast_update)&gt;200)<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;fast_update&nbsp;=&nbsp;<span style="color: #cc6600;">millis</span>();<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S1 = <span style="color: #cc6600;">digitalRead</span>(15);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S2 = <span style="color: #cc6600;">digitalRead</span>(16);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S3 = <span style="color: #cc6600;">digitalRead</span>(19);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">if</span> (S1==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"POWER"</span> ,use, <span style="color: #006699;">"USE"</span>, usekwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span> <span style="color: #cc6600;">if</span> (S2==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"SOLAR"</span> ,gen, <span style="color: #006699;">"GEN"</span>, genkwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span><br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// use, usekwh, gen, maxgen, genkwh, temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_solar_page(use,&nbsp;usekwh,&nbsp;gen,&nbsp;2050,&nbsp;genkwh,&nbsp;temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;12,43);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;}&nbsp;<br />}<br /><br /><span class="Apple-style-span" style="font-family: 'Times New Roman'; white-space: normal;">To run this you will need the accompanying icons and templates files, its all available in the EmonGLCD repo here:&nbsp;<a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev</a></span></pre><pre><br /></pre>Interested to hear any thoughts on how best to take this forward.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/28/reading-watt-hour-data-from-elster/">Reading Watt-hour data from an Elster A100C electricity meter using IrDA by Dave Berkeley</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-28T11:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/utility-meters/'>utility meters</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/28/reading-watt-hour-data-from-elster/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><div class="separator" style="clear: both; text-align: center;"><a href="http://www.rotwang.co.uk/projects/images/DSCN3869.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="272" src="http://www.rotwang.co.uk/projects/images/DSCN3869.JPG" width="400" /></a></div><br />If you have an Elster meter this is a fantastic way to read the exact accumulated watt hours that you have generated or used and can compliment and cross check a CT based measurement.<br /><br /><a href="http://www.rotwang.co.uk/">Dave Berkeley</a> writes:<br /><br /><div style="background-color: #dddddd; font-size: 90%; padding: 10px;">The A100C has an LCD display showing the number of kilowatt hours generated, but it also has two optical outputs. One flashes momentarily each time one watt hour is recorded. The second output is an infrared port which transmits the details of the meter, including accumulated Watt Hours, every second or so.<br /><br />There are lots of commercial power meter readers around, and many homemade ones too. But they all seem to simply count the 1Wh optical pulses. This does give you an accurate measure of instantaneous power usage / generation, but does not give accumulated totals. If you get a malfunction in the reader you will lose counts. If you count the IrDA output it always gives you accurate accumulated totals.</div><br />Read the full build guide here: <a href="http://www.rotwang.co.uk/projects/meter.html">Electricity Meter Reader</a><br /><br />and download the Arduino source code here: <a href="http://www.rotwang.co.uk/projects/docs/elec_meter.ino">elec_meter.ino</a><br /><br />The only thing you need to get this running on an arduino or an emontx is a&nbsp;<a href="http://www.alldatasheet.com/datasheet-pdf/pdf/92399/ETC/TSL261.html">TSL261R</a> optical sensor, the TSL261R has the same pin out as the  <a href="http://openenergymonitor.org/emon/sites/default/files/TSL257.pdf">TSL257</a>&nbsp;so can be connected to the emontx pulse input.<br /><br />We've put together a small kit <a href="http://shop.openenergymonitor.com/tsl261r-ir-sensor-kit/">available in the shop</a> of all the components needed to connect it to an emontx including the TSL261R a male 3.5mm jack, 1m of cable and&nbsp;heat-shrink to save needing to get all the components from different places.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/27/emonglcd-icons-by-drsdre/">EmonGLCD Icons by Drsdre</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-27T10:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/27/emonglcd-icons-by-drsdre/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/EmonGLCD_icons.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="369" src="http://openenergymonitor.org/emon/sites/default/files/EmonGLCD_icons.JPG" width="640" /></a></div><br /><a href="http://openenergymonitor.org/emon/user/859">Drsdre</a> writes: <br /><br /><div style="background-color: #dddddd; font-size: 90%; padding: 10px;">I've started experimenting with using icon based information with the goal to use the limited real estimate on the LCD more  efficient and make the display more attractive.<br /><br />Current features of this experiment:<br /><ul><li>Icons for current usage, grid, solar and temperature.&nbsp;</li><li>Solar and temperature will shown different icons based upon solar wattage/temperature on scale -15 to 40c. Solar maximum value is auto-learning.&nbsp;</li><li>If no EmonTX or EmonBase info is received, amount of seconds when last package was seen is shown.&nbsp;</li><li>Assigned down button to switch on/off background light.&nbsp;</li></ul>Ideas: also add a animated wind energy icon, use an overall more graphical representation based upon a house with panel on the roof, wind mill in garden and connection to grid.  It's in a very early stage and I love to hear your feedback.<br /><br />Forked EmonGLCD sketch with changes can be found on <a href="https://github.com/drsdre/EmonGLCD">https://github.com/drsdre/EmonGLCD</a></div><br />From the forum thread here: <a href="http://openenergymonitor.org/emon/node/888">http://openenergymonitor.org/emon/node/888</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/26/almost-at-next-emoncms-release-point/">Almost at the next emoncms release point</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-26T15:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/26/almost-at-next-emoncms-release-point/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Over the last couple of months I have been working closely with Ildefonso Martínez Marchena from Spain on developing <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a> to the next level and we have been making really good progress.<br /><br />We are almost at the next release point with a lot of big additions including:<br /><br /><span class="Apple-style-span" style="font-size: large;">Dashboards</span><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s1600/dashscreen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s640/dashscreen.png" width="640" /></a></div><div><ul><li>Support for multiple dashboards</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#creating_a_dashboard">A fully visual dashboard editor</a></li><li>Public dashboards via username i.e <a href="http://emoncms.org/trystan">emoncms.org/trystan</a></li><li>Support for ckeditor and simeo file manager</li><li>8 different dial types and a hot water cylinder</li><li>LED’s widgets thanks to Lloyd</li><li>Published and unpublished dashboards for dashboards that are being worked on.</li><li>A reworked dashboard renderer implementation</li></ul><span class="Apple-style-span" style="font-size: large;">Visualisations</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s1600/threshold_order.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="294" src="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s640/threshold_order.png" width="640" /></a></div><div><ul><li>A simple <a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_dp_edit">data-point editor.</a></li><li>Many histogram based visualisations based on <a href="http://openenergymonitor.blogspot.co.uk/2012/05/view-your-power-data-as-histogram-in.html">Paul Allen's histogram input process</a>.</li><li>kWh Comparison Visualisation thanks to <a href="https://twitter.com/galouf/status/217938127430492160">Baptise Gaultier</a></li><li>A new API screen, detailing all the available visualisations and other key features available.</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_multigrapg">Editable multigraph.</a></li></ul><span class="Apple-style-span" style="font-size: large;">Data and core</span><br /><ul><li>CSV data input and identification by sensor node inputs.</li><li>Feed Autoconfig</li><li>New averaging process for creating daily temperature averages.</li><li>Setup script improvements</li><li>Thanks to Juan Sidrach for help with general code formatting and multilingual implementation.&nbsp;</li><li><a href="http://twitter.github.com/bootstrap/">Twitter bootstrap</a> based theme.</li></ul><span class="Apple-style-span" style="font-size: large;">Multilingual</span><br /><ul><li><a href="http://openenergymonitor.org/emon/emoncms/using-gettext-on-ubuntu">Multilingual implementation based on gettext</a></li><li>Thanks to Alco for the Dutch translation.</li></ul>All this is available now on github and has been of course throughout development. At this stage we are just polishing the release and updating and writing documentation.<br /><br /><span class="Apple-style-span" style="font-size: large;"><a href="http://emoncms.org/">emoncms.org</a></span><br />We've got the domain and have the latest version running there off the same server and database as vis.openenergymonitor.org so you can still access your<a href="http://vis.openenergymonitor.org/"> vis.openenergymonitor.org</a> data through <a href="http://emoncms.org/">emoncms.org</a>.<br /><br />The idea here is to create a really nice launch page for emoncms and have the live instance hosted there which can be used as a main logging site or for testing before running it on your own server or both. Emoncms.org will still be a beta service for now as its stability and reliability is established.<br /><br /><span class="Apple-style-span" style="font-size: large;">Bug testing</span><br />It would be great if you can try out the new version and let us know of any bugs you find so that we can try to get it as rock solid as possible before this release is complete.<br /><br />Due to a couple of core implementation changes to visualisations and dashboards many of the visualisation URL’s and dashboard scripting have changed so it best to build any old dashboards from scratch using the new visual editor.</div><div><br /></div><div>Have a look at the using emoncms documentation here if you need help with any of the steps:<br /><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms">openenergymonitor.org/emon/emoncms/using-emoncms</a></div><div><br /></div><div>Please submit any bug details either to the issue tracker on github here:</div><div><a href="https://github.com/openenergymonitor/emoncms3/issues">https://github.com/openenergymonitor/emoncms3/issues</a></div><div>or on the forums here:</div><div><a href="http://openenergymonitor.org/emon/forum/5">http://openenergymonitor.org/emon/forum/5</a><br /></div><div>There is also a beginning on code documentation <a href="http://openenergymonitor.org/emon/node/312">here</a>&nbsp;that may come in useful.</div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Github</span></div><div><span class="Apple-style-span" style="font-size: large;"><a href="http://github.com/openenergymonitor/emoncms3">github.com/openenergymonitor/emoncms3</a></span></div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Installation guides</span></div><div>To install emoncms on your own server have a look at these guides:</div><div><a href="http://openenergymonitor.org/emon/emoncms/installation">General Installation details</a>,&nbsp;<a href="http://openenergymonitor.org/emon/emoncms/installing-ubuntu-debian-pi">PI, Debian, Ubuntu installation</a></div><div><br /></div><div>Let us know how you get on with it.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/26/open-source-sailing-technology-to-clean/">Open source sailing technology to clean up oil spills</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-26T10:30:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/open-source/'>open source</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/26/open-source-sailing-technology-to-clean/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <object height="374" width="526"><param name="movie" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf"></param><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always"/><param name="wmode" value="transparent"></param><param name="bgColor" value="#ffffff"></param><param name="flashvars" value="vu=http://video.ted.com/talk/stream/2012S/Blank/CesarHarada_2012S-320k.mp4&su=http://images.ted.com/images/ted/tedindex/embed-posters/CesarHarada_2012S-embed.jpg&vw=512&vh=288&ap=0&ti=1499&lang=en&introDuration=15330&adDuration=4000&postAdDuration=830&adKeys=talk=cesar_harada_a_novel_idea_for_cleaning_up_oil_spills;year=2012;theme=a_greener_future;theme=ocean_stories;theme=inspired_by_nature;theme=talks_from_ted_fellows;event=TEDxSummit;tag=global+issues;tag=oceans;tag=open-source;&preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><embed src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" pluginspace="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" bgColor="#ffffff" width="526" height="374" allowFullScreen="true" allowScriptAccess="always" flashvars="vu=http://video.ted.com/talk/stream/2012S/Blank/CesarHarada_2012S-320k.mp4&su=http://images.ted.com/images/ted/tedindex/embed-posters/CesarHarada_2012S-embed.jpg&vw=512&vh=288&ap=0&ti=1499&lang=en&introDuration=15330&adDuration=4000&postAdDuration=830&adKeys=talk=cesar_harada_a_novel_idea_for_cleaning_up_oil_spills;year=2012;theme=a_greener_future;theme=ocean_stories;theme=inspired_by_nature;theme=talks_from_ted_fellows;event=TEDxSummit;tag=global+issues;tag=oceans;tag=open-source;&preAdTag=tconf.ted/embed;tile=1;sz=512x288;"></embed></object><br /><br />What a great explanation of the importance of open hardware for developing environmental technology and the right conception of business where purpose comes first and profit is there to make the purpose happen rather than technology as a means to make profit,&nbsp;excellent!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/17/emonglcd-v14/">emonGLCD V1.4</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-17T10:05:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/17/emonglcd-v14/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Introducing the current version of the emonGLCD. This post is a bit later than planned, we have actually been selling the V1.4 through the shop for the past month or so. This version features some minor incremental&nbsp;improvements rather than a new design.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The main changes to this revision are:</div><ul style="background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 17px; text-align: left;"><li>This LCD power is connected to the 3.3V rail instead of instead of 5V. This will fix the problem with the LCD going blank due to over voltage, <a href="http://openenergymonitor.org/emon/node/679">discussion thread here</a>. *</li></ul><ul style="background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 17px; text-align: left;"><li>The external power connection now routed through voltage regulator this means it can accept an input from 5-12V</li></ul><ul style="background-color: white; text-align: left;"><li><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-size: 12px; line-height: 17px;">The push switches are now active high, each with their own 10K pull down resistor, R7 and R8 are two additional 10K pull down resistors.&nbsp;</span></span></li></ul>The <a href="http://github.com/openenergymonitor/emonGLCD">emonGLCD sketch examples on GitHub</a> have been modified to work on the V1.4 as default.  <span style="background-color: white; text-align: left;">If you have V1.3 then you will need to uncomment the line that enables the internal pull up&nbsp;resistors&nbsp;(line 116 in emonGLCD_HEM) You will also need to comment line 199 and uncomment line 200 to change the action to active high rather than active low.</span><br /><div><div style="text-align: left;"><br /></div><div style="text-align: left;">All other functions work exactly the same as previous emonGLCD versions.&nbsp;</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">See the bottom of the<a href="http://openenergymonitor.org/emon/emonglcd"> main emonGLCD documentation</a> page for a full change-log detailing the different versions over time.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">*Running the LCD at 3.3V instead of 5V is now within spec for the LCD unit, however running the LCD at a lower voltage did flag up an error in the orientation of C13 and C14 see&nbsp;<a href="http://openenergymonitor.org/emon/node/754">forum&nbsp;discussion&nbsp;thread here</a>. A note has been added to the build guide to instruct the&nbsp;insertion&nbsp;of C13 and C14 the&nbsp;opposite&nbsp;way round to what is marked on the PCB.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-x_-BqWjyBJ4/T5AwrR5UExI/AAAAAAAAaFY/CPDezo-eew4/s1600/emonGLCD_V1.4.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="306" src="http://2.bp.blogspot.com/-x_-BqWjyBJ4/T5AwrR5UExI/AAAAAAAAaFY/CPDezo-eew4/s400/emonGLCD_V1.4.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 - Assembled (RFM12B missing)</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-S0WecuCSHUA/T5AwuRA-rUI/AAAAAAAAaFg/CXWY1n9ZrYY/s1600/emonGLCD_V1.4_front.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-S0WecuCSHUA/T5AwuRA-rUI/AAAAAAAAaFg/CXWY1n9ZrYY/s400/emonGLCD_V1.4_front.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 PCB - Front</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-beKXiEr-zCY/T5Az5AZvkNI/AAAAAAAAaFw/kwKQeoeTDoM/s1600/emonGLCD_V1.4_rear.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="313" src="http://2.bp.blogspot.com/-beKXiEr-zCY/T5Az5AZvkNI/AAAAAAAAaFw/kwKQeoeTDoM/s400/emonGLCD_V1.4_rear.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 - Rear</td></tr></tbody></table>The emonGLCD SolderPad page has been updated with the V1.4 Schematic and Board files:&nbsp;<a href="http://solderpad.com/openenergymon/emonglcd/">http://solderpad.com/openenergymon/emonglcd/</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/07/16/triac-based-mk2-pv-controller-by/">Triac based MK2 PV Controller by Calypso Rye</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-16T13:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
+      
+        <li><a class='category' href='/categories/solarpv/'>solarPV</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/07/16/triac-based-mk2-pv-controller-by/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s1600/IMGP9704.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s400/IMGP9704.JPG" width="400" /></a></div><br /><br /><a href="http://openenergymonitor.org/emon/user/956">Calypso Rye</a> writes:<br /><br /><div style="background-color: #dddddd; font-size: 90%; padding: 10px;">Based on the standard VI sketch which uses calcVI() in EmonLib, I’ve had a system in place for the last couple of months which diverts surplus PV power to our immersion heater.  This system has proved to be both effective and reliable, and I am most grateful for everyone who has helped me along the way.  The main downside to this arrangement is that it requires an expensive item of third-party kit to distribute the power.  (I know that others have found cheaper ways, but my Carlo Gavazzi unit cost me £70).<br /><br />Other contributors to this forum have shown that a standard triac can be easily controlled by an Arduino.  By using a zero-crossing detector such as the Motorola MOC3041, it should be possible for the Arduino to allocate mains cycles directly to the load rather than delegating this task to a separate device.<br /><br />A Mk2 system of this type has been working in our garage for the last few days.  The sketch and a schematic diagram are attached, its main features being:<br /><br />- a comprehensive 'debug' mode which allows real world conditions to be simulated ;<br /><div><br />- a continuous mode of operation, for both measurement and distribution of power;</div><div><br />- an "energy bucket" concept which gives precise control of surplus power;<br /><br />- interleaved windows for measurement and generation, each only 20mS;<br /><br />- a rapid response time to changing conditions (50mS);<br /><br />- suitable timing for 'arming' a zero-crossing trigger device;<br /><br />- a single LPF which determines the dc-offset of raw VI samples;<br /><br />- a programmable safety margin for biassing import v. export;<br /><br />- minimal calibration is required.</div></div><br />Read the full post on the forum here: <a href="http://openenergymonitor.org/emon/node/841">http://openenergymonitor.org/emon/node/841</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/06/18/it-works-single-ac-power-supply-voltage/">Single AC power supply + voltage sensing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-18T03:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/voltage-sensing/'>voltage sensing</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/06/18/it-works-single-ac-power-supply-voltage/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div dir="ltr" style="text-align: left;" trbidi="on">The idea of using the same AC-AC power adaptor for both sensing voltage and supplying power to emonTx has been discussed on the forums for months (see <a href="http://openenergymonitor.org/emon/node/309" target="_blank">this topic</a>), and about six weeks ago Glyn posted <a href="http://openenergymonitor.blogspot.de/2012/05/emontx-single-ac-power-supply.html" target="_blank">a simulation of a possible circuit</a>.<br /><br />I had the time this weekend to give it a try, bought the necessary components and put it all on a breadboard. After a sleepless night I can confirm: It works!<br /><br />Here is my messy setup:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="380" src="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s640/2012-06-18+04.55.43.jpg" width="640" /></a><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><br /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /><div style="text-align: left;"><br /></div></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><a href="http://www.blogger.com/goog_1837366350"><br /></a></div><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Small modifications had to be made to get it to work: I added a 1uF cap between 3.3v and GND to&nbsp;filter out some noise and redefined the voltage calibration coefficient in the code.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">But the main problem (took me all night to figure it out) is that the usual emonTx sketch wont work straight ahead. The line that lights up the LED (on pin 9) at the end of the setup loop has to be commented out, otherwise the setup won't work. It's no problem to flash it 2ms after each packet is sent, but apparently having it on in the beginning will prevent the program from starting. Maybe there isn't enough current to do it and move on (I must say that I use 10k ohm resistors for the voltage dividers). If it's not that then maybe full wave rectification could help.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">I used a humble Xprotolab to measure the Vin, Vout and at some other points in the circuit. It behaves almost exactly like the simulation. fft also shows very little noise.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Would be great if other members could repeat this experiment to see if the results will be the same.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Next step: Voltage sensing on the base ;)&nbsp;</span><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1"><br style="color: black;" /></a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/06/04/getting-visual/">Getting visual</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-04T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/benchmarking/'>benchmarking</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/graphing/'>graphing</a></li>
+      
+        <li><a class='category' href='/categories/interface/'>interface</a></li>
+      
+        <li><a class='category' href='/categories/social-energy-monitoring/'>social energy monitoring</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/06/04/getting-visual/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div dir="ltr" style="text-align: left;" trbidi="on">The Open Energy Monitor is all about getting visual. Using hardware to post collected data to emonCMS basically transforms the acquired data into easily understandable informations, and what's better than graphs.<br />Here is a <a href="https://power2switch.com/" target="_blank">similar initiative</a> that converts absurd electricity bills into meaningful information:<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s1600/p2s-bill-redesign-v16.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s640/p2s-bill-redesign-v16.jpg" width="492" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Source: <a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">FastCoDesign.com</a></td></tr></tbody></table>You can compare it with with the old bill:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s1600/comed-bill-jan-2011-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s400/comed-bill-jan-2011-1.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>It is obvious that presenting the same information in a different way makes a big difference. The redesigned bill is much easier to understand, and the use of shapes and colors turns something very abstract into tangible information.<br /><br />But I believe that if we really want to democratize energy monitoring, we should take it one step further. We should offer people who have no idea what 4.2 kW or 150 kWh are, a reference to compare with. For example, visualizing 1kWh as the energy than ten 100W light bulbs consume in one hour makes it understandable to your grandma. Or showing one week's consumption each hour on one matrix using colored circles.<br /><br />More important is to give a feeling of the order of magnitude. Like showing a community average VS your consumption on a colored scale to have an idea how well you're doing, lets you have a good reference point.<br /><br />I agree that with households community averages are quite complicated since households have extremely different consumption patterns: some work from home, some have many guests, others spend very little time at home, etc... But when it comes to businesses, benchmarking is much less complicated, you can compare bakeries or cafes electricity consumption patterns in a much meaningful way.<br /><br />I think this should be a main target to be implemented in emonCMS, and I believe that the community has something to say and contribute to this topic, so I started this forum thread : http://openenergymonitor.org/emon/node/715&nbsp;please feel free to add your thoughts to it.<br /><br /><br /><div style="text-align: right;"><a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">Link to FastCoDesign article.</a></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/22">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/20">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

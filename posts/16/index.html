@@ -1,0 +1,851 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/16/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/16/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/31/the-current-emoncms-feed-storage/">The current emoncms feed storage implementation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-31T21:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2013/05/31/the-current-emoncms-feed-storage/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Following on from the last blog post on <a href="http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-load-stats.html">emoncms.org server load and disk use</a>, lets look at the current emoncms implementation of feed storage in a bit more depth before going on to look at how it can be improved.</div><div><br /></div><div>Emoncms currently stores realtime feed data in a mysql database, every feed has its own mysql table. A feed table contains two fields: timestore and data value. Feed data is usually on a regular time interval, ie: 5,10,60s data. The time interval is set by the posting sensor node rather than emoncms.</div><div><b><br /></b></div><div><b>Calculating feed disk use</b></div><div>We can calculate the estimated feed table size using the current implementation used in emoncms.</div><br />Lets say we want to store a year of 10s data. There are 31536000 seconds in a year and so 3153600 datapoints at a 10s data rate.<br /><br />A single datapoint is made up of a timestamp which is stored as an unsigned integer, which takes up 4 bytes, and a float data value which also takes up 4 bytes.<br /><br />3153600 datapoints x 8 bytes per datapoint (table row) = 24 Mb<br /><br />In addition to the feed data we also have a table index which speeds up queries considerably. The worst case index size can be estimated with the equation detailed on this page:<br /><br /><a href="http://dev.mysql.com/doc/refman/5.0/en/key-space.html" style="color: #3465a4;">http://dev.mysql.com/doc/refman/5.0/en/key-space.html</a><br /><br />index row size = (key_length+4) / 0.67<br /><br />The key we are using is the time field which is 4 bytes and so the index row size is = (4 + 4) / 0.67 =~ 12 bytes<br /><br />The index size for 3153600 datapoints is&nbsp;therefore&nbsp;approximately = 3153600 * (4 + 4) / 0.67  = 36Mb<br /><br />The total feed table size will therefore be approximately 60Mb.<div><br /></div><div><b>Feed query speeds</b></div><div>        <div style="margin-bottom: 0cm;">As emoncms has developed a fair bit of work has gone into improving the method that realtime data is queried.&nbsp;At first improvements seem promising, see this documentation page for detailed discussion on the query implementation and query speeds:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/site/docs/developdatastorage">http://emoncms.org/site/docs/developdatastorage</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">But&nbsp;growing&nbsp;server demand on emoncms.org and feed table size means they have often only staved off an eventual slow down.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I think the last idea I had of using a php for-loop to request a single row at given intervals that originally &nbsp;reduced query times by about 10x is no longer working well on emoncms.org, it still gives the 1.6s query time on my local installation of emoncms but on emoncms.org Im getting a mixture of short query times 500ms and much longer query times 20s+ (in the more than 55 hour timewindow).&nbsp;The reason for this I think is due to the php for loop having to wait when the server is under heavy load for other mysql queries to complete. I think another solution is needed.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next few blog posts I will look at some of the potential solutions to both disk use and query speeds.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/30/emoncmsorg-load-stats/">Emoncms.org load stats</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-30T12:10:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/30/emoncmsorg-load-stats/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">You might be wondering what kind of load is on emoncms.org, maybe you have experienced it slow down from time to time and then other times be much faster, maybe your just intrigued&nbsp;about how much its used and what are the challenges with hosting a site like this. So what better way to investigate the load on emoncms.org that use the visualisation features built into emoncms itself.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This first graph is of server load since late January 2013 as recorded by the command 'uptime'. You can see a clear drop in load on the 16th of March where the&nbsp;re-factored emoncms v5 was introduced with its reduction in mysql queries in input processing:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-vz--c_fGLKc/UaZzZ_sRaWI/AAAAAAAACns/vQlipYYkFzU/s1600/1minload.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="273" src="http://2.bp.blogspot.com/-vz--c_fGLKc/UaZzZ_sRaWI/AAAAAAAACns/vQlipYYkFzU/s640/1minload.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">On a shorter time scale the load fluctuates at what seems to be periodic intervals with a significant spike every 10-12 minutes, a load of 3 is enough to make emoncms feel slightly sluggish on feed data requests.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-JhEGB9gOyE0/UaZzZYkYMfI/AAAAAAAACnc/bO55U8Par4M/s1600/4h1min.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="268" src="http://3.bp.blogspot.com/-JhEGB9gOyE0/UaZzZYkYMfI/AAAAAAAACnc/bO55U8Par4M/s640/4h1min.png" width="640" /></a></div>This graph shows the number of feeds that where updated sometime in the last 5 minutes (not the number of feed updates in the last 5 mins which is much higher). I use this graph to check that an emoncms update has not caused a big drop off in active feeds, I check to make sure that the number of active feeds returns to the same level after an update.<br /><br />The number of active feeds has grown from around 1350 to 2100 (750) since early March 2013, just over 300 new active feeds a month. The total number of feeds created in all time is 15660 a portion of these will have been deleted and replaced with new feeds, a portion will just be inactive.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-0aFZMWgBnbE/UaZzZ5X2ZrI/AAAAAAAACng/vinsexlFFHQ/s1600/activefeeds5min.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="278" src="http://1.bp.blogspot.com/-0aFZMWgBnbE/UaZzZ5X2ZrI/AAAAAAAACng/vinsexlFFHQ/s640/activefeeds5min.png" width="640" /></a></div>Zooming in again on the last 4 hours shows that there are about 120 feeds that are updated on a longer than 5 min timescale and there&nbsp;doesn't&nbsp;seem to be a clear correlation between the server load spikes above and the update spikes here. Maybe some kind of&nbsp;mechanism&nbsp;to&nbsp;even&nbsp;out the load could be a beneficial feature to look into.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-uCaBsAHSkbs/UaZzaUPToWI/AAAAAAAACno/vBNAL13zP-Y/s1600/activefeeds5min_last4hours.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="276" src="http://1.bp.blogspot.com/-uCaBsAHSkbs/UaZzaUPToWI/AAAAAAAACno/vBNAL13zP-Y/s640/activefeeds5min_last4hours.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;">The next graph is the last server load related graph, it shows the time in seconds taken by the server to serve all requests, you can see again the time saved by the emoncms v5 implementation of input processing (the change of gradient on the 16th of March). High load events are also clearly visible as steps, some of these events made emoncms.org unresponsive for quite sometime, one of the larger high load events lasted 40 mins.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-424rxwcdk38/UaZzbdHO_8I/AAAAAAAACoA/GcSUNwgdlz8/s1600/timelog.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="276" src="http://3.bp.blogspot.com/-424rxwcdk38/UaZzbdHO_8I/AAAAAAAACoA/GcSUNwgdlz8/s640/timelog.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Emoncms.org disk use</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Apart from load spikes, disk use is probably the most pressing concern with emoncms.org and probably emoncms in general. Disk use is growing pretty fast rising from 22GB at the start of&nbsp;February&nbsp;to 47GB now at the end of May. The vast majority of this is realtime feed data. I need to measure for certain but I think all the other tables including daily averages and histogram data come to only a few hundred MB.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Kz6SS2XHOlk/UaZzahpekrI/AAAAAAAACn4/ZtG6cbYHGmc/s1600/diskspace.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="278" src="http://2.bp.blogspot.com/-Kz6SS2XHOlk/UaZzahpekrI/AAAAAAAACn4/ZtG6cbYHGmc/s640/diskspace.png" width="640" /></a></div><br /><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">Disk use is rising at about 280 Mb a day so about 100 GB a year, disk space is charged for on a monthly basis (£2 per month for 10GB&nbsp;<a href="http://www.bigv.io/prices">http://www.bigv.io/prices</a>). For every 100GB stored the annual cost would therefore be £240 per 100GB per year without backup and £480 a year with second bigv server used for backup, so even if the number of feeds that are posting to emoncms.org stay constant and there are no new users, disk use costs for&nbsp;existing&nbsp;users will continue to rise if historic data is retained in its current form.</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">Luckily there are several potential solutions to this which I will come back to in another blog post, the most promising one being a method of compressing the data without loosing the vital time resolution on feed events.&nbsp;Essentially&nbsp;removing redundant datapoints, only preserving datapoints where changes are happening. This should be a beneficial feature for raspberry pi installations of emoncms as well where disk space is also at a premium.</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">So to summarise, I think there are two design challenges identified above that would be good to tackle going forward with emoncms:</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">- How to identify the source of and either distribute or limit the effect of whatever is causing load spikes.</div><div class="separator" style="clear: both;">- How to fix the disk space use problem.</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">While fixing these it would also be good to reduce query times and retain the vital resolution on feed events.</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both;">Apart from challenges the above graphs show the success of emoncms.org which is exciting, its great to see people use it, that's really encouraging. Lets keep rising the bar with what's possible with a fully open source cloud&nbsp;application energy monitoring service.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/29/recent-commits-to-emoncms/">Recent commits to emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-29T11:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/29/recent-commits-to-emoncms/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />There have been many great recent commits to emoncms thanks to PlaneteDomo, Baptiste Gaultier, Simon Stamm, Erik Karlsson (IntoMethod), Bryan Mayland (CapnBry), Ildefonso Martínez, Paul Reed and Jerome. Including improved translations, ability to translate javascript, query speed-ups, a working remember me implementation and work on the raspberry pi module. I thought Id write this blog post to draw attention to the great contributions that are being made and so that credit goes where its due:<br /><br /><b>Summary of additions:</b><br /><br /><a href="https://github.com/PlaneteDomo"><b>PlaneteDomo</b></a> - Implementation of a clean way of adding ability to translate text previously defined in javascript <a href="https://github.com/emoncms/emoncms/pull/72">https://github.com/emoncms/emoncms/pull/72</a><br /><br /><a href="https://github.com/bgaultier"><b>Baptiste Gaultier</b></a> (bgaultier) - A lot of French translation work<br /><br /><a href="https://github.com/simonstamm"><b>Simon Stamm</b></a> - Added ability to display yen and euro in zoom visualisation, including an option to place the currency after the value ( 1 = after value, 0 = before value)<br /><a href="https://github.com/simonstamm/emoncms/commit/39af426ecd9eabffefbc12712bfea9ed2503a5f5">https://github.com/simonstamm/emoncms/commit/39af426ecd9eabffefbc12712bfea9ed2503a5f5</a><br />and fixed issue with floatval and json_decode: <a href="https://github.com/emoncms/emoncms/pull/78">https://github.com/emoncms/emoncms/pull/78</a><br /><br /><a href="https://github.com/IntoMethod"><b>Erik Karlsson</b></a> (IntoMethod) -&nbsp;Fixed dashboard height issue, thanks to Paul Reed for reporting this bug on the forums: <a href="http://openenergymonitor.org/emon/node/2013">http://openenergymonitor.org/emon/node/2013</a><br /><br />Addition of async ajax calls for some visualisations <a href="https://github.com/emoncms/emoncms/pull/71">https://github.com/emoncms/emoncms/pull/71</a> this makes the dashboard feel alot snappier and page load is about 4-5 times faster.<br /><br />Also a really significant fix that I've been really enjoying, Erik&nbsp;Karlsson&nbsp;fixed the remember me implementation that I failed to get to work properly: <a href="https://github.com/emoncms/emoncms/pull/69">https://github.com/emoncms/emoncms/pull/69</a><br /><br /><a href="https://github.com/CapnBry"><b>Bryan Mayland</b> </a>(CapnBry) -&nbsp;Improved feed/data request query times: <a href="https://github.com/emoncms/emoncms/pull/63">https://github.com/emoncms/emoncms/pull/63</a> adds a 3rd query type using the mysql average method for times less than 50 hours (180,000 seconds).<br /><br /><b><a href="https://github.com/ildemartinez">Ildefonso Martínez</a> </b>(ildemartinez) - javascript code&nbsp;re-factoring<br /><br /><a href="https://github.com/Paul-Reed"><b>Paul Reed</b></a> - tab between fields when logging in, average field in visualisations moved to the right.<br /><br /><a href="https://github.com/Jerome-github"><b>Jerome</b></a> (Jerome-github)&nbsp;A lot of work on the RaspberryPI emoncms module including continued work on the python gateway script. For ongoing discussion on raspberrypi module development see the github issues page here: <a href="https://github.com/emoncms/raspberrypi/issues/30">https://github.com/emoncms/raspberrypi/issues/30</a><br /><br />Id really like to thank these guys and everyone who continues to help out with development, there's a lot of hard work going in that's really pushing things forward.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/28/emoncmsorg-backup/">Emoncms.org backup</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-28T11:15:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/28/emoncmsorg-backup/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p dir=ltr>I'm happy to announce that emoncms.org is fully backed up and has incremental backup implemented, all data is incrementally backed up once every 24 hours, a backup cron job runs hourly syncing 640 feeds each time so 15360 feeds every 24 hours. emoncms.org disk use is currently growing at a rate of about 300MB a day and the transfer format is csv which gives you an idea of the volume of data that the backup implementation needs to sync. The total volume of data I have synced so far using this is 49 GB. </p><p dir=ltr>The backup implementation uses many of the things already developed as part of the sync module which allows you to download feed data from a remote server. I've put the full emoncms backup script in the tools repository on github here:</p><p dir=ltr><a href="https://github.com/emoncms/usefulscripts/blob/master/backupemoncms.php">https://github.com/emoncms/usefulscripts/blob/master/backupemoncms.php</a></p><p dir=ltr>For the above script to run, you need to first copy the users and feeds table from the master server to the backup server using the more common backup procedure of using mysqldump and scp, the steps to do this are described in the header comments of the backup script.</p><p dir=ltr>This method of backing up is much faster than using rsync which I originally tried for incremental backup as it does not go through each feed looking for changes it just checks when was the last datapoint in the backed up feed and downloads every new datapoint from the master server recorded after that time, one disadvantage of this is that any changes to feed data using the datapoint editor tools in emoncms will not get updated to the backup server. It would be good though to make it possible to delete data on the backup server if its deleted off the master server, as disk space is expensive and if you delete data off emoncms.org you would expect no copy to remain from a data privacy point of view.</p><p dir=ltr>I implemented the backup system like this because I had most of what I needed already in place in the sync module and so it was the quickest way for me to get this up and running using what I already knew. I'm aware the database replication can be performed with mysql replication, where a transaction log is stored on the master server and transferred to and then executed on the backup server. I'm interested in exploring this option too and if anyone can tell me that using mysql replication will offer significant performance benefits over the method above and why, that would certainly motivate me to look at it sooner.</p><p dir=ltr>I'm still reluctant to guarantee data on emoncms.org as both vm servers are in the same datacenter and they are part of bigv cloud which could even mean that both share the same disk (which would invalidate one of the reasons for a separate backup to protect against disk failure) although bigv suggested that this is unlikely as there are plenty of tails. They recognise this as a weakness and something they hope to change soon. </p><p dir=ltr>So if you want extra peace of mind I suggest installing a local installation of emoncms on your own computer and downloading your data periodically using the sync module, I do this both for extra backup and so that I can access the raw data for trying new visualisation and data analysis, processing ideas. I will write a guide on how to do this soon. The sync module is available here:</p><p dir=ltr><a href="http://github.com/emoncms/sync">http://github.com/emoncms/sync</a></p><p dir=ltr>I'm interested in being transparent about how emoncms.org is hosted, so that rather than give opaque promises you can asses things like how its backed up for yourself. You often here people say that no system is absolutely secure and completely safe from failure so I hope that by being transparent about this you can see what has been done. I'm relatively new to administering web services and I'm sure if your a more experienced web admin reading this you may know how this can be done better, I would appreciate hearing how you think it could be improved.</p>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/27/12-input-pulse-counter-idea/">12 input pulse counter idea</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-27T22:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2013/05/27/12-input-pulse-counter-idea/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+             <br /><div style="margin-bottom: 0cm;">A while ago now Glyn and I worked on a design for a 12 input pulse counter, we where doing some work at the Centre for Alternative technology, a stripboard version was built and is in continued use monitoring grid import/export, chp and diesel generator (the last two not actually in active use).</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We wrote up about it here:</div><div style="margin-bottom: 0cm;"><a href="http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting">http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting</a></div><div style="margin-bottom: 0cm;"><a href="http://openenergymonitor.org/emon/buildingblocks/12-input-pulse-counting">http://openenergymonitor.org/emon/buildingblocks/12-input-pulse-counting</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">After visiting CAT again recently and discussing a project they hope to do, it got me thinking again about the 12 input pulse counter. In non-domestic buildings that already have pulse output meters on many of the circuits and a meter room with all the meters in one place, a multiple input pulse counter may be the most effective way to add automatic meter reading.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I've wanted to make a PCB for the 12 input pulse counter for a while so I though I'd do a little work on it this morning, here's a screenshot of where I've got to so far:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-iwNiX7_hZ94/UaPd7SY1PxI/AAAAAAAACnM/FJFCMe3045g/s1600/12inputpulsecounter_pcb01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="http://2.bp.blogspot.com/-iwNiX7_hZ94/UaPd7SY1PxI/AAAAAAAACnM/FJFCMe3045g/s400/12inputpulsecounter_pcb01.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">Here are the features Im thinking it will have:</div><ul><li><div style="margin-bottom: 0cm;">12-input  pulse counter</div></li><li><div style="margin-bottom: 0cm;">Optional pull  down resistor with option for SMT or through hole, see building blocks pages linked above for why pull down resistors are required.</div></li><li><div style="margin-bottom: 0cm;">Input status  LED, driven by pulse signal.</div></li><li><div style="margin-bottom: 0cm;">Dedicated ATmega for pulse counting</div></li><li><div style="margin-bottom: 0cm;">Serial  connection to second ATmega used for ethernet or/and rfm12 comms.</div></li><li><div style="margin-bottom: 0cm;">Enclosed in a  DIN rail mounted enclosure.</div></li></ul><div style="margin-bottom: 0cm;">Here's the eagle design so far:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://solderpad.com/trystanlea/12-input-pulse-counter/">http://solderpad.com/trystanlea/12-input-pulse-counter/</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I used the rfm12pi board design as a starting point as it already had the basic atmega + rfm12 circuit in place.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">One thing I'm still wondering about is&nbsp;whether&nbsp;to add a second optional resistor between the terminals and the pull down resistor which would provide the option of having a voltage divider on the input for stepping down from higher pulse voltages like 24V.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">More to come soon..</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/25/continuation-of-emontx-testing-feed/">Continuation of emontx testing - feed comparison tool</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-25T21:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/25/continuation-of-emontx-testing-feed/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">Glyn has been running a parallel test of the new emontx v3 vs the old emontx v2 for over a month now. See Glyn's original post introducing emontx v3 here: <a href="http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html">http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In testing a new emontx version here are a few questions that we would like to answer:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How does emonTx v3 accuracy compare at lower power's?</div><div style="margin-bottom: 0cm;">Is there any difference in low power readings with or without the powered from AC-AC adapter feature?</div><div style="margin-bottom: 0cm;">Can differences be explained by calibration error?</div><div style="margin-bottom: 0cm;">Are there any other measurement variations that need investigating?</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To make it easier to compare the parallel test power feeds I though Id create a visualisation tool in emoncms that made it easier to see the difference between the feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s1600/compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s400/compare.png" width="272" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If difference is caused by calibration error then applying a calibration to the measured data should bring the difference down close to zero.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Any deviations in measurements that remain should be non-calibration errors, and they will appear off to one side of the linear PowerX vs PowerY plot.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">The above visualisation can be viewed here:</div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809">http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">This visualisation tool is available in the emoncms visualisations list if youd like to try this on your own monitor, even comparing say two different CT channels on a single emontx.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">There are some issues I need to fix with the visualisation tool implementation that gives rise to some incorrect comparisons at some scales to do with the way it selects datapoint id's to compare.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next post I will explore differences between the two parallel test power feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;"><b>On another topic:</b></div><div style="margin-bottom: 0cm;">One of the interesting things I did yesterday was use the raspberrypi emoncms module on my ubuntu laptop. I used a jeelink connected to the usb port of the laptop and then configured raspberrypi_run.php to connect on port /dev/ttyUSB4 instead of the default raspberrypi port, this could be a useful configuration for anyone who just wants to log data from the nodes locally to their laptop and as Jerome pointed out <a href="https://github.com/emoncms/raspberrypi/issues/30">here</a>,&nbsp;maybe the emoncms raspberrypi module should just be called the emoncms linux board module or just serial interface module.</div><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/25/testing-ds18b20-temperature-sensing-on/">Testing DS18B20 temperature sensing on emonTx v3</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-25T09:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/temperature/'>temperature</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/25/testing-ds18b20-temperature-sensing-on/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Hello, so I thought Id try something new on this blog, I'm going to try writing short blog posts about progress and general work on things day to day, these are not intended to mark significant developments or milestones which many of the other blog posts have tended to be, something more like a log book that will hopefully give insight into the development process.</div><br /><b>Testing DS18B20 temperature sensing on emonTx v3</b><br /><br />Glyn and I with help from Robert are continuing with testing emontx V3, there have been a few niggling issues that we're working on but its pretty much there. This morning I tested the DS18B20 temperature sensor connection, it all worked fine, one of the nice things of the new emontx is that there are screw terminals for connecting up the temperature sensor which makes connecting up the encapsulated DS18B20 temperature sensors much easier.<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-ffiA6kvc8Gk/UZ6qIJqbXvI/AAAAAAAACms/2qOL0QhZnZs/s1600/2013-05-24+00.40.45.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: center;"><img border="0" height="180" src="http://1.bp.blogspot.com/-ffiA6kvc8Gk/UZ6qIJqbXvI/AAAAAAAACms/2qOL0QhZnZs/s320/2013-05-24+00.40.45.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">DS18B20 connected to emontx v3</td></tr></tbody></table>Another new addition for temperature sensing is the ability to switch the sensor power pin on and off for use when powering the emontx of batteries (this avoids the hack introduced in the low power temperature node that uses the emontx v2.2 pcb). Anyway the circuit was originally designed with analog 5 (used as digital pin 19) being used for data and digital 5 used for power. While reading about using analog inputs as digital pins I came across this note on the arduino site:<br /><br /><i>The Atmega datasheet also cautions against switching analog pins in<br />close temporal proximity to making A/D readings (analogRead) on other<br />analog pins. This can cause electrical noise and introduce jitter in<br />the analog system. It may be desirable, after manipulating analog pins<br />(in digital mode), to add a short delay before using analogRead() to<br />read other analog pins.</i><br /><br />It turns out one can just switch the atmega pins used around so analog 5 (digital 19) is used for power and digital 5 is used for the data which will be higher frequency switching and so good to bring that off the analog pin. As power switching is only needed in battery operation one could make a temperature measurement after the analog read section just before putting the emontx to sleep which should not cause interference.<br /><br /><b>Update (15/06/13): On future emonTx V3 PCB revisions 3.x ADC 5 (Dig 19) and Dig5 have been swapped round on the PCB to fix this issue. Dig 5 is now DS18B20 one-wire signal and ADC5 (Dig19) is now DS18B20 power.</b><br /><b><br /></b><b>If no DS18B20 temperature sensor is connected the ports can be used for other functions. ADC 5 can be used as a analogue input/output and Dig 5 (with R27/R24 4.7K pull up removed) can be used as a general Digital I/O with PWM&nbsp;capabilities.&nbsp;</b><br /><b><br /></b><b>The DS18B20 data 4.7K pull-up resistor on Dig 5 and the Dig 2 IRQ 10K pull-down resistor have been designed to take a thru-hole resistor if the SMT resistor was removed to make it possible to change the value of these resistors.&nbsp;</b>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/17/open-source-hardware-users-group-oshug/">Open Source Hardware Users Group (OSHUG) #26 Meetup </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-17T07:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/presentation/'>presentation</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/17/open-source-hardware-users-group-oshug/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Last night I attended<a href="http://oshug.org/event/26"> OSHUG event #26</a>&nbsp;in London and gave a short talk on Low Power Wireless sensors as well as the brief overview of the OpenMonitorProject and a quick look at what we've been working on recently.<br /><br />There are a couple of new screenshots in the presentation from the open-source <a href="http://emoncms.org/sap/introduction">SAP building&nbsp;modelling&nbsp;emoncms module</a> that Trystan is been working in with Manchester&nbsp;<a href="http://twitter.com/CarbonCoop">@CarbonCoop</a>&nbsp;recently. This is an exciting bit of development. The idea is that the building model could be matched up to the monitoring results (temperature profile &amp; heat input) of a building, the model could then be used to investigate the effect of undertaking improvement measures such as wall, loft insulation or external&nbsp;cladding&nbsp;etc.. Finally after&nbsp;completion&nbsp;of improvement measures the monitoring data can again be used to evaluate the actual performance of the improvement measures.<br /><br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" mozallowfullscreen="" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/21307459" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" webkitallowfullscreen="" width="427"> </iframe><br /><div style="margin-bottom: 5px;"><strong> <a href="http://www.slideshare.net/OpenEnergyMonitor/osug-26-low-power-wireless-sensors" target="_blank" title="Osug #26 low power wireless sensors">Osug #26 low power wireless sensors</a> </strong> from <strong><a href="http://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> <br /><br />It was great to meet everyone and put faces to (twitter) names! Big thanks to Andrew Back&nbsp;<a href="https://twitter.com/9600">@9600</a>&nbsp;for organising the event and&nbsp;<a href="https://twitter.com/skpang_uk">@skpang_uk</a>&nbsp;for&nbsp;sponsoring the event...and buying me a beer afterwards!&nbsp;&nbsp;</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/13/one-year-of-solar-pv-monitoring/">One Year of Solar PV Monitoring</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-13T20:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/benchmarking/'>benchmarking</a></li>
+      
+        <li><a class='category' href='/categories/renewable/'>renewable</a></li>
+      
+        <li><a class='category' href='/categories/solarpv/'>solarPV</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/13/one-year-of-solar-pv-monitoring/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">On the 23rd November 2011 we have had a 2.9Kwp solar PV installed.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s1600/Panels.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="177" src="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s320/Panels.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">We recently got our first payment from the<a href="http://www.fitariffs.co.uk/eligible/levels/">&nbsp;UK's&nbsp;governments&nbsp;Feed In Tariff</a>&nbsp;scheme.&nbsp;This has prompted me to take stock of how the system has been performing and how the data collected using the OpenEnergyMonitor energy monitoring system compares to the utility&nbsp;company's&nbsp;billing meter:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both;">From the 23rd Nov 2011 - 23rd Nov 2012 the billing utility meter on the solar PV system has recorded a &nbsp;<b>generation of 2069 kWh</b>. Over the same period we consumed 3588&nbsp;Kwh, <b>57% of our electrical energy needs have been met by the solar PV.&nbsp;</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">At this rate it looks like we're on track for the system to pay back in 7-8 years, maybe even less if we have some more sun in the next few years, fingers crossed!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For the same time period the OpenEnergyMonitor monitoring system has recorded a generation of 2029 kWh, giving the <b>energy monitor an accuracy of 98%!&nbsp;</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The monitoring system is a standard&nbsp;<a href="http://shop.openenergymonitor.com/solar-pv-monitor-kit-bundle-433mhz-euro-plug/">emonTx with an AC-AC adapter taking Real Power readings</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-BSjVQR4ViYY/UZFElq6OGdI/AAAAAAAAeow/VV4iTj7-PmI/s1600/Selection_014.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://1.bp.blogspot.com/-BSjVQR4ViYY/UZFElq6OGdI/AAAAAAAAeow/VV4iTj7-PmI/s640/Selection_014.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">One Year of PV Generation</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-aBI-v-iDQ9Q/UZHtMP1ludI/AAAAAAAAepM/zz59PUGZ0lE/s1600/Selection_015.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="228" src="http://2.bp.blogspot.com/-aBI-v-iDQ9Q/UZHtMP1ludI/AAAAAAAAepM/zz59PUGZ0lE/s640/Selection_015.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Kwh/d Electricity Consumption (orange) Overlaid&nbsp;with Generation (blue)&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">When the system was installed the solar PV company&nbsp;estimated&nbsp;we would produce&nbsp;2434 Kwh per year, we generated 15% less than this estimate. This could partly be&nbsp;attributed&nbsp;to the very poor summer we&nbsp;experienced&nbsp;in 2012.</div><div><span style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 13px;"><br /></span></div><div class="separator" style="clear: both; text-align: left;">This year is already looking promising, on the 2nd of May 2013 our system generated a record (for us) of 18.3 Kwh 1.9 times more than we consumed on that day (9.7 Kwh):</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-XTd1UQbWGI4/UZEv6lkOiTI/AAAAAAAAeoU/EFmdCDAIG9I/s1600/New+PV+record+2nd+May+2013.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://4.bp.blogspot.com/-XTd1UQbWGI4/UZEv6lkOiTI/AAAAAAAAeoU/EFmdCDAIG9I/s640/New+PV+record+2nd+May+2013.png" width="451" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Record Generation on 2nd May 2013</td></tr></tbody></table>Fingers&nbsp;crossed&nbsp;for a sunny 2013 summer!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/05/03/carbon-coop/">Carbon Coop</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-03T15:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/course-slash-workshop/'>Course/Workshop</a></li>
+      
+        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/05/03/carbon-coop/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The weekend before last I went to Manchester to help Matt Fawcett and Jonathan Atkinson of Carbon coop with the&nbsp;<a href="http://carbon.coop/news/2013-04-03/ecohome-lab-launch-workshop-build-day-first-meet">EcoHome_Lab</a> openenergymonitor energy monitor building workshop. I haven’t blogged about Carbon Co-op before so Id like to give a bit of an intro to who they are and why I think what they are doing is particularly exiting.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s1600/2013-04-26+12.56.04.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="188" src="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s640/2013-04-26+12.56.04.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://carbon.coop/">http://carbon.coop</a></td></tr></tbody></table>I first met <a href="http://openenergymonitor.org/emon/user/1510">Matt</a> who is&nbsp;responsible for the monitoring&nbsp;at Carbon Coop at a <a href="http://www.cleanweb.org.uk/">Cleanwebuk</a> event in London after initially exchanging a few emails. Matt explained that they are working on a retrofit programme to try to prove that it is possible to cut between 60-80% of energy demand from homes because this is what we need to save.<br /><div><div><br />They want monitoring to be at the centre of everything they do, so that their members can see how minor changes impact energy usage as well as more major retrofit changes. They also want to monitor internal air quality as well as temperature for early identification of any problems with the insulation and airtightness measures. By monitoring humidity, CO2 as well as temperature Matt explained that its possible to isolate issues around damp/cooking etc from issues around ventilation.<br /><br />They are really keen to use open source technology because that then gives them the freedom to configure the system as they need and then get at the data. They are keen advocates for open data and open source software and hardware in general and carry out their own work in an open way.<br /><br />Since then Carbon Coop have installed 18 openenergymonitor energy monitors in houses across Manchester, held two energy monitor workshops including last weekends and are going forward with retrofitting 15 houses to between 60 and 80% carbon reduction.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s1600/2013-04-20+14.25.30.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: center;"><img border="0" height="180" src="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s640/2013-04-20+14.25.30.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Building monitors at the Carbon Coop EcoHomeLab workshop 19th-20th April&nbsp;</td></tr></tbody></table>What I really like about Carbon Coop is the way they are working on every part of the process: They start with the larger picture of what we need to do in terms of sustainable energy in housing and then go from there to work on an individual household basis, first carrying out a detailed whole house assessment based on the governments SAP (standard assessment procedure) to identify where most energy is being lost, which improvements would have the biggest effect and what to do first. They’re using the energy monitoring to provide feedback to households as described above. From there they go on to help households carry out work on their houses, from finding the best way to finance retrofit measures to working with architects and local tradespeople. Once the retrofit building works are complete they continue to monitor to ensure that the changes reach the predicted energy targets. They do all this using an open source approach, they are also a co-operative that is open for people to join. They are a really switched on group of people, carrying out their work in a thorough, thoughtful, evidence based way.<br /><br />Every-time I go to visit them I come back inspired to develop things further. One of the highlights of the last visit was listening to Eleni Kalkantzi who works for URBED (Carbon Coop's technical partner) talk about the whole house assessment methodology and reports she, Charlie Baker and Marianne Heaslip have developed. A huge amount of work has clearly gone into these reports and the assessment method, they have an example report and report on the assessment method here:<br /><br />See their example assessment here: <a href="http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf">http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf</a><br /><br />Report on the assessment method: <a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf</a><br /><br />They see the next step being to integrate monitoring data directly in to the SAP model on which their reporting is based to reduce the number of assumptions made. This is where the <a href="http://github.com/emoncms/sap">open source emoncms SAP model</a>&nbsp;that we have been developing comes in but I will come back to that in another post.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/17">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/15">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

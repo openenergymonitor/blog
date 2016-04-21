@@ -1,0 +1,769 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/31/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/31/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/07/31/nuelectronics-ethernet-shield-simple/">Nuelectronics ethernet shield simple client library</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-07-31T19:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/07/31/nuelectronics-ethernet-shield-simple/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Just put together a simple client library for the nuelectronics ethernet shield and a couple of examples including sending data to pachube, it can all be found here:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/80">http://openenergymonitor.org/emon/node/80</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/07/30/reading-from-pulse-output-kwh-meters/">Reading from pulse output kWh meters</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-07-30T11:15:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/07/30/reading-from-pulse-output-kwh-meters/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    A new guide on reading power and energy from pulse output kWh meters:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/79">http://openenergymonitor.org/emon/node/79</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/07/23/alan-meanys-ambient-knowledge/">Alan Meany's Ambient Knowledge</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-07-23T11:43:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/07/23/alan-meanys-ambient-knowledge/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Check out Alan Meany's <a href="http://www.alanmeany.net/ambientknowledge.html">Ambient Knowledge</a> energy monitor project using the non-invasive Mains AC method, its a really nice idea, from Alan's website:</div><div><i><blockquote>"Ambient Knowledge is a lamp that glows different colours to display the current consumption in your home. Ambient Knowledge is an Ambient Energy Information Display that provides you with energy information in a visually pleasing, easily accessible convenient, glancable manner. At a quick glance AmbientKnowledge will make you aware of how much energy your house is consuming in a subtle simple approach, with minimal effort needed."</blockquote></i></div><a href="javascript:void(0)"></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TEmBJSb3ZYI/AAAAAAAAB6I/oCiM5fGJo9A/s1600/AmbientKnowledgePage.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 354px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TEmBJSb3ZYI/AAAAAAAAB6I/oCiM5fGJo9A/s400/AmbientKnowledgePage.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5497066816749921666" /></a>Alan will be exhibiting Ambient Knowledge a<span><span>t <a href="http://www.aec.at/festival_about_en.php">Ars Electronica 2010</a> in Linz, Austria 2nd - 11th of September.</span></span><div><span><span><br /></span></span></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/06/30/project-update/">Project Update</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-06-30T19:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Suneil Tagore</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/06/30/project-update/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    This is a joint blog post from Suneil Tagore and Trystan Lea. Last week we met up in North Wales and spent a good part of the week looking at the next step for the openenergymonitor project. We thought about: How it could be organised and described better. How it could be made more useful for other participants/users/developers, and how it could better reflect our ideas for the project and also our activities using the technology.<br /><br />One of the main aspects that we would like to expand on is the idea of modularity.<br /><br />Lets say you build a solar hot water controller, the solar hot water controller has the Arduino microcontroller platform at its heart, 1 of the 6 analog inputs and 2 of the 14 digital channels is used for the 3 multiplexed RTD temperature sensors. 1 other digital channel is used for the pump control. That leaves 5 analog channels spare and 11 digital channels. The cost so far has been £20 for the Arduino and between £5-8 for the temperature sensor electronics and pump control. For another £12: the price of a couple of resistors, capacitors a CT sensor and AC-AC adapter: mains AC energy monitoring can be added using only 2 more analog inputs. The mains AC energy monitor and the solar hot water controller share the same arduino and can also share for example an LCD and ethernet connection. This ability to share resources enabled by such a modular system can ultimately yield significant overall benefits in terms of energy efficiency, material efficiency, cost reduction, convenience and usability compared with having a separate device for each energy monitoring and control application.<br /><br />To make this possible one of the main tasks will be deciding on documentation standards so that each bit of documentation can fit together with the other bits, this will need a bit of thought and work.<br /><br />Another important element of making modularisation easy to work with will be developing Arduino libraries for the modules so that the software side is straightforward to program and also possibly investigating standardized connections between modules.<br /><br />To start with we thought it might be best to divide the modules into types:<br /><br /><span style="font-weight: bold;">Input modules</span><br /><br />Modules for measuring things, for example: Electricity, Heat, light, wind, fluid flow, etc<br /><br /><span style="font-weight: bold;">Actuator modules</span><br /><br />Modules for controlling things, for example electric pumps or dump loads.<br /><br /><span style="font-weight: bold;">Data Modules</span><br /><br />Displays, Computer and Internet based graphing<br /><br />Each module would have a description of what it is and how it works, a list of parts - including possible suppliers, circuit design (if applicable), and a section on how to connect it to an Arduino including details on software and calibration (if applicable).<br /><br />The next part to the documentation is the builds section: how to bring more than one module together to do something more useful and interesting like a solar hot water controller or a solar hot water controller / energy monitor combo.<br /><br />After that is case studies. Which brings us on to another important topic. As well as developing this technology we hope to use it in our own homes and also look into how we can use it as a part of a service that we could offer, at the moment one idea in its early stages is to explore offering an energy auditing ,renewable energy feasibility and renewable energy installation service in our local areas. Suneil is just in the middle of his first solar PV installation and is developing a solar monitoring unit for the installation. Both of us taught a wind turbine making course at Atlantic college in south wales this year, and as a part of that we will be installing wind turbine monitoring. The case studies section will document the use of the openenergymonitor project in projects like these. One of the aspects of this is that as we experiment with making a living we hope to help other do the same.<br /><br />Last but very much not least: the updated website has a section on local manufacturing. One of the main things we would like to explore as a part of this project is the idea of local manufacturing: Being able to make the things we want and need either in our own homes or in labs/workshops and small businesses in our local communities. This is a really exciting idea and emerging possibility that was a large part of the inspiration to do this project.<br /><br />To learn more about local manufacturing also often called decentralised manufacturing or desktop fabrication have a look at the following projects that are pionnering the idea: RepRap the project to build an open source 3D printer and MIT FabLab’s; 100kgarages; a book by Kevin Karson and more resources on p2pfoundation manufacturing page.<br /><br />So over the next few weeks there shall be changes a foot on the website as we attempt to organise it along the lines of what we have described above and the project starts to move more along this direction.<br /><br />We would like to thank Ken Boak who has helped us refine the ideas above, especially those on modularity. Ken Boak is very knowledgeable energy monitoring and sustainable technologies enthusiast, and documents many of his findings on his blog <a href="http://sustburbia.blogspot.com/">sustainable suburbia.</a><br /><br />Please feel free to join in and share your thoughts and ideas on this project. The scope for developing new applications and real world case studies/installations is limitless; posting your findings here is most welcome in this collaborative project. Hope to hear from you soon!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/06/14/solar-hot-water-controller/">Solar hot water controller</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-06-14T12:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/06/14/solar-hot-water-controller/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TSwojgZXHsI/AAAAAAAACFE/AdaHM5VVMNQ/s1600/SHW.png"></a><div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/TBZKD7-C-0I/AAAAAAAAB4g/RC3K7jonOlU/s1600/hotwatergraph.png"></a><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/TBZGa4YJ4bI/AAAAAAAAB4U/ipnbvXZ87bI/s1600/DSCF0014.JPG"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/TBZGa4YJ4bI/AAAAAAAAB4U/ipnbvXZ87bI/s320/DSCF0014.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5482647023994397106" /></a><div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div>Well its been a while since I last updated, I managed to get some time over the last month to build a solar hot water controller for the navitron evacuated tube system we have installed here on our house, its been a project I wanted to do for a while. I've documented version 1.0 of the design here:</div><div><br /></div><div><a href="http://openenergymonitor.org/emon/solarhotwater">Solar hot water controller v2.0</a></div><div><br /></div></div><div>Apart from the usefulness of being able to log data from the solar hot water controller I'm interested in looking at combining data from the solar hot water controller with data from the energy monitor. It would be interesting to see if its possible to calculate accurately how much immersion heating is displaced by the solar hot water system as well as how well the system is working compared with its expected output.</div><div><br /></div><div>Here is a graph of the different system temperatures plotted with flot</div><div><br /></div><div><span class="Apple-style-span"  style=" color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; font-size:15.8333px;"><img src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TSwojgZXHsI/AAAAAAAACFE/AdaHM5VVMNQ/s200/SHW.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5560864230352559810" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 240px; height: 134px; " /></span></div><div><span class="Apple-style-span"  style=" color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; font-size:15.8333px;"><br /></span></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/04/29/all-power-labs/">All Power Labs</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-04-29T15:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/04/29/all-power-labs/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <span class="Apple-style-span" style="color: rgb(0, 0, 0); -webkit-text-decorations-in-effect: none; ">A couple of weeks ago I visited </span><a href="http://www.allpowerlabs.org/">All Power Labs</a> over in Berkeley CA on the recommendation of<a href="http://sustburbia.blogspot.com/"> Ken Boak</a> who went over there for a workshop in March. All power labs are:<br /><div><br /></div><div><i>“..an incubator for open source energy experiments and distributed manufacturing solutions. We work to generate physical tools and information resources for people exploring alterative energy through DIY innovation and online collaboration. We believe that a bottom up, participatory ecology in energy is just as possible as it has been in computing. And we expect the impact of such creative self-determination will be no less transforming than its been in digital realms.”</i></div><div><br /></div><div>Their current main project is called the <a href="http://www.gekgasifier.com/">GEK gasifier</a>, (Gasifiers Experimenters Kit). The GEK gasifier converts biomass (woodchip etc) into wood gas, this gas can then be run in a car or burned for heating or used to generate electricity by running a gas turbine (they have a gas turbine!)+ generator or internal combustion engine + generator. The gasifier+engine+generator combination is called the Power pallet and can produce 10kW. </div><div><br /></div><div>Bear Kaufmann who is investigating the performance of the system was looking for energy monitoring equipment and so Mario and I went over to see the operation and work with Bear on getting some energy monitoring working.</div><div><br /></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muSYZND8I/AAAAAAAAB2w/cQ4wqUUxsZc/s1600/DSCF8435.JPG"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muSYZND8I/AAAAAAAAB2w/cQ4wqUUxsZc/s400/DSCF8435.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5465591253599850434" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 300px; " /></a></div><div><br /></div><div>The generator they are using is a single phase 3-wire generator that is effectively the same configuration as household electrical wiring in the states. The energy monitoring setup therefore consisted of 2 CT sensors for current measurement: one for each leg a step down transformer for voltage measurement.</div><div><br /></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muiFxmL-I/AAAAAAAAB24/3a6HKIwdaqk/s1600/DSCF8448.JPG"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muiFxmL-I/AAAAAAAAB24/3a6HKIwdaqk/s400/DSCF8448.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5465591523479793634" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 300px; " /></a></div><div><br /></div><div>The power pallet has a<a href="http://gekgasifier.pbworks.com/Gasifier-Control-Unit"> gasifier control unit (GCU) </a>which is based on the Atmel ATmega 1280 which is used in the Arduino Mega and so the unit is compatible with and uses the Arduino IDE for programming. The GCU has a lot of things happening on it: it monitors temperatures and pressures and controls things like flow to keep the gasifier working efficiently, there are critical servo updates that happen about every 20ms and so the main challenge of the visit was to try to fit the energy monitoring on to the GCU, to fit the real power, apparent power, powerfactor, vrms, irms sampling and calculation into those 20ms time slots. Up until now I have usually had the arduino dedicate around a second to make these measurements and so the question was could we squash the energy monitoring down and still get accurate results. Luckily we found we could do this, by taking one wavelength long samples and then averaging around 10 of these one wavelength samples to get a more stable result and so now the power output and efficiency of the power pallet can be tested with out a lot of extra equipment just a couple of sensors, resistors and capacitors connected to the GCU.</div><div><br /></div><div>Here's a test output with different loads:</div><div><span class="Apple-style-span"  style="color:#0000EE;"><u><span class="Apple-style-span"  style="color:#000000;"><br /></span></u></span></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9mvgW35WQI/AAAAAAAAB3A/OOPQ572zGAE/s1600/realpower_test_20100419-500.jpg"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9mvgW35WQI/AAAAAAAAB3A/OOPQ572zGAE/s400/realpower_test_20100419-500.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5465592593221507330" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 87px; " /></a></div><div><br /></div><div>For more information have a look at Bear's post and write up here: <a href="http://gekgasifier.com/forums/showthread.php?p=1295#post1295">http://gekgasifier.com/forums/showthread.php?p=1295#post1295</a></div><br /><br />I will also try to upload the code for single phase 3-wire and the one wavelength sampling soon as I get a chance.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/04/11/arduinocomm-code-simplified/">ArduinoComm code simplified</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-04-11T18:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/04/11/arduinocomm-code-simplified/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    No need to have those A B C D E .. identifiers any more. More info and new version: <a href="http://openenergymonitor.org/emon/arduinocomm">http://openenergymonitor.org/emon/arduinocomm</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/04/07/mains-ac-non-invasive-version-30-up/">Mains AC: non-invasive version 3.0 up</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-04-07T23:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/04/07/mains-ac-non-invasive-version-30-up/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S70PwUwYvDI/AAAAAAAABqo/n8mTr0jT6bA/s1600/vibasic.JPG"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S70PwUwYvDI/AAAAAAAABqo/n8mTr0jT6bA/s400/vibasic.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5457535646322703410" /></a><div style="text-align: left;"><span class="Apple-style-span"  style="color:#0000EE;"><u><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></u></span></div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">The documentation for version 3 of the Mains AC: non-invasive energy monitor is up. It can be found here:</span></span><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></div><div><a href="http://openenergymonitor.org/emon/node/56"><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Mains AC: non-invasive version 3.0</span></span></a></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">The main changes are:</span></span></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></div><div><span class="Apple-style-span" style="  border-collapse: collapse; line-height: 17px; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; "><p style="margin-top: 0.5em; margin-bottom: 0.9em; "><strong><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Electronics</span></span></strong></p><ul><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">2x 10uF bias stabilizing capacitors added significantly improving accuracy: </span><a href="http://openenergymonitor.blogspot.com/2010/03/reducing-noise-adding-capacitor.html"><span class="Apple-style-span" style="font-size: small;">more info</span></a></span></li><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Changed Voltage measurement circuit</span></span></li><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Power for arduino comes from a seperate transformer to AC voltage measurement transformer. </span></span></li></ul><p style="margin-top: 0.5em; margin-bottom: 0.9em; "><strong><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Software</span></span></strong></p><ul><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Arduino sketch rewrite, sketch now follows </span><a href="http://www.atmel.com/dyn/resources/prod_documents/doc2566.pdf"><span class="Apple-style-span" style="font-size: small;">Atmel's AVR 465 app note</span></a><span class="Apple-style-span" style="font-size: small;"> </span></span><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">method, adding:</span></span><ul><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Phase calibration</span></span></li><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Digital high pass filter to remove offset.</span></span></li></ul></li></ul><p style="margin-top: 0.5em; margin-bottom: 0.9em; "><strong><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Other</span></span></strong></p><ul><li><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">Much simplified calibration</span></span></li></ul><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">There is also new more detailed documentation with this version, including separate pages on:</span></span></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></div><div><li><a href="http://openenergymonitor.org/emon/node/58"><span class="Apple-style-span" style="font-size: small;">How to build it</span></a></li><li><a href="http://openenergymonitor.org/emon/node/60"><span class="Apple-style-span" style="font-size: small;">Accuracy</span></a></li><li><a href="http://openenergymonitor.org/emon/node/59"><span class="Apple-style-span" style="font-size: small;">Detailed system design</span></a></li><li><a href="http://openenergymonitor.org/emon/node/61"><span class="Apple-style-span" style="font-size: small;">AC Power Theory 1</span></a></li><li><a href="http://openenergymonitor.org/emon/node/62"><span class="Apple-style-span" style="font-size: small;">AC Power Theory 2</span></a></li><li><a href="http://openenergymonitor.org/emon/node/63"><span class="Apple-style-span" style="font-size: small;">Household wiring</span></a></li><li><a href="http://openenergymonitor.org/emon/node/64"><span class="Apple-style-span" style="font-size: small;">Further development questions</span></a></li></div></span></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;"><br /></span></span></div><div><span class="Apple-style-span"  style="font-family:georgia;"><span class="Apple-style-span" style="font-size: small;">I've also done a bit of re-arranging of the documentation layout, trying to make the website a little easier to navigate, if you have any suggestions on this they would be very welcome.</span></span></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/04/07/mission-science-workshop-project/">Mission Science Workshop Project</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-04-07T00:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/04/07/mission-science-workshop-project/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S7wlMVbCmQI/AAAAAAAABqU/UUFbYMrfFfE/s1600/DSCF8397.JPG"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S7wlMVbCmQI/AAAAAAAABqU/UUFbYMrfFfE/s400/DSCF8397.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5457277742305417474" /></a><div><br /></div>I'm currently in San Francisco :) I'm here helping an organisation called Mission Science Workshop, who are interested in developing a course based on the energy monitor for high schools. The idea is to use the arduino and computer based graphing/logging as a platform to make scientific measurements of things like: voltage, current, power, energy, temperature, light, etc, that can be used in workshops to make it possible to see useful, interesting phenomenon and demonstrate the use of computers in science. Mission Science Workshop teach science in a very hands on, experiential way, trying to keep kids curiosity alive and sparking their interest in science. Have a look at their website here:<div><div><div><br /></div><div><a href="http://www.missionscienceworkshop.org/">http://www.missionscienceworkshop.org/</a></div><div><br /></div><div>I'm working with Mario Landau Holdsworth from mission science on the project, he teaches at Mission Science and has a keen interest in Arduino's, energy monitoring, electric cars, mycelia and teaching science in a fun way. He has been very kind to sort out the whole visit.</div><div><br /></div><div>As a part of the mission science project I gave a short workshop on the energy monitor last Friday. For the workshop I did a bit more work on the energy monitor design and tried to improve the documentation a bit, creating a printable energy monitor guide. I'm going to upload these to the main website today, but here are the printable pdf's for the mean time:</div></div></div><div><ul><li><a href="http://openenergymonitor.org/emon/sites/default/files/HowToBuild.pdf">How to make a basic energy monitor</a></li><li><a href="http://openenergymonitor.org/emon/sites/default/files/HowToBuild.pdf"></a><a href="http://openenergymonitor.org/emon/sites/default/files/DetailedSystemDesign.pdf">Detailed System Design</a></li><li><a href="http://openenergymonitor.org/emon/sites/default/files/Accuracy.pdf">Accuracy</a></li><li><a href="http://openenergymonitor.org/emon/sites/default/files/ACPowerTheory1.pdf">AC Power Theory 1</a></li><li><a href="http://openenergymonitor.org/emon/sites/default/files/ACPowerTheory2.pdf">AC Power Theory 2</a></li><li><a href="http://openenergymonitor.org/emon/sites/default/files/HouseholdWiring.pdf">Household wiring</a></li></ul><div>I'm in the San Francisco area until the end of the month, working on the project and going hiking around marin county and hopefully Yosemite, if your in the area, Mario and I will be down at Mission Science building things so let us know if you'd like to come and have a look.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2010/03/18/maker-faire-how-to-build-energy-monitor/">Maker Faire, How to build an energy monitor guide</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-03-18T11:10:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2010/03/18/maker-faire-how-to-build-energy-monitor/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I put together a printable how to build an energy monitor guide for the maker faire last weekend. Its a current measurement only energy monitor with breadboard assembly instructions and instructions on how to add a nokia 3310 LCD screen. To read about it have a look here:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/54">How to make a simple energy monitor</a></div><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S6ILLELBkvI/AAAAAAAABlI/Ctl8l3IIuwk/s1600-h/SetupPic.JPG"></a><div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S6ILLELBkvI/AAAAAAAABlI/Ctl8l3IIuwk/s1600-h/SetupPic.JPG"><br /><img style="text-align: left;display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; cursor: pointer; width: 400px; height: 300px; " src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S6ILLELBkvI/AAAAAAAABlI/Ctl8l3IIuwk/s400/SetupPic.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5449930783798170354" /></a></div><div><br /></div><div>The <a href="http://www.nuelectronics.com/estore/index.php?main_page=product_info&amp;cPath=1&amp;products_id=12&amp;zenid=ad69b88790127de7406a7eab9d1539ed">nokia 3310 LCD screen from nuelectronics</a> is really nice.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/32">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/30">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

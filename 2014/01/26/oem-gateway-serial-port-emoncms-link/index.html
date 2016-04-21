@@ -1,0 +1,222 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OEM Gateway: Serial Port > Emoncms Link  - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2014/01/26/oem-gateway-serial-port-emoncms-link/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="OEM Gateway: Serial Port > Emoncms Link ">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2014/01/26/oem-gateway-serial-port-emoncms-link/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="OEM Gateway: Serial Port > Emoncms Link ">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">OEM Gateway: Serial Port > Emoncms Link </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-26T19:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  In the past we have recommended our simple <a href="https://github.com/openenergymonitor/EmoncmsPythonLink">EmoncmsPythonLink</a> to post data to emoncms which is received on a serial port (this could be an Arduino or USB device such a JeeLink plugged into a Raspberry Pi).<br><br>The <a href="https://github.com/Jerome-github/oem_gateway">OEM Gateway</a> by Jerome that we use extensively on the Raspberrry Pi to post data received by the <a href="http://shop.openenergymonitor.com/base-stations/">RFM12Pi</a> to emoncms can also (easily) be used to post data received an a serial port to emoncms. Using the OEM Gateay to do this rather than the Emoncms Python Link is a much more robust solution with better error logging.<br><br>I have recently setup a Raspberry Pi with an Arduino connected to receive RF data from my<a href="http://emoncms.org/beehive/live"> honey bee hive temperature monitor</a> and post to emoncms. I found using the OEM gateway in conjunction with <a href="http://openenergymonitor.blogspot.co.uk/2013/12/developing-for-arduino-remotely-on.html">ino to compile and upload code for the Arduino</a> remotely over ssh directly on the Raspberry Pi to be invaluable for remote bug fixing.<br><br>Here's how to use the OEM Gateway to post data to a local or remote emoncms from data received on a serial port:<br><br><b>1. Fist setup the Arduino / JeeLink &nbsp;to write to the serial port using Serial.print() in the following format&nbsp;</b><br><br>NodeID val1 val2<br>NodeID val1 val2<br><br>Example for temperature and relative humidity fluctuating around 19°C and 60% posting as node 11<br><br>11 19.2 60.1<br>11 19.5 60.0<br>11 19.3 60.4<br>(No restriction on number size and decimal part.)<br><br><b>2. Follow the&nbsp;excellent&nbsp;instruction on Jerome's Github for how to setup the OEM gateway&nbsp;</b><br><br>https://github.com/Jerome-github/oem_gateway<br><br><br><b>3. Rename the oemgateway.conf file and edit it as follows adding in your USB port and API keys for local or remote emoncms or both</b>.<br><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;"># Gateway settings #</span></i><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;">[gateway]</span></i><br><i><span style="font-size: x-small;"># loglevel must be one of DEBUG, INFO, WARNING, ERROR, and CRITICAL</span></i><br><i><span style="font-size: x-small;"># see here : http://docs.python.org/2/library/logging.html</span></i><br><i><span style="font-size: x-small;">loglevel = DEBUG</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;"># Listeners #</span></i><br><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;">[listeners]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># This listener manages the serail</span></i><br><i><span style="font-size: x-small;">[[Serial]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewaySerialListener</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; com_port = /dev/ttyUSB0</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;"># Buffers #</span></i><br><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;">[buffers]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># The two following buffers instantiate the same class,&nbsp;</span></i><br><i><span style="font-size: x-small;"># that formats the data for an emoncms instance.</span></i><br><i><span style="font-size: x-small;"># One sends the data to a local instance, the other one</span></i><br><i><span style="font-size: x-small;"># to a distant one.</span></i><br><i><span style="font-size: x-small;"># If active is set to False, the buffer neither records nor sends any data,</span></i><br><i><span style="font-size: x-small;"># but it holds unsent data until active becomes True.</span></i><br><i><span style="font-size: x-small;">[[emoncms_local]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = localhost</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey =xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = False</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path = /emoncms</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">[[emoncms_remote]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = emoncms.org</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = True</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path =&nbsp;</span></i><br><br><br><b>4. Start the gateway with instruction to use the config from the config file&nbsp;</b><br><br><i>$ ./oemgateway --config-file oemgateway.conf</i><br><br><br>The instructions on Jerome's Github can be followed to set the oemgateway script to run as a deamon service automatically at startup if required.
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+  
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: diy drones | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/diy-drones/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-21T23:25:44+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A few tips from DIY Drones]]></title>
+    <link href="http://blog.openenergymonitor.org/2011/02/06/few-tips-from-diy-drones/"/>
+    <updated>2011-02-06T20:48:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2011/02/06/few-tips-from-diy-drones</id>
+    <content type="html"><![CDATA[<div style="text-align: justify;">
+  <p>I visit regulary <a href="http://diydrones.com/">DIY Drones</a>, and two posts lately captured my attention because they are directly related to our project:&lt;/div&gt;&lt;div style="text-align: justify;"&gt;
+<br />&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li style="text-align: justify;"&gt;<a href="http://diydrones.com/profiles/blogs/announcing-dronepediacom-wiki">Dronepedia</a>: The first issue is the necessity of having a well done wiki for any Open Source project. A solid wiki would spare users a lot of time and many replicated discussions. I think it is time for the Open Energy Monitor to have a solid wiki, and the team here agrees on it. I guess we will roll it very soon. Needless to say, help is much appreciated.
+<br />
+<br />&lt;/li&gt;&lt;li style="text-align: justify;"&gt;<a href="http://diydrones.com/profiles/blogs/the-paradox-of-diy-electronics?id=705844:BlogPost:270952&amp;page=2#comments">DIY electronics warranties:</a> A serious issue for the DIY movement businesses, and small electronics makers in general. Where does your liability stop, and where does users responsibility begin? As Anderson puts it in his post, it varies from one company to another, while they are committed to delivering a minimum level of customer and technical support, other companies estimate that starting the moment where you power the components on, their liability stops. It is quite paradoxal indeed. I invite you to read the linked post ans share with us your opinions in the comments&lt;/li&gt;&lt;/ol&gt;&lt;div style="text-align: justify;"&gt;<meta charset="utf-8" /><a href="http://www.adafruit.com/adablog/wp-content/uploads/2010/10/robotspodcast-diy-drones.jpg"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2010/10/robotspodcast-diy-drones.jpg" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 500px; height: 320px; " /></a>&lt;/div&gt;&lt;/div&gt;&lt;div&gt;
+<br />&lt;/div&gt;</p>
+</div>
+]]></content>
+  </entry>
+  
+</feed>

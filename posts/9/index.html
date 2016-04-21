@@ -1,0 +1,887 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/posts/9/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Blog | OpenEnergyMonitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/posts/9/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Blog | OpenEnergyMonitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+            
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/03/03/emoncms-developments-and-calculating-wh/">Emoncms developments and calculating wh totals on the emontx</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-03-03T19:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/03/03/emoncms-developments-and-calculating-wh/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-gzVf4dhp7bQ/UxTcfjCJWBI/AAAAAAAAC38/7c0KCAjzomk/s1600/SAM_0408.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-gzVf4dhp7bQ/UxTcfjCJWBI/AAAAAAAAC38/7c0KCAjzomk/s1600/SAM_0408.JPG" height="300" width="400" /></a></div><br /><br />Rather than posting at length about development on the blog, I've posted what I've been working on recently on the forums, here are links to the posts:<br /><b><br />Development: Calculating Wh totals on the emontx</b><br /><a href="http://openenergymonitor.org/emon/node/3995">http://openenergymonitor.org/emon/node/3995 </a><br /><br /><b>Emoncms development </b><a href="http://openenergymonitor.org/emon/node/3868"><br />http://openenergymonitor.org/emon/node/3868</a><br /><br /><br /><br /><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/02/13/weve-made-local-newspaper/">We've made the local newspaper! </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-02-13T18:06:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/award/'>award</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/02/13/weve-made-local-newspaper/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    After receiving the <a href="http://openenergymonitor.blogspot.com/2014/01/we-won-daily-post-business-award-2013.html">Achievement Wales Daily Post Green Award</a> we recently got interviewed for the Daily Post newspaper. The resulting article gives a bit of background about how we started out complete with a nice 'cheesy' photo!<br /><br />Here's the article:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-bZ2_d3buaqo/UxwqNMFgK1I/AAAAAAAAvFE/sZej8LFComg/s1600/DailyPost.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-bZ2_d3buaqo/UxwqNMFgK1I/AAAAAAAAvFE/sZej8LFComg/s1600/DailyPost.jpg" height="640" width="496" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/02/04/pebble-smart-watch-emoncms-display/">Pebble Smart Watch Emoncms Display & Heating Control - Dev</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-02-04T08:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/pebble/'>pebble</a></li>
+      
+        <li><a class='category' href='/categories/smartwatch/'>smartwatch</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/02/04/pebble-smart-watch-emoncms-display/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Smart watches seem to be all the rave at the moment. They could potentially be a convenient way to check your power and temperature feeds, be notified of events and control your heating.<br /><br />Our friend Ryan Brooks (<a href="http://twitter.com/spikeheap">@spikeheap</a>) has been working on getting <a href="http://emoncms.org/">Emoncms</a> feeds to display on his Pebble Smart watch as well as making the fist steps towards controlling his <a href="http://ryanbrooks.co.uk/posts/2013-12-08-pi-powered-central-heating-phase-1/">RaspberryPi controlled heating</a> from his wrist.<br /><br />Take it away Ryan&gt;<br /><br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/Z_qfPJ3LNwQ" width="420"></iframe> <br /><br /><br />Ryan's code it all on GitHub if anyone fancies joining the fun. It would be great to get an Emoncms app in the in new Pebble app store. Even if it is just a simple as being able to display a single Emoncms feed this would be pretty cool.<br /><br /><a href="https://github.com/spikeheap/pebble-emoncms">https://github.com/spikeheap/pebble-emoncms</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/01/26/oem-gateway-serial-port-emoncms-link/">OEM Gateway: Serial Port > Emoncms Link </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-26T19:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/01/26/oem-gateway-serial-port-emoncms-link/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    In the past we have recommended our simple <a href="https://github.com/openenergymonitor/EmoncmsPythonLink">EmoncmsPythonLink</a> to post data to emoncms which is received on a serial port (this could be an Arduino or USB device such a JeeLink plugged into a Raspberry Pi).<br><br>The <a href="https://github.com/Jerome-github/oem_gateway">OEM Gateway</a> by Jerome that we use extensively on the Raspberrry Pi to post data received by the <a href="http://shop.openenergymonitor.com/base-stations/">RFM12Pi</a> to emoncms can also (easily) be used to post data received an a serial port to emoncms. Using the OEM Gateay to do this rather than the Emoncms Python Link is a much more robust solution with better error logging.<br><br>I have recently setup a Raspberry Pi with an Arduino connected to receive RF data from my<a href="http://emoncms.org/beehive/live"> honey bee hive temperature monitor</a> and post to emoncms. I found using the OEM gateway in conjunction with <a href="http://openenergymonitor.blogspot.co.uk/2013/12/developing-for-arduino-remotely-on.html">ino to compile and upload code for the Arduino</a> remotely over ssh directly on the Raspberry Pi to be invaluable for remote bug fixing.<br><br>Here's how to use the OEM Gateway to post data to a local or remote emoncms from data received on a serial port:<br><br><b>1. Fist setup the Arduino / JeeLink &nbsp;to write to the serial port using Serial.print() in the following format&nbsp;</b><br><br>NodeID val1 val2<br>NodeID val1 val2<br><br>Example for temperature and relative humidity fluctuating around 19°C and 60% posting as node 11<br><br>11 19.2 60.1<br>11 19.5 60.0<br>11 19.3 60.4<br>(No restriction on number size and decimal part.)<br><br><b>2. Follow the&nbsp;excellent&nbsp;instruction on Jerome's Github for how to setup the OEM gateway&nbsp;</b><br><br>https://github.com/Jerome-github/oem_gateway<br><br><br><b>3. Rename the oemgateway.conf file and edit it as follows adding in your USB port and API keys for local or remote emoncms or both</b>.<br><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;"># Gateway settings #</span></i><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;">[gateway]</span></i><br><i><span style="font-size: x-small;"># loglevel must be one of DEBUG, INFO, WARNING, ERROR, and CRITICAL</span></i><br><i><span style="font-size: x-small;"># see here : http://docs.python.org/2/library/logging.html</span></i><br><i><span style="font-size: x-small;">loglevel = DEBUG</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;"># Listeners #</span></i><br><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;">[listeners]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># This listener manages the serail</span></i><br><i><span style="font-size: x-small;">[[Serial]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewaySerialListener</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; com_port = /dev/ttyUSB0</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;"># Buffers #</span></i><br><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;">[buffers]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># The two following buffers instantiate the same class,&nbsp;</span></i><br><i><span style="font-size: x-small;"># that formats the data for an emoncms instance.</span></i><br><i><span style="font-size: x-small;"># One sends the data to a local instance, the other one</span></i><br><i><span style="font-size: x-small;"># to a distant one.</span></i><br><i><span style="font-size: x-small;"># If active is set to False, the buffer neither records nor sends any data,</span></i><br><i><span style="font-size: x-small;"># but it holds unsent data until active becomes True.</span></i><br><i><span style="font-size: x-small;">[[emoncms_local]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = localhost</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey =xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = False</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path = /emoncms</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">[[emoncms_remote]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = emoncms.org</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = True</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path =&nbsp;</span></i><br><br><br><b>4. Start the gateway with instruction to use the config from the config file&nbsp;</b><br><br><i>$ ./oemgateway --config-file oemgateway.conf</i><br><br><br>The instructions on Jerome's Github can be followed to set the oemgateway script to run as a deamon service automatically at startup if required.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/01/18/emonth-multiple-ds18b20-sensors/">emonTH Multiple DS18B20 Sensors</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-18T13:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/01/18/emonth-multiple-ds18b20-sensors/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Thanks to&nbsp;<a href="https://github.com/Dave-McCraw">Dave McCraw</a> it's now possible to connect multiple DS18B20 digital temperature sensors to the emonTH on the one-wire bus.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-ux4DUlS0uWw/Utp7RQ83b_I/AAAAAAAAss0/DRiLl_F13D8/s1600/2014-01-18+12.59.20.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-ux4DUlS0uWw/Utp7RQ83b_I/AAAAAAAAss0/DRiLl_F13D8/s1600/2014-01-18+12.59.20.jpg" height="240" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Two External DS18B20 temperature sensor +&nbsp;internal DHT22 temp&nbsp;+ humidity on emonTH</td></tr></tbody></table><br />Multiple DS18B20 sensors can be (optionally) used alongside an internal DHT22 temperature and humidity sensor. Dave's sketch which is now up in the <a href="https://github.com/openenergymonitor/emonTH">emonTH GitHub repo</a> supports two DS18B20 sensors but can easily be extended to include more.<br /><br />Dave's multiple sensor sketch requires the unique hardware addresses of the DS18B20 sensors hard-coded in the sketch, the '<a href="https://github.com/openenergymonitor/emonTH/tree/master/Simple%20emonTH%20Sensor%20Test/emonTH_temperature_search">emonTH temperature search</a>' utility sketch can be used to discover the addresses. &nbsp;Hardcoding the hardware addresses guarantees Emoncms inputs won't flip around if you replace or add sensors.<br /><br />The multiple DS18B20 sketch includes all the low power saving tricks, the sensors are only switch on when required and the ATMega328 goes to sleep in-between readings switching off all unnecessary functions. Obviously running more than one sensor will consume more power but I would still expect <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">battery life</a> to be in the region of 12 months.<br /><br />Using multiple DS18B20 external temperature sensors on the emonTH as lots of exciting possibilities, a few ideas include:<br /><br /><ul><li><a href="http://openenergymonitor.org/emon/applications/heatpump">Heatpump monitoring</a>: inlet, outlet flow temperatures etc.</li><li><a href="http://openenergymonitor.org/emon/applications/shw">Solar hotwater &amp; hot water cylinder monitoring</a>: top, middle and bottom of hot water tank</li><li><a href="http://openenergymonitor.org/emon/openbem">Building temperature investigation</a>: internal, cavity wall and external temperatures to inform openBEM (Building Energy Model)</li></ul><div><br /></div><div>emonTH Shop page:&nbsp;<a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">http://shop.openenergymonitor.com/emonth-temperature-humidity-node/</a></div><div>emonTH main getting started page:&nbsp;<a href="http://openenergymonitor.org/emon/modules/emonTH">http://openenergymonitor.org/emon/modules/emonTH</a></div><div>emonTH GitHub:&nbsp;<a href="https://github.com/openenergymonitor/emonTH">https://github.com/openenergymonitor/emonTH</a></div><div>emonTH technical wiki:&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=EmonTH">http://wiki.openenergymonitor.org/index.php?title=EmonTH</a></div><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/01/07/we-won-daily-post-business-award-2013/">We Won! Daily Post Business Award 2013 - Green Award Category </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-07T22:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/award/'>award</a></li>
+      
+        <li><a class='category' href='/categories/media/'>media</a></li>
+      
+        <li><a class='category' href='/categories/open-source/'>open source</a></li>
+      
+        <li><a class='category' href='/categories/openenergymonitor/'>openenergymonitor</a></li>
+      
+        <li><a class='category' href='/categories/shop/'>shop</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2014/01/07/we-won-daily-post-business-award-2013/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" height="320" width="252" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>We have been lucky enough to be awarded winner of the Green Award category in the Daily Post Business Awards 2013. The Daily Post is a regional (North West Wales) newspaper, the Green Award was sponsored this year by Windpower Wales. The award was announced at the end of last year, I resisted posting about it until we got our hands on the video that was made about us.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-CzJ1Zr-KHsI/Uvu4dbctpaI/AAAAAAAAt14/N-0kXuwlIZg/s1600/IMG_20140206_103538.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-CzJ1Zr-KHsI/Uvu4dbctpaI/AAAAAAAAt14/N-0kXuwlIZg/s1600/IMG_20140206_103538.jpg" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Trystan being interviewed by Daily Post newspaper, <a href="http://openenergymonitor.blogspot.com/2014/02/weve-made-local-newspaper.html">read the article here</a></td></tr></tbody></table><br />Winning the award was very unexpected for us, we feel very humbled. It goes without saying that it would not be possible for us to be doing what we do if it was not for the work of many others. As always with open-source it feels like we are standing on the shoulders of lots of other projects. A big thank you to everyone who has contributed to the project in some way and or bought items from the shop.<br /><br />Given the nature of an online collaborative project such as OpenEnergyMonitor much of our day-to-day communications and business is conducted online; it's great that what we are doing is being recognised locally. Trystan and I are very proud to be able to live and work in Snowdonia, North Wales. We're both welsh speakers and were brought up locally. Our website <a href="http://megni.co.uk/">http://megni.co.uk</a>&nbsp;has a couple of photos I've taken while out climbing and walking in the Snowdonia mountains as well as an overview of the OpenEnergyMonitor system.<br /><br />Megni (which means 'monitoring energy' in Welsh) is the name of our business which runs the OpenEnergyMonitor shop. We're keen to make the distinction between Megni and OpenEnergyMonitor since we don't take claim for all OpenEnergyMonitor developments: the .org website, open-source hardware, software and documentation is all separate from the business. Megni is a partnership between Trystan Lea and myself (Glyn Hudson); we now have a couple of friends Ynyr Edwards and Gwil Noble working with us helping with shop fulfillment, support requests and ongoing development.<br /><br />This award ended 2013 on a high for us, it's been a very exciting few months launching new<a href="http://openenergymonitor.blogspot.com/2013/11/new-hardware-is-in-shop-and-starting-to.html"> pre-assembled hardware units</a> and moving into a<a href="http://openenergymonitor.blogspot.com/2013/10/new-office-space-and-new-units.html"> new office / lab space</a>. Let's hope 2014 is just as awesome! We have lots of exciting plans for this year, high on the list is starting to&nbsp;<a href="http://openenergymonitor.blogspot.com/2013/12/emoncms-early-heating-control-demo.html">move into the control of appliances</a>&nbsp;and general polishing of the energy monitoring system. <br /><br />Here's a short video which was made for the event, it's got some nice shots of the hardware and our new lab:<br /><br /><object height="360" width="640"><param name="movie" value="//www.youtube.com/v/GRmqA2bv22A?hl=en_GB&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/GRmqA2bv22A?hl=en_GB&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object> <br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/12/28/tutorial-on-how-to-create-emoncms-module/">Tutorial on how to create an emoncms module</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-28T12:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/12/28/tutorial-on-how-to-create-emoncms-module/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've just created a tutorial that covers the basics of creating a simple custom display module for emoncms that shows a readout of current home power use and how many kwh's have been used today.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://github.com/emoncms/development/raw/master/Modules/myelectric_tutorial/images/myelectric.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="206" src="https://github.com/emoncms/development/raw/master/Modules/myelectric_tutorial/images/myelectric.png" width="640" /></a></div><br />The tutorial is up on github here:<br /><br /><a href="https://github.com/emoncms/development/blob/master/Modules/myelectric_tutorial/readme.md">&nbsp;https://github.com/emoncms/development/blob/master/Modules/myelectric_tutorial/readme.md</a><br /><br />What should I expand on in the emoncms module building tutorial next?
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/12/27/developing-for-arduino-remotely-on/">Developing for Arduino remotely on a Raspberry Pi</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-27T22:55:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/arduino/'>arduino</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/12/27/developing-for-arduino-remotely-on/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I found myself tonight requiring the ability to develop for Arduino remotely on a Raspberry Pi. The use case is connecting an Arduino Uno to a Raspberry Pi to receive data from my <a href="http://openenergymonitor.org/emon/beehive/v2">Bee Hive Temperature Monitor</a> setup. The Arduino posts data received from the Bee Monitor as a serial string onto ttyUSB0, <a href="https://github.com/openenergymonitor/EmoncmsPythonLink">EmoncmsPythonLink</a> script is used to post the data to the emoncms server running locally on the <a href="http://emoncms.org/site/docs/raspberrypihdd">Raspberry Pi with the file system on an external hard drive</a>. The Pi also has an RFM12Pi fitted receiving data from an emonTx and a couple of emonTH's<br /><br />I wanted to be able to access the Arduino, and upload a new sketch to fix bugs etc remotely since I will not always have local access to the system.<br /><br />I came across a great Arduino command line build environment called inotool<br /><br /><a href="http://inotool.org/">http://inotool.org/</a><br /><br /><br /><i>$ sudo apt-get update&nbsp;</i><br /><i>$ sudo apt-get install arduino</i><br /><i>$ sudo apt-get install python-dev&amp;&amp;python-setuptools</i><br /><i>$ git clone git://github.com/amperka/ino.git</i><br /><i>$ cd ino</i><br /><i>$ sudo python setup.py install</i><br /><div><br /></div>if you want to use ino's built in serial terminal<br /><br /><i>$ sudo apt-get install picocom</i><br /><br /><div>to exit picocom serial [CTRL&nbsp;+ A] followed by [CTRL&nbsp;+ X]</div><div><br /></div><div><i>$ ino init -t blink &nbsp; &nbsp; &nbsp;# initiates a project using "blink" as a template, copy libraries into&nbsp;</i></div><div><i>$ ino build &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # compiles the sketch, creating .hex file (default Arduino uno -m atmega328 for duemilanove)</i></div><div><i>$ ino upload &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # uploads the .hex file</i></div><div><i><br /></i></div><div>The setup works well, opening the port on the router I can now ssh into the Pi and upload new sketches to the Arduino from anywhere on the web,</div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/12/26/emoncms-control-developments-and-demos/">Emoncms control developments and demo's</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-26T16:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/control/'>control</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/12/26/emoncms-control-developments-and-demos/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div id="example1heatingonoff">First Happy Christmas everyone for yesterday!<br /><br />One of the things I enjoy about the Christmas period is that you get some nice time to relax and with relaxation comes ideas and energy to try out some new things.<br /><br />Glyn and I had been talking about control interfaces that could work well on a mobile or tablet and Id been working on a touch enabled dial earlier this month so I thought Id package it up as a emoncms module that sets the control variables in the packetgen module, I've also created a couple of simpler control interface examples using buttons and edit boxes. To try out the following demo's for yourself see the steps at the bottom of the post.</div><h2 id="example1heatingonoff">Example 1: Heating On/Off</h2>A simple example using a bootstrap styled html button as our heating on/off button. Clicking the button toggles the state and updates the “packetgen” control packet with the new state.<br /><br /><img alt="button off" height="144" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button.png" title="" width="640" /><br /><br /><img alt="button on" height="145" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button_on.png" title="" width="640" /><br /><h2 id="example2heatingonoffplussetpoint">Example 2: Heating On/Off plus set point</h2>Very similar to the first example but now with a text input for setting the set point temperature for the room/building. The microcontroller on the control node checks the room temperature and turns on and off the heater depending on the setpoint setting it recieves from emoncms.<br /><br /><img alt="setpoint" height="178" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/setpoint.png" title="" width="640" /><br /><h2 id="example3nestinspireddial">Example 3: Nest inspired dial</h2>A nest inspired dial interface for setting the setpoint temperature. The set point can be adjusted by spinning the dial wheel with your finger:<br /><br /><img alt="heating dial" height="391" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial_expanded.png" title="" width="640" /><br /><br />The dial and page resizes to fit different screen types from widescreen laptop's to mobile phones and tablets and touch can be used to spin the dial.<br /><br /><img alt="heating dial mobile" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial.png" title="" /><br /><h2 id="solarpvgeneration">Solar PV Generation</h2>Not really control but developing the idea of custom html/javascript canvas based graphics further.<br /><br />I've always liked the standard “news &amp; weather” app that came with my android phone. It's a good example of how clean an intuitive graphs can be and how touch can be used to browse temperature/humidity at different times of the day.<br />This example is a start on creating a graph that looks and behaves in much the same way implemented in canvas.<br /><br /><img alt="solarpv" height="263" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/solarpv.png" title="" width="640" /><br /><h2 id="whatyouwillneedtoruntheseexamples">What you will need to run these examples</h2>You will need your own installation of emoncms to try these out, such as an emoncms + raspberrypi + harddrive setup.<br /><br /><a href="http://emoncms.org/site/docs/raspberrypihdd">RaspberryPI with harddrive</a><br /><br />You will also need the packetgen module (installed as default with the harddrive image):<br /><br />http://github.com/emoncms/packetgen<br /><br />and the 'development' repository <br /><br />http://github.com/emoncms/development<br /><br />Copy the folder titled myheating from the development repository to your emoncms/Modules folder. (from development/Modules/control)<br /><br />You should now be able to load the examples by clicking on the My Heating menu item.<br /><br />The example does not yet allow for any gui based configuration and so assumes that the control packet structure looks like this:<br /><br /><img alt="packet structure" height="288" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/packetgen.png" title="" width="640" /><br /><br />This packet will work with the Arduino electricradiator control node example that can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/Modules/control/Arduino%20Examples/electricradiator">Arduino Examples / electricradiator</a><br /><br />This sketch could be run on an emontx with jeeplug relay's attached or other rfm12b + arduino + relay type hardware builds.<br /><br /><b>Coding your own control interface</b><br /><br />The code for the simple button example above which may be useful as a foundation for building something else can be found here:<br /><br /><a href="https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php">https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php</a><br /><br />The interface is all in html and javascript jquery and uses bootstrap style buttons it just sends the updated heating state to the packetgen module via ajax.<br /><br /><b>More posts on controlling things </b><br /><br />Glyn's post on controlling his boiler: <a href="http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html">http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html</a><br /><br />The packet generator: <a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html">http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/12/15/emoncms-early-heating-control-demo/">Emoncms (early) Heating Control Demo</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-15T21:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> four minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/control/'>control</a></li>
+      
+        <li><a class='category' href='/categories/emonctrl/'>emonCtrl</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/heating/'>heating</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/12/15/emoncms-early-heating-control-demo/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've just hooked up a relay to control my central heating boiler and am successfully controlling it via the new emoncms packet generator module...it feels like the future has arrived in my house :-)<br><br>The next step will be to make a nice user facing interface which allows setting heating control time schedules and pulling in temperature data from emonTH and even making it smart by using energy data to try and detect if someone is home or not. Lots of exciting possibilities now the enabling hardware is in place.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-SjVPMnBRjYY/Uq4aU1vsHWI/AAAAAAAArwc/9p8I5DZXh9g/s1600/20131215_204511_Orwig+Terrace.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-SjVPMnBRjYY/Uq4aU1vsHWI/AAAAAAAArwc/9p8I5DZXh9g/s400/20131215_204511_Orwig+Terrace.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Gas Combi Boiler Relay Control Unit top left</td></tr></tbody></table>Please excuse the old boiler, yes I know it should be a no brainer to replace it with a modern efficient condensing unit however things are never simple in rented accommodation. In practice I hardly use the boiler since bottled LPG is very expensive (no mains gas available here), luckily I have a wood stove and a good supply of wood!<br><br>Here's a demo of the heating boiler being turned on remotely:<br><br><iframe allowfullscreen="" frameborder="0" height="360" src="//www.youtube.com/embed/1d797idBJ2M" width="640"></iframe> <br><h3>Hardware:</h3><b>Webserver:&nbsp;</b><br><a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi with RFM12Pi expansion module</a> running emoncms (on external HDD file system): <a href="http://openenergymonitor.blogspot.com/2013/12/setup-emoncms-on-raspberrypi-with-hard.html">see blog post</a>. The Raspberry Pi and emoncms are also used to log my home power consumption from my <a href="http://openenergymonitor.org/emon/modules/emonTxV3">emonTx V3</a>, and room temperatures and humidity from my <a href="http://openenergymonitor.org/emon/modules/emonTH">emonTH's.</a> It also mirrors the data to a remote emoncms server for backup.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-yE06dnTas_U/Uql-Wl0JuAI/AAAAAAAArqg/aKs3d72Xqh0/s1600/pihdsetup.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://2.bp.blogspot.com/-yE06dnTas_U/Uql-Wl0JuAI/AAAAAAAArqg/aKs3d72Xqh0/s400/pihdsetup.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi with RFM12Pi module with emoncms running locally on HDD file system</td></tr></tbody></table><br><br><b>Control Node:</b><br><br><b>If switching mains voltage is involved only undertake tasks you are&nbsp;comfortable&nbsp;with,&nbsp;making sure everything is isolated before starting work and don't take any chances.&nbsp;</b><br><b><br></b>Heating systems vary widely, as does the type of control available. Some heating boilers can be controlled via an RF protocol, this could be preferable since tapping into the boiler direct and switching high voltage would not be required.<br><br>My old Worcester Bosch 240 with Honeywell controller requires connecting two terminals together to switch the heating on (see image below). I managed to wire in an additional control wire while keeping the original timer unit in place.<br><br>I used an emonTx V2 with JeeLabs relay module, this is just what I had to hand, any RFM12B node with an appropriate relay module could be used. We're looking into making a prototype PCB with an RFM12B, relay unit, on-board power supply and in-line energy monitoring (why not?!). The important consideration here is to make sure everything is properly enclosed and wired up to a high standard if you're controlling mains voltage. DON'T TAKE CHANCES WITH MAINS VOLTAGE.<br><br>It's important that the relay module used can handle the current being switched in my case this was only about 500mA @ 240V AC&nbsp;but if you're controlling an electric heating direct this is an important consideration.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-OZ4jgaJAK4E/Uq31bNdh45I/AAAAAAAArvs/9YoSKa3uQK8/s1600/IMG_20131214_185622.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://1.bp.blogspot.com/-OZ4jgaJAK4E/Uq31bNdh45I/AAAAAAAArvs/9YoSKa3uQK8/s400/IMG_20131214_185622.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Old Honeywell timer controller unit with front face removed - connect terminal 5 to 3 to turn heating on - black wire goes to relay (caution 240V AC)</td></tr></tbody></table><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-0Gm-mp2wiyU/Uq3zQUVBu-I/AAAAAAAArvg/VkOa8uQvR7c/s1600/20131214_193529.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-0Gm-mp2wiyU/Uq3zQUVBu-I/AAAAAAAArvg/VkOa8uQvR7c/s400/20131214_193529.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V2 with RFM12B and JeeLabs relay module</td></tr></tbody></table><span id="goog_440867743"></span><br><br><h3>Software:</h3><b>Emoncms Raspberry Pi Server</b><br>emoncms running on Raspberry Pi with the new packet generator module,<a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html"> see blog post</a>. This is included in the emoncms Raspberry Pi external HDD image (it's still in beta). For the moment as shown in the video the relay is switched on and off from the emoncms backend web page by browsing to the Pi's local IP address and logging into emoncms and selecting the packet gen module under the extras menu.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-_Ym-R5e4vro/Uq4ba4lTDQI/AAAAAAAArwk/jc3HuW2oXLw/s1600/Selection_036.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="257" src="http://1.bp.blogspot.com/-_Ym-R5e4vro/Uq4ba4lTDQI/AAAAAAAArwk/jc3HuW2oXLw/s640/Selection_036.png" width="640"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms RFM12B control packet generator module - beta</td></tr></tbody></table><br>To enable control from outside the house the the http port would have to be opened on my router's firewall and a dynamic dns setup on the external IP address. As mentioned at the beginning of this post the next stage is to design a user facing interface dashboard for emoncms control modules.<br><br><b>Arduino Firmware:&nbsp;</b><br>I've pushed the Arduino sketch running on the emonTx to the e<a href="https://github.com/emoncms/packetgen/tree/master/Arduino_RFM12B_receiver_sketch_examples">moncms packetgen module GitHub as an example</a>.<br><br><b>Fail safe</b><br>I choose a non latching relay so in case of control unit power failure the relay will default to the open / off position.<br><br>I've tried to make the code on the relay control unit as fail safe as possible (independent of Raspberry Pi and network) and as boiler friendly as possible by including a fail safe time after which the relay will default to off (1hr - I'm a frugal user of heating), and a maximum switching rate of 5 min to stop the boiler repeatedly being switched on and off should something go wrong. A hardware watchdog on the ATmega328 was included to try and ensure the microprocessor never locks up.<br><br><br>
+    
+  </div>
+  </article>
+  <hr>
+  
+ 
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/10">&larr; Older</a>
+    
+
+    
+    <a class="btn pull-right" href="/posts/8">Newer &rarr;</a>
+    
+  </div>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+    <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">OpenEnergyMonitor</h1>
+  <ul class="divided">
+    <li>
+      A project to develop open-source energy monitoring tools to help us relate to our use of energy, our energy systems and the challenge of sustainable energy.
+    </li>
+    <li><a href='https://openenergymonitor.org/emon/opensustech'>Open-Source Tools</a></li>
+    <li><a href='https://openenergymonitor.org/emon/sustainable-energy'>Sustainable Energy</a> </li>
+  </ul>
+  <p>
+  <h1 class="title delta">Emoncms</h1>
+  <ul class="divided">
+    <li>
+      Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </li>
+    <li><a href='https://emoncms.org'>Emoncms.org</a></li>
+    <li><a href='https://github.com/emoncms'>Emoncms Github</a> </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+     <section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided">
+    
+    
+      <li><a href="/categories/./">.</a></li>
+    
+      <li><a href="/categories/3phases/">3phases</a></li>
+    
+      <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
+    
+      <li><a href="/categories/android/">Android</a></li>
+    
+      <li><a href="/categories/antenna/">Antenna</a></li>
+    
+      <li><a href="/categories/building energy modelling/">Building Energy Modelling</a></li>
+    
+      <li><a href="/categories/china/">China</a></li>
+    
+      <li><a href="/categories/christmas/">Christmas</a></li>
+    
+      <li><a href="/categories/course/workshop/">Course/Workshop</a></li>
+    
+      <li><a href="/categories/dc/">DC</a></li>
+    
+      <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
+    
+      <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/heat pump/">Heat Pump</a></li>
+    
+      <li><a href="/categories/kaizen/">Kaizen</a></li>
+    
+      <li><a href="/categories/kicad/">KiCad</a></li>
+    
+      <li><a href="/categories/mqtt/">MQTT</a></li>
+    
+      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
+    
+      <li><a href="/categories/nodered/">NodeRed</a></li>
+    
+      <li><a href="/categories/oem labs/">OEM Labs</a></li>
+    
+      <li><a href="/categories/okg/">OKG</a></li>
+    
+      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
+    
+      <li><a href="/categories/rfm12/">RFM12</a></li>
+    
+      <li><a href="/categories/rfm69/">RFM69</a></li>
+    
+      <li><a href="/categories/rs485/">RS485</a></li>
+    
+      <li><a href="/categories/sap 2012/">SAP 2012</a></li>
+    
+      <li><a href="/categories/shw/">SHW</a></li>
+    
+      <li><a href="/categories/srf/">SRF</a></li>
+    
+      <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/test/">Test</a></li>
+    
+      <li><a href="/categories/ad/">ad</a></li>
+    
+      <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/arduino/">arduino</a></li>
+    
+      <li><a href="/categories/award/">award</a></li>
+    
+      <li><a href="/categories/backup/">backup</a></li>
+    
+      <li><a href="/categories/batteries/">batteries</a></li>
+    
+      <li><a href="/categories/benchmarking/">benchmarking</a></li>
+    
+      <li><a href="/categories/build sesh/">build sesh</a></li>
+    
+      <li><a href="/categories/business/">business</a></li>
+    
+      <li><a href="/categories/ciseco/">ciseco</a></li>
+    
+      <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/control/">control</a></li>
+    
+      <li><a href="/categories/current sensor/">current sensor</a></li>
+    
+      <li><a href="/categories/current transformer/">current transformer</a></li>
+    
+      <li><a href="/categories/dashboard/">dashboard</a></li>
+    
+      <li><a href="/categories/display/">display</a></li>
+    
+      <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/efergy/">efergy</a></li>
+    
+      <li><a href="/categories/electronics/">electronics</a></li>
+    
+      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
+    
+      <li><a href="/categories/email notifications/">email notifications</a></li>
+    
+      <li><a href="/categories/embodied energy/">embodied energy</a></li>
+    
+      <li><a href="/categories/emocms/">emocms</a></li>
+    
+      <li><a href="/categories/emonbase/">emonBase</a></li>
+    
+      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
+    
+      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
+    
+      <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonth/">emonTH</a></li>
+    
+      <li><a href="/categories/emontx/">emonTx</a></li>
+    
+      <li><a href="/categories/emontx v2/">emonTx V2</a></li>
+    
+      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
+    
+      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
+    
+      <li><a href="/categories/emoncms/">emoncms</a></li>
+    
+      <li><a href="/categories/end-to-end/">end to end</a></li>
+    
+      <li><a href="/categories/energy monitor/">energy monitor</a></li>
+    
+      <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/film/">film</a></li>
+    
+      <li><a href="/categories/graphing/">graphing</a></li>
+    
+      <li><a href="/categories/hackathon/">hackathon</a></li>
+    
+      <li><a href="/categories/hall effect/">hall effect</a></li>
+    
+      <li><a href="/categories/hardware/">hardware</a></li>
+    
+      <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/home camp/">home camp</a></li>
+    
+      <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/interface/">interface</a></li>
+    
+      <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/java/">java</a></li>
+    
+      <li><a href="/categories/job/">job</a></li>
+    
+      <li><a href="/categories/kickstarter/">kickstarter</a></li>
+    
+      <li><a href="/categories/linux/">linux</a></li>
+    
+      <li><a href="/categories/logo/">logo</a></li>
+    
+      <li><a href="/categories/manufacturing/">manufacturing</a></li>
+    
+      <li><a href="/categories/measurement/">measurement</a></li>
+    
+      <li><a href="/categories/media/">media</a></li>
+    
+      <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/modbus/">modbus</a></li>
+    
+      <li><a href="/categories/n/">n</a></li>
+    
+      <li><a href="/categories/nanode/">nanode</a></li>
+    
+      <li><a href="/categories/open source/">open source</a></li>
+    
+      <li><a href="/categories/openhab/">openHAB</a></li>
+    
+      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/optical pulse/">optical pulse</a></li>
+    
+      <li><a href="/categories/pcb/">pcb</a></li>
+    
+      <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/pluse/">pluse</a></li>
+    
+      <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry pi/">raspberry pi</a></li>
+    
+      <li><a href="/categories/renewable/">renewable</a></li>
+    
+      <li><a href="/categories/serial/">serial</a></li>
+    
+      <li><a href="/categories/shop/">shop</a></li>
+    
+      <li><a href="/categories/showcase/">showcase</a></li>
+    
+      <li><a href="/categories/smartwatch/">smartwatch</a></li>
+    
+      <li><a href="/categories/social energy monitoring/">social energy monitoring</a></li>
+    
+      <li><a href="/categories/solarpv/">solarPV</a></li>
+    
+      <li><a href="/categories/sparkfun/">sparkfun</a></li>
+    
+      <li><a href="/categories/sustainability/">sustainability</a></li>
+    
+      <li><a href="/categories/temperature/">temperature</a></li>
+    
+      <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/tutorials/">tutorials</a></li>
+    
+      <li><a href="/categories/upgrade/">upgrade</a></li>
+    
+      <li><a href="/categories/utility meters/">utility meters</a></li>
+    
+      <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/wind/">wind</a></li>
+    
+      <li><a href="/categories/wind turbine/">wind turbine</a></li>
+    
+      <li><a href="/categories/wireless/">wireless</a></li>
+    
+      <li><a href="/categories/workshop/">workshop</a></li>
+    
+  </ul>
+</section>
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

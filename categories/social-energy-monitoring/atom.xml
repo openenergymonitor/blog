@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: social energy monitoring | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/social-energy-monitoring/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-21T23:25:44+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting visual]]></title>
+    <link href="http://blog.openenergymonitor.org/2012/06/04/getting-visual/"/>
+    <updated>2012-06-04T12:57:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2012/06/04/getting-visual</id>
+    <content type="html"><![CDATA[<div dir="ltr" style="text-align: left;" trbidi="on">
+  <p>The Open Energy Monitor is all about getting visual. Using hardware to post collected data to emonCMS basically transforms the acquired data into easily understandable informations, and what’s better than graphs.<br />Here is a <a href="https://power2switch.com/" target="_blank">similar initiative</a> that converts absurd electricity bills into meaningful information:<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s1600/p2s-bill-redesign-v16.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s640/p2s-bill-redesign-v16.jpg" width="492" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Source: <a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">FastCoDesign.com</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;You can compare it with with the old bill:<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s1600/comed-bill-jan-2011-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s400/comed-bill-jan-2011-1.jpg" width="400" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;It is obvious that presenting the same information in a different way makes a big difference. The redesigned bill is much easier to understand, and the use of shapes and colors turns something very abstract into tangible information.<br /><br />But I believe that if we really want to democratize energy monitoring, we should take it one step further. We should offer people who have no idea what 4.2 kW or 150 kWh are, a reference to compare with. For example, visualizing 1kWh as the energy than ten 100W light bulbs consume in one hour makes it understandable to your grandma. Or showing one week’s consumption each hour on one matrix using colored circles.<br /><br />More important is to give a feeling of the order of magnitude. Like showing a community average VS your consumption on a colored scale to have an idea how well you’re doing, lets you have a good reference point.<br /><br />I agree that with households community averages are quite complicated since households have extremely different consumption patterns: some work from home, some have many guests, others spend very little time at home, etc… But when it comes to businesses, benchmarking is much less complicated, you can compare bakeries or cafes electricity consumption patterns in a much meaningful way.<br /><br />I think this should be a main target to be implemented in emonCMS, and I believe that the community has something to say and contribute to this topic, so I started this forum thread : http://openenergymonitor.org/emon/node/715 please feel free to add your thoughts to it.<br /><br /><br />&lt;div style="text-align: right;"&gt;<a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">Link to FastCoDesign article.</a>&lt;/div&gt;&lt;/div&gt;</p>
+</div>
+]]></content>
+  </entry>
+  
+</feed>
