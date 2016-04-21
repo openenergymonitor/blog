@@ -18,19 +18,21 @@ Emoncms is an open-source web application for processing, logging and visualisin
 
 ## Branches
 
-**Note:** We are currently reorganising the emoncms branches. The master branch is now the same as 9.x. 
+**Note:** We are currently reorganising the emoncms branches. The master branch is now the same as 9.x.
 
 * [master](https://github.com/emoncms/emoncms) - The latest and greatest developments. Potential bugs, use at your own risk!  [EmonCMS 9.x forum thread](http://openenergymonitor.org/emon/node/11009)
 
-* [stable](https://github.com/emoncms/emoncms/tree/stable) - emonPi/emonBase release branch, regularly merged from master. Slightly more tried and tested. 
+* [stable](https://github.com/emoncms/emoncms/tree/stable) - emonPi/emonBase release branch, regularly merged from master. Slightly more tried and tested.
 
 * [low-write (v8.5)](https://github.com/emoncms/emoncms/tree/low-write) - The old emonpi/emonbase emoncms version (July 15 ready-to-go SD card image). Low-write mode is now available in v9.0. The low write version of emoncms is designed for running on SD cards. This is a cut down version of emoncms supports only the phpfina and phptimeseries feed engines (no in built feed averaging or histograms) and a reduced input processor set. **Archived branch**
+
+<!--more-->
 
 **Optional modules**
 
 Optional modules can be installed by downloading or git cloning into the emoncms/Modules folder. Be sure to update check for database updates in Administration menu after installing new modules:
 
-- Dashboards module, required for creating, viewing and publishing dashboards: 
+- Dashboards module, required for creating, viewing and publishing dashboards:
 https://github.com/emoncms/dashboard
 
 - App provides application specific dashboards for emoncms: myelectric, mysolar, mysolar&wind, myheatpump https://github.com/emoncms/app.git
@@ -70,7 +72,7 @@ There are many other modules such as the event module and openbem (open source b
 
 #### Design
 
-Documentation hosted on openenergymonitor documentation github: 
+Documentation hosted on openenergymonitor documentation github:
 
 - [Emoncms architecture](https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/emoncms/architecture.md)
 - [Input processing](https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/emoncms/developinputproc.md)

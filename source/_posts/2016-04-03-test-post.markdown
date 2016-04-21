@@ -42,6 +42,8 @@ public function get_npoints($feedid) {
 
 ```
 
+<!--more-->
+
 ## c++ code syntax:
 
 ```cpp

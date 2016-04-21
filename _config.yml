@@ -8,7 +8,7 @@ title: Blog | OpenEnergyMonitor
 subtitle: OpenEnergyMonitor Blog
 author: Glyn Hudson
 simple_search: https://www.google.com/search
-description: User guide for OpenEnergyMonitor hardware and software
+description: OpenEnergyMonitor Blog
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -114,15 +114,11 @@ disqus_short_name: openenergymonitor
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id: UA-10321170-3
+google_analytics_tracking_id: UA-10321170-4
 
 # Facebook Like
 facebook_like: true
 
 social:
-  visible: false
-  facebook:
-    app_id: xxxxxxxxxxxxxxx
-
   twitter:
     account: openenergymon
