@@ -10,6 +10,8 @@ layout: post
 title: 'My awesome blog post'
 date: '2016-04-22'
 author: Glyn Hudson
+author_twitter: glynhudson
+comments: true
 tags:
 - awesome
 - blog
