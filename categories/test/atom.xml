@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Test | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/test/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T01:38:15+00:00</updated>
+  <updated>2016-04-22T01:40:16+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.openenergymonitor.org/2016/04/test-post/"/>
     <updated>2016-04-03T17:00:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2016/04/test-post</id>
-    <content type="html"><![CDATA[<p>Testing markdown blog post. Will this replace our <a href="http://blog.openenergymonitor.org">old blog</a>?</p>
+    <content type="html"><![CDATA[<p>Testing markdown blog post. Will this replace our <a href="http://openenergymonitor.blogspot.com">old blog</a>?</p>
 
 <p>Here is a markdown post: <em>italic</em>, <strong>bold</strong>, <code class="highlighter-rouge">inline code</code></p>
 

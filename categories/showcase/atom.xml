@@ -4,7 +4,7 @@
   <title><![CDATA[Category: showcase | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/showcase/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T01:38:15+00:00</updated>
+  <updated>2016-04-22T01:40:16+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -41,7 +41,7 @@
 <div style="text-align: left;"><a href="http://openenergymonitor.org/emon/forum/7">http://openenergymonitor.org/emon/forum/7</a></div>
 <div style="text-align: left;"><br /></div>
 <div style="text-align: left;"><b>Emoncms backup</b></div>
-<div style="text-align: left;">A couple of additions to the script linked to in the last blog post:&nbsp;<a href="http://blog.openenergymonitor.org/2013/07/a-new-backup-system-for-emoncmsorg.html">http://blog.openenergymonitor.org/2013/07/a-new-backup-system-for-emoncmsorg.html</a></div>
+<div style="text-align: left;">A couple of additions to the script linked to in the last blog post:&nbsp;<a href="http://openenergymonitor.blogspot.com/2013/07/a-new-backup-system-for-emoncmsorg.html">http://openenergymonitor.blogspot.com/2013/07/a-new-backup-system-for-emoncmsorg.html</a></div>
 <div style="text-align: left;"><br /></div>
 <div style="text-align: left;">Completes file backup correctly and better verbose output:</div>
 <div style="text-align: left;"><a href="https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php">https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php</a></div>

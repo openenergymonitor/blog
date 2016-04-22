@@ -4,7 +4,7 @@
   <title><![CDATA[Category: community energy | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/community-energy/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T01:38:15+00:00</updated>
+  <updated>2016-04-22T01:40:16+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -29,7 +29,7 @@
     <id>http://blog.openenergymonitor.org/2012/01/community-energy-plan-maker</id>
     <content type="html"><![CDATA[<div>Over the last year Glyn Hudson, Bethan Gritten and I have been running a community energy project with our local sustainability group <a href="http://ecobro.org/">Ecobro</a> in the Penrhyndeudraeth area of North Wales. The aim of the project is to create a comprehensive snapshot of our current energy use as a group that we can then use as a solid foundation for creating a sustainable energy action plan.</div>
 <div><br /></div>
-<div>As part of the project we have installed 20 <a href="http://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy.html">openenergymonitor energy monitors </a>and have also developed for the project a community energy auditing and plan making application which is what this blog post is about.</div>
+<div>As part of the project we have installed 20 <a href="http://openenergymonitor.blogspot.com/2012/01/full-web-connected-home-energy.html">openenergymonitor energy monitors </a>and have also developed for the project a community energy auditing and plan making application which is what this blog post is about.</div>
 <div><br /></div>
 <div>This is how the application works:</div>
 <div><br /></div>
