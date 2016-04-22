@@ -4,7 +4,7 @@
   <title><![CDATA[Category: pluse | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/pluse/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-21T23:25:44+00:00</updated>
+  <updated>2016-04-22T00:06:26+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Reading Watt-hour data from an Elster A100C electricity meter using IrDA by Dave Berkeley part 2]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/08/27/reading-watt-hour-data-from-elster/"/>
+    <link href="http://blog.openenergymonitor.org/2012/08/reading-watt-hour-data-from-elster/"/>
     <updated>2012-08-27T11:02:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/08/27/reading-watt-hour-data-from-elster</id>
+    <id>http://blog.openenergymonitor.org/2012/08/reading-watt-hour-data-from-elster</id>
     <content type="html"><![CDATA[<div>
   <div style="text-align: center;"></div>
   <div class="separator" style="clear: both; text-align: center;">

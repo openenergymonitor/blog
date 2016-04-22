@@ -1,0 +1,207 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reducing noise, adding a capacitor - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2010/03/reducing-noise-adding-capacitor/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Reducing noise, adding a capacitor">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2010/03/reducing-noise-adding-capacitor/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Reducing noise, adding a capacitor">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Reducing noise, adding a capacitor</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-03-18T10:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> five minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>I recently bought a new laptop and when I plugged it in to the mains and connected up the energy monitor via usb and monitored the current of one light the current value it read was much higher than what my reference meter said it should be. I got the following results:</p><p><b><span class="Apple-style-span"  style="font-size:medium;">Load description:</span></b><span class="Apple-style-span"  style="font-size:medium;"> One light<br /></span><b><span class="Apple-style-span"  style="font-size:medium;">Energy monitor power supply:</span></b><span class="Apple-style-span"  style="font-size:medium;"> Laptop mains connected.<br /></span><b><span class="Apple-style-span"  style="font-size:medium;">Energy monitor:</span></b><span class="Apple-style-span"  style="font-size:medium;"> 1050mA  </span><b><span class="Apple-style-span"  style="font-size:medium;">reference meter:</span></b><span class="Apple-style-span"  style="font-size:medium;"> 189mA</span></p><p><b>Load description</b>: One light<br /><b>Energy monitor power supply:</b> Laptop running off battery.<br /><b>Energy monitor:</b> 186mA  <b>reference meter:</b> 189mA</p><p>I loaded up the waveform sampler program to see what was going wrong and saw this when the laptop was connected to the mains:</p><p><a href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR_F_QnI/AAAAAAAABk0/9BHwhjPBonU/s1600-h/noiseless.png"></a><a href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR9aNjyI/AAAAAAAABks/PwBKFa9kIeA/s1600-h/noise.png"><img src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR9aNjyI/AAAAAAAABks/PwBKFa9kIeA/s400/noise.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921006637256482" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 220px; " /></a></p><p>When the laptop was not connected to the mains the fluctuations largely disappeared.</p><p>I then checked to see what the energy monitor would read when powered by an external supply rather than the laptop supply. The energy monitor was now a lot closer to the reference meter than before:</p><p><b>Load description</b>: One light<br /><b>Energy monitor power supply:</b> External power supply<br /><b>Energy monitor:</b> 225mA  <b>reference meter:</b> 191mA<br />The laptop is not connected to the mains here.</p><p><b>Load description:</b> One light<br /><b>Energy monitor power supply:</b> External power supply<br /><b>Energy monitor:</b> 215mA  <b>reference meter:</b> 191mA<br />The laptop is connected to the mains here but on a separate plug socket.</p><p>Interestingly the laptop still produces an effect even when its plugged into another socket not part of the measuring setup. The other thing to note is that the energy monitor current is higher by about 20-35mA with the external power supply than when powered by the laptop running off its battery.</p><p>It would clearly be nice to get rid of the noise when the laptop is connected to the mains and the difference in measured current between the different power supplies.</p><p>Reading through the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc2566.pdf">Atmel AVR465 application note</a>, they use a 10uF capacitor across the biasing voltage divider to stabilise the DC level. I added the capacitor and low and behold the noise and difference in power supplies disappeared and now the results are much better :) The energy monitor now reads</p><p>Load description: One light</p><p><b>Energy monitor power supply:</b> Laptop mains connected.<br /><b>Energy monitor:</b> 194mA <b>Reference meter:</b> 191mA</p><p><b>Energy monitor power supply:</b> Laptop running off battery.<br /><b>Energy monitor</b>: 194mA <b>Reference meter</b>:  191mA</p><p><b>Energy monitor power supply:</b> External power supply.<br /><b>Energy monitor:</b> 193mA <b>Reference meter:</b>  191mA<br />The laptop is not connected to the mains here.</p><p><b>Energy monitor power supply:</b> External power supply.<br /><b>Energy monitor:</b> 193mA <b>Reference meter:</b>  191mA<br />The laptop is connected to the mains here but on a separate plug socket.</p><p>The variation between power supplies and the effect of the noisy laptop power supply is significantly reduced. </p><p>Here's a screenshot measuring the same lamp as I was measuring above with the energy monitor powered from the laptop connected to the mains but now with the 10uF capacitor across the 2.5V bias:<br /></p><p><span class="Apple-style-span" style="color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; "><img src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S6ICR_F_QnI/AAAAAAAABk0/9BHwhjPBonU/s400/noiseless.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921007089304178" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 220px; " /></span></p><p>Very steppy but this is due to the small magnitude of the signal versus the ADC resolution which is expected, the large noise fluctuations have disappeared. </p><p>Here's the new circuit diagram:</p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S6ICSHoj12I/AAAAAAAABk8/f8-g6JuPYYM/s1600-h/circuit.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 218px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/S6ICSHoj12I/AAAAAAAABk8/f8-g6JuPYYM/s400/circuit.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5449921009381791586" /></a><p><b>Component values</b></p><p><b>CT sensor</b> turns ratio –  for the efergy sensor seems to be 1:1500 which means the current in the   secondary windings will be 1500 times less than the current in the mains primary winding.</p><p><b>RsensI -</b> Dictates the range that the current can be read over.<br /></p><ul><li>56Ohms gives a current range of 0 to 47Amps (with efergy CT, turns ratio: 1500)</li><li>100Ohms gives a current range of 0 to 26Amps (with efergy CT, turns ratio: 1500)</li></ul><p></p><p><b>C1 – </b>The bias stabilizing capacitor.<br /></p><ul><li>Noise decreases as the capacitor size increases. </li><li>Energy monitor start-up time increases as capacitor size increases – this is the time taken for the capacitor to charge, measured as the time it takes for the current measurement to reach within 20mA of the final value. Only a noticeable delay the first time you put the energy monitor on.</li><li>Atmel recommends a 10uF capacitor in their AVR465 app note.</li><li>10uF works well, I tried a couple of other values and there doesn't seem to be a very noticeable difference at 4.7uF, 1uF, 0.1uF, needs further testing to establish exactly how much difference there is between the values.</li></ul><p></p><p><b>Rvd –</b> 2x equal sized voltage divider resistors<br /></p><ul><li>Increasing the resistor size decreases current consumption in the voltage divider.</li><li>Increasing the resistor size increases noise due to high impedance.</li><li>Increasing the resistor size increases the energy monitor start-up time due to charging of C1.</li><li>2x 100k resistors and a C1 of 10uF gives a start-up time of 16s.</li><li>2x 10k resistors and a C1 of 10uF gives a start-up time of 4s.</li></ul><p></p><p>I've also removed the 100Ohm current limiting resistor from the above circuit as I'm not sure that it was really doing anything, I put it in there out of general practice, feel free to use one if you like.</p><p>Its also worth adding a 10uF capacitor on to the voltage measurement circuit in the same place. I will discuss that in more detail soon along with some other changes to the voltage measurement electronics.</p>
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

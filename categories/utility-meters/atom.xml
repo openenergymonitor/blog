@@ -4,7 +4,7 @@
   <title><![CDATA[Category: utility meters | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/utility-meters/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-21T23:25:44+00:00</updated>
+  <updated>2016-04-22T00:06:26+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Reading Watt-hour data from an Elster A100C electricity meter using IrDA by Dave Berkeley]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/07/28/reading-watt-hour-data-from-elster/"/>
+    <link href="http://blog.openenergymonitor.org/2012/07/reading-watt-hour-data-from-elster/"/>
     <updated>2012-07-28T11:02:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/07/28/reading-watt-hour-data-from-elster</id>
+    <id>http://blog.openenergymonitor.org/2012/07/reading-watt-hour-data-from-elster</id>
     <content type="html"><![CDATA[<div>
   <div class="separator" style="clear: both; text-align: center;">
     <p><a href="http://www.rotwang.co.uk/projects/images/DSCN3869.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="272" src="http://www.rotwang.co.uk/projects/images/DSCN3869.JPG" width="400" /></a>&lt;/div&gt;<br />If you have an Elster meter this is a fantastic way to read the exact accumulated watt hours that you have generated or used and can compliment and cross check a CT based measurement.<br /><br /><a href="http://www.rotwang.co.uk/">Dave Berkeley</a> writes:<br /><br />&lt;div style="background-color: #dddddd; font-size: 90%; padding: 10px;"&gt;The A100C has an LCD display showing the number of kilowatt hours generated, but it also has two optical outputs. One flashes momentarily each time one watt hour is recorded. The second output is an infrared port which transmits the details of the meter, including accumulated Watt Hours, every second or so.<br /><br />There are lots of commercial power meter readers around, and many homemade ones too. But they all seem to simply count the 1Wh optical pulses. This does give you an accurate measure of instantaneous power usage / generation, but does not give accumulated totals. If you get a malfunction in the reader you will lose counts. If you count the IrDA output it always gives you accurate accumulated totals.&lt;/div&gt;<br />Read the full build guide here: <a href="http://www.rotwang.co.uk/projects/meter.html">Electricity Meter Reader</a><br /><br />and download the Arduino source code here: <a href="http://www.rotwang.co.uk/projects/docs/elec_meter.ino">elec_meter.ino</a><br /><br />The only thing you need to get this running on an arduino or an emontx is a <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/92399/ETC/TSL261.html">TSL261R</a> optical sensor, the TSL261R has the same pin out as the  <a href="http://openenergymonitor.org/emon/sites/default/files/TSL257.pdf">TSL257</a> so can be connected to the emontx pulse input.<br /><br />We’ve put together a small kit <a href="http://shop.openenergymonitor.com/tsl261r-ir-sensor-kit/">available in the shop</a> of all the components needed to connect it to an emontx including the TSL261R a male 3.5mm jack, 1m of cable and heat-shrink to save needing to get all the components from different places.&lt;/div&gt;</p>

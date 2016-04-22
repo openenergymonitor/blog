@@ -1,0 +1,216 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Website Backup - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2013/10/website-backup/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Website Backup">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2013/10/website-backup/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Website Backup">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Website Backup</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-01T10:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/backup/'>backup</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  In the interest of open-source I thought I would share the backup setup we have running for the OpenEnergyMonitor website. I'm relatively new to sys-admin tasks and writing bash scripts so please suggest if you think if something could be implemented better.<br /><br />Backing up our Drupal SQL databases which contain the user credentials and all the forum and text content of the website was relatively easy since the disk space they take up is relatively small. A nightly SQL dump then a scheduled secure FTP bash script running as a nightly cronjob on a Raspberry Pi with external hard drive to download the zipped SQL database does the trick. The FTP login credentials are stored away from prying eyes in .netrc file (with chmod 600), two sets of credentials are required and the relevant .netrc file is copied to the home folder when needed.<br /> <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script> <br /><pre class="prettyprint">cp netrc/.netrc1 .netrc<br />today=$(date +"%d-%b-%Y")<br />ftp -vp -z secure $HOST &lt;&lt; EOT<br />ascii<br />cd /LOCATION OF SQL DUMP ON SERVER<br />get $db_name-$today_backup.gz $LOCAL_BACKUP/$db_name-$today_backup.gz<br />bye<br />EOT<br />rm .netrc<br /><br /></pre><br />&nbsp;Backing up the files (images, documents etc) is a bit more of an issue since the ever increasing size of the content mean it's impractical and would unnecessary load the server and bandwidth to download a full snapshot every night.<br /><br />I found wget has many customisable options. A nightly scheduled bash script running on a Raspberry Pi with an external hard drive with the following wget options looks at files have been created or modified since the last time the command was run and only downloads the changes. Once the initial download is done the command only takes less then a minute to execute and often only downloads a few Mb of data. The option '-N' tells wget only to download new or modified files<br /><br /><pre class="prettyprint">cp netrc/.netrc2 .netrc<br />wget -m -nv -N -l 0 -P $LOCAL_BACKUP ftp://$HOST/public_html/FILES_LOCATION -o $LOCAL_BACKUP/filelog=$today.txt<br />rm .netrc<br /># This is what the other options do:<br /># -l 0 infinite level of recursive (folder depth)<br /># -m mirror<br /># -N only download new files<br /># -o logfile<br /># -b run in the background<br /># -q turn off logs<br /># -nv non-verbose logs<br /></pre>This setup seems to be working well. It has a few weak points and limitations that I can think of:<br /><ul><li>The wget files backup script only downloads new and modified files, it does not mirror the fact that a file could have been deleted on the server, the file would remain in the backup.&nbsp;</li></ul><ul><li>The wget script does not keep historical snapshots meaning that if something bad was to happen it would not be possible to rollback to a certain date in history. <i>Update: I have since had recommend to me Rsnapshot which is a backup utility based on Rsync. Rsnapshot looks great and can work over FTPS. My friend <a href="https://twitter.com/spikeheap">Ryan Brooks</a> wrote a good blog post on how to <a href="http://www.ryanbrooks.co.uk//blog/2013/08/22/simple-rsnapshot-backup-over-ftps/">set up Rsnapshot over FTPS</a>.&nbsp;</i></li></ul><ul><li>Currently the Raspberry Pi only has the one external 1TB hard drive used for backup, ideally this would be two hard drives in a raid array for double safety Backups are only done nightly, this is plenty good enough for us at the moment but might need to be improved in the future.&nbsp;</li></ul><br />I think it's amazing that a little £25 Raspberry Pi is powerful enough to handle backup for several websites. the Pi with an external 1TB hard drive connected through a USB hub consumes only 5.7W making it not too bad to leave on 24/7.<br /><br />&nbsp;One issue that I had initially with the Pi is that the external hard driver would move from /dev/sdb to /dev/sdc therefore loosing it's mount point. I think this was caused by the HDD momentarily losing power. Switching to using a<a href="http://shop.pimoroni.com/products/pihub"> Pimoroni PiHub</a> to power the setup and mounting the drive by it's UUID instead of /dev/xxx reference in fstab fixed the problem:&nbsp; <br /><br /><pre class="prettyprint">UUID=2921-FCE8 /home/pi/1TB vfat  user,umask=0000   0   0</pre><br />I would be interested to hear if you think how the backup could be implemented more efficiently or more securely.
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

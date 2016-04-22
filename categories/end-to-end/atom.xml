@@ -4,7 +4,7 @@
   <title><![CDATA[Category: end-to-end | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/end-to-end/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-21T23:25:44+00:00</updated>
+  <updated>2016-04-22T00:06:26+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Full web-connected home energy monitoring system]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/01/14/full-web-connected-home-energy/"/>
+    <link href="http://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy/"/>
     <updated>2012-01-14T14:02:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/01/14/full-web-connected-home-energy</id>
+    <id>http://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">
   <p>The mission of the OpenEnergyMonitor project is to design and build and open-source energy monitoring and eventually control system. We would like this system to be work well for home energy monitoring systems but also be scalable. For more information see our newly updated <a href="http://openenergymonitor.org/emon/vision" style="text-align: left;">project vision</a><span class="Apple-style-span" style="text-align: left;">.</span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span class="Apple-style-span" style="text-align: left;"><br /></span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span class="Apple-style-span" style="text-align: left;">We are now at the stage were we have a fully functional end-to-end web-connected home energy monitoring system. We have recently written a full <a href="http://openenergymonitor.org/emon/applications/homeenergy">step-by-step build guide for the system</a>. This build guide covers everything from assembling the electronics, uploading the Arduino firmware to setting the web dashboard. </span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-tB9AiNhb9nc/TxGHRRQ-D8I/AAAAAAAAZO0/veKjKKazHqg/s1600/singlectmonitor.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="265" src="http://3.bp.blogspot.com/-tB9AiNhb9nc/TxGHRRQ-D8I/AAAAAAAAZO0/veKjKKazHqg/s400/singlectmonitor.png" width="400" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The system consists of three wireless hardware units <a href="http://openenergymonitor.org/emon/emontx">emonTx</a> (transmitter), <a href="http://openenergymonitor.org/emon/emonGLCD">emonGLCD</a> (display), <a href="http://openenergymonitor.org/emon/emonbase">emonBase</a> (web-connected base station) and a powerful web-application <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a>.&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;We also have build guide/documentation for setting up a <a href="http://openenergymonitor.org/emon/applications/solarpv">solar PV monitoring system</a> using the same modules. &lt;/div&gt;<br /></p>
 </div>

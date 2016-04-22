@@ -1,0 +1,218 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ambient Wind Energy Indicator using Node-RED and Blink(1) USB  - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Ambient Wind Energy Indicator using Node-RED and Blink(1) USB ">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Ambient Wind Energy Indicator using Node-RED and Blink(1) USB ">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-11-04T10:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> four minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/nodered/'>NodeRed</a></li>
+      
+        <li><a class='category' href='/categories/display/'>display</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div>As we move to a low carbon electric grid with large amount of input from renewable sources we will need to match our consumption of energy to generation. The wind will not always blow and the sun doesn't always shine. Grid energy storage will play a role, however the closer we can match our consumption of energy to generation the less storage will be required. In the future we can expect dynamic pricing to act as as an incentive for shifting consumption patterns.&nbsp;</div><div><br /></div><div>As an experiment I have been playing around with creating a real-time ambient indicator of UK wind energy generation. Since wind energy is the greatest input of renewable energy into the UK grid we can assume that when wind generation output is high this is the best time for us to use power e.g. run the washing machine, dish washer etc..&nbsp;</div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div>I've used <a href="http://emoncms.org/">emoncms.org</a>, &nbsp;Node-RED and a <a href="https://blink1.thingm.com/">ThingM blink(1) USB RGB LED</a>&nbsp;plugged into an <a href="http://shop.openenergymonitor.com/emonpi-1">emonPi</a> energy monitor to create the indicator.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-MgLolvdJt4w/Vi6jGqzmYbI/AAAAAAABhhE/uCflxGRqya8/s1600/IMG_20151023_164739161%257E01.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://3.bp.blogspot.com/-MgLolvdJt4w/Vi6jGqzmYbI/AAAAAAABhhE/uCflxGRqya8/s320/IMG_20151023_164739161%257E01.jpg" width="239" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Real-time wind energy indicator</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-zTad-tTlyUE/VjnbfV5tPOI/AAAAAAABiaE/zrYYHpfwjW8/s1600/blinkusb.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://4.bp.blogspot.com/-zTad-tTlyUE/VjnbfV5tPOI/AAAAAAABiaE/zrYYHpfwjW8/s320/blinkusb.gif" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blink USB Indicator</td></tr></tbody></table><br />First let's install the software to control the Blink(1) USB on the emonPi / RaspberryPi:<br /><br /><i>$ git clone https://github.com/todbot/blink1</i><br /><i>$ sudo cp ~/blink1/linux/51-blink1.rules /etc/udev/rules.d/</i><br /><i>$ sudo udevadm control --reload-rules</i><br />un-plug then re-plug device<br /><i>$ cd blink1/commandline</i><br /><i>$ make</i><br /><br />Note: if Node HID fails to compile you may need to install gcc-4.8. I did not experience this problem using Raspbian Wheezy:&nbsp;<span style="color: #383838; font-family: &quot;monaco&quot; , &quot;courier&quot; , monospace; font-size: 14px; line-height: 1.57143em;"><a href="https://github.com/node-hid/node-hid/issues/115">https://github.com/node-hid/node-hid/issues/115</a></span><br /><span style="color: #383838; font-family: &quot;monaco&quot; , &quot;courier&quot; , monospace; font-size: 14px; line-height: 1.57143em;"><br /></span>Test it's operation by turning on a white LED with<br />$ <i>~/blink1/commandline./blink1-tools --on</i><br /><i><br /></i>To make the Blink(1) USB work with Node-RED we need to install the Blink(1) node-RED flow and libusb driver. If you haven't already got it installed this example also requires the emoncms noe-RED flow to pull data from emoncms.org<br /><br /><i>$ sudo apt-get install libusb-1.0-0.dev</i><br /><i>$ cd ~/.node-red</i><br /><i>$ npm install node-red-node-blink1</i><br /><i>$ npm install node-red-node-emoncms</i><br /><br />Then restart node-RED.<br /><br />Node-RED makes it super easy to link the required software components together, with pre built nodes available for emoncms and Blink USB it's just a case of linking the nodes together and adding some logic. Here is now node-RED flow, see node-RED export at bottom of this post:<br /><br /></div><div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-9_rpddNkZsA/VjnUJ2AYmOI/AAAAAAABiZQ/PVepjwwO6Jo/s1600/Node_RED_Emoncms_WindEnergy.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="208" src="http://4.bp.blogspot.com/-9_rpddNkZsA/VjnUJ2AYmOI/AAAAAAABiZQ/PVepjwwO6Jo/s640/Node_RED_Emoncms_WindEnergy.png" width="640" /></a></div><br /></div><div>We have a script running on emoncms.org to pull in real-time UK wind energy generation. We have been logging this data for almost a year now. Checkout the dashboard here: <a href="http://emoncms.org/mywindpower/ukwind">http://emoncms.org/mywindpower/ukwind</a>.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-zr6-pnRM68Q/Vjnc8gUs1gI/AAAAAAABiaU/7h__EuOz9ps/s1600/Emoncms_my_wind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="253" src="http://3.bp.blogspot.com/-zr6-pnRM68Q/Vjnc8gUs1gI/AAAAAAABiaU/7h__EuOz9ps/s400/Emoncms_my_wind.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/mywindpower/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/mywindpower/ukwind</a></td></tr></tbody></table><br />The read API key for this account is <i>8f5c2d146c0c338845d2201b8fe1b0e1</i> and the feed ID is&nbsp;<span style="background-color: whitesmoke; color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px; line-height: 20px;"><i>67088</i></span>. To pull the real time data into&nbsp;node red just plug in the &nbsp;api key and feed ID into the <a href="http://flows.nodered.org/node/node-red-node-emoncms">node-RED emoncms in node</a>. Node-RED will then execute the following GET request:</div><div><a href="https://www.blogger.com/goog_896110156"><br /></a><b><a href="http://emoncms.org/feed/value.json?id=67088&amp;apikey=8f5c2d146c0c338845d2201b8fe1b0e1">http://emoncms.org/feed/value.json?id=67088&amp;apikey=8f5c2d146c0c338845d2201b8fe1b0e1</a></b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRE/BlMdaoiDjsQ/s1600/3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275" src="http://4.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRE/BlMdaoiDjsQ/s400/3.png" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRA/0AtBR80rNP0/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="235" src="http://1.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRA/0AtBR80rNP0/s400/2.png" width="400" /></a></div><b><br /></b></div><div><br />The blink usb node requires RGB csv to represent a colour output. A node is used to map the generation 0 - &nbsp;7000 MW (currently!) to 0 - 255 RGB representation.&nbsp;</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-WlNB7c0DlW8/Vii2PYXKUBI/AAAAAAABhRQ/hNDNr07dFlg/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-WlNB7c0DlW8/Vii2PYXKUBI/AAAAAAABhRQ/hNDNr07dFlg/s400/4.png" width="390" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GhZ2U4h9ckY/Vii2PiJSKlI/AAAAAAABhRM/4a-Vlm5vXoM/s1600/5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/-GhZ2U4h9ckY/Vii2PiJSKlI/AAAAAAABhRM/4a-Vlm5vXoM/s400/5.png" width="391" /></a></div><br /><br /><span style="font-family: Arial, Helvetica, sans-serif; font-size: xx-small;">[{"id":"98c24074.673dc","type":"emoncms-server","server":"http://emoncms.org","name":"emoncms UK windpower"},{"id":"5a3294d0.a5cd6c","type":"function","name":"Create RGB values CSV","func":"// convert to integer \n//var wind = +msg.payload;\n\n// green = 255 @ max wind output\nvar g = msg.payload\n\n// red = 255 @ zero wind output\nvar r= 255 - msg.payload\n\n// Round to whole number\ng = Number((g).toFixed(0));\nr = Number((r).toFixed(0));\n\nvar csv = r + \",\" + g + \",\" + 0;\nreturn {payload:csv};","outputs":1,"noerr":0,"x":617,"y":348,"z":"c0b0c402.3f4f38","wires":[["52d8719f.ad279","f3dd00d0.0c23"]]},{"id":"6ec040ed.913fc","type":"inject","name":"Trigger every 10min 7AM-11PM","topic":"","payload":"1445415635","payloadType":"string","repeat":"","crontab":"*/10 7-22 * * *","once":false,"x":297,"y":261,"z":"c0b0c402.3f4f38","wires":[["68f8d790.970728"]]},{"id":"52d8719f.ad279","type":"debug","name":"","active":false,"console":"false","complete":"false","x":878,"y":334,"z":"c0b0c402.3f4f38","wires":[]},{"id":"b5d43139.4a2bd","type":"inject","name":"Test 100MW","topic":"","payload":"100","payloadType":"string","repeat":"","crontab":"","once":false,"x":223,"y":421,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"9122dd65.6edd2","type":"inject","name":"Test 2000 MW","topic":"","payload":"2500","payloadType":"string","repeat":"","crontab":"","once":false,"x":225,"y":469,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"b5c8e6e5.4a3718","type":"inject","name":"Test 5000MW","topic":"","payload":"5000","payloadType":"string","repeat":"","crontab":"","once":true,"x":224,"y":514,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"f3dd00d0.0c23","type":"blink1","fade":"600","name":"Blink(1) USB","x":847,"y":440,"z":"c0b0c402.3f4f38","wires":[]},{"id":"68f8d790.970728","type":"emoncms in","name":"Get UK wind generation output from emoncm.org","emonServer":"98c24074.673dc","feedid":"67087","x":263,"y":343,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"2da76a85.d25896","type":"range","minin":"0","maxin":"6000","minout":"0","maxout":"255","action":"clamp","round":true,"name":"Range: Scale wind output to RGB value","x":551,"y":417,"z":"c0b0c402.3f4f38","wires":[["5a3294d0.a5cd6c"]]},{"id":"64a3fa26.9b5c04","type":"inject","name":"Turn off after 11PM","topic":"","payload":"0,0,0","payloadType":"string","repeat":"","crontab":"01 23 * * *","once":false,"x":613,"y":488,"z":"c0b0c402.3f4f38","wires":[["f3dd00d0.0c23"]]}]</span>
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

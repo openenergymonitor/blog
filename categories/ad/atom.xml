@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ad | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/ad/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-21T23:25:44+00:00</updated>
+  <updated>2016-04-22T00:06:26+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A business wants to see the light]]></title>
-    <link href="http://blog.openenergymonitor.org/2011/02/03/business-wants-to-see-light/"/>
+    <link href="http://blog.openenergymonitor.org/2011/02/business-wants-to-see-light/"/>
     <updated>2011-02-03T10:08:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2011/02/03/business-wants-to-see-light</id>
+    <id>http://blog.openenergymonitor.org/2011/02/business-wants-to-see-light</id>
     <content type="html"><![CDATA[<div style="text-align: justify;">
   <p>You may remember <a href="http://openenergymonitor.blogspot.com/2010/12/kirikou-open-electricity-monitor.html">my last post</a> on this blog. I was raising money to fund my prototype of an energy monitor connected to the cloud via WiFi. The crowdfundraising was a success (probably thanks to some of you), now that 95% of the components arrived I had the monitor assembled and the sketch running. A few technical problems are to be overcome (please check the forum and see if you can help), and the business plan is taking shape.&lt;/div&gt;&lt;div style="text-align: justify;"&gt;
 <br />&lt;/div&gt;&lt;div style="text-align: justify;"&gt;Yes, exactly: business plan :) Trystan, the other founders and myself would love to see a few small businesses based on the concept of open source hardware, in other words we would like to see some people making money with this system. Moreover, we would like to see a network of these businesses co-existing in a constructive symbiose to drive the wheel of development on a wide scale.&lt;/div&gt;&lt;div style="text-align: justify;"&gt;

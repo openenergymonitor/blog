@@ -1,0 +1,207 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2015/06/modelling-hourly-demand-and-supply-for/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2015/06/modelling-hourly-demand-and-supply-for/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-10T07:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s1600/model.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="340" src="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s640/model.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s1600/intro.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s640/intro.png" width="640" /></a></div>Earlier this year I did some work with Philip James from the Centre for Alternative Technology and a researcher on the ZeroCarbonBritain project on creating an open source online zero carbon energy modelling tool based on the ZeroCarbonBritain energy model which is one of the Uk's leading energy scenarios outlining a positive, aspirational 100% renewable zero carbon energy future.<br /><br />This first tool is available online <a href="http://zerocarbonbritain.org/energy_model/">here</a> and <a href="http://openenergymonitor.blogspot.co.uk/2015/02/an-open-source-hourly-zero-carbon.html">blog post</a>, using it it is possible to explore how its possible to supply energy demands such as space heating and electric vehicles from a variable renewable supply consisting of wind, solar, tide and wave power and a mix of storage technologies. The tool models supply and demand on an hourly basis which is a significant improvement over simpler annual approach.<br /><br /><b>Understanding its workings</b><br />I had been wanting to dig down deeper into the workings of the model and unpick the effect of the different components, the full model has so many different things going on that its hard to see how each component such as space heating demand from heatpumps, space heating profiles, electric vehicle charging profiles, water heating, or different generation technologies affects the bigger picture of the overall supply/demand balance and resulting storage requirements and so over the last month and a half I've spent some time looking into this in more detail. <br /><br /><b>Python and javascript example models</b><br />I started by writing a series of python models that modelled many of the key components in turn using the full 10 year hourly dataset used in the ZeroCarbonBritain spreadsheet model, exploring the level of supply/demand matching for each generation technology. As I started to model some of the more complex demands such as space heating from heatpumps, including the effect of solar and internal gains, I needed to be able to see what was going on in more detail so I converted the models to javascript and wrote a data viewer using flot.<br /><br /><b>Online visual tool</b><br />I've put all these model examples together into an online tool and added alongside each model a brief analysis and extended results of the many model run's I ran with different parameters. The tool also includes an introduction and overview of the uk energy context which is intended to help put the model examples which focus on domestic traditional electricity demand, space heating and electric transport in context. This tool is now available online here:<br /><br /><br />Launch online zero carbon energy system example models: <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a><br /><br />and its all open source with the code and full website on github here:<br /><a href="https://github.com/TrystanLea/zcem">https://github.com/TrystanLea/zcem</a><br /><br />The tool covers the following model examples and context pages:<br /><br />&nbsp;&nbsp;&nbsp; Introduction<br />&nbsp;&nbsp;&nbsp; Energy Overview<br />&nbsp;&nbsp;&nbsp; 1. Variable supply<br />&nbsp;&nbsp;&nbsp; 2. Variable supply and flat demand<br />&nbsp;&nbsp;&nbsp; 3. Variable supply, traditional electricity demand and oversupply<br />&nbsp;&nbsp;&nbsp; 4. Mixed supply and flat demand<br />&nbsp;&nbsp;&nbsp; 5. Variable supply and space heating demand<br />&nbsp;&nbsp;&nbsp; 6. Electric Vehicles<br />&nbsp;&nbsp;&nbsp; 7. All<br />&nbsp;&nbsp;&nbsp; Aggregation<br />&nbsp;&nbsp;&nbsp; ZCB Dataset<br />&nbsp;&nbsp;&nbsp; ZCB web model<br />&nbsp;&nbsp;&nbsp; Python models <br /><br />I have found it really interesting doing this work, but it also feels like a chapter early on in a large book. There is a lot more I'd like to understand in more detail and expand on which I hope to continue with over time. <br /><br />
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>emonGLCD V2 SMT Development - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2014/07/emonglcd-v2-smt-development/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="emonGLCD V2 SMT Development">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2014/07/emonglcd-v2-smt-development/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="emonGLCD V2 SMT Development">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    <span>Blog | OpenEnergyMonitor</span>
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">emonGLCD V2 SMT Development</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-07-03T14:28:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  For sometime now the emonGLCD has been lagging behind other OpenEnergyMonitor hardware units in terms of development, we're still selling it only in thru-hole DIY kit form.<br /><br />We've been thinking about updating it to SMT pre-assembled for some time, however we've been dragged our heels somewhat since there has been thoughts that maybe a smartphone app could fill the same function. However I believe&nbsp;a physical LCD display unit fulfils a slightly different role to a smartphone app. I believe in certain circumstances there is certainly value to having an always-on low power LCD display located in a prominent location displaying current power consumption and or generation.<br /><br />I have found the emonGLCD with the ambient indication tri-colour LED's to be a really useful easy-to-read indication of solar PV import / export at any given time.<br /><br />Doing a quick <a href="https://www.google.co.uk/search?q=emonglcd&amp;safe=off&amp;rlz=1CAACAG_enGB573GB573&amp;es_sm=93&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=N1u1U42-KcXb7Abzk4CoDA&amp;ved=0CAkQ_AUoAg">Google search</a> shows that there are lots of emonGLCD being used and customized for all sorts of purposes we could not even have though of! For example: heat pump monitor, temperature measurements, electric car charge rate etc.<br /><br />With this in mind, we have decided to make an SMT version of the emonGLCD keeping the design largely the same (same LCD panel size and same controller chip ST7565). This will mean the current emonGLCD firmware sketches should run on the new unit with little or no modifications. <br /><br />I would be interested to heard your thoughts on what you would like in a new version of the emonGLCD?<br /><br />Over the past few weeks I've made a start to get a prototype, here is the main design criteria and features so far:<br /><ul><li>  ST7565&nbsp;128 x 64 LCD panel&nbsp;with integrated&nbsp;RGB backlight, <a href="http://www.vatronix.com/products/75.html">specifically this Vatronix unit</a> (to replace the LED's on the current version)</li><li>  Single front facing&nbsp;rotary encoder with push-to-select (to replace the three push buttons the the current)</li><li>  Option for lithium battery pack with USB battery charging circuit and battery voltage monitor</li><li>  Arduino compatiable ATmega328&nbsp;with RFM12B / RFM1269CW</li><li>  Option for on-board&nbsp;DS18B20 and DHT22&nbsp;temperature and humidity sensors&nbsp;</li></ul>Using SMT assembly and lower cost LCD unit and enclosure we should be able to reduce the price of the emonGLCD&nbsp;compared to the current version.<br /><br />Yesterday I sent off for the first prototype PCB revision:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-YAr16KVXPrE/U7Vno3nIb4I/AAAAAAAA2zc/5Z419xiIra8/s1600/emonGLCD_V2.0_brd.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-YAr16KVXPrE/U7Vno3nIb4I/AAAAAAAA2zc/5Z419xiIra8/s1600/emonGLCD_V2.0_brd.png" height="526" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-VyOmm39X200/U7VnoxaukPI/AAAAAAAA2zg/MyAATsXtGtA/s1600/emonGLCD_V2.0_sch.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-VyOmm39X200/U7VnoxaukPI/AAAAAAAA2zg/MyAATsXtGtA/s1600/emonGLCD_V2.0_sch.png" height="522" width="640" /></a></div><br /> <br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-kyenCaUIo8Y/U7VnteHlIYI/AAAAAAAA2zw/L3pF1d4kAN8/s1600/2014-05-23+13.55.25.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-kyenCaUIo8Y/U7VnteHlIYI/AAAAAAAA2zw/L3pF1d4kAN8/s1600/2014-05-23+13.55.25.jpg" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing the new LCD panel with built in RGB backlight</td></tr></tbody></table>These images and more can be viewed in higher resolution in the emonGLCD V2 SMT Development album on G+, I will be periodically updating this album with development photos as things develop!<br /><a href="https://plus.google.com/photos/114424977493521882459/albums/6016575729643776881#">https://plus.google.com/photos/114424977493521882459/albums/6016575729643776881#</a><br /><br /><h2> <strong>Enclosure&nbsp;</strong></h2>The enclosure is an important part of the emonGLCD&nbsp;design considerations. We plan to move to a 'proper' custom made enclosure for the new emonGLCD. These are the main options available:<br /><br />1.) 3D printed (for small volumes and prototyping, not really possible for 500+ per production run)<br />2.) layered laser cut plywood or acrylic (like the Pimoroni Raspberry Pi cases)<br />3.) Injection molded&nbsp;plastic<br /><br />I'm specifically interested in exploring if/how an enclosure could be made with<strong> lowest embodied energy and maximum&nbsp;recyclability.</strong><br />We have not yet made much progress on case design nor have we got a designer or manufacturer in mind. If you would like to work with us please get in touch. Equally if you have some ideas on enclosure design I look forward to hearing.<br /><br />Please use the the emonGLCD V2 SMT forum thread for comments and discussion: <a href="http://openenergymonitor.org/emon/node/5374">http://openenergymonitor.org/emon/node/5374&nbsp;</a><br /><br />
+</article>
+
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    var disqus_script = 'count.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>
