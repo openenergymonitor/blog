@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/android/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T01:56:53+00:00</updated>
+  <updated>2016-04-22T02:06:41+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -25,7 +25,11 @@
 <div class="" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span><span style="text-align: left;">The app is now available on Google Play</span><sup style="background-color: white; color: #444444; font-family: Roboto, sans-serif; font-size: 8px; line-height: 0;">TM</sup>.&nbsp;</div>
 <div class="separator" style="clear: both; text-align: left;"><a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" height="65" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" width="200" /></a></div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="" style="clear: both; text-align: left;"><span style="text-align: left;">What's even more exciting is that this app has been developed almost solely by a member of the&nbsp;</span><span style="text-align: left;">community&nbsp;</span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>). &nbsp; &nbsp;</div>
+<div class="" style="clear: both; text-align: left;"><span style="text-align: left;">
+    
+    <!--more-->
+    
+    What's even more exciting is that this app has been developed almost solely by a member of the&nbsp;</span><span style="text-align: left;">community&nbsp;</span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>). &nbsp; &nbsp;</div>
 <h3 style="clear: both; text-align: left;">Features:</h3>
 <div class="separator" style="clear: both; text-align: left;"></div>
 <ul><li>Emoncms MyElectric dashboard &nbsp;</li><li>Supports <a href="http://emoncms.org/">http://emoncms.org</a> and any other Emoncms server&nbsp;</li><li>Power or currency view toggle</li><li>Multiple currency support&nbsp;</li><li>Unit cost config (e.g £/Kwh)</li><li>Pinch &amp; zoom on real-time power graph</li><li>Number of KWh days displayed is based on screen resolution, rotation to horizontal or viewing on a large tabet results in more KWh day values displayed (see below for Nexus 10 screenshot)&nbsp;</li><li>MySolar support in development&nbsp;</li><li>Fully open-source (<a href="https://github.com/emoncms/AndroidApp">GitHub Repo</a>)</li><li>Developed by the community with input from the community (<a href="http://openenergymonitor.org/emon/node/11260#comment-37116">development forum thread</a>)</li></ul>

@@ -104,48 +104,6 @@
     <header>
   
   <h1 class="beta">
-    <a href="/2013/07/in-memory-storage-php-shared-memory-vs/">In memory storage: PHP shared memory vs Redis vs MYSQL</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-04T09:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> three minutes reading time</span>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
-      
-    
-    </ul>
-  </span>
-    
-      <a class='comments'
-         href="/2013/07/in-memory-storage-php-shared-memory-vs/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Continuing on the theme of rethinking the data core of emoncms, as <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">previously mentioned</a> for short term storage, storage to disk may not be necessary, instead we can store data in memory using an in-memory database. Here are some tests and benchmarks for in memory storage:<br /><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To start with I created baseline test using MYSQL updating a feed's last time and value in the feeds table row for that feed. This took around: 4800 – 5100 ms to update a row 10000 times.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We would imagine Redis doing a lot better as its in-memory, it&nbsp;isn't&nbsp;writing to disk each time which is much slower than memory access. Redis did indeed perform faster completing the same number of updates to a key-value pair in 1900 – 2350ms.&nbsp;I'm&nbsp;a little surprised thought that it was only 2.3x as fast and not much faster, but then there is a lot going on Redis has its own server which needs to be accessed from the PHP client this is going to slow things down a bit, I tested both the phpredis client and Predis. Phpredis was between 500-1000 ms faster than the Predis client and is written in c.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How fast can in-memory storage be? A general program variable is also a form of in-memory storage, a quick test suggests that it takes 21ms to write to a program variable 10000 times, much better than 2.3x faster&nbsp;that's&nbsp;230x faster! The problem with in program variables is that if they are written to in one script say an instance of input/post they cannot be accessed by another instance serving feed/list, we need some form of storage that can be accessed across different instances of scripts.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The difference between 21ms and 1900-2350ms for redis is intriguingly large and so I thought I would search for other ways of storing data in-memory that would allow access between different application scripts and instances.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I came across the PHP shared memory functions which are similar to the flat file access but for memory, the results of a simple test are encouraging showing a write time of 48ms for 10000 updates. So from a performance perspective using php shared memory looks like a better way of doing things.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The issue though is implementation, mysql made it really easy to search for the feed rows that you wanted (either by selecting by feed id or by feeds that belong to a user or feeds that are public), I'm a little unsure about how best to implement the similar functionality in redis but it looks like it may be possible by just storing each feed meta data roughly like this: feed_1: {"time":1300,"value":20}.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Shared memory though looks like it could be quite a bit more complicated to implement, but then it does appear to be much faster. Maybe the 2.3x speed improvement over mysql offered by redis is fast enough? and its probably much faster in high-concurrency&nbsp;situations. I think more testing and attempts at writing full implementations using each approach is needed before a definitive answer can be reached.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2013/06/load-stats-for-myisam-vs-innodb-for/">Load stat's for MYISAM vs INNODB for feed storage on the RaspberryPI</a>
   </h1>
   
@@ -511,6 +469,46 @@
 
   <div class="entry-content clearfix">
     <i>Update 27/06/13:</i><br /><br /><i>As kindly pointed out by Jörg Becker in the comments below I mad an error with the timebase. I had assumed If I zoomed in the same amount that the time base would be the same, I had not realised that this was not actually the case. Below is an updated screen grab with the correct time period. As we can see the power in the window is pretty much the same 0.28/0.29Kwh. <b>Defrosting the fridge does not seem to have had much of a reduction effect in the power consumption, just an increased duty cycle. </b>Apologies for my original misleading post below.&nbsp;</i><br /><i><br /></i><i>Thanks again to Jörg Becker for pointing this out.&nbsp;</i><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s878/Selection_001.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="290" src="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s640/Selection_001.png" width="640" /></a></div><br /><br />Yesterday I defrosted my fridge, I was amazed at the effect it had on it's energy consumption and pattern.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s1600/fridge+defrost.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s640/fridge+defrost.jpg" width="640" /></a></div><br /><strike>Energy consumption due to fridge dropped from 2.29 Kwh/d to 1.09Kwh/d, about a 50% readuction. The pattern of energy consumption changed a fair bit, now defrosted the fridge switches on for a much shorter period of time, &nbsp;obviously getting up to&nbsp;down to temperature much quicker.</strike><br /><strike><br /></strike><strike>If I keep the fridge defrosted regularly all year it should save me around £60 a year.</strike><br /><br />I am aware that my fridge is quite an old model and a new model would use less energy overall and not require defrosting. Something to thing about for the future..
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/06/building-energy-modelling-part-2-first/">Building Energy Modelling part 2 - First attempts and research</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-17T20:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> two minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/06/building-energy-modelling-part-2-first/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />It was not long after reading the<a href="http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-part-1-whole.html"> Whole House Book</a> that Glyn and I went to a green hackathon in London (January 2012) and I spent my time creating a small web app that implemented a really basic model that produced estimates of 20 year savings of implementing various building fabric improvement measures, its still up here:<br /><div style="margin-bottom: 0cm;"><span style="color: black;"><span style="font-family: Times New Roman;"><span style="font-size: medium;"><br /></span></span></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VzL7G6cycIg/Ub9kqV2oNKI/AAAAAAAACrk/aloGK36hQMQ/s1600/retrofit.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="337" src="http://4.bp.blogspot.com/-VzL7G6cycIg/Ub9kqV2oNKI/AAAAAAAACrk/aloGK36hQMQ/s400/retrofit.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><span style="color: black;"><span style="font-family: Times New Roman;"><span style="font-size: medium;"><br /></span></span></span></div><div style="margin-bottom: 0cm;">Try it out: <a href="http://vis.openenergymonitor.org/retrofit">http://vis.openenergymonitor.org/retrofit</a>&nbsp;</div><br />Source code:<a href="https://github.com/openenergymonitor/retrofit.git"> https://github.com/openenergymonitor/retrofit.git</a> <br /><br />I had not quite realised the importance of solar and internal gains at that point or indeed utilisation factors and heating patterns so the green hackathon retrofit calculator will only be remotely close to actual heating demand in very leaky buildings, with few windows and consistently heated to an even set temperature all year. Paul Tanner pointed out the heating pattern flaw at the time in a tweet but it wasnt until more recently that I got how significant the difference is.<br /><br />After the green hackathon retrofit calculator I tried to develop the idea of a calculator that would output a list of proposed measures, their energy savings and financial payback but had low confidence in the accuracy of its output so decided to shelve it for a while.<br /><br />At around the same time I did a little work on dynamic simulation of heat conduction through a wall that can be found here: <a href="http://vis.openenergymonitor.org/dev/heatflow01/">http://vis.openenergymonitor.org/dev/heatflow01/</a> but was also unsure of its accuracy, needing to brush up on my calculus to check precisely by computing an exact solution via the fourier method.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-VYIqFFY31h8/Ub9qUS2ebfI/AAAAAAAACr0/gP1d5D8YRZg/s1600/heatflowsim.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-VYIqFFY31h8/Ub9qUS2ebfI/AAAAAAAACr0/gP1d5D8YRZg/s400/heatflowsim.png" width="381" /></a></div><div style="margin-bottom: 0cm;"><span style="font-size: medium;"><br /></span></div>I had by now read through the<a href="http://www.bre.co.uk/sap2012/page.jsp?id=2759"> SAP worksheet</a> (The UK's standard assessment procedure for assessing the energy performance of domestic buildings) many times but thought it a little too long to embark on implementing it, although basing an energy model on a standard approach supported widely seemed like the best approach.<br /><br />Searching for open source SAP implementations I found a useful open source version of the 2009 SAP worksheet implemented as a open office spreadsheet by Wookey here:&nbsp;<a href="http://wookware.org/files/SAPWorksheet9.80.ods">http://wookware.org/files/SAPWorksheet9.80.ods</a> which if you prefer spreadsheets to code is certainly worth looking at. There was also a thread on the greenbuildingforums calling for good open source building energy modelling software with a lively debate: <a href="http://www.greenbuildingforum.co.uk/newforum/comments.php?DiscussionID=6574&amp;page=1#Item_0">http://www.greenbuildingforum.co.uk/newforum/comments.php?DiscussionID=6574&amp;page=1#Item_0</a> <br /><br />In my searching I also came across a fully dynamic open source building energy model called esp-r developed by the University of Strathclyde <a href="http://www.esru.strath.ac.uk/Programs/ESP-r.htm">http://www.esru.strath.ac.uk/Programs/ESP-r.htm</a> and created a page on how to install it on ubuntu on the openenergymonitor site which I never linked in here: <a href="http://openenergymonitor.org/emon/node/1715">http://openenergymonitor.org/emon/node/1715</a>.<br /><div><br /></div><div>I'm also more recently aware that there is another open source dynamic building energy modelling project called OpenStudio which looks like it has a nice front end, OpenStudio is a National Renewable Energy Laboratories project&nbsp;<a href="https://openstudio.nrel.gov/">https://openstudio.nrel.gov/</a>&nbsp;and has sketchup integrations, looks nice!<br /><br /><b>Next blog post:</b> <a href="http://openenergymonitor.blogspot.com/2013/06/building-energy-modelling-carbon-coop.html">Carbon Coop and the open source SAP 2012</a></div>
     
   </div>
   </article>

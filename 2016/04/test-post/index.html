@@ -109,7 +109,7 @@
   <div class="meta clearfix">
     <time datetime="2016-04-03T17:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> March 3rd 2016</time>
     <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
-    <span><i class='icon-time'></i> 1 minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
@@ -150,37 +150,7 @@ formatting syntax is to make it as readable</p>
 
 <p><a href="http://coapp.org/reference/garrett-flavored-markdown.html#code">See here</a> for a full list of code syntax markdown tags</p>
 
-<h2 id="python-code-syntax">Python code syntax:</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Initialize logging</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">"EmonHub"</span><span class="p">)</span>
-
-</code></pre>
-</div>
-<p>## PHP code syntax:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public function get_npoints($feedid) {
-    $feedid = (int) $feedid;
-
-</code></pre>
-</div>
-
-<a name="read-more"></a>
-
-<h2 id="c-code-syntax">c++ code syntax:</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">get_temperature</span><span class="p">(</span><span class="n">byte</span> <span class="n">sensor</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">float</span> <span class="n">temp</span><span class="o">=</span><span class="p">(</span><span class="n">sensors</span><span class="p">.</span><span class="n">getTempC</span><span class="p">(</span><span class="n">allAddress</span><span class="p">[</span><span class="n">sensor</span><span class="p">]));</span>
-  <span class="k">if</span> <span class="p">((</span><span class="n">temp</span><span class="o">&lt;</span><span class="mf">125.0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">temp</span><span class="o">&gt;-</span><span class="mf">55.0</span><span class="p">))</span> <span class="k">return</span><span class="p">(</span><span class="n">temp</span><span class="o">*</span><span class="mi">10</span><span class="p">);</span>            <span class="c1">//if reading is within range for the sensor convert
-</span></code></pre>
-</div>
-
-<h2 id="bash-code-syntax-markdown">Bash code syntax markdown:</h2>
-
-<pre><code class="language-console">$ echo "hello world"
-</code></pre>
-<p># Table:</p>
+<h1 id="table">Table:</h1>
 
 <table>
   <thead>

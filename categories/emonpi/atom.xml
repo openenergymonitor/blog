@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonPi | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/emonpi/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T01:56:53+00:00</updated>
+  <updated>2016-04-22T02:06:41+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -23,7 +23,10 @@
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="separator" style="clear: both; text-align: left;">In my last few blog posts I have been taking a look at making the <a href="http://shop.openenergymonitor.com/emonpi-1/">emonPi</a> the heart of a smart energy optimised home and how live energy monitoring data from the emonPi can easily be used to inform other services: &nbsp;&nbsp;</div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="" style="clear: both; text-align: left;">1.&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2015/10/emonpi-nodered-and-mqtt.html">Integrating&nbsp;Node-RED and MQTT&nbsp;on the emonPi</a></div>
+<div class="" style="clear: both; text-align: left;">1.
+<!--more-->
+
+&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2015/10/emonpi-nodered-and-mqtt.html">Integrating&nbsp;Node-RED and MQTT&nbsp;on the emonPi</a></div>
 <div class="separator" style="clear: both; text-align: left;">2. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/node-red-emoncms-node.html">Node-RED and Emoncms</a></div>
 <div class="" style="clear: both; text-align: left;">3. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/remote-control-of-lightwave-rf-plugs.html">Controlling LightWaveRF devices on the emonPi</a>&nbsp;(OOK RF Tx)&nbsp;</div>
 <div class="" style="clear: both; text-align: left;"><br /></div>
