@@ -136,7 +136,7 @@
   <div class="entry-content clearfix">
     <p>Testing markdown blog post. Will this replace our <a href="http://openenergymonitor.blogspot.com">old blog</a>?</p>
 
-<p>Here is a markdown post: <em>italic</em>, <strong>bold</strong>, <code>inline code</code></p>
+<p>Here is a markdown post: <em>italic</em>, <strong>bold</strong>, <code class="highlighter-rouge">inline code</code></p>
 
 <ul>
   <li>Bullet points</li>
@@ -146,93 +146,32 @@
 <p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.</p>
 
 <blockquote>
-  <p>The overriding design goal for Markdown’s<br />
+  <p>The overriding design goal for Markdown’s
 formatting syntax is to make it as readable</p>
 </blockquote>
 
-<h1>Code syntax highlight blocks</h1>
+<h1 id="code-syntax-highlight-blocks">Code syntax highlight blocks</h1>
 
 <p><a href="http://coapp.org/reference/garrett-flavored-markdown.html#code">See here</a> for a full list of code syntax markdown tags</p>
 
-<h2>Python code syntax:</h2>
+<h2 id="python-code-syntax">Python code syntax:</h2>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="comment"># Initialize logging</span>
-<span class="predefined-constant">self</span>._log = logging.getLogger(<span class="string"><span class="delimiter">&quot;</span><span class="content">EmonHub</span><span class="delimiter">&quot;</span></span>)
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Initialize logging</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">"EmonHub"</span><span class="p">)</span>
 
-</pre></div>
-</div>
+</code></pre>
 </div>
 <p>## PHP code syntax:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="keyword">public</span> <span class="keyword">function</span> <span class="function">get_npoints</span>(<span class="local-variable">$feedid</span>) {
-    <span class="local-variable">$feedid</span> = (<span class="predefined-type">int</span>) <span class="local-variable">$feedid</span>;
+<div class="highlighter-rouge"><pre class="highlight"><code>public function get_npoints($feedid) {
+    $feedid = (int) $feedid;
 
-</pre></div>
-</div>
+</code></pre>
 </div>
 
 
     
       <a class="btn pull-right" href="/2016/04/test-post/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/04/testing-markdown/">Testing Markdown Post</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-04-01T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
-    <span><i class='icon-time'></i> three minutes reading time</span>
-    
-    
-      <a class='comments'
-         href="/2016/04/testing-markdown/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <h1>Emoncms 9</h1>
-
-<p>Emoncms is an open-source web application for processing, logging and visualising energy, temperature and other environmental data and is part of the <a href="http://openenergymonitor.org/emon">OpenEnergyMonitor project</a>.</p>
-
-<p><strong>Version 9 of emoncms has been developed by <a href="https://github.com/chaveiro/">Chaveiro</a> with a significant list of improvements, see <a href="http://openenergymonitor.org/emon/node/11009">forum thread with full change log</a></strong></p>
-
-<p><img src="docs/files/emoncms_graphic.png" alt="Emoncms" /></p>
-
-<h2>Branches</h2>
-
-<p><strong>Note:</strong> We are currently reorganising the emoncms branches. The master branch is now the same as 9.x.</p>
-
-<ul>
-  <li>
-    <p><a href="https://github.com/emoncms/emoncms">master</a> - The latest and greatest developments. Potential bugs, use at your own risk!  <a href="http://openenergymonitor.org/emon/node/11009">EmonCMS 9.x forum thread</a></p>
-  </li>
-  <li>
-    <p><a href="https://github.com/emoncms/emoncms/tree/stable">stable</a> - emonPi/emonBase release branch, regularly merged from master. Slightly more tried and tested.</p>
-  </li>
-  <li>
-    <p><a href="https://github.com/emoncms/emoncms/tree/low-write">low-write (v8.5)</a> - The old emonpi/emonbase emoncms version (July 15 ready-to-go SD card image). Low-write mode is now available in v9.0. The low write version of emoncms is designed for running on SD cards. This is a cut down version of emoncms supports only the phpfina and phptimeseries feed engines (no in built feed averaging or histograms) and a reduced input processor set. <strong>Archived branch</strong></p>
-  </li>
-</ul>
-
-
-    
-      <a class="btn pull-right" href="/2016/04/testing-markdown/#read-more">Read on &rarr;</a>
     
   </div>
   </article>
@@ -374,7 +313,7 @@ formatting syntax is to make it as readable</p>
     <header>
   
   <h1 class="beta">
-    <a href="/2016/02/heat-pump-testing-initial-results-1/">Heat pump Testing: Initial results</a>
+    <a href="/2016/02/heat-pump-testing-initial-results-(1)/">Heat pump Testing: Initial results</a>
   </h1>
   
 
@@ -395,7 +334,7 @@ formatting syntax is to make it as readable</p>
   </span>
     
       <a class='comments'
-         href="/2016/02/heat-pump-testing-initial-results-1/#disqus_thread"
+         href="/2016/02/heat-pump-testing-initial-results-(1)/#disqus_thread"
          >Comments</a>
     
   </div>
@@ -575,6 +514,48 @@ formatting syntax is to make it as readable</p>
 
   <div class="entry-content clearfix">
     <div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.&nbsp;</span></div><div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s1600/unnamed1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s640/unnamed1.png" width="355" /></a><span style="text-align: left;"><br /></span></div><div class="" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span><span style="text-align: left;">The app is now available on Google Play</span><sup style="background-color: white; color: #444444; font-family: Roboto, sans-serif; font-size: 8px; line-height: 0;">TM</sup>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" height="65" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" width="200" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;"><span style="text-align: left;">What's even more exciting is that this app has been developed almost solely by a member of the&nbsp;</span><span style="text-align: left;">community&nbsp;</span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>). &nbsp; &nbsp;</div><h3 style="clear: both; text-align: left;">Features:</h3><div class="separator" style="clear: both; text-align: left;"></div><ul><li>Emoncms MyElectric dashboard &nbsp;</li><li>Supports <a href="http://emoncms.org/">http://emoncms.org</a> and any other Emoncms server&nbsp;</li><li>Power or currency view toggle</li><li>Multiple currency support&nbsp;</li><li>Unit cost config (e.g £/Kwh)</li><li>Pinch &amp; zoom on real-time power graph</li><li>Number of KWh days displayed is based on screen resolution, rotation to horizontal or viewing on a large tabet results in more KWh day values displayed (see below for Nexus 10 screenshot)&nbsp;</li><li>MySolar support in development&nbsp;</li><li>Fully open-source (<a href="https://github.com/emoncms/AndroidApp">GitHub Repo</a>)</li><li>Developed by the community with input from the community (<a href="http://openenergymonitor.org/emon/node/11260#comment-37116">development forum thread</a>)</li></ul><br /><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s1600/unnamed.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s640/unnamed.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s1600/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="568" src="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s640/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" width="640" /></a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-12-13T18:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
+    <span><i class='icon-time'></i> six minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/openhab/'>openHAB</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2015/12/openenergymonitor-emonpi-and-openhab/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Using the emonPi in it's current default configuration works great to post data to Emoncms for logging and visualisation. However there may be times when you want some more flexibility and or ability to interface with other hardware or services&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In my last few blog posts I have been taking a look at making the <a href="http://shop.openenergymonitor.com/emonpi-1/">emonPi</a> the heart of a smart energy optimised home and how live energy monitoring data from the emonPi can easily be used to inform other services: &nbsp;&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">1.&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2015/10/emonpi-nodered-and-mqtt.html">Integrating&nbsp;Node-RED and MQTT&nbsp;on the emonPi</a></div><div class="separator" style="clear: both; text-align: left;">2. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/node-red-emoncms-node.html">Node-RED and Emoncms</a></div><div class="" style="clear: both; text-align: left;">3. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/remote-control-of-lightwave-rf-plugs.html">Controlling LightWaveRF devices on the emonPi</a>&nbsp;(OOK RF Tx)&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Following on from my last post on controlling LightWaveRF devices from the emonPi using MQTT we now need a front end interface to handle the control. I have recently been taking a look at how openHAB can be configured to provide a front end interface to OpenEnergyMonitor hardware and control.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /><a href="http://2.bp.blogspot.com/-Mn4SF-hLCuQ/Vm2cvhlvFCI/AAAAAAABkr4/cq8GoyQEYkc/s1600/openhab.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="179" src="http://2.bp.blogspot.com/-Mn4SF-hLCuQ/Vm2cvhlvFCI/AAAAAAABkr4/cq8GoyQEYkc/s320/openhab.jpg" width="320" /></a><br /><br /></div><div class="" style="clear: both; text-align: left;">We are working on releasing an updated pre-built SD card stack for the emonPi which will include Emoncms V9, MQTT, Node-RED and openHAB all pre-configured. I hope to post a beta image download to the forums in the next few days.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;"><a href="http://www.openhab.org/">Open Home Automation Bus (openHAB)</a> is "a vendor and technology agnostic open source automation software for your home". OpenHAB can run on an emonPi (Raspberry Pi) and is very flexible and can be configured for just about any home automation task. This high level of configurability can also make it seem quite hard to understand to start with. I've have put together a <a href="https://github.com/openenergymonitor/oem_openHab">skeleton config to setup openHAB with to OpenEnergyMonitor</a> pulling data from the MQTT server running on an emonPi.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Once setup you simply browse to&nbsp;<a href="http://emonpi:8080/openhab.app?sitemap=oem">http://emonpi:8080/openhab.app?sitemap=oem</a>&nbsp;to view the openHAB user interface. openHAB also has a nice Android or IOS app which can be pointed at the same URL. &nbsp; <br /><br /></div><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: left;"><tbody><tr><td style="text-align: left;"><a href="http://1.bp.blogspot.com/-lAn2SNSzyLQ/VmVkYfsFDxI/AAAAAAABkic/Wqhp7g4R4uA/s1600/OpenEnergyMonitor_openHAB.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-lAn2SNSzyLQ/VmVkYfsFDxI/AAAAAAABkic/Wqhp7g4R4uA/s400/OpenEnergyMonitor_openHAB.png" width="385" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB OpenEnergyMonitor skeleton setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: left;"><a href="http://2.bp.blogspot.com/--fxB-426-Hs/VmXNqpc1KJI/AAAAAAABkk4/lzBoHKFz5g8/s1600/Screenshot_2015-12-07-10-23-42.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/--fxB-426-Hs/VmXNqpc1KJI/AAAAAAABkk4/lzBoHKFz5g8/s400/Screenshot_2015-12-07-10-23-42.png" width="225" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB Android app</td></tr></tbody></table><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: left;"><a href="http://4.bp.blogspot.com/-Y_6-BnAJWcE/VmXNqpDvxjI/AAAAAAABkkw/4kpSmg9rdtU/s1600/Screenshot_2015-12-07-10-23-52.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/-Y_6-BnAJWcE/VmXNqpDvxjI/AAAAAAABkkw/4kpSmg9rdtU/s400/Screenshot_2015-12-07-10-23-52.png" width="225" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB LightWaveRF control using openHAB Android app</td></tr></tbody></table><br /><br /><br /><br /><div class="separator" style="clear: both; text-align: left;"></div><br /><h3>Installing OpenHAB</h3><div><span id="goog_2128785651"></span>I have put together a <a href="https://github.com/openenergymonitor/oem_openHab">guide from installing OpenHAB on an emonPi</a> with the config shown above to work with OpenEnergyMonitor on the oem_openHAB GitHub<span id="goog_2128785652"></span>.&nbsp;</div><div><br /></div><h3>OpenHAB Configuration&nbsp;</h3>OpenHAB configuration is based around two files 'items and 'sitemap'. In my openHAB emonPi install instructions I recommend cloning the&nbsp;oem_openHAB to the home directory then soft linking the Items and Sitemap files to the relevant config locations in /etc/openhab/configurations/. This makes the files easier to edit.<br /><br />It's possible to have multiple user interfaces defined by multiple sitemaps e.g oem.sitemap, kids.sitemap or admin.sitemap etc.<br /><br /><b>Items</b><br /><b><br /></b>The items file defines all the 'things' you might want to view or control in openHAB. Items can be bound to 'bindings' which are optional packages that used to extend functionality of openHAB. This example makes use of the MQTT and HTTP bindings. The items file is usually located in&nbsp;/etc/openhab/configurations/items.<br /><br />For example the line in the items file to pull power 1 from emonhub MQTT is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Number  emonpi_ct1       "Power 1 [%d W]"    { mqtt="&lt;[mosquitto:emonhub/rx/5/values:state:REGEX((.*),.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)]" }</span><br /><br /><br />Notice the REGEX is used to tell openHAB that we want the first value in the 11 part CSV emonhub posts to MQTT to emonhub/rx/5/values.<br /><br />and the items line to control LightWaveRF plug 1 (publish "1 1" to /lwrf mqtt topic) is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Switch lwrf1   "LWRF Socket 1"  {mqtt="&gt;[mosquitto:lwrf:command:ON:1 1],&gt;[mosquitto:lwrf:command:OFF:1 0]"}</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><a href="https://github.com/openenergymonitor/oem_openHab/blob/master/oem.items">See the full items file used for this example on the open_openhab GitHub repo</a><br /><br /><b>Sitemap</b><br /><b><br /></b>The second openHAB config file of interest is 'sitemap'.&nbsp;Sitemaps are used to create elements of a user interface for making openHAB items accessible to the frontend interface.<br /><br />For example the sitemap config line to produce the emonPi Power1 in the interface is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Text item=emonpi_ct1 icon="firstfloor"</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span>And to produce the LightWaveRF control swithches:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Switch item=lwrf1 label="LWRF Plug 1"</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><a href="https://github.com/openenergymonitor/oem_openHab/blob/master/oem.sitemap">See the full sitemap file used for this example on the open_openhab GitHub repo</a><br /><br />I have intentionally kept this 'skeleton' example as simple as possible. To view the full capabilities of openHAB including using groups checkout the <a href="http://demo.openhab.org:8080/openhab.app?sitemap=demo">openHAB demo</a>&nbsp;and corresponding demo <a href="https://github.com/openhab/openhab/blob/master/distribution/openhabhome/configurations/items/demo.items">items</a> and <a href="https://github.com/openhab/openhab/blob/master/distribution/openhabhome/configurations/sitemaps/demo.sitemap">sitemap</a> files.<br /><br /><h3>Demo</h3><br />Here's a quick demo I made using openHAB to control LightWave RF plugs:<br /><br /><div class="separator" style="clear: both; text-align: left;"><a href="http://3.bp.blogspot.com/-SzaE2KRbyrY/Vm2tX_kJbzI/AAAAAAABksQ/j_A9OuXi6KA/s1600/Screenshot%2B2015-12-13%2Bat%2B17.35.56.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="411" src="http://3.bp.blogspot.com/-SzaE2KRbyrY/Vm2tX_kJbzI/AAAAAAABksQ/j_A9OuXi6KA/s640/Screenshot%2B2015-12-13%2Bat%2B17.35.56.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;"><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/6uF0qU30q-g/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/6uF0qU30q-g?feature=player_embedded" width="320"></iframe></div>
     
   </div>
   </article>

@@ -104,37 +104,6 @@
     <header>
   
   <h1 class="beta">
-    <a href="/2010/01/usb-pen-data-logger-documentation/">USB pen data logger documentation</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2010-01-22T21:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
-    
-    
-      <a class='comments'
-         href="/2010/01/usb-pen-data-logger-documentation/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The USB pen drive data logger documentation is finished and can be found here:<br /><br /><a href="http://openenergymonitor.org/emon/node/44">How to add USB pen data logging</a>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2010/01/main-documentation-page-started/">Main documentation page started</a>
   </h1>
   
@@ -143,7 +112,7 @@
   <div class="meta clearfix">
     <time datetime="2010-01-21T19:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     
     
       <a class='comments'
@@ -174,7 +143,7 @@
   <div class="meta clearfix">
     <time datetime="2010-01-21T16:08:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     
     
       <a class='comments'
@@ -236,7 +205,7 @@
   <div class="meta clearfix">
     <time datetime="2009-10-22T23:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     
     
       <a class='comments'
@@ -298,7 +267,7 @@
   <div class="meta clearfix">
     <time datetime="2009-10-05T21:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     
     
       <a class='comments'
@@ -360,7 +329,7 @@
   <div class="meta clearfix">
     <time datetime="2009-09-03T23:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
@@ -431,6 +400,37 @@
 
   <div class="entry-content clearfix">
     Thought Id have a go at using a hall effect sensor to measure current. A hall effect sensor can measure DC and AC current, Ive had a go at the DC and it seems to work quite nicely, its also quite a bit cheaper than the other DC current measuring method I detail <a href="http://openenergymonitor.org/emon/node/31">here</a>, which is always good!<br /><br />Here's a pic of the setup:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s1600-h/hall.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s400/hall.JPG" alt="" id="BLOGGER_PHOTO_ID_5376994279608168786" border="0" /></a><br />I bought the hall sensor from farnell <a href="http://uk.farnell.com/jsp/search/productdetail.jsp?CMP=i-ddd7-00001003&amp;sku=1082269">here</a>.<br /><br />It requires a supply voltage of between 6 and 12. Its output is centred around Vcc/2. The output voltage increases about 50mV per Amp when the supply voltage is 12V. When measuring DC current the output looks like this:<br />0.0A - 6.0V<br />1.0A - 6.05V<br />2.0A - 6.10V<br />...<br /><br />I've used an inverting amplifier to invert the signal about a set voltage so that the voltage going to the Arduino's analog in is between 0 and 5V. I will upload the circuit diagram and further details soon when I get a chance.<br /><br />So far it looks like a promising method.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2009/08/openco2monitor-collaboration/">OpenCO2Monitor collaboration</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2009-08-25T08:51:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> 1 minute reading time</span>
+    
+    
+      <a class='comments'
+         href="/2009/08/openco2monitor-collaboration/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    A couple of days ago I was contacted by <span class="blsp-spelling-error" id="SPELLING_ERROR_0">Ronic</span> Concepcion and  <span class="blsp-spelling-error" id="SPELLING_ERROR_1">Ymreb</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_2">Momville</span> from the University Southeastern Philippines who are undertaking a technical research project called <span class="blsp-spelling-error" id="SPELLING_ERROR_3">OpenCO</span>2Monitor as a part of their BS Information Technology degrees.<br /><br />Their project will be a collaboration with this project using the <a href="http://openenergymonitor.org/emon/node/28">Mains AC:Non-invasive method</a> of energy monitoring to supply energy consumption information to their software.<br /><br />From their blog: <a href="http://openco2monitor.exofire.net/">http://openco2monitor.exofire.net</a><blockquote>"<span class="blsp-spelling-error" id="SPELLING_ERROR_4">OpenCO</span>2Monitor is an open source software which is capable of monitoring CO2 emissions on a house/building. When the emitted CO2 reaches danger levels, the software will automatically sound an alarm and show a message dialog on the computer screen tell the user what to do.<br /><br /><span class="blsp-spelling-error" id="SPELLING_ERROR_5">OpenCO</span>2Monitor is not only capable of monitoring CO2 levels but also monitoring the electric energy consumption of a house/building. It is also capable of showing your current monthly bill based on the Davao Light and Power Company generation charge per kilowatt hour.<br /><br /><span class="blsp-spelling-error" id="SPELLING_ERROR_6">OpenCO</span>2Monitor also shows how many number of full grown trees a house/building should have in its surroundings to offset its CO2 Emissions. It also displays the house/building’s current contribution to temperature rise.<br /><br /><span class="blsp-spelling-error" id="SPELLING_ERROR_7">OpenCO</span>2Monitor uses the Mains AC:Non-invasive method from <span class="blsp-spelling-error" id="SPELLING_ERROR_8">OpenEnergyMonitor</span>.org to read the <span class="blsp-spelling-error" id="SPELLING_ERROR_9">Kwh</span> Usage of a house/building."<br /></blockquote>All really useful information that aims to help the user to  "save money and energy while lessening their contribution to greenhouse gasses."
     
   </div>
   </article>

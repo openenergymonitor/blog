@@ -104,48 +104,6 @@
     <header>
   
   <h1 class="beta">
-    <a href="/2013/09/raspberrypi-sd-cards-hdd-gateway/">RaspberryPI: SD Cards, HDD, Gateway Forwarder</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-09-25T16:44:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
-    <span><i class='icon-time'></i> four minutes reading time</span>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span>
-    
-      <a class='comments'
-         href="/2013/09/raspberrypi-sd-cards-hdd-gateway/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">After several&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2013/04/introducing-rfm12pi-v2-raspberry-pi.html?q=raspberry+pi">Raspberry Pi emonBase</a>&nbsp;SD card failures between myself and Glyn in the last two weeks and the general experience of short SD card lifespan&nbsp;<a href="http://openenergymonitor.org/emon/node/2292">on the forums</a>&nbsp;(SD cards have a limited number of writes), we thought we'd make a concerted effort this week to move the openenergymonitor Raspberry Pi documentation, pi images and pre-installed SD cards over to the more stable solutions:</div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-0z_9GxPBEr0/UkKqHnyLZRI/AAAAAAAAkmA/5m3pIXesesA/s1600/20130820_191803.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-0z_9GxPBEr0/UkKqHnyLZRI/AAAAAAAAkmA/5m3pIXesesA/s320/20130820_191803.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi emonBase with <a href="http://shop.openenergymonitor.com/raspberry-pi/">RFM12Pi</a> in Pibow Timber Case</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">1. We read <a href="http://harizanov.com/2013/08/rock-solid-rfm2pi-gateway-solution/">Martin Harizanov's blog post</a> on creating a rock-solid gateway using a read-only filesystem with&nbsp;<a href="http://openenergymonitor.org/emon/user/1531">Jerome&nbsp;Lafréchoux's</a> excellent python <a href="https://github.com/Jerome-github/oem_gateway">oem_gateway</a> to forward data to <a href="http://emoncms.org/">emoncms.org</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This is a reliable solution which is simple to setup and works well if you just want to forward data to a remote emoncms server like emoncms.org. We have created a Raspberry Pi SD card image for this read-only filesystem oem_gateway setup, see documentation page for full details, there's a link to download it there too:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://emoncms.org/site/docs/raspberrypigateway">http://emoncms.org/site/docs/raspberrypigateway</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The ready-to-go pre-loaded SD card available in the shop will be pre-loaded with this image from now on.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">2. We also heard from <a href="http://openenergymonitor.org/emon/node/2292">Paul Reed about his setup</a> where the SD card is just used to boot an external hard drive (powered by a USB hub) with the Pi's root partition running a web server and the full version of emoncms on the external hard drive. This solution is great if you want to keep your data locally or have an additional backup. This could also double up as a 24/7 file server running in your home for music streaming, document backup etc.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Glyn's using the read-only gateway for his setup and I'm going to setup the hard drive local backup in addition to forwarding to emoncms.org for mine.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here's a diagram that illustrates these different options, including the NanodeRF, local and remote storage, backup options and emoncms data storage options (mysql, timestore etc):</div><div class="separator" style="clear: both; text-align: left;"><a href="http://3.bp.blogspot.com/-1yBlyXKWE8k/UkBuY7OxrbI/AAAAAAAACww/Hbm3i0PkobM/s1600/overview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="452" src="http://3.bp.blogspot.com/-1yBlyXKWE8k/UkBuY7OxrbI/AAAAAAAACww/Hbm3i0PkobM/s640/overview.png" width="640" /></a></div>If your not sure which way to go, its probably easiest to start with the Raspberry Pi oem_gateway forwarder to emoncms.org, you can re-configure it for local storage and backup via an external harddrive if you want later. If your more comfortable with Arduino code than the Raspberry Pi and linux then the <a href="http://shop.openenergymonitor.com/nanoderf/">NanodeRF (pre-assembled SMT)</a> may be best for you.<br /><div><br /></div><div>To summarise the above with pros and cons, here are the two main emonBase Raspberry Pi options:<br /><div><br /><b>1. Run a read only filesystem on the Pi and forward data straight to a remote emoncms server.</b><br /><b>Developed by Jerome&nbsp;Lafréchoux and&nbsp;Martin Harizanov's</b><br /><a href="http://harizanov.com/2013/08/rock-solid-rfm2pi-gateway-solution/">http://harizanov.com/2013/08/rock-solid-rfm2pi-gateway-solution/</a><br /><ul><li>+ More robust and easier to setup</li><li>+&nbsp;Cheaper and lower power than using an external HDD</li><li>- Does not utilise the full potential of the Pi</li></ul><ul><li>Run IPE – Industrial Perennial Environment a special blackout-proof flavour of Raspbian which can be locked down after setup to work in read only mode</li><li>The <a href="https://github.com/Jerome-github/oem_gateway">Oem Gateway Python scrip</a>t by&nbsp;Jérôme Lafréchoux to forward the data received by the RFM12Pi straight to emoncms.org</li></ul><div><b>2. Move the Pi's file system to an external HDD using the SD card only to boot&nbsp;</b><br />This option requires an external hard drive connected to the Pi through a powered USB hub. This does require extra expense and an increase in power consumption, the hard drive we tested here a 1TB USB hard drive adds 1.8W to the power consumption of the Pi (3.9W). However this option does have several advantages:<br /><ul><li>+&nbsp;Ability to run emoncms on the Pi to log data locally and have full control over your setup as well as forwarding data to a remote emoncms server.</li><li>+&nbsp;You now have the potential to have 24/7 file server running in your house for music streaming document backup etc.</li><li>- More complicated to setup</li><li>- Higher cost and power consumption</li></ul></div></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2013/09/measuring-building-thermal-performance/">Measuring building thermal performance - coheating tests</a>
   </h1>
   
@@ -503,6 +461,46 @@
 
   <div class="entry-content clearfix">
     One of the central principles behind the <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="mikestirling.co.uk/redmine/projects/timestore">Timestore data storage</a> approach is that datapoints are stored at a fixed interval. Because you know that there is a datapoint every 10s you dont need to store the timestamp for each datapoint, you only need to store the timestamp for the first datapoint. The timestamp for every other datapoint can be worked out i.e:<br /><br /><pre>timestamp = start + position * interval.</pre><br />Storing time series data in this way makes it really easy and very fast to query. The tests so far have shown timestore to be <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="http://openenergymonitor.blogspot.co.uk/2013/07/from-13-minutes-to-196ms-timestore-on.html">several magnitudes faster</a> while also using significantly less disk space.<br /><br />If your logging to emoncms.org there is now an interface that can be used to select the interval rate that you would like your feeds converted too, its linked from the feeds page.<br /><br /><b>On the feed/convert page:</b><br /><br />The new interval column states the average interval rate of the existing feed and is calculated simply as the end time minus the start time divided by the number of datapoints in the feed. This interval rate can be skewed if the monitor dropped off for a period, so its worth double checking that it is correct.<br /><br />You may wish to change your interval rate, if your logging temperature data at 5s intervals and 60s is enough to see the changes in temperature you want to see then select 60s as this reduces the disk use of the feed considerably.<br /><br />To set the interval rate you wish your feed to be converted to, click on the <b>pencil button</b> to bring up in-line editing:<br /><img src="http://emoncms.org/Modules/feed/Views/step1.png" /> <br />Click on the drop down menu under convert to and select from the list the interval you wish to use. Click on the tick button to complete.<br /><img src="http://emoncms.org/Modules/feed/Views/step2.png" /> <br />Repeat the above steps for every feed you wish to convert and then once your done click on <b>Add feeds to conversion queue</b> button that is at the bottom of the conversion page.<br /><br />As mentioned in the last post, its going to take up to a month for the server to convert through all the feeds so you wont see anything straight away. I will update with conversion progress.<br /><br />I've put all the code for the above on github under an <a href="https://github.com/emoncms/emoncms/tree/emoncmsorg">emoncmsorg branch of emoncms</a>, the conversion scripts can also be found in the repo <a href="https://github.com/emoncms/usefulscripts">usefulscripts</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/07/from-13-minutes-to-196ms-timestore-on/">From 1.3 minutes to 196ms: timestore on emoncms.org</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-31T11:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> three minutes reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2013/07/from-13-minutes-to-196ms-timestore-on/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">John Cantor who uses the openenergymonitor system for <a href="http://www.heatpumps.co.uk/">heatpump performance monitoring</a>&nbsp;got in contact the other day saying that graphs on emoncms.org where taking a really long time to load. I said that the work on using <a href="http://www.mike-stirling.com/redmine/projects/timestore">timestore</a> will soon speed things up significantly. He asked if there was a chance to convert the feeds before he went up to work on a system in Scotland as being able to zoom with speed through the graphs would make a big difference.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Clicking on the Y (Year) button in the rawdata visualisation has slowed down so much over the last year that it now takes over a minute to load the view.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-hOkV9mZtczY/UfjjBpy62ZI/AAAAAAAACvU/y1WT69TFM4U/s1600/mysql_yearview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="281" src="http://3.bp.blogspot.com/-hOkV9mZtczY/UfjjBpy62ZI/AAAAAAAACvU/y1WT69TFM4U/s400/mysql_yearview.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">The same request on a raspberrypi takes <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">2.9 seconds</a>, The thinking to why its so much slower on emoncms.org is because of the use of the php loop doing individual requests to mysql which are added to the mysql process queue and have to wait in line&nbsp;amongst&nbsp;all the other mysql inserts and updates caused by all the updating feeds, the php loop method was<a href="http://emoncms.org/site/docs/developdatastorage"> initially faster than an equivalent mysql implementation</a> but clearly not for long.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Anyway I figured we could get timestore up and running on emoncms.org straight away if we run timestore in parallel with the current mysql storage and then slowly convert feeds over to timestore over time.&nbsp;The present input processing and visualisation implementation would be kept as is for the time being only initially using timestore to replace the realtime datatype<a href="http://openenergymonitor.blogspot.co.uk/2013/07/emoncms-powered-by-timestore.html"> rather than both realtime and daily</a>.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Conversion from mysql to timestore takes a long time especially as the process has to be throttled down in order to allow enough resources on the server for normal operation to continue. For example the conversion of a 568 day long, 5s datapoint interval feed (~152mb) takes about half an hour loading the server to an average 15min (quite high) load of 4.69 at that rate it will take about a month to convert all feeds over to timestore.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The results though are worth it!:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-xmRfvjUVfPk/UfjrE7OGHJI/AAAAAAAACvk/vtYOubE9enw/s1600/timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="272" src="http://2.bp.blogspot.com/-xmRfvjUVfPk/UfjrE7OGHJI/AAAAAAAACvk/vtYOubE9enw/s400/timestore.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><span style="font-size: x-large;">196ms!</span></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div style="margin-bottom: 0cm;">1.3 minutes down to 196ms is a<b> 398x</b> speed increase! and its also possible to see another advantage of timestore the effect of the average layers showing a slight winter summer curve. A big thankyou and credit to Mike Stirling for developing timestore enabling this kind of performance, if you&nbsp;haven't&nbsp;already check out the timestore project website:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://www.mike-stirling.com/redmine/projects/timestore">http://www.mike-stirling.com/redmine/projects/timestore</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">John Cantor has shared the Scottish heatpump dashboard publicly, take a look to try out the new timestore feeds:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/mallard">http://emoncms.org/mallard</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Im currently working on an interface in emoncms to allow selection of the feed datapoint interval (5s, 10s, 30s etc) to convert to before the feeds are added to the conversion queue, more on this soon.</div>
     
   </div>
   </article>

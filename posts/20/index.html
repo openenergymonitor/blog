@@ -104,46 +104,6 @@
     <header>
   
   <h1 class="beta">
-    <a href="/2012/09/making-emoncms-data-portable/">Making emoncms data portable</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-09-18T20:43:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> 1 minute reading time</span>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span>
-    
-      <a class='comments'
-         href="/2012/09/making-emoncms-data-portable/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    One of the features I've wanted in emoncms for some time is the ability to move feed data between different server's with ease.<br /><div><br /></div><div>I want to be able to log in the emoncms instance running on my local machine and go to a page where I can enter the authentication details and location of my account on a remote emoncms server such as emoncms.org at which point it would bring up a list of the feeds that are available and I could either download particular feeds or just click download all and it would automatically download the whole account.</div><div><br /></div><div>This would allow me to get at my data when I'm offline and it could serve as a personal backup of the data.&nbsp;Another need for this feature is we have an old remote emoncms instance that has some old energy data on, this feature would make it really easy to move the data to the new instance.</div><div><br /></div><div>This feature could also work in a similar way to a ubuntu one or dropbox like service, there could be an automatic syncing option.</div><div><br /></div><div>This would make the energy data very portable, data potability helps to create an open web, ensures that we can be in full control of our energy data, we can remove it from a service if we no longer want to be with a particular service, use it in other applications and for other applications that may not have been thought of in the original application design.</div><div><br /></div><div>Over the next few blog posts I'm going to try and explore how this can be implemented. I've already got some working code, but a lot of work will need to be done to make this a nice well implemented feature, so if you can help with the coding or/and provide insight into better ways of doing things, that would be most welcome.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2012/09/cleanweb-uk/">Cleanweb UK</a>
   </h1>
   
@@ -152,7 +112,7 @@
   <div class="meta clearfix">
     <time datetime="2012-09-18T15:37:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
@@ -192,7 +152,7 @@
   <div class="meta clearfix">
     <time datetime="2012-09-04T15:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
@@ -234,7 +194,7 @@
   <div class="meta clearfix">
     <time datetime="2012-09-04T09:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
     <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span>
-    <span><i class='icon-time'></i> less than one minute reading time</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
     <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
@@ -498,6 +458,48 @@
 
   <div class="entry-content clearfix">
     <div><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"></span><br />While discussing the 3 phase sketch implementation here:&nbsp;<a href="http://openenergymonitor.org/emon/node/467">http://openenergymonitor.org/emon/node/467</a>&nbsp;by Pcunha which makes use of the AVR analog read commands rather than the arduino analog_read function&nbsp;which is a wrapping for these commands JBecker suggested that the analog reference voltage was not being selected correctly, so I had to do some reading up on this on ADMUX and bitwise operators.<br /><br />So for anyone interested, this is how it works first ADMUX is an 8-bit byte that holds the settings for the analog reference voltage and the analog pin to select:<br /><br />ADMUX is 8-bit:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">ADLAR&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">-&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX3&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX2&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX0&nbsp;</td></tr></tbody></table></span><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"></span>Where:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 77px;"><b>&nbsp;REFS1</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 77px;"><b>REFS0&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 402px;"><b>Voltage Reference Selection&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AREF, Internal Vref turned off&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AVcc with external capacitor on AREF pin&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Reserved&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Internal 1.1V (ATmega168/328) or &nbsp;2.56V on (ATmega8)</td></tr></tbody></table></span>and:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top; width: 111px;"><b>MUX 3...0</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top; width: 307px;"><b>Single Ended Input</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0000</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC0&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0001</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC1&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0010</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC2&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0011</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC3&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0100</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC4&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0101</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC5</td></tr></tbody></table></span><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: x-small;"><span class="Apple-style-span" style="line-height: 16px;"><br /></span></span><br /><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><br /></span></span><br />So if we want to use AVcc with external capacitor on AREF pin as our voltage reference (which is the default arduino voltage reference) and we want to select ADC2 for example, we would need to set ADMUX to:<div><br /></div><div><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td></tr></tbody></table></span><div><br /></div><div>We can use <a href="http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B">bitwise operations</a> to get there:</div><div><br /></div><div>This is how its done in&nbsp;<i>wiring_analog.c</i> found in <i>Arduino-1.0/hardware/arduino/cores/arduino</i><br /><br /><b>ADMUX = (analog_reference &lt;&lt; 6) | (pin &amp; 0x07);</b><br /><b><br /></b><br />Starting with<b>&nbsp;(analog_reference &lt;&lt; 6)</b>. The variable analog_reference is set to 1 as default for the atmega328 so&nbsp;1 &lt;&lt; 6 means bitshift 1 left 6 places where 1 in binary is&nbsp;00000001 and shifting the bits left 6 places moves the 1 to 01000000. The desirable result for setting the 6th bit REFS0 to 1.<br /><br />If you dont need to select different analog_reference values then we can get&nbsp;01000000 directly by specifying its&nbsp;hexadecimal: 0x40.<br /><br />Next looking at the&nbsp;<b>&nbsp;(pin &amp; 0x07) </b>part.<br /><br /><ul><li>The &amp; 0x07 is actually just for validation, it essentially says only allow selection of ADC0 to ADC5.&nbsp;</li><li>The &amp; bitwise operator is the <b>AND</b> operation.</li><li>0x07 is&nbsp;hexadecimal whose binary representation is 00000111</li><li>Selecting ADC2 which is pin = 2 or in binary 00000010</li><li>The result of 2 &amp; 0x07 =&nbsp;00000010 AND&nbsp;00000111 =&nbsp;00000010.</li></ul><br />The last part is the<b> | </b>bitwise operator: <b>OR</b><br /><b><br /></b><br />(analog_reference &lt;&lt; 6) | (pin &amp; 0x07) becomes in our example here&nbsp;01000000 OR 00000010. Which is equall to:&nbsp;<b>01000010 </b>the result we where looking for above.<br /><br />If you would like to read more on the AVR ADC commands see these&nbsp;helpful&nbsp;articles:<br /><br /><a href="https://sites.google.com/site/qeewiki/books/avr-guide/analog-input">https://sites.google.com/site/qeewiki/books/avr-guide/analog-input</a><br /><a href="http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/">http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/</a><br /><br /></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/08/configurable-single-to-3-phase/">Configurable single to 3-phase interrupt based EmonTX code by Pcunha</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-01T19:54:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> </time>
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span>
+    <span><i class='icon-time'></i> Less than one minute reading time</span>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/three-phase/'>three phase</a></li>
+      
+    
+    </ul>
+  </span>
+    
+      <a class='comments'
+         href="/2012/08/configurable-single-to-3-phase/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Some great work I'd like to flag up by <a href="http://openenergymonitor.org/emon/user/754">Pcunha</a>, who has developed a super configurable single to 3-phase interrupt based firmware for the EmonTX.<br /><br />Its up on github here:<br /><a href="https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts">https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts</a><br /><br />and there is more about it in the forum thread here:<br /><a href="http://openenergymonitor.org/emon/node/467#comment-5481">http://openenergymonitor.org/emon/node/467#comment-5481</a>
     
   </div>
   </article>

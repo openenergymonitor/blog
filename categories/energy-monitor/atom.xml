@@ -4,7 +4,7 @@
   <title><![CDATA[Category: energy monitor | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/energy-monitor/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T00:06:26+00:00</updated>
+  <updated>2016-04-22T01:21:58+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -18,15 +18,20 @@
     <link href="http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good/"/>
     <updated>2011-06-24T11:15:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good</id>
-    <content type="html"><![CDATA[<div style="text-align: left;">
-  <p>The Open Energy Monitor uses an AC transformer as a voltage sensor, but the choice of this transformer can influence the accuracy of your monitor.&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;&lt;div&gt;Jean Claude from JeeLabs (brilliant engineer BTW) investigated the difference between a bad and a good AC transformers and here are the results in images:&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;&lt;div&gt;1) Bad quality transformer:&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;<meta equiv="Content-Type" content="text/html;charset=UTF-8" /><img src="http://jeelabs.org/wp-content/uploads/2011/06/open1.png" style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 604px; height: 108px;" border="0" alt="" />&lt;div&gt;
+    <content type="html"><![CDATA[<div style="text-align: left;">The Open Energy Monitor uses an AC transformer as a voltage sensor, but the choice of this transformer can influence the accuracy of your monitor.</div>
+<div>
+<br /></div>
+<div>Jean Claude from JeeLabs (brilliant engineer BTW) investigated the difference between a bad and a good AC transformers and here are the results in images:</div>
+<div>
+<br /></div>
+<div>1) Bad quality transformer:</div>
+<div>
+<br /></div>
+<meta equiv="Content-Type" content="text/html;charset=UTF-8" />
+<p><img src="http://jeelabs.org/wp-content/uploads/2011/06/open1.png" style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 604px; height: 108px;" border="0" alt="" />&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;2)Better quality transformer:&lt;/div&gt;&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;<meta charset="utf-8" /><a href="http://jeelabs.org/wp-content/uploads/2011/06/better.png" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://jeelabs.org/wp-content/uploads/2011/06/better.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 604px; height: 301px; " /></a>&lt;/div&gt;&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;You can read his complete post on his blog: <a href="http://jeelabs.org/2011/06/24/alternating-current/">JeeLabs Daily Weblog</a>.&lt;/div&gt;</p>
-</div>
 ]]></content>
   </entry>
   
@@ -35,9 +40,36 @@
     <link href="http://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor/"/>
     <updated>2010-12-20T00:40:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor</id>
-    <content type="html"><![CDATA[<div style="text-align: left;">
-  <p>Hello everyone,&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;This is my first contribution to this blog after months of reading it :)&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;I am Amin, I study a Bsc. of “<a href="http://www.tu-cottbus.de/fakultaet4/de/environment/">Environmental and Resource Management</a>” at the BTU, and I am currently doing an internship at the technical department at <a href="http://www.wagner-solar.com/wagnerEN/?ref=/wagnerDE/">Wagner und Co. Solartechnik</a> in Marburg.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;My main task in this internship is to dimension and design photovoltaic systems for our clients overseas, and I could not help but notice how pricy the existing monitoring solutions are: more than 400 euros for a box that monitors your inverter’s production and makes the data available on the internet. So I started thinking about building a system that does that for a very “affordable” cost. And since I have caught the Arduino virus for quite some time (Wired magazine’s fault), I started to think about making an Arduino-based photovoltaic plant monitor, this is how I found the open energy monitor initiative.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;Months of browsing and thinking made this little idea grow in my head like a good cancer, and talking to people about it generated mostly positive feedback.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;I am now determined to launch a commercial product (<a href="http://diydrones.com/">DIY-Drones</a> business model, more or less) that is based on the open energy monitor. This device, which I name for the moment Kirikou, will monitor the mains AC that comes from the meter to the distribution box in each building, plus 5 to 20 sub-circuit consumers. It will not require the intervention of an electrician (clip CT’s). It will send the data to Pachube or Google Charts via Wifi. And it will cost 200-240 euros per unit.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;Quite an ambitious target I know, but with the help and support of the inventors, the community and some other people, I am confident that I can make it take off. <a href="http://blog.ponoko.com/index.php?s=%22ten+rules+for+maker%22">Open source hardware businesses</a> started to pop up like mushrooms the last years, and that’s fantastic! It is only fair to share the knowledge about things, it is a win-win situation for everyone and I really hope to see many businesses based on the open energy monitor.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;There are also some unconventional ways to get it started, like these sponsoring programs that help entrepreneurs get on their feet in the beginning. A very good friend sent me this link to the Zurich HUB fellowship, and I applied.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;I thought it would be in the spirit of the competition to get a community involved, and I created this Ulule page (screenshot below) to raise 120 euros to build my electricity monitor based on the Blackwidow board.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;<a href="http://www.ulule.com/kirikou-an-open-source-electricity-monitor/"><img src="http://sphotos.ak.fbcdn.net/hphotos-ak-snc4/hs1168.snc4/151044_10150324187775461_904875460_15862761_726884_n.jpg" /></a>&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;I am really excited to start this adventure with the support of a community, I believe that we could develop and spread this together.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;I believe the first step should be to get more organized and communicate more efficiently on the technical choices and so on.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;Your feedback, comments, criticism is most welcome, you can also visit <a href="http://www.bouhablog.com/">my blog</a> if you want to know me better.&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;By the way, the verdict from the Zurich HUB will be announced on Dec 20th (in a few hours), please wish me good luck :)&lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;Amin&lt;/div&gt;</p>
-</div>
+    <content type="html"><![CDATA[<div style="text-align: left;">Hello everyone,</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">This is my first contribution to this blog after months of reading it :)</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">I am Amin, I study a Bsc. of "<a href="http://www.tu-cottbus.de/fakultaet4/de/environment/">Environmental and Resource Management</a>" at the BTU, and I am currently doing an internship at the technical department at <a href="http://www.wagner-solar.com/wagnerEN/?ref=/wagnerDE/">Wagner und Co. Solartechnik</a> in Marburg.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">My main task in this internship is to dimension and design photovoltaic systems for our clients overseas, and I could not help but notice how pricy the existing monitoring solutions are: more than 400 euros for a box that monitors your inverter's production and makes the data available on the internet. So I started thinking about building a system that does that for a very "affordable" cost. And since I have caught the Arduino virus for quite some time (Wired magazine's fault), I started to think about making an Arduino-based photovoltaic plant monitor, this is how I found the open energy monitor initiative.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">Months of browsing and thinking made this little idea grow in my head like a good cancer, and talking to people about it generated mostly positive feedback.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">I am now determined to launch a commercial product (<a href="http://diydrones.com/">DIY-Drones</a> business model, more or less) that is based on the open energy monitor. This device, which I name for the moment Kirikou, will monitor the mains AC that comes from the meter to the distribution box in each building, plus 5 to 20 sub-circuit consumers. It will not require the intervention of an electrician (clip CT's). It will send the data to Pachube or Google Charts via Wifi. And it will cost 200-240 euros per unit.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">Quite an ambitious target I know, but with the help and support of the inventors, the community and some other people, I am confident that I can make it take off. <a href="http://blog.ponoko.com/index.php?s=%22ten+rules+for+maker%22">Open source hardware businesses</a> started to pop up like mushrooms the last years, and that's fantastic! It is only fair to share the knowledge about things, it is a win-win situation for everyone and I really hope to see many businesses based on the open energy monitor.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">There are also some unconventional ways to get it started, like these sponsoring programs that help entrepreneurs get on their feet in the beginning. A very good friend sent me this link to the Zurich HUB fellowship, and I applied.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">I thought it would be in the spirit of the competition to get a community involved, and I created this Ulule page (screenshot below) to raise 120 euros to build my electricity monitor based on the Blackwidow board.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;"><a href="http://www.ulule.com/kirikou-an-open-source-electricity-monitor/"><img src="http://sphotos.ak.fbcdn.net/hphotos-ak-snc4/hs1168.snc4/151044_10150324187775461_904875460_15862761_726884_n.jpg" /></a></div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">I am really excited to start this adventure with the support of a community, I believe that we could develop and spread this together.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">I believe the first step should be to get more organized and communicate more efficiently on the technical choices and so on.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">Your feedback, comments, criticism is most welcome, you can also visit <a href="http://www.bouhablog.com/">my blog</a> if you want to know me better.</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">By the way, the verdict from the Zurich HUB will be announced on Dec 20th (in a few hours), please wish me good luck :)</div>
+<div style="text-align: left;"><br /></div>
+<div style="text-align: left;">Amin</div>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: current transformer | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/current-transformer/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-22T00:06:26+00:00</updated>
+  <updated>2016-04-22T01:21:58+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -18,15 +18,20 @@
     <link href="http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good/"/>
     <updated>2011-06-24T11:15:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good</id>
-    <content type="html"><![CDATA[<div style="text-align: left;">
-  <p>The Open Energy Monitor uses an AC transformer as a voltage sensor, but the choice of this transformer can influence the accuracy of your monitor.&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;&lt;div&gt;Jean Claude from JeeLabs (brilliant engineer BTW) investigated the difference between a bad and a good AC transformers and here are the results in images:&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;&lt;div&gt;1) Bad quality transformer:&lt;/div&gt;&lt;div&gt;
-<br />&lt;/div&gt;<meta equiv="Content-Type" content="text/html;charset=UTF-8" /><img src="http://jeelabs.org/wp-content/uploads/2011/06/open1.png" style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 604px; height: 108px;" border="0" alt="" />&lt;div&gt;
+    <content type="html"><![CDATA[<div style="text-align: left;">The Open Energy Monitor uses an AC transformer as a voltage sensor, but the choice of this transformer can influence the accuracy of your monitor.</div>
+<div>
+<br /></div>
+<div>Jean Claude from JeeLabs (brilliant engineer BTW) investigated the difference between a bad and a good AC transformers and here are the results in images:</div>
+<div>
+<br /></div>
+<div>1) Bad quality transformer:</div>
+<div>
+<br /></div>
+<meta equiv="Content-Type" content="text/html;charset=UTF-8" />
+<p><img src="http://jeelabs.org/wp-content/uploads/2011/06/open1.png" style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 604px; height: 108px;" border="0" alt="" />&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;2)Better quality transformer:&lt;/div&gt;&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;<meta charset="utf-8" /><a href="http://jeelabs.org/wp-content/uploads/2011/06/better.png" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://jeelabs.org/wp-content/uploads/2011/06/better.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 604px; height: 301px; " /></a>&lt;/div&gt;&lt;div&gt;
 <br />&lt;/div&gt;&lt;div&gt;You can read his complete post on his blog: <a href="http://jeelabs.org/2011/06/24/alternating-current/">JeeLabs Daily Weblog</a>.&lt;/div&gt;</p>
-</div>
 ]]></content>
   </entry>
   
