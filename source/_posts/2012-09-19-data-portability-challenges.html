@@ -7,7 +7,7 @@ categories:
 - emoncms
 modified_time: '2012-09-27T04:13:41.408-07:00'
 blogger_id: tag:blogger.com,1999:blog-2472065242652647619.post-7824585600401093806
-blogger_orig_url: http://openenergymonitor.blogspot.com/2012/09/data-portability-challenges.html
+blogger_orig_url: http://blog.openenergymonitor.org/2012/09/data-portability-challenges.html
 ---
 
 Continuing from yesterday's post on <a href="http://openenergymonitor.blogspot.co.uk/2012/09/making-emoncms-data-portable.html">making emoncms data portable</a>.<br /><br />There are some challenges with implementing data portability for energy data. 5s energy feed data can grow to be quite large, I have several feeds that are approaching 100Mb and a total account size of about 700Mb and thats only just approaching one year.<br /><br />Moving large quantities of data uses server resources including: cpu, memory and bandwidth. Emoncms.org is hosted on a <a href="http://www.bigv.io/">BigV virtual machine</a>, where you get 1GiB Ram, 25GiB Disk space, 200GiB transfer for £10 a month, which is a fantastic deal for those specs.<br /><br />As exporting or importing large feeds takes time its important that it does not hog resources on the server making the server unusable for other users, any import or export code needs to use a small percentage of the server resources and ideally the amount of resources used could be adjustable. We also need to keep an eye on the data transfer limits.<br /><br />In the next post I will post up the initial working feed export code.<br /><br /><br /><br /><br /><br />
