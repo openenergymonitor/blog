@@ -27,37 +27,7 @@ Markdown is a lightweight markup language based on the formatting conventions th
 
 [See here](http://coapp.org/reference/garrett-flavored-markdown.html#code) for a full list of code syntax markdown tags
 
-## Python code syntax:
 
-```python
-# Initialize logging
-self._log = logging.getLogger("EmonHub")
-
-```
-## PHP code syntax:
-
-```php
-public function get_npoints($feedid) {
-    $feedid = (int) $feedid;
-
-```
-
-<!--more-->
-
-## c++ code syntax:
-
-```cpp
-int get_temperature(byte sensor)
-{
-  float temp=(sensors.getTempC(allAddress[sensor]));
-  if ((temp<125.0) && (temp>-55.0)) return(temp*10);            //if reading is within range for the sensor convert
-```
-
-## Bash code syntax markdown:
-
-```console
-$ echo "hello world"
-```
 # Table:
 
 | Column1      | Column2            |
