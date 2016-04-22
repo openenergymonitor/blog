@@ -11,7 +11,7 @@ categories: Test
 simple_search: true
 ---
 
-Testing markdown blog post. Will this replace our [old blog](http://blog.openenergymonitor.org)?
+Testing markdown blog post. Will this replace our [old blog](http://openenergymonitor.blogspot.com)?
 
 Here is a markdown post: *italic*, **bold**, `inline code`
 
