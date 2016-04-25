@@ -4,15 +4,17 @@ Drop a new `YYYY-MM-DD-myawesomepost.markdown` into `/source/_posts` and images 
 
 **Note: date in the post needs to be yesterdays date in order to appear*
  - Future dates can be set if you want post to appear in the future
+ 
+## Post Template Example
+
 ```
 ---
 layout: post
 title: 'My awesome blog post'
-date: '2016-04-22'
+date: 2016-04-22                # Needs to be yesetdays date to appear
 author: Glyn Hudson
-author_twitter: glynhudson
 comments: true
-tags:
+categories:                     # LOWER CASE
 - awesome
 - blog
 - post

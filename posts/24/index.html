@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/documentation-reorganisation/">Documentation reorganisation proposal</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-21T19:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-21 19:21:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/documentation-reorganisation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s1600/oem_site_now.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s400/oem_site_now.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span class="Apple-style-span" style="font-size: small;"><i>The current front page</i></span></td></tr></tbody></table><div style="text-align: center;"></div><div style="text-align: -webkit-auto;"><br /></div><br />It has been pointed out several times that the documentation on this site is hard to follow.&nbsp;We've&nbsp;been giving this some thought and have come up with a plan for hopefully what will be a clearer structure.<br /><br />Here are our initial thoughts:<br /><br />1) We start with the following headings, these form the main menu:<br /><br /><b>Community |&nbsp;Applications | Modules | Fundamentals | Tools | Archive</b><br /><br />These headings contain:<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Community</span></b><br /><ul><li>Forums</li><li>Development plans</li><li>Links to community builds and blogs</li></ul><b><span class="Apple-style-span" style="font-size: large;">Applications</span></b><br />Applications are step by step guides of how to assemble modules to create a particular system. They start with a short description then a step-by-step type structure. Detailed application discussion would be on a second page or blog post with link through.<br /><ul><li>Power monitoring</li><li>Solar PV</li><li>Solar hot water</li><li>Pulse counting</li><li>Heatpump monitoring</li></ul><div>Applications reference&nbsp;through&nbsp;to modules below.</div><br />Separate github folder for each application containing sketches for all the modules that make up the application.<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Modules</span></b><br /><ul><li>Hardware</li><ul><li>emontx</li><li>emonglcd</li><li>emonbase</li><li>See-a-watt</li></ul><li>Software</li><ul><li>emoncms</li><li>Pachube</li></ul></ul>Each module contains the pages:<br /><ul><li>page1: overview + features (maybe use it: application list is referenced here?)</li><li>page2: built it / install it /&nbsp;buy it</li><li>page3: detailed design documentation</li></ul>All emon system sections reference through to fundamentals section below<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Fundamentals</span></b><br /><br />Getting started with arduino, uploading sketches etc.<br /><br /><b>Electricity monitoring</b><br /><ul><li>AC Theory - Introduction</li><li>AC Theory - Advanced</li><li>AC Theory - 3 phase</li><li>Power in different countries</li></ul><ul><li>Non-invasive</li><ul><li>CT sensors - Introduction</li><li>CT sensors - Advanced</li><li>Current only - Single Phase</li><li>Current and voltage - Single Phase</li><li>3-phase Monitoring</li></ul><li>Invasive</li><ul><li>AC shunt</li><li>DC Shunt &amp; hall effect sensing</li></ul></ul><ul><li>Appliance inference - labs</li><li>Interfacing with inverters</li></ul><b>Pulse counting</b><br /><ul><li>Single pulse counting</li><li>12 input pulse counting</li></ul><b>Temperature</b><br /><ul><li>DS18B20 temperature sensing</li><li>PT1000 temperature sensing</li></ul><b>Networking</b><br /><ul><li>RF</li><li>RFM12B</li><li>xbee, zigbee, old rf</li><li>Master/slave simple serial networking</li><li>Ethernet</li></ul><b>Displays</b><br /><ul><li>GLCD</li><li>7segment, 3310</li></ul><b>Storage</b><br /><ul><li>USB Pen drive data-logging</li><li>SD Card logging</li></ul><b>Control</b><br /><ul><li>Relay</li></ul><b>Firmware</b><br /><ul><li>Watchdog timer</li><li>Structures for transmitting data.</li><li>Sleep mode</li><li>String constructor</li></ul>Github sketches for the fundamentals section could be contained in one github folder called fundamentals.<br /><br /><span class="Apple-style-span" style="font-size: large;"><b>Tools</b></span><br />Tools that can be useful in debugging / development of systems:<br /><ul><li>VI Sampler</li><li>KST based graphing and statistics</li><li>Programming nanode with arduino</li></ul><span class="Apple-style-span" style="font-size: large;"><b>Archive</b></span><br />Items for archive<br /><br /><b>Other changes</b><br />We've disabled comments on pages, the thinking here is that its getting quite hard to navigate the page comments as conversations at different dates and topics are all getting mixed together and that it would be better to have these discussions on the forum, where each forum thread has its own clear topic.<br /><br />Every page can be put in a&nbsp;hierarchical&nbsp;order such as modules/hardware/emontx making navigation clearer.<br /><br />A site map with all of the above.<br /><br /><span class="Apple-style-span" style="font-size: large;">Do you think this is a good idea?&nbsp;</span><br />Any suggestions on how the website content can be better arranged would be greatly welcomed!<br />Thankyou!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/02/emoncms-features-part-2-email-notifier/">New emoncms features part 2 - Email notifier</a>
   </h1>
   
@@ -483,37 +523,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/how-to-contribute-on-openenergymonitor/">How to contribute on OpenEnergyMonitor dev + development plans</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-19T23:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-19 23:46:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2011/12/how-to-contribute-on-openenergymonitor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />If your wondering how best to get involved with OpenEnergyMonitor development here are a couple of&nbsp;thoughts&nbsp;and possible pointers.<br /><br />First a few insights and ideas from an another open source project we follow: DIYdrones. Thanks to Amin Zayani for the heads up on these:<a href="http://diydrones.com/profiles/blogs/how-to-contribute-to-the"> [1]</a>&nbsp;<a href="http://www.diydrones.com/profiles/blogs/how-to-contribute-to-a-diy-drones-project-start-with-something-sm">[2]</a><a href="http://diydrones.com/profiles/blogs/how-to-contribute-on-arducopter-project">&nbsp;[3]</a><br />In Chris Anderson of DIY drones's words, who we think has articulated it well:<br /><i>“The best way to participate is to do something cool on your own and share it here. All of our code bases and hardware design files are open. If you see an opportunity to improve something, just do it, post it and then tell the community about what you've done. If it's good, people will use it, help improve it, and we'll get a sense of what you can do. That makes it much easier for us to figure out what your skills are and where you'd fit in best.”</i><br /><br />If your looking for ideas here are a list of things we would like to do but no one is currently leading on them, Many of these problems are quite large, it would probably good to break them down into smaller sub projects.&nbsp;If you have a feature you would like to implement or would like to take the lead on any of the features below that would be really great, please post with your thoughts.<br /><ul><li>Appliance inference - infer from a single power feed of a house what each appliance uses and so providing a energy use by appliance breakdown.</li><li>PCB and casing for the 12 input pulse counter (a DIN rail and non din rail option)</li><li>Plug based energy monitor - for per appliance monitoring &nbsp;- an alternative method to appliance inference.</li><li>Larger&nbsp;monitoring PCB's: maybe 12 input CT?</li><li>3 phase monitoring sketch for emontx - quite a few people are asking for this so this would be really useful.</li><li>Develop a series of control modules, that extend the emon system into an open source monitoring and control system that can be used for domestic and industrial situations.&nbsp;Control modules could include:</li><ul><li>multiple relay board (for dump load control, immertion heaters, pumps, lighting)</li><li>solenoid valve driver board for central heating control.</li><li>motor control</li><li>This emon monitoring and control system could link together by either a wireless bus say rfm12 or a wired bus (maybe rs485). The modules could be designed to fit in both DIN rail style casing or non-DIN rail casing.</li></ul><li>Merge emonTx firmware examples into an Arduino library.</li></ul><div><b>Short term goals</b></div><div>For a general overview here are the short term goals that are being worked on at the moment and in the very near future:<br /><ul><li dir="ltr">New casing design for emontx and emonbase</li><li dir="ltr">Transfer emonbase sketches over to EtherCard library</li><li dir="ltr">Compatibility of main sketches with Arduino 1.0</li><li dir="ltr">Complete watchdog addition</li><li dir="ltr">Emoncms development <a href="http://openenergymonitor.org/emon/node/296">see feature plans and discussion page on forums.</a></li><li dir="ltr">Complete and publish energy audit software v1.0</li><li dir="ltr">Improve full emon system documentation.</li></ul><div>This blogpost is repeated as a <a href="http://openenergymonitor.org/emon/node/308">forum post here</a>, lets discuss this on the forum as its a better place for it.<br /><br /><i>Thankyou</i><br /><i>Trystan</i></div></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -594,10 +603,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/tasker/">Tasker</a></li>
     
-      <li><a href="/categories/test/">Test</a></li>
-    
-      <li><a href="/categories/ad/">ad</a></li>
-    
       <li><a href="/categories/app/">app</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
@@ -642,8 +647,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/embodied energy/">embodied energy</a></li>
     
-      <li><a href="/categories/emocms/">emocms</a></li>
-    
       <li><a href="/categories/emonbase/">emonBase</a></li>
     
       <li><a href="/categories/emonctrl/">emonCtrl</a></li>
@@ -672,7 +675,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
-      <li><a href="/categories/film/">film</a></li>
+      <li><a href="/categories/github/">github</a></li>
     
       <li><a href="/categories/graphing/">graphing</a></li>
     
@@ -684,9 +687,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/heating/">heating</a></li>
     
+      <li><a href="/categories/home assistant/">home Assistant</a></li>
+    
       <li><a href="/categories/home camp/">home camp</a></li>
     
       <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/integrations/">integrations</a></li>
     
       <li><a href="/categories/interface/">interface</a></li>
     
@@ -711,8 +718,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/mobile/">mobile</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
-    
-      <li><a href="/categories/n/">n</a></li>
     
       <li><a href="/categories/nanode/">nanode</a></li>
     

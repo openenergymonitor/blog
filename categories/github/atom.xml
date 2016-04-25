@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/github/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-25T17:39:40+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GitHub Submodules]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
+    <updated>2016-04-18T15:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
+    <content type="html"><![CDATA[<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
+
+<p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
+
+<p>However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</p>
+
+<!--more-->
+
+<h2 id="github-submodules">GitHub Submodules</h2>
+
+<blockquote>
+  <p>With git submodules a repository can contain a checkout of another repository as a subdirectory.
+The subfolder stores the submodule repository location and a commit ID. This means you can, for example, keep some common code in a separate repository and use a specific, known-working version of this code in other projects.
+If the submodule gets an update, the submodule will not get updated in the repo until you specifically pull the changes into them. Also, you can make changes to the submodule from within a project and push those changes to the submodule’s repository to make them available to other projects.</p>
+</blockquote>
+
+<h2 id="example">Example</h2>
+
+<p>Here is the firmware folder of the <a href="https://github.com/openenergymonitor/emonpi/tree/master/firmware/libraries">emonPi GitHub Repo</a>. The visible sub folders contain the required Arduino libs at a specific point in time.</p>
+
+<p>Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.</p>
+
+<p><img src="/images/submodules.png" alt="Git SubModules" /></p>
+
+<p>Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it’s possible to set the sketchbook location to the project repo to import all the required libs into the IDE.</p>
+
+<p>To obtain the submodules the repo must be Git cloned (not zip downloaded) then once the repo has been cloned a couple of extra steps are required to import the submodules. Here is an example for cloning the emonPi repo in pull in the sub modules:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi
+$ cd emonpi
+$ git submodule update
+$ git submodule init
+$ git submodule update
+</code></pre>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

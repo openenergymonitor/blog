@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/09/measuring-building-thermal-performance/">Measuring building thermal performance - coheating tests</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-09-20T13:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-09-20 13:58:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/09/measuring-building-thermal-performance/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Improving the thermal performance of buildings is an area where some of the largest energy and carbon savings can be made. Building energy use and carbon emissions can be reduced by as much as 60-80% through better insulation, draught proofing (improved thermal performance) and heating efficiency and controls. But how do you go about working out the performance of your house and what measures are best to undertake to reach this level of performance improvement? Improving building fabric is expensive, how do you work out which measures will be most cost-effective? and how do you make sure that your house actually achieves the target performance? how do you measure and check it?<br /><br />These are the questions I’m currently grappling with for my own house and the openenergymonitor lab, these are also the questions we’re trying to develop improved processes for answering with our work with <a href="http://openenergymonitor.blogspot.co.uk/2013/05/carbon-coop.html">Carbon Coop</a>.<br /><br />Here’s a graphic from the <a href="http://zerocarbonbritain.com/">Centre for Alternative Technology’s Zero Carbon Report</a>&nbsp;illustrating the kind of performance improvements that are possible:<br /><div><br /></div><div><div style="text-align: center;"><img height="408" src="https://lh4.googleusercontent.com/IawY7i3x1WLGkRDyl0mv-SMap9VzNxzfvjWNw933ikxI0BPythd58a1asyYHwGl6NqBhLhqltkykbtuWJbht2YCIsB3IyF58fQUKW6KL2EgSnHqbAwOjDErMEg" width="640" /></div><br />The most common way to investigate domestic building performance is by using simple building energy models such as SAP:</div><div><a href="http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-carbon-coop.html">http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-carbon-coop.html</a><br /><br />The accuracy of a model is always dependent on its input data and assumptions, work that has been done on comparing modelled energy consumption as calculated by SAP vs actual energy consumption show that there is often a discrepancy and in some cases the discrepancy is so large (even a 100% or more) as to undermine decisions made based on model outputs.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><img height="245" src="https://lh4.googleusercontent.com/VlT6g2k6w09l4anb5WRV47GYtIQKvn8FZApwUafwiQzvqzrzLsN3KxL3wY9FcKoF4BvNte15jX2PBRMyY9R-0roymQSh8PH0aju-oL_Xjeu_BLXVtp7PV9SM2A" style="margin-left: auto; margin-right: auto;" width="400" /></td></tr><tr><td class="tr-caption" style="text-align: center;"><a class="src-url" href="https://www.bsria.co.uk/download/asset/agm-2011-co-heating-tests-sarah-birchall.pdf" style="color: #5566dd; display: inline-block; font-family: Ubuntu, Arial, sans-serif; font-size: 12px; max-width: 500px; overflow: hidden; padding-bottom: 1px; padding-top: 4px; text-align: start; text-decoration: none; text-overflow: ellipsis; white-space: nowrap;" target="_blank">https://www.bsria.co.uk/download/asset/agm-2011-co-heating-tests-sarah-birchall.pdf</a></td></tr></tbody></table><div style="text-align: left;">To rely therefore on modelled performance only can be misleading.</div><br />It is possible however to measure the total building thermal performance by measuring how much energy it takes to heat a building up to a given temperature above the outside temperature. This procedure is known as a coheating test and was <a href="http://www.leedsmet.ac.uk/as/cebe/projects/coheating_test_protocol.pdf">pioneered by the Center for the Built Environment at Leeds Met University</a>. (There's also a good info sheet on coheating tests here by Peter Warm&nbsp;<span id="docs-internal-guid-079ade9d-3ba6-00da-229a-975b3d49fdab"><span style="color: #1155cc; font-family: Arial; font-size: 15px; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"><a href="http://www.peterwarm.co.uk/?dl_id=6" style="text-decoration: none;">www.peterwarm.co.uk/?dl_id=6</a> </span></span>)</div><div><br />The standard co-heating test involves heating building when unoccupied to an elevated internal temperature of 25C over a period of 1-3 weeks with electric heating and monitoring the electrical heat input, internal and external temperatures. Keeping the building unoccupied reduces unknown variables and so increases the accuracy of the measurement but it alongside the elevated temperature makes widespread testing of this kind difficult.<br /><br />The question that several people have been asking and I’m aware of several groups working on this (<a href="http://www.housahedron.co.uk/">@Housahedron</a> and <a href="http://www.lboro.ac.uk/departments/cv/docs/docSem/121213/Jack.pdf">Richard Jack, lboro</a>)  is; can a method be developed for undertaking an ongoing co-heating equivalent test that can be undertaken while the building is being used, that could even measure thermal performance over time as measures are undertaken. The analogy is a car MPG meter but for your house.<br /><br />Over the last few weeks I’ve been working on an approach that I think is showing promising results, it involves applying a dynamic model to realtime monitored heating input and external temperature data to model indoor temperature. The modelled internal temperature is then compared to the actual indoor temperature.<br /><br /><div style="text-align: center;"><img height="508" src="https://lh6.googleusercontent.com/fZyZiAT9XcS6B6OwzBbWQiR9AKsp7oZXoNCdx-AVNHIlxZeIxLiwofbjGX8wMhfSXKUpq0cEhk6zqW93cp1uo57dkAHJGRr1TZoikCl1No9lQN2R7UBL7T4arA" width="640" /></div><br />The model parameters that give a good match tell you the heat loss factor of your building and also it’s thermal mass. The heat loss factor is your MPG equivalent for household fabric thermal performance.<br /><br />The model type is a multi stage resistor-capacitor model, using the resistor-capacitor analogy for thermal modelling is a standard approach used in many thermal models, there's an interesting page on it here: <a href="http://lpsa.swarthmore.edu/Systems/Thermal/SysThermalModel.html">http://lpsa.swarthmore.edu/Systems/Thermal/SysThermalModel.html</a><br /><br /><div style="text-align: center;"><img height="177" src="https://lh6.googleusercontent.com/nnfKC3yzKI9FTo1b3RfaZAhRDFWqDA8uNJDKnCCbtdjE-wIj5J6fn4-Z69w6ars3BZfFiKOcVXmlvC8qY_67e4Kg_SsshZ-BlYUpWQCoMXpW5fTkJC7err3aZg" width="640" /></div><br />This is all open source and the code so far is up on github here: <a href="https://github.com/emoncms/openbem">https://github.com/emoncms/openbem</a>, <br />There's also a forum thread here with a bit more information on the model and tests&nbsp;<a href="http://openenergymonitor.org/emon/node/2783">http://openenergymonitor.org/emon/node/2783</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/09/faire-maus/">Faire Maus! A 'fair' USB optical mouse</a>
   </h1>
   
@@ -467,48 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/oem-gateway-by-jerome/">OEM Gateway by Jerome Lafréchoux</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-29T22:28:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-29 22:28:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/oem-gateway-by-jerome/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I would like to highlight the good and interesting work that <a href="https://github.com/Jerome-github">Jerome Lafréchoux</a>&nbsp;has been doing on developing a gateway that is intended to go beyond the current RFM2Pi interface towards something that can be used on any linux system whether a pi or any computer to take say input from a serial RFM12Pi and forward it either to local instances of emoncms or remote instances of any service (without necessarily needing a local install of emoncms).<br /><br />Here's an exerpt from Jerome's last post on the<a href="https://github.com/emoncms/raspberrypi/issues/30">&nbsp;github topic on gateway development</a>:<br /><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">"The standalone gateway seems complete enough for me to be published, although I'd rather have a little feedback before recommending it.</div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;"><a href="https://github.com/Jerome-github/oem_gateway" style="color: #4183c4; text-decoration: initial;">https://github.com/Jerome-github/oem_gateway</a></div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">It works basically the same way. Here are the main features:</div><ul style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin: 15px 0px; padding: 0px 0px 0px 30px;"><li><div style="margin-bottom: 15px; margin-top: 15px;">Can be parameterized either via emoncms GUI (with current limitations of the interface) or through a configuration file. Useful for those who don't want to install a local emoncms just for the configuration of their gateway. This also allows to add features without the need for complex GUI edition.</div></li><li><div style="margin-bottom: 15px; margin-top: 15px;">Can read inputs from the RFM2Pi, but also inputs from the serial port of the form "NodeID val1 val2 ...", or even from a socket. This socket possibility means any application on the same machine or on the network can send data to the gateway. This even solves the inter-applications issue. It is better than writing to a file, in my opinion.</div></li><li><div style="margin-bottom: 15px; margin-top: 15px;">Extensibility. By design, it should be easy to create new inputs (data sources) or outputs (another server's API). It uses classes, so a new input (listener) or output (buffer) can be created through inheritance/overriding.</div></li></ul><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">See readme file for more explanations.</div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">I should add a socket use sample, but it's pretty basic and require very few code. Here's a python example:</div><pre style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); color: #333333; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; line-height: 19px; margin-bottom: 15px; margin-top: 15px; overflow: auto; padding: 6px 10px;"><code style="background-color: transparent; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: none; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; margin: 0px; padding: 0px;">import socket<br />HOST = 'raspberrypi'    # The remote host, can be 'localhost' just the same<br />PORT = 50011            # The port chosen in the gateway config<br />s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br />s.connect((HOST, PORT))<br />s.send('14 15 26\r\n')<br />s.close()&nbsp;</code></pre><span style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px;">Currently, each buffer instantiated in the gateway buffers a given amount of data when network is down. This is limited (we don't want to eat up all memory). Next step could be to add the possibility to buffer samples in a file (with care for SD card wearout)."</span><br /><br />To try it out see the github repository here: <a href="https://github.com/Jerome-github/oem_gateway">https://github.com/Jerome-github/oem_gateway</a>. Jerome is looking for testers and would appreciate feedback on it.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -589,10 +589,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/tasker/">Tasker</a></li>
     
-      <li><a href="/categories/test/">Test</a></li>
-    
-      <li><a href="/categories/ad/">ad</a></li>
-    
       <li><a href="/categories/app/">app</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
@@ -637,8 +633,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/embodied energy/">embodied energy</a></li>
     
-      <li><a href="/categories/emocms/">emocms</a></li>
-    
       <li><a href="/categories/emonbase/">emonBase</a></li>
     
       <li><a href="/categories/emonctrl/">emonCtrl</a></li>
@@ -667,7 +661,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
-      <li><a href="/categories/film/">film</a></li>
+      <li><a href="/categories/github/">github</a></li>
     
       <li><a href="/categories/graphing/">graphing</a></li>
     
@@ -679,9 +673,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/heating/">heating</a></li>
     
+      <li><a href="/categories/home assistant/">home Assistant</a></li>
+    
       <li><a href="/categories/home camp/">home camp</a></li>
     
       <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/integrations/">integrations</a></li>
     
       <li><a href="/categories/interface/">interface</a></li>
     
@@ -706,8 +704,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/mobile/">mobile</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
-    
-      <li><a href="/categories/n/">n</a></li>
     
       <li><a href="/categories/nanode/">nanode</a></li>
     

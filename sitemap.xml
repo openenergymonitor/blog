@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://blog.openenergymonitor.org/2016/04/test-post/</loc>
-<lastmod>2016-04-03T17:00:00+00:00</lastmod>
+<loc>http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/</loc>
+<lastmod>2016-04-18T15:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.openenergymonitor.org/2016/04/Home-Assistant/</loc>
+<lastmod>2016-04-01T17:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/2016/03/raspberry-pi-3/</loc>
@@ -1105,10 +1109,6 @@
 <lastmod>2011-02-06T20:48:00+00:00</lastmod>
 </url>
 <url>
-<loc>http://blog.openenergymonitor.org/2011/02/business-wants-to-see-light/</loc>
-<lastmod>2011-02-03T10:08:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://blog.openenergymonitor.org/2011/01/great-talk-by-saul-griffith-on-energy/</loc>
 <lastmod>2011-01-20T16:21:00+00:00</lastmod>
 </url>
@@ -1416,12 +1416,6 @@
 <loc>http://blog.openenergymonitor.org/categories/display/</loc>
 </url>
 <url>
-<loc>http://blog.openenergymonitor.org/categories/job/</loc>
-</url>
-<url>
-<loc>http://blog.openenergymonitor.org/categories/ad/</loc>
-</url>
-<url>
 <loc>http://blog.openenergymonitor.org/categories/business/</loc>
 </url>
 <url>
@@ -1447,9 +1441,6 @@
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/categories/rfm12/</loc>
-</url>
-<url>
-<loc>http://blog.openenergymonitor.org/categories/emocms/</loc>
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/categories/nanode/</loc>
@@ -1587,6 +1578,9 @@
 <loc>http://blog.openenergymonitor.org/categories/feed-storage/</loc>
 </url>
 <url>
+<loc>http://blog.openenergymonitor.org/categories/job/</loc>
+</url>
+<url>
 <loc>http://blog.openenergymonitor.org/categories/backup/</loc>
 </url>
 <url>
@@ -1603,9 +1597,6 @@
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/categories/batteries/</loc>
-</url>
-<url>
-<loc>http://blog.openenergymonitor.org/categories/n/</loc>
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/categories/linux/</loc>
@@ -1704,10 +1695,13 @@
 <loc>http://blog.openenergymonitor.org/categories/app/</loc>
 </url>
 <url>
-<loc>http://blog.openenergymonitor.org/categories/film/</loc>
+<loc>http://blog.openenergymonitor.org/categories/home-assistant/</loc>
 </url>
 <url>
-<loc>http://blog.openenergymonitor.org/categories/test/</loc>
+<loc>http://blog.openenergymonitor.org/categories/integrations/</loc>
+</url>
+<url>
+<loc>http://blog.openenergymonitor.org/categories/github/</loc>
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/posts/2/</loc>
@@ -1810,6 +1804,6 @@
 </url>
 <url>
 <loc>http://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2016-04-25T15:54:52+00:00</lastmod>
+<lastmod>2016-04-25T17:38:35+00:00</lastmod>
 </url>
 </urlset>

@@ -7,26 +7,26 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Category: emocms - Blog | OpenEnergyMonitor</title>
+    <title>GitHub Submodules - Blog | OpenEnergyMonitor</title>
     <meta name="author" content="Glyn Hudson">
-    <meta name="description" content="Category: emocms">
+    <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="http://blog.openenergymonitor.org/categories/emocms/">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/">
 
     <meta property="fb:app_id" content="">
-    <meta property="og:title" content="Category: emocms">
+    <meta property="og:title" content="GitHub Submodules">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="http://blog.openenergymonitor.org/categories/emocms/">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Category: emocms">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@openenergymon">
     
-    <meta name="twitter:title" content="Category: emocms">
-    <meta name="twitter:description" content="Category: emocms">
+    <meta name="twitter:title" content="GitHub Submodules">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
@@ -101,142 +101,80 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <div class="grid__item two-thirds lap-one-whole palm-one-whole">
         
 
-          <article class="page">
-  
-  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/categories/emocms/index.html'>Edit this page on GitHub</a></div>
-
+          <article class="post">
   
   <header>
-    <h1 class="title indent">
-      Category: Emocms
-    </h1>
-  </header>
-  <hr class="divider">
+  
+  <h1 class="title indent">GitHub Submodules</h1>
   
 
-  <div id="archive-list">
   
-  
-  
-    
-    <h2>2015</h2>
-  
-    <article>
-      <div class="grid">
-
-  <div class="grid__item one-fifth palm-one-whole">
-    <time datetime="2015-02-03T18:07:00+00:00" pubdate>
-      <span class='month'>Feb</span> <span class='day'>03</span>
-    </time>
-  </div>
-  <div class="grid__item four-fifths palm-one-whole">
-    <h1 class="gamma"><a href="/2015/02/pre-built-heatpump-dashboards/">Pre-built heatpump dashboards</a></h1>
-    
-    <footer class="meta">
-      <span>
+  <div class="meta clearfix">
+    <time datetime="2016-04-18T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April  18th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
     <i class="icon-tags"></i>
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emocms/'>emocms</a></li>
+        <li><a class='category' href='/categories/github/'>github</a></li>
       
     
     </ul>
-  </span>
-    </footer>
+  </span> <br>
     
-    <hr class="divider">
+      <a class='comments'
+         href="/2016/04/Git-Sub-Modules/#disqus_thread"
+         >Comments</a>
+    
   </div>
+  
+</header>
 
+
+  <p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
+
+<p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
+
+<p>However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</p>
+
+<a name="read-more"></a>
+
+<h2 id="github-submodules">GitHub Submodules</h2>
+
+<blockquote>
+  <p>With git submodules a repository can contain a checkout of another repository as a subdirectory.
+The subfolder stores the submodule repository location and a commit ID. This means you can, for example, keep some common code in a separate repository and use a specific, known-working version of this code in other projects.
+If the submodule gets an update, the submodule will not get updated in the repo until you specifically pull the changes into them. Also, you can make changes to the submodule from within a project and push those changes to the submodule’s repository to make them available to other projects.</p>
+</blockquote>
+
+<h2 id="example">Example</h2>
+
+<p>Here is the firmware folder of the <a href="https://github.com/openenergymonitor/emonpi/tree/master/firmware/libraries">emonPi GitHub Repo</a>. The visible sub folders contain the required Arduino libs at a specific point in time.</p>
+
+<p>Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.</p>
+
+<p><img src="/images/submodules.png" alt="Git SubModules" /></p>
+
+<p>Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it’s possible to set the sketchbook location to the project repo to import all the required libs into the IDE.</p>
+
+<p>To obtain the submodules the repo must be Git cloned (not zip downloaded) then once the repo has been cloned a couple of extra steps are required to import the submodules. Here is an example for cloning the emonPi repo in pull in the sub modules:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi
+$ cd emonpi
+$ git submodule update
+$ git submodule init
+$ git submodule update
+</code></pre>
 </div>
-    </article>
-  
-  
-  
-    
-    <h2>2014</h2>
-  
-    <article>
-      <div class="grid">
-
-  <div class="grid__item one-fifth palm-one-whole">
-    <time datetime="2014-08-01T14:12:00+00:00" pubdate>
-      <span class='month'>Aug</span> <span class='day'>01</span>
-    </time>
-  </div>
-  <div class="grid__item four-fifths palm-one-whole">
-    <h1 class="gamma"><a href="/2014/08/android-tasker-pebble-smartwatch/">Android Tasker & Pebble Smartwatch - Emoncms Notifications</a></h1>
-    
-    <footer class="meta">
-      <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/android/'>Android</a></li>
-      
-        <li><a class='category' href='/categories/tasker/'>Tasker</a></li>
-      
-        <li><a class='category' href='/categories/emocms/'>emocms</a></li>
-      
-        <li><a class='category' href='/categories/pebble/'>pebble</a></li>
-      
-    
-    </ul>
-  </span>
-    </footer>
-    
-    <hr class="divider">
-  </div>
-
-</div>
-    </article>
-  
-  
-  
-    
-    <h2>2011</h2>
-  
-    <article>
-      <div class="grid">
-
-  <div class="grid__item one-fifth palm-one-whole">
-    <time datetime="2011-08-07T23:40:00+00:00" pubdate>
-      <span class='month'>Aug</span> <span class='day'>07</span>
-    </time>
-  </div>
-  <div class="grid__item four-fifths palm-one-whole">
-    <h1 class="gamma"><a href="/2011/08/nanode-applications-weekend/">Nanode Applications weekend</a></h1>
-    
-    <footer class="meta">
-      <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emocms/'>emocms</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/nanode/'>nanode</a></li>
-      
-        <li><a class='category' href='/categories/presentation/'>presentation</a></li>
-      
-    
-    </ul>
-  </span>
-    </footer>
-    
-    <hr class="divider">
-  </div>
-
-</div>
-    </article>
-  
-</div>
-
-
 </article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
 
 
         </div>
@@ -286,7 +224,10 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   var disqus_shortname = 'openenergymonitor';
   
     
-    var disqus_script = 'count.js';
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/';
+    var disqus_url = 'http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/';
+    var disqus_script = 'embed.js';
   
   (function () {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

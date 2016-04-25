@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/04/engineers-thermometer/">Engineers thermometer</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-04-22T16:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-22 16:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> JohnCantor</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/04/engineers-thermometer/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I have just configured an emonGLCD and a battery-powered emonTx unit with 3 temperature sensors. This would make a useful heat-pump engineers tool, and probably has many other uses.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-6CJx6SlT4KE/T5QwzWYc0PI/AAAAAAAAAB0/gUZAhU0WevE/s1600/GLCD+radio+thermometer.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-6CJx6SlT4KE/T5QwzWYc0PI/AAAAAAAAAB0/gUZAhU0WevE/s320/GLCD+radio+thermometer.JPG" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>The emonTx has 2 probes (DS18B20's) on 2m cables, and one on-board the PCB. It's battery powered so can be put anywhere in range. The emonGLCD display shows the 3 emonTx temperatures and also a local temperature.&nbsp; Temperatures are transmitted via wireless from the emonTx to the emonGLCD every 2 seconds.<br /><br />Typical uses would be for balancing radiators. i.e T1 on the flow, T2 on the return. I have added T1 - T2 (delta T) because that is what you are often looking for.&nbsp;&nbsp; It could also be used for air-in, air-off off an air source heat pump, or and flow/return situation.&nbsp;&nbsp; It would make a good tell-tale device. i.e. to alert if any system goes out of its best operating ranges.<br /><br />I also have the temperatures data going to a Nanode emonBase to be logged to emoncms so that graphs can display temperatures over time. You really need this to balance up central heating radiators. i.e. fix it to a different radiator every day and compare results. The flows can be balanced accordingly.<br /><br />The DS18B20's are not ideal because they are a bit chunky (as opposed to thermocouples). On the other hand, the accuracy is excellent and it seems that the values can be relied upon. I have chosen to pot-up the probes myself.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-F4FmXiRSSEc/T5Q0s5e8FSI/AAAAAAAAACE/f2rJOeU2XnE/s1600/18B20+sensor+with+flex.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-F4FmXiRSSEc/T5Q0s5e8FSI/AAAAAAAAACE/f2rJOeU2XnE/s320/18B20+sensor+with+flex.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>They are fragile, and the <a href="http://shop.openenergymonitor.com/waterproof-ds18b20-temperature-sensing-kit/">ready-made sensors</a> from the OpenEnergyMonitor shop are much more rugged and can easily be tie-wrapped to a copper pipe and insulated etc.<br /><br />Next thing is to battery-power the emonGLCD so it becomes a portable tool. &nbsp; <br /><br />Another addition would be a LCD pulse input. This would give me a reading of kWh, and would save me using a stop-watch, as I have many over the years. <br /><br />Adapting these devices could get addictive!!<br /><br /><i>By John Cantor <a href="http://heatpumps.co.uk/">heatpumps.co.uk</a></i><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/04/short-video-of-openenergymonitor-labs/">A short video of OpenEnergyMonitor Labs</a>
   </h1>
   
@@ -465,46 +507,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/02/documentation-reorganisation/">Documentation reorganisation proposal</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-02-21T19:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-21 19:21:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/02/documentation-reorganisation/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s1600/oem_site_now.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s400/oem_site_now.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span class="Apple-style-span" style="font-size: small;"><i>The current front page</i></span></td></tr></tbody></table><div style="text-align: center;"></div><div style="text-align: -webkit-auto;"><br /></div><br />It has been pointed out several times that the documentation on this site is hard to follow.&nbsp;We've&nbsp;been giving this some thought and have come up with a plan for hopefully what will be a clearer structure.<br /><br />Here are our initial thoughts:<br /><br />1) We start with the following headings, these form the main menu:<br /><br /><b>Community |&nbsp;Applications | Modules | Fundamentals | Tools | Archive</b><br /><br />These headings contain:<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Community</span></b><br /><ul><li>Forums</li><li>Development plans</li><li>Links to community builds and blogs</li></ul><b><span class="Apple-style-span" style="font-size: large;">Applications</span></b><br />Applications are step by step guides of how to assemble modules to create a particular system. They start with a short description then a step-by-step type structure. Detailed application discussion would be on a second page or blog post with link through.<br /><ul><li>Power monitoring</li><li>Solar PV</li><li>Solar hot water</li><li>Pulse counting</li><li>Heatpump monitoring</li></ul><div>Applications reference&nbsp;through&nbsp;to modules below.</div><br />Separate github folder for each application containing sketches for all the modules that make up the application.<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Modules</span></b><br /><ul><li>Hardware</li><ul><li>emontx</li><li>emonglcd</li><li>emonbase</li><li>See-a-watt</li></ul><li>Software</li><ul><li>emoncms</li><li>Pachube</li></ul></ul>Each module contains the pages:<br /><ul><li>page1: overview + features (maybe use it: application list is referenced here?)</li><li>page2: built it / install it /&nbsp;buy it</li><li>page3: detailed design documentation</li></ul>All emon system sections reference through to fundamentals section below<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Fundamentals</span></b><br /><br />Getting started with arduino, uploading sketches etc.<br /><br /><b>Electricity monitoring</b><br /><ul><li>AC Theory - Introduction</li><li>AC Theory - Advanced</li><li>AC Theory - 3 phase</li><li>Power in different countries</li></ul><ul><li>Non-invasive</li><ul><li>CT sensors - Introduction</li><li>CT sensors - Advanced</li><li>Current only - Single Phase</li><li>Current and voltage - Single Phase</li><li>3-phase Monitoring</li></ul><li>Invasive</li><ul><li>AC shunt</li><li>DC Shunt &amp; hall effect sensing</li></ul></ul><ul><li>Appliance inference - labs</li><li>Interfacing with inverters</li></ul><b>Pulse counting</b><br /><ul><li>Single pulse counting</li><li>12 input pulse counting</li></ul><b>Temperature</b><br /><ul><li>DS18B20 temperature sensing</li><li>PT1000 temperature sensing</li></ul><b>Networking</b><br /><ul><li>RF</li><li>RFM12B</li><li>xbee, zigbee, old rf</li><li>Master/slave simple serial networking</li><li>Ethernet</li></ul><b>Displays</b><br /><ul><li>GLCD</li><li>7segment, 3310</li></ul><b>Storage</b><br /><ul><li>USB Pen drive data-logging</li><li>SD Card logging</li></ul><b>Control</b><br /><ul><li>Relay</li></ul><b>Firmware</b><br /><ul><li>Watchdog timer</li><li>Structures for transmitting data.</li><li>Sleep mode</li><li>String constructor</li></ul>Github sketches for the fundamentals section could be contained in one github folder called fundamentals.<br /><br /><span class="Apple-style-span" style="font-size: large;"><b>Tools</b></span><br />Tools that can be useful in debugging / development of systems:<br /><ul><li>VI Sampler</li><li>KST based graphing and statistics</li><li>Programming nanode with arduino</li></ul><span class="Apple-style-span" style="font-size: large;"><b>Archive</b></span><br />Items for archive<br /><br /><b>Other changes</b><br />We've disabled comments on pages, the thinking here is that its getting quite hard to navigate the page comments as conversations at different dates and topics are all getting mixed together and that it would be better to have these discussions on the forum, where each forum thread has its own clear topic.<br /><br />Every page can be put in a&nbsp;hierarchical&nbsp;order such as modules/hardware/emontx making navigation clearer.<br /><br />A site map with all of the above.<br /><br /><span class="Apple-style-span" style="font-size: large;">Do you think this is a good idea?&nbsp;</span><br />Any suggestions on how the website content can be better arranged would be greatly welcomed!<br />Thankyou!
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -585,10 +587,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/tasker/">Tasker</a></li>
     
-      <li><a href="/categories/test/">Test</a></li>
-    
-      <li><a href="/categories/ad/">ad</a></li>
-    
       <li><a href="/categories/app/">app</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
@@ -633,8 +631,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/embodied energy/">embodied energy</a></li>
     
-      <li><a href="/categories/emocms/">emocms</a></li>
-    
       <li><a href="/categories/emonbase/">emonBase</a></li>
     
       <li><a href="/categories/emonctrl/">emonCtrl</a></li>
@@ -663,7 +659,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
-      <li><a href="/categories/film/">film</a></li>
+      <li><a href="/categories/github/">github</a></li>
     
       <li><a href="/categories/graphing/">graphing</a></li>
     
@@ -675,9 +671,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/heating/">heating</a></li>
     
+      <li><a href="/categories/home assistant/">home Assistant</a></li>
+    
       <li><a href="/categories/home camp/">home camp</a></li>
     
       <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/integrations/">integrations</a></li>
     
       <li><a href="/categories/interface/">interface</a></li>
     
@@ -702,8 +702,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/mobile/">mobile</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
-    
-      <li><a href="/categories/n/">n</a></li>
     
       <li><a href="/categories/nanode/">nanode</a></li>
     

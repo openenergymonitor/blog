@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/12/rfm12b-wireless-transmission-explained/">RFM12B Wireless Transmission Explained</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-12-04T23:09:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-12-04 23:09:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/12/rfm12b-wireless-transmission-explained/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><br /></div><div><a href="http://4.bp.blogspot.com/-wAK7ujuyW74/UL6CdPOgCTI/AAAAAAAAdDI/BnSuuYG715M/s1600/rfm12.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-wAK7ujuyW74/UL6CdPOgCTI/AAAAAAAAdDI/BnSuuYG715M/s1600/rfm12.png" /></a>All OpenEnergyMonitor hardware modules (emonTx, emonGLCD emonBase etc) currently use the RFM12B 433/868/915Mhz module to communicate via wireless.&nbsp;</div><div><br /></div><div>We use the <a href="https://github.com/jcw/jeelib">JeeLib Arduino library</a> from <a href="http://jeelabs.org/">JeeLabs</a> as the software driver for the RFM12B.</div><div><br /></div><div><a href="http://openenergymonitor.org/emon/user/924">Robert Wall</a> has recently contributed a well written bit of documentation to explain the basics&nbsp;RFM12B wireless transmission:<br /><br /><br /><br /><br /></div><div style="background-color: #dddddd; padding: 10px;"><b><i>RFM12B - Part 2 -</i></b><br /><b><i>Sending data by radio between emonTx, emonBase and emonGLCD</i></b></div><div style="background-color: #dddddd; padding: 10px;"><i>The data is sent by radio between the sensor nodes, the base station (including the RFM12Pi) and the display. This note describes the way in which the data is assembled and addressed in order to pass values between units.<br /><br />The Arduino-based emon modules are programmed with application sketches that make use of the JeeLib library to handle the transmission and reception of the data, using the function calls provided by the library. The RFM12Pi is programmed in PHP but uses exactly the same methods and data structure. <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2#appendix1">Appendix 1</a>&nbsp;contains instructions for configuring the Raspberry Pi module.</i><br /><br /><i><b>Configuring &amp; Addressing</b></i></div><div style="background-color: #dddddd; padding: 10px;"><i>All the devices that communicate with each other must all use the same frequency. For the Arduino-based devices, this is specified in the software and must be one of the pre-defined constants. It must match the frequency of the hardware. (You should check which frequencies are permitted in your locality. It is possible to operate at the wrong frequency, e.g. 868 MHz hardware at 433 MHz, but the range can be very small, maybe less than 1 m).<br /><br />The addressing scheme has two parts, the “Network Group” and the “Node ID”. The RFM12B module supports 250 network groups, the RFM12 module can have only one network group, 212. Only devices that belong to the same group can talk to and listen to each other. If you like, you can think of a network group as being like a room: everyone in the room can talk to anyone else, but can neither talk to nor hear someone in a different room.<br /><br />Within the network group, there can be 31 Node Ids, but nodes 0 and 31 are special. Node 0 is used for On/Off Keying (OOK) and node 31 is for broadcast messages. The way we use it, each device must have its own unique ID. You can think of the ID as the name of a person in the room. <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2#appendix2">Appendix 2</a> lists our standardised Node IDs.<br /><br />There is one further but very important restriction: all the devices in all the network groups all use the same frequency, so only one device is allowed to transmit at any time.</i></div><div style="background-color: #dddddd; padding: 10px;"><a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2">Read Item in full from the Building Blocks Section&nbsp;</a></div><br />This documentation forms part 2 of RFM12B documentation. Part 1 details an <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless">overview of the RFM12B module</a>.  <br /><br />I would also like to take this opportunity to thank <a href="http://openenergymonitor.org/emon/user/1741">ukmoose</a> for his contributions to the Raspberry Pi&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=Raspberry_Pi">RFM12pi documentation wiki page</a>.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/12/public-and-private-feeds/">Public and private feeds </a>
   </h1>
   
@@ -469,48 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/10/pre-assembled-nanode-rf/">Pre-assembled Nanode RF </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-10-31T11:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-10-31 11:24:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-        <li><a class='category' href='/categories/nanode/'>nanode</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/10/pre-assembled-nanode-rf/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/--gOT_aPXFsg/UJEHT09ZQAI/AAAAAAAAcvc/GpHw4tOvNCg/s1600/Nanode_Gateway_RF.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="249" src="http://3.bp.blogspot.com/--gOT_aPXFsg/UJEHT09ZQAI/AAAAAAAAcvc/GpHw4tOvNCg/s320/Nanode_Gateway_RF.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">We're happy to announce that we are now selling Nanode RF web-connected emonBase gateways pre-assembled. This makes it even easier and quicker to get started with energy monitoring:&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://shop.openenergymonitor.com/base-stations/">http://shop.openenergymonitor.com/base-stations/</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The pre-assembled Nanode RF using surface mount electronics has been designed and assembled in the US by Wicked Devices. The Nanode was&nbsp;originally&nbsp;designed by our friend Ken Boak. Ken has written &nbsp;an interesting blog post giving a brief history of the Nanode.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Ken writes:&nbsp;</div><br /><br /><div style="background-color: #eeeeee; border: 1px solid rgb(204, 204, 204); margin: 5px; padding: 10px;"><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><div style="text-align: left;"><i>Nanode was conceived back in the summer of 2010, when I returned from a trip to Shenzhen, China. I was between jobs, and had a bit of time on my hands for tinkering with some new product ideas.</i><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: left;"></table><i>Nanode arose out of the need to find a cheaper way of connecting simple open source hardware, such as Arduino to the internet, so that Arduino could be used for a range of sensing and control applications.</i></div><div style="text-align: left;"><i><br /></i></div><a href="http://3.bp.blogspot.com/-qNfrw-wFDb0/UI0rrJ_XtAI/AAAAAAAAA7Q/4cirn7DHaPc/s320/P1030151.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-qNfrw-wFDb0/UI0rrJ_XtAI/AAAAAAAAA7Q/4cirn7DHaPc/s320/P1030151.JPG" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Early Nanode prototype controlling an RGB lamp</td></tr></tbody></table>Read his full blog post here:&nbsp;<a href="http://saelaenx.wordpress.com/2012/09/27/geektool-setup/">http://sustburbia.blogspot.co.uk/2012/10/a-brief-history-of-nanode.html</a></div><div style="text-align: left;"><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -591,10 +589,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/tasker/">Tasker</a></li>
     
-      <li><a href="/categories/test/">Test</a></li>
-    
-      <li><a href="/categories/ad/">ad</a></li>
-    
       <li><a href="/categories/app/">app</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
@@ -639,8 +633,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/embodied energy/">embodied energy</a></li>
     
-      <li><a href="/categories/emocms/">emocms</a></li>
-    
       <li><a href="/categories/emonbase/">emonBase</a></li>
     
       <li><a href="/categories/emonctrl/">emonCtrl</a></li>
@@ -669,7 +661,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
-      <li><a href="/categories/film/">film</a></li>
+      <li><a href="/categories/github/">github</a></li>
     
       <li><a href="/categories/graphing/">graphing</a></li>
     
@@ -681,9 +673,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       <li><a href="/categories/heating/">heating</a></li>
     
+      <li><a href="/categories/home assistant/">home Assistant</a></li>
+    
       <li><a href="/categories/home camp/">home camp</a></li>
     
       <li><a href="/categories/humidity/">humidity</a></li>
+    
+      <li><a href="/categories/integrations/">integrations</a></li>
     
       <li><a href="/categories/interface/">interface</a></li>
     
@@ -708,8 +704,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/mobile/">mobile</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
-    
-      <li><a href="/categories/n/">n</a></li>
     
       <li><a href="/categories/nanode/">nanode</a></li>
     

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: home Assistant | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/home-assistant/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-04-25T17:39:40+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Home Assistant and emonPi]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
+    <updated>2016-04-01T17:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
+    <content type="html"><![CDATA[<p><a href="http://home-assistant.io/">Home Assistant</a> (HA) is a fully <a href="https://github.com/balloob/home-assistant">open-source</a> home automation platform.</p>
+
+<p>In terms of functionality it’s quite similar to <a href="http://openenergymonitor.blogspot.co.uk/search/label/openHAB">openHAB</a> however it’s architecture is very different it runs on Python 3 as opposed to java.</p>
+
+<p>I found home assistant very easy to setup and configure. It’s got some nice auto detect features e.g. It auto-detected by Chromecast devices. Home Assistant has got <a href="https://home-assistant.io/components/">pre-built component integrations</a> with many home automation and monitoring devices and platforms. I was also impressed with the presence detection support, I tested using <a href="https://home-assistant.io/components/device_tracker.nmap_scanner/">nmap</a> to scan my home router for presence of my phone connected to my home WiFi (indication that I’m home…or I forget my phone!) and <a href="https://home-assistant.io/components/device_tracker.owntracks/">OwnTracks</a> MQTT based GPS tracking.</p>
+
+<!--more-->
+
+<p>Interfacing with our <a href="http://openenergymonitor.org/emon/modules/emonpi">emonPi Raspberry Pi energy monitor</a> was easy, using MQTT component to connect to emonPi’s MQTT server and subscribe to the power and sensor readings of interest.</p>
+
+<p>As yet I have not experimented with creating automations with HA .e.g turning off lights and heating when we’re not home. I think I will still prefer using nodeRED for these types of rule based automations. However what HA does well is present a nice clean, mobile friendly and easy to configure front-end interface:</p>
+
+<p><img src="/images/ha1.jpg" alt="home assistant" />
+My HA Home Setup So Far</p>
+
+<p><img src="/images/ha2.png" alt="home assistant" />
+Home Assistant has some nice mini graphing features to give you a quick overview.</p>
+
+<p><img src="/images/ha3.png" alt="home assistant" /> <img src="/images/ha4.png" alt="home assistant" /></p>
+
+<p>On a switch node a quite overview will tell you how long the switch has been on or off for. Very useful for checking long long the heating has been on for</p>
+
+<p><img src="/images/ha5.png" alt="home assistant" /></p>
+
+<p>Generic emonPi Config Example</p>
+
+<p><a href="https://github.com/openenergymonitor/oem_home-assistant">I have published setup guide to setting up Home Assistant on an emonPi with example config</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
