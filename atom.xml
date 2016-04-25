@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-04-23T00:30:54+00:00</updated>
+  <updated>2016-04-25T12:51:07+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -138,7 +138,7 @@ This 80 TWh of electricity demand is around 20% of the final direct electricity 
   <entry>
     <title type="html"><![CDATA[Heat pump Monitoring]]></title>
     <link href="http://blog.openenergymonitor.org/2015/12/heat-pump-monitoring/"/>
-    <updated>2015-12-18T13:42:00+00:00</updated>
+    <updated>2015-12-18T13:00:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2015/12/heat-pump-monitoring</id>
     <content type="html"><![CDATA[For a number of years now I have been working with John Cantor on monitoring heat pumps. John is one of the UK's foremost experts on heat pumps having worked in the field since the early 1980's, he has written a book on heat pumps and is an advisor and consultant on the technology. <br /><br />Earlier this year we worked on reading heat metering data from a Kamstrup heat meter in order to obtain accurate heat output measurement in addition to system flow temperatures and electrical power input. After spending quite a bit of time adapting existing emontx hardware and often emontx v2 hardware to integrate the additional circuitry required we decided it might be better to try and design a dedicated heat pump monitoring board that would have all the functionality we needed on a single board. <br /><br />This board is currently going through initial testing.<br />
 
