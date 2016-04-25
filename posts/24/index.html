@@ -233,56 +233,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
-    <a href="/2012/02/if-you-are-active-member-of/">3 Phases AC monitoring</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-02-13T11:49:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-13 11:49:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/3phases/'>3phases</a></li>
-      
-        <li><a class='category' href='/categories/dc-current-sensing/'>DC current sensing</a></li>
-      
-        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
-      
-        <li><a class='category' href='/categories/open-source/'>open source</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/02/if-you-are-active-member-of/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div dir="ltr" style="text-align: left;" trbidi="on">Note: this topic is still in development, there is an on-going discussion on the forum:&nbsp;<a href="http://openenergymonitor.org/emon/node/431">http://openenergymonitor.org/emon/node/431</a><br /><br />If you are an active member of OpenEnergyMonitor.org, then you know for sure that one of the challenges the project is facing is monitoring tri-phase AC systems (220V-400V).<br /><div>In theory it is as simple and easy as monitoring three one-phase systems with one voltage sensor per voltage phase, but in real life, it is not as easy as that.</div><div>Most of the time, plugs of the different phases are far from each others, and often there are no plugs for one or more phases (if it's for a special purpose like a night water heater). So this implies cabling one plug for each of the three phases in the cabinet and using 3 voltage sensors.</div><div><br /></div><div>This would hit one of the most important&nbsp;features of OpenEnergyMonitor: non-invasiveness.&nbsp;It would imply significantly more cabling and electrical work, this would also mean higher costs.</div><div><br /></div><div>I happen to know enough about principles of electrical power to be convinced that we can use one voltage sensor and three current sensors to monitor three-phases systems. Here is the theory:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-QxOn2-0s1_8/Tzjt2UEskxI/AAAAAAAAAQw/FeAWyFnM0nY/s1600/acp50.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-QxOn2-0s1_8/Tzjt2UEskxI/AAAAAAAAAQw/FeAWyFnM0nY/s1600/acp50.gif" /></a></div><div class="separator" style="clear: both; text-align: center;"><i><span style="font-size: xx-small;">Source:&nbsp;http://www.electronics-tutorials.ws/</span></i></div><div class="separator" style="clear: both; text-align: left;">The three voltage vectors are <b>always</b> shifted by 120°. What changes is the angle between a certain phase voltage and current vectors (a change caused by the properties of your load, but that's another story). So if the angle between two voltage vectors is always the same, then the phase shift of a current vector to the another phase voltage vector is exactly the phase shift of that current vector to its voltage vector + 120°.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Example from the figure above:</b></div><div class="separator" style="clear: both; text-align: left;">Phaseshift of red phase current and voltage= Phaseshift of red current vector and yellow voltage vector.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">So if we calculate the power factor of a current with any other voltage, we will of course get a wrong one, but we can always shift it by 120° and get the right one.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I have a setup of what I call "See-a-Watt" (which is basically a device based on the plans and code of OpenEnergyMonitor, but that combines data acquisition ethernet connection) installed in a building on the campus of my university, with access to a three-phases installation. So I decided to test the theory there.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The approach is as follows:</div><div class="separator" style="clear: both; text-align: left;"></div><ol style="text-align: left;"><li>Sample one voltage waveform out of three</li><li>Sample three current waveforms (of each phase</li><li>Calculate the phase shift (aka. power factor) of each of the three current waveforms to the one voltage waveform.</li><li>Send Vrms1, I1,I2, I3 and the power factors relative to each phase to emonCMS</li><li>Reverse the power factors to get the "wrong" phase, then compensate it with&nbsp;120° and recalculate the "right" power factor</li><li>Calculate the "right" powers = Ix * Vrms1 *'correct PF'</li></ol><br /><div class="separator" style="clear: both; text-align: left;">With the help of Trystan (he's much better with PHP than me and he knows emonCMS like the back of his hand) we implemented a function in emonCMS that reverses the "wrong" PF to the "wrong" phase shift angle, then shift it by + or -&nbsp;120° and recalculate the PF.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This setup is working now for more than 6 weeks without any problem and the accuracy is comparable to the traditional accuracy of the non-invasive method: 1-2% not more.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here is the code on the device side:&nbsp;<a href="https://github.com/AminfiBerlin/See-a-Watt-3-Phases">https://github.com/AminfiBerlin/See-a-Watt-3-Phases</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">and here is the commit on emonCMS that introduced the phaseshift function:&nbsp;<a href="https://github.com/openenergymonitor/emoncms3/commit/a41c57d457df77697540b1a89a74486951e058ee">https://github.com/openenergymonitor/emoncms3/commit/a41c57d457df77697540b1a89a74486951e058ee</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Needless to say that this is still in beta, I did not have any problem with it so far but that doesn't mean it's perfect. Please feel free to download the code and test it in every possible way.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><i>This is my first real contribution to any OpenSource project at all, I feel so proud and happy to be able to give back as much as I can.</i></div><div class="separator" style="clear: both; text-align: left;"><i><br /></i></div><div class="separator" style="clear: both; text-align: left;"><i>By&nbsp;<span class="Apple-style-span" style="background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px;"><a href="http://openenergymonitor.org/emon/user/15">Amin Zayani</a></span></i></div><div><br /></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2012/01/community-energy-plan-maker/">Community Energy Plan maker</a>
   </h1>
   
@@ -523,6 +473,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2011/12/how-to-contribute-on-openenergymonitor/">How to contribute on OpenEnergyMonitor dev + development plans</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2011-12-19T23:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-19 23:46:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2011/12/how-to-contribute-on-openenergymonitor/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />If your wondering how best to get involved with OpenEnergyMonitor development here are a couple of&nbsp;thoughts&nbsp;and possible pointers.<br /><br />First a few insights and ideas from an another open source project we follow: DIYdrones. Thanks to Amin Zayani for the heads up on these:<a href="http://diydrones.com/profiles/blogs/how-to-contribute-to-the"> [1]</a>&nbsp;<a href="http://www.diydrones.com/profiles/blogs/how-to-contribute-to-a-diy-drones-project-start-with-something-sm">[2]</a><a href="http://diydrones.com/profiles/blogs/how-to-contribute-on-arducopter-project">&nbsp;[3]</a><br />In Chris Anderson of DIY drones's words, who we think has articulated it well:<br /><i>“The best way to participate is to do something cool on your own and share it here. All of our code bases and hardware design files are open. If you see an opportunity to improve something, just do it, post it and then tell the community about what you've done. If it's good, people will use it, help improve it, and we'll get a sense of what you can do. That makes it much easier for us to figure out what your skills are and where you'd fit in best.”</i><br /><br />If your looking for ideas here are a list of things we would like to do but no one is currently leading on them, Many of these problems are quite large, it would probably good to break them down into smaller sub projects.&nbsp;If you have a feature you would like to implement or would like to take the lead on any of the features below that would be really great, please post with your thoughts.<br /><ul><li>Appliance inference - infer from a single power feed of a house what each appliance uses and so providing a energy use by appliance breakdown.</li><li>PCB and casing for the 12 input pulse counter (a DIN rail and non din rail option)</li><li>Plug based energy monitor - for per appliance monitoring &nbsp;- an alternative method to appliance inference.</li><li>Larger&nbsp;monitoring PCB's: maybe 12 input CT?</li><li>3 phase monitoring sketch for emontx - quite a few people are asking for this so this would be really useful.</li><li>Develop a series of control modules, that extend the emon system into an open source monitoring and control system that can be used for domestic and industrial situations.&nbsp;Control modules could include:</li><ul><li>multiple relay board (for dump load control, immertion heaters, pumps, lighting)</li><li>solenoid valve driver board for central heating control.</li><li>motor control</li><li>This emon monitoring and control system could link together by either a wireless bus say rfm12 or a wired bus (maybe rs485). The modules could be designed to fit in both DIN rail style casing or non-DIN rail casing.</li></ul><li>Merge emonTx firmware examples into an Arduino library.</li></ul><div><b>Short term goals</b></div><div>For a general overview here are the short term goals that are being worked on at the moment and in the very near future:<br /><ul><li dir="ltr">New casing design for emontx and emonbase</li><li dir="ltr">Transfer emonbase sketches over to EtherCard library</li><li dir="ltr">Compatibility of main sketches with Arduino 1.0</li><li dir="ltr">Complete watchdog addition</li><li dir="ltr">Emoncms development <a href="http://openenergymonitor.org/emon/node/296">see feature plans and discussion page on forums.</a></li><li dir="ltr">Complete and publish energy audit software v1.0</li><li dir="ltr">Improve full emon system documentation.</li></ul><div>This blogpost is repeated as a <a href="http://openenergymonitor.org/emon/node/308">forum post here</a>, lets discuss this on the forum as its a better place for it.<br /><br /><i>Thankyou</i><br /><i>Trystan</i></div></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
  
   <div class="pagination">
     
@@ -548,8 +529,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   <h1 class="title delta">Categories</h1>
   <ul class="divided">
     
-    
-      <li><a href="/categories/3phases/">3phases</a></li>
     
       <li><a href="/categories/air quality egg/">Air Quality Egg</a></li>
     
@@ -793,6 +772,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <div class="copyright">
   <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
   <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+  <a rel="me" href='http://blog.openenergymonitor.org/atom.xml'><i class="icon-rss"></i></a>
 
   <div class="credit">
     Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
