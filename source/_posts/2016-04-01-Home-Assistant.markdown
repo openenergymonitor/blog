@@ -5,7 +5,9 @@ date: 2016-04-01 17:00                                          # This is the in
 date_formatted: "April  1st 2016"                                # This is the public facing date on the post
 author: Glyn Hudson
 comments: true
-categories: home Assistant, integrations
+categories:
+ - home Assistant
+ - integrations
 ---
 
 [Home Assistant](http://home-assistant.io/) (HA) is a fully [open-source](https://github.com/balloob/home-assistant) home automation platform.
