@@ -1,14 +1,21 @@
 {% capture date %}{{ page.date }}{{ post.date }}{% endcapture %}
 {% capture date_formatted %}{{ post.date_formatted }}{% endcapture %}
 {% capture has_date %}{{ date | size }}{% endcapture %}
+{% capture has_date_formatted %}{{ date_formatted | size }}{% endcapture %}
 
 {% capture updated %}{{ page.updated }}{{ post.updated }}{% endcapture %}
 {% capture updated_formatted %}{{ page.updated_formatted }}{{ post.updated_formatted }}{% endcapture %}
 {% capture was_updated %}{{ updated | size }}{% endcapture %}
 
-{% if has_date != '0' %}
-  {% capture time %}<time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %}><i class="icon-calendar"></i> {{ date_formatted }}</time>{% endcapture %}
+{% if has_date != '0' and has_date_formatted != '0' %}
+  {% capture time %}<time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %}><i class="icon-calendar"></i> {{ date_formatted }}{% endcapture %}
 {% endif %}
+
+{% comment %} If 'date_formatted: XXX' does not exist then display 'date: XXX' on posts {% endcomment %}
+{% if has_date != '0' and has_date_formatted == '0' %}
+  {% capture time %}<time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %}><i class="icon-calendar"></i> {{ date }}{% endcapture %}
+{% endif %}
+    
 
 {% if was_updated != '0' %}
   {% capture updated %}<time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">Updated {{ updated_formatted }}</time>{% endcapture %}
