@@ -10,13 +10,14 @@
   {% unless post.meta == false %}
   <div class="meta clearfix">
     {% include blog/post/date.html %}{{ time }}
-    {% include post/author.html %} <br>
+    {% include post/author.html %}
     {% include post/time_to_read.html %} <br>
-    {% include blog/post/tags.html %}
+    {% include blog/post/tags.html %} <br>
     {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
       <a class='comments'
-         href="{{root_url }}{{ post.url }}{% endif %}#disqus_thread"
+         href="{{root_url }}{{ post.url }}#disqus_thread"
          >Comments</a>
+    {% endif %}
   </div>
   {% endunless %}
 </header>
