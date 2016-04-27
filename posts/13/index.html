@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/07/from-13-minutes-to-196ms-timestore-on/">From 1.3 minutes to 196ms: timestore on emoncms.org</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-31T11:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-31 11:14:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/from-13-minutes-to-196ms-timestore-on/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">John Cantor who uses the openenergymonitor system for <a href="http://www.heatpumps.co.uk/">heatpump performance monitoring</a>&nbsp;got in contact the other day saying that graphs on emoncms.org where taking a really long time to load. I said that the work on using <a href="http://www.mike-stirling.com/redmine/projects/timestore">timestore</a> will soon speed things up significantly. He asked if there was a chance to convert the feeds before he went up to work on a system in Scotland as being able to zoom with speed through the graphs would make a big difference.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Clicking on the Y (Year) button in the rawdata visualisation has slowed down so much over the last year that it now takes over a minute to load the view.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-hOkV9mZtczY/UfjjBpy62ZI/AAAAAAAACvU/y1WT69TFM4U/s1600/mysql_yearview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="281" src="http://3.bp.blogspot.com/-hOkV9mZtczY/UfjjBpy62ZI/AAAAAAAACvU/y1WT69TFM4U/s400/mysql_yearview.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">The same request on a raspberrypi takes <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">2.9 seconds</a>, The thinking to why its so much slower on emoncms.org is because of the use of the php loop doing individual requests to mysql which are added to the mysql process queue and have to wait in line&nbsp;amongst&nbsp;all the other mysql inserts and updates caused by all the updating feeds, the php loop method was<a href="http://emoncms.org/site/docs/developdatastorage"> initially faster than an equivalent mysql implementation</a> but clearly not for long.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Anyway I figured we could get timestore up and running on emoncms.org straight away if we run timestore in parallel with the current mysql storage and then slowly convert feeds over to timestore over time.&nbsp;The present input processing and visualisation implementation would be kept as is for the time being only initially using timestore to replace the realtime datatype<a href="http://openenergymonitor.blogspot.co.uk/2013/07/emoncms-powered-by-timestore.html"> rather than both realtime and daily</a>.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Conversion from mysql to timestore takes a long time especially as the process has to be throttled down in order to allow enough resources on the server for normal operation to continue. For example the conversion of a 568 day long, 5s datapoint interval feed (~152mb) takes about half an hour loading the server to an average 15min (quite high) load of 4.69 at that rate it will take about a month to convert all feeds over to timestore.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The results though are worth it!:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-xmRfvjUVfPk/UfjrE7OGHJI/AAAAAAAACvk/vtYOubE9enw/s1600/timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="272" src="http://2.bp.blogspot.com/-xmRfvjUVfPk/UfjrE7OGHJI/AAAAAAAACvk/vtYOubE9enw/s400/timestore.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><span style="font-size: x-large;">196ms!</span></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div style="margin-bottom: 0cm;">1.3 minutes down to 196ms is a<b> 398x</b> speed increase! and its also possible to see another advantage of timestore the effect of the average layers showing a slight winter summer curve. A big thankyou and credit to Mike Stirling for developing timestore enabling this kind of performance, if you&nbsp;haven't&nbsp;already check out the timestore project website:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://www.mike-stirling.com/redmine/projects/timestore">http://www.mike-stirling.com/redmine/projects/timestore</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">John Cantor has shared the Scottish heatpump dashboard publicly, take a look to try out the new timestore feeds:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/mallard">http://emoncms.org/mallard</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Im currently working on an interface in emoncms to allow selection of the feed datapoint interval (5s, 10s, 30s etc) to convert to before the feeds are added to the conversion queue, more on this soon.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/07/oem-gateway-by-jerome/">OEM Gateway by Jerome Lafréchoux</a>
   </h1>
   
@@ -477,48 +517,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/more-direct-file-storage-research/">More direct file storage research</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-04T12:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-04 12:04:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/more-direct-file-storage-research/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I was surprised to find how easy it was to use flat file storage for feed data using PHP file access commands and how fast this approach could be.<br /><br />While reading up on indexes I realised that the timestamp column in a feed data table is its own index as it is naturally sorted in ascending order and each row (datapoint) should be unique. A data-point can then be searched for efficiently using binary search which I remember covering in A-level computing. The feed data in mysql had a binary tree index which If I understand correctly is similar but it is implemented using a separate index layer which uses quite a bit of extra disk space. <br /><br />I had a go at implementing the get_feed_data function used in emoncms to select a given number of datapoint's over a timewindow used for drawing graphs. An example of the standalone function can be found here: <br /><br /><a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php">https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php</a> <br /><br />A development branch of emoncms that uses this flat file approach and includes this function can be found here (inserting data, input processing such as power to kwhd and visualisation all work, but its still quite conceptual) <br /><br /><a href="https://github.com/emoncms/emoncms/tree/flatfilestore">https://github.com/emoncms/emoncms/tree/flatfilestore</a> <br /><br />The get_feed_data function as implemented above takes roughly 120-230ms on a RaspberryPI to select 1000 datapoints over 1 to 300 days with a feed table with over 9 million rows. <br /><br />Thats much better than the 900-2700ms achieved at similar ranges with the <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">current mysql implementation</a>. <br /><br />The feed table in mysql used 178Mb of disk space. The same feed with no loss of data stored without an index and accessed as above takes up 67Mb so that's a considerable saving. Interestingly a 67Mb feed can be compressed to 18.5Mb with tar.gz compression. <br /><br />One of the issues with the above get_feed_data query is that it needs to know the data interval to do the get a datapoint every x number of datapoints approach. We could use binary search to find every datapoint but this would be slower although maybe worth trying to get a benchmark so that it can be compared. <br /><br />The other issue is that the datapoints selected may not be representative of the window they represent as they are just one random datapoint at a particular point in time. Which is the problem that the averaging approach used by <a href="http://mikestirling.co.uk/redmine/projects/timestore">Mike Stirling in Timestore </a>and by <a href="https://github.com/dovadi/emonWeb">Frank Oakner in EmonWeb</a> solves. <br /><br />Timestore is also a fair bit faster than the above get_feed_data function returning 1000 datapoints in 45ms. <br /><br />The advantage of the above approach is that it can fit into emoncms without having to change the current implementation too much, the feed data retains its timestamps, input processing is used in the same way. <br /><br />Not storing timestamps as timestore does could also be an advantage as it helps keep data quality high: fixed interval datapoints should be easier to use for comparison's,&nbsp;mathematical&nbsp;operations between feeds, it gives you higher certainty when querying the data, fetching data is faster and disk use is potentially half the size of the above approach if the values are stored as <a href="http://openenergymonitor.blogspot.com/2013/06/timestore-timeseries-database.html">4 byte floats as above rather than the default 8 byte double</a>. This coupled with averaged layers provides data that is representative at all time scales and datapoint number requests. <br /><br />My next step will therefore be to explore timestore further, first creating a script to export data from emoncms into timestore. The script needs to analyse the emoncms feed to work out the most common data interval. It needs to check for missing data, If a monitor went offline for an extended length of time it needs to give you the option to take this into account. It then needs to export and import into timestore as efficiently as possible.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -541,6 +539,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -593,12 +597,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
         </li>
       
     

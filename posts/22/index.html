@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/06/arduino-leonardo-atmega32u4-and-rfm12b/">Arduino Leonardo (ATmega32U4) and RFM12B</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-01T21:43:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-01 21:43:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/06/arduino-leonardo-atmega32u4-and-rfm12b/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />I've just managed to get an RFM12B hooked up to an Arduino Leonardo. It's been a bit of port mapping nightmare! <br /><br />The ATmega 32U4's &nbsp;'special function' ports such as PWM, IRQ, SPI etc are quite different to the ATmega328. The <a href="http://arduino.cc/en/Hacking/PinMapping32u4">Arduino port mapping table</a> proves very useful, if a little difficult to&nbsp;interpret. I made a re-arranged table with the ports re-arranged&nbsp;into function groups. I'll publish it once I've&nbsp;tidied&nbsp;it up.<br /><br />Once of the main&nbsp;differences&nbsp;is that the hardware ISP connections are no longer on digital pins 10,11,12 and 13. On the Leonardo they are<br /><br /><table border="0" cellspacing="0" cols="2"> <colgroup width="245"></colgroup> <colgroup width="229"></colgroup> <tbody><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>MISO - &nbsp;Digital 14</i></span></td><td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>SCK - &nbsp; Digital 15</i></span></td><td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>MOSI - Digital 16</i></span></td>  <td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>SS - &nbsp; &nbsp; &nbsp;Digital 17&nbsp;</i></span></td>  <td align="LEFT"><br /></td></tr></tbody></table><br />Unlike on the Arduino Uno These SPI pins are not accessible&nbsp;through any of the digital I/O pins, on om the Leonardo, their only accessible through the ICSP header. The SPI SS pin on the Leonardo is not broken out anywhere on the board,&nbsp;strangely&nbsp;it's used for the Rx LED. Can anyone explain why this is the case? It's not a big problem, we can use another pin as SS, digital 10 in this case.<br /><br />The IRQ Interrupt connection is made to Digital 3 (INT0). This has moved from Digital 2 on the Arduino Uno.<br /><br />The SEL connection is the same as with the Arduino UNO/ATmega328 goes to digital 10.<br /><br />See the RFM12B documentation page for general info on RFM12B and details of how to interface with ATmega328: <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless">http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless .&nbsp;</a><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-1wlXYOH5sRw/T8k1oL7NA_I/AAAAAAAAbqM/ADGDEPtMkFc/s1600/Ardiono+Leonardo+RFM12B.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="266" src="http://1.bp.blogspot.com/-1wlXYOH5sRw/T8k1oL7NA_I/AAAAAAAAbqM/ADGDEPtMkFc/s640/Ardiono+Leonardo+RFM12B.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Arduino Leonardo Connections to RFM12B via<a href="http://jeelabs.com/products/rfm12b-board"> JeeLabs RFM12B</a> breakout for level shifting to 3.3V</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-SL7RcnJfBxU/T8kWsOqWWTI/AAAAAAAAbqA/LYa2A00fwp0/s1600/SPI.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-SL7RcnJfBxU/T8kWsOqWWTI/AAAAAAAAbqA/LYa2A00fwp0/s1600/SPI.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">ICSP Header</td></tr></tbody></table>Now the hardware is&nbsp;complete&nbsp;it's time to tackle the software. We use the RFM12B driver as part of the JeeLib library from JeeLabs:&nbsp;<a href="https://github.com/jcw/jeelib">https://github.com/jcw/jeelib</a>. The library needs to be installed in the Arduino&nbsp;library's&nbsp;folder in the usual way. Arduino 1.0.1 is needed to be&nbsp;compatible&nbsp;with Leonardo.<br /><br /><strike>To make the JeeLib library work with the Leonardo and RFM12B (hooked up as above) the following needs to be inserted into the RF12.cpp file on line 62 <b>before</b> the <i>else&nbsp;// ATmega168, ATmega328, etc.</i></strike><br /><i><br /></i><br />No change to RFM12.cpp is needed, just download the latest version, see update below.<br /><br /><i>#elif defined(__AVR_ATmega32U4__)</i><br /><i><br /></i><br /><i>#define RFM_IRQ &nbsp; &nbsp; 0<span class="Apple-tab-span" style="white-space: pre;"> </span> &nbsp; //PD0, INT0, Digital3&nbsp;</i><br /><i>#define SS_DDR &nbsp; &nbsp; &nbsp;DDRB</i><br /><i>#define SS_PORT &nbsp; &nbsp; PORTB</i><br /><i>#define SS_BIT &nbsp; &nbsp; &nbsp;6<span class="Apple-tab-span" style="white-space: pre;"> </span> &nbsp; //Dig10, PB6</i><br /><i><br /></i><br /><i>#define SPI_SS &nbsp; &nbsp; &nbsp;17 &nbsp; &nbsp; // PB0, pin 8, Digital17</i><br /><i>#define SPI_MISO &nbsp; &nbsp;14 &nbsp; &nbsp; // PB3, pin 11, Digital14</i><br /><i>#define SPI_MOSI &nbsp; &nbsp;16 &nbsp; &nbsp; // PB2, pin 10, Digital16</i><br /><i>#define SPI_SCK &nbsp; &nbsp; 15 &nbsp; &nbsp; // PB1, pin 9, Digital15</i><br /><br /><br />I'm going to send JCW a git pull request to see if these changes can be integrated into the JeeLib library so it should work 'out of the box' in the future.<br /><br /><b>Update: Pull request has been merged, RF12 part of JeeLib Arduino library now has ATmega32U4 support :-) . Download it here:&nbsp;<a href="https://github.com/jcw/jeelib">https://github.com/jcw/jeelib</a></b><br /><br />For a simple RFM12B transmission demo/example see:&nbsp;<a href="https://github.com/openenergymonitor/RFM12B_Simple">https://github.com/openenergymonitor/RFM12B_Simple</a><br /><br />I'm planning on using the ATmega32U4 in the emonTx SMT that I'm currently working on. Spot the common thread in my last few blog posts!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/06/high-accuracy-current-measurement-over/">High Accuracy Current Measurement Over a Wide Range</a>
   </h1>
   
@@ -467,46 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/05/embodied-energy-of-electronic-enclosure/">Embodied Energy of Electronic Enclosure Materials</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-05-09T22:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-09 22:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/05/embodied-energy-of-electronic-enclosure/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    For us the&nbsp;underlying&nbsp;aim of energy monitoring is energy reduction. It's therefore important that over its useful life an energy monitoring system contributes to the saving of more energy than it involved in the embodied energy of it's production.<br /><br />Recently we have been having the discussion as to which material is&nbsp;environmentally&nbsp;better to use for electronic enclosures.<br /><br />So I did some research:<br /><br />Caution: The figures below were obtained from&nbsp;reputable&nbsp;sources but should not be taken on face value.<br /><ul><li>&nbsp;Extruded Aluminium takes approximately 40-80% <i>more </i>energy (KWh/Kg) to produce than ABS plastic [1][2] *</li></ul><ul><li>Aluminium is widely and easily recycled (even if its been anodised&nbsp;[2]) and the recycled product is of just as high a quality as the&nbsp;original.&nbsp;ABS plastic can be recycled in some locations but the recycled product is of much lower quality than the&nbsp;original, 'downcycling' would be a better term!&nbsp;</li></ul><ul><li>Recycled aluminium takes about 30% <i>less </i>energy (KWh/Kg) &nbsp;to produce than ABS plastic [3].</li></ul><ul><li>Plastic is made from oil which is a non-renewable fossil fuel.</li></ul><ul><li>Aluminium is the most abundant metal in the Earth's crust, extracting it requires lots of electricity which could be generated from renewable sources.&nbsp;</li></ul>With current processing and recycling&nbsp;methods&nbsp;we think aluminium could be the best material to use, it does take more energy to produce in the first place but once produced it can be recycled again and again to make new things with little extra energy.<br /><br />What do you think?<br /><br />References:<br />[1]&nbsp;<a href="http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml">http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml</a><br />[2]&nbsp;<a href="http://www.victoria.ac.nz/cbpr/documents/pdfs/ee-coefficients.pdf">www.victoria.ac.nz/cbpr/documents/pdfs/ee-coefficients.pdf</a><br /><div><div>[3] <a href="http://www.worldchanging.com/archives/005656.html">http://www.worldchanging.com/archives/005656.html</a><br /><br />*Aluminium is about 2.6 times denser than plastic therefore a similar case made from plastic could be&nbsp;lighter. Further research is required before drawing a conclusion.&nbsp;</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -529,6 +531,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -581,12 +589,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
         </li>
       
     

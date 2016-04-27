@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/emonglcd-v13-pcb/">emonGLCD V1.3 PCB</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-28T13:09:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-28 13:09:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/emonglcd-v13-pcb/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Introducing the latest version of the emonGLCD PCB.<br /><br />This latest version (V1.3) fixes a <a href="http://openenergymonitor.org/emon/node/273">few minor issues</a> with the previous version (V1.2) but also has some issues of its own. It's a case of two steps forward and one step back.<br /><br />The good news:<br /><br /><ul><li>The LDR light sensor no longer suffers from reduced&nbsp;sensitivity due to sharing a port with one of the LCD pins&nbsp;</li><li>Both tri-colour LEDs are on ATmega328's hardware PWM ports allowing the brightness to be controlled with some nice dimming effects&nbsp;</li><li>New new rear silkscreen design&nbsp;featuring&nbsp;a handy RFM12B frequency note area and a large Welsh dragon graphic!&nbsp;</li></ul>The bad news:<br /><br /><ul><li>The new feature in V1.3 was suppose to be two extra push switches to allow for future screen navigation. Unfortunately due to a PCB layout error non of the switches on V1.3 are functional. While this is&nbsp;frustrating&nbsp;since it was an easily avoidable mistake the display is still very functional. The current firmware example for single CT energy monitoring and solar PV monitoring don't really make much use of the switch.&nbsp;</li></ul><div>The good news!</div><div><br /></div><div>Everything else LCD, wireless, ATmega 328, Light sensor, Temperature sensor and multi-colour LED's work great. We have decided to go with the switches not working for now as it still makes a very functional energy monitor display.&nbsp;</div><div><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-mZVa3YtA_fc/T0vZUnFBJPI/AAAAAAAAZf8/VIaKBCNs6aU/s1600/emonGLCD_PCB_V1.3_front.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-mZVa3YtA_fc/T0vZUnFBJPI/AAAAAAAAZf8/VIaKBCNs6aU/s320/emonGLCD_PCB_V1.3_front.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.3 front</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-m6oT0oN8qrk/T0vZgUbu3zI/AAAAAAAAZgE/mlnwxzxFYeM/s1600/emonGLCD_PCB_V1.3_rear.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-m6oT0oN8qrk/T0vZgUbu3zI/AAAAAAAAZgE/mlnwxzxFYeM/s320/emonGLCD_PCB_V1.3_rear.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.3 rear&nbsp;</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b2Md9kSXgCM/T0vy5TRCAZI/AAAAAAAAZgM/PU1OQgo2K6g/s1600/DSCF4655.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-b2Md9kSXgCM/T0vy5TRCAZI/AAAAAAAAZgM/PU1OQgo2K6g/s320/DSCF4655.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">V1.3 assembled</td></tr></tbody></table>The&nbsp;schematic&nbsp;and board design for emonGLCD V1.3 are up on solderpad:&nbsp;<a href="http://solderpad.com/openenergymon/emonglcd/">http://solderpad.com/openenergymon/emonglcd/</a><br /><br />The emonGLCD documentation page has been updated with the new port mappings:&nbsp;<a href="http://openenergymonitor.org/emon/emonglcd">http://openenergymonitor.org/emon/emonglcd</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/02/documentation-reorganisation/">Documentation reorganisation proposal</a>
   </h1>
   
@@ -473,37 +513,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/how-to-contribute-on-openenergymonitor/">How to contribute on OpenEnergyMonitor dev + development plans</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-19T23:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-19 23:46:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2011/12/how-to-contribute-on-openenergymonitor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />If your wondering how best to get involved with OpenEnergyMonitor development here are a couple of&nbsp;thoughts&nbsp;and possible pointers.<br /><br />First a few insights and ideas from an another open source project we follow: DIYdrones. Thanks to Amin Zayani for the heads up on these:<a href="http://diydrones.com/profiles/blogs/how-to-contribute-to-the"> [1]</a>&nbsp;<a href="http://www.diydrones.com/profiles/blogs/how-to-contribute-to-a-diy-drones-project-start-with-something-sm">[2]</a><a href="http://diydrones.com/profiles/blogs/how-to-contribute-on-arducopter-project">&nbsp;[3]</a><br />In Chris Anderson of DIY drones's words, who we think has articulated it well:<br /><i>“The best way to participate is to do something cool on your own and share it here. All of our code bases and hardware design files are open. If you see an opportunity to improve something, just do it, post it and then tell the community about what you've done. If it's good, people will use it, help improve it, and we'll get a sense of what you can do. That makes it much easier for us to figure out what your skills are and where you'd fit in best.”</i><br /><br />If your looking for ideas here are a list of things we would like to do but no one is currently leading on them, Many of these problems are quite large, it would probably good to break them down into smaller sub projects.&nbsp;If you have a feature you would like to implement or would like to take the lead on any of the features below that would be really great, please post with your thoughts.<br /><ul><li>Appliance inference - infer from a single power feed of a house what each appliance uses and so providing a energy use by appliance breakdown.</li><li>PCB and casing for the 12 input pulse counter (a DIN rail and non din rail option)</li><li>Plug based energy monitor - for per appliance monitoring &nbsp;- an alternative method to appliance inference.</li><li>Larger&nbsp;monitoring PCB's: maybe 12 input CT?</li><li>3 phase monitoring sketch for emontx - quite a few people are asking for this so this would be really useful.</li><li>Develop a series of control modules, that extend the emon system into an open source monitoring and control system that can be used for domestic and industrial situations.&nbsp;Control modules could include:</li><ul><li>multiple relay board (for dump load control, immertion heaters, pumps, lighting)</li><li>solenoid valve driver board for central heating control.</li><li>motor control</li><li>This emon monitoring and control system could link together by either a wireless bus say rfm12 or a wired bus (maybe rs485). The modules could be designed to fit in both DIN rail style casing or non-DIN rail casing.</li></ul><li>Merge emonTx firmware examples into an Arduino library.</li></ul><div><b>Short term goals</b></div><div>For a general overview here are the short term goals that are being worked on at the moment and in the very near future:<br /><ul><li dir="ltr">New casing design for emontx and emonbase</li><li dir="ltr">Transfer emonbase sketches over to EtherCard library</li><li dir="ltr">Compatibility of main sketches with Arduino 1.0</li><li dir="ltr">Complete watchdog addition</li><li dir="ltr">Emoncms development <a href="http://openenergymonitor.org/emon/node/296">see feature plans and discussion page on forums.</a></li><li dir="ltr">Complete and publish energy audit software v1.0</li><li dir="ltr">Improve full emon system documentation.</li></ul><div>This blogpost is repeated as a <a href="http://openenergymonitor.org/emon/node/308">forum post here</a>, lets discuss this on the forum as its a better place for it.<br /><br /><i>Thankyou</i><br /><i>Trystan</i></div></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -526,6 +535,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -578,12 +593,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
         </li>
       
     

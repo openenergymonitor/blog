@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/05/the-current-emoncms-feed-storage/">The current emoncms feed storage implementation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-31T21:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-31 21:39:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2013/05/the-current-emoncms-feed-storage/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Following on from the last blog post on <a href="http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-load-stats.html">emoncms.org server load and disk use</a>, lets look at the current emoncms implementation of feed storage in a bit more depth before going on to look at how it can be improved.</div><div><br /></div><div>Emoncms currently stores realtime feed data in a mysql database, every feed has its own mysql table. A feed table contains two fields: timestore and data value. Feed data is usually on a regular time interval, ie: 5,10,60s data. The time interval is set by the posting sensor node rather than emoncms.</div><div><b><br /></b></div><div><b>Calculating feed disk use</b></div><div>We can calculate the estimated feed table size using the current implementation used in emoncms.</div><br />Lets say we want to store a year of 10s data. There are 31536000 seconds in a year and so 3153600 datapoints at a 10s data rate.<br /><br />A single datapoint is made up of a timestamp which is stored as an unsigned integer, which takes up 4 bytes, and a float data value which also takes up 4 bytes.<br /><br />3153600 datapoints x 8 bytes per datapoint (table row) = 24 Mb<br /><br />In addition to the feed data we also have a table index which speeds up queries considerably. The worst case index size can be estimated with the equation detailed on this page:<br /><br /><a href="http://dev.mysql.com/doc/refman/5.0/en/key-space.html" style="color: #3465a4;">http://dev.mysql.com/doc/refman/5.0/en/key-space.html</a><br /><br />index row size = (key_length+4) / 0.67<br /><br />The key we are using is the time field which is 4 bytes and so the index row size is = (4 + 4) / 0.67 =~ 12 bytes<br /><br />The index size for 3153600 datapoints is&nbsp;therefore&nbsp;approximately = 3153600 * (4 + 4) / 0.67  = 36Mb<br /><br />The total feed table size will therefore be approximately 60Mb.<div><br /></div><div><b>Feed query speeds</b></div><div>        <div style="margin-bottom: 0cm;">As emoncms has developed a fair bit of work has gone into improving the method that realtime data is queried.&nbsp;At first improvements seem promising, see this documentation page for detailed discussion on the query implementation and query speeds:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/site/docs/developdatastorage">http://emoncms.org/site/docs/developdatastorage</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">But&nbsp;growing&nbsp;server demand on emoncms.org and feed table size means they have often only staved off an eventual slow down.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I think the last idea I had of using a php for-loop to request a single row at given intervals that originally &nbsp;reduced query times by about 10x is no longer working well on emoncms.org, it still gives the 1.6s query time on my local installation of emoncms but on emoncms.org Im getting a mixture of short query times 500ms and much longer query times 20s+ (in the more than 55 hour timewindow).&nbsp;The reason for this I think is due to the php for loop having to wait when the server is under heavy load for other mysql queries to complete. I think another solution is needed.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next few blog posts I will look at some of the potential solutions to both disk use and query speeds.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/emoncmsorg-load-stats/">Emoncms.org load stats</a>
   </h1>
   
@@ -464,48 +495,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/04/introducing-rfm12pi-v2-raspberry-pi/">Introducing the RFM12Pi V2 - Raspberry Pi Wireless Expansion Board </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-04-26T18:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-04-26 18:25:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/04/introducing-rfm12pi-v2-raspberry-pi/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Since, November last year we have more and more been leaning towards using a Raspberry Pi as our web connected base station of choice. See&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/11/raspberry-pi-emonbase.html">here</a>&nbsp;for our original&nbsp;blog post on using the Raspberry Pi as an emoncms logging &nbsp;and visualisation&nbsp;server.<br /><br />Here is the latest version of the RFM12Pi Raspberry Pi wireless expansion board. Like the V1 the RFM12Pi V2 allows the Raspberry Pi to receive and transmit data via RFM12B 433/868mhz from and to other wireless nodes such as the <a href="http://openenergymonitor.org/emon/emontx">emonTx</a>, <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> and <a href="http://openenergymonitor.org/emon/emontx/tempnode">Remote Temperature</a> nodes.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-jaZMslEY3zA/UXXFwc4uSDI/AAAAAAAAee8/vqDdsJqPCGo/s1600/RFM12PiV2_Pi_small.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="256" src="http://3.bp.blogspot.com/-jaZMslEY3zA/UXXFwc4uSDI/AAAAAAAAee8/vqDdsJqPCGo/s400/RFM12PiV2_Pi_small.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM12Pi V2 - Raspberry Pi Expansion Board</td></tr></tbody></table><br />The RFM12Pi V2 is now&nbsp;<a href="http://shop.openenergymonitor.com/raspberry-pi/">for sale in the OpenEnergyMonitor online shop</a>, it comes pre-assembled and ready loaded with firmware, when used in conjunction with the read-to-go emoncms Raspberry Pi SD card image&nbsp;it makes for a truly plug-and-play energy monitor web-connected base-station setup. We're also selling a PCB only version and of course the hardware design, Arduino based firmware all Raspberry Pi emoncms setup is all open-source.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-kvaEcEb-_YM/UZFQNVhLKrI/AAAAAAAAeo8/eclD4tkXnAI/s1600/RFM12PiV2_Top_angle_small.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-kvaEcEb-_YM/UZFQNVhLKrI/AAAAAAAAeo8/eclD4tkXnAI/s200/RFM12PiV2_Top_angle_small.png" width="180" /></a><a href="http://4.bp.blogspot.com/-hGz4QEGTlGA/UXbtEK_0XqI/AAAAAAAAefc/F0YfFncPEVE/s1600/RFM12PiV2_bottom.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="165" src="http://4.bp.blogspot.com/-hGz4QEGTlGA/UXbtEK_0XqI/AAAAAAAAefc/F0YfFncPEVE/s200/RFM12PiV2_bottom.png" width="200" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For the ultimate super-quick and easy setup we have also made available <a href="http://shop.openenergymonitor.com/emoncms-pre-loaded-raspberry-pi-4gb-sd-card/">pre-loaded Emoncms Raspberry Pi SD cards</a>.&nbsp;</div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-axDPbDuB160/UXrFGNcK-ZI/AAAAAAAAegE/tycnq-iOfzw/s1600/emoncmsPi+SD+CARD.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="190" src="http://4.bp.blogspot.com/-axDPbDuB160/UXrFGNcK-ZI/AAAAAAAAegE/tycnq-iOfzw/s200/emoncmsPi+SD+CARD.png" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms Raspberry Pi Pre-loaded SD card&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div>The new features of the RFM12Pi V2 are:<br /><ul><li>ATmega328 based, has more memory and hardware serial support</li><li>Using the ATmega328 hardware serial (+optiboot) and AVRdude (pre-installed on SD card image) it's possible to upgrade the firmware on the RFM12Pi V2 direct from Raspberry Pi,<a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2#Upgrading_RFM12Pi_Firmware_Direct_from_the_Pi"> </a><a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2#Upgrading_RFM12Pi_Firmware_Direct_from_the_Pi">instructions are on the wiki</a>.</li><li>Runs on ATmega328 internal 8Mhz oscillator (to save unnecessary components)</li><li>SMT used, board layout is optimised for pick-and-place assembly</li><li>Lower profile to fit inside most Raspberry Pi enclosures</li></ul>See the the <a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2">RFM12Pi V2 wiki </a>for more technical details regarding the hardware and firmware. <br /><br />To get up and running all that's needed is to connect the RFM12Pi onto the Raspberry Pi's GPIO pins, insert the pre-build SD card and bootup the Pi. Once booted up browse to the Pi's local IP address or the host name (<a href="http://emoncmspi/">http://emoncmspi)</a> and then configure the RFM12B network setting from within emoncms.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/Raspi_emoncms.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="408" src="http://openenergymonitor.org/emon/sites/default/files/Raspi_emoncms.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms Raspberry Pi Module Config Page</td></tr></tbody></table><br /><br />Monitoring data is logged to the Raspberry Pi's SD card and can be mirrored to <a href="http://emoncms.org/">emoncms.org</a> or any other emoncms server for backup and remote viewing. The Raspberry Pi is powerful enough to be able to serve emoncms graphs and widgets.    <br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><img border="0" src="http://lh3.ggpht.com/-mW_ZAzB018I/UXcDcf8e1fI/AAAAAAAAef0/iiBTxla5bfg/s640/Skitch.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms dashboard served from the Raspberry Pi - viewed on a Nexus 7 Tablet&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><a href="http://lh3.ggpht.com/-mW_ZAzB018I/UXcDcf8e1fI/AAAAAAAAef0/iiBTxla5bfg/s1600/Skitch.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;">  </a> </div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -528,6 +517,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -580,12 +575,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
         </li>
       
     
