@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-06-05-removing-redundant-datapoints-algorithm.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <br /><div style="margin-bottom: 0cm;">You could probably say that the aim of an algorithm that removes redundant datapoints is to create a line plot who's standard deviation compared to the raw data line is as small as possible while minimising the number of datapoints. This is probably a good rough criteria for evaluating a prospective algorithm.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Here's one idea for an algorithm, I think it can certainly be improved upon but its a start.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If we start with our monitor that's posting once every 10 seconds. If we note down the first datapoint received and then as subsequent datapoints come in draw a line between the first and the last datapoint.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s1600/algorithm1_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s400/algorithm1_01.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">Then lets say there is a step change, a light goes on, suddenly the line is much higher than the actual data for most datapoints:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s1600/algorithm1_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="185" src="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s400/algorithm1_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">If we measure the standard deviation of the raw datapoints vs the line to begin with it will be small, once that step change happens it will become much larger.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">At this point we note a significant change has happened (stdev is larger than a threshold) and create a datapoint one back from the last datapoint (the bottom of the step).</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We can then move our 'start' datapoint forward to this created datapoint and repeat the process. This should do a pretty good job of tracking the raw data.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To test it I have created a visualisation that applies this algorithm using javascript in the browser here is the result:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s1600/algorithm01_3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="173" src="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s400/algorithm01_3.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It works pretty well reducing 1064 datapoints to 52, but it does look messy in places.</div><div style="margin-bottom: 0cm;">To try out the code for the above, make a backup of the script:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><i>emoncms/Modules/vis/visualisations/rawdata.php</i> in your local emoncms installation.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">and replace with this:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php">https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If you can think of a good algorithm to do this, It would be great to hear about it.</div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

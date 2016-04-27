@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-02-09-air-quality-egg.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <i>The Air Quality Egg is a sensing device which facilitates a community-led network that gives people a way to participate in the conversation about air quality.</i><br /><div><br />The Air Quality egg monitors local Co, No2, Temperature and Humidity levels. Reading from the Air Quality Egg can be shared and compared on a web-based&nbsp;crowd&nbsp;sourced dashboard at: <a href="http://airqualityegg.com/">http://airqualityegg.com</a><br /><br />We're very pleased &nbsp;to be the UK/Europe&nbsp;distributor&nbsp;for the Air Quality Egg and air quality Arduino Shields on behalf of <a href="http://wickeddevice.com/">Wicked Device</a>.<br /><br /></div><div><div>Air quality is important to our health and something which is easily overlooked.&nbsp;Although the Air Quality Egg is not strictly an energy monitor it's very similar hardware and web-connectivity wise. Over time we would like to make it possible to integrate the Air Quality Eggs sensors it into an existing OpenEnergyMonitor system.<br /><div><br /><br /><a href="http://1.bp.blogspot.com/-03IwVsOZtKw/URP7V8H7DpI/AAAAAAAAdJE/z_74ycF2UiY/s1600/AQE_rear_box.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="452" src="http://1.bp.blogspot.com/-03IwVsOZtKw/URP7V8H7DpI/AAAAAAAAdJE/z_74ycF2UiY/s640/AQE_rear_box.jpg" width="640" /></a><br /><br /><br /><br /><br />The project was funded as part of a&nbsp;<a href="http://www.kickstarter.com/projects/edborden/air-quality-egg">successful&nbsp;Kickstarter</a>&nbsp;(actually once of the <a href="http://www.kickstarter.com/year/2012?utm_campaign=Jan082013&amp;utm_medium=email&amp;utm_source=newsletter#air_quality_egg">20 top kickstarter projects of 2012</a>!), the Air Quality Eggs are manufactured in the US by <a href="http://wickeddevice.com/">Wicked Device</a>.<br /><br /><h3>Hardware</h3><div>Hardware wise the Air Quality Egg is&nbsp;two NanodeRF SMT's, one with an Air Quality Egg Sensor Shield (temperature, humidity, carbon monoxide and nitrous dioxide sensors)&nbsp;+ mini fan&nbsp;and the other with an Ethernet controller and an RGB status LED which illuminates the egg housing. The sensor egg should be located outdoors (but undercover) and the base-station egg plugs into your home Internet router. The units communicated via 433Mhz RFM12B.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-sNvaJcu6G34/URVHJtyR7BI/AAAAAAAAdJc/ZzxPeVm1riM/s1600/EQE+Inside.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="226" src="http://1.bp.blogspot.com/-sNvaJcu6G34/URVHJtyR7BI/AAAAAAAAdJc/ZzxPeVm1riM/s320/EQE+Inside.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Cracking the egg open &nbsp;- eggs from OpenEnergyMonitor shop will include UK / Euro plugs</td></tr></tbody></table>The two eggs (transmitter and base-station)&nbsp;collectively&nbsp;consumer 4W of power.&nbsp;</div><div><br /></div><h3>Software</h3><div>Firmware - The AQE is Arduino&nbsp;compatible. &nbsp;It uses many of the same&nbsp;libraries&nbsp;and a Nanode emonBase (e.g JeeLib and EtherCard). The AQE can easily be re-programmed&nbsp;with a USB to UART cable (included) and Arduino IDE. <a href="https://github.com/jmsaavedra/Air-Quality-Egg">All the firmware is up on GitHub</a>. All the AQE's from OpenEnergyMonitor will be shipped with the latest firmware (V1.03 as of 8th Feb 2013).&nbsp;</div><div><br /></div><div>IoT Cloud - <a href="http://cosm.com/">Cosm</a> is used as the data store for the AQE. A neat <a href="https://github.com/cosm/airqualityegg.com">open-source</a>&nbsp;Ruby web-application has been written to display a crowd sourced web-dashboard with a nice Google map showing egg monitoring locations.&nbsp;</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-6DnLFR6TaGo/URPv3z-GiFI/AAAAAAAAdIU/eB2R88m8RBs/s1600/AQE_Europe_Feb13.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="263" src="http://1.bp.blogspot.com/-6DnLFR6TaGo/URPv3z-GiFI/AAAAAAAAdIU/eB2R88m8RBs/s400/AQE_Europe_Feb13.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://airqualityegg.com/" style="font-size: medium; text-align: start;">http://airqualityegg.com/</a>&nbsp;- let's get some more&nbsp;European&nbsp;eggs activated!&nbsp;</td></tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-3UlYWwLXUKs/URVUJcKKCkI/AAAAAAAAdJo/Ku5-zJZgbYY/s1600/OEM_egg.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="308" src="http://2.bp.blogspot.com/-3UlYWwLXUKs/URVUJcKKCkI/AAAAAAAAdJo/Ku5-zJZgbYY/s400/OEM_egg.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Example Air Quality Egg Readings from the OpenEnergyMonitor labs, readings may be in-correct. Sensors take a few days to 'burn-in'. See here for the live version:&nbsp;<a href="http://airqualityegg.com/egg/103153">http://airqualityegg.com/egg/103153</a></td></tr></tbody></table><br /><h3>Setup</h3><div>Follow the setup&nbsp;instructions&nbsp;on:&nbsp;<a href="http://aqe.wickeddevice.com/?page_id=39">http://aqe.wickeddevice.com/?page_id=39</a></div><div><br /></div><div>In summary setup is as simple as:<br /><ol><li>Head to&nbsp;<a href="http://airqualityegg.com/">http://airqualityegg.com/</a>&nbsp;and enter the serial number on the AQE box</li><li>Plug in the base station - watch for LED illumination sequence (green LED) to confirm&nbsp;successfully&nbsp;connection (or connect FTDI on baud 115200 for more&nbsp;verbose&nbsp;confirmation) &nbsp;</li><li>Pair sensor egg to base station by un-plugging the base station, then plugging it back-in then connecting the sensor egg when the base station glows yellow. Base egg will cycle through a number of&nbsp;colours&nbsp;to confirm pairing.&nbsp;</li><li>Deploy sensor egg somewhere in the open air (but undercover) within 100ft of the base</li></ol></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-N6nG_KUEL9I/URP6iwP72xI/AAAAAAAAdI8/n-kpK4jGinQ/s1600/Egg-Color-Patterns.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://4.bp.blogspot.com/-N6nG_KUEL9I/URP6iwP72xI/AAAAAAAAdI8/n-kpK4jGinQ/s320/Egg-Color-Patterns.png" width="135" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Base-egg LED colour status debugging from <a href="http://blog.wickeddevice.com/?p=413">Wicked Device Blog</a></td></tr></tbody></table>If your familiar with the Arduino IDE we recommend you 'crack-open' the base-station egg and connect the USB to UART cable (included) and open up an Arduino IDE terminal window (115200 baud) to view a verbose output of the setup process. Here's an example terminal output from a&nbsp;successfully connected egg:<br /><br /><div style="border: 1px solid #ccc; font: 12px/22px courier; height: 200px; overflow: auto; width: 500px;">Stack: 271<br />[Air Quality Egg - Base Egg - v1.03]<br />Unit Address: xx_xx_YOUR SERIAL NUMBER HERE_xx_xx<br />3070 Received Packet During Pairing<br />85 0 4 163 55 182 217 0<br />Pairing Event Count: 1<br />8159 Received Packet During Pairing<br />85 0 4 163 55 182 217 0<br />Pairing Event Count: 2<br />Pairing complete<br /><br />Egg Serial #: &nbsp;00:04:a3:37:b6:d9<br /><br />IP: 192.168.1.102<br />GW: 192.168.1.254<br />DNS: 192.168.1.254<br />Stack: 191<br />SRV: 216.52.233.121<br />Previously provisioned<br />Packet Received @ 107604<br />&nbsp; Packet Type: 33<br />&nbsp; Remote Firmware Version: 3<br />&nbsp; Remote Station Address: 00_04_A3_37_BB_97<br />&nbsp; Source Sensor Address: 00_04_A3_37_BB_97<br />&nbsp; Sensor Index: 0<br />&nbsp; Sensor Type: Temperature<br />&nbsp; Sensor Units: deg C<br />&nbsp; Sensor Value: 11<br /><br />Preparing stash<br />Sending data to Cosm<br />Data sent<br />&gt;&gt;&gt; RESPONSE RECEIVED ---</div></div><br /><h3>Future Development</h3><div>Wicked Device are&nbsp;actively&nbsp;developing the air quality sensors. Most recent is&nbsp;a<a href="http://blog.wickeddevice.com/?p=395"> dust-sensor add-on board</a>.</div><div><br /></div><div>We would love to make the Air Quality egg sensors more integrated into the OpenEnergyMonitor system, it would be cool to be able to add an air monitor sensor to an energy monitoring system using a Raspberry Pi with a RFM12Pi as the base station.&nbsp;</div><div><br /></div><div>The community crowd sourcing aspect of the AQE using Cosm as the data store has the obvious advantages of being able to easily share and compare air quality data (which is what the project is all about). However it would also be cool to get the data into emoncms for better graphing and analysis. I would love to see how the air quality date fluctuates over the days/months/year(s).&nbsp;</div><h3>Community / Troubleshooting / More info&nbsp;</h3>As always you are most welcome to post on the active and friendly <a href="http://openenergymonitor.org/emon/forum">OpenEnergyMonitor forums</a>. However the Air Quality Egg is quite a new thing for us, more relevant support might be better obtained from:<br /><br />Air Quality Egg forum:&nbsp;<a href="http://osqa.wickeddevice.com/">http://osqa.wickeddevice.com/</a><br /><br />Google Group:<a href="http://forum.wickeddevice.com/"> https://groups.google.com/forum/?fromgroups#!forum/airqualityegg</a><br /><br /><h4>Other&nbsp;Sources&nbsp;of Information:&nbsp;</h4><ul><li>Wicked Device Air Quality Egg homepage:&nbsp;<a href="http://aqe.wickeddevice.com/">http://aqe.wickeddevice.com</a></li><li>Community wiki:&nbsp;<a href="http://airqualityegg.wikispaces.com/AirQualityEgg">http://airqualityegg.wikispaces.com/AirQualityEgg</a></li><li>Github Source code &amp; PCB cad files:&nbsp;<a href="http://github.com/jmsaavedra/Air-Quality-Egg">http://github.com/jmsaavedra/Air-Quality-Egg</a></li><li><a href="https://docs.google.com/document/d/1H1Ul2SzwXkJpdXGmgnuToOhtt7pjg2RVEUEVk0KCiwY/edit">Google Doc with Fimrware Documentation</a></li><li>Wicked Device Blog:&nbsp;<a href="http://aqe.wickeddevice.com/blog.wickeddevice.com">http://aqe.wickeddevice.com/blog.wickeddevice.com</a></li></ul>The Air Quality Egg is <a href="http://shop.openenergymonitor.com/air-quality-egg-fully-assembled/">now available in the OpenEnergyMonitor shop</a>, shipped from the UK to all Europe destinations<br /><br /></div></div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

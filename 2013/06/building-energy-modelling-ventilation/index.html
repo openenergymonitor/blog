@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-06-23-building-energy-modelling-ventilation.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <br />Following from the <a href="http://openenergymonitor.blogspot.com/2013/06/how-much-energy-does-it-take-to-heat.html">previous blog that described a simple example of heat loss via heat conduction through the building fabric</a>, the second primary cause of heat loss is ventilation and infiltration. The movement of heated air from inside the house into its surroundings.<br /><div><br />I wrote the following as a start for the <a href="http://github.com/emoncms/sap">Emoncms SAP module</a> documentation and can be found under <a href="http://emoncms.org/sap/airchange">emoncms.org/sap/airchange</a><br /><br />The rate of air movement is typically measured in air-changes per hour. An air-change is when the full volume of air inside a house is replaced with a new volume of air. This happens surprisingly frequently.<br /><br />The heat lost is equal to the energy stored in the warm air relative to the external temperature, which can be found with another fundamental physics equation, the equation for specific heat:<br /><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); margin-bottom: 10px; padding: 9.5px; word-break: break-all; word-wrap: break-word;"><span style="color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; white-space: pre-wrap;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = c x m x (T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">INTERNAL</sub> - T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">EXTERNAL</sub>)<br /><br />Where:<br /><br />c = Specific heat of air (1006 J/kg.K)<br />m = Mass of air that has moved out of the building per second</span><br /></pre>(HyperPhysics: <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">Specific heat</a>)<br /><br /><b>Example:</b><br /><br />A house that measures 7 meters wide, 7 meters long and 6 meters high encloses a volume of: 294 m3. The house has an average air tightness for a modern house of around 1.5 air changes an hour and the internal temperature is 20C while the external temperature is 12C.<br /><br />The first step is to work out the m: the mass of air that has moved out of the building per second. We know the volume of air that has moved and the rate at which the volume moved and so we can calculate the mass from this.</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">mass of one air change = volume x air density</pre><div>There are 1.5 air changes per hour or 1.5 / 3600 air changes per second. The mass of air that has moved per second is therefore:</div></div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">m = (air-change / 3600) x volume x air density</pre>The division by density of air and 3600 and also the multiplication by the specific heat of air is in many models bundled together into one constant to reduce on the calculation steps:</div><div><br /></div><div><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">m x c = air-change x volume x (density x c / 3600)</pre>Where:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">density x c / 3600 = 1.205 x 1005 / 3600 = <b>0.336</b></pre>The heat loss from ventilation and infiltration becomes:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = 0.33 x air-change x volume x (T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">INTERNAL</sub> - T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">EXTERNAL</sub>)</pre><br /><br />This is the form of the equation used in the SAP model in section 4 (<a href="http://emoncms.org/sap/4">emoncms.org/sap/4</a>). 0.336 has been rounded down to 0.33 in accordance with the SAP value. The density and specific heat figures above come from: <a href="http://www.engineeringtoolbox.com/air-properties-d_156.html">http://www.engineeringtoolbox.com/air-properties-d_156.html</a><br /><br />Entering our example values in the simplified equation, we get:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = 0.33 x 1.5 x 294 x (20 - 13) = <b>1018.71 Watts</b></pre><b></b><br /><div><b><b><br /></b></b></div><b>Working out air-changes per hour</b><br /><br />The hard part in the equation above to work out is of course the air changes per hour of a building. The most accurate way to find it out is to perform an air tightness test of the building. This involves de-pressurising the building with specialist fans attached to the front door.<br /><br />The SAP model provides a method to estimate the air-change rate in the absence of a measured value. This method is detailed in full in section 2 (<a href="http://emoncms.org/sap/2">emoncms.org/sap/2</a>) and takes into account factors from number of chimneys and flues to wind speed and the degree the building is sheltered from the wind.<br /><br /><b>Typical air-change per hour values</b><br /><br />As a guide Pat Borer and Cindy Harris give the following values in <a href="http://openenergymonitor.blogspot.com/2013/06/building-energy-modelling-part-1-whole.html">the Whole House Book</a>.<br /><br />Old undraught stripped house: 4 air changes per hour<br /><br />Average modern house: 1 to 2 air changes per hour<br /><br />Very tight, super-insulated house: 0.6 air changes per hour</div></div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

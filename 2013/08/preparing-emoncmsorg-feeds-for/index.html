@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-08-01-preparing-emoncmsorg-feeds-for.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   One of the central principles behind the <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="mikestirling.co.uk/redmine/projects/timestore">Timestore data storage</a> approach is that datapoints are stored at a fixed interval. Because you know that there is a datapoint every 10s you dont need to store the timestamp for each datapoint, you only need to store the timestamp for the first datapoint. The timestamp for every other datapoint can be worked out i.e:<br /><br /><pre>timestamp = start + position * interval.</pre><br />Storing time series data in this way makes it really easy and very fast to query. The tests so far have shown timestore to be <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="http://openenergymonitor.blogspot.co.uk/2013/07/from-13-minutes-to-196ms-timestore-on.html">several magnitudes faster</a> while also using significantly less disk space.<br /><br />If your logging to emoncms.org there is now an interface that can be used to select the interval rate that you would like your feeds converted too, its linked from the feeds page.<br /><br /><b>On the feed/convert page:</b><br /><br />The new interval column states the average interval rate of the existing feed and is calculated simply as the end time minus the start time divided by the number of datapoints in the feed. This interval rate can be skewed if the monitor dropped off for a period, so its worth double checking that it is correct.<br /><br />You may wish to change your interval rate, if your logging temperature data at 5s intervals and 60s is enough to see the changes in temperature you want to see then select 60s as this reduces the disk use of the feed considerably.<br /><br />To set the interval rate you wish your feed to be converted to, click on the <b>pencil button</b> to bring up in-line editing:<br /><img src="http://emoncms.org/Modules/feed/Views/step1.png" /> <br />Click on the drop down menu under convert to and select from the list the interval you wish to use. Click on the tick button to complete.<br /><img src="http://emoncms.org/Modules/feed/Views/step2.png" /> <br />Repeat the above steps for every feed you wish to convert and then once your done click on <b>Add feeds to conversion queue</b> button that is at the bottom of the conversion page.<br /><br />As mentioned in the last post, its going to take up to a month for the server to convert through all the feeds so you wont see anything straight away. I will update with conversion progress.<br /><br />I've put all the code for the above on github under an <a href="https://github.com/emoncms/emoncms/tree/emoncmsorg">emoncmsorg branch of emoncms</a>, the conversion scripts can also be found in the repo <a href="https://github.com/emoncms/usefulscripts">usefulscripts</a>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

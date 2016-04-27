@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-09-19-data-portability-challenges.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   Continuing from yesterday's post on <a href="http://openenergymonitor.blogspot.co.uk/2012/09/making-emoncms-data-portable.html">making emoncms data portable</a>.<br /><br />There are some challenges with implementing data portability for energy data. 5s energy feed data can grow to be quite large, I have several feeds that are approaching 100Mb and a total account size of about 700Mb and thats only just approaching one year.<br /><br />Moving large quantities of data uses server resources including: cpu, memory and bandwidth. Emoncms.org is hosted on a <a href="http://www.bigv.io/">BigV virtual machine</a>, where you get 1GiB Ram, 25GiB Disk space, 200GiB transfer for £10 a month, which is a fantastic deal for those specs.<br /><br />As exporting or importing large feeds takes time its important that it does not hog resources on the server making the server unusable for other users, any import or export code needs to use a small percentage of the server resources and ideally the amount of resources used could be adjustable. We also need to keep an eye on the data transfer limits.<br /><br />In the next post I will post up the initial working feed export code.<br /><br /><br /><br /><br /><br />
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

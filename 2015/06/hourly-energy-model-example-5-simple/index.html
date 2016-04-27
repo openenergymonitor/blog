@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2015-06-22-hourly-energy-model-example-5-simple.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -125,6 +126,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   The 5th example in the online zero carbon energy modelling tool is where it starts to get more interesting: modelling the supply/demand matching between a variable renewable supply and space heating delivered by heatpumps. The electrification of heating with heatpumps so that heating can be supplied with renewable electricity is one of the key solutions used in ZeroCarbonBritain and <a href="http://withouthotair.com/c21/page_146.shtml.">Sustainable energy without the hot air.</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-XQZc9Wcj3AU/VYfZ3abpxQI/AAAAAAAAS_A/cJgDAe0Sy6Q/s1600/heatingmodel.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="328" src="http://3.bp.blogspot.com/-XQZc9Wcj3AU/VYfZ3abpxQI/AAAAAAAAS_A/cJgDAe0Sy6Q/s640/heatingmodel.png" width="640" /></a></div><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>5. Variable supply and space heating demand</i><br /><br />The ZeroCarbonBritain dataset includes weighted daily temperatures for 10 years. This dataset can be combined with the solar dataset and a basic household energy model to create a seasonal heating demand model.<br /><br />Solar gains are an important aspect of space heating. Using <a href="http://github.com/emoncms/MyHomeEnergyPlanner">MyHomeEnergyPlanner</a> (The open source retrofit modelling tool we are developing with <a href="http://carbon.coop/">Carbon Coop</a>) to model a concept low energy house with fabric energy efficiency of 120W/K and a total of 16m2 of window area on a 80m2 (floor area) house with external surface area 206.4m2 the maximum potential annual solar gains where calculated to be 4429 kWh.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-VgSn1d3RZv4/VYfW1wCB3LI/AAAAAAAAS-0/8_nSg_M_FkU/s1600/myhomeneergyplanner.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="342" src="http://3.bp.blogspot.com/-VgSn1d3RZv4/VYfW1wCB3LI/AAAAAAAAS-0/8_nSg_M_FkU/s640/myhomeneergyplanner.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">MyHomeEnergyPlanner: http://github.com/emoncms/MyHomeEnergyPlanner </td></tr></tbody></table>Running a low electricity demand of 2200 kWh a year and taking into account the solar gains. The space heating demand is only 4,247 kWh/year (compared to 13500 kWh/year for a typical house today a 68% space heating energy saving). If that remaining heat demand is supplied by a heatpump the electrical input should be 1,416 kWh/year. <br /><br /><b>Building an hourly space heating model:</b><br /><br />In order to calculate the space heating demand the model first calculates the total heating demand before solar gains and internal gains are taken into account. The space heating demand assumes constant internal temperature target of 18.5C rather than a morning and evening heating period. A further example with a higher internal temperature and variable profile would worth exploring for comparison. (21.0C being the passivhaus internal temperature target and there is an interesting discussion about the role of heating profiles, heatpump performance and demand spikes)<br /><br />The model then subtracts the internal gains (heat given off by appliances/cooking/lights etc) and the heat provided by solar gains through the windows, we use the solar pv capacity factor dataset here to provide our solar irradiance dataset. The amount of solar gain was scaled to match the amount of solar gain calculated in the SAP MyHomeEnergyPlanner tool based on the window orientations and areas – the total available solar gain energy is equivalent of 5.0 kW of solar pv.<br /><br />The model also keeps track of unused solar and internal gains when the internal temperature is already at the target temperature. The assumption at this point is that the excess heat is dumped outside perhaps through increased ventilation.<br /><br />The space heating demand after internal and solar gains are taken into account is then supplied with a heatpump with the simplifying assumption that the COP is constant and the heatpump fully responsive. A more complex model taking into account a degree of thermal mass in the building and the dynamics of the heatpump cross checked with real data would be useful here to check the assumptions taken in order to create an initial simplified model.<br /><br />Running the same fabric energy efficiency, max available solar gains and internal gains through this hourly model gives a space heating demand that is 14% higher than the space heating demand calculated with the SAP based MyHomeEnergyPlanner. The difference may be due to the differences in the way solar gains and internal gains utilisation is calculated in a monthly vs hourly model, further investigation is needed to fully understand the reason for this difference.<br /><br />Model heating demand results:<br /><table class="table"><tbody><tr><td>Total heat demand</td><td>8445 kWh/y</td></tr><tr><td>- Total utilized internal gains:</td><td>2044 kWh/y of 2201 kWh/y</td></tr><tr><td>- Total utilized solar gains:</td><td>1566 kWh/y of 4132 kWh/y</td></tr><tr><td>= Total space heating demand:</td><td>4835 kWh/y</td></tr><tr><td>Total heatpump electricity demand:</td><td>1611 kWh/y</td></tr></tbody></table><br />Running the model for each renewable generation type to investigate the degree of direct supply demand matching we get the following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>0.568kW</td><td>0.383kW</td><td>0.651kW</td><td>0.776kW</td><td>1.95kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>51%</td><td>57%</td><td>61%</td><td>43%</td><td>10%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>59%</td><td>59%</td><td>58%</td><td>54%</td><td>41%</td>     </tr></tbody></table><br />Onshore, Offshore and Wave give quite similar levels of matching. Solar PV supplies the least demand because most of the solar electricity is generated in the summer and most of the heating demand is of course in the winter but also importantly when the sun is shining the heat demand is less due to direct solar gains, the dataset we are using for solar pv generation and solar gains is the same dataset.<br /><br />The online example also explores the effect of adding a very basic thermal store in order to increase the level of supply matching.<br /><br />The source code and datasets for the heating demand model and full supply/heating demand matching simulation is all open source available in both javascript and python.<br /><br />Space heating demand <a href="http://openenergymonitor.org/energymodel/python/varsupply_spaceheatingdemand.py">varsupply_spaceheatingdemand.py</a> <br />Space heating demand with heatstore<a href="http://openenergymonitor.org/energymodel/python/varsupply_spaceheatingdemand_store.py">varsupply_spaceheatingdemand_store.py</a> <br />Full source code: <a href="https://github.com/TrystanLea/zcem">https://github.com/TrystanLea/zcem</a>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -135,7 +138,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

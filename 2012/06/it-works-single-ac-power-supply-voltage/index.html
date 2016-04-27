@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-06-17-it-works-single-ac-power-supply-voltage.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -138,6 +139,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <div dir="ltr" style="text-align: left;" trbidi="on">The idea of using the same AC-AC power adaptor for both sensing voltage and supplying power to emonTx has been discussed on the forums for months (see <a href="http://openenergymonitor.org/emon/node/309" target="_blank">this topic</a>), and about six weeks ago Glyn posted <a href="http://openenergymonitor.blogspot.de/2012/05/emontx-single-ac-power-supply.html" target="_blank">a simulation of a possible circuit</a>.<br /><br />I had the time this weekend to give it a try, bought the necessary components and put it all on a breadboard. After a sleepless night I can confirm: It works!<br /><br />Here is my messy setup:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="380" src="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s640/2012-06-18+04.55.43.jpg" width="640" /></a><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><br /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /><div style="text-align: left;"><br /></div></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><a href="http://www.blogger.com/goog_1837366350"><br /></a></div><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Small modifications had to be made to get it to work: I added a 1uF cap between 3.3v and GND to&nbsp;filter out some noise and redefined the voltage calibration coefficient in the code.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">But the main problem (took me all night to figure it out) is that the usual emonTx sketch wont work straight ahead. The line that lights up the LED (on pin 9) at the end of the setup loop has to be commented out, otherwise the setup won't work. It's no problem to flash it 2ms after each packet is sent, but apparently having it on in the beginning will prevent the program from starting. Maybe there isn't enough current to do it and move on (I must say that I use 10k ohm resistors for the voltage dividers). If it's not that then maybe full wave rectification could help.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">I used a humble Xprotolab to measure the Vin, Vout and at some other points in the circuit. It behaves almost exactly like the simulation. fft also shows very little noise.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Would be great if other members could repeat this experiment to see if the results will be the same.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Next step: Voltage sensing on the base ;)&nbsp;</span><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1"><br style="color: black;" /></a></div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -148,7 +151,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

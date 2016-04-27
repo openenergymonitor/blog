@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-10-18-emonth-update-hardware.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   Since my <a href="http://openenergymonitor.blogspot.co.uk/2013/06/emonth-prototype.html">last post on the emonTH</a>&nbsp;wireless Temperature and Humidity monitoring node good progress has been made.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s1600/P1030255.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s320/P1030255.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH cased up</td></tr></tbody></table><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH - unboxed</td></tr></tbody></table><br />The most significant hardware change has been the addition of a DC-DC step-up boost converter to step-up the voltage from discharging AA batteries to a steady 3.3V. The boost converter circuit consists of a tiny (SC-70 package) LTC3525-3.3 chip a 10uH inductor and a couple of small 1uF capacitors. The step-up converter is essential for the DHT22 as this sensor does not perform well with varying supply voltage, &nbsp;specifically once below 3.3V. The addition of the converter will also significantly increase battery life. The LTC3525 was chosen because of its low quiescent power consumption of 7uA and high conversion efficiency of up to 95%. <br /><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s1600/Boost.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s320/Boost.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH LTC3525 DC-DC boost converter circuit</td></tr></tbody></table><br /></div><div>The boost circuit is very impressive, given a minimum input voltage of 0.7V it boosts up to a steady 3.3V.</div><div><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s1600/Vin=2V.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="192" src="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s320/Vin=2V.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: small; text-align: start;">Using scope with AC coupled probe to examine boost converter&nbsp;output&nbsp;when stepping 2V up to 3.3V with no load: output exhibited 9.3mV RMS ripple at 333Khz</span></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s1600/2013-09-28+16.26.59.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s320/2013-09-28+16.26.59.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing &nbsp;emonTH external DS18B20 temperature sensor terminal block connection</td></tr></tbody></table><br /></div><div>We hope to have the emonTH in the shop by December.<br /><br /></div><div>Stay tuned after the break for update on<a href="http://openenergymonitor.blogspot.com/2013/10/emonth-update-software-power.html"> emonTH software, power consumption and batteries</a>...</div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

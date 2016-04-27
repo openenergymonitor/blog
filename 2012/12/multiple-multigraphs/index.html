@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-12-03-multiple-multigraphs.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <div class="separator" style="clear: both; text-align: left;">A long asked for feature for emoncms has been the ability to create multiple multigraph type visualisations. One might be a comparison of room temperatures another for hot water system temperatures, maybe another for room temperature and electrical or gas energy input?</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This feature has now been implemented and is integrated fully into the visualisation selector page. If you have your own emoncms server you can download the latest emoncms from the usual place:&nbsp;<a href="http://github.com/emoncms/emoncms">github.com/emoncms/emoncms&nbsp;</a>&nbsp;and emoncms.org has also been updated.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Unfortunately&nbsp;due to the large rewrite of the multigraph code the new multigraph is not backwards compatible with the old multigraph, but I hope you will persist with the new implementation as the gains are well worth it. Old multigraphs appear as a list of undefined feeds, my advice is to delete the old multigraph and start with a new one.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here is a brief&nbsp;walk through&nbsp;of the feature:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">1) Start by going to the Vis tab and select the multigraph visualisation from the first drop down menu. In the second box you should now see a select multigraph drop down menu and a new + button. Click on the plus icon to create a new multigraph:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-U9G_DPA7OFI/ULzgMIu-soI/AAAAAAAACgo/xOIxBo9Ljus/s1600/multigraph01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="216" src="http://3.bp.blogspot.com/-U9G_DPA7OFI/ULzgMIu-soI/AAAAAAAACgo/xOIxBo9Ljus/s400/multigraph01.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">This will refresh the page, navigate again to multigraph in the first drop down menu, you should now see the new multigraph id in the drop down menu. Click/select the new dashboard id:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-umaxZ0XwMXI/ULzgOgq9OXI/AAAAAAAACgw/6o9fZ2lDdx4/s1600/multigraph02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="228" src="http://4.bp.blogspot.com/-umaxZ0XwMXI/ULzgOgq9OXI/AAAAAAAACgw/6o9fZ2lDdx4/s400/multigraph02.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Select a feed from the add feed drop down menu and click on Add, this will add a feed to the multigraph feed list table. Put a tick in the left or right checkbox to specify the axis you wish the feed to appear on, you should now see the feed appear:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-eXbYEsVxmEo/ULzgQhAWzfI/AAAAAAAACg4/RUuBe5sGcaY/s1600/multigraph03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-eXbYEsVxmEo/ULzgQhAWzfI/AAAAAAAACg4/RUuBe5sGcaY/s400/multigraph03.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Add a few more, put a tick in the fill box to fill in the area below the curve:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-E5j7KqLpMZE/ULzgTd1CtgI/AAAAAAAAChA/e_PU16ej21s/s1600/multigraph3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="233" src="http://2.bp.blogspot.com/-E5j7KqLpMZE/ULzgTd1CtgI/AAAAAAAAChA/e_PU16ej21s/s400/multigraph3.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Select a default time range by clicking on the day/week/month/year buttons. When you reload the multigraph it should now appear at the time range given. If you'd like the multigraph to load a specific fixed time range just zoom in on the area you want it to show, the next time you load the multigraph it should load your last view.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-hFwzUnsMXYk/ULzgVbLaaQI/AAAAAAAAChI/n9pdMhhcLSI/s1600/multigraph04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="223" src="http://2.bp.blogspot.com/-hFwzUnsMXYk/ULzgVbLaaQI/AAAAAAAAChI/n9pdMhhcLSI/s400/multigraph04.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Add a multigraph to your dashboard by selecting multigraph from the dropdown visualisation menu.&nbsp;</div><div class="separator" style="clear: both; text-align: left;">Click on the blank dashboard and click on the Options button. Select the multigraph you wish to show from the drop down menu and click save.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9vgKF7XMlWA/ULzgZJIqrvI/AAAAAAAAChQ/Gj9n5WmpekI/s1600/multigraph05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="255" src="http://3.bp.blogspot.com/-9vgKF7XMlWA/ULzgZJIqrvI/AAAAAAAAChQ/Gj9n5WmpekI/s400/multigraph05.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;">Love to hear any feedback on it,&nbsp;whether&nbsp;it worked or&nbsp;didn't&nbsp;work for you, may be worth clearing the cache if it does not work as a few of the javascript scripts have been updated. Enjoy!</div><br />
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

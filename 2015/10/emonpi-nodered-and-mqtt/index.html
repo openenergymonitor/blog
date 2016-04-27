@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2015-10-12-emonpi-nodered-and-mqtt.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -138,6 +139,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   Using the <a href="http://openenergymonitor.org/emon/modules/emonpi">emonPi in it's default configuration</a> works great to post data to Emoncms for logging and visualisation. However there may be times when you want some more flexibility and or ability to interface with other hardware.<br /><br />Using a tool called <a href="http://nodered.org/">Node-Red</a> the emonPi can become a central hub for home automation, control and notification.&nbsp;Node-RED&nbsp;is a tool for wiring together hardware devices, APIs and online services in new and interesting ways. At the heart of Node-RED is a visual editor allowing complex data flows to be wired together with only a little coding skills. &nbsp;Here are some of my ideas of things I might like to achieve with Node-RED, For more inspiration check out&nbsp;<a href="http://www.youtube.com/watch?v=KPnwyTgZaS0&amp;t=29m18s">Martin's IoT Google hangout 29min in</a>:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-dLsVZfkrCk8/Vm2c8jR7OVI/AAAAAAABksA/oPCn7WCPE9U/s1600/node-red.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://4.bp.blogspot.com/-dLsVZfkrCk8/Vm2c8jR7OVI/AAAAAAABksA/oPCn7WCPE9U/s200/node-red.png" width="200" /></a></div><br /><ul><li>Send power consumption notifications to my phone using <a href="http://flows.nodered.org/node/node-red-node-pushover">Node-RED and Pushover</a></li><li>Send a notification to my phone when it's a good time to use power e.g <a href="https://gist.github.com/dceejay/6572686">national power demand </a>is low and grid renewable generation input is high</li><li>Use an emonTH as a room thermostat temperature input to control my heating using <a href="http://shop.openenergymonitor.com/three-channel-wifi-relay-thermostat/">WiFi MQTT relay board</a> (blog post coming soon... :-) )</li><li>Switch my heating on when I arrive home using <a href="https://harizanov.com/2015/03/making-ifttt-if-this-then-that-talk-to-node-red/">node-RED and IFTT</a>&nbsp;Android / iOS location&nbsp;</li><li>Post energy data to another service e.g. thingspeak.com, pvoutput.org, xively.com etc..</li><li>Use <a href="http://flows.nodered.org/node/node-red-node-emoncms">node-RED to post data from other services to Emoncms</a>&nbsp;e.g <a href="https://gist.github.com/dceejay/6572686">national power demand</a>, home weather station, <a href="http://flows.nodered.org/node/node-red-node-openweathermap">weather forecast</a> &nbsp;</li><li>Periodically tweet my home power consumption or solar PV output</li><li>Set an email when you emonTH batteries run low (see example below)</li></ul><h3><b>Install Node-RED on emonPi / emonHub / Raspberry Pi&nbsp;</b></h3>Make emonPi file-system RW:<br /><i>$ rpi-rw</i><br /><br />Install Node-RED (taken from <a href="http://nodered.org/docs/hardware/raspberrypi.html">node-RED RaspberryPi install guide</a>):<br /><i>$ curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -&nbsp;</i><br /><i>$ sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs</i><br /><i>$ sudo npm install -g --unsafe-perm node-red</i><br /><i><br /></i>Open up port 1880 so we can access Node-RED editor:<br /><i>$ sudo iptables -A INPUT -p tcp -m tcp --dport 1880 -j ACCEPT</i><br /><i><br /></i>Open up port 1883 so we can access MQTT server:<br /><i>$ sudo iptables -A INPUT -p tcp -m tcp --dport 1883 -j ACCEPT</i><br /><i><br /></i>Make iptables rules persistent<br />$ apt-get install iptables-persistent<br /><br />Choose yes to save rules, if needed edit the persistent rules:<br />$ sudo nano /etc/iptables/rules.v4<br /><br /><i><br /></i>Start Node-RED with:<br /><i>$&nbsp;node-red-pi --max-old-space-size=128</i><br /><br />To view the node-RED graphical editor browse to:<br /><a href="http://emonpi:1880/">http://emonpi:1880/</a>&nbsp;(or use IP address if this does not work)<br /><br />To use Node-RED as a permanent setup you will want to <a href="https://gist.github.com/bigmonkeyboy/9962293">set it up as a service to autostart at boot</a>&nbsp;and e<a href="http://nodered.org/docs/security.html">nable secure authentication access to node-RED editor</a>.<br /><br />When you are done don't forget to put the emonPi back to read-only mode to preserve SD card lifespan:<br /><i>$ rpi-ro</i><br /><div><br /></div><h3><b>Getting data from the emonPi into Node-RED</b></h3>There are two options to get our energy data into Node-RED:<br /><br /><b>1. Real-time data from emonHub using MQTT (see example below):</b><br /><br /><a href="http://mqtt.org/">MQTT</a> is a lightweight communication protocol for small web-connected devices. The latest version of emonHub as setup on the emonPi (and emonHub from July 15) uses MQTT as a link to Emoncms and also to provide data to the emonPi LCD script. Since MQTT is already running all we need to do is to point Node-RED MQTT input block to subscribe to the <i>'emonhub/rx/#</i>' MQTT topic on port 1883. The '#' topic includes data received from all nodes. To subscribe to just one node use e.g. emonPi use: <i>'emonhub/5/values' </i>or '<i>emonhub/10/values'</i> for emonTx.<br /><br />To subscribe the the emonPi's MQTT topics externally (if your running node-RED on another machine) you will need to open up the MQTT port on the emonPi:<br /><br /><i>$&nbsp;sudo iptables -A INPUT -p tcp -m tcp --dport 1883 -j ACCEPT</i><br /><br /><b>2. Historic data from Emoncms using HTTP API:&nbsp;</b><br /><br />To pull historic data already logged to Emoncms (e.g KWh data) into Node-RED we can use Emoncms's API. Here is a simple example to pull in the latest value from the KWh feed, just enter your RW API key and feed ID:<br /><br /><a href="http://emoncms.org/feed/value.json&amp;apikey=APIKEY&amp;id=FEED_ID">http://emoncms.org/feed/value.json&amp;apikey=APIKEY&amp;id=FEED_ID</a><br /><br />To view all Emoncms API see:&nbsp;<a href="http://emoncms.org/input/api">http://emoncms.org/input/api</a><br /><br /><h3><b>Node-RED example: send warning email&nbsp;when&nbsp;emonTH battery is low</b></h3><b><br /></b>Simple but useful example, use Node-RED connecting to emonPi in real-time data via MQTT (localhost) and sending email (via Gmail SMTP) if emonTH battery drops below 1.7V. Also in this flow as an example is a node to decode emonPi power data. <br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-gfgkoEkv-HY/VhuGvzIzqOI/AAAAAAABg6Q/BUKxbYx6IG0/s1600/Screenshot%2B2015-10-12%2Bat%2B11.05.39.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="204" src="http://4.bp.blogspot.com/-gfgkoEkv-HY/VhuGvzIzqOI/AAAAAAABg6Q/BUKxbYx6IG0/s640/Screenshot%2B2015-10-12%2Bat%2B11.05.39.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here is the contents of each node:&nbsp;</div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-QdCMAYzfeZw/VhuGuzSG1fI/AAAAAAABg6M/b0b31YoUcPA/s1600/Node%2BRED%2B%2B%2Bemonpi.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="179" src="http://4.bp.blogspot.com/-QdCMAYzfeZw/VhuGuzSG1fI/AAAAAAABg6M/b0b31YoUcPA/s320/Node%2BRED%2B%2B%2Bemonpi.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">MQTT Node subscribing to emonhub mqtt topic on localhost (running node-RED on emonPi)</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ANX-AiX1Vg0/VhuGvI8h5wI/AAAAAAABg6U/wNu2U69oiwU/s1600/Node%2BRED%2B%2B%2Bemonpi1.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="293" src="http://4.bp.blogspot.com/-ANX-AiX1Vg0/VhuGvI8h5wI/AAAAAAABg6U/wNu2U69oiwU/s320/Node%2BRED%2B%2B%2Bemonpi1.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Separate node to split the MQTT data up into nodes based on ID: e.g emonTx = 10, emonPi = 5, emonTH = 19</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-wM8zp4WGrCk/VhuGvBsYP1I/AAAAAAABg6g/KJAxe8zI53M/s1600/Node%2BRED%2B%2B%2Bemonpi2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="375" src="http://4.bp.blogspot.com/-wM8zp4WGrCk/VhuGvBsYP1I/AAAAAAABg6g/KJAxe8zI53M/s400/Node%2BRED%2B%2B%2Bemonpi2.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">CSV node to split up MQTT CSV string</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-NemcPlwD1Ws/VhuGvVuEs6I/AAAAAAABg6Y/XkUBKmteqrE/s1600/Node%2BRED%2B%2B%2Bemonpi3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://4.bp.blogspot.com/-NemcPlwD1Ws/VhuGvVuEs6I/AAAAAAABg6Y/XkUBKmteqrE/s400/Node%2BRED%2B%2B%2Bemonpi3.png" width="361" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">If function node</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-1mzPm3DVvVU/VhuGvi-MFlI/AAAAAAABg6c/KCFuKqCADrE/s1600/Node%2BRED%2B%2B%2Bemonpi4.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="278" src="http://2.bp.blogspot.com/-1mzPm3DVvVU/VhuGvi-MFlI/AAAAAAABg6c/KCFuKqCADrE/s320/Node%2BRED%2B%2B%2Bemonpi4.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">email node, enter your Gmail (or otherwise) SMTP login</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div>Node-RED flow export, import by copy and pasting into import&gt;clipboard in Node-RED editor:<br /><br /><i><span style="font-size: xx-small;">[{"id":"eb57a13e.14a86","type":"mqtt-broker","broker":"localhost","port":"1883","clientid":""},{"id":"44c7eefa.bb381","type":"mqtt in","name":"MQTT: emonhub/rx/#","topic":"emonhub/rx/#","broker":"eb57a13e.14a86","x":159,"y":386,"z":"fa6ca080.05936","wires":[["2c7fcc53.d38034","eb7e04d9.1481f8"]]},{"id":"2c7fcc53.d38034","type":"debug","name":"RAW MQTT output: emonhub/rx/#","active":false,"console":"false","complete":"topic","x":242,"y":461,"z":"fa6ca080.05936","wires":[]},{"id":"eb7e04d9.1481f8","type":"switch","name":"Seperate Nodes","property":"topic","rules":[{"t":"cont","v":"5"},{"t":"cont","v":"19"},{"t":"cont","v":"20"}],"checkall":"true","outputs":3,"x":343,"y":317,"z":"fa6ca080.05936","wires":[["b0618044.4f9e8"],["9077dea0.6f882"],[]]},{"id":"9077dea0.6f882","type":"csv","name":"emonTH 1: emonhub/19/values &gt; Decode MQTT CSV","sep":",","hdrin":"","hdrout":"","multi":"one","ret":"\\n","temp":"temp,temp_external,humidity,battery,pulsecount","x":664,"y":373,"z":"fa6ca080.05936","wires":[["75ee731f.8a118c"]]},{"id":"b0618044.4f9e8","type":"csv","name":"emonPi: emonhub/5/values &gt; Decode MQTT CSV","sep":",","hdrin":"","hdrout":"","multi":"one","ret":"\\n","temp":"power1,power2,power1_plus_2,Vrms,temp1,temp2,temp3,temp4,temp5,temp6,pulseCount","x":647,"y":236,"z":"fa6ca080.05936","wires":[["cda897fa.325768"]]},{"id":"cda897fa.325768","type":"debug","name":"Debug: emonPi Power1 output","active":false,"console":"false","complete":"payload.power1","x":1015,"y":235,"z":"fa6ca080.05936","wires":[]},{"id":"75ee731f.8a118c","type":"function","name":"If emonTH battery &lt; 1.7V","func":"if (msg.payload.battery &lt; 1.7) {\n &nbsp; return {payload:'WARNING: emonTH battery low &nbsp;'+msg.payload.battery+'V' &nbsp;};\n}","outputs":1,"noerr":0,"x":1015,"y":363,"z":"fa6ca080.05936","wires":[["f8d8fd72.0727"]]},{"id":"f8d8fd72.0727","type":"delay","name":"Limit 1 email per day","pauseType":"rate","timeout":"5","timeoutUnits":"seconds","rate":"1","rateUnits":"day","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":true,"x":948,"y":447,"z":"fa6ca080.05936","wires":[["1d4154b2.e2beab"]]},{"id":"1d4154b2.e2beab","type":"e-mail","server":"smtp.gmail.com","port":"465","name":"","dname":"Send warning email","x":1198,"y":439,"z":"fa6ca080.05936","wires":[]}]</span></i>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -148,7 +151,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

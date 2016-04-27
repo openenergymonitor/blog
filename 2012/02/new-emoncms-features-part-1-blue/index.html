@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-02-18-new-emoncms-features-part-1-blue.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   Spent a bit of time implementing new features for emoncms today, the first one was a much needed but quite small addition: a themed location to output messages such as "user already exists" and so on, see the blue bar in the screen below:<br /><br /><a href="http://2.bp.blogspot.com/-XwN8DaZEyjE/T0AeWhkvpMI/AAAAAAAACXo/WpPIvGWjbus/s1600/bluebar.png"><img border="0" src="http://2.bp.blogspot.com/-XwN8DaZEyjE/T0AeWhkvpMI/AAAAAAAACXo/WpPIvGWjbus/s400/bluebar.png" /></a><br /><br />Try it out here: <a href="http://vis.openenergymonitor.org/emoncms3/">http://vis.openenergymonitor.org/emoncms3/</a><br /><br /><b>How it works</b><br /><br />If you have a look at the user_controller here<a href="https://github.com/openenergymonitor/emoncms3/blob/master/Controllers/user_controller.php"> github user_controller.php</a><br />On line 28 and 29 you will see the following:<br /><br />$output['content'] = "";<br />$output['message'] = "";<br />(ie line 65) $output['message'] = "Your new account has been created";<br /><br />The returned output from the controllers used to be just the one variable $output now we have two, one for main body content output and the other for message bar output. These variables are passed through <a href="https://github.com/openenergymonitor/emoncms3/blob/master/index.php">index.php</a> to the theme The <a href="https://github.com/openenergymonitor/emoncms3/blob/master/Views/theme/dark/theme.php">theme</a> then places the message and content in separately themed locations.
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

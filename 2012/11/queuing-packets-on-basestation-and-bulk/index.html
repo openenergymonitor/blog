@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-11-14-queuing-packets-on-basestation-and-bulk.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -136,6 +137,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   As we connect more and more wireless nodes to a basestation, with each wireless node transmitting every 10s or so we quickly start to have a situation where the basestation is trying to make several connections to the server every second. <br /> <br />The question is, does the rate of connections matter? Is it bad news for the emoncms server and what is the effect on the local internet connection, router? <br /> <br />Although I have not investigated this in detail, Im pretty sure Im seeing an adverse effect on my internet connection if the post rate gets too high, I noticed this especially the other day when I changed my router to a bt homehub after a lighting strike took out the old router. It would be great to get some good data on this. <br /> <br />Then there is the question of server load which needs more investigation. <br /><br />Jumping to a solution before the problem is properly characterized, the solution that comes to mind is to queue packets received from wireless nodes in the basestation and then do a bulk post at a slower rate, such as once every 20s or longer. <br /> <br />I have put together an initial working example of this, including code for both the NanodeRF basestation end and the emoncms server end. <br /><br />Starting with the NanodeRF code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />The NanodeRF code queues packets received, including a time offset between packets so that they can be stored in emoncms at the right time when they get there (although the implementation for this is a little rough at the moment). <br /> <br />The packets are queued in a string that can be sent via the ethernet and then decoded simply in emoncms using json_decode(); <br /> <br />A string for 3 packets from the different nodes looks like this: <br />[[0,16,1137],[2,17,1437,3164],[4,19,1412,3077]] <br /> <br />The first node: [0,16,1137] <br /> <br />The first number of each node is the time offset, so for the first node it is 0 which means the packet for the first node arrived at 0 seconds. The second node arrived at 2 seconds and 3rd 4 seconds. <br /> <br />The second number is the node id, this is the unqiue identifer for the wireless node. <br /> <br />All the numbers after the first two are data values. The first node here (node 16) has only once data value: 1137. <br /><br />This string is sent to emoncms every 20s in the example and there is enough room in the string buffer to store up to 400 characters or about 22 low power temperature node packets, this may be extendible by another 200 characters for more storage, and maybe a lot further with an SD card or other larger storage medium. <br /> <br />The emoncms api for sending bulk data is emoncms.org/input/bulk?data= <br /> <br />Emoncms then decodes the string, registers and processes the inputs and returns an ok. <br /> <br />If your interested in testing this out, here's the NanodeRF bluksend example again, if your using the NanodeRF_multinode code already this is just a straight switch to the bulk send code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />If your running your own server you will need the latest emoncms version: <br /><a href="https://github.com/emoncms/emoncms">https://github.com/emoncms/emoncms</a> or if you are using emoncms.org its all ready to go there. <br /> <br />There's a couple of question marks at the moment as to the stability of this initial working example, I had a few problems with the queue string getting malformed but only once every 20-30 successful string builds and at the moment the nanodeRF does not reset itself using the watchdog if there are more than 10 unsucessful attempts. A few extra eye's on the code would definetly help to improve it and I will keep testing here.
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -146,7 +149,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

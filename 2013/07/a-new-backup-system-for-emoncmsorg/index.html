@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-07-09-a-new-backup-system-for-emoncmsorg.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -136,6 +137,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   The current emoncms.org backup system works by using two&nbsp;separate&nbsp;servers with data being synced from the main one to the second backup server using the same implementation used in the emoncms sync module&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-backup.html">http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-backup.html</a><br /><div><br /></div><div>A couple of weeks after getting all that setup BigV announced a new feature: archive storage which they say is ideal for backups. Archive storage works in much the same way as connecting a second external drive to a computer. Archive storage on bigv is guaranteed to be on a separate storage pool from the main vm disc which is good news as it&nbsp;wasn't&nbsp;guaranteed that the two&nbsp;separate&nbsp;server method used seperate storage pools (If I understand correctly)</div><div><a href="http://blog.bytemark.co.uk/2013/06/13/archive-storage-and-web-based-vm-manager-launched">http://blog.bytemark.co.uk/2013/06/13/archive-storage-and-web-based-vm-manager-launched</a></div><div><br /></div><div>Another advantage to the new archive storage is that its much cheaper to run, costing £2/month for 50GB rather than £16/month for another vm and 30GB extra space.</div><div><br /></div><div>A simple php script is used to perform the backup, it makes use of the direct file access stuff I recently learnt about (<a href="http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html">http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html</a>)&nbsp;to do incremental backup file copy using php file access commands making it potentially very fast, it can backup files at full file copy speeds:</div><div><a href="https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php">https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php</a></div><div><br /></div><div>It accesses the mysql data directly, copying the content of the mysql feed data file i.e: &nbsp;/var/lib/mysql/emoncms/feed_1.MYD to the backup drive.</div><div><br /></div><div>On another slightly related note the data in&nbsp;feed_1.MYD is stored simply as:</div><div><br /></div><div>1 byte for null flag</div><div>4 bytes for the timestamp</div><div>4 bytes for the float data value<br />repeated...</div><div><br /></div><div>and because the readings are inserted one after the other in ascending time we can actually use the mysql feed data files directly with the direct file get_feed_data method to get 10-20x query speed improvement for generating visualisations: <a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php">https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php</a></div><div><br /></div><div>We could even get rid of the mysql feed table index's to save disk space although that will probably slow down mysql updates (I need to look into it). This could be a short term measure before a full timestore emoncms implementation is complete which provides many other benefits.</div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -146,7 +149,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

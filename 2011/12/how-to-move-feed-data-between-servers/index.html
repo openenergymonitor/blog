@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2011-12-17-how-to-move-feed-data-between-servers.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   There is often a need to transfer large feed tables between different servers. Here is one way to do it via ssh that does not require downloading the data to a local machine. This makes it particularly fast especially if your local internet connection is relatively slow.<br /><br /><b>1) Login via ssh to the source server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (source server ip)<br /><br /><b>2) Export feed table from source instance database</b><br />mysqldump -u <i>username</i> -p <i>database</i> feed_1 &gt; feed_1.sql<br /><br /><b>3) Transfer feed table via ssh to destination instance server</b><br />tar -cjvf - feed_1.sql | ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> tar -xjf - -C <a href="http://www.blogger.com/home/user" style="color: #3465a4;">/home/user</a>            (destination server ip)<br /><br /><b>4) Login via ssh to the destination server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (destination server ip)<br /><br /><b>5) Import feed table into destination instance database</b><br />mysql -u root -p <i>database</i> &lt; feed_1.sql<br /><br />It would be great to have some kind of utility within emoncms that makes it possible to move large feed tables between emoncms instances efficiently and easily without having to use terminal and ssh. If you know of an efficient way of doing this,&nbsp;advice&nbsp;would be most welcome.
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

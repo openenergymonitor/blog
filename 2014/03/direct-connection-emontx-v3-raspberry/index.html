@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2014-03-07-direct-connection-emontx-v3-raspberry.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -136,6 +137,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Sometimes it's more convenient to connect the emonTx V3 directly to a Raspberry Pi base station rather than use RF.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Both the Raspberry Pi and emonTx V3 run at 3.3V so the serial Rx and Tx serial lines can be directly connected. The raspberrypi's 5V supply can be used to power the emontx which is then stepped down to to 3.3V through the emonTx V3's voltage regulator. 5V is provided by the red wire. The ground connection is the black wire and the data going from the emontx to the raspberrypi is the green wire. I haven't connected a wire for serial data going the other way but this is a possible option if two-way serial is required.</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" height="222" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 &gt; Raspberry Pi Connection&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" height="251" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Here's a simple direct serial output sketch for the emontx v3&nbsp;<a class="external text" href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM12B/Examples/emonTxV3_DirectSerial/emonTxV3_DirectSerial.ino" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">on GitHub here</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">On the raspberrypi if you just want to forward the emontx data to a remote emoncms this can be done with the oem_gateway developed by Jerome which is on the&nbsp;<a class="external text" href="http://emoncms.org/site/docs/raspberrypigateway" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">standard rock solid forwarder image</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">See our&nbsp;<a class="external text" href="http://openenergymonitor.blogspot.co.uk/2014/01/oem-gateway-serial-port-emoncms-link.html" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">blog post</a>&nbsp;about how to configure the oem_gateway for work over a serial link rather than RFM12B&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">This info was taken from the <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Direct_connection_emonTx_V3_.3E_Raspberry_Pi_GPIO">emonTx wiki</a> and written up after a<a href="http://openenergymonitor.org/emon/node/3872"> forum thread</a>.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">For the future we are working on developing an energy monitoring shield for the Pi to create an all-in-on Pi-energy-monitoring unit, see dev forum thread:&nbsp;http://openenergymonitor.org/emon/node/3937</div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -146,7 +149,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

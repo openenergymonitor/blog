@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2014-07-03-emonglcd-v2-smt-development.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,6 +135,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   For sometime now the emonGLCD has been lagging behind other OpenEnergyMonitor hardware units in terms of development, we're still selling it only in thru-hole DIY kit form.<br /><br />We've been thinking about updating it to SMT pre-assembled for some time, however we've been dragged our heels somewhat since there has been thoughts that maybe a smartphone app could fill the same function. However I believe&nbsp;a physical LCD display unit fulfils a slightly different role to a smartphone app. I believe in certain circumstances there is certainly value to having an always-on low power LCD display located in a prominent location displaying current power consumption and or generation.<br /><br />I have found the emonGLCD with the ambient indication tri-colour LED's to be a really useful easy-to-read indication of solar PV import / export at any given time.<br /><br />Doing a quick <a href="https://www.google.co.uk/search?q=emonglcd&amp;safe=off&amp;rlz=1CAACAG_enGB573GB573&amp;es_sm=93&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=N1u1U42-KcXb7Abzk4CoDA&amp;ved=0CAkQ_AUoAg">Google search</a> shows that there are lots of emonGLCD being used and customized for all sorts of purposes we could not even have though of! For example: heat pump monitor, temperature measurements, electric car charge rate etc.<br /><br />With this in mind, we have decided to make an SMT version of the emonGLCD keeping the design largely the same (same LCD panel size and same controller chip ST7565). This will mean the current emonGLCD firmware sketches should run on the new unit with little or no modifications. <br /><br />I would be interested to heard your thoughts on what you would like in a new version of the emonGLCD?<br /><br />Over the past few weeks I've made a start to get a prototype, here is the main design criteria and features so far:<br /><ul><li>  ST7565&nbsp;128 x 64 LCD panel&nbsp;with integrated&nbsp;RGB backlight, <a href="http://www.vatronix.com/products/75.html">specifically this Vatronix unit</a> (to replace the LED's on the current version)</li><li>  Single front facing&nbsp;rotary encoder with push-to-select (to replace the three push buttons the the current)</li><li>  Option for lithium battery pack with USB battery charging circuit and battery voltage monitor</li><li>  Arduino compatiable ATmega328&nbsp;with RFM12B / RFM1269CW</li><li>  Option for on-board&nbsp;DS18B20 and DHT22&nbsp;temperature and humidity sensors&nbsp;</li></ul>Using SMT assembly and lower cost LCD unit and enclosure we should be able to reduce the price of the emonGLCD&nbsp;compared to the current version.<br /><br />Yesterday I sent off for the first prototype PCB revision:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-YAr16KVXPrE/U7Vno3nIb4I/AAAAAAAA2zc/5Z419xiIra8/s1600/emonGLCD_V2.0_brd.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-YAr16KVXPrE/U7Vno3nIb4I/AAAAAAAA2zc/5Z419xiIra8/s1600/emonGLCD_V2.0_brd.png" height="526" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-VyOmm39X200/U7VnoxaukPI/AAAAAAAA2zg/MyAATsXtGtA/s1600/emonGLCD_V2.0_sch.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-VyOmm39X200/U7VnoxaukPI/AAAAAAAA2zg/MyAATsXtGtA/s1600/emonGLCD_V2.0_sch.png" height="522" width="640" /></a></div><br /> <br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-kyenCaUIo8Y/U7VnteHlIYI/AAAAAAAA2zw/L3pF1d4kAN8/s1600/2014-05-23+13.55.25.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-kyenCaUIo8Y/U7VnteHlIYI/AAAAAAAA2zw/L3pF1d4kAN8/s1600/2014-05-23+13.55.25.jpg" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing the new LCD panel with built in RGB backlight</td></tr></tbody></table>These images and more can be viewed in higher resolution in the emonGLCD V2 SMT Development album on G+, I will be periodically updating this album with development photos as things develop!<br /><a href="https://plus.google.com/photos/114424977493521882459/albums/6016575729643776881#">https://plus.google.com/photos/114424977493521882459/albums/6016575729643776881#</a><br /><br /><h2> <strong>Enclosure&nbsp;</strong></h2>The enclosure is an important part of the emonGLCD&nbsp;design considerations. We plan to move to a 'proper' custom made enclosure for the new emonGLCD. These are the main options available:<br /><br />1.) 3D printed (for small volumes and prototyping, not really possible for 500+ per production run)<br />2.) layered laser cut plywood or acrylic (like the Pimoroni Raspberry Pi cases)<br />3.) Injection molded&nbsp;plastic<br /><br />I'm specifically interested in exploring if/how an enclosure could be made with<strong> lowest embodied energy and maximum&nbsp;recyclability.</strong><br />We have not yet made much progress on case design nor have we got a designer or manufacturer in mind. If you would like to work with us please get in touch. Equally if you have some ideas on enclosure design I look forward to hearing.<br /><br />Please use the the emonGLCD V2 SMT forum thread for comments and discussion: <a href="http://openenergymonitor.org/emon/node/5374">http://openenergymonitor.org/emon/node/5374&nbsp;</a><br /><br />
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -144,7 +147,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

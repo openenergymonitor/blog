@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-07-25-ciseco-srf-vs-rfm12b-power-consumption.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -136,6 +137,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   Following on <a href="http://openenergymonitor.blogspot.com/2013/07/new-oscilloscope.html">yesterdays post</a> on the Hope RF RFM12B power consumption I decided to do a comparison with the Ciseco <a href="http://shop.ciseco.co.uk/srf-wireless-rf-radio-surface-mount/">SRF Radio</a>. An <a href="http://shop.ciseco.co.uk/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328/">RFu328</a> (miniature ATmega328 in XBEE footprint) was used to mount and interface with the two radios. The same 3.3V power supply was used with both modules<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-2kD9f3Dosxc/UfEwb_GzQYI/AAAAAAAAiU8/6ZEmjZ6SHMQ/s1600/20130725_145657~01.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="223" src="http://3.bp.blogspot.com/-2kD9f3Dosxc/UfEwb_GzQYI/AAAAAAAAiU8/6ZEmjZ6SHMQ/s320/20130725_145657%7E01.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Ciseco RFu328 with SRF and RFM12B</td></tr></tbody></table><br /><div>The scope was connected up to measure the voltage drop across a shunt resistor as follows:</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmH8/6RVoByOGZlA/s1600/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="319" src="http://1.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmH8/6RVoByOGZlA/s320/scope_connection.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Oscilloscope probe measuring voltage drop across a 10R series resistor</td></tr></tbody></table><div><h3>Hope RF RFM12B </h3>Here is the RFM12B current consumption trace while sending 4 integers using the JeeLib packet structure. Using this packet structure each integer takes up 2 bytes, therefore 4 integers is 8 bytes plus 1 byte containing the node ID, this gives a total packet size of 9 bytes. Transmission takes 2.7ms and the current consumption in the time is about 24mA @ 3.3V. This gives a power and energy consumption of 24mA * 3.3V = 79.2mW * 2.7mS = 0.214mJ = 214uJ<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VndghVRMol4/UfD8rjHP4fI/AAAAAAAAiTU/yyEof-FXo1c/s1600/DS2_QuickPrint1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="384" src="http://4.bp.blogspot.com/-VndghVRMol4/UfD8rjHP4fI/AAAAAAAAiTU/yyEof-FXo1c/s640/DS2_QuickPrint1.png" width="640" /></a></div><br /><h3>Ciseco SRF</h3><br />A SRF V1.0a with serial firmware was used for this test.<br /><br />The SRF is serial based. Ciseco have standardized on a communication structure called <a href="http://lightweight%20local%20automation%20protocol/">LLAP (Lightweight Local Automation Protocol)</a>.&nbsp; <br /><br />A LLAP packet consists of one start byte 'a' , two bytes for the node ID  then 9 bytes for the message. Encoding as HEX each LLAP packet can give  us space for two integers. Each integer has a range of -32767 to 32767 which is fine for our standard emonTx setup which has a maximum reading of 25000W (100A x 250Vrms).<br /><br />To transmit four integers from the emonTx (3 x power and 1 x voltage) would require two LLAP packets which each contains 12 char characters which gives a packet size of 12 bytes transmitted twice giving a total of 24 bytes.<br /><br />Here is a current capture waveform of the SRF transmitting two LLAP packets, it's rather more interesting than the RFM12B, I would love to know exactly what the SRF is doing at each spike and dip.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-3GCX4bQfBak/UfEFd1nw6UI/AAAAAAAAiUM/ZCtp1D6oj4c/s1600/DS2_QuickPrint2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://4.bp.blogspot.com/-3GCX4bQfBak/UfEFd1nw6UI/AAAAAAAAiUM/ZCtp1D6oj4c/s640/DS2_QuickPrint2.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Average power consumption of 20.8mA</td></tr></tbody></table><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-xINKtBtwsT0/UfEFd6nhkUI/AAAAAAAAiUI/uPJg4WFD0x4/s1600/DS2_QuickPrint3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://2.bp.blogspot.com/-xINKtBtwsT0/UfEFd6nhkUI/AAAAAAAAiUI/uPJg4WFD0x4/s640/DS2_QuickPrint3.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Transmission of two LLAP packets takes 15ms</td></tr></tbody></table><br />Transmission of two LLAP packets takes 15ms with an average current of consumption of 20.8mA. This gives and power and energy consumption of 20.8mA * 3.3V = 68.6mW * 15ms =1mJ.<br /><br />This is 4.7 times more energy than the RFM1B for the transmission of the same four integers. This is mainly due to the efficient nature of the JeeLib packet structure sending the integers as binary rather than serial characters as in the case of the SRF. Transmitting four integers as HEX characters in two LLAP packets takes 24 bytes as opposed to the 9 bytes needed for the same four integers in the RFM12B JeeLib packet structure. Taking this into account the SRF consumes 41uJ per byte where the RFM12B consumes 23uJ per byte, this is around 1.8 times more power byte for byte than the RFM12B. <br /><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-19szWt9GRZU/UfEFdx0XjKI/AAAAAAAAiUE/kIz-iRPiOMQ/s1600/DS2_QuickPrint4.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://2.bp.blogspot.com/-19szWt9GRZU/UfEFdx0XjKI/AAAAAAAAiUE/kIz-iRPiOMQ/s640/DS2_QuickPrint4.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">SRF startup 50mA spike</td></tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"></div>An interesting observation is that the SRF exhibits a rather high current spike of about 50mA as it's turned on / comes out of sleep. As this spike only lasts for only about 100nS it won't contribute that much to the overall power consumption.&nbsp; <br /><br /><h3>Energy Consumed While Sleeping</h3>The energy used the the RF modules needs to be put in perspective with the overall consumption of the system. An emonTx running on batteries or low power temperate node will spend much of it's time sleeping, the ATmega328 consumes 4.3uA when sleeping and the SRF and RFM12B consume about the same when sleeping 0.2-0.3uA, giving an overall sleep mode power draw of 4.6uA or 0.0046mA.<br /><br /><h4>Sleeping for 10s</h4>Assuming a the case of a wireless node which sleeps for 10s in between readings. This gives a energy consumption of 0.0046mA * 3.3V = 0.0152mW * 10s = 0.152mJ = 152uJ.<br /><br />If this node was using an RFM1B 1.4 times more energy would be consumed in the 3ms that the RFM12B is active while transmitting the data via RF then in the proceeding 10s when the node is sleeping <br /><br />If the temperature node was using an SRF 6.6 times more energy would be consumed in the 15ms that the SRF is active while transmitting the data via RF then in the proceeding 10s when the node is sleeping.<br /><br /><h4>Sleeping for 10 min</h4>Assuming a the case of a wireless node which sleeps for 10s in between readings. This gives a energy consumption of&nbsp;0.0046mA * 3.3V = 0.0152mW * (60s *10) = &nbsp;9.13mJ.<br /><br />The energy consumed while sleeping now becomes the greatest consumer. The energy consumed during sleeping for 10s is 43 times greater than the energy required by the RFM12B to transmit the data or 9 times greater than the energy required by the SRF to transmit the data.<br /><br /><br /><h3>Conclusion </h3>If a ATmega328 based 'sleepy' node sleeps for 14s or more the energy used during sleeping will equal or greater the energy used by the RFM12B (to transmit four integers). If the nodes sleeps for 1 min or more the energy used during sleeping will equal or greater then energy used by the SRF (using serial LLAP to transmit four integers).<br /><br />LLAP serial on the SRF not the most power efficient way to transmit integers compared to the RFM12B using the JeeLib packet structure. Power consumption of the SRF can be reduced at the expense of human readability of the data packets. I plan to investigate this further, see questions to answer below: <br /><br /><h3>Questions to answer:</h3>Does the extra energy consumed by the SRF result in increased range over the RFM1B?<br /><br />The SRF by default is set at 10dBm transmission power (compared to 0dBM  for RFM12B), this can be reduced all the way down to -30dBm in various  increments, how much will this reduce energy consumption and range? Is  there a sweet spot? The RFM12B transmits at 0dBm, how will the range of  the SRF transmitting at 0dBM compare to the SRF?&nbsp; <br /><br />The SRF currently transmits at 9600 baud rate, this can be increased to 115200, will this reduce the time taken to complete a transmission and therefore energy used. How much will this effect loss of packets and range? <a href="http://openmicros.org/index.php/articles/88-ciseco-product-documentation/260-srf-configuration">Ciseco SRF setup documentation.&nbsp;</a> <br /><br />Is it possible to interface directly with the SRF to transmit the raw packets not using serial? <br /><br />Can power consumption of SRF be improved with new firmware?<br /><br />I hear it's possible to use the CC chip on the SRF to offload the WDT to wake up the ATmega328 using a hardware interrupt, this could result in sleep current draw of around 0.3uA. I'm keen to investigate this.</div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -146,7 +149,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

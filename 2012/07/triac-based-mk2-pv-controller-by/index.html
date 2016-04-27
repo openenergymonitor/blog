@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-07-16-triac-based-mk2-pv-controller-by.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -136,6 +137,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   <div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s1600/IMGP9704.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s400/IMGP9704.JPG" width="400" /></a></div><br /><br /><a href="http://openenergymonitor.org/emon/user/956">Calypso Rye</a> writes:<br /><br /><div style="background-color: #dddddd; font-size: 90%; padding: 10px;">Based on the standard VI sketch which uses calcVI() in EmonLib, I’ve had a system in place for the last couple of months which diverts surplus PV power to our immersion heater.  This system has proved to be both effective and reliable, and I am most grateful for everyone who has helped me along the way.  The main downside to this arrangement is that it requires an expensive item of third-party kit to distribute the power.  (I know that others have found cheaper ways, but my Carlo Gavazzi unit cost me £70).<br /><br />Other contributors to this forum have shown that a standard triac can be easily controlled by an Arduino.  By using a zero-crossing detector such as the Motorola MOC3041, it should be possible for the Arduino to allocate mains cycles directly to the load rather than delegating this task to a separate device.<br /><br />A Mk2 system of this type has been working in our garage for the last few days.  The sketch and a schematic diagram are attached, its main features being:<br /><br />- a comprehensive 'debug' mode which allows real world conditions to be simulated ;<br /><div><br />- a continuous mode of operation, for both measurement and distribution of power;</div><div><br />- an "energy bucket" concept which gives precise control of surplus power;<br /><br />- interleaved windows for measurement and generation, each only 20mS;<br /><br />- a rapid response time to changing conditions (50mS);<br /><br />- suitable timing for 'arming' a zero-crossing trigger device;<br /><br />- a single LPF which determines the dc-offset of raw VI samples;<br /><br />- a programmable safety margin for biassing import v. export;<br /><br />- minimal calibration is required.</div></div><br />Read the full post on the forum here: <a href="http://openenergymonitor.org/emon/node/841">http://openenergymonitor.org/emon/node/841</a>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -146,7 +149,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

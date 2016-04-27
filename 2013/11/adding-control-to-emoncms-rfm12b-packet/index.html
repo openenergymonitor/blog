@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2013-11-27-adding-control-to-emoncms-rfm12b-packet.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -138,6 +139,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   I've had many conversations with people recently about controlling things like radiator set points, boiler thermostat's, heatpump's and so on.<br /><br />I visited John cantor of <a href="http://heatpumps.co.uk/">http://heatpumps.co.uk/</a> today who is  implementing an impressive control and monitoring system for a heatpump  central heating system which involves EmonGLCD's with relay's connected  to radiator valve actuators in each room. The buttons on the EmonGLCD  are used to set the target temperature for the room and information is  displayed on the EmonGLCD about heatpump power input and outside  temperature.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s1600/BX6HlyfCUAAe0iX.jpg:large.jpeg" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s320/BX6HlyfCUAAe0iX.jpg:large.jpeg" width="320" /></a></div><br />On the way back I stopped at the Centre for Alternative Technology where <span style="font-family: Calibri;">Marnoch who is <a href="http://openenergymonitor.blogspot.co.uk/2013/07/probably-best-student-placement.html">on their student placement</a> there is </span>working on doing something similar but for a radiator system connected to a wood chip boiler.<br /><br />Both Glyn and Ynyr are keen to get boiler thermostat controllers working in their houses and Ken Boak who designed the NanodeRF phoned up the other day suggesting we start an openenergymonitor sub project and discussion on this topic, Ken's been working on central heating control for quite some time.<br /><br />Its something I have a growing interest in too as we will be soon installing a heatpump system at home which has a lot of opportunity for control and monitoring to make sure its running efficiently.<br /><br />So I've been giving some thought to how control features could be added to emoncms in a more integrated way than initial efforts I've made before.<br /><br />I like the simplicity of the way Jean Claude Wippler designed the jeelib library to use c structures as the method in which data is packaged and sent via the RFM12b radio's and so I thought that maybe a good basis for adding control functionality to emoncms would be to first make it possible for emoncms to easily generate RFM12b data packets in the format that can be easily decoded with a struct definition on the listening control nodes. Emoncms would then broadcast this control packet containing all the state information about the system at a regular interval in the same way as an emontx broadcasts it's readings. Listening nodes can then be programmed to selectively use variables in that control packet depending on what they need to do.<br /><br />I've put together an initial working concept of a module that can be used to do this and its up on github here: <a href="https://github.com/emoncms/packetgen">https://github.com/emoncms/packetgen</a><br /><br />Here's a screenshot of the main interface:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s1600/rfm12packetgen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s640/rfm12packetgen.png" width="395" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">One of the nice things about it is that as you generate your control packet the module generates example Arduino code to make it easier to start coding a control node, you can just copy the code any drop it into the Arduino IDE and upload to a atmega+rfm12b based node and it should start receiving the control packet right away. </div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I see this module and control in general being run on a local installation of emoncms running on a raspberrypi + harddrive combination rather than emoncms.org. The next step is an image with all this installed and working out of the box.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s1600/pihdsetup.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s400/pihdsetup.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -148,7 +151,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>

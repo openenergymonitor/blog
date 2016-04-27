@@ -102,6 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2015-06-12-hourly-energy-model-example-2-variable.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -125,6 +126,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 
   The second example in the hourly energy modelling tool models the degree of supply/demand matching  between a variable renewable supply consisting of a single renewable  energy generation type and a flat electricity demand profile. <br /><br />A flat demand may not of course be particularly realistic and the more complex examples later on address this, but I've used it here just to illustrate this particular simple example case.<br /><br /><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="584" src="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s640/varsupplyflatdemand.png" width="640" /></a> <br /><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>2. variable supply and flat demand</i><br /><i>&nbsp;</i> <br />The demand is subtracted from the supply for every  hour in the 10 year period and the total amount of unmet demand and  excess generation is measured as well as the amount of time the supply  was more than or equal to the demand.<br /><br />The demand level is set to an annual average electricity  demand of 3300 kWh which is the average UK household annual electricity  consumption. The amount of installed capacity is set to match this  demand on the 10 year basis of the dataset.<br /><br />Running the model for each of each generation type, matching total 10  year supply to total 10 year demand of 3300 kWh x 10 we get the  following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>65.9%</td><td>76.4%</td><td>73.9%</td><td>57.7%</td><td>40.6%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.1%</td><td>46.2%</td><td>45.3%</td><td>38.6%</td><td>32.1%</td>     </tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div>We can see again here that offshore wind is the clear winner with the lowest installed capacity requirement and highest level of supply/demand matching. Perhaps an interesting result is how less predictable technologies such as wind and wave provide greater levels of matching than power from tidal which is very predictable.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of  python versions of the examples which are simpler to follow as they dont  include all the code to create the visual output, they just print out  the main results at the end.<br /><br />I've highlighted the main parts in bold below:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 1<br /><br />installed_capacity = 0.785 # kW<br /><br />annual_house_demand = 3300 # kWh<br />house_power = (annual_house_demand * 10.0) / 87648&nbsp;&nbsp; <br /><br /><b># Load dataset</b><br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br />print<br /><br />total_supply = 0<br />total_demand = 0<br /><br />exess_generation = 0<br />unmet_demand = 0<br /><br />hours_met = 0</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><b># for every hour in the dataset</b><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate the supply</b><br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate demand</b><br />&nbsp;&nbsp;&nbsp; demand = house_power<br />&nbsp;&nbsp;&nbsp; total_demand += demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># subtract demand from supply to find the balance</b><br />&nbsp;&nbsp;&nbsp; balance = supply - demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># record the total amount of exess and unmet demand</b><br />&nbsp;&nbsp;&nbsp; if balance&gt;=0:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exess_generation += balance<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hours_met += 1<br />&nbsp;&nbsp;&nbsp; else:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unmet_demand += -balance<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />prc_demand_supplied = ((total_demand - unmet_demand) / total_demand) * 100<br /><br />prc_time_met = (1.0 * hours_met / hours) * 100</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /><b># print out the results</b> </span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">print "Installed capacity: %s kW" % installed_capacity<br />print "Capacity factor: %d%%" % capacity_factor<br />print<br />print "Total supply: %d kWh" % total_supply<br />print "Total demand: %d kWh" % total_demand<br />print<br />print "Exess generation %d kWh" % exess_generation<br />print "Unmet demand %d kWh" % unmet_demand<br />print <br />print "Percentage of demand supplied directly %d%%" % prc_demand_supplied<br />print "Percentage of time supply was more or the same as the demand %d%%" % prc_time_met</span></span>
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
 </article>
 
 
@@ -135,7 +138,73 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
           <div class="grid">
 
-  
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+        </li>
+      
+    
+  </ul>
+</section>
   
   
 </div>
