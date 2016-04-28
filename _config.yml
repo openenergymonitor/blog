@@ -27,6 +27,10 @@ email: support@openenergymonitor.zendesk.com
 # ----------------------- #
 ex_image: https://openenergymonitor.org/file/blog_images
 
+# embed with <img src="{{site.ex_image}/photo.jpg" />
+# or
+# ![image]({{site.ex_image}}]/photo.jpg)
+
 
 # ----------------------- #
 #    Jekyll & Plugins     #
