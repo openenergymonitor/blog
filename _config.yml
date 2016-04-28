@@ -23,6 +23,12 @@ subscribe_email:
 email: support@openenergymonitor.zendesk.com
 
 # ----------------------- #
+#    OEM CUSTOM           #
+# ----------------------- #
+ex_image: https://openenergymonitor.org/file/blog_images
+
+
+# ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
 
