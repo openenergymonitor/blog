@@ -25,11 +25,10 @@ email: support@openenergymonitor.zendesk.com
 # ----------------------- #
 #    OEM CUSTOM           #
 # ----------------------- #
-ex_image: https://openenergymonitor.org/file/blog_images
+ex_image_path: https://openenergymonitor.org/files/blog_images
+image_path: /images
 
-# embed with <img src="{{site.ex_image}/photo.jpg" />
-# or
-# ![image]({{site.ex_image}}]/photo.jpg)
+#![image-description]({{site.image_path}}/photo.jpg)
 
 
 # ----------------------- #
