@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-02T01:02:59+00:00</updated>
+  <updated>2016-05-02T01:15:42+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -32,15 +32,22 @@
     <updated>2015-12-17T10:47:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
-<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.&nbsp;</span></div>
+<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.
+
+
+
+
+
+    
+    <!--more-->
+    
+    &nbsp;</span></div>
 <div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
 <div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s1600/unnamed1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s640/unnamed1.png" width="355" /></a><span style="text-align: left;"><br /></span></div>
 <div class="" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span><span style="text-align: left;">The app is now available on Google Play</span><sup style="background-color: white; color: #444444; font-family: Roboto, sans-serif; font-size: 8px; line-height: 0;">TM</sup>.&nbsp;</div>
 <div class="separator" style="clear: both; text-align: left;"><a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" height="65" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" width="200" /></a></div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="" style="clear: both; text-align: left;"><span style="text-align: left;">
-    
-    <!--more-->
     
     What's even more exciting is that this app has been developed almost solely by a member of the&nbsp;</span><span style="text-align: left;">community&nbsp;</span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>). &nbsp; &nbsp;</div>
 <h3 style="clear: both; text-align: left;">Features:</h3>
