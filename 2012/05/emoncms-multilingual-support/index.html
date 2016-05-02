@@ -102,7 +102,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
         
 
           <article class="post">
-  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-05-19-emoncms-multilingual-support.markdown'>Edit this page on GitHub</a></div>
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2012-05-19-emoncms-multilingual-support.html'>Edit this page on GitHub</a></div>
   
   <header>
   
@@ -134,16 +134,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 </header>
 
 
-  <table>
-  <tbody>
-    <tr>
-      <td>The latest update to emoncms adds a basic implementation of multilingual support.<br /><a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a><br /><br /><b>Adding a language</b><br /><br /><b>1) Make a copy of the folder Views/en and call it the language your creating a translation for, i.e cy for welsh:</b><br /><b><br /></b><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s1600/lang_copy.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="100" src="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s320/lang_copy.png" width="320" /></a>&lt;/div&gt;<b><br /></b><br /><br />.. or use a language that has already been translated from the emoncms_languages repo, i.e cy…<br /><a href="https://github.com/openenergymonitor/emoncms_languages">https://github.com/openenergymonitor/emoncms_languages</a> (feel free to send a pull request with your translations)<br /><br /><b>2) If your creating a new translation, translate each view script inside your language folder.</b><br /><br /><b>3) Add your language to the language options in index.php:</b><br /><br />Change the line:<br />&lt;pre&gt;$lang =  $_GET[‘lang’]; if ($lang==’en’) $_SESSION[‘lang’] = $lang; else $lang = null;&lt;/pre&gt;<br />to (with your chosen language code)<br />&lt;pre&gt;$lang =  $_GET[‘lang’]; if ($lang==’en’</td>
-      <td> </td>
-      <td>$lang==’cy’) $_SESSION[‘lang’] = $lang; else $lang = null;&lt;/pre&gt;<br /><b>2) Add your language to the user_view language selector.</b><br />Until a better implementation is created, this needs to be done for each language.<br />In Views/en/user_view.php<br /><br />add (or your chosen language)<br /><br />&lt;pre&gt;&lt;option value=”cy”&gt;Welsh&lt;/option&gt;&lt;/pre&gt;<br />below: <br />&lt;pre&gt;&lt;option selected value=”en”&gt;English&lt;/option&gt;&lt;/pre&gt;<br /><br />Repeat this for the user_view that belongs to the language your adding and set the selected attribute to the added language.<br /><br />Any thoughts on a better way of implementing this is as always welcome.</td>
-    </tr>
-  </tbody>
-</table>
-
+  The latest update to emoncms adds a basic implementation of multilingual support.<br /><a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a><br /><br /><b>Adding a language</b><br /><br /><b>1) Make a copy of the folder Views/en and call it the language your creating a translation for, i.e cy for welsh:</b><br /><b><br /></b><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s1600/lang_copy.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="100" src="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s320/lang_copy.png" width="320" /></a></div><b><br /></b><br /><br />.. or use a language that has already been translated from the emoncms_languages repo, i.e cy...<br /><a href="https://github.com/openenergymonitor/emoncms_languages">https://github.com/openenergymonitor/emoncms_languages</a>&nbsp;(feel free to send a pull request with your translations)<br /><br /><b>2) If your creating a new translation, translate each view script inside your language folder.</b><br /><br /><b>3) Add your language to the language options in index.php:</b><br /><br />Change the line:<br /><pre>$lang = &nbsp;$_GET['lang']; if ($lang=='en') $_SESSION['lang'] = $lang; else $lang = null;</pre><br />to (with your chosen language code)<br /><pre>$lang = &nbsp;$_GET['lang']; if ($lang=='en' || $lang=='cy') $_SESSION['lang'] = $lang; else $lang = null;</pre><br /><b>2) Add your language to the user_view language selector.</b><br />Until a better implementation is created, this needs to be done for each language.<br />In Views/en/user_view.php<br /><br />add (or your chosen language)<br /><br /><pre>&lt;option value="cy"&gt;Welsh&lt;/option&gt;</pre><br />below: <br /><pre>&lt;option selected value="en"&gt;English&lt;/option&gt;</pre><br /><br />Repeat this for the user_view that belongs to the language your adding and set the selected attribute to the added language.<br /><br />Any thoughts on a better way of implementing this is as always welcome.
       <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
     <br>
 </article>
