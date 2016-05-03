@@ -29,7 +29,7 @@ With only four households aggregating on-site solar, off-site wind, hydro and co
 
 At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.
 
-The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Centre for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See [modelled supply/demand matching]((https://openenergymonitor.org/energymodel/)) based on ZeroCarbonBritain data:
+The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Center for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See [modelled supply/demand matching]((https://openenergymonitor.org/energymodel/)) based on ZeroCarbonBritain data:
 
 
 [Smart grid test intro page](https://openenergymonitor.org/dev/smartgrid)
@@ -43,4 +43,3 @@ At the top of the page is a UK grid status indicator that is based on Dominic Mc
 
 
 ![image]({{site.image_path}}/smartgrid2.png )
-
