@@ -4,7 +4,7 @@
   <title><![CDATA[Category: forum | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/forum/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-03T18:54:18+00:00</updated>
+  <updated>2016-05-03T19:12:14+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Website Changes]]></title>
+    <title type="html"><![CDATA[New Forum, Blog and User Guide Website]]></title>
     <link href="http://blog.openenergymonitor.org/2016/05/website-changes/"/>
     <updated>2016-05-02T15:00:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2016/05/website-changes</id>
@@ -30,11 +30,11 @@
 
 <p><strong>Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</strong></p>
 
-<p>Read on for full details.</p>
-
 <!--more-->
 
 <h2 id="new-community-forum">1. New Community Forum</h2>
+
+<p><img src="/images/Selection_037.png" alt="image" /><img src="/images/Selection_038.png" alt="image" /></p>
 
 <h4 id="httpscommunityopenenergymonitororghttpscommunityopenenergymonitororg"><a href="https://community.openenergymonitor.org">https://community.openenergymonitor.org</a></h4>
 
@@ -46,9 +46,9 @@
 
 <p>Thanks a lot to the team of community volunteers who have prepare the new forum over the past few weeks.</p>
 
-<p><img src="/images/Selection_037.png" alt="image" /><img src="/images/Selection_038.png" alt="image" /></p>
-
 <h2 id="new-user-guide">2. New User Guide</h2>
+
+<p><img src="/images/Selection_036.png" alt="image" /></p>
 
 <h4 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h4>
 
@@ -66,15 +66,13 @@
 
 <p>The Hardware Wiki will still exist, however expect hardware documentation to move to <a href="https://github.com/openenergymonitor/hardware">GitHub Hardware Repo</a> over time.</p>
 
-<p><img src="/images/Selection_036.png" alt="image" /></p>
-
 <h2 id="new-blog">3. New Blog</h2>
+
+<p><img src="/images/Selection_039.png" alt="image" /></p>
 
 <h4 id="httpsblogopenenergymonitororghttpsblogopenenergymonitororg"><a href="https://blog.openenergymonitor.org">https://blog.openenergymonitor.org</a></h4>
 
-<p>We have wanted to move away from our <a href="http://openenergymonitor.blogspot.co.uk/">old Google blogger</a> for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice <a href="https://import.jekyllrb.com/docs/blogger/">Jekyll import script</a> we managed to migrate over the blog without too much difficulty.</p>
-
-<p><img src="/images/Selection_039.png" alt="image" /></p>
+<p>We have wanted to move away from our <a href="http://openenergymonitor.blogspot.co.uk/">old Google blogger</a> for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice <a href="https://import.jekyllrb.com/docs/blogger/">Jekyll import script</a> we managed to migrate over the blog without too much difficulty. Please update your RSS subscription to the <a href="http://blog.openenergymonitor.org/atom.xml">new RSS feed</a>.</p>
 
 <h3 id="technical-info">Technical info</h3>
 
