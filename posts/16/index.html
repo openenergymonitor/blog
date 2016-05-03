@@ -107,6 +107,86 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/removing-redundant-datapoints-part-1/">Removing redundant datapoints - part 1</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-04T09:38:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-04 09:38:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/removing-redundant-datapoints-part-1/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">As I mentioned before another idea for reducing disk use is compression by removing redundant datapoints. Describing our plot with the least possible number of datapoints. Before energy monitoring I first learnt programming writing some basic 3d games and physics simulations using OpenGL, I was always&nbsp;fascinated&nbsp;by trying to create 3d landscapes, one of the techniques used to generated large landscapes is called level-of-detail terrains where you increase the polygon count where there is lots of detail I.e a mountain ridge or reduce the polygon count where there isnt ie a flat plain. I've been wondering for a while whether a similar approach could be taken to describe timeseries data so we increase the datapoint rate where there is a big change (ie when the kettle, light, fridge goes on) so that we get that event exactly at the right point in time and reduce the rate when not much is happening.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I tried to do something along these lines a few years back where the hardware would only post to the server on a step change in the power signal, the code is still up here as part of the appliance inference work I was experimenting with: <a href="http://openenergymonitor.org/emon/buildingblocks/appliance-inference">http://openenergymonitor.org/emon/buildingblocks/appliance-inference</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The problem was that it was failing when events happened too frequently, ie a thermostat controlled cooker&nbsp;cycling&nbsp;on and off. The event detection algorithm relied upon two 5 datapoint segments next to each other, when the difference between the average of the segments where larger than a threshold an event would be registered. A 10 datapoint segment spanning ~ 100s at 10s per datapoint or 50 seconds at 5s is too large and will miss events that happen to frequently. The other problem with this approach is that it wont work for temperature data which is more a change of gradient than power data steps.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Anyway with the problem of large emoncms disk space demand I have been thinking about this idea again. Could it be used to reduce disk space use significantly without loosing vital timing on events that would happen by just reducing the post interval rate. I had a good conversation with the guys at houseahedron <a href="https://twitter.com/Housahedron">https://twitter.com/Housahedron</a>who came to visit last week about this, they had been thinking along similar lines and saw parallels with an approach used in path plotting, they took a couple of example datasets back with them to see if they can find a way to parse it.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The screenshot below shows the solar hot water pump coming on for 40 mins at the beginning of a bright sunny day. The raw data would use 720 datapoints at a 10s post interval to describe the plot. Overlayed on the raw data plot I have drawn a second line that only has datapoints where needed to keep the  standard deviation between the lines roughly within an acceptable limit, in this case 10 datapoints seems to be enough to do this. If this kind of datapoint reduction rate is typical then a 60Mb mysql table with the current emoncms implementation might only take up 0.83Mb of space per year.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9484HO0ijiA/Ua20PKS7ivI/AAAAAAAACoU/bEP6NlDbjnE/s1600/01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="276" src="http://3.bp.blogspot.com/-9484HO0ijiA/Ua20PKS7ivI/AAAAAAAACoU/bEP6NlDbjnE/s640/01.png" width="640" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Zooming in a bit, rather than 270 datapoints, this could be described with 8. (at this datapoint reduction rate 60Mb would compress to ~1.8Mb)</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ezmsjqyzuzw/Ua20VzX0VGI/AAAAAAAACoc/u_HXX1dlLYU/s1600/02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="278" src="http://2.bp.blogspot.com/-ezmsjqyzuzw/Ua20VzX0VGI/AAAAAAAACoc/u_HXX1dlLYU/s640/02.png" width="640" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In addition to reducing disk space, it may be possible to use this technique to increase the resolution of our measurement as we are oversampling in regions where there are no large changes</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">This atmel appnote describes how to use oversampling and decimation to achieve greater measurement resolution:</div><div style="margin-bottom: 0cm;"><a href="http://www.atmel.com/Images/doc8003.pdf">http://www.atmel.com/Images/doc8003.pdf</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I think there are two main development questions facing this idea:</div><ol><li><div style="margin-bottom: 0cm;">Can a good enough algorithm be  developed to compress the data while retaining the detail we want.</div></li><li><div style="margin-bottom: 0cm;">What are the implications for data  query speeds?</div></li></ol><div style="margin-bottom: 0cm;">The above said, I think <a href="http://openenergymonitor.blogspot.com/2013/06/timestore-timeseries-database.html">timestore looks like the leading solution at the moment</a> for data storage and fast query speeds. With timestore we can achieve an 80% reduction in disk space demand from <a href="http://openenergymonitor.blogspot.com/2013/05/the-current-emoncms-feed-storage.html">60Mb per 10s feed per year</a> to 12.3 Mb, this would reduce the disk space use on emoncms.org from 47GB to 9.6GB, disk space use would increase at 20GB per year (costing £96 per 20GB stored inc backup <a href="http://openenergymonitor.blogspot.com/2013/05/emoncmsorg-load-stats.html">instead of £480/year</a>) and most of its already there in terms of implementation.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It might just be interesting to explore the datapoint reduction idea in parallel to see if further disk space&nbsp;reductions&nbsp;can be achieved but without sacrificing on query speeds which is the open question. If feeds could be compressed to 1.8Mb from 60Mb emoncms.org disk use would shrink from 47GB to 1.2GB and disk space would increase at a rate of 2.6 GB a year which would make server disk space costs pretty&nbsp;negligible.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/06/timestore-timeseries-database/">Timestore timeseries database</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-03T14:03:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-03 14:03:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/timestore-timeseries-database/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The first and most developed solution to both the query speed problem and disk space problem is timestore.<br /><br /><a href="http://www.mike-stirling.com/redmine/projects/timestore" style="color: #3465a4;">http://www.mike-stirling.com/redmine/projects/timestore</a><br /><br />Timestore is a lightweight time-series database developed by Mike Stirling. It uses a NoSQL approach to store an arbitrary number of time points without an index.<br /><br /><b>Query speeds</b><br />Timestore is fast, here's the figures given by Mike Stirling on the documentation page:<br /><br />From the resulting data set containing 1M points spanning about 1 year on 30 second intervals:<br /><br />Retrieve 100 points from the first hour: 2.6 ms<br />Retrieve 1000 points from the first hour (duplicates inserted automatically): 6.2 ms<br />Retrieve 100 points over the entire dataset (about a year worth): 2.5 ms<br />Retrieve 1000 points over the entire dataset: 7.0 ms<br /><br /><b>Disk use</b><br /><br />Timestore uses a double as a default data type which is 8 bytes. The current emoncms mysql database stores data values as floats which take up 4 bytes, its easy to change the data type in timestore so for a fair comparison we can change the default datatype to a 4-byte float:<br /><br />Layer 1: 10s layer = 3153600 datapoints x 4 bytes = 12614400 bytes<br />Layer 2: 60 layer1 datapoints averaged = 52560 datapoints x 4 bytes = 210240 Bytes<br />Layer 3: 10 layer2 datapoints averaged = 5256 datapoints x 4 bytes = 21024 bytes<br />Layer 4: 6 layer3 datapoints averaged = 876 datapoints x 4 bytes = 7008 bytes<br />Layer 5: 6 layer4 datapoints averaged = 146 datapoints x 4 bytes = 1168 bytes<br />Layer 6: 4 layer5 datapoints averaged = 36 datapoints x 4 bytes = 288 bytes<br />Layer 7: 7 layer6 datapoints averaged = 5 datapoints x 4 bytes = 40 bytes<br /><br /><b>total size = 12854168 Bytes or 12.26Mb</b><br /><br />The current emoncms data storage implementation uses 60Mb to hold the same data as it saves both the timestamp and an associated index. Timestore therefore has the potential to reduce diskuse by 80% for realtime data feeds.<br /><br />Interestingly all the downsampled layers created by timestore only come too <b>0.23 Mb</b>. Before doing the calculation above I used to think that adding all the downsampled layers would add to the problem of disk space significantly but evidently it a very small contribution compared with the full resolution data layer.<br /><br /><b>Emoncms timestore development branch</b><br /><br />I made a start on integrating timestore in emoncms, there's still a lot to do to make it fully functional but it works as a demo for now, here's how to get it setup:<br /><br /><b>1) Download, make and start timestore</b><br /><br />$ git clone <a href="http://mikestirling.co.uk/git/timestore.git" style="color: #3465a4;">http://mikestirling.co.uk/git/timestore.git</a><br />$ cd timestore<br />$ make<br />$ cd src<br />$ sudo ./timestore -d<br /><br />Fetch the admin key<br /><br />$ cd <a href="http://www.blogger.com/var/lib/timestore" style="color: #3465a4;">/var/lib/timestore</a><br />$ nano adminkey.txt<br /><br />copy the admin key which looks something like this: POpP)@H=1[#MJYX&lt;(i{YZ.0/Ni.5,g~&lt;<br />the admin key is generated anew every time timestore is restarted.<br /><br /><b>2) Download and setup the emoncms timestore branch</b><br /><br />Download copy of the timestore development branch<br /><br />$ git clone -b timestore <a href="https://github.com/emoncms/emoncms.git" style="color: #3465a4;">https://github.com/emoncms/emoncms.git</a> timestore<br /><br />Create a mysql database for emoncms and enter database settings into settings.php.<br /><br />Add a line to settings.php with the timestore adminkey:<br />$timestore_adminkey = "POpP)@H=1[#MJYX&lt;(i{YZ.0/Ni.5,g~&lt;";<br /><br />Create a user and login<br /><br />The development branch currently only implements timestore for realtime data and the feed/data api is restricted to timestore data only which means that daily data does not work. The use of timestore for daily data needs to be implemented.<br /><br />The feed model methods implemented to use timestore so far are create, insert_data and get_data.<br /><br /><b>Try it out</b><br /><br />Navigate to the feeds tab, click on feed API helper, create a new feed by typing:<br /><a href="http://localhost/timestore/feed/create.json?name=power&amp;type=1" style="color: #3465a4;">http://localhost/timestore/feed/create.json?name=power&amp;type=1</a><br /><br />It should return {"success":true,"feedid":1}<br /><br />Navigate back to feeds, you should now see your power feed in the list.<br />Navigate again to the api helper to fetch the insert data api url<br /><br />Call the insert data api a few times over say a minute (so that we have at least 6 datapoints - one every 10 seconds).&nbsp;Vary the value to make it more interesting:<br /><a href="http://localhost/timestore/feed/insert.json?id=1&amp;value=100.0" style="color: #3465a4;">http://localhost/timestore/feed/insert.json?id=1&amp;value=100.0</a><br /><br />Select the rawdata visualisation from the vis menu<br /><a href="http://localhost/timestore/vis/rawdata&amp;feedid=1" style="color: #3465a4;">http://localhost/timestore/vis/rawdata&amp;feedid=1</a><br /><br />zoom to the last couple of minutes to see the data.<br /><br /><br />I met Mike Stirling a little over a month ago in Chester for a beer and a chat after Mike originally got in contact to let me know about timestore. We discussed data storage, secure authentication, low cost temperature sensing and <a href="http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html">openTRV</a> the project Mike is working on. I think there could be great benefit to work on making what we're developing here with openenergymonitor interoperable with what Mike and others are developing with openTRV, especially as we develop more building heating and building fabric performance monitoring tools. This could all develop into a super nice open source whole building energy (both electric and heat) monitoring and control ecosystem of hardware and software tools.<br /><br />Check out Mike's blog here:<br /><br /><a href="http://www.mike-stirling.com/">http://www.mike-stirling.com/</a><br />and&nbsp;<a href="http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html">http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/the-current-emoncms-feed-storage/">The current emoncms feed storage implementation</a>
   </h1>
   
@@ -409,92 +489,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/one-year-of-solar-pv-monitoring/">One Year of Solar PV Monitoring</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-13T20:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-13 20:27:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/benchmarking/'>benchmarking</a></li>
-      
-        <li><a class='category' href='/categories/renewable/'>renewable</a></li>
-      
-        <li><a class='category' href='/categories/solarpv/'>solarPV</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/one-year-of-solar-pv-monitoring/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">On the 23rd November 2011 we have had a 2.9Kwp solar PV installed.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s1600/Panels.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="177" src="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s320/Panels.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">We recently got our first payment from the<a href="http://www.fitariffs.co.uk/eligible/levels/">&nbsp;UK's&nbsp;governments&nbsp;Feed In Tariff</a>&nbsp;scheme.&nbsp;This has prompted me to take stock of how the system has been performing and how the data collected using the OpenEnergyMonitor energy monitoring system compares to the utility&nbsp;company's&nbsp;billing meter:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both;">From the 23rd Nov 2011 - 23rd Nov 2012 the billing utility meter on the solar PV system has recorded a &nbsp;<b>generation of 2069 kWh</b>. Over the same period we consumed 3588&nbsp;Kwh, <b>57% of our electrical energy needs have been met by the solar PV.&nbsp;</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">At this rate it looks like we're on track for the system to pay back in 7-8 years, maybe even less if we have some more sun in the next few years, fingers crossed!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For the same time period the OpenEnergyMonitor monitoring system has recorded a generation of 2029 kWh, giving the <b>energy monitor an accuracy of 98%!&nbsp;</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The monitoring system is a standard&nbsp;<a href="http://shop.openenergymonitor.com/solar-pv-monitor-kit-bundle-433mhz-euro-plug/">emonTx with an AC-AC adapter taking Real Power readings</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-BSjVQR4ViYY/UZFElq6OGdI/AAAAAAAAeow/VV4iTj7-PmI/s1600/Selection_014.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://1.bp.blogspot.com/-BSjVQR4ViYY/UZFElq6OGdI/AAAAAAAAeow/VV4iTj7-PmI/s640/Selection_014.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">One Year of PV Generation</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-aBI-v-iDQ9Q/UZHtMP1ludI/AAAAAAAAepM/zz59PUGZ0lE/s1600/Selection_015.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="228" src="http://2.bp.blogspot.com/-aBI-v-iDQ9Q/UZHtMP1ludI/AAAAAAAAepM/zz59PUGZ0lE/s640/Selection_015.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Kwh/d Electricity Consumption (orange) Overlaid&nbsp;with Generation (blue)&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">When the system was installed the solar PV company&nbsp;estimated&nbsp;we would produce&nbsp;2434 Kwh per year, we generated 15% less than this estimate. This could partly be&nbsp;attributed&nbsp;to the very poor summer we&nbsp;experienced&nbsp;in 2012.</div><div><span style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 13px;"><br /></span></div><div class="separator" style="clear: both; text-align: left;">This year is already looking promising, on the 2nd of May 2013 our system generated a record (for us) of 18.3 Kwh 1.9 times more than we consumed on that day (9.7 Kwh):</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-XTd1UQbWGI4/UZEv6lkOiTI/AAAAAAAAeoU/EFmdCDAIG9I/s1600/New+PV+record+2nd+May+2013.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://4.bp.blogspot.com/-XTd1UQbWGI4/UZEv6lkOiTI/AAAAAAAAeoU/EFmdCDAIG9I/s640/New+PV+record+2nd+May+2013.png" width="451" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Record Generation on 2nd May 2013</td></tr></tbody></table>Fingers&nbsp;crossed&nbsp;for a sunny 2013 summer!
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/carbon-coop/">Carbon Coop</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-03T15:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-03 15:27:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/course-slash-workshop/'>Course/Workshop</a></li>
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/carbon-coop/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The weekend before last I went to Manchester to help Matt Fawcett and Jonathan Atkinson of Carbon coop with the&nbsp;<a href="http://carbon.coop/news/2013-04-03/ecohome-lab-launch-workshop-build-day-first-meet">EcoHome_Lab</a> openenergymonitor energy monitor building workshop. I haven’t blogged about Carbon Co-op before so Id like to give a bit of an intro to who they are and why I think what they are doing is particularly exiting.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s1600/2013-04-26+12.56.04.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="188" src="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s640/2013-04-26+12.56.04.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://carbon.coop/">http://carbon.coop</a></td></tr></tbody></table>I first met <a href="http://openenergymonitor.org/emon/user/1510">Matt</a> who is&nbsp;responsible for the monitoring&nbsp;at Carbon Coop at a <a href="http://www.cleanweb.org.uk/">Cleanwebuk</a> event in London after initially exchanging a few emails. Matt explained that they are working on a retrofit programme to try to prove that it is possible to cut between 60-80% of energy demand from homes because this is what we need to save.<br /><div><div><br />They want monitoring to be at the centre of everything they do, so that their members can see how minor changes impact energy usage as well as more major retrofit changes. They also want to monitor internal air quality as well as temperature for early identification of any problems with the insulation and airtightness measures. By monitoring humidity, CO2 as well as temperature Matt explained that its possible to isolate issues around damp/cooking etc from issues around ventilation.<br /><br />They are really keen to use open source technology because that then gives them the freedom to configure the system as they need and then get at the data. They are keen advocates for open data and open source software and hardware in general and carry out their own work in an open way.<br /><br />Since then Carbon Coop have installed 18 openenergymonitor energy monitors in houses across Manchester, held two energy monitor workshops including last weekends and are going forward with retrofitting 15 houses to between 60 and 80% carbon reduction.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s1600/2013-04-20+14.25.30.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: center;"><img border="0" height="180" src="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s640/2013-04-20+14.25.30.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Building monitors at the Carbon Coop EcoHomeLab workshop 19th-20th April&nbsp;</td></tr></tbody></table>What I really like about Carbon Coop is the way they are working on every part of the process: They start with the larger picture of what we need to do in terms of sustainable energy in housing and then go from there to work on an individual household basis, first carrying out a detailed whole house assessment based on the governments SAP (standard assessment procedure) to identify where most energy is being lost, which improvements would have the biggest effect and what to do first. They’re using the energy monitoring to provide feedback to households as described above. From there they go on to help households carry out work on their houses, from finding the best way to finance retrofit measures to working with architects and local tradespeople. Once the retrofit building works are complete they continue to monitor to ensure that the changes reach the predicted energy targets. They do all this using an open source approach, they are also a co-operative that is open for people to join. They are a really switched on group of people, carrying out their work in a thorough, thoughtful, evidence based way.<br /><br />Every-time I go to visit them I come back inspired to develop things further. One of the highlights of the last visit was listening to Eleni Kalkantzi who works for URBED (Carbon Coop's technical partner) talk about the whole house assessment methodology and reports she, Charlie Baker and Marianne Heaslip have developed. A huge amount of work has clearly gone into these reports and the assessment method, they have an example report and report on the assessment method here:<br /><br />See their example assessment here: <a href="http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf">http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf</a><br /><br />Report on the assessment method: <a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf</a><br /><br />They see the next step being to integrate monitoring data directly in to the SAP model on which their reporting is based to reduce the number of assumptions made. This is where the <a href="http://github.com/emoncms/sap">open source emoncms SAP model</a>&nbsp;that we have been developing comes in but I will come back to that in another post.</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -520,7 +514,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -563,18 +569,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -658,6 +652,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

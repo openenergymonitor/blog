@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: community smart grid | Blog | OpenEnergyMonitor]]></title>
+  <link href="http://blog.openenergymonitor.org/categories/community-smart-grid/atom.xml" rel="self"/>
+  <link href="http://blog.openenergymonitor.org/"/>
+  <updated>2016-05-03T09:40:31+00:00</updated>
+  <id>http://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
+    <updated>2016-05-02T15:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
+    <content type="html"><![CDATA[<p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
+
+<p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
+
+<p>Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.</p>
+
+<p>In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a <a href="https://openenergymonitor.org/dev/smartgrid"><strong>‘virtual microgrid’ concept</strong></a>, we have a provisional front page for this here - please note that its still in early development:</p>
+
+<p><img src="/images/smart-grid.png" alt="image" /></p>
+
+<!--more-->
+
+<p>With only four households aggregating on-site solar, off-site wind, hydro and consumption and with total supply matching total demand over the whole period achieved by scaling the wind component, we can see matching increasing from 46% in the previous example to around 64% here. The resulting average carbon intensity is 132gCO2/kWh.</p>
+
+<p>At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.</p>
+
+<p>The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Centre for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See <a href="(https://openenergymonitor.org/energymodel/)">modelled supply/demand matching</a> based on ZeroCarbonBritain data:</p>
+
+<p><a href="https://openenergymonitor.org/dev/smartgrid">Smart grid test intro page</a></p>
+
+<p>Visible currently on the community smart grid test front page is the participating households renewable supply mix, real-time information on grid CO2 intensity and grid wind, solar and hydro. Household demand is not currently shown as there are not enough participants for the demand profile to be sufficiently anonymous.</p>
+
+<p><img src="/images/supply.png" alt="image" /></p>
+
+<p>At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in <a href="http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2">Dominic’s blog post</a>.</p>
+
+<p><img src="/images/smartgrid2.png" alt="image" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/04/Part-2-Exploring-carbon-intensity/"/>
+    <updated>2016-04-28T15:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/04/Part 2-Exploring-carbon-intensity</id>
+    <content type="html"><![CDATA[<p><img src="/images/winderful.png" alt="image" /></p>
+
+<p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
+
+<p>The <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">last post</a> described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.</p>
+
+<p>If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.</p>
+
+<p>There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Calculating a households share of real-time wind output
+
+Between March 2015 and March 2016 the output of UK wind power was on average 2630MW.
+
+If a household buys 54% of 3300 kWh (typical annual household electricity consumption) or about 1800 kWh this converts to an average power of 205 Watts.
+
+The scaling factor to convert total wind power output in MW to a household share is therefore:
+
+scaling factor = 205 W / 2630 MW
+
+The wind power available at any given moment would then be
+
+wind power available = ( 205W / 2630MW ) x uk wind power output (MW)
+
+If total UK wind power is 4000MW the estimated amount available in this example for the household is = (205W/2630MW) x 4000MW = 312 Watts.
+
+Over the year the average available wind power for the household will work out to being 205W but for any given moment it could be more or less than this depending on how much power is being generated at that moment.
+</code></pre>
+</div>
+
+<p>With data on household demand, onsite solar and a share of UK wind, we then work out how much backup supply is needed and from this an estimate of household CO2 intensity.</p>
+
+<p>The backup CO2 intensity could be a single source such as CCGT gas power or a grid CO2 intensity with the wind power component removed in order to avoid double counting. Using an intensity based on grid: coal, gas, nuclear and interconnectors with the wind component removed may help incentivise use outside of peak periods but as discussed in the last post an extended analysis would be needed to establish what’s best from a carbon perspective.</p>
+
+<p><img src="/images/week6.png" alt="image" /></p>
+
+<p><em>Above: Emoncms MyEnergy App showing onsite solar (yellow), share of uk wind estimate (green) and household demand (blue). Available on emoncms.org or self-hosted installations.</em></p>
+
+<p>The average CO2 intensities that result from this approach depend on the degree of matching between household demand and the renewable supply. From our experience so far matching can be anywhere between 40% and 70% depending on the nature of the household demand and how much demand shifting effort is undertaken. The resulting average carbon intensity is directly proportional to the level of matching: 40% matching means we need backup supply to cover 60% of the demand reducing the carbon intensity by 40% compared to grid average or perhaps CCGT gas CO2 intensity.</p>
+
+<p>While far from perfect as no account is taken of what is actually happening on the local network, this approach could be seen as a good middle ground between on the one hand saying that all grid electricity has to be counted at grid average carbon intensity and on the other that all electricity from a green tariff is zero carbon at all times. It provides an incentive for demand shifting to times of high renewable output, while reflecting a substantial carbon reduction benefit that should be available from buying renewable energy across the grid.</p>
+
+<h3 id="excessexported-renewable-energy">Excess/exported renewable energy</h3>
+<p>There is an interesting question as to what happens to excess renewable energy not used by the household in this approach. If the energy is exported to the grid and used by others effectively displacing otherwise needed fossil fuel generation then this carbon saving could offset the carbon emissions emitted by the household when backup electricity was used. The result could mean that regardless of the degree of matching achieved between renewable supply and demand, whether on-site solar or wider grid renewable, the household could achieve net zero carbon by generating and equal amount of renewable supply as demand over a longer time period such as a year. This is a commonly used argument for net zero buildings. On the one hand it makes sense but on the other it relies on there being a wider fossil fuel powered grid in order to displace the fossil fuel generation and it substantially removes the incentive for renewable supply/demand matching.</p>
+
+<h3 id="displaced-carbon">Displaced carbon</h3>
+<p>Perhaps a better way to look at the displaced carbon issue is who is it that actually gets to claim the zero carbon benefit of that electricity. It would make sense that exported electricity is sold and then bought by the other party, once you’re buying renewable energy you would expect to be able to claim the zero carbon benefit of that energy as the user. Counting the exported electricity if bought by another user as displaced carbon would result in double counting in this case.</p>
+
+<p>This is somewhat complicated by fact that exported solar pv electricity is not metered for small domestic installations in the UK. Instead the amount exported is assumed to be 50% of total generation. The exported electricity is paid for at around 4.91p/kWh but not measured. It’s not clear who gets to claim the carbon saved.</p>
+
+<h3 id="next-aggregation">Next: Aggregation</h3>
+<p>The degree of matching can be increased by aggregating supply and demand across several households. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s. We have been testing with a limited number of households so far, the effect of aggregation on the degree of supply/demand matching which I will come on to in the next post.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
+    <updated>2016-04-18T15:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/04/ Understand-CO2-intensity-grid-electricity</id>
+    <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
+
+<p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>
+
+<p>The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>As an example the CO2 intensity of combined cycle gas turbines (CCGT) which provide the majority of electricity generated from gas in the UK have a co2 intensity of 360gCO2/kWh.
+
+At this intensity a well installed heat pump that achieves an average COP of 3.0 delivers heat at a CO2 intensity of 129gCO2/kWh heat including 7% grid losses. This provides a significant 44% co2 emissions reduction compared to having an efficient gas boiler which delivers heat at a CO2 intensity of 230gCO2/kWh.
+
+An electric car achieving a real world mountainous north Wales terrain driving efficiency of 3.7 miles per kWh (5.9km/kWh) including charging losses powered by gas electricity has a co2 intensity of 61gCO2/kWh which again provides a significant 44% co2 emissions reduction compared to real world efficient small petrol car co2 emissions of110 gCO2/km based on: 10.6 kgCO2 per gallon [1] and 60mpg (typical of the most efficient small car real world mpg [2].
+</code></pre>
+</div>
+<p><a href="http://www.carbonindependent.org/sources_car.html">[1]</a>
+<a href="http://www.whatcar.com/car-news/real-world-mpg-efficient-small-cars/1214063">[2]</a></p>
+
+<p>The average CO2 intensity for the UK grid as a whole in 2015 was <a href="http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html">367gCO2/kWh</a> http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015 - providing similar CO2 emission reduction potential to the gas only calculations above.</p>
+
+<p>It is interesting to note that this average, results from coal generation with a CO2 intensity of 910gCO2/kWh being offset somewhat by generation from renewable energy and nuclear at 0gCO2/kWh resulting in a CO2 intensity that is close to what it would be if gas CCGT was our only supply source – which really highlights how carbon intensive coal is.</p>
+
+<p>When we move energy demands from one form to another such as replacing a gas boiler with a heat pump the carbon reduction benefits depend heavily on what kind of generation provides for that additional demand. If the additional demand is provided for by CCGT gas turbines the switch makes sense, if it is provided by coal generation at 910gCO2/kWh it does not make so much sense. If it is provided by mix of renewable energy and CCGT is will make even more sense.</p>
+
+<p>There are several different approaches to calculating the co2 intensity of delivered electricity each with their benefits and drawbacks which I will try and explore below and in further posts.</p>
+
+<p>Whole grid averageHere we consider the grid as one big system with the CO2 intensity calculated as the total CO2 emitted by all forms of generation divided by the total demand over an extended period of time – one or more years. The co2 intensity of the UK electricity grid for 2015 was 367gCO2/kWh.</p>
+
+<p>Near real-time co2 intensity using grid wide data</p>
+
+<p>Here the CO2 intensity is calculated by the total CO2 emitted divided by total demand on typically a 10 minute basis. The CO2 intensity calculated this way will often show higher CO2 intensity in the day where gas and coal are a larger percentage of overall supply than at night time. CO2 intensity is also higher when its colder where demand is pushed up by higher heating requirements.</p>
+
+<p><img src="/images/ukgrid.png" alt="UK Grid Carbon" /></p>
+
+<p><a href="https://openenergymonitor.org/ukgrid">OpenEnergyMonitor UK Grid page</a> showing real-time CO2 Intensity.</p>
+
+<p>If we use this real-time CO2 intensity in order to choose when to use electricity it gets more complicated, we may decide to shift electric vehicle charging or heat pump hot water heating to the night time in order to make use of grid carbon intensities that can often be 50-100gCO2/kWh less than day-time rates, but is this really a valid approach? The lower CO2 intensities at night are as a result of demand being lower and nuclear + renewables making up a larger share of generation, if night time demand is increased through demand shifting, turning on more gas and coal power plants, the carbon intensity would increase as well.</p>
+
+<p>Given that most of the dis-patchable generation is gas and coal and assuming low levels of wind curtailment at night then it could be argued that the effective carbon intensity of moving demand to the night time should be calculated at the carbon intensity of this dis-patchable generation which depends on the proportion of gas to coal, a more in depth understanding as to how the proportion of gas and coal generation is decided would be needed to assess the carbon value of demand shifting. If the proportions are constant, shifting would make no difference, if gas is ramped up to meet the additional demand there may well be a benefit to shifting on the other hand if the difference is made up with more coal generation there would not be. There’s a bit more on this here using 2011 data from <a href="http://people.bath.ac.uk/en8sc/GridCarbonIntensity.pdf">Sam Cooper of Bath University</a> <a href="http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html">linked from earth notes here</a>.</p>
+
+<p>Shifting demand away from peak times may well make sense from a transmission and distribution grid capacity perspective but this is largely a different argument and would require a different calculation to assess. It may also be the case that some wind curtailment does take place although the precise extent of this and where on the grid using more will reduce curtailment is difficult to quantify.</p>
+
+<p>In the next blog I will discuss the work I’ve been doing with Dominic McCann from the Carbon Coop on estimating CO2 intensity with onsite and green tariff renewable energy considered.</p>
+]]></content>
+  </entry>
+  
+</feed>

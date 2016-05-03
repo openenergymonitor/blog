@@ -1,0 +1,323 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Part 3: Aggregated supply and demand across multiple households - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Part 3: Aggregated supply and demand across multiple households">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Part 3: Aggregated supply and demand across multiple households">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    
+    <span style="color:#555;font-weight:bold;font-family:Arial;font-size:20"'>
+Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-size:20"'>EnergyMonitor</span>
+
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="http://openenergymonitor.org">Home</a></li>
+  <li><a href="http://shop.openenergymonitor.com">Online-Store</a></li>
+  <li><a href="http://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="http://emoncms.org">Emoncms</a></li>
+  <li><a href="http://community.openenergymonitor.org">Forum</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/guide/tree/master/source/_posts/2016-05-03-Part3-Aggregated-supply-and-demand.markdown'>Edit this page on GitHub</a></div>
+  
+  <header>
+  
+  <h1 class="title indent">Part 3: Aggregated supply and demand across multiple households</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-05-02T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May  3rd 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/community-smart-grid/'>community smart grid</a></li>
+      
+        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/05/Part3-Aggregated-supply-and-demand/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
+
+<p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
+
+<p>Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.</p>
+
+<p>In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a <a href="https://openenergymonitor.org/dev/smartgrid"><strong>‘virtual microgrid’ concept</strong></a>, we have a provisional front page for this here - please note that its still in early development:</p>
+
+<p><img src="/images/smart-grid.png" alt="image" /></p>
+
+<a name="read-more"></a>
+
+<p>With only four households aggregating on-site solar, off-site wind, hydro and consumption and with total supply matching total demand over the whole period achieved by scaling the wind component, we can see matching increasing from 46% in the previous example to around 64% here. The resulting average carbon intensity is 132gCO2/kWh.</p>
+
+<p>At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.</p>
+
+<p>The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Centre for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See <a href="(https://openenergymonitor.org/energymodel/)">modelled supply/demand matching</a> based on ZeroCarbonBritain data:</p>
+
+<p><a href="https://openenergymonitor.org/dev/smartgrid">Smart grid test intro page</a></p>
+
+<p>Visible currently on the community smart grid test front page is the participating households renewable supply mix, real-time information on grid CO2 intensity and grid wind, solar and hydro. Household demand is not currently shown as there are not enough participants for the demand profile to be sufficiently anonymous.</p>
+
+<p><img src="/images/supply.png" alt="image" /></p>
+
+<p>At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in <a href="http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2">Dominic’s blog post</a>.</p>
+
+<p><img src="/images/smartgrid2.png" alt="image" /></p>
+
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor'><i class="icon-github"></i></a>
+  <a rel="me" href='http://blog.openenergymonitor.org/atom.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and the <a href='https://github.com/coogie/oscailte'>Oscalite theme</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/';
+    var disqus_url = 'http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

@@ -107,6 +107,90 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/08/plug-and-play-sensor-nodes/">Plug and play sensor nodes</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-02T12:38:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-02 12:38:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/08/plug-and-play-sensor-nodes/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><br /><div class="separator" style="clear: both; text-align: left;">At the moment to get a system up and running you need to do quite a bit of manual firmware configuration, setting&nbsp;unique&nbsp;node-id's selecting different emontx sketches for different functionality, hard coding the emonglcd to get different screens.&nbsp;To add a second emontx you need to add several lines of code to the emonbase and the basestation needs to know the data structure of the sensor nodes.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s1600/OEM_system_emoncms2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="212" src="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s400/OEM_system_emoncms2.png" width="400" /></a></div><br />What if you could upload a standard sketch to each of these nodes, plug your base station into your router, power up an emontx and see emontx 1 appear in a node list in emoncms. Then as you add more nodes they automatically appear in emoncms, no additional base station configuration needed. In time the software could develop to allow remote configuration of nodes such as&nbsp;emontx config and emonGLCD pages: beginning with page template functions as described in the last blog post:&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-template-based-displays.html">emonglcd template based displays</a><br /><br />Continue reading the forum post <a href="http://openenergymonitor.org/emon/node/904">here</a>.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/08/low-level-adc-control-admux/">Low-level ADC control: ADMUX</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-02T09:51:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-02 09:51:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> seven minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/08/low-level-adc-control-admux/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"></span><br />While discussing the 3 phase sketch implementation here:&nbsp;<a href="http://openenergymonitor.org/emon/node/467">http://openenergymonitor.org/emon/node/467</a>&nbsp;by Pcunha which makes use of the AVR analog read commands rather than the arduino analog_read function&nbsp;which is a wrapping for these commands JBecker suggested that the analog reference voltage was not being selected correctly, so I had to do some reading up on this on ADMUX and bitwise operators.<br /><br />So for anyone interested, this is how it works first ADMUX is an 8-bit byte that holds the settings for the analog reference voltage and the analog pin to select:<br /><br />ADMUX is 8-bit:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">ADLAR&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">-&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX3&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX2&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX0&nbsp;</td></tr></tbody></table></span><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"></span>Where:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 77px;"><b>&nbsp;REFS1</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 77px;"><b>REFS0&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 402px;"><b>Voltage Reference Selection&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AREF, Internal Vref turned off&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AVcc with external capacitor on AREF pin&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Reserved&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Internal 1.1V (ATmega168/328) or &nbsp;2.56V on (ATmega8)</td></tr></tbody></table></span>and:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top; width: 111px;"><b>MUX 3...0</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top; width: 307px;"><b>Single Ended Input</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0000</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC0&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0001</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC1&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0010</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC2&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0011</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC3&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0100</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC4&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0101</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC5</td></tr></tbody></table></span><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: x-small;"><span class="Apple-style-span" style="line-height: 16px;"><br /></span></span><br /><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><br /></span></span><br />So if we want to use AVcc with external capacitor on AREF pin as our voltage reference (which is the default arduino voltage reference) and we want to select ADC2 for example, we would need to set ADMUX to:<div><br /></div><div><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td></tr></tbody></table></span><div><br /></div><div>We can use <a href="http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B">bitwise operations</a> to get there:</div><div><br /></div><div>This is how its done in&nbsp;<i>wiring_analog.c</i> found in <i>Arduino-1.0/hardware/arduino/cores/arduino</i><br /><br /><b>ADMUX = (analog_reference &lt;&lt; 6) | (pin &amp; 0x07);</b><br /><b><br /></b><br />Starting with<b>&nbsp;(analog_reference &lt;&lt; 6)</b>. The variable analog_reference is set to 1 as default for the atmega328 so&nbsp;1 &lt;&lt; 6 means bitshift 1 left 6 places where 1 in binary is&nbsp;00000001 and shifting the bits left 6 places moves the 1 to 01000000. The desirable result for setting the 6th bit REFS0 to 1.<br /><br />If you dont need to select different analog_reference values then we can get&nbsp;01000000 directly by specifying its&nbsp;hexadecimal: 0x40.<br /><br />Next looking at the&nbsp;<b>&nbsp;(pin &amp; 0x07) </b>part.<br /><br /><ul><li>The &amp; 0x07 is actually just for validation, it essentially says only allow selection of ADC0 to ADC5.&nbsp;</li><li>The &amp; bitwise operator is the <b>AND</b> operation.</li><li>0x07 is&nbsp;hexadecimal whose binary representation is 00000111</li><li>Selecting ADC2 which is pin = 2 or in binary 00000010</li><li>The result of 2 &amp; 0x07 =&nbsp;00000010 AND&nbsp;00000111 =&nbsp;00000010.</li></ul><br />The last part is the<b> | </b>bitwise operator: <b>OR</b><br /><b><br /></b><br />(analog_reference &lt;&lt; 6) | (pin &amp; 0x07) becomes in our example here&nbsp;01000000 OR 00000010. Which is equall to:&nbsp;<b>01000010 </b>the result we where looking for above.<br /><br />If you would like to read more on the AVR ADC commands see these&nbsp;helpful&nbsp;articles:<br /><br /><a href="https://sites.google.com/site/qeewiki/books/avr-guide/analog-input">https://sites.google.com/site/qeewiki/books/avr-guide/analog-input</a><br /><a href="http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/">http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/</a><br /><br /></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/08/configurable-single-to-3-phase/">Configurable single to 3-phase interrupt based EmonTX code by Pcunha</a>
   </h1>
   
@@ -429,98 +513,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/06/it-works-single-ac-power-supply-voltage/">Single AC power supply + voltage sensing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-06-18T03:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-18 03:21:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/voltage-sensing/'>voltage sensing</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/06/it-works-single-ac-power-supply-voltage/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div dir="ltr" style="text-align: left;" trbidi="on">The idea of using the same AC-AC power adaptor for both sensing voltage and supplying power to emonTx has been discussed on the forums for months (see <a href="http://openenergymonitor.org/emon/node/309" target="_blank">this topic</a>), and about six weeks ago Glyn posted <a href="http://openenergymonitor.blogspot.de/2012/05/emontx-single-ac-power-supply.html" target="_blank">a simulation of a possible circuit</a>.<br /><br />I had the time this weekend to give it a try, bought the necessary components and put it all on a breadboard. After a sleepless night I can confirm: It works!<br /><br />Here is my messy setup:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="380" src="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s640/2012-06-18+04.55.43.jpg" width="640" /></a><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><br /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /><div style="text-align: left;"><br /></div></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><a href="http://www.blogger.com/goog_1837366350"><br /></a></div><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Small modifications had to be made to get it to work: I added a 1uF cap between 3.3v and GND to&nbsp;filter out some noise and redefined the voltage calibration coefficient in the code.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">But the main problem (took me all night to figure it out) is that the usual emonTx sketch wont work straight ahead. The line that lights up the LED (on pin 9) at the end of the setup loop has to be commented out, otherwise the setup won't work. It's no problem to flash it 2ms after each packet is sent, but apparently having it on in the beginning will prevent the program from starting. Maybe there isn't enough current to do it and move on (I must say that I use 10k ohm resistors for the voltage dividers). If it's not that then maybe full wave rectification could help.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">I used a humble Xprotolab to measure the Vin, Vout and at some other points in the circuit. It behaves almost exactly like the simulation. fft also shows very little noise.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Would be great if other members could repeat this experiment to see if the results will be the same.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Next step: Voltage sensing on the base ;)&nbsp;</span><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1"><br style="color: black;" /></a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/06/getting-visual/">Getting visual</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-06-04T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-04 12:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/benchmarking/'>benchmarking</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/graphing/'>graphing</a></li>
-      
-        <li><a class='category' href='/categories/interface/'>interface</a></li>
-      
-        <li><a class='category' href='/categories/social-energy-monitoring/'>social energy monitoring</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/06/getting-visual/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div dir="ltr" style="text-align: left;" trbidi="on">The Open Energy Monitor is all about getting visual. Using hardware to post collected data to emonCMS basically transforms the acquired data into easily understandable informations, and what's better than graphs.<br />Here is a <a href="https://power2switch.com/" target="_blank">similar initiative</a> that converts absurd electricity bills into meaningful information:<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s1600/p2s-bill-redesign-v16.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://2.bp.blogspot.com/-PY9KdI3eIt4/T8ygPLITPtI/AAAAAAAAAQ4/a67-09plce8/s640/p2s-bill-redesign-v16.jpg" width="492" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Source: <a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">FastCoDesign.com</a></td></tr></tbody></table>You can compare it with with the old bill:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s1600/comed-bill-jan-2011-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-E7YYVFYZ41s/T8yjo2P1PwI/AAAAAAAAARE/xvE3r5-85ig/s400/comed-bill-jan-2011-1.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>It is obvious that presenting the same information in a different way makes a big difference. The redesigned bill is much easier to understand, and the use of shapes and colors turns something very abstract into tangible information.<br /><br />But I believe that if we really want to democratize energy monitoring, we should take it one step further. We should offer people who have no idea what 4.2 kW or 150 kWh are, a reference to compare with. For example, visualizing 1kWh as the energy than ten 100W light bulbs consume in one hour makes it understandable to your grandma. Or showing one week's consumption each hour on one matrix using colored circles.<br /><br />More important is to give a feeling of the order of magnitude. Like showing a community average VS your consumption on a colored scale to have an idea how well you're doing, lets you have a good reference point.<br /><br />I agree that with households community averages are quite complicated since households have extremely different consumption patterns: some work from home, some have many guests, others spend very little time at home, etc... But when it comes to businesses, benchmarking is much less complicated, you can compare bakeries or cafes electricity consumption patterns in a much meaningful way.<br /><br />I think this should be a main target to be implemented in emonCMS, and I believe that the community has something to say and contribute to this topic, so I started this forum thread : http://openenergymonitor.org/emon/node/715&nbsp;please feel free to add your thoughts to it.<br /><br /><br /><div style="text-align: right;"><a href="http://www.fastcodesign.com/1669931/how-a-redesigned-electricity-bill-could-make-you-smarter-and-save-cash" target="_blank">Link to FastCoDesign article.</a></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -546,7 +538,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -589,18 +593,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -684,6 +676,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

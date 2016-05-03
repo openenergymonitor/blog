@@ -107,6 +107,88 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2014/06/emoncms-time-series-feed-engine/">Emoncms time-series feed engine documentation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-06-19T11:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-06-19 11:46:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/06/emoncms-time-series-feed-engine/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've been working over the last few days on writing documentation on  how the emoncms time-series feed engines work (phpfiwa, phpfina and  phptimeseries). The documentation is an early draft at this stage and I  would very much welcome comments.<br /><br /> <a href="https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries">https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries</a><br /> <br />&nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/history.md">Emoncms time series database development history</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/variableinterval.md">Variable interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedinterval.md">Fixed interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedintervalaveraging.md">Fixed interval with averaging time series</a><br /> <br />On a related note out of an interest in creating a version of emoncms  that will run and log to SD cards without wearing them out so fast I've  started to look at how the write load created by the emoncms feed  engines can be reduced through in memory buffering and writing in larger  blocks to disk, initial testing suggests that it could be reduced by  potentially more than a 1000x on systems with 30+ feeds, maybe several  100x on systems with only a few feeds.<br /><br />See forum post: <a href="http://openenergymonitor.org/emon/node/5319">http://openenergymonitor.org/emon/node/5319 </a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/06/emonpi-raspberry-pi-energy-monitoring/">emonPi Raspberry Pi Energy Monitoring Shield - Prototype Dev Update </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-06-06T22:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-06-06 22:45:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/06/emonpi-raspberry-pi-energy-monitoring/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    For a while now I have been working on developing a Raspberry Pi energy monitoring shield. Here is a preview of the first prototype design.<br /><br />The emonPi is not designed to totally replace the emonTx V3, but rather to complement it. I see the emonPi fulfilling two applications:<br /><br />1. As a low cost Raspberry Pi add-on shield to make all-in-one home energy monitoring unit based on the Raspberry Pi. &nbsp;We will produce a version of the emonPi board on it's own (without enclosure, HDD and LCD), maybe even with just SMT components ready assembled (like the Arduino Lenoardo) to being the cost down further.<br /><br />2. As a high quality, robust and nicely enclosed stand-alone energy monitoring unit and web-connected base station with LCD status display, built in hard-drive for local logging and backup. The emonPi has also been designed to be perfect for installers of heat-pump monitoring systems which require many temperature sensor wired up (see temperature sensing part of my forum post update) as well as power monitoring.<br /><br />The emonPi has got an option for RFM12B / RFM69CW radio to enable it also to act as an emonBase, receiving date from other wireless nodes such as emonTH (room temperature and humidity node), emonTx V3 (energy monitoring node) and transmitting the current time to the emonGLCD LCD display. <br /><br />Since the emonPi is an energy monitor sensing node and remote posting base station all-in-one and coupled with a status LCD this should make system setup, installation and debugging easier. The emonPi should also be great for remote administration since with the correct network config the Raspberry Pi can be accessed remotely, log files checked and even upload Arduino sketch firmware onto the emonPi's ATmega328.<br /><br /><br />Development has been documented in an ongoing open forum thread:&nbsp;<a href="http://openenergymonitor.org/emon/node/3937">http://openenergymonitor.org/emon/node/3937</a><br /><br />My latest update post can be viewed here:&nbsp;<a href="http://openenergymonitor.org/emon/node/3937#comment-21865">http://openenergymonitor.org/emon/node/3937#comment-21865</a><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-Ie1NJkM7fyM/U5JCDHS0spI/AAAAAAAA0kI/7SYI3mP42ec/s1600/2014-06-06+17.09.51.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-Ie1NJkM7fyM/U5JCDHS0spI/AAAAAAAA0kI/7SYI3mP42ec/s1600/2014-06-06+17.09.51.jpg" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonPi - Raspberry Pi Energy Monitoring Shield Prototype&nbsp;</td></tr></tbody></table><br /><h1>emon Pi Features&nbsp;</h1><div><ul><li>Two channel CT monitoring with AC sample input&nbsp;</li><li>Ability to power the Raspberry Pi and an external HDD without the need for an additional USB hub, emonPi can also function without a HDD</li><li>RJ45 DS18B20 on-wire temperature bus to allow many temperature sensors to easily be added using a RJ45 breakout board for heatpump monitoring applications&nbsp;</li><li>PWM and IRW I/O's on RJ45&nbsp;</li><li>Status LCD</li><li>Compatible with RaspberryPi model A and model B&nbsp;</li><li>Option for RFM12B / RFM69CW with SMA antenna to receive or transmit data from other sensor nodes</li><li>OOK (on-off keying) transmitter footprint for controlling remote plugs etc.&nbsp;</li><li>ATmega328 with ability to remotely upload sketches vis Raspberry Pi Serial&nbsp;</li><li>Open-source hardware, firmware and software&nbsp;</li><li>High quality custom made, wall mountable enclosure</li></ul></div><a href="https://lh5.googleusercontent.com/-IU7PpuMjM-8/U430w6Pj6sI/AAAAAAAAAiA/HNtFuP39CBQ/w791-h593-no/2014-06-03+16.06.07.jpg"><img alt="" src="https://lh5.googleusercontent.com/-IU7PpuMjM-8/U430w6Pj6sI/AAAAAAAAAiA/HNtFuP39CBQ/w791-h593-no/2014-06-03+16.06.07.jpg" style="height: 225px; width: 300px;" /></a>&nbsp;<a href="https://lh6.googleusercontent.com/-CIAg1dncpgk/U4x59fUq9BI/AAAAAAAAAg8/dSiGDZmtsD0/w642-h593-no/2014-06-02+14.02.51.jpg"><img alt="" src="https://lh6.googleusercontent.com/-CIAg1dncpgk/U4x59fUq9BI/AAAAAAAAAg8/dSiGDZmtsD0/w642-h593-no/2014-06-02+14.02.51.jpg" style="height: 185px; width: 200px;" /></a>&nbsp;<a href="https://lh6.googleusercontent.com/zEhhe_TfO98MdxIppFGBiI44u2Gdc_gauh39D5R7NT8=w650-h593-no"><img alt="" src="https://lh6.googleusercontent.com/zEhhe_TfO98MdxIppFGBiI44u2Gdc_gauh39D5R7NT8=w650-h593-no" style="height: 182px; width: 200px;" /></a>&nbsp;<a href="https://lh5.googleusercontent.com/-71eGH3u2zCM/U480yf_GVbI/AAAAAAAAAjQ/s2w-UPOjzGg/w974-h593-no/2014-06-04+15.23.09.jpg"><img alt="" src="https://lh5.googleusercontent.com/-71eGH3u2zCM/U480yf_GVbI/AAAAAAAAAjQ/s2w-UPOjzGg/w974-h593-no/2014-06-04+15.23.09.jpg" style="height: 183px; width: 300px;" /></a><br /><br />End-plate silkscreen draft:<br /><a href="https://lh6.googleusercontent.com/-5La40AHmBeM/U5JAeqttmHI/AAAAAAAAAls/Lqh-UPzcRcI/w839-h593-no/emonPi+Face+Panel+Print+DRAFT.png"><img alt="" src="https://lh6.googleusercontent.com/-5La40AHmBeM/U5JAeqttmHI/AAAAAAAAAls/Lqh-UPzcRcI/w839-h593-no/emonPi+Face+Panel+Print+DRAFT.png" style="height: 353px; width: 500px;" /></a><br />See G+ album for more photos: <a href="https://plus.google.com/b/114424977493521882459/photos/+OpenenergymonitorOrgpage/albums/5999656723837107313">https://plus.google.com/b/114424977493521882459/photos/+OpenenergymonitorOrgpage/albums/5999656723837107313</a><br /><br />&nbsp;LCD demo:<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/qHizy1S4WXI" width="560"></iframe><br /><br /><br />Please join in the emonPi's open-development forum thread if you have any ideas of thoughts to contribute:<br /><a href="http://openenergymonitor.org/emon/node/3937#comment-21865">http://openenergymonitor.org/emon/node/3937#comment-21865</a><br /><br /><br />The disadvantages of the emonPi compared to the current emonTx V3 are:<br /><br /><ul><li>Only two CT channels, no (approximate) 3-phase</li><li>Due to higher power requirements of the Pi, the emonPi can't be powered from batteries, 5V DC USB mini-B is required.&nbsp;</li><li>Again, due to higher power requirements of the Pi, the emonPi can't be powered from an AC-AC adapter, for real power a 5V DC and 9V AC adapter will both be required.&nbsp;</li><li>Requires wifi connectivity or Ethernet to reach the location where the utility meter is located</li><li>Larger enclosure than the emonTx V3</li></ul><br /><ul></ul>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/06/how-to-draw-myelectric-style-bar-chart/">How to draw a myelectric style bar chart</a>
   </h1>
   
@@ -426,92 +508,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/03/emontx-v3-antenna-testing/">emonTx V3 Antenna Testing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-03-12T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-12 12:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/antenna/'>Antenna</a></li>
-      
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/03/emontx-v3-antenna-testing/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Today we did some quick testing regarding using different antennas with the emonTx V3.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Four antenna options were tested (Farnell part numbers listed for SMA antennas) :</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" height="321" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" height="358" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">Note: the graph sub-title has a typo, it should read 'RFM69CW', 'CRW' module does not exist.. At least to my knowledge!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It was found that the wire-whip antenna as shipped by default with the emonTx V3 performed best.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">However using an SMA could be preferable in some environments; it's more robust and can &nbsp;be extended easier.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Now we have a way to measure RSSI (received signel strength indicator) using &nbsp;an rfm69cw module we plan &nbsp;to &nbsp;do some more antenna and range testing. I'm interested to test to see how many db we're loosing in the antenna pcb trace from the module to the RFu328 then the emonTx V3 pcb trace then finally into the 90 degree sma connector. In future version will probably but the rf module and MCU directly on the PCB keeping the antenna trace as short as possible and use an edge mounted sma connector (these are also cheaper and easier to solder in manufacture).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For more info on the test see the emonTx V3 wiki page: &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna">http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna</a></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/03/direct-connection-emontx-v3-raspberry/">Direct connection emonTx V3 > Raspberry Pi GPIO</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-03-07T15:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-07 15:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/03/direct-connection-emontx-v3-raspberry/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Sometimes it's more convenient to connect the emonTx V3 directly to a Raspberry Pi base station rather than use RF.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Both the Raspberry Pi and emonTx V3 run at 3.3V so the serial Rx and Tx serial lines can be directly connected. The raspberrypi's 5V supply can be used to power the emontx which is then stepped down to to 3.3V through the emonTx V3's voltage regulator. 5V is provided by the red wire. The ground connection is the black wire and the data going from the emontx to the raspberrypi is the green wire. I haven't connected a wire for serial data going the other way but this is a possible option if two-way serial is required.</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" height="222" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 &gt; Raspberry Pi Connection&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" height="251" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Here's a simple direct serial output sketch for the emontx v3&nbsp;<a class="external text" href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM12B/Examples/emonTxV3_DirectSerial/emonTxV3_DirectSerial.ino" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">on GitHub here</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">On the raspberrypi if you just want to forward the emontx data to a remote emoncms this can be done with the oem_gateway developed by Jerome which is on the&nbsp;<a class="external text" href="http://emoncms.org/site/docs/raspberrypigateway" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">standard rock solid forwarder image</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">See our&nbsp;<a class="external text" href="http://openenergymonitor.blogspot.co.uk/2014/01/oem-gateway-serial-port-emoncms-link.html" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">blog post</a>&nbsp;about how to configure the oem_gateway for work over a serial link rather than RFM12B&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">This info was taken from the <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Direct_connection_emonTx_V3_.3E_Raspberry_Pi_GPIO">emonTx wiki</a> and written up after a<a href="http://openenergymonitor.org/emon/node/3872"> forum thread</a>.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">For the future we are working on developing an energy monitoring shield for the Pi to create an all-in-on Pi-energy-monitoring unit, see dev forum thread:&nbsp;http://openenergymonitor.org/emon/node/3937</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -537,7 +533,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -580,18 +588,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -675,6 +671,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

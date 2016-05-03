@@ -107,6 +107,88 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/07/what-is-embodied-energy-of/">What is the embodied energy of a microcontroller?</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-06T09:51:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-06 09:51:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> eight minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/embodied-energy/'>embodied energy</a></li>
+      
+        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/07/what-is-embodied-energy-of/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Continuing with the <a href="http://openenergymonitor.blogspot.co.uk/2015/06/investigating-embodied-energy-of-emonpi.html">investigation into the embodied energy that it takes to make an energy monitor</a>, I thought I would explore in a little more detail the embodied energy of the microcontroller which is often associated with the most energy intensive aspect of electronics manufacture.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Atk61lU9PJg/VZm5VQZtIlI/AAAAAAAATbw/WKqu8g7mhh4/s1600/atmegaemonpi.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-Atk61lU9PJg/VZm5VQZtIlI/AAAAAAAATbw/WKqu8g7mhh4/s1600/atmegaemonpi.jpg" /></a></div><br />As I mentioned before I wouldn’t put a large amount of confidence in the accuracy of the figures below, computer chips are incredibly complex things that take a large number of manufacturing processes to make and I have found it hard to find open detailed information on energy requirements of these. The calculations below are based on the datasets that I could find including the EU <a href="http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/index_en.htm">ecodesign dataset</a> which I'm told is one of the higher quality freely available sources. But I could not find much detail on how the figures where derived to know what it does and does not include and the breakdown of energy use in its manufacture.<br /><br />The idea here is more to get an initial set of numbers that could be improved upon in the future. My motivation for looking into this started by being inspired by <a href="http://www.howies.co.uk/">howies</a> and <a href="http://www.patagonia.com/us/footprint">patagonia's</a> efforts on footprint and supply chain analysis, partly by reading <a href="http://withouthotair.com/c15/page_88.shtml">sustainable energy without the hot air</a> that identifies industry as being a significant part of overall energy use and also after reading the article here about <a href="http://www.lowtechmagazine.com/2009/06/embodied-energy-of-digital-technology.html">'the monster footprint of digital technology'.</a><br /><br />The following starts by looking at the available datasets and then investigates deriving figures for the embodied energy of a chip by calculation of the actual semiconductor volume contained which compares well for the small IC embodied energy value.<br /><br /><b>1) Datasets</b><br /><br /><b>EU Ecodesign methodology</b><br />The EU ecodesign methodology downloadable here <a href="http://ec.europa.eu/DocsRoom/documents/5308/attachments/1/translations/en/renditions/native">http://ec.europa.eu/DocsRoom/documents/5308/attachments/1/translations/en/renditions/native</a> provides embodied energy values for a variety of electronic component categories, it provides two embodied energy values for IC's (integrated circuits) these are:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Large IC&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 8021.88 MJ/kg</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Small IC&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 1786.73 MJ/kg</span><br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">MJ/kg: 1,000,000 Joules per kg </span><br /><br />The question is what constitutes a small or large IC? Dimensions? processing power? and there is a large difference between both of these values!<br /><br />Another paper that lists sources for embodied energy values including the EU ecodesign dataset is this paper on the embodied energy of an offgrid light<a href="http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf">: http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf</a>. It lists two other useful values:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Semiconductor Grade Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35000 MJ/kg, Taiariol et al. 2001</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">EPROM Chip (M27C1001, 0.36 W IC)&nbsp;&nbsp; 12.5 MJ/chip,&nbsp; Taiariol et al. 2001</span><br /><br />Jean Claude Wippler of JeeLabs did an interesting post a couple of years ago on what is inside an ATmega8 chip. The Silicon part was extracted by dissolving the outer casing with sulphuric and nitric acid. <a href="http://jeelabs.org/2013/06/09/whats-inside-that-chip">http://jeelabs.org/2013/06/09/whats-inside-that-chip</a><br /><br />The size of the semiconductor part inside the ATmega8 is 2855 x 2795 um, less than 3x3mm:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-QvJnGzXeRLg/VZmgRUCvqgI/AAAAAAAATbM/Keu1ATBsQ0g/s1600/siliconchip.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="387" src="http://4.bp.blogspot.com/-QvJnGzXeRLg/VZmgRUCvqgI/AAAAAAAATbM/Keu1ATBsQ0g/s400/siliconchip.png" width="400" /></a></div><br />Is it possible to estimate the embodied energy of a microcontroller by working out the embodied energy of the silicon part and the casing part separately? and how would the figure compare with the embodied energy values given for a small and large IC in the EU ecodesign dataset?<br /><br /><b>Thickness</b><br />To find the embodied energy of the silicon part we need to first work out the weight of that part. To do this we will need the density and thickness of the silicon wafer. The thickness of a silicon wafer can be anywhere between 275um and 926um.<br /><br /><b>Density of silicon:</b> 2.3290 g.cm3 https://en.wikipedia.org/?title=Silicon<br /><br /><b>Weight</b><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">2855 x 2795 um x 275 um = 0.00219 cm3 x 2.329 g.m3 = 0.0051 g</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">2855 x 2795 um x 625 um = 0.00499 cm3 x 2.329 g.m3 = 0.0116 g</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">2855 x 2795 um x 926 um = 0.00739 cm3 x 2.329 g.m3 = 0.0172 g</span><br /><br />The embodied energy of silicon grade Si is around 35000 MJ/kg, 35 MJ/g<br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">0.0051 g x 35MJ/g = 0.178 MJ = 0.049 kWh</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">0.0116 g x 35 MJ/g = 0.406 MJ = 0.113 kWh</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">0.0172 g x 35 MJ/g = 0.602 MJ = 0.167 kWh</span><br /><br />The weight of a SMT Atmega 328 is 0.14375g:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Large IC: 8021.88 MJ/kg = 1.153 MJ = 0.320 kWh</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Small IC: 1786.73 MJ/kg = 0.257 MJ = 0.071 kWh</span><br /><br />The EPROM Chip (M27C1001, 0.36 W IC) example is 12.5 MJ/chip = 3.47 kWh<br />Which is between 10 and 50x the large/small IC estimates and 20 to 70x the wafer only estimates.<br /><br />The large IC is between 2x and 6x the wafer only and small IC is between 0.5x to 1.5x the wafer only estimate.<br /><br />The weight of the silicon part of the chip for the ATmega8 should be between 3.5% to 12% of the total chip weight.<br /><br />The rest of the weight is metal and plastic. Copper has an embodied energy of between 38MJ/kg and 142MJ/kg depending on manufacturing process and plastic is anywhere between 80-120MJ/kg. If we assume a copper/plastic mix of around 100MJ/kg as a rough estimate.<br /><br />This would then contribute an additional 0.0132 MJ = 0.0037 kWh which would only increase the embodied energy of the chip by around 2-7%.<br /><br />Our estimate therefore for the embodied energy of the small microcontroller is between 0.053 kWh and 0.171 kWh, mid range of 0.117 kWh for 625um wafer which compares well with the small IC estimate of 0.071 kWh (it is of the right magnitude). We would expect a certain amount of assembly energy for combining the plastic, copper and semiconductor parts which is not included when taking a constituent parts approach which will likely add a little more to the total.<br /><b><br />Package type?</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WazQBqTygXI/VZm3wiRIuFI/AAAAAAAATbk/d2LwHZ6TahA/s1600/packagetype.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="125" src="http://3.bp.blogspot.com/-WazQBqTygXI/VZm3wiRIuFI/AAAAAAAATbk/d2LwHZ6TahA/s400/packagetype.jpg" width="400" /></a></div><br />Calculating the embodied energy this way brings up an important question about the package type of the IC, I.e how much plastic and connector metal surrounds the semiconductor core. If the size of the semiconductor inside a through-hole and SMT version of a ATmega328 is the same then surely a total weight based measure is not a good guide for the embodied energy. Given that over 90% the embodied energy is associated with 3.5 - 12% of the weight.<br /><br /><b>RaspberryPi chips</b><br />The ATmega8 or ATmega328 is not a particularly powerful chip, the emonpi also uses a RaspberryPi which has three chips on board.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PdjkOiAbz6U/VZm2iti-xgI/AAAAAAAATbc/MFm6leg9lsI/s1600/Pi2ModB1GB_-comp.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="http://1.bp.blogspot.com/-PdjkOiAbz6U/VZm2iti-xgI/AAAAAAAATbc/MFm6leg9lsI/s400/Pi2ModB1GB_-comp.jpeg" width="400" /></a></div><br />Its not clear what the volumes of the semiconductors inside these chips are. But given their small size and relatively large processing power lets assume for an initial calculation that the size of the package is very close to the size of the semiconductor. If the wafer thickness is 625um then the embodied energy of the chips can be estimated as:<br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Broadcom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14 x 14 mm x 625um = ~2.8 kWh</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Elpida&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; 12 x 12 mm x 625um = ~2.0 kWh</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Smst&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 8.7 x 8.7 mm x 625um = ~1.1 kWh</span><br /><br />These estimates which cover a quad core 900Mhz + 1GB ram computer are much larger than the ATmega8 estimate as we would expect but are still significantly lower than the embodied energy figure given for the 32MB 2g memory chip referenced in the article on the <a href="http://www.lowtechmagazine.com/2009/06/embodied-energy-of-digital-technology.html">the monster footprint of digital technology</a> of 20 kWh - while delivering much more functionality, almost a full computer! <br /><br />Are these figures accurate? are the underlying datasets accurate for modern processors? Does it mean that newer miniaturised technology with the ability to pack much more computing power inside the same volume of semiconductor has resulted in a significant reduction in the embodied energy for equivalent amounts of computing digital technology functionality? These are all significant guesses at the moment and it would be really interesting and useful to see more open data available on the embodied energy of newer technology. It would be good to see greater interest from the manufacturers of these chips in calculating and giving information on the embodied energy of their products, making data available on this would really help with understanding this question about the impact of technology. 
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/07/open-source-circular-economy-oscedays/">Open Source Circular Economy OSCEdays - emonPi Embodied Energy </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-05T19:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-05 19:48:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/embodied-energy/'>embodied energy</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/07/open-source-circular-economy-oscedays/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-P6V6jHZByMA/VZmH3t6iH8I/AAAAAAAATa8/Ji4-lP05LZk/s1600/oscedays.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="230" src="https://2.bp.blogspot.com/-P6V6jHZByMA/VZmH3t6iH8I/AAAAAAAATa8/Ji4-lP05LZk/s640/oscedays.png" width="640" /></a></div><br />Three weeks ago, time runs fast! I attended the open source circular economy event OSCEdays in London. It was a fantastic event with a lot of energy and ideas exploring how  the circular economy could benefit from an open source approach.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-_Gn7kS9kGMQ/VZl965UyCJI/AAAAAAAATak/UMpLQ-RQ6-E/s1600/oscedays.jpeg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="260" src="https://2.bp.blogspot.com/-_Gn7kS9kGMQ/VZl965UyCJI/AAAAAAAATak/UMpLQ-RQ6-E/s400/oscedays.jpeg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">OSCEdays at FabLab London</td><td class="tr-caption" style="text-align: center;"></td><td class="tr-caption" style="text-align: center;"></td><td class="tr-caption" style="text-align: center;"><br /></td><td class="tr-caption" style="text-align: center;"><br /></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-iVHrLVdqWpY/VZl_FM3RFkI/AAAAAAAATas/FpO29-jdQSo/s1600/bda5d194978a0361.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="180" src="https://1.bp.blogspot.com/-iVHrLVdqWpY/VZl_FM3RFkI/AAAAAAAATas/FpO29-jdQSo/s400/bda5d194978a0361.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://openenergymonitor.blogspot.co.uk/2015/06/investigating-embodied-energy-of-emonpi.html">Initial draft embodied energy analysis of the emonpi</a></td></tr></tbody></table>There was a wide range of challenges and projects there including: circular makerspaces submitted by <a href="http://www.greatrecovery.org.uk/">the great recovery</a> looking at how fablab's and makerspaces could encourage circular thinking, an initiative developing re-usable containers for cosmetics, a challenge looking at the implications of the circular economy for wearable technologies, 'trust is not waste' by <a href="http://www.therubbishdiet.org.uk/">the rubbish diet project</a> and ours looking at the embodied energy and lifecycle analysis of the OpenEnergyMonitor EmonPi.<br /><br />Id like to thank Rachel Stanley, David Green, WoonTan and Paidi Creed for all their help and input and for Erica Purvis and Sharon Prendeville for organising the event and the wider team that where involved in running the event in many other cities around the world.<br /><br />Our discussions and findings are partly documented here, there's also a bit more that needs writing up which will be online soon: <a href="http://community.oscedays.org/t/headline-challenge-open-energy-life-cycles/662/2">http://community.oscedays.org/t/headline-challenge-open-energy-life-cycles/662/2</a>.<br /><br />The research that I did on the embodied energy of the emonpi in the lead up to the event can be found here: <a href="http://openenergymonitor.blogspot.co.uk/2015/06/investigating-embodied-energy-of-emonpi.html">http://openenergymonitor.blogspot.co.uk/2015/06/investigating-embodied-energy-of-emonpi.html</a><i> </i><br /><br />We are really interested in the lifecycle impacts and embodied energy side of OpenEnergyMonitor and so were going to keep building on this. I've almost finished a post that looks at the embodied energy calculation for the emonpi microcontroller and raspberrypi chips in more detail which will be up soon.<br /><br />If your interested in embodied energy, lifecycle impacts, the circular economy and how open source could play a part do check out OSCEdays <a href="https://oscedays.org/">https://oscedays.org</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/07/open-source-hourly-zero-carbon-energy/">Open source hourly zero carbon energy model, combining traditional electric, heating and electric vehicle demand.</a>
   </h1>
   
@@ -380,68 +462,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/hourly-energy-model-example-3-variable/">Hourly energy model example 3: Variable supply and traditional electricity demand</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-14T06:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-14 06:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2015/06/hourly-energy-model-example-3-variable/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The <a href="http://openenergymonitor.org/energymodel/#dataset">ZeroCarbonBritain dataset</a> includes 10 years of hourly traditional electricity demand data for the UK. The previous example compared <a href="http://openenergymonitor.blogspot.co.uk/2015/06/hourly-energy-model-example-2-variable.html">renewable supply data with a flat demand profile</a>, this example explores the effect of the variable traditional electricity demand profile with its day time peaks and night time low on supply/demand matching for the different renewable energy generators.<br /><br />The screenshot below gives a flavour for what the traditional electricity demand profile looks like in blue, the black line is the supply from onshore wind, using the tool you can compare traditional electricity demand to: onshore wind, offshore wind, tidal, wave and solar power. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s1600/traddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="588" src="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s640/traddemand.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-oB-kae37Z5s/VXvoMLLp9FI/AAAAAAAAScI/YdkT8sArJyc/s1600/varsupplytraddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>3. Variable supply, traditional electricity demand and oversupply</i><br /><br />These are the results for the amount of demand supplied directly for each generation type, matching annual supply totals with demand totals:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>66.5%</td><td>76.7%</td><td>75.2%</td><td>57.0%</td><td>42.1%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.7%</td><td>46.5%</td><td>44.7%</td><td>38.7%</td><td>31.1%</td>     </tr></tbody></table><br />Interestingly they only change marginally. Solar PV makes a gain 2% on the demand supplied directly which reflects higher demand in the day vs night time and we see a couple of other 1% changes but the differences are quite marginal and smaller than the difference between each renewable energy type so we don’t really see any change of order.<br /><h3>Increasing the degree of supply/demand matching between a variable renewable supply and traditional electricity demand by over supply</h3>The are multiple ways of increasing the level of supply/demand matching or reducing the unmet demand. Over-supply is one way we can do this and is one of the measures used in the ZeroCarbonBritain scenario. In the previous examples we sized the installed capacity of the renewable electricity generating technologies to produce over the 10 year model period the exact same amount of electricity as was used in the 10 year period.<br />We can re-run the same model but with installed capacity amounts set to 110%, 120% or 130% of demand<br /><br /><b>Oversupply: 110%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.86kW</td><td>1.46kW</td><td>1.74kW</td><td>4.39kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>68.9%</td><td>79.6%</td><td>77.9</td><td>58.9%</td><td>43.0%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>44.1%</td><td>51.8%</td><td>50.0%</td><td>41.7%</td><td>32.4%</td>     </tr></tbody></table><br /><b>Oversupply: 120%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.94kW</td><td>1.60kW</td><td>1.89kW</td><td>4.79kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>71.1%</td><td>81.9%</td><td>80.3%</td><td>60.4%</td><td>43.8%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>47.2%</td><td>56.5%</td><td>54.3%</td><td>44.3%</td><td>33.5%</td>     </tr></tbody></table><br /><b>Oversupply: 130%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.51kW</td><td>1.02kW</td><td>1.73kW</td><td>2.05kW</td><td>5.19kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>72.9%</td><td>83.9%</td><td>82.2%</td><td>61.7%</td><td>44.5%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>50.1%</td><td>60.7%</td><td>58.1%</td><td>46.7%</td><td>34.4%</td>     </tr></tbody></table><br />For every 10% of demand increase in supply we see 1-3% improvements in the percentage of demand supplied directly and 1-5% improvements in the amount of time demand is more or the same as supply.<br /><br />The python code for the above examples is very similar to the previous example for the flat demand profile and can be downloaded here: <a href="http://openenergymonitor.org/energymodel/#python">http://openenergymonitor.org/energymodel/#python </a><br /><br />The next example looks at the question of complementarity between different renewable energy types and asks the question what might the optimum capacity mix point be between wind and solar for a given electricity price point.
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/hourly-energy-model-example-2-variable/">Hourly energy model example 2: Variable supply and flat demand (python code included)</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-12T07:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-12 07:52:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2015/06/hourly-energy-model-example-2-variable/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The second example in the hourly energy modelling tool models the degree of supply/demand matching  between a variable renewable supply consisting of a single renewable  energy generation type and a flat electricity demand profile. <br /><br />A flat demand may not of course be particularly realistic and the more complex examples later on address this, but I've used it here just to illustrate this particular simple example case.<br /><br /><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="584" src="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s640/varsupplyflatdemand.png" width="640" /></a> <br /><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>2. variable supply and flat demand</i><br /><i>&nbsp;</i> <br />The demand is subtracted from the supply for every  hour in the 10 year period and the total amount of unmet demand and  excess generation is measured as well as the amount of time the supply  was more than or equal to the demand.<br /><br />The demand level is set to an annual average electricity  demand of 3300 kWh which is the average UK household annual electricity  consumption. The amount of installed capacity is set to match this  demand on the 10 year basis of the dataset.<br /><br />Running the model for each of each generation type, matching total 10  year supply to total 10 year demand of 3300 kWh x 10 we get the  following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>65.9%</td><td>76.4%</td><td>73.9%</td><td>57.7%</td><td>40.6%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.1%</td><td>46.2%</td><td>45.3%</td><td>38.6%</td><td>32.1%</td>     </tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div>We can see again here that offshore wind is the clear winner with the lowest installed capacity requirement and highest level of supply/demand matching. Perhaps an interesting result is how less predictable technologies such as wind and wave provide greater levels of matching than power from tidal which is very predictable.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of  python versions of the examples which are simpler to follow as they dont  include all the code to create the visual output, they just print out  the main results at the end.<br /><br />I've highlighted the main parts in bold below:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 1<br /><br />installed_capacity = 0.785 # kW<br /><br />annual_house_demand = 3300 # kWh<br />house_power = (annual_house_demand * 10.0) / 87648&nbsp;&nbsp; <br /><br /><b># Load dataset</b><br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br />print<br /><br />total_supply = 0<br />total_demand = 0<br /><br />exess_generation = 0<br />unmet_demand = 0<br /><br />hours_met = 0</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><b># for every hour in the dataset</b><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate the supply</b><br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate demand</b><br />&nbsp;&nbsp;&nbsp; demand = house_power<br />&nbsp;&nbsp;&nbsp; total_demand += demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># subtract demand from supply to find the balance</b><br />&nbsp;&nbsp;&nbsp; balance = supply - demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># record the total amount of exess and unmet demand</b><br />&nbsp;&nbsp;&nbsp; if balance&gt;=0:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exess_generation += balance<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hours_met += 1<br />&nbsp;&nbsp;&nbsp; else:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unmet_demand += -balance<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />prc_demand_supplied = ((total_demand - unmet_demand) / total_demand) * 100<br /><br />prc_time_met = (1.0 * hours_met / hours) * 100</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /><b># print out the results</b> </span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">print "Installed capacity: %s kW" % installed_capacity<br />print "Capacity factor: %d%%" % capacity_factor<br />print<br />print "Total supply: %d kWh" % total_supply<br />print "Total demand: %d kWh" % total_demand<br />print<br />print "Exess generation %d kWh" % exess_generation<br />print "Unmet demand %d kWh" % unmet_demand<br />print <br />print "Percentage of demand supplied directly %d%%" % prc_demand_supplied<br />print "Percentage of time supply was more or the same as the demand %d%%" % prc_time_met</span></span>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -467,7 +487,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -510,18 +542,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -605,6 +625,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

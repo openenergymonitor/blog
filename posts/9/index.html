@@ -107,6 +107,92 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2014/03/emontx-v3-antenna-testing/">emonTx V3 Antenna Testing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-03-12T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-12 12:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/antenna/'>Antenna</a></li>
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/03/emontx-v3-antenna-testing/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Today we did some quick testing regarding using different antennas with the emonTx V3.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Four antenna options were tested (Farnell part numbers listed for SMA antennas) :</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" height="321" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" height="358" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">Note: the graph sub-title has a typo, it should read 'RFM69CW', 'CRW' module does not exist.. At least to my knowledge!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It was found that the wire-whip antenna as shipped by default with the emonTx V3 performed best.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">However using an SMA could be preferable in some environments; it's more robust and can &nbsp;be extended easier.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Now we have a way to measure RSSI (received signel strength indicator) using &nbsp;an rfm69cw module we plan &nbsp;to &nbsp;do some more antenna and range testing. I'm interested to test to see how many db we're loosing in the antenna pcb trace from the module to the RFu328 then the emonTx V3 pcb trace then finally into the 90 degree sma connector. In future version will probably but the rf module and MCU directly on the PCB keeping the antenna trace as short as possible and use an edge mounted sma connector (these are also cheaper and easier to solder in manufacture).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For more info on the test see the emonTx V3 wiki page: &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna">http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna</a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2014/03/direct-connection-emontx-v3-raspberry/">Direct connection emonTx V3 > Raspberry Pi GPIO</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-03-07T15:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-07 15:58:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/03/direct-connection-emontx-v3-raspberry/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Sometimes it's more convenient to connect the emonTx V3 directly to a Raspberry Pi base station rather than use RF.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Both the Raspberry Pi and emonTx V3 run at 3.3V so the serial Rx and Tx serial lines can be directly connected. The raspberrypi's 5V supply can be used to power the emontx which is then stepped down to to 3.3V through the emonTx V3's voltage regulator. 5V is provided by the red wire. The ground connection is the black wire and the data going from the emontx to the raspberrypi is the green wire. I haven't connected a wire for serial data going the other way but this is a possible option if two-way serial is required.</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" height="222" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 &gt; Raspberry Pi Connection&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" height="251" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Here's a simple direct serial output sketch for the emontx v3&nbsp;<a class="external text" href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM12B/Examples/emonTxV3_DirectSerial/emonTxV3_DirectSerial.ino" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">on GitHub here</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">On the raspberrypi if you just want to forward the emontx data to a remote emoncms this can be done with the oem_gateway developed by Jerome which is on the&nbsp;<a class="external text" href="http://emoncms.org/site/docs/raspberrypigateway" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">standard rock solid forwarder image</a></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">See our&nbsp;<a class="external text" href="http://openenergymonitor.blogspot.co.uk/2014/01/oem-gateway-serial-port-emoncms-link.html" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">blog post</a>&nbsp;about how to configure the oem_gateway for work over a serial link rather than RFM12B&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">This info was taken from the <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Direct_connection_emonTx_V3_.3E_Raspberry_Pi_GPIO">emonTx wiki</a> and written up after a<a href="http://openenergymonitor.org/emon/node/3872"> forum thread</a>.&nbsp;</div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div><div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">For the future we are working on developing an energy monitoring shield for the Pi to create an all-in-on Pi-energy-monitoring unit, see dev forum thread:&nbsp;http://openenergymonitor.org/emon/node/3937</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/03/emoncms-developments-and-calculating-wh/">Emoncms developments and calculating wh totals on the emontx</a>
   </h1>
   
@@ -441,96 +527,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/12/emoncms-control-developments-and-demos/">Emoncms control developments and demo's</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-12-26T16:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-12-26 16:23:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/control/'>control</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/12/emoncms-control-developments-and-demos/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div id="example1heatingonoff">First Happy Christmas everyone for yesterday!<br /><br />One of the things I enjoy about the Christmas period is that you get some nice time to relax and with relaxation comes ideas and energy to try out some new things.<br /><br />Glyn and I had been talking about control interfaces that could work well on a mobile or tablet and Id been working on a touch enabled dial earlier this month so I thought Id package it up as a emoncms module that sets the control variables in the packetgen module, I've also created a couple of simpler control interface examples using buttons and edit boxes. To try out the following demo's for yourself see the steps at the bottom of the post.</div><h2 id="example1heatingonoff">Example 1: Heating On/Off</h2>A simple example using a bootstrap styled html button as our heating on/off button. Clicking the button toggles the state and updates the “packetgen” control packet with the new state.<br /><br /><img alt="button off" height="144" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button.png" title="" width="640" /><br /><br /><img alt="button on" height="145" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button_on.png" title="" width="640" /><br /><h2 id="example2heatingonoffplussetpoint">Example 2: Heating On/Off plus set point</h2>Very similar to the first example but now with a text input for setting the set point temperature for the room/building. The microcontroller on the control node checks the room temperature and turns on and off the heater depending on the setpoint setting it recieves from emoncms.<br /><br /><img alt="setpoint" height="178" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/setpoint.png" title="" width="640" /><br /><h2 id="example3nestinspireddial">Example 3: Nest inspired dial</h2>A nest inspired dial interface for setting the setpoint temperature. The set point can be adjusted by spinning the dial wheel with your finger:<br /><br /><img alt="heating dial" height="391" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial_expanded.png" title="" width="640" /><br /><br />The dial and page resizes to fit different screen types from widescreen laptop's to mobile phones and tablets and touch can be used to spin the dial.<br /><br /><img alt="heating dial mobile" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial.png" title="" /><br /><h2 id="solarpvgeneration">Solar PV Generation</h2>Not really control but developing the idea of custom html/javascript canvas based graphics further.<br /><br />I've always liked the standard “news &amp; weather” app that came with my android phone. It's a good example of how clean an intuitive graphs can be and how touch can be used to browse temperature/humidity at different times of the day.<br />This example is a start on creating a graph that looks and behaves in much the same way implemented in canvas.<br /><br /><img alt="solarpv" height="263" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/solarpv.png" title="" width="640" /><br /><h2 id="whatyouwillneedtoruntheseexamples">What you will need to run these examples</h2>You will need your own installation of emoncms to try these out, such as an emoncms + raspberrypi + harddrive setup.<br /><br /><a href="http://emoncms.org/site/docs/raspberrypihdd">RaspberryPI with harddrive</a><br /><br />You will also need the packetgen module (installed as default with the harddrive image):<br /><br />http://github.com/emoncms/packetgen<br /><br />and the 'development' repository <br /><br />http://github.com/emoncms/development<br /><br />Copy the folder titled myheating from the development repository to your emoncms/Modules folder. (from development/Modules/control)<br /><br />You should now be able to load the examples by clicking on the My Heating menu item.<br /><br />The example does not yet allow for any gui based configuration and so assumes that the control packet structure looks like this:<br /><br /><img alt="packet structure" height="288" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/packetgen.png" title="" width="640" /><br /><br />This packet will work with the Arduino electricradiator control node example that can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/Modules/control/Arduino%20Examples/electricradiator">Arduino Examples / electricradiator</a><br /><br />This sketch could be run on an emontx with jeeplug relay's attached or other rfm12b + arduino + relay type hardware builds.<br /><br /><b>Coding your own control interface</b><br /><br />The code for the simple button example above which may be useful as a foundation for building something else can be found here:<br /><br /><a href="https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php">https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php</a><br /><br />The interface is all in html and javascript jquery and uses bootstrap style buttons it just sends the updated heating state to the packetgen module via ajax.<br /><br /><b>More posts on controlling things </b><br /><br />Glyn's post on controlling his boiler: <a href="http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html">http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html</a><br /><br />The packet generator: <a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html">http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html</a>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/12/emoncms-early-heating-control-demo/">Emoncms (early) Heating Control Demo</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-12-15T21:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-12-15 21:20:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/control/'>control</a></li>
-      
-        <li><a class='category' href='/categories/emonctrl/'>emonCtrl</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/heating/'>heating</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/12/emoncms-early-heating-control-demo/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I've just hooked up a relay to control my central heating boiler and am successfully controlling it via the new emoncms packet generator module...it feels like the future has arrived in my house :-)<br><br>The next step will be to make a nice user facing interface which allows setting heating control time schedules and pulling in temperature data from emonTH and even making it smart by using energy data to try and detect if someone is home or not. Lots of exciting possibilities now the enabling hardware is in place.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-SjVPMnBRjYY/Uq4aU1vsHWI/AAAAAAAArwc/9p8I5DZXh9g/s1600/20131215_204511_Orwig+Terrace.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-SjVPMnBRjYY/Uq4aU1vsHWI/AAAAAAAArwc/9p8I5DZXh9g/s400/20131215_204511_Orwig+Terrace.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Gas Combi Boiler Relay Control Unit top left</td></tr></tbody></table>Please excuse the old boiler, yes I know it should be a no brainer to replace it with a modern efficient condensing unit however things are never simple in rented accommodation. In practice I hardly use the boiler since bottled LPG is very expensive (no mains gas available here), luckily I have a wood stove and a good supply of wood!<br><br>Here's a demo of the heating boiler being turned on remotely:<br><br><iframe allowfullscreen="" frameborder="0" height="360" src="//www.youtube.com/embed/1d797idBJ2M" width="640"></iframe> <br><h3>Hardware:</h3><b>Webserver:&nbsp;</b><br><a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi with RFM12Pi expansion module</a> running emoncms (on external HDD file system): <a href="http://openenergymonitor.blogspot.com/2013/12/setup-emoncms-on-raspberrypi-with-hard.html">see blog post</a>. The Raspberry Pi and emoncms are also used to log my home power consumption from my <a href="http://openenergymonitor.org/emon/modules/emonTxV3">emonTx V3</a>, and room temperatures and humidity from my <a href="http://openenergymonitor.org/emon/modules/emonTH">emonTH's.</a> It also mirrors the data to a remote emoncms server for backup.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-yE06dnTas_U/Uql-Wl0JuAI/AAAAAAAArqg/aKs3d72Xqh0/s1600/pihdsetup.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://2.bp.blogspot.com/-yE06dnTas_U/Uql-Wl0JuAI/AAAAAAAArqg/aKs3d72Xqh0/s400/pihdsetup.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi with RFM12Pi module with emoncms running locally on HDD file system</td></tr></tbody></table><br><br><b>Control Node:</b><br><br><b>If switching mains voltage is involved only undertake tasks you are&nbsp;comfortable&nbsp;with,&nbsp;making sure everything is isolated before starting work and don't take any chances.&nbsp;</b><br><b><br></b>Heating systems vary widely, as does the type of control available. Some heating boilers can be controlled via an RF protocol, this could be preferable since tapping into the boiler direct and switching high voltage would not be required.<br><br>My old Worcester Bosch 240 with Honeywell controller requires connecting two terminals together to switch the heating on (see image below). I managed to wire in an additional control wire while keeping the original timer unit in place.<br><br>I used an emonTx V2 with JeeLabs relay module, this is just what I had to hand, any RFM12B node with an appropriate relay module could be used. We're looking into making a prototype PCB with an RFM12B, relay unit, on-board power supply and in-line energy monitoring (why not?!). The important consideration here is to make sure everything is properly enclosed and wired up to a high standard if you're controlling mains voltage. DON'T TAKE CHANCES WITH MAINS VOLTAGE.<br><br>It's important that the relay module used can handle the current being switched in my case this was only about 500mA @ 240V AC&nbsp;but if you're controlling an electric heating direct this is an important consideration.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-OZ4jgaJAK4E/Uq31bNdh45I/AAAAAAAArvs/9YoSKa3uQK8/s1600/IMG_20131214_185622.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://1.bp.blogspot.com/-OZ4jgaJAK4E/Uq31bNdh45I/AAAAAAAArvs/9YoSKa3uQK8/s400/IMG_20131214_185622.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Old Honeywell timer controller unit with front face removed - connect terminal 5 to 3 to turn heating on - black wire goes to relay (caution 240V AC)</td></tr></tbody></table><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-0Gm-mp2wiyU/Uq3zQUVBu-I/AAAAAAAArvg/VkOa8uQvR7c/s1600/20131214_193529.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-0Gm-mp2wiyU/Uq3zQUVBu-I/AAAAAAAArvg/VkOa8uQvR7c/s400/20131214_193529.jpg" width="400"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V2 with RFM12B and JeeLabs relay module</td></tr></tbody></table><span id="goog_440867743"></span><br><br><h3>Software:</h3><b>Emoncms Raspberry Pi Server</b><br>emoncms running on Raspberry Pi with the new packet generator module,<a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html"> see blog post</a>. This is included in the emoncms Raspberry Pi external HDD image (it's still in beta). For the moment as shown in the video the relay is switched on and off from the emoncms backend web page by browsing to the Pi's local IP address and logging into emoncms and selecting the packet gen module under the extras menu.<br><br><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-_Ym-R5e4vro/Uq4ba4lTDQI/AAAAAAAArwk/jc3HuW2oXLw/s1600/Selection_036.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="257" src="http://1.bp.blogspot.com/-_Ym-R5e4vro/Uq4ba4lTDQI/AAAAAAAArwk/jc3HuW2oXLw/s640/Selection_036.png" width="640"></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms RFM12B control packet generator module - beta</td></tr></tbody></table><br>To enable control from outside the house the the http port would have to be opened on my router's firewall and a dynamic dns setup on the external IP address. As mentioned at the beginning of this post the next stage is to design a user facing interface dashboard for emoncms control modules.<br><br><b>Arduino Firmware:&nbsp;</b><br>I've pushed the Arduino sketch running on the emonTx to the e<a href="https://github.com/emoncms/packetgen/tree/master/Arduino_RFM12B_receiver_sketch_examples">moncms packetgen module GitHub as an example</a>.<br><br><b>Fail safe</b><br>I choose a non latching relay so in case of control unit power failure the relay will default to the open / off position.<br><br>I've tried to make the code on the relay control unit as fail safe as possible (independent of Raspberry Pi and network) and as boiler friendly as possible by including a fail safe time after which the relay will default to off (1hr - I'm a frugal user of heating), and a maximum switching rate of 5 min to stop the boiler repeatedly being switched on and off should something go wrong. A hardware watchdog on the ATmega328 was included to try and ensure the microprocessor never locks up.<br><br><br>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -556,7 +552,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -599,18 +607,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -694,6 +690,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

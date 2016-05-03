@@ -107,6 +107,86 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/09/data-portability-exporting-feed-data/">Data portability: exporting feed data from emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-09-19T21:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-19 21:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/09/data-portability-exporting-feed-data/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Following on from the previous two posts:<br /><a href="http://openenergymonitor.blogspot.com/2012/09/making-emoncms-data-portable.html">Making emoncms data portable</a><br /><a href="http://openenergymonitor.blogspot.com/2012/09/data-portability-challenges.html">Data portability challenges</a><br /><br />Here's my initial solution for feed export code that also&nbsp;allows&nbsp;it's load on the server to be regulated.<br /><br />In trying to work this out I first tired requesting all the feed data (which could be millions of rows) in one mysql query and then writing the data to a file in one push, Testing on my laptop server installation and monitoring the load with the linux top tool the mysql query can use around 97% of the cpu for up to tens of seconds depending on the feed size. Once the query is complete the writing of the file (an apache process) then takes up another block of 97% cpu use until the file has completed downloading. Emoncms still seems fairly responsive in that time.<br /><br />My next thought was to break up that larger query into smaller blocks and introducing a delay between the reading of each block, maybe the delay could wait for other actions to finish before continuing in future versions.<br /><br />Spiting&nbsp;the query into blocks of 400 rows,&nbsp;alternately&nbsp;loading and writing to the file without a delay drops the load to around 50% for both the mysql and apache processes.<br /><br />By introducing a delay of about 80 microseconds its then possible to drop the load down to roughly 10% for the apache process and a little less for the mysql process.<br /><br />Increasing the block size or/and reducing the delay speeds the transfer rate up, reducing the block size or/and increasing the delay slows the transfer rate down.<br /><br />Any thoughts on improving this would be welcome, I will try and add it to the emoncms repo soon.<br /><br />Here's the code:<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #bc7a00;">&lt;?php</span><br /><span class="Apple-style-span" style="font-family: 'Times New Roman'; line-height: normal; white-space: normal;"><pre style="line-height: 16px;">  <span style="color: #408080; font-style: italic;">// Open database etc here</span></pre></span><span class="Apple-style-span" style="font-family: 'Times New Roman'; line-height: normal; white-space: normal;"><pre style="line-height: 16px;">  <span style="color: #408080; font-style: italic;">// Extend timeout limit from 30s to 2mins</span></pre></span><span class="Apple-style-span">  <span style="color: green;">set_time_limit</span> (<span style="color: #666666;">120</span>);    <span style="color: #408080; font-style: italic;">// Feed id and start time of feed to export</span>  <span style="color: #19177c;">$feedid</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span></span>;<span class="Apple-style-span">  <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span></span>;<span class="Apple-style-span">     <span style="color: #408080; font-style: italic;">// Regulate mysql and apache load.</span>  <span style="color: #19177c;">$block_size</span> <span style="color: #666666;">=</span> <span style="color: #666666;">400</span>;   <span style="color: #19177c;">$sleep</span> <span style="color: #666666;">=</span> <span style="color: #666666;">80000</span>;    <span style="color: #19177c;">$feedname</span> <span style="color: #666666;">=</span> <span style="color: #ba2121;">"feed_"</span><span style="color: #666666;">.</span>trim(<span style="color: #19177c;">$feedid</span>)<span style="color: #666666;">.</span><span style="color: #ba2121;">""</span>;   <span style="color: #19177c;">$fileName</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$feedname</span><span style="color: #666666;">.</span><span style="color: #ba2121;">'.csv'</span>;     <span style="color: #408080; font-style: italic;">// There is no need for the browser to cache the output</span>  header(<span style="color: #ba2121;">"Cache-Control: no-cache, no-store, must-revalidate"</span>);    <span style="color: #408080; font-style: italic;">// Tell the browser to handle output as a csv file to be downloaded</span>  header(<span style="color: #ba2121;">'Content-Description: File Transfer'</span>);   header(<span style="color: #ba2121;">"Content-type: text/csv"</span>);   header(<span style="color: #ba2121;">"Content-Disposition: attachment; filename=</span><span style="color: #bb6688; font-weight: bold;">{</span><span style="color: #19177c;">$fileName</span><span style="color: #bb6688; font-weight: bold;">}</span><span style="color: #ba2121;">"</span>);    header(<span style="color: #ba2121;">"Expires: 0"</span>);   header(<span style="color: #ba2121;">"Pragma: no-cache"</span>);    <span style="color: #408080; font-style: italic;">// Write to output stream</span>  <span style="color: #19177c;">$fh</span> <span style="color: #666666;">=</span> <span style="color: #666666;">@</span><span style="color: green;">fopen</span>( <span style="color: #ba2121;">'php://output'</span>, <span style="color: #ba2121;">'w'</span> );    <span style="color: #408080; font-style: italic;">// Load new feed blocks until there is no more data </span>  <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span>;   <span style="color: green; font-weight: bold;">while</span> (<span style="color: #19177c;">$moredata_available</span>)   {     <span style="color: #408080; font-style: italic;">// 1) Load a block</span>    <span style="color: #19177c;">$result</span> <span style="color: #666666;">=</span> db_query(<span style="color: #ba2121;">"SELECT * FROM </span><span style="color: #bb6688; font-weight: bold;">$feedname</span><span style="color: #ba2121;"> WHERE time&gt;</span><span style="color: #bb6688; font-weight: bold;">$start</span><span style="color: #ba2121;"> &nbsp;</span></span></pre><pre style="line-height: 125%; margin: 0;"><span style="color: #ba2121;">    ORDER BY time Asc Limit </span><span style="color: #bb6688; font-weight: bold;">$block_size</span><span style="color: #ba2121;">"</span>);<br /><br />    <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>;<br />    <span style="color: green; font-weight: bold;">while</span>(<span style="color: #19177c;">$row</span> <span style="color: #666666;">=</span> db_fetch_array(<span style="color: #19177c;">$result</span>)) {<br /><br />      <span style="color: #408080; font-style: italic;">// Write block as csv to output stream</span><br />      <span style="color: green;">fputcsv</span>(<span style="color: #19177c;">$fh</span>, <span style="color: green; font-weight: bold;">array</span>(<span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'time'</span>],<span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'data'</span>]));<br /><br />      <span style="color: #408080; font-style: italic;">// Set new start time so that we read the next block along</span><br />      <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'time'</span>];<br />      <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span>;<br />    }<br />    <span style="color: #408080; font-style: italic;">// 2) Sleep for a bit</span><br />    <span style="color: green;">usleep</span>(<span style="color: #19177c;">$sleep</span>);<br />  }<br /><br />  <span style="color: green;">fclose</span>(<span style="color: #19177c;">$fh</span>);<br /></pre></div><br />In the next post I will discuss creating a script to import feed data by pointing directly at the export script on the other server, plus a background running&nbsp;daemon&nbsp;process and queueing&nbsp;mechanism&nbsp;to manage the import process.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/09/data-portability-challenges/">Data portability challenges</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-09-19T08:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-19 08:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/09/data-portability-challenges/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Continuing from yesterday's post on <a href="http://openenergymonitor.blogspot.co.uk/2012/09/making-emoncms-data-portable.html">making emoncms data portable</a>.<br /><br />There are some challenges with implementing data portability for energy data. 5s energy feed data can grow to be quite large, I have several feeds that are approaching 100Mb and a total account size of about 700Mb and thats only just approaching one year.<br /><br />Moving large quantities of data uses server resources including: cpu, memory and bandwidth. Emoncms.org is hosted on a <a href="http://www.bigv.io/">BigV virtual machine</a>, where you get 1GiB Ram, 25GiB Disk space, 200GiB transfer for £10 a month, which is a fantastic deal for those specs.<br /><br />As exporting or importing large feeds takes time its important that it does not hog resources on the server making the server unusable for other users, any import or export code needs to use a small percentage of the server resources and ideally the amount of resources used could be adjustable. We also need to keep an eye on the data transfer limits.<br /><br />In the next post I will post up the initial working feed export code.<br /><br /><br /><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/09/making-emoncms-data-portable/">Making emoncms data portable</a>
   </h1>
   
@@ -422,90 +502,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/08/plug-and-play-sensor-nodes/">Plug and play sensor nodes</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-08-02T12:38:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-02 12:38:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/08/plug-and-play-sensor-nodes/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div><br /><div class="separator" style="clear: both; text-align: left;">At the moment to get a system up and running you need to do quite a bit of manual firmware configuration, setting&nbsp;unique&nbsp;node-id's selecting different emontx sketches for different functionality, hard coding the emonglcd to get different screens.&nbsp;To add a second emontx you need to add several lines of code to the emonbase and the basestation needs to know the data structure of the sensor nodes.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s1600/OEM_system_emoncms2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="212" src="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s400/OEM_system_emoncms2.png" width="400" /></a></div><br />What if you could upload a standard sketch to each of these nodes, plug your base station into your router, power up an emontx and see emontx 1 appear in a node list in emoncms. Then as you add more nodes they automatically appear in emoncms, no additional base station configuration needed. In time the software could develop to allow remote configuration of nodes such as&nbsp;emontx config and emonGLCD pages: beginning with page template functions as described in the last blog post:&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-template-based-displays.html">emonglcd template based displays</a><br /><br />Continue reading the forum post <a href="http://openenergymonitor.org/emon/node/904">here</a>.
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/08/low-level-adc-control-admux/">Low-level ADC control: ADMUX</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-08-02T09:51:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-02 09:51:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> seven minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/08/low-level-adc-control-admux/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"></span><br />While discussing the 3 phase sketch implementation here:&nbsp;<a href="http://openenergymonitor.org/emon/node/467">http://openenergymonitor.org/emon/node/467</a>&nbsp;by Pcunha which makes use of the AVR analog read commands rather than the arduino analog_read function&nbsp;which is a wrapping for these commands JBecker suggested that the analog reference voltage was not being selected correctly, so I had to do some reading up on this on ADMUX and bitwise operators.<br /><br />So for anyone interested, this is how it works first ADMUX is an 8-bit byte that holds the settings for the analog reference voltage and the analog pin to select:<br /><br />ADMUX is 8-bit:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">REFS0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">ADLAR&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">-&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX3&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX2&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">MUX0&nbsp;</td></tr></tbody></table></span><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"></span>Where:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 77px;"><b>&nbsp;REFS1</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 77px;"><b>REFS0&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 402px;"><b>Voltage Reference Selection&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AREF, Internal Vref turned off&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">AVcc with external capacitor on AREF pin&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Reserved&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;">&nbsp;1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">Internal 1.1V (ATmega168/328) or &nbsp;2.56V on (ATmega8)</td></tr></tbody></table></span>and:<br /><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top; width: 111px;"><b>MUX 3...0</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top; width: 307px;"><b>Single Ended Input</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0000</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC0&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0001</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC1&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0010</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC2&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0011</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC3&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0100</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC4&nbsp;</td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; vertical-align: top;">&nbsp;0101</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; vertical-align: top;">ADC5</td></tr></tbody></table></span><br /><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: x-small;"><span class="Apple-style-span" style="line-height: 16px;"><br /></span></span><br /><span class="Apple-style-span" style="background-color: white; font-family: Arial, Verdana, sans-serif; font-size: 12px;"><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><br /></span></span><br />So if we want to use AVcc with external capacitor on AREF pin as our voltage reference (which is the default arduino voltage reference) and we want to select ADC2 for example, we would need to set ADMUX to:<div><br /></div><div><span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px;"><table border="1" bordercolor="#888888" cellspacing="0" style="border-bottom-color: rgb(136, 136, 136); border-bottom-width: 1px; border-collapse: collapse; border-left-color: rgb(136, 136, 136); border-left-width: 1px; border-right-color: rgb(136, 136, 136); border-right-width: 1px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><tbody><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top; width: 59px;">&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>7 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>6 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>5 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>4 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>3 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>2 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>1 bit&nbsp;</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top; width: 59px;"><b>0 bit&nbsp;</b></td></tr><tr><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; height: 15px; text-align: center; vertical-align: top;"><b>ADMUX</b></td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="background-color: #f3f3f3; color: #999999; font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">1</td><td style="font-family: Arial, Verdana, sans-serif; font-size: 12px; text-align: center; vertical-align: top;">0&nbsp;</td></tr></tbody></table></span><div><br /></div><div>We can use <a href="http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B">bitwise operations</a> to get there:</div><div><br /></div><div>This is how its done in&nbsp;<i>wiring_analog.c</i> found in <i>Arduino-1.0/hardware/arduino/cores/arduino</i><br /><br /><b>ADMUX = (analog_reference &lt;&lt; 6) | (pin &amp; 0x07);</b><br /><b><br /></b><br />Starting with<b>&nbsp;(analog_reference &lt;&lt; 6)</b>. The variable analog_reference is set to 1 as default for the atmega328 so&nbsp;1 &lt;&lt; 6 means bitshift 1 left 6 places where 1 in binary is&nbsp;00000001 and shifting the bits left 6 places moves the 1 to 01000000. The desirable result for setting the 6th bit REFS0 to 1.<br /><br />If you dont need to select different analog_reference values then we can get&nbsp;01000000 directly by specifying its&nbsp;hexadecimal: 0x40.<br /><br />Next looking at the&nbsp;<b>&nbsp;(pin &amp; 0x07) </b>part.<br /><br /><ul><li>The &amp; 0x07 is actually just for validation, it essentially says only allow selection of ADC0 to ADC5.&nbsp;</li><li>The &amp; bitwise operator is the <b>AND</b> operation.</li><li>0x07 is&nbsp;hexadecimal whose binary representation is 00000111</li><li>Selecting ADC2 which is pin = 2 or in binary 00000010</li><li>The result of 2 &amp; 0x07 =&nbsp;00000010 AND&nbsp;00000111 =&nbsp;00000010.</li></ul><br />The last part is the<b> | </b>bitwise operator: <b>OR</b><br /><b><br /></b><br />(analog_reference &lt;&lt; 6) | (pin &amp; 0x07) becomes in our example here&nbsp;01000000 OR 00000010. Which is equall to:&nbsp;<b>01000010 </b>the result we where looking for above.<br /><br />If you would like to read more on the AVR ADC commands see these&nbsp;helpful&nbsp;articles:<br /><br /><a href="https://sites.google.com/site/qeewiki/books/avr-guide/analog-input">https://sites.google.com/site/qeewiki/books/avr-guide/analog-input</a><br /><a href="http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/">http://www.protostack.com/blog/2011/02/analogue-to-digital-conversion-on-an-atmega168/</a><br /><br /></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -531,7 +527,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -574,18 +582,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -669,6 +665,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

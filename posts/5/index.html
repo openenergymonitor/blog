@@ -107,6 +107,68 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/hourly-energy-model-example-3-variable/">Hourly energy model example 3: Variable supply and traditional electricity demand</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-14T06:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-14 06:33:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2015/06/hourly-energy-model-example-3-variable/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The <a href="http://openenergymonitor.org/energymodel/#dataset">ZeroCarbonBritain dataset</a> includes 10 years of hourly traditional electricity demand data for the UK. The previous example compared <a href="http://openenergymonitor.blogspot.co.uk/2015/06/hourly-energy-model-example-2-variable.html">renewable supply data with a flat demand profile</a>, this example explores the effect of the variable traditional electricity demand profile with its day time peaks and night time low on supply/demand matching for the different renewable energy generators.<br /><br />The screenshot below gives a flavour for what the traditional electricity demand profile looks like in blue, the black line is the supply from onshore wind, using the tool you can compare traditional electricity demand to: onshore wind, offshore wind, tidal, wave and solar power. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s1600/traddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="588" src="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s640/traddemand.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-oB-kae37Z5s/VXvoMLLp9FI/AAAAAAAAScI/YdkT8sArJyc/s1600/varsupplytraddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>3. Variable supply, traditional electricity demand and oversupply</i><br /><br />These are the results for the amount of demand supplied directly for each generation type, matching annual supply totals with demand totals:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>66.5%</td><td>76.7%</td><td>75.2%</td><td>57.0%</td><td>42.1%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.7%</td><td>46.5%</td><td>44.7%</td><td>38.7%</td><td>31.1%</td>     </tr></tbody></table><br />Interestingly they only change marginally. Solar PV makes a gain 2% on the demand supplied directly which reflects higher demand in the day vs night time and we see a couple of other 1% changes but the differences are quite marginal and smaller than the difference between each renewable energy type so we don’t really see any change of order.<br /><h3>Increasing the degree of supply/demand matching between a variable renewable supply and traditional electricity demand by over supply</h3>The are multiple ways of increasing the level of supply/demand matching or reducing the unmet demand. Over-supply is one way we can do this and is one of the measures used in the ZeroCarbonBritain scenario. In the previous examples we sized the installed capacity of the renewable electricity generating technologies to produce over the 10 year model period the exact same amount of electricity as was used in the 10 year period.<br />We can re-run the same model but with installed capacity amounts set to 110%, 120% or 130% of demand<br /><br /><b>Oversupply: 110%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.86kW</td><td>1.46kW</td><td>1.74kW</td><td>4.39kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>68.9%</td><td>79.6%</td><td>77.9</td><td>58.9%</td><td>43.0%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>44.1%</td><td>51.8%</td><td>50.0%</td><td>41.7%</td><td>32.4%</td>     </tr></tbody></table><br /><b>Oversupply: 120%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.94kW</td><td>1.60kW</td><td>1.89kW</td><td>4.79kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>71.1%</td><td>81.9%</td><td>80.3%</td><td>60.4%</td><td>43.8%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>47.2%</td><td>56.5%</td><td>54.3%</td><td>44.3%</td><td>33.5%</td>     </tr></tbody></table><br /><b>Oversupply: 130%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.51kW</td><td>1.02kW</td><td>1.73kW</td><td>2.05kW</td><td>5.19kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>72.9%</td><td>83.9%</td><td>82.2%</td><td>61.7%</td><td>44.5%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>50.1%</td><td>60.7%</td><td>58.1%</td><td>46.7%</td><td>34.4%</td>     </tr></tbody></table><br />For every 10% of demand increase in supply we see 1-3% improvements in the percentage of demand supplied directly and 1-5% improvements in the amount of time demand is more or the same as supply.<br /><br />The python code for the above examples is very similar to the previous example for the flat demand profile and can be downloaded here: <a href="http://openenergymonitor.org/energymodel/#python">http://openenergymonitor.org/energymodel/#python </a><br /><br />The next example looks at the question of complementarity between different renewable energy types and asks the question what might the optimum capacity mix point be between wind and solar for a given electricity price point.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2015/06/hourly-energy-model-example-2-variable/">Hourly energy model example 2: Variable supply and flat demand (python code included)</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-12T07:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-12 07:52:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2015/06/hourly-energy-model-example-2-variable/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The second example in the hourly energy modelling tool models the degree of supply/demand matching  between a variable renewable supply consisting of a single renewable  energy generation type and a flat electricity demand profile. <br /><br />A flat demand may not of course be particularly realistic and the more complex examples later on address this, but I've used it here just to illustrate this particular simple example case.<br /><br /><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="584" src="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s640/varsupplyflatdemand.png" width="640" /></a> <br /><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>2. variable supply and flat demand</i><br /><i>&nbsp;</i> <br />The demand is subtracted from the supply for every  hour in the 10 year period and the total amount of unmet demand and  excess generation is measured as well as the amount of time the supply  was more than or equal to the demand.<br /><br />The demand level is set to an annual average electricity  demand of 3300 kWh which is the average UK household annual electricity  consumption. The amount of installed capacity is set to match this  demand on the 10 year basis of the dataset.<br /><br />Running the model for each of each generation type, matching total 10  year supply to total 10 year demand of 3300 kWh x 10 we get the  following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>65.9%</td><td>76.4%</td><td>73.9%</td><td>57.7%</td><td>40.6%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.1%</td><td>46.2%</td><td>45.3%</td><td>38.6%</td><td>32.1%</td>     </tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div>We can see again here that offshore wind is the clear winner with the lowest installed capacity requirement and highest level of supply/demand matching. Perhaps an interesting result is how less predictable technologies such as wind and wave provide greater levels of matching than power from tidal which is very predictable.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of  python versions of the examples which are simpler to follow as they dont  include all the code to create the visual output, they just print out  the main results at the end.<br /><br />I've highlighted the main parts in bold below:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 1<br /><br />installed_capacity = 0.785 # kW<br /><br />annual_house_demand = 3300 # kWh<br />house_power = (annual_house_demand * 10.0) / 87648&nbsp;&nbsp; <br /><br /><b># Load dataset</b><br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br />print<br /><br />total_supply = 0<br />total_demand = 0<br /><br />exess_generation = 0<br />unmet_demand = 0<br /><br />hours_met = 0</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><b># for every hour in the dataset</b><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate the supply</b><br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate demand</b><br />&nbsp;&nbsp;&nbsp; demand = house_power<br />&nbsp;&nbsp;&nbsp; total_demand += demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># subtract demand from supply to find the balance</b><br />&nbsp;&nbsp;&nbsp; balance = supply - demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># record the total amount of exess and unmet demand</b><br />&nbsp;&nbsp;&nbsp; if balance&gt;=0:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exess_generation += balance<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hours_met += 1<br />&nbsp;&nbsp;&nbsp; else:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unmet_demand += -balance<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />prc_demand_supplied = ((total_demand - unmet_demand) / total_demand) * 100<br /><br />prc_time_met = (1.0 * hours_met / hours) * 100</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /><b># print out the results</b> </span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">print "Installed capacity: %s kW" % installed_capacity<br />print "Capacity factor: %d%%" % capacity_factor<br />print<br />print "Total supply: %d kWh" % total_supply<br />print "Total demand: %d kWh" % total_demand<br />print<br />print "Exess generation %d kWh" % exess_generation<br />print "Unmet demand %d kWh" % unmet_demand<br />print <br />print "Percentage of demand supplied directly %d%%" % prc_demand_supplied<br />print "Percentage of time supply was more or the same as the demand %d%%" % prc_time_met</span></span>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/06/hourly-energy-model-example-1-variable/">Hourly energy model example 1: Variable Supply</a>
   </h1>
   
@@ -393,88 +455,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/02/real-world-emonth-battery-life/">Real World emonTH Battery Life </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-02-27T10:07:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-27 10:07:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/02/real-world-emonth-battery-life/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" height="266" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The battery on my home <a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">emonTH Temperature &amp; Humidity Node</a> has just died for the second time in 14 months. Each set of batteries lasted exactly 221 days (7 months and 9 days)! The 2 x AA alkaline battery voltage started at 3.1V and the emonTH stopped working just after the voltage dropped below 1.2V (final dying breath was at a battery voltage of 0.8V!). &nbsp;The two AA batteries installed were low cost alkaline batteries <a href="http://www.espares.co.uk/product/es1660092/espares-ultra-alkaline-aa-batteries---pack-of?ApplianceTypeId=1090&amp;ManufacturerId=596">unbranded from e-spares</a>. Battery life would not doubt be longer from some quality cells.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I recommend using rechargeable alkaline batteries if possible in the emonTH, for least environmental impact. See my previous posts on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">emonTH battery selection</a> and <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">power consumption optimisation</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My emonTH had a DHT22 temperature and humidity sensor connected and was set to the default post rate of one minute in-between samples. The unit was running V1.0 firmware (the firmware is now at V1.2, there have been a couple of minor battery life improvements).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It's very impressive how the DC-DC boost converter onboard the emonTH continues to boost the depleting battery voltage to 3.3V, using this method allows the battery to be drained much further than powering the unit directly.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" height="356" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" height="300" width="640" /></a></div><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/02/rfm69cw-power-consumption/">RFM69CW Power Consumption </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-02-23T13:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-23 13:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/rfm69/'>RFM69</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/02/rfm69cw-power-consumption/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Following on from my <a href="http://openenergymonitor.blogspot.co.uk/2013/07/new-oscilloscope.html">post on RFM12B power consumption</a>&nbsp;here's the same measurements for the RFM69CW&nbsp;(<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see RFM69CW intro blog post</a>).<br /><br />Current consumption was measured in the same way as explained in the RFM12B post back in July 2013. Voltage drop was measured across 10R current shunt resistor.<br /><br />A fully populated emonTx V3.4 with a 433Mhz RFM69CW running <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM69CW/emonTxV3_RFM69CW_DiscreteSampling/emonTxV3_RFM69CW_DiscreteSampling.ino">discrete sampling code </a>with a single CT connected was used in the test. The V3.4 was powered directly with 3.3V DC from bench PSU.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 with RFM69CW Test Setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test setup illustration</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test Bench</td></tr></tbody></table><i>Please excuse my photos of the scope traces rather than screen captures, for some reason the USB socket on the scope did not seem to be working today :-(</i><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Full sample and RFM69CW transmit trace capture</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">When an AC-AC adapter is not connected the emonTx goes to sleep in between readings. The above current trace shows the ATmega328 waking up for 295ms to sample from one CT channel the spike at the end is the RFM69CW transmitting. The trace below is a zoomed in capture of the RFM69CW transmission and LED.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM69CW transmission current consumption&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><b>The current trace above shows the RFM69CW transmission: 33mA @ 3.3V&nbsp;(109mW) for 4ms. The current spike at the end (up to 39mA) is the emonTx LED. </b>In this test the emonTx was running the standard discrete sampling firmware transmitting a JeeLib packet structure with six integers. Since we were only sampling from one CT four out of the five integers will be zero.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This equates to a 15 bytes payload plus 9 byte overhead&nbsp;@ 48kb/s. See J<a href="http://jeelabs.org/2011/06/09/rf12-packet-format-and-design/">eeLib packet structure</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In comparison I measured the RFM12B to consume 25.5mA @ 3.3V (84.2mW)&nbsp;for 3ms.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My measurements pretty much agree with the datasheets, here's a comparison table compiled by Low Power Labs:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="142" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Even though the RFM69CW does consume more power while it's transmitting it does have a lower sleep consumption than the RFM12B. This increased transmission power should result in an increased transmission range.</div><br />I've started a forum thread for discussion:&nbsp;<a href="http://openenergymonitor.org/emon/node/10210">http://openenergymonitor.org/emon/node/10210</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -500,7 +480,19 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     
       
         <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Attempting to measure and understand the CO2 intensity of grid electricity</a>
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part-2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -543,18 +535,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2015/12/heatpumps-in-zerocarbonbritain-model-by/">Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/heat-pump-monitoring/">Heat pump Monitoring</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2015/12/emoncms-android-app/">Emoncms Android App</a>
         </li>
       
     
@@ -638,6 +618,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/ciseco/">ciseco</a></li>
     
       <li><a href="/categories/community energy/">community energy</a></li>
+    
+      <li><a href="/categories/community smart grid/">community smart grid</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     
