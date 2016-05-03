@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Attempting to measure and understand the CO2 intensity of grid electricity"
+title: "Part 1: Attempting to measure and understand the CO2 intensity of grid electricity"
 date: 2016-04-18 15:00                                          # This is the indexed published time and date
 date_formatted: "April  27th 2016"                                # This is the public facing date on the post
 author: Trystan Lea
 comments: true
-categories: sustainability                                      # Lower case
+categories:
+ - sustainability                                      # Lower case
+ - community smart grid                                 # Lower case
 ---
 
 Zero carbon energy scenarios such as [ZeroCarbonBritain](http://zerocarbonbritain.org/) feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.
@@ -26,7 +28,7 @@ An electric car achieving a real world mountainous north Wales terrain driving e
 [[1]](http://www.carbonindependent.org/sources_car.html)
 [[2]](http://www.whatcar.com/car-news/real-world-mpg-efficient-small-cars/1214063)
 
-The average CO2 intensity for the UK grid as a whole in 2015 was [367gCO2/kWh](http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015) http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015 - providing similar CO2 emission reduction potential to the gas only calculations above.
+The average CO2 intensity for the UK grid as a whole in 2015 was [367gCO2/kWh](http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html) http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015 - providing similar CO2 emission reduction potential to the gas only calculations above.
 
 It is interesting to note that this average, results from coal generation with a CO2 intensity of 910gCO2/kWh being offset somewhat by generation from renewable energy and nuclear at 0gCO2/kWh resulting in a CO2 intensity that is close to what it would be if gas CCGT was our only supply source – which really highlights how carbon intensive coal is.
 
