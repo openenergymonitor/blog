@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-03T09:40:31+00:00</updated>
+  <updated>2016-05-03T18:54:18+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Website Changes]]></title>
+    <link href="http://blog.openenergymonitor.org/2016/05/website-changes/"/>
+    <updated>2016-05-02T15:00:00+00:00</updated>
+    <id>http://blog.openenergymonitor.org/2016/05/website-changes</id>
+    <content type="html"><![CDATA[<p>We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.</p>
+
+<p>Introducing a shiny new:</p>
+
+<ol>
+  <li>Community Forum</li>
+  <li>User Guide website</li>
+  <li>Blog</li>
+</ol>
+
+<p><strong>Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</strong></p>
+
+<p>Read on for full details.</p>
+
+<!--more-->
+
+<h2 id="new-community-forum">1. New Community Forum</h2>
+
+<h4 id="httpscommunityopenenergymonitororghttpscommunityopenenergymonitororg"><a href="https://community.openenergymonitor.org">https://community.openenergymonitor.org</a></h4>
+
+<p>The current <a href="http://openenergymonitor.org/emon/forum">OpenEnergyMonitor Forums</a> have been running (since 2010) on Drupal 6. As of February 2016 Drupal 6 reached EOL. This does not mean that the site will stop working, however, it does mean we have decided the time has come to upgrade the highest traffic and most interacted-with part of the site &gt; The Community Forums.</p>
+
+<p>Later this week <strong>on Thursday 5th May 2016 the old forum will be frozen</strong> and we will be moving to the new forum powered by <a href="https://www.discourse.org/">Discouse</a> open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.</p>
+
+<p>You will need to create an account on the new forum. You should receive an email soon inviting you to the new forum, if you join via the link in the email you will receive elevated privileges on the new forum since you have already proved yourself as a trusted user.</p>
+
+<p>Thanks a lot to the team of community volunteers who have prepare the new forum over the past few weeks.</p>
+
+<p><img src="http://blog.openenergymonitor.org/images/Selection_037.png" alt="image" /><img src="http://blog.openenergymonitor.org/images/Selection_038.png" alt="image" /></p>
+
+<h2 id="new-user-guide">2. New User Guide</h2>
+
+<h4 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h4>
+
+<p><a href="https://openenergymonitor.org/emon/">OpenEnergyMonitor.org</a> contains has a wealth of information (specifically the <a href="http://openenergymonitor.org/emon/buildingblocks">Building Blocks</a> resources section), however a common issue raised by new users is they feel lost swimming in a sea of information. The user guide has been created to provide just the right amount of information to setup and configure and OpenEnergyMonitor system. The guide is focused on the emonPi but will also cover emonBase (Raspberry Pi + RFM69Pi), emonTx and emonTH.</p>
+
+<p>The launch of the Guide site coincides with the launch of the new emonSD Raspberry Pi emonPi / emonBase pre built image which includes the latest version of Emoncms as well as MQTT, nodeRED, openHAB and Raspberry Pi 3 support all setup and pre-configured. <a href="https://community.openenergymonitor.org/t/emonsd-03may16-release/145">See forum post</a>. This new emonSD image will be installed as standard with all emonPi/emonBase’s shipped from our store in the next few weeks. <em>We soon be selling the Raspberry Pi 3 as standard with emonPi / emonBase, another blog post on this coming soon..</em></p>
+
+<p>The User Guide site will attempt to create a distinction between ‘user’ documentation and ‘developer’ documentation and discussions. The Guide site has been designed to look and work great on mobile devices. We think this is important since stats indicated that users often follow the setup guide on a mobile or tablet while at the install site (think head stuck inside a meter cabinate!). Going forward we would like to standardise on the following locations for documentation:</p>
+
+<ul>
+  <li>User Guide Site - User documentation</li>
+  <li>Forums - User support / Developer discussion separated with categories.</li>
+  <li>GitHub - Technical documentation</li>
+</ul>
+
+<p>The Hardware Wiki will still exist, however expect hardware documentation to move to <a href="https://github.com/openenergymonitor/hardware">GitHub Hardware Repo</a> over time.</p>
+
+<p><img src="http://blog.openenergymonitor.org/images/Selection_036.png" alt="image" /></p>
+
+<h2 id="new-blog">3. New Blog</h2>
+
+<h4 id="httpsblogopenenergymonitororghttpsblogopenenergymonitororg"><a href="https://blog.openenergymonitor.org">https://blog.openenergymonitor.org</a></h4>
+
+<p>We have wanted to move away from our <a href="http://openenergymonitor.blogspot.co.uk/">old Google blogger</a> for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice <a href="https://import.jekyllrb.com/docs/blogger/">Jekyll import script</a> we managed to migrate over the blog without too much difficulty.</p>
+
+<p><img src="http://blog.openenergymonitor.org/images/Selection_039.png" alt="image" /></p>
+
+<h3 id="technical-info">Technical info</h3>
+
+<p>The new Guide and Blog are built using <a href="http://jekyllrb.com/">Jekyll</a> static site generator with Octopress <a href="https://github.com/coogie/oscailte">Oscailte theme</a> to convert markdown files to html. The sites are <a href="https://github.com/openenergymonitor/guide">fully open-source on GitHub </a> and are hosted by GitHub pages. <a href="https://travis-ci.org/openenergymonitor/guide/">Travis CI</a> has been configured to re-build the static html pages each time a change commit is made. Hosting the site on github will make it easy for anyone to propose a change/fix. The site is served and secured via Cloud Flare using CF’s <a href="https://blog.cloudflare.com/cloudflare-ca-encryption-origin/">Universal SSL/TLS to origin</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
@@ -34,7 +103,7 @@
 
 <p>At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.</p>
 
-<p>The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Centre for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See <a href="(https://openenergymonitor.org/energymodel/)">modelled supply/demand matching</a> based on ZeroCarbonBritain data:</p>
+<p>The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Center for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See <a href="(https://openenergymonitor.org/energymodel/)">modelled supply/demand matching</a> based on ZeroCarbonBritain data:</p>
 
 <p><a href="https://openenergymonitor.org/dev/smartgrid">Smart grid test intro page</a></p>
 
@@ -45,7 +114,6 @@
 <p>At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in <a href="http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2">Dominic’s blog post</a>.</p>
 
 <p><img src="http://blog.openenergymonitor.org/images/smartgrid2.png" alt="image" /></p>
-
 ]]></content>
   </entry>
   
@@ -409,14 +477,6 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
     <updated>2015-11-04T11:54:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
     <content type="html"><![CDATA[<br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it's possible to identify subtler power signatures. Here's an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It's great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br />]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ambient Wind Energy Indicator using Node-RED and Blink(1) USB ]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/"/>
-    <updated>2015-11-04T10:25:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using</id>
-    <content type="html"><![CDATA[<div>As we move to a low carbon electric grid with large amount of input from renewable sources we will need to match our consumption of energy to generation. The wind will not always blow and the sun doesn't always shine. Grid energy storage will play a role, however the closer we can match our consumption of energy to generation the less storage will be required. In the future we can expect dynamic pricing to act as as an incentive for shifting consumption patterns.&nbsp;</div><div><br /></div><div>As an experiment I have been playing around with creating a real-time ambient indicator of UK wind energy generation. Since wind energy is the greatest input of renewable energy into the UK grid we can assume that when wind generation output is high this is the best time for us to use power e.g. run the washing machine, dish washer etc..&nbsp;</div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div>I've used <a href="http://emoncms.org/">emoncms.org</a>, &nbsp;Node-RED and a <a href="https://blink1.thingm.com/">ThingM blink(1) USB RGB LED</a>&nbsp;plugged into an <a href="http://shop.openenergymonitor.com/emonpi-1">emonPi</a> energy monitor to create the indicator.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-MgLolvdJt4w/Vi6jGqzmYbI/AAAAAAABhhE/uCflxGRqya8/s1600/IMG_20151023_164739161%257E01.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://3.bp.blogspot.com/-MgLolvdJt4w/Vi6jGqzmYbI/AAAAAAABhhE/uCflxGRqya8/s320/IMG_20151023_164739161%257E01.jpg" width="239" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Real-time wind energy indicator</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-zTad-tTlyUE/VjnbfV5tPOI/AAAAAAABiaE/zrYYHpfwjW8/s1600/blinkusb.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://4.bp.blogspot.com/-zTad-tTlyUE/VjnbfV5tPOI/AAAAAAABiaE/zrYYHpfwjW8/s320/blinkusb.gif" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blink USB Indicator</td></tr></tbody></table><br />First let's install the software to control the Blink(1) USB on the emonPi / RaspberryPi:<br /><br /><i>$ git clone https://github.com/todbot/blink1</i><br /><i>$ sudo cp ~/blink1/linux/51-blink1.rules /etc/udev/rules.d/</i><br /><i>$ sudo udevadm control --reload-rules</i><br />un-plug then re-plug device<br /><i>$ cd blink1/commandline</i><br /><i>$ make</i><br /><br />Note: if Node HID fails to compile you may need to install gcc-4.8. I did not experience this problem using Raspbian Wheezy:&nbsp;<span style="color: #383838; font-family: &quot;monaco&quot; , &quot;courier&quot; , monospace; font-size: 14px; line-height: 1.57143em;"><a href="https://github.com/node-hid/node-hid/issues/115">https://github.com/node-hid/node-hid/issues/115</a></span><br /><span style="color: #383838; font-family: &quot;monaco&quot; , &quot;courier&quot; , monospace; font-size: 14px; line-height: 1.57143em;"><br /></span>Test it's operation by turning on a white LED with<br />$ <i>~/blink1/commandline./blink1-tools --on</i><br /><i><br /></i>To make the Blink(1) USB work with Node-RED we need to install the Blink(1) node-RED flow and libusb driver. If you haven't already got it installed this example also requires the emoncms noe-RED flow to pull data from emoncms.org<br /><br /><i>$ sudo apt-get install libusb-1.0-0.dev</i><br /><i>$ cd ~/.node-red</i><br /><i>$ npm install node-red-node-blink1</i><br /><i>$ npm install node-red-node-emoncms</i><br /><br />Then restart node-RED.<br /><br />Node-RED makes it super easy to link the required software components together, with pre built nodes available for emoncms and Blink USB it's just a case of linking the nodes together and adding some logic. Here is now node-RED flow, see node-RED export at bottom of this post:<br /><br /></div><div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-9_rpddNkZsA/VjnUJ2AYmOI/AAAAAAABiZQ/PVepjwwO6Jo/s1600/Node_RED_Emoncms_WindEnergy.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="208" src="http://4.bp.blogspot.com/-9_rpddNkZsA/VjnUJ2AYmOI/AAAAAAABiZQ/PVepjwwO6Jo/s640/Node_RED_Emoncms_WindEnergy.png" width="640" /></a></div><br /></div><div>We have a script running on emoncms.org to pull in real-time UK wind energy generation. We have been logging this data for almost a year now. Checkout the dashboard here: <a href="http://emoncms.org/mywindpower/ukwind">http://emoncms.org/mywindpower/ukwind</a>.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-zr6-pnRM68Q/Vjnc8gUs1gI/AAAAAAABiaU/7h__EuOz9ps/s1600/Emoncms_my_wind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="253" src="http://3.bp.blogspot.com/-zr6-pnRM68Q/Vjnc8gUs1gI/AAAAAAABiaU/7h__EuOz9ps/s400/Emoncms_my_wind.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/mywindpower/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/mywindpower/ukwind</a></td></tr></tbody></table><br />The read API key for this account is <i>8f5c2d146c0c338845d2201b8fe1b0e1</i> and the feed ID is&nbsp;<span style="background-color: whitesmoke; color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px; line-height: 20px;"><i>67088</i></span>. To pull the real time data into&nbsp;node red just plug in the &nbsp;api key and feed ID into the <a href="http://flows.nodered.org/node/node-red-node-emoncms">node-RED emoncms in node</a>. Node-RED will then execute the following GET request:</div><div><a href="https://www.blogger.com/goog_896110156"><br /></a><b><a href="http://emoncms.org/feed/value.json?id=67088&amp;apikey=8f5c2d146c0c338845d2201b8fe1b0e1">http://emoncms.org/feed/value.json?id=67088&amp;apikey=8f5c2d146c0c338845d2201b8fe1b0e1</a></b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRE/BlMdaoiDjsQ/s1600/3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275" src="http://4.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRE/BlMdaoiDjsQ/s400/3.png" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRA/0AtBR80rNP0/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="235" src="http://1.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRA/0AtBR80rNP0/s400/2.png" width="400" /></a></div><b><br /></b></div><div><br />The blink usb node requires RGB csv to represent a colour output. A node is used to map the generation 0 - &nbsp;7000 MW (currently!) to 0 - 255 RGB representation.&nbsp;</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-WlNB7c0DlW8/Vii2PYXKUBI/AAAAAAABhRQ/hNDNr07dFlg/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-WlNB7c0DlW8/Vii2PYXKUBI/AAAAAAABhRQ/hNDNr07dFlg/s400/4.png" width="390" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GhZ2U4h9ckY/Vii2PiJSKlI/AAAAAAABhRM/4a-Vlm5vXoM/s1600/5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/-GhZ2U4h9ckY/Vii2PiJSKlI/AAAAAAABhRM/4a-Vlm5vXoM/s400/5.png" width="391" /></a></div><br /><br /><span style="font-family: Arial, Helvetica, sans-serif; font-size: xx-small;">[{"id":"98c24074.673dc","type":"emoncms-server","server":"http://emoncms.org","name":"emoncms UK windpower"},{"id":"5a3294d0.a5cd6c","type":"function","name":"Create RGB values CSV","func":"// convert to integer \n//var wind = +msg.payload;\n\n// green = 255 @ max wind output\nvar g = msg.payload\n\n// red = 255 @ zero wind output\nvar r= 255 - msg.payload\n\n// Round to whole number\ng = Number((g).toFixed(0));\nr = Number((r).toFixed(0));\n\nvar csv = r + \",\" + g + \",\" + 0;\nreturn {payload:csv};","outputs":1,"noerr":0,"x":617,"y":348,"z":"c0b0c402.3f4f38","wires":[["52d8719f.ad279","f3dd00d0.0c23"]]},{"id":"6ec040ed.913fc","type":"inject","name":"Trigger every 10min 7AM-11PM","topic":"","payload":"1445415635","payloadType":"string","repeat":"","crontab":"*/10 7-22 * * *","once":false,"x":297,"y":261,"z":"c0b0c402.3f4f38","wires":[["68f8d790.970728"]]},{"id":"52d8719f.ad279","type":"debug","name":"","active":false,"console":"false","complete":"false","x":878,"y":334,"z":"c0b0c402.3f4f38","wires":[]},{"id":"b5d43139.4a2bd","type":"inject","name":"Test 100MW","topic":"","payload":"100","payloadType":"string","repeat":"","crontab":"","once":false,"x":223,"y":421,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"9122dd65.6edd2","type":"inject","name":"Test 2000 MW","topic":"","payload":"2500","payloadType":"string","repeat":"","crontab":"","once":false,"x":225,"y":469,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"b5c8e6e5.4a3718","type":"inject","name":"Test 5000MW","topic":"","payload":"5000","payloadType":"string","repeat":"","crontab":"","once":true,"x":224,"y":514,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"f3dd00d0.0c23","type":"blink1","fade":"600","name":"Blink(1) USB","x":847,"y":440,"z":"c0b0c402.3f4f38","wires":[]},{"id":"68f8d790.970728","type":"emoncms in","name":"Get UK wind generation output from emoncm.org","emonServer":"98c24074.673dc","feedid":"67087","x":263,"y":343,"z":"c0b0c402.3f4f38","wires":[["2da76a85.d25896"]]},{"id":"2da76a85.d25896","type":"range","minin":"0","maxin":"6000","minout":"0","maxout":"255","action":"clamp","round":true,"name":"Range: Scale wind output to RGB value","x":551,"y":417,"z":"c0b0c402.3f4f38","wires":[["5a3294d0.a5cd6c"]]},{"id":"64a3fa26.9b5c04","type":"inject","name":"Turn off after 11PM","topic":"","payload":"0,0,0","payloadType":"string","repeat":"","crontab":"01 23 * * *","once":false,"x":613,"y":488,"z":"c0b0c402.3f4f38","wires":[["f3dd00d0.0c23"]]}]</span>]]></content>
   </entry>
   
 </feed>
