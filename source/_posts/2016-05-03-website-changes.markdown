@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Website Changes"
+title: "New Forum, Blog and User Guide Website"
 date: 2016-05-02 15:00                                       # This is the indexed published time and date
 date_formatted: "May  3rd 2016"                              # This is the public facing date on the post
 author: Glyn Hudson
@@ -22,11 +22,11 @@ Introducing a shiny new:
 
 **Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums**
 
-Read on for full details.
-
 <!--more-->
 
 ## 1. New Community Forum
+
+![image]({{site.image_path}}/Selection_037.png)![image]({{site.image_path}}/Selection_038.png)
 
 ####  [https://community.openenergymonitor.org](https://community.openenergymonitor.org)
 
@@ -38,9 +38,9 @@ You will need to create an account on the new forum. You should receive an email
 
 Thanks a lot to the team of community volunteers who have prepare the new forum over the past few weeks.
 
-![image]({{site.image_path}}/Selection_037.png)![image]({{site.image_path}}/Selection_038.png)
-
 ## 2. New User Guide
+
+![image]({{site.image_path}}/Selection_036.png)
 
 #### [https://guide.openenergymonitor.org](https://guide.openenergymonitor.org)
 
@@ -56,16 +56,14 @@ The User Guide site will attempt to create a distinction between 'user' document
 
 The Hardware Wiki will still exist, however expect hardware documentation to move to [GitHub Hardware Repo](https://github.com/openenergymonitor/hardware) over time.
 
-![image]({{site.image_path}}/Selection_036.png)
-
-
 ## 3. New Blog
+
+![image]({{site.image_path}}/Selection_039.png)
 
 #### [https://blog.openenergymonitor.org](https://blog.openenergymonitor.org)
 
-We have wanted to move away from our [old Google blogger](http://openenergymonitor.blogspot.co.uk/) for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice [Jekyll import script](https://import.jekyllrb.com/docs/blogger/) we managed to migrate over the blog without too much difficulty.
+We have wanted to move away from our [old Google blogger](http://openenergymonitor.blogspot.co.uk/) for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice [Jekyll import script](https://import.jekyllrb.com/docs/blogger/) we managed to migrate over the blog without too much difficulty. Please update your RSS subscription to the [new RSS feed](http://blog.openenergymonitor.org/atom.xml).
 
-![image]({{site.image_path}}/Selection_039.png)
 
 ### Technical info
 
