@@ -32,7 +32,7 @@ Introducing a shiny new:
 
 The current [OpenEnergyMonitor Forums](http://openenergymonitor.org/emon/forum) have been running (since 2010) on Drupal 6. As of February 2016 Drupal 6 reached EOL. This does not mean that the site will stop working, however, it does mean we have decided the time has come to upgrade the highest traffic and most interacted-with part of the site > The Community Forums.
 
-Later this week **on Thursday 5th May 2016 the old forum will be frozen** and we will be moving to the new forum powered by [Discouse](https://www.discourse.org/) open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.
+Later this week **on Thursday 5th May 2016 the old forum will be frozen** and we will be moving to the new forum powered by [Discourse](https://www.discourse.org/) open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.
 
 You will need to create an account on the new forum. You should receive an email soon inviting you to the new forum, if you join via the link in the email you will receive elevated privileges on the new forum since you have already proved yourself as a trusted user.
 
