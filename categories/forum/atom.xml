@@ -4,7 +4,7 @@
   <title><![CDATA[Category: forum | Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/categories/forum/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-04T22:40:58+00:00</updated>
+  <updated>2016-05-04T22:41:43+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -40,7 +40,7 @@
 
 <p>The current <a href="http://openenergymonitor.org/emon/forum">OpenEnergyMonitor Forums</a> have been running (since 2010) on Drupal 6. As of February 2016 Drupal 6 reached EOL. This does not mean that the site will stop working, however, it does mean we have decided the time has come to upgrade the highest traffic and most interacted-with part of the site &gt; The Community Forums.</p>
 
-<p>Later this week <strong>on Thursday 5th May 2016 the old forum will be frozen</strong> and we will be moving to the new forum powered by <a href="https://www.discourse.org/">Discouse</a> open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.</p>
+<p>Later this week <strong>on Thursday 5th May 2016 the old forum will be frozen</strong> and we will be moving to the new forum powered by <a href="https://www.discourse.org/">Discourse</a> open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.</p>
 
 <p>You will need to create an account on the new forum. You should receive an email soon inviting you to the new forum, if you join via the link in the email you will receive elevated privileges on the new forum since you have already proved yourself as a trusted user.</p>
 
