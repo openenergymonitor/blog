@@ -62,7 +62,7 @@ The Hardware Wiki will still exist, however expect hardware documentation to mov
 
 #### [https://blog.openenergymonitor.org](https://blog.openenergymonitor.org)
 
-We have wanted to move away from our [old Google blogger](http://openenergymonitor.blogspot.co.uk/) for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice [Jekyll import script](https://import.jekyllrb.com/docs/blogger/) we managed to migrate over the blog without too much difficulty. Please update your RSS subscription to the [new RSS feed](http://blog.openenergymonitor.org/atom.xml).
+We have wanted to move away from our [old Google blogger](http://openenergymonitor.blogspot.co.uk/) for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice [Jekyll import script](https://import.jekyllrb.com/docs/blogger/) we managed to migrate over the blog without too much difficulty. Please update your RSS subscription to the [new Atom feed.xml](http://blog.openenergymonitor.org/feed.xml).
 
 
 ### Technical info
