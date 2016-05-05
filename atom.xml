@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="http://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:49:29+00:00</updated>
+  <updated>2016-05-05T16:53:59+00:00</updated>
   <id>http://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -116,25 +116,11 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Part2 Exploring Carbon Intensity]]></title>
+    <title type="html"><![CDATA[Part 2: Exploring carbon intensity and renewable energy matching]]></title>
     <link href="http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
-    <updated>2016-04-28T00:00:00+00:00</updated>
+    <updated>2016-04-28T15:00:00+00:00</updated>
     <id>http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
-    <content type="html"><![CDATA[
-<hr />
-<p>published: true
-layout: post
-title: “Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy”
-date: 2016-04-28 15:00                                          # This is the indexed published time and date
-date_formatted: “April  28th 2016”                                # This is the public facing date on the post
-author: Trystan Lea
-comments: true
-categories:
- - sustainability                                      # Lower case
- - community smart grid
-—</p>
-
-<p><img src="http://blog.openenergymonitor.org/images/winderful.png" alt="image" /></p>
+    <content type="html"><![CDATA[<p><img src="http://blog.openenergymonitor.org/images/winderful.png" alt="image" /></p>
 
 <p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
 
