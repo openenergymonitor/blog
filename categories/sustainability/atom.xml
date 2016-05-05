@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sustainability | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/sustainability/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T17:10:37+00:00</updated>
+  <updated>2016-05-05T17:25:32+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -113,7 +113,7 @@ Over the year the average available wind power for the household will work out t
   <entry>
     <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
     <link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
-    <updated>2016-04-18T15:00:00+00:00</updated>
+    <updated>2016-04-27T15:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id>
     <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
 
