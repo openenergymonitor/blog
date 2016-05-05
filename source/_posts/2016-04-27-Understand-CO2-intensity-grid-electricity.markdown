@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 1: Attempting to measure and understand the CO2 intensity of grid electricity"
-date: 2016-04-18 15:00                                          # This is the indexed published time and date
+date: 2016-04-27 15:00                                          # This is the indexed published time and date
 date_formatted: "April  27th 2016"                                # This is the public facing date on the post
 author: Trystan Lea
 comments: true
