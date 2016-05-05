@@ -1,8 +1,7 @@
-
 ---
 published: true
 layout: post
-title: "Part 2: Exploring carbon intensity and renewable energy matching: real-time grid CO2 intensity + on-site and grid renewable energy"
+title: "Part 2: Exploring carbon intensity and renewable energy matching"
 date: 2016-04-28 15:00                                          # This is the indexed published time and date
 date_formatted: "April  28th 2016"                                # This is the public facing date on the post
 author: Trystan Lea
