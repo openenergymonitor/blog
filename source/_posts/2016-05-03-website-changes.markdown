@@ -48,7 +48,7 @@ Thanks a lot to the team of community volunteers who have prepare the new forum 
 
 The launch of the Guide site coincides with the launch of the new emonSD Raspberry Pi emonPi / emonBase pre built image which includes the latest version of Emoncms as well as MQTT, nodeRED, openHAB and Raspberry Pi 3 support all setup and pre-configured. [See forum post](https://community.openenergymonitor.org/t/emonsd-03may16-release/145). This new emonSD image will be installed as standard with all emonPi/emonBase's shipped from our store in the next few weeks. *We soon be selling the Raspberry Pi 3 as standard with emonPi / emonBase, another blog post on this coming soon..*
 
-The User Guide site will attempt to create a distinction between 'user' documentation and 'developer' documentation and discussions. The Guide site has been designed to look and work great on mobile devices. We think this is important since stats indicated that users often follow the setup guide on a mobile or tablet while at the install site (think head stuck inside a meter cabinate!). Going forward we would like to standardise on the following locations for documentation:
+The User Guide site will attempt to create a distinction between 'user' documentation and 'developer' documentation and discussions. The Guide site has been designed to look and work great on mobile devices. We think this is important since stats indicated that users often follow the setup guide on a mobile or tablet while at the install site (think head stuck inside a meter cabinet!). Going forward we would like to standardise on the following locations for documentation:
 
  - User Guide Site - User documentation
  - Forums - User support / Developer discussion separated with categories.
