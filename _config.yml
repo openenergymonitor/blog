@@ -68,6 +68,7 @@ gems:
   - jekyll-time-to-read
   - octopress-filters
   - octopress-include-tag
+  - jekyll-feed
 
 paginate: 10          # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
