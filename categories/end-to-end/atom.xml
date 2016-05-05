@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: end-to-end | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/end-to-end/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/end-to-end/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Full web-connected home energy monitoring system]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy/"/>
+    <link href="https://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy/"/>
     <updated>2012-01-14T14:02:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy</id>
+    <id>https://blog.openenergymonitor.org/2012/01/full-web-connected-home-energy</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">The mission of the OpenEnergyMonitor project is to design and build and open-source energy monitoring and eventually control system. We would like this system to be work well for home energy monitoring systems but also be scalable. For more information see our newly updated&nbsp;<a href="http://openenergymonitor.org/emon/vision" style="text-align: left;">project vision</a><span class="Apple-style-span" style="text-align: left;">.</span></div>
 <div class="separator" style="clear: both; text-align: left;"><span class="Apple-style-span" style="text-align: left;"><br /></span></div>
 <div class="separator" style="clear: both; text-align: left;"><span class="Apple-style-span" style="text-align: left;">We are now at the stage were we have a fully functional end-to-end web-connected home energy monitoring system. We have recently written a full&nbsp;<a href="http://openenergymonitor.org/emon/applications/homeenergy">step-by-step build guide for the system</a>. This build guide covers everything from assembling the electronics, uploading the Arduino firmware to setting the web dashboard.&nbsp;</span></div>

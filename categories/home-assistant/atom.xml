@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: home Assistant | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/home-assistant/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/home-assistant/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Home Assistant and emonPi]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
     <updated>2016-04-01T17:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
     <content type="html"><![CDATA[<p><a href="http://home-assistant.io/">Home Assistant</a> (HA) is a fully <a href="https://github.com/balloob/home-assistant">open-source</a> home automation platform.</p>
 
 <p>In terms of functionality it’s quite similar to <a href="http://openenergymonitor.blogspot.co.uk/search/label/openHAB">openHAB</a> however it’s architecture is very different it runs on Python 3 as opposed to java.</p>

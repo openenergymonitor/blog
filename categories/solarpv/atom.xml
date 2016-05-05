@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: solarPV | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/solarpv/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/solarpv/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Documentation highlight: Solar PV power diversion PLL]]></title>
-    <link href="http://blog.openenergymonitor.org/2013/11/documentation-highlight-solar-pv-power/"/>
+    <link href="https://blog.openenergymonitor.org/2013/11/documentation-highlight-solar-pv-power/"/>
     <updated>2013-11-11T21:34:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2013/11/documentation-highlight-solar-pv-power</id>
+    <id>https://blog.openenergymonitor.org/2013/11/documentation-highlight-solar-pv-power</id>
     <content type="html"><![CDATA[<p>I would like to highlight the recent addition of some really great documentation written by Robert Wall and Martin Roberts detailing Martin’s Solar PV power diversion implementation which uses an emonTx running PLL based firmware,an emonGLCD and temperature measurement. <br /><br />You can find it here <a href="http://openenergymonitor.org/emon/pvdiversion/pll">http://openenergymonitor.org/emon/pvdiversion/pll</a><br />and its linked through from the main <a href="http://openenergymonitor.org/emon/guide">Getting Started Guide</a>.<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-TdBaiyaDj5s/UoFKdwsQX7I/AAAAAAAACy8/O7aM8mCkVs4/s1600/Screenshot+from+2013-11-11+21:19:31.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="500" src="http://3.bp.blogspot.com/-TdBaiyaDj5s/UoFKdwsQX7I/AAAAAAAACy8/O7aM8mCkVs4/s640/Screenshot+from+2013-11-11+21:19:31.png" width="640" /></a>&lt;/div&gt;<br /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[One Year of Solar PV Monitoring]]></title>
-    <link href="http://blog.openenergymonitor.org/2013/05/one-year-of-solar-pv-monitoring/"/>
+    <link href="https://blog.openenergymonitor.org/2013/05/one-year-of-solar-pv-monitoring/"/>
     <updated>2013-05-13T20:27:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2013/05/one-year-of-solar-pv-monitoring</id>
+    <id>https://blog.openenergymonitor.org/2013/05/one-year-of-solar-pv-monitoring</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">On the 23rd November 2011 we have had a 2.9Kwp solar PV installed.&nbsp;</div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s1600/Panels.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="177" src="http://3.bp.blogspot.com/-6Zd9PL-5AJE/UZEzH7aGB9I/AAAAAAAAeog/-tocRt1M_OA/s320/Panels.png" width="320" /></a></div>
@@ -57,18 +57,18 @@
   
   <entry>
     <title type="html"><![CDATA[Solar PV excess power into immersion water heater using emonTx, emonGLCD & MKII triac code - in development]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/11/solar-pv-excess-power-into-immersion/"/>
+    <link href="https://blog.openenergymonitor.org/2012/11/solar-pv-excess-power-into-immersion/"/>
     <updated>2012-11-24T19:45:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/11/solar-pv-excess-power-into-immersion</id>
+    <id>https://blog.openenergymonitor.org/2012/11/solar-pv-excess-power-into-immersion</id>
     <content type="html"><![CDATA[<p>From the forums: <b>Solar PV excess power into immersion water heater using emonTx, emonGLCD &amp; MKII triac code</b><br /><b><br /></b><a href="http://openenergymonitor.org/emon/user/1533" style="background-color: white; color: #336699; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; text-decoration: none;" title="View user profile.">jrobbie</a> (on the forums) writes:<br /><br />&lt;div style="background-color: #dddddd; padding: 10px;"&gt;As there appears to be a considerable amount of interest in getting an emonTx unit running Robin’s MK2 code (calypso_rae on this forum) and communicating with emonGLCD / emon Base … I thought it was about time I publish where I am at with my project.<br /><br />The emonTx with CT1 connected to the Grid, and CT3 connected to the Solar PV generation meter, AC psu and 5v USB supply are also connected.<br /><br />&lt;table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-ePo_WfKqfoI/ULEiH9DxikI/AAAAAAAAc1Y/_9GkfZ0RQGA/s1600/emonGLCD+Diverting.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="266" src="http://3.bp.blogspot.com/-ePo_WfKqfoI/ULEiH9DxikI/AAAAAAAAc1Y/_9GkfZ0RQGA/s400/emonGLCD+Diverting.JPG" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonGLCD with modified code&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-PoJvZwH7HzU/ULEiT-Sp7fI/AAAAAAAAc1o/Xpa1rBxfAwA/s1600/emonTx+boxed.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://1.bp.blogspot.com/-PoJvZwH7HzU/ULEiT-Sp7fI/AAAAAAAAc1o/Xpa1rBxfAwA/s320/emonTx+boxed.JPG" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx with additional tri-color LED to indicate immersion heater status&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-gl4dP3fIijE/ULEiBPOsqZI/AAAAAAAAc1Q/lWiOlpdaok8/s1600/DPCU.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://3.bp.blogspot.com/-gl4dP3fIijE/ULEiBPOsqZI/AAAAAAAAc1Q/lWiOlpdaok8/s320/DPCU.JPG" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption"&gt;Consumer unit containing MOC3041 triac&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div style="background-color: #dddddd; padding: 10px;"&gt;So many thanks to Robin for the MK2 code, Ian for the Calibration code, Glyn and Trystan for the building blocks as well as Paul Reed, Stuart and Robert Wall who have all made major contributions via this forum and get us to where we are today.&lt;/div&gt;&lt;div style="background-color: #dddddd; padding: 10px;"&gt;Read full post including emonGLCD and emonTx software sketches on the forums <a href="http://openenergymonitor.org/emon/node/1340">here</a>&lt;/div&gt;</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Triac based MK2 PV Controller by Calypso Rye]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/07/triac-based-mk2-pv-controller-by/"/>
+    <link href="https://blog.openenergymonitor.org/2012/07/triac-based-mk2-pv-controller-by/"/>
     <updated>2012-07-16T13:42:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/07/triac-based-mk2-pv-controller-by</id>
+    <id>https://blog.openenergymonitor.org/2012/07/triac-based-mk2-pv-controller-by</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: center;"></div>
 <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s1600/IMGP9704.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s400/IMGP9704.JPG" width="400" /></a></div>
 <p><br /><br /><a href="http://openenergymonitor.org/emon/user/956">Calypso Rye</a> writes:<br /><br />&lt;div style="background-color: #dddddd; font-size: 90%; padding: 10px;"&gt;Based on the standard VI sketch which uses calcVI() in EmonLib, I’ve had a system in place for the last couple of months which diverts surplus PV power to our immersion heater.  This system has proved to be both effective and reliable, and I am most grateful for everyone who has helped me along the way.  The main downside to this arrangement is that it requires an expensive item of third-party kit to distribute the power.  (I know that others have found cheaper ways, but my Carlo Gavazzi unit cost me £70).<br /><br />Other contributors to this forum have shown that a standard triac can be easily controlled by an Arduino.  By using a zero-crossing detector such as the Motorola MOC3041, it should be possible for the Arduino to allocate mains cycles directly to the load rather than delegating this task to a separate device.<br /><br />A Mk2 system of this type has been working in our garage for the last few days.  The sketch and a schematic diagram are attached, its main features being:<br /><br />- a comprehensive ‘debug’ mode which allows real world conditions to be simulated ;<br />&lt;div&gt;<br />- a continuous mode of operation, for both measurement and distribution of power;&lt;/div&gt;&lt;div&gt;<br />- an “energy bucket” concept which gives precise control of surplus power;<br /><br />- interleaved windows for measurement and generation, each only 20mS;<br /><br />- a rapid response time to changing conditions (50mS);<br /><br />- suitable timing for ‘arming’ a zero-crossing trigger device;<br /><br />- a single LPF which determines the dc-offset of raw VI samples;<br /><br />- a programmable safety margin for biassing import v. export;<br /><br />- minimal calibration is required.&lt;/div&gt;&lt;/div&gt;<br />Read the full post on the forum here: <a href="http://openenergymonitor.org/emon/node/841">http://openenergymonitor.org/emon/node/841</a></p>
@@ -77,9 +77,9 @@
   
   <entry>
     <title type="html"><![CDATA[emonGLCD Solar PV PWM LED Proportional Indication]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/05/emonglcd-solarpv-led-proportional/"/>
+    <link href="https://blog.openenergymonitor.org/2012/05/emonglcd-solarpv-led-proportional/"/>
     <updated>2012-05-13T14:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/05/emonglcd-solarpv-led-proportional</id>
+    <id>https://blog.openenergymonitor.org/2012/05/emonglcd-solarpv-led-proportional</id>
     <content type="html"><![CDATA[<p>The tri-colour LED’s on the emonGLCD V1.3 are connected the the hardware digital PWM lines on the Atmega328. This allows the brightness to be smoothly controlled in 0-255 steps.<br /><br />Up-until now we have not made use of this feature.<br /><br />The video below shows a demo of Solar PV generation and power consumption ramping up and down. The tri-colour LEDs smoothly increase in intensity green or red depending on the amount of power being imported or exported.<br /><br />This should serve as a nice at-a-glance visual indicator to how much power is being imported or exported at any given time. At the moment the example has been configured so that the LED’s are at their brightest when 4kW’s are being exported or imported. In the future it would be great if the display learnt what size PV system (kWp) is installed.<br /><br /><br />&lt;iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/H7EXHPc-lU8" width="560"&gt;&lt;/iframe&gt;<br /><br />It would be possible to implement a similar feature on the Home Energy Monitor display to indicate the level of power being consumed, but this will have to be done carefully not to annoy the user! The problem with this is what constitutes a high level of consumption? To be useful the display needs to ‘learn’ what’s high and what normal level of consumption.<br /><br />Thanks to <a href="http://openenergymonitor.org/emon/user/905">Rob Walker</a> and the discussion on <a href="http://openenergymonitor.org/emon/node/541">this thread</a> for help in implementing this. Rob has also implemented proportional control of the white LED backlight level based on the light level in the room measured by the on-board light sensor (LDR)..nice!<br /><br />All these changes and some other minor improvements have been committed to the emonGLCD github repository: <a href="https://github.com/openenergymonitor/EmonGLCD">https://github.com/openenergymonitor/EmonGLCD</a>. Please test and report feedback on the forums.<br /><br />Update: The single CT Home Energy Monitor emonGLCD example sketch has been updated to also include proportional red LED PWM brightness control corresponding to the amount of energy being consumed.</p>
 ]]></content>
   </entry>

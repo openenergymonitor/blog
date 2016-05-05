@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sparkfun | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/sparkfun/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/sparkfun/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Sparkfun tutorial: Solder stenciling]]></title>
-    <link href="http://blog.openenergymonitor.org/2011/03/sparkfun-tutorial-solder-stenciling/"/>
+    <link href="https://blog.openenergymonitor.org/2011/03/sparkfun-tutorial-solder-stenciling/"/>
     <updated>2011-03-02T21:16:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2011/03/sparkfun-tutorial-solder-stenciling</id>
+    <id>https://blog.openenergymonitor.org/2011/03/sparkfun-tutorial-solder-stenciling</id>
     <content type="html"><![CDATA[<p><a href="http://www.sparkfun.com/">Sparkfun</a> sometimes posts very useful tutorials on skills related to tinkering with electronics. This time they made a video tutorial on using a stencil to solder SMD components on a PCB. I find it quite useful, even for very small volumes (starting 5-10).&lt;div&gt;<br />&lt;iframe title="YouTube video player" width="560" height="349" src="http://www.youtube.com/embed/WDIqtGMROjM" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;If you are not the lucky owner of a laser cutter, there are many websites that offer to produce the stencil for you like <a href="http://www.ohararp.com/Stencils.html">www.ohararp.com</a> for reasonable prices.&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div style="text-align: right;"&gt;<a href="http://www.sparkfun.com/news/561">Source</a>&lt;/div&gt;</p>
 ]]></content>
   </entry>

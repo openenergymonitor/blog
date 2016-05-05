@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New Forum, Blog and User Guide Website]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/05/website-changes/"/>
+    <link href="https://blog.openenergymonitor.org/2016/05/website-changes/"/>
     <updated>2016-05-03T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/05/website-changes</id>
+    <id>https://blog.openenergymonitor.org/2016/05/website-changes</id>
     <content type="html"><![CDATA[<p>We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.</p>
 
 <p>Introducing a shiny new:</p>
@@ -34,7 +34,7 @@
 
 <h2 id="new-community-forum">1. New Community Forum</h2>
 
-<p><img src="http://blog.openenergymonitor.org/images/Selection_037.png" alt="image" /><img src="http://blog.openenergymonitor.org/images/Selection_038.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/Selection_037.png" alt="image" /><img src="https://blog.openenergymonitor.org/images/Selection_038.png" alt="image" /></p>
 
 <h4 id="httpscommunityopenenergymonitororghttpscommunityopenenergymonitororg"><a href="https://community.openenergymonitor.org">https://community.openenergymonitor.org</a></h4>
 
@@ -48,7 +48,7 @@
 
 <h2 id="new-user-guide">2. New User Guide</h2>
 
-<p><img src="http://blog.openenergymonitor.org/images/Selection_036.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/Selection_036.png" alt="image" /></p>
 
 <h4 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h4>
 
@@ -68,7 +68,7 @@
 
 <h2 id="new-blog">3. New Blog</h2>
 
-<p><img src="http://blog.openenergymonitor.org/images/Selection_039.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/Selection_039.png" alt="image" /></p>
 
 <h4 id="httpsblogopenenergymonitororghttpsblogopenenergymonitororg"><a href="https://blog.openenergymonitor.org">https://blog.openenergymonitor.org</a></h4>
 
@@ -82,9 +82,9 @@
   
   <entry>
     <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
+    <link href="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
     <updated>2016-05-02T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
+    <id>https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
     <content type="html"><![CDATA[<p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
 
 <p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
@@ -93,7 +93,7 @@
 
 <p>In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a <a href="https://openenergymonitor.org/dev/smartgrid"><strong>‘virtual microgrid’ concept</strong></a>, we have a provisional front page for this here - please note that its still in early development:</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/smart-grid.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/smart-grid.png" alt="image" /></p>
 
 <!--more-->
 
@@ -107,24 +107,24 @@
 
 <p>Visible currently on the community smart grid test front page is the participating households renewable supply mix, real-time information on grid CO2 intensity and grid wind, solar and hydro. Household demand is not currently shown as there are not enough participants for the demand profile to be sufficiently anonymous.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/supply.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/supply.png" alt="image" /></p>
 
 <p>At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in <a href="http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2">Dominic’s blog post</a>.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/smartgrid2.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/smartgrid2.png" alt="image" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Part 2: Exploring carbon intensity and renewable energy matching]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
     <updated>2016-04-28T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
-    <content type="html"><![CDATA[<p><img src="http://blog.openenergymonitor.org/images/winderful.png" alt="image" /></p>
+    <id>https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
+    <content type="html"><![CDATA[<p><img src="https://blog.openenergymonitor.org/images/winderful.png" alt="image" /></p>
 
 <p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
 
-<p>The <a href="http://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/">last post</a> described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.</p>
+<p>The <a href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/">last post</a> described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.</p>
 
 <p>If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.</p>
 
@@ -156,7 +156,7 @@ Over the year the average available wind power for the household will work out t
 
 <p>The backup CO2 intensity could be a single source such as CCGT gas power or a grid CO2 intensity with the wind power component removed in order to avoid double counting. Using an intensity based on grid: coal, gas, nuclear and interconnectors with the wind component removed may help incentivise use outside of peak periods but as discussed in the last post an extended analysis would be needed to establish what’s best from a carbon perspective.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/week6.png" alt="image" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/week6.png" alt="image" /></p>
 
 <p><em>Above: Emoncms MyEnergy App showing onsite solar (yellow), share of uk wind estimate (green) and household demand (blue). Available on emoncms.org or self-hosted installations.</em></p>
 
@@ -179,9 +179,9 @@ Over the year the average available wind power for the household will work out t
   
   <entry>
     <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/ Understand-CO2-intensity-grid-electricity</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id>
     <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
 
 <p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>
@@ -214,7 +214,7 @@ An electric car achieving a real world mountainous north Wales terrain driving e
 
 <p>Here the CO2 intensity is calculated by the total CO2 emitted divided by total demand on typically a 10 minute basis. The CO2 intensity calculated this way will often show higher CO2 intensity in the day where gas and coal are a larger percentage of overall supply than at night time. CO2 intensity is also higher when its colder where demand is pushed up by higher heating requirements.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/ukgrid.png" alt="UK Grid Carbon" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/ukgrid.png" alt="UK Grid Carbon" /></p>
 
 <p><a href="https://openenergymonitor.org/ukgrid">OpenEnergyMonitor UK Grid page</a> showing real-time CO2 Intensity.</p>
 
@@ -230,9 +230,9 @@ An electric car achieving a real world mountainous north Wales terrain driving e
   
   <entry>
     <title type="html"><![CDATA[GitHub Submodules]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
     <content type="html"><![CDATA[<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
 
 <p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
@@ -255,7 +255,7 @@ If the submodule gets an update, the submodule will not get updated in the repo 
 
 <p>Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/submodules.png" alt="Git SubModules" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/submodules.png" alt="Git SubModules" /></p>
 
 <p>Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it’s possible to set the sketchbook location to the project repo to import all the required libs into the IDE.</p>
 
@@ -274,9 +274,9 @@ $ git submodule update
   
   <entry>
     <title type="html"><![CDATA[Home Assistant and emonPi]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
     <updated>2016-04-01T17:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
     <content type="html"><![CDATA[<p><a href="http://home-assistant.io/">Home Assistant</a> (HA) is a fully <a href="https://github.com/balloob/home-assistant">open-source</a> home automation platform.</p>
 
 <p>In terms of functionality it’s quite similar to <a href="http://openenergymonitor.blogspot.co.uk/search/label/openHAB">openHAB</a> however it’s architecture is very different it runs on Python 3 as opposed to java.</p>
@@ -289,17 +289,17 @@ $ git submodule update
 
 <p>As yet I have not experimented with creating automations with HA .e.g turning off lights and heating when we’re not home. I think I will still prefer using nodeRED for these types of rule based automations. However what HA does well is present a nice clean, mobile friendly and easy to configure front-end interface:</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/ha1.jpg" alt="home assistant" />
+<p><img src="https://blog.openenergymonitor.org/images/ha1.jpg" alt="home assistant" />
 My HA Home Setup So Far</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/ha2.png" alt="home assistant" />
+<p><img src="https://blog.openenergymonitor.org/images/ha2.png" alt="home assistant" />
 Home Assistant has some nice mini graphing features to give you a quick overview.</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/ha3.png" alt="home assistant" /> <img src="http://blog.openenergymonitor.org/images/ha4.png" alt="home assistant" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/ha3.png" alt="home assistant" /> <img src="https://blog.openenergymonitor.org/images/ha4.png" alt="home assistant" /></p>
 
 <p>On a switch node a quite overview will tell you how long the switch has been on or off for. Very useful for checking long long the heating has been on for</p>
 
-<p><img src="http://blog.openenergymonitor.org/images/ha5.png" alt="home assistant" /></p>
+<p><img src="https://blog.openenergymonitor.org/images/ha5.png" alt="home assistant" /></p>
 
 <p>Generic emonPi Config Example</p>
 
@@ -309,9 +309,9 @@ Home Assistant has some nice mini graphing features to give you a quick overview
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi 3 ]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/03/raspberry-pi-3/"/>
+    <link href="https://blog.openenergymonitor.org/2016/03/raspberry-pi-3/"/>
     <updated>2016-03-17T00:51:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/03/raspberry-pi-3</id>
+    <id>https://blog.openenergymonitor.org/2016/03/raspberry-pi-3</id>
     <content type="html"><![CDATA[The latest and greatest from the awesome Raspberry Pi team! An iterative upgrade but very welcome addition of on-board WiFi and a faster processor. <br /><br />The <a href="https://openenergymonitor.org/emon/node/12212">latest emonSD</a>&nbsp;for emonPi / emonBase&nbsp;seemed to work out of the box with the RasPi3, however it became apparent that something rather&nbsp;important was missing...serial communication with the emonPi's ATmega328!<br /><br />The emonPi communicates with the RasPi via GPIO 14/15 which on the Model B,B+ and Pi2 is mapped to UART0. However on the Pi3 these pins are mapped to UART1 since UART0 is now used for the Bluetooth module. However UART1 is software UART and baud rate is dependent to clock speed which can change with the CPU load, under voltage and temperature; therefore not stable enough. One hack is to force the CPU to a lower speed ( add core_freq=250 to /boot/cmdline.txt)which cripples the Pi3 performance.<br /><br />A better solution for the emonPi is to disable BT and map UART1 back to UART0 (ttyAMA0) so we can talk to the emonPi in the same way as before.<br /><br />
 
     <!--more-->
@@ -327,9 +327,9 @@ First update:<br /><br /><pre>sudo apt-get update<br />sudo apt-get upgrade<br /
   
   <entry>
     <title type="html"><![CDATA[Outdoor Temperature Data from Weather Underground to Emoncms & MQTT]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/"/>
+    <link href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/"/>
     <updated>2016-02-29T19:08:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather</id>
+    <id>https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather</id>
     <content type="html"><![CDATA[Monitoring the temperature outside your house is super useful to inform your home automation systems and calculate domestic heating (and dressing!) requirements.<br /><br />One way is to monitor external temperature is to install your own external <a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">emonTH wireless temperature node</a> or use a commercial web-connected weather station. However a cheaper way is to tap into the Internet of Things and connect to another weather station in your area. &nbsp;<a href="https://www.wunderground.com/weather/api/">Weather Underground</a> have over 18K weather stations online in the USA and a <a href="https://www.wunderground.com/weather/api/">free API</a> for non commercial use.<br /><br />Here's an example of using nodeRED to poll the Weather Underground API and post to Emoncms (using <a href="http://flows.nodered.org/node/node-red-node-emoncms">nodeRED Emoncms flow</a>) and MQTT.
 
 <!--more-->
@@ -339,9 +339,9 @@ First update:<br /><br /><pre>sudo apt-get update<br />sudo apt-get upgrade<br /
   
   <entry>
     <title type="html"><![CDATA[Heat pump Testing: Initial results]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/02/heat-pump-testing-initial-results/"/>
+    <link href="https://blog.openenergymonitor.org/2016/02/heat-pump-testing-initial-results/"/>
     <updated>2016-02-17T15:36:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/02/heat-pump-testing-initial-results</id>
+    <id>https://blog.openenergymonitor.org/2016/02/heat-pump-testing-initial-results</id>
     <content type="html"><![CDATA[<b>Headline figures</b><br /><b>Test period:</b> 17th of October to 7th of February (113.3 days)<br /><b>Electricity input:</b> 413 kWh (3.6 kWh/d)<br /><b>Heat output:</b> 1405 kWh (12.4 kWh/d)<br /><b>COP: 3.4</b><br />Electricity input includes: heat pump compressor, heat pump controller and circulation pump.<br /><br />In late October last year I installed with <a href="http://heatpumps.co.uk/">John Cantors</a> help an air source heat pump at home, I currently live in a small cottage in Snowdonia, North Wales and after several winters of heating with a wood stove and direct electrical fan heaters, its been great having a warm place with much reduced electrical input requirement and wood consumption and its given me a good opportunity to test the technology in order to understand and confirm how well it works, albeit in a building which is far from low energy in terms of building fabric performance. <br /><br />Here is a photo of&nbsp; the cottage which gives a good idea of the kind of building it is; for a detailed look at the space heating energy requirements and building fabric see appendix.
 
 <!--more-->
@@ -351,9 +351,9 @@ The heat pump is located at the back and is a Mitsubushi Ecodan 5kW air-to-water
   
   <entry>
     <title type="html"><![CDATA[Low carbon energy film featuring OpenEnergyMonitor]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/01/french-low-carbon-energy-film-featuring/"/>
+    <link href="https://blog.openenergymonitor.org/2016/01/french-low-carbon-energy-film-featuring/"/>
     <updated>2016-01-01T11:23:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/01/french-low-carbon-energy-film-featuring</id>
+    <id>https://blog.openenergymonitor.org/2016/01/french-low-carbon-energy-film-featuring</id>
     <content type="html"><![CDATA[A few months ago we were lucky to be contacted by a French film team wanting to feature OpenEnergyMonitor as part of a film about low carbon energy. The film "ACHIEVING 2050 I OPTIMIZE ENERG" aired in November this year.<br /><br />The film can be watched online here (in French), the part featuring us starts at 28min in:
 
 
@@ -366,9 +366,9 @@ The heat pump is located at the back and is a Mitsubushi Ecodan 5kW air-to-water
   
   <entry>
     <title type="html"><![CDATA[Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by/"/>
     <updated>2015-12-24T13:31:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by</id>
+    <id>https://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by</id>
     <content type="html"><![CDATA[Following on from <a href="http://guide.openenergymonitor.org/2015/12/heat-pump-monitoring">last blog post on heat pump monitoring</a> I will try in this post to give a bit of context on heat pumps. Heat pumps are interesting because they provide a way to make efficient use of renewable electricity for heating. They are used in many zero carbon energy scenario's including the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario from the Centre for Alternative Technology which is one of the most comprehensive UK based 100% renewable energy scenarios created.<br /><br />This sankey diagram from the ZeroCarbonBritain report gives an overview of the energy flows in their scenario, with heat pumps providing the bulk of the heating and hot water demand:
 
 <!--more-->
@@ -380,9 +380,9 @@ This 80 TWh of electricity demand is around 20% of the final direct electricity 
   
   <entry>
     <title type="html"><![CDATA[Heat pump Monitoring]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/heat-pump-monitoring/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/heat-pump-monitoring/"/>
     <updated>2015-12-18T13:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/heat-pump-monitoring</id>
+    <id>https://blog.openenergymonitor.org/2015/12/heat-pump-monitoring</id>
     <content type="html"><![CDATA[For a number of years now I have been working with John Cantor on monitoring heat pumps. John is one of the UK's foremost experts on heat pumps having worked in the field since the early 1980's, he has written a book on heat pumps and is an advisor and consultant on the technology. <br /><br />Earlier this year we worked on reading heat metering data from a Kamstrup heat meter in order to obtain accurate heat output measurement in addition to system flow temperatures and electrical power input. After spending quite a bit of time adapting existing emontx hardware and often emontx v2 hardware to integrate the additional circuitry required we decided it might be better to try and design a dedicated heat pump monitoring board that would have all the functionality we needed on a single board. <br /><br />This board is currently going through initial testing.<br />
 
 
@@ -393,9 +393,9 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
   
   <entry>
     <title type="html"><![CDATA[Emoncms Android App]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
     <updated>2015-12-17T10:47:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
+    <id>https://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.
 
 
@@ -412,9 +412,9 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
   
   <entry>
     <title type="html"><![CDATA[OpenEnergyMonitor, emonPi and openHAB ]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/"/>
     <updated>2015-12-13T18:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab</id>
+    <id>https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Using the emonPi in it's current default configuration works great to post data to Emoncms for logging and visualisation. However there may be times when you want some more flexibility and or ability to interface with other hardware or services&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In my last few blog posts I have been taking a look at making the <a href="http://shop.openenergymonitor.com/emonpi-1/">emonPi</a> the heart of a smart energy optimised home and how live energy monitoring data from the emonPi can easily be used to inform other services: &nbsp;&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">1.
 <!--more-->
 
@@ -423,25 +423,25 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
   
   <entry>
     <title type="html"><![CDATA[North Wales Tech Meetup Presentations]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations/"/>
     <updated>2015-12-10T11:13:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations</id>
+    <id>https://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations</id>
     <content type="html"><![CDATA[Yesterday evening Trystan and I attend a local meetup in Bangor, North Wales hosted by <a href="http://northwales.technology/">NorthWalesTech</a> It was a good event with some interesting talks. Here are the slides from the 5min lightning talks we gave:<br />&nbsp;<br />My slides give a brief overview of the OpenEnergyMontor project before diving in to MQTT and node-RED with a live demo controlling LightWave RF plugs switching Christmas lights over the web using MQTT and nodeRED:<br /><br /><iframe allowfullscreen="" frameborder="0" height="485" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/key/Heh5JMIHbvRTUy" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="595"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/OpenEnergyMonitor/connecting-all-the-things-with-mqtt-nodered" target="_blank" title="Connecting all the things with MQTT &amp; Node-RED">Connecting all the things with MQTT &amp; Node-RED</a> </strong> from <strong><a href="https://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> </div><br />Slides from N.Wales Tech meetup Dec 15. Brief overview of OpenEnergyMonitor and MQTT, nodeRED and LightWaveRF demo.<br /><br />Related blog posts:<br /><a href="http://openenergymonitor.blogspot.com/2015/10/emonpi-nodered-and-mqtt.html">http://openenergymonitor.blogspot.com/2015/10/emonpi-nodered-and-mqtt.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/remote-control-of-lightwave-rf-plugs.html">http://openenergymonitor.blogspot.com/2015/11/remote-control-of-lightwave-rf-plugs.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/node-red-emoncms-node.html">http://openenergymonitor.blogspot.com/2015/11/node-red-emoncms-node.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/ambient-wind-energy-indicator-using.html">http://openenergymonitor.blogspot.com/2015/11/ambient-wind-energy-indicator-using.html</a><br /><br />---------------------------------------------------------------------------------------------------------<br /><br />Trystan's lightning talk was focused on a heatpump which he has recently installed with <a href="http://heatpumps.co.uk/">John Cantor</a> to heat his home. Trystan gave an overview of heatpump technology, his monitoring setup and the preliminary performance results:<br /><br /><iframe allowfullscreen="" frameborder="0" height="485" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/key/3kihW4kk5CsHco" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="595"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/OpenEnergyMonitor/heatpumps-and-heatpump-monitoring" target="_blank" title="Heatpumps and Heatpump Monitoring">Heatpumps and Heatpump Monitoring</a> </strong> from <strong><a href="https://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> </div>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Remote Control of LightWave RF plugs via MQTT using emonPi with OOK Tx]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/"/>
     <updated>2015-11-26T17:09:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs</id>
+    <id>https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs</id>
     <content type="html"><![CDATA[Using a Raspberry Pi as an emonPi / emonBase web-connected base station for energy monitoring has many advantages (maintainability, remote access, debugging, updated etc.) but it does seem rather wasteful to have a 900Mhz 1GB RAM machine being used to post a couple of integers to a web-server! The always-on nature of a web-connected base station and plenty of spare processing power makes it ideal to use the emonPi for more than just energy monitoring; home automation and heating control optimisation are obvious candidates. <br /><br /><br /><b>Hardware</b><br /><b><br /></b>Many home automation products such as RF plugs, relays and heating remotes use a simple OOK (On-Off-Keying) wireless protocol. UK company LightWaveRF produce a <a href="http://www.megamanuk.com/lightwaverf/products/power-control/">variety of RF plugs</a> and <a href="http://www.megamanuk.com/lightwaverf/products/inline-switching/jsjslw830/">relays</a>&nbsp;which can be controlled via OOK RF. The protocol is also compatible with some&nbsp;<a href="http://www.ebay.co.uk/itm/321887470042?_trksid=p2057872.m2749.l2649&amp;var=510834121070&amp;ssPageName=STRK%3AMEBIDX%3AIT">cheaper OOK learning receiver relays</a>. &nbsp;While maybe not strictly open-source the protocol and been reverse engineered allowing plugs to be easily controlled from Arduino / Raspberry Pi. There is an active&nbsp;<a href="http://lightwaverfcommunity.org.uk/forum/">LightWaveRF</a>&nbsp;online community. Using off-the shelf hardware like this is a 'safe' way to control lights, heaters and appliances &nbsp;around a home without getting our hands dirty dealing with with high voltages. These plugs and relays can be used to control anything from lights to immersion heaters, most LightWaveRF plugs/relays will switch up to 13A / 3kW.<br /><br />Note: OOK protocol by it's simplistic nature is not particularly secure, I would not recommend controlling anything you don't mind getting accidently switched.<br /><div><br /></div>An OOK transmitter can easily be added to the emonPi. &nbsp;We have started stocking <a href="http://shop.openenergymonitor.com/ook-on-off-keying-transmitter-433mhz/">OOK transmitter modules in the OpenEnergyMonitor store</a> as well as adding an option to have OOK module factory installed on&nbsp;<a href="http://shop.openenergymonitor.com/emonpi/">new emonPi's</a>. <br /><br />See&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=EmonPi#OOK">emonPi Technical Hardware Wiki</a>&nbsp;for details how to retrofit OOK TX module to existing emonPi's.<br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ooKdNYl_8fA/Vlc-c0pyyJI/AAAAAAABj5o/M6wlA5rH_Ko/s1600/emonPi_lwrf.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://3.bp.blogspot.com/-ooKdNYl_8fA/Vlc-c0pyyJI/AAAAAAABj5o/M6wlA5rH_Ko/s640/emonPi_lwrf.png" width="600" /></a></div><br /> <b>Software</b><br /><br />We have been working with&nbsp;<a href="https://github.com/lawrie">Lawrie Griffiths</a>&nbsp;from <a href="https://geekgrandad.wordpress.com/">Geek Grandad blog</a> to develop a <a href="https://github.com/lawrie/LightwaveRF">LightWaveRF MQTT service</a> to run on a Raspberry Pi to allow LightWaveRF plugs to be controlled via MQTT.<br /><br /><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;"><a href="https://www.electricalsupplies.co.uk/media/catalog/product/0/0/0019040_megaman-lightwave-rf-handheld-remote-controller-white.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://www.electricalsupplies.co.uk/media/catalog/product/0/0/0019040_megaman-lightwave-rf-handheld-remote-controller-white.jpeg" width="213" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><br /></td></tr></tbody></table>Once running a plug can be controlled by publishing to the 'lwrf' MQTT topic:<br /><br />E.g "1 1" switches on plug 1 while "1 0" switches off plug 1. Plugs can be paired in the usual LightWaveRF plug.<br /><br /><b>See <a href="http://wiki.openenergymonitor.org/index.php/EmonPi#LightWaveRF_OOK">emonPi technical Wiki</a> for how to install &amp; setup</b>.<br /><br />Existing LightWaveRF remotes can be emulated allowing plugs to be controlled from either emonPi MQTT or via the remote.<br /><br />Now our plugs can be controlled via MQTT there are a many of options open as to how to control either via interface openHAB (blog post coming soon..), nodeRED, Android Tasker etc.<br /><br />I have been using nodeRED with input from Android <a href="http://owntracks.org/">OwnTracks</a> running on my phone to detect when I'm home and turn on a couple of lights:<br /><br /><div class="" style="clear: both; text-align: center;"><b>Demo:</b></div><div class="" style="clear: both; text-align: center;"><b><br /></b></div><div class="" style="clear: both; text-align: center;">Using NodeRED and OwnTracks to turn on LightWave RF sockets when I arrive home:&nbsp;</div><div class="" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div style="text-align: left;"><a href="http://3.bp.blogspot.com/-gt2MVmKylsk/VlOTJKgRb5I/AAAAAAABjrQ/hZUctXS_e_s/s1600/Screenshot%2B2015-11-23%2Bat%2B22.28.06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="280" src="http://3.bp.blogspot.com/-gt2MVmKylsk/VlOTJKgRb5I/AAAAAAABjrQ/hZUctXS_e_s/s640/Screenshot%2B2015-11-23%2Bat%2B22.28.06.png" width="640" /></a></div><b><br /></b><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/GVKXgS01Vqw/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/GVKXgS01Vqw?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">Using Android Tasker with &nbsp;AutoVoice and MQTT plugins to control LightWaveRF sockets:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/QjIqo4QsywA/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/QjIqo4QsywA?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><b>Next Steps</b></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">Now we can control appliances remotely via MQTT the next logical step is to add a mobile user interface. In my next blog post I plan to explore setting up <a href="http://www.openhab.org/">openHab</a> to control appliances. Here's a early preview:&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/6uF0qU30q-g/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/6uF0qU30q-g?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">We plan to include out-of-the-box support for OOK LightWave RF, nodeRED and openHab pre-configured on our next emonPi pre-built SD card. Due for release in December 2015.</div><br />]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[UK Grid Carbon Intensity API]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity/"/>
     <updated>2015-11-21T11:04:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity</id>
+    <id>https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity</id>
     <content type="html"><![CDATA[<br />Following on from my blog post creating an <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">ambient indicator to indicate wind turbine renewable electricity generation</a> we have extended the <a href="http://emoncms.org/">Emoncms</a>&nbsp;UK electric grid statistic aggregation to calculate and record the UK electric grid carbon intensity i.e. the amount of carbon emitted per kWh (CO2/kWh). As before we have created a dashboard open API for easy access to this data.<br /><br />
 
 
@@ -455,25 +455,25 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
   
   <entry>
     <title type="html"><![CDATA[Node-RED Emoncms Node]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/node-red-emoncms-node/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node/"/>
     <updated>2015-11-15T22:22:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
+    <id>https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
     <content type="html"><![CDATA[<br />I have recently been experimented using <a href="http://nodered.org/">Node-RED</a> for a <a href="http://openenergymonitor.blogspot.co.uk/search/label/NodeRed">number of tasks</a>. Thanks to the work of others a Node-RED flow node already existed for Emoncms making it very easy to post data to Emoncms. For my <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">Ambient Wind Energy Indicator</a>&nbsp;I had the need to extract real-time feed data from Emoncms feeds using the Emoncms API. I have now contributed this functionality to the official Node-RED Emoncms node. Using the updated Emoncms node it's now super easy to post data to extract latest real-time feed values from any Emoncms server including <a href="http://emoncms.org/">Emoncms.org</a>.<br /><br />Get the latest version from:&nbsp;<a href="http://flows.nodered.org/node/node-red-node-emoncms">http://flows.nodered.org/node/node-red-node-emoncms</a>. If you're interested in viewing and improving the functionality the open-source code behind the node is up on the <a href="https://github.com/node-red/node-red-nodes/tree/master/io/emoncms">Node-RED flows GitHub</a><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms Node-RED node</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">Install with:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">$ cd ~/.node-red</div><div class="separator" style="clear: both; text-align: center;">$ npm install node-red-node-emoncms</div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s1600/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s640/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" width="514" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Node Documentation</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s1600/2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="235" src="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s400/2.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms in Node Config</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s1600/3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s400/3.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms Server Config</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenEnergyMonitor November 2015 - Overview Presentation]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/openenergymonitor-november-2015/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/openenergymonitor-november-2015/"/>
     <updated>2015-11-11T23:16:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/openenergymonitor-november-2015</id>
+    <id>https://blog.openenergymonitor.org/2015/11/openenergymonitor-november-2015</id>
     <content type="html"><![CDATA[Here's a few slides giving an overview of the OpenEnergyMonitor project as it stands currently in November 2015. It features some of the work we have been doing looking at the <a href="http://openenergymonitor.blogspot.co.uk/2015/07/open-source-circular-economy-oscedays.html">embodied energy involved in producing and shipping some of our products</a>&nbsp;as well as latest developments on <a href="http://openenergymonitor.blogspot.co.uk/search/label/dashboard">Emoncms application dashboards</a>.&nbsp;<br /><br /><br /><iframe allowfullscreen="" frameborder="0" height="355" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/key/df1ND4Q5htgtks" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="425"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/OpenEnergyMonitor/openenergymonitor-overview-november-2015" target="_blank" title="OpenEnergyMonitor Overview November 2015">OpenEnergyMonitor Overview November 2015</a> </strong> from <strong><a href="https://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> <br /><br />Notes to accompany the slides can be found <a href="https://docs.google.com/document/d/1iRrEWlJnxP3RV3anaHM-lfrcbnEgE4XPLikMRgYGDSU/edit?usp=sharing">here</a>.</div>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Interpreting Emoncms Dashboards]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards/"/>
     <updated>2015-11-04T11:54:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
+    <id>https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
     <content type="html"><![CDATA[<br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it's possible to identify subtler power signatures. Here's an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It's great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br />]]></content>
   </entry>
   

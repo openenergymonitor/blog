@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.openenergymonitor.org/sitemap.xml 
+Sitemap: https://blog.openenergymonitor.org/sitemap.xml 

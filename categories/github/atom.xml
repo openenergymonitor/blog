@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: github | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/github/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/github/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[GitHub Submodules]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
     <content type="html"><![CDATA[<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
 
 <p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>

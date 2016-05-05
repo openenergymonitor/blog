@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: three phase | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/three-phase/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/three-phase/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[From the Forum: Using Modbus RS485 to read a SDM630M 3-phase meter ]]></title>
-    <link href="http://blog.openenergymonitor.org/2014/09/from-forum-using-modbus-rs485-to-read/"/>
+    <link href="https://blog.openenergymonitor.org/2014/09/from-forum-using-modbus-rs485-to-read/"/>
     <updated>2014-09-11T11:20:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2014/09/from-forum-using-modbus-rs485-to-read</id>
+    <id>https://blog.openenergymonitor.org/2014/09/from-forum-using-modbus-rs485-to-read</id>
     <content type="html"><![CDATA[<div><br /></div>
 <div><a href="http://openenergymonitor.org/emon/user/1332">JBecker</a> writes :</div>
 <div><br /></div>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configurable single to 3-phase interrupt based EmonTX code by Pcunha]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/08/configurable-single-to-3-phase/"/>
+    <link href="https://blog.openenergymonitor.org/2012/08/configurable-single-to-3-phase/"/>
     <updated>2012-08-01T19:54:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/08/configurable-single-to-3-phase</id>
+    <id>https://blog.openenergymonitor.org/2012/08/configurable-single-to-3-phase</id>
     <content type="html"><![CDATA[<div>Some great work I'd like to flag up by <a href="http://openenergymonitor.org/emon/user/754">Pcunha</a>, who has developed a super configurable single to 3-phase interrupt based firmware for the EmonTX.<br /><br />Its up on github here:<br /><a href="https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts">https://github.com/pcunha-lab/emonTxFirmware/tree/master/emonTx_Interrupts</a><br /><br />and there is more about it in the forum thread here:<br /><a href="http://openenergymonitor.org/emon/node/467#comment-5481">http://openenergymonitor.org/emon/node/467#comment-5481</a>
 </div>
 ]]></content>

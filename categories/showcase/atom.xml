@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: showcase | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/showcase/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/showcase/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[DIY Casing]]></title>
-    <link href="http://blog.openenergymonitor.org/2013/07/diy-casing/"/>
+    <link href="https://blog.openenergymonitor.org/2013/07/diy-casing/"/>
     <updated>2013-07-26T14:57:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2013/07/diy-casing</id>
+    <id>https://blog.openenergymonitor.org/2013/07/diy-casing</id>
     <content type="html"><![CDATA[<p>We are working on new designs which which will be better designed to fit into cases in the meantime <a href="http://openenergymonitor.org/emon/user/53">John Cantor </a> (from <a href="http://heatpumps.co.uk/">heatpumps.co.uk</a>) who has been using a <a href="http://openenergymonitor.org/emon/applications/heatpump">modified OpenEnergyMonitor system</a> for<a href="http://openenergymonitor.blogspot.co.uk/2012/03/heat-pump-monitoring.html"> monitoring the performance of air and ground source heatpumps</a> shares a photo of his experiences of boxing up the emonTx and Nanode RF SMT<br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-n9f4aR3ePBI/UfKNGjkI7hI/AAAAAAAAiWM/9lpAuj0x82U/s1600/echfghch.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="553" src="http://4.bp.blogspot.com/-n9f4aR3ePBI/UfKNGjkI7hI/AAAAAAAAiWM/9lpAuj0x82U/s640/echfghch.png" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx setup for temperature monitoring and nanode RF SMT cased up using standard RS cases&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />These cases from RS were used:<br /><br />ABS moulded box, 120x65x40mm, ivory<br />RS Stock No.502-641<br />ABS moulded box, 112x62x31mm, ivory<br />RS Stock No.502-635<br />both £3.45+vat.<br /><br /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Great emoncms dashboards by Paul Reed, Jürgen and Tom + update on backup]]></title>
-    <link href="http://blog.openenergymonitor.org/2013/07/great-emoncms-dashboards-by-paul-reed/"/>
+    <link href="https://blog.openenergymonitor.org/2013/07/great-emoncms-dashboards-by-paul-reed/"/>
     <updated>2013-07-11T12:37:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2013/07/great-emoncms-dashboards-by-paul-reed</id>
+    <id>https://blog.openenergymonitor.org/2013/07/great-emoncms-dashboards-by-paul-reed</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">There's a new forum on the forums for showcasing emoncms dashboard creations (thanks to Paul Reed for the idea), here are a few screenshots of dashboards created by Paul Reed and Jürgen:</div>
 <div class="separator" style="clear: both; text-align: center;"><br /></div>
 <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-VIuksQPiqw4/Ud6jqIReJ6I/AAAAAAAACt4/YUk1vej4ZY0/s1600/Emoncms2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="612" src="http://3.bp.blogspot.com/-VIuksQPiqw4/Ud6jqIReJ6I/AAAAAAAACt4/YUk1vej4ZY0/s640/Emoncms2.png" width="640" /></a></div>

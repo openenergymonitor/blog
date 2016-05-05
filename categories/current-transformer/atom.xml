@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: current transformer | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/current-transformer/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/current-transformer/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cheap AC transformers are no good]]></title>
-    <link href="http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good/"/>
+    <link href="https://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good/"/>
     <updated>2011-06-24T11:15:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good</id>
+    <id>https://blog.openenergymonitor.org/2011/06/cheap-ac-transformer-are-no-good</id>
     <content type="html"><![CDATA[<div style="text-align: left;">The Open Energy Monitor uses an AC transformer as a voltage sensor, but the choice of this transformer can influence the accuracy of your monitor.</div>
 <div>
 <br /></div>
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Measuring AC mains energy use the non-invasive current transformer method - part 2]]></title>
-    <link href="http://blog.openenergymonitor.org/2009/08/measuring-ac-mains-energy-use-non/"/>
+    <link href="https://blog.openenergymonitor.org/2009/08/measuring-ac-mains-energy-use-non/"/>
     <updated>2009-08-05T13:18:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2009/08/measuring-ac-mains-energy-use-non</id>
+    <id>https://blog.openenergymonitor.org/2009/08/measuring-ac-mains-energy-use-non</id>
     <content type="html"><![CDATA[<p>Over the last few weeks I have been working on measuring AC mains energy use using the non-invasive current transformer method. I’ve updated the website with a page about what I’ve done and how it works <a href="http://openenergymonitor.org/emon/node/28">here</a> (there’s still some work to be done on the page, but most of the info is there now).<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SnmHOcRSRAI/AAAAAAAAAY4/c_G8bq4cDtg/s1600-h/noninv01s2.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 194px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SnmHOcRSRAI/AAAAAAAAAY4/c_G8bq4cDtg/s400/noninv01s2.JPG" alt="" id="BLOGGER_PHOTO_ID_5366469113165267970" border="0" /></a><span style="font-style: italic;">Measuring energy use in a power strip above- but is just as easy to measure whole house electrical energy use by cliping the sensor to the mains input to the house. </span></p>
 ]]></content>
   </entry>

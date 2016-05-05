@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: openenergymonitor | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/openenergymonitor/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/openenergymonitor/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[We Won! Daily Post Business Award 2013 - Green Award Category ]]></title>
-    <link href="http://blog.openenergymonitor.org/2014/01/we-won-daily-post-business-award-2013/"/>
+    <link href="https://blog.openenergymonitor.org/2014/01/we-won-daily-post-business-award-2013/"/>
     <updated>2014-01-07T22:18:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2014/01/we-won-daily-post-business-award-2013</id>
+    <id>https://blog.openenergymonitor.org/2014/01/we-won-daily-post-business-award-2013</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" height="320" width="252" /></a></div>
 <div class="separator" style="clear: both; text-align: center;"><br /></div>
@@ -27,18 +27,18 @@
   
   <entry>
     <title type="html"><![CDATA[A big thank you to everyone]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/12/a-big-thank-you-to-everyone/"/>
+    <link href="https://blog.openenergymonitor.org/2012/12/a-big-thank-you-to-everyone/"/>
     <updated>2012-12-29T02:01:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/12/a-big-thank-you-to-everyone</id>
+    <id>https://blog.openenergymonitor.org/2012/12/a-big-thank-you-to-everyone</id>
     <content type="html"><![CDATA[<p><br />&lt;div style="margin-bottom: 0cm;"&gt;As you know OpenEnergyMonitor is a collaborative project. The project would be nothing without the hard work, time and effort that so many of you dedicate.  &lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;With the festive season upon us and the year coming to an end I would like to take this opportunity to say a big thank you to everyone who’s contributed in some way to the project over the past year. Contributions could be anything from a whole new module, fixing a bug, correcting a typo to helping out with discussions and support on the forums. We very much appreciate every contribution no matter how small. &lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />Helping out with friendly support on the forums is an area where we are particularly grateful for assistance, as the project grows bigger (we’re almost at 3000 registered users!) so does the user support requirements. It makes me very happy to see that the forums are a friendly place for new users to ask for help, as well as the first point of call for  discussing an idea.&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;Here are a few names of people that I’ve picked up as making a significant contribution to the project over the past year. I apologise if I’ve missed anyone (I almost certainly have), if you think you too should be in this list please drop me and email and I’ll add you on:&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;&lt;/div&gt;&lt;ul&gt;<br />&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/924">Robert Wall</a> - significant contributions of his expert electronics knowledge to the project and contribution of several major documentation sections. &lt;/li&gt;&lt;li&gt;<a href="http://harizanov.com/">Martin Harizanov -</a> RFM12Pi and Raspberry Pi as emonBase development hardware &amp; software&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/956">Robin Emley (calpso_rae)</a> - Solar PV immersion water heating controller development&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/238">Paul Reed</a> - Solar PV immersion water heating controller development&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/450">Stuart Pittaway (stuart)</a> - Solar PV immersion water heating controller, <a href="https://github.com/stuartpittaway/ArduinoSolarPowerController">significant software development</a>&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/1165">Richard McDonald (richmc)</a> - Solar PV immersion water heating controller development&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/1399">Ian Beck (series530)</a> - Solar PV immersion water heating controller, integration of emonTx and emonGLCD&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/641">Baptiste Gaultier (galouf) </a>- emoncms and website front page graphic design &lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/877">Ildefonso Martínez</a> - significant emoncms contributions&lt;/li&gt;&lt;li&gt;<a href="https://github.com/mattwire">Matthew Wire</a> - emoncms input processing GUI&lt;/li&gt;&lt;li&gt;<span style="background-color: white; vertical-align: baseline;"><a href="https://github.com/MarsFlyer">Paul Allen</a> -</span> emoncms histogram graphs&lt;/li&gt;&lt;li&gt;<a href="https://github.com/elyobelyob">Nick Boyle</a> - emoncms MQTT, Event module&lt;/li&gt;&lt;li&gt;<a href="http://openenergymonitor.org/emon/user/1332">Jörg Becker</a> - Solar PV dump load controller, software debugging &lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;MrSharkey - Significant contribution into solar PV dump load controller design by investigating the characteristics of digital meters.&lt;/li&gt;&lt;li&gt;Everyone else who I’ve failed to mention… &lt;/li&gt;&lt;/ul&gt;Thank you again and a Merry Christmas and a Happy New Year to all!<br /><br /><i>..no blog post is complete without an image, here’s one a took a few weeks back. It rather sums up the winter we’re currently having here in North Wales. Sadly rather wet and warm, rather than cold and icy. I suppose it’s good news for heating energy! </i><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-6tmSN_YjvcE/UN5NXvOwNxI/AAAAAAAAdGk/hClatF-9tF4/s1600/DSCF2876.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://3.bp.blogspot.com/-6tmSN_YjvcE/UN5NXvOwNxI/AAAAAAAAdGk/hClatF-9tF4/s320/DSCF2876.JPG" width="238" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<i>Water puddle reflections from a wet and windy North Wales, UK in December </i>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[New emoncms features part 2 - Email notifier]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier/"/>
+    <link href="https://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier/"/>
     <updated>2012-02-18T23:31:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier</id>
+    <id>https://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">Its good to know as soon as possible if there is an issue with an installed energy monitor, such as the base station dropping offline or a problem with RF connection. This is a rough and ready first implementation of an email notifier for emoncms, that sends you an email to say that a feed has become inactive or a feed is&nbsp;equal&nbsp;to a certain value. No longer are the days when you log in to emoncms just to find that there are two days of missing data as&nbsp;happened&nbsp;to me on feb 6-7 <a href="http://openenergymonitor.org/emon/emoncms/showcase">here</a></div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="separator" style="clear: both; text-align: left;"><b>A walkthrough</b></div>

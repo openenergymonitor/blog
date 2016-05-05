@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: current sensor | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/current-sensor/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/current-sensor/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hall effect sensor circuit diagram]]></title>
-    <link href="http://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram/"/>
+    <link href="https://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram/"/>
     <updated>2009-09-03T23:23:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram</id>
+    <id>https://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram</id>
     <content type="html"><![CDATA[<p>The circuit is an inverting amplifier circuit. The 100k pot level shifts the input signal. It can be set so that the output lies within the arduino’s 0 to 5V input range.  The 1k pot sets the amplification factor. By varying both pot’s it is possible to set the current measurement range of the circuit. Note the output is inverted so that when the current increases the signal input to the arduino decreases from 5V to 0V.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SqBP73s9otI/AAAAAAAAAZ4/DhH-QrpshxA/s1600-h/circuit.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 178px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SqBP73s9otI/AAAAAAAAAZ4/DhH-QrpshxA/s400/circuit.png" alt="" id="BLOGGER_PHOTO_ID_5377385845063787218" border="0" /></a></p>
 ]]></content>
   </entry>

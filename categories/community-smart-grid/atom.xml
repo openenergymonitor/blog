@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: community smart grid | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/community-smart-grid/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/community-smart-grid/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
+    <link href="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
     <updated>2016-05-02T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
+    <id>https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
     <content type="html"><![CDATA[<p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
 
 <p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[Part 2: Exploring carbon intensity and renewable energy matching]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
     <updated>2016-04-28T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
     <content type="html"><![CDATA[<p><img src="/images/winderful.png" alt="image" /></p>
 
 <p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
@@ -112,9 +112,9 @@ Over the year the average available wind power for the household will work out t
   
   <entry>
     <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/ Understand-CO2-intensity-grid-electricity</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id>
     <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
 
 <p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>

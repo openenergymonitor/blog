@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: forum | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/forum/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/forum/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New Forum, Blog and User Guide Website]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/05/website-changes/"/>
+    <link href="https://blog.openenergymonitor.org/2016/05/website-changes/"/>
     <updated>2016-05-03T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/05/website-changes</id>
+    <id>https://blog.openenergymonitor.org/2016/05/website-changes</id>
     <content type="html"><![CDATA[<p>We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.</p>
 
 <p>Introducing a shiny new:</p>

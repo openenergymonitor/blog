@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: energy monitoring | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/energy-monitoring/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/energy-monitoring/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Fridge Defrosting]]></title>
-    <link href="http://blog.openenergymonitor.org/2013/06/fridge-defrosting/"/>
+    <link href="https://blog.openenergymonitor.org/2013/06/fridge-defrosting/"/>
     <updated>2013-06-18T08:33:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2013/06/fridge-defrosting</id>
+    <id>https://blog.openenergymonitor.org/2013/06/fridge-defrosting</id>
     <content type="html"><![CDATA[<p><i>Update 27/06/13:</i><br /><br /><i>As kindly pointed out by Jörg Becker in the comments below I mad an error with the timebase. I had assumed If I zoomed in the same amount that the time base would be the same, I had not realised that this was not actually the case. Below is an updated screen grab with the correct time period. As we can see the power in the window is pretty much the same 0.28/0.29Kwh. <b>Defrosting the fridge does not seem to have had much of a reduction effect in the power consumption, just an increased duty cycle. </b>Apologies for my original misleading post below. </i><br /><i><br /></i><i>Thanks again to Jörg Becker for pointing this out. </i><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s878/Selection_001.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="290" src="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s640/Selection_001.png" width="640" /></a>&lt;/div&gt;<br /><br />Yesterday I defrosted my fridge, I was amazed at the effect it had on it’s energy consumption and pattern.<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s1600/fridge+defrost.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s640/fridge+defrost.jpg" width="640" /></a>&lt;/div&gt;<br /><strike>Energy consumption due to fridge dropped from 2.29 Kwh/d to 1.09Kwh/d, about a 50% readuction. The pattern of energy consumption changed a fair bit, now defrosted the fridge switches on for a much shorter period of time, &nbsp;obviously getting up to&nbsp;down to temperature much quicker.</strike><br /><strike><br /></strike><strike>If I keep the fridge defrosted regularly all year it should save me around £60 a year.</strike><br /><br />I am aware that my fridge is quite an old model and a new model would use less energy overall and not require defrosting. Something to thing about for the future..</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[New emoncms features part 2 - Email notifier]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier/"/>
+    <link href="https://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier/"/>
     <updated>2012-02-18T23:31:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier</id>
+    <id>https://blog.openenergymonitor.org/2012/02/emoncms-features-part-2-email-notifier</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">Its good to know as soon as possible if there is an issue with an installed energy monitor, such as the base station dropping offline or a problem with RF connection. This is a rough and ready first implementation of an email notifier for emoncms, that sends you an email to say that a feed has become inactive or a feed is&nbsp;equal&nbsp;to a certain value. No longer are the days when you log in to emoncms just to find that there are two days of missing data as&nbsp;happened&nbsp;to me on feb 6-7 <a href="http://openenergymonitor.org/emon/emoncms/showcase">here</a></div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="separator" style="clear: both; text-align: left;"><b>A walkthrough</b></div>
@@ -45,9 +45,9 @@
   
   <entry>
     <title type="html"><![CDATA[Kirikou: an open electricity monitor]]></title>
-    <link href="http://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor/"/>
+    <link href="https://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor/"/>
     <updated>2010-12-20T00:40:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor</id>
+    <id>https://blog.openenergymonitor.org/2010/12/kirikou-open-electricity-monitor</id>
     <content type="html"><![CDATA[<div style="text-align: left;">Hello everyone,</div>
 <div style="text-align: left;"><br /></div>
 <div style="text-align: left;">This is my first contribution to this blog after months of reading it :)</div>
@@ -83,18 +83,18 @@
   
   <entry>
     <title type="html"><![CDATA[Hall effect sensor circuit diagram]]></title>
-    <link href="http://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram/"/>
+    <link href="https://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram/"/>
     <updated>2009-09-03T23:23:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram</id>
+    <id>https://blog.openenergymonitor.org/2009/09/hall-effect-sensor-circuit-diagram</id>
     <content type="html"><![CDATA[<p>The circuit is an inverting amplifier circuit. The 100k pot level shifts the input signal. It can be set so that the output lies within the arduino’s 0 to 5V input range.  The 1k pot sets the amplification factor. By varying both pot’s it is possible to set the current measurement range of the circuit. Note the output is inverted so that when the current increases the signal input to the arduino decreases from 5V to 0V.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SqBP73s9otI/AAAAAAAAAZ4/DhH-QrpshxA/s1600-h/circuit.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 178px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SqBP73s9otI/AAAAAAAAAZ4/DhH-QrpshxA/s400/circuit.png" alt="" id="BLOGGER_PHOTO_ID_5377385845063787218" border="0" /></a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Update on progress and a revised aim]]></title>
-    <link href="http://blog.openenergymonitor.org/2009/07/update-on-progress-and-revised-aim/"/>
+    <link href="https://blog.openenergymonitor.org/2009/07/update-on-progress-and-revised-aim/"/>
     <updated>2009-07-26T17:22:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2009/07/update-on-progress-and-revised-aim</id>
+    <id>https://blog.openenergymonitor.org/2009/07/update-on-progress-and-revised-aim</id>
     <content type="html"><![CDATA[<p>First an update on what I’ve been working on and where I hope to go next.<br /><br />Over the last few weeks I have been working on monitoring mains AC electricity energy use with the non invasive current transformer method rather than the invasive current sensing resistor method. In my previous post on the current transformer (CT) method I made two errors first the circuit I used was over complicated and secondly the efergy energy monitor seems to be able to estimate real power. Even though the CT method only measures current, I tried to see if it was possible to infer the voltage waveform from the current waveform producing a close estimate of the real power, It seems to have worked quite well. I will upload the details of what I have done soon.<br /><br />I have also been working on DC energy monitoring for the wind turbine. I built the circuit that I talked about in the previous post. I however managed to blow one of the amps on the LT1495 chip and there seems to be an offset on the other amp which may be due to having blown one side. Id like to find a cheaper amp to replace the LT1495, maybe sacrificing a little on accuracy.<br /><br />For the next two weeks the wind turbine is going up at two local festivals here in North Wales (Celtic camp and the National Eisteddfod). If your in the area feel free to drop by.<br /><br />After the festivals I hope to have a look at monitoring the energy captured by the hot water solar panel we have here on our house, at the moment were not sure if it is working properly, it doesn’t seem to be heating much water. However its hard to tell; the controller gives the current temperatures of the tank and panel, it would be useful to have graphs of the temperatures over several days and if a flow meter is installed it is possible to measure kWh of heat captured. Hopefully with better information it would be easier to see how well the system is working. It would be great to have a bit of software that analysed the data from the system, compared it to ideal site data and then be able to tell you something like “your system is working at 80% of potential”<br /><br />All the above applications can all share the same software and similar electronics based on the Arduino. Once one is built, your have a lot of what you need for the others.<br /><br />Further along the line it could be interesting to investigate possibilities for predicting how much energy it is possible to capture from a wind turbine or a hydro turbine before it is installed at a site using an arduino connected to an anemometer for wind or a river flow meter for hydro. I have also been doing some work with Suneil on trying to characterise how well the generator we built for the wind turbine works. With some detailed data and analysis it might be possible to identify possible improvements. Both the energy prediction and generator development could again share much of the same electronics, software and knowledge required for the energy use and energy capture parts of the project. And finally I would like to look at Internet connectivity, it would be really great to be able to check up on how say the wind turbine is doing from anyware in the world.<br /><br />And so for the project to encompass all of the above:<br /><br /><span style="font-style: italic;">“This is a project to develop and build open source energy monitoring and analysis tools for energy efficiency and distributed renewable micro generation.”</span><br /><br />The project is then divided into 6 areas:<br /><br /><span style="font-weight: bold;">Energy Use</span><br />Mains AC electricity and DC.<br /><br /><span style="font-weight: bold;">Energy Capture</span><br />Wind turbine, hot water solar, hydro etc.<br /><br /><span style="font-weight: bold;">Energy Prediction</span><br />Wind speeds, stream flow…<br /><br /><span style="font-weight: bold;">Energy Technology Development</span><br />Tools for the development and building stage rather than the use stage.<br /><br /><span style="font-weight: bold;">Data graphing and analysis and storage.</span><br />Using free and open source software<br /><br /><span style="font-weight: bold;">Sharing data with the world</span><br />Internet connectivity.<br /><br />Hopefully this better reflects the direction of the work and will hopefully be a more useful collection of tools for anyone interested.<br /><br />I will be updating the website soon with the recent work and to reflect the revised aim.<br /><br />Any comments on the above would be great. Thanks for reading!</p>
 ]]></content>
   </entry>

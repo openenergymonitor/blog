@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sustainability | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/sustainability/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/sustainability/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
+    <link href="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
     <updated>2016-05-02T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
+    <id>https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
     <content type="html"><![CDATA[<p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
 
 <p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[Part 2: Exploring carbon intensity and renewable energy matching]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/"/>
     <updated>2016-04-28T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id>
     <content type="html"><![CDATA[<p><img src="/images/winderful.png" alt="image" /></p>
 
 <p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
@@ -112,9 +112,9 @@ Over the year the average available wind power for the household will work out t
   
   <entry>
     <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
+    <link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/04/ Understand-CO2-intensity-grid-electricity</id>
+    <id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id>
     <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
 
 <p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>
@@ -163,18 +163,18 @@ An electric car achieving a real world mountainous north Wales terrain driving e
   
   <entry>
     <title type="html"><![CDATA[An open source hourly zero carbon energy system model]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/02/an-open-source-hourly-zero-carbon/"/>
+    <link href="https://blog.openenergymonitor.org/2015/02/an-open-source-hourly-zero-carbon/"/>
     <updated>2015-02-06T01:05:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/02/an-open-source-hourly-zero-carbon</id>
+    <id>https://blog.openenergymonitor.org/2015/02/an-open-source-hourly-zero-carbon</id>
     <content type="html"><![CDATA[<p>I’ve been doing some work recently with Philip James from the Centre for Alternative Technology  on developing a set of open source zero carbon energy system models  based on <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> that visualise in a javascript based web page application how energy demand  can be supplied by a variable renewable energy supply using a mix of  storage technologies. You can create your own scenarios, choosing how  much wind, solar, storage technologies etc are used.<br /><br />Its still work in progress but the models we have built<span class="text_exposed_show"> so far are now online and can be explored here:<br /> <a href="http://zerocarbonbritain.org/energy_model/" rel="nofollow" target="_blank">http://zerocarbonbritain.org/energy_model</a></span><br /><br />The source code is all available there too as well as the original ZeroCarbonBritain spreadsheet model: <a href="https://github.com/philJam/energymodel">https://github.com/philJam/energymodel</a><br /><br />Visualising hourly surplus and shortfall:<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-GvNCSRnIum0/VNQO64pJuYI/AAAAAAAAOWU/FwIXxOjYfxE/s1600/screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-GvNCSRnIum0/VNQO64pJuYI/AAAAAAAAOWU/FwIXxOjYfxE/s1600/screenshot.png" height="336" width="400" /> </a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Visualising battery, hydrogen, synthetic liquid and gas store levels:&lt;/div&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-GpTxQG9x5ps/VNQO8Vc2BWI/AAAAAAAAOWc/uHHiIVeKVgk/s1600/store.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-GpTxQG9x5ps/VNQO8Vc2BWI/AAAAAAAAOWc/uHHiIVeKVgk/s1600/store.png" height="321" width="400" /></a>&lt;/div&gt;<br />This builds partly on findings and questions raised from our earlier work on the Snowdonia household energy study: here;<a href="http://openenergymonitor.blogspot.co.uk/2014/11/snowdonia-household-energy-study.html">http://openenergymonitor.blogspot.co.uk/2014/11/snowdonia-household-energy-study.html</a><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-knYU11AkW_A/VNQPjbpKzLI/AAAAAAAAOWk/OFmPN42NIU8/s1600/0present.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-knYU11AkW_A/VNQPjbpKzLI/AAAAAAAAOWk/OFmPN42NIU8/s1600/0present.png" height="176" width="400" /></a>&lt;/div&gt;<br />The aim will be to extend that analysis to look at the amount of  renewable energy and energy storage required to supply the energy demand  after implementing measures like building insulation/retrofit,  heatpumps and electric transport.<br /><br /><br />I find it very interesting looking at how all of these  different elements can come together to create a zero carbon energy  system, to understand better the relevance of different solutions. With a  framework like this it becomes more possible to put ideas like smart  electric car charging or excess pv diversion to immersion heaters and  battery stores in context, to get a better idea of actually how much  effect different solutions can have.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Kettle vs Blanket]]></title>
-    <link href="http://blog.openenergymonitor.org/2014/12/kettle-vs-blanket/"/>
+    <link href="https://blog.openenergymonitor.org/2014/12/kettle-vs-blanket/"/>
     <updated>2014-12-08T11:55:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2014/12/kettle-vs-blanket</id>
+    <id>https://blog.openenergymonitor.org/2014/12/kettle-vs-blanket</id>
     <content type="html"><![CDATA[<p>One of the things I love about monitoring energy is that it can be used to answer questions and inform decisions.<br />&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;In my household we have recently purchased an electric blanket, I had always associated such items as an indulgent luxury! However at this time of year the temperature in our bedroom is often only just about in double figures (old property with poor heating and frugal use) necessitating a seemingly moderate luxury of a hot water bottle to warm the bed up a little.   &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;I assumed using the new electric blanket would result in an increase in our power consumption, however the energy monitor proved me wrong! &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;Having the electric blanket on for 30min used about 0.1KWh while boiling 1L of hot water to fill at hot water bottle used about 0.16KWh of energy, 60% more! Also the electric blanket does a much better job of warming the bed then the hot water bottle, after 30min it was almost uncomfortably hot even with an ambient temperature in the room of 11 degrees! &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<br /><a href="http://2.bp.blogspot.com/-PRWQK4f8cpM/VIFxhBOblbI/AAAAAAABAjg/B0fmE75iFEs/s1600/blanket.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-PRWQK4f8cpM/VIFxhBOblbI/AAAAAAABAjg/B0fmE75iFEs/s1600/blanket.png" height="456" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;200W Electric Blanket on for about 30 min&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-9WhNqhDkTyk/VIWOeVUmd6I/AAAAAAABAro/XBAaAxspyKg/s1600/Screenshot%2B2014-12-08%2Bat%2B11.38.19.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-9WhNqhDkTyk/VIWOeVUmd6I/AAAAAAABAro/XBAaAxspyKg/s1600/Screenshot%2B2014-12-08%2Bat%2B11.38.19.png" height="286" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Kettle heating 1L of water to boiling&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;/div&gt;</p>
 ]]></content>
   </entry>

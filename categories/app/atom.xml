@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: app | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/app/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/app/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Emoncms Android App]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
     <updated>2015-12-17T10:47:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
+    <id>https://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
 <div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.
 

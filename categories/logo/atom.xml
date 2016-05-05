@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: logo | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/logo/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/logo/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Logo Ideas ]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/09/logo-ideas/"/>
+    <link href="https://blog.openenergymonitor.org/2012/09/logo-ideas/"/>
     <updated>2012-09-27T12:21:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/09/logo-ideas</id>
+    <id>https://blog.openenergymonitor.org/2012/09/logo-ideas</id>
     <content type="html"><![CDATA[<p>Recently our friend and freelance artist/graphic designer <a href="http://gwilnoble.com/">Gwil Noble</a> has knocked up a few logo possibilities for OpenEnergyMonitor. <br /><br />Gwil has also made some gorgeous little context icons we will be using in our new front page re-design soon.<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-_VI0FaO4410/UGRFhuP4NxI/AAAAAAAAclo/1HAmJxHx5iU/s1600/LogoPrototypes_web.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="160" src="http://1.bp.blogspot.com/-_VI0FaO4410/UGRFhuP4NxI/AAAAAAAAclo/1HAmJxHx5iU/s400/LogoPrototypes_web.png" width="400" /></a>&lt;/div&gt;<br /><br /><br />For the main icon there are three possibilities so far, their all in prototype stage, there is a possibility that we end up using something totally different! If you have any creative ideas for ‘D’, ‘E’ or even ‘F’ we would love to be able to add more options to the list. <br /><br />We have setup a poll to enable you to vote on which logo you prefer: <a href="http://openenergymonitor.org/emon/logovote">http://openenergymonitor.org/emon/logovote</a><br /><br />Forum discussion thread here: <a href="http://openenergymonitor.org/emon/node/1093">http://openenergymonitor.org/emon/node/1093</a></p>
 ]]></content>
   </entry>

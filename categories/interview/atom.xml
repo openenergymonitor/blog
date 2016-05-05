@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: interview | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/interview/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/interview/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ubuntu podcast Interview]]></title>
-    <link href="http://blog.openenergymonitor.org/2011/11/ubuntu-podcast-interview/"/>
+    <link href="https://blog.openenergymonitor.org/2011/11/ubuntu-podcast-interview/"/>
     <updated>2011-11-24T16:43:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2011/11/ubuntu-podcast-interview</id>
+    <id>https://blog.openenergymonitor.org/2011/11/ubuntu-podcast-interview</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><a href="http://podcast.ubuntu-uk.org/wp-content/themes/uupc4/images/logo.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://podcast.ubuntu-uk.org/wp-content/themes/uupc4/images/logo.png" /></a></div>
 <div><br /></div>
 <p>A couple of weeks ago Laura Cowen and Tony Whitmore from Ubuntu UK podcast interviewed Trystan and myself at the HomeCamp 4 event in London. &lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;A recording from the interview can be heard 27 min into this weeks edition of the podcast. Download it here: <a href="http://podcast.ubuntu-uk.org/2011/11/23/s04e20-run-to-the-hills/">http://podcast.ubuntu-uk.org/2011/11/23/s04e20-run-to-the-hills/</a>&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;Trystan and I have both use Ubuntu as our main operating systems for the last few years. We rate it highly  and it keeps on getting better all the time. Its especially good for programming, we experience a lot less problems that windows users to when uploading code using the Arduino IDE. &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;Thanks a lot to Laura and Tony, I’v added the Ubuntu UK podcast to my RSS reader. Its a good listen. &lt;/div&gt;</p>

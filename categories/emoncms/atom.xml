@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Outdoor Temperature Data from Weather Underground to Emoncms & MQTT]]></title>
-    <link href="http://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/"/>
+    <link href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/"/>
     <updated>2016-02-29T19:08:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather</id>
+    <id>https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather</id>
     <content type="html"><![CDATA[<p>Monitoring the temperature outside your house is super useful to inform your home automation systems and calculate domestic heating (and dressing!) requirements.<br /><br />One way is to monitor external temperature is to install your own external <a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">emonTH wireless temperature node</a> or use a commercial web-connected weather station. However a cheaper way is to tap into the Internet of Things and connect to another weather station in your area.  <a href="https://www.wunderground.com/weather/api/">Weather Underground</a> have over 18K weather stations online in the USA and a <a href="https://www.wunderground.com/weather/api/">free API</a> for non commercial use.<br /><br />Here’s an example of using nodeRED to poll the Weather Underground API and post to Emoncms (using <a href="http://flows.nodered.org/node/node-red-node-emoncms">nodeRED Emoncms flow</a>) and MQTT.</p>
 
 <!--more-->
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Emoncms Android App]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
     <updated>2015-12-17T10:47:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
+    <id>https://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
 <div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms Android mobile app.
 
@@ -59,9 +59,9 @@
   
   <entry>
     <title type="html"><![CDATA[UK Grid Carbon Intensity API]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity/"/>
     <updated>2015-11-21T11:04:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity</id>
+    <id>https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity</id>
     <content type="html"><![CDATA[<p><br />Following on from my blog post creating an <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">ambient indicator to indicate wind turbine renewable electricity generation</a> we have extended the <a href="http://emoncms.org/">Emoncms</a> UK electric grid statistic aggregation to calculate and record the UK electric grid carbon intensity i.e. the amount of carbon emitted per kWh (CO2/kWh). As before we have created a dashboard open API for easy access to this data.<br /><br /></p>
 
 <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
@@ -75,18 +75,18 @@
   
   <entry>
     <title type="html"><![CDATA[Node-RED Emoncms Node]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/node-red-emoncms-node/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node/"/>
     <updated>2015-11-15T22:22:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
+    <id>https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
     <content type="html"><![CDATA[<p><br />I have recently been experimented using <a href="http://nodered.org/">Node-RED</a> for a <a href="http://openenergymonitor.blogspot.co.uk/search/label/NodeRed">number of tasks</a>. Thanks to the work of others a Node-RED flow node already existed for Emoncms making it very easy to post data to Emoncms. For my <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">Ambient Wind Energy Indicator</a> I had the need to extract real-time feed data from Emoncms feeds using the Emoncms API. I have now contributed this functionality to the official Node-RED Emoncms node. Using the updated Emoncms node it’s now super easy to post data to extract latest real-time feed values from any Emoncms server including <a href="http://emoncms.org/">Emoncms.org</a>.<br /><br />Get the latest version from: <a href="http://flows.nodered.org/node/node-red-node-emoncms">http://flows.nodered.org/node/node-red-node-emoncms</a>. If you’re interested in viewing and improving the functionality the open-source code behind the node is up on the <a href="https://github.com/node-red/node-red-nodes/tree/master/io/emoncms">Node-RED flows GitHub</a><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Node-RED node&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Install with:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ cd ~/.node-red&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ npm install node-red-node-emoncms&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s1600/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s640/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" width="514" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Node Documentation&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s1600/2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="235" src="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s400/2.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms in Node Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s1600/3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s400/3.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Server Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Interpreting Emoncms Dashboards]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards/"/>
+    <link href="https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards/"/>
     <updated>2015-11-04T11:54:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
+    <id>https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
     <content type="html"><![CDATA[<p><br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it’s possible to identify subtler power signatures. Here’s an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It’s great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br /></p>
 ]]></content>
   </entry>

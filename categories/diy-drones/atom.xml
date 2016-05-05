@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: diy drones | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/diy-drones/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/diy-drones/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A few tips from DIY Drones]]></title>
-    <link href="http://blog.openenergymonitor.org/2011/02/few-tips-from-diy-drones/"/>
+    <link href="https://blog.openenergymonitor.org/2011/02/few-tips-from-diy-drones/"/>
     <updated>2011-02-06T20:48:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2011/02/few-tips-from-diy-drones</id>
+    <id>https://blog.openenergymonitor.org/2011/02/few-tips-from-diy-drones</id>
     <content type="html"><![CDATA[<div style="text-align: justify;">I visit regulary <a href="http://diydrones.com/">DIY Drones</a>, and two posts lately captured my attention because they are directly related to our project:</div>
 <div style="text-align: justify;">
 <br /></div>

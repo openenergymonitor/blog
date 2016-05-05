@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hackathon | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/hackathon/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/hackathon/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[elektro:camp(«2012.05») Workshop | Offenburg-Germany]]></title>
-    <link href="http://blog.openenergymonitor.org/2012/04/elektrocamp201205-workshop-offenburg/"/>
+    <link href="https://blog.openenergymonitor.org/2012/04/elektrocamp201205-workshop-offenburg/"/>
     <updated>2012-04-14T13:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2012/04/elektrocamp201205-workshop-offenburg</id>
+    <id>https://blog.openenergymonitor.org/2012/04/elektrocamp201205-workshop-offenburg</id>
     <content type="html"><![CDATA[<div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;">Hackathons are great! The next one I am attending will be the electro:camp in Offenburg, in Germany, close to the french border. I think Trystan and Glyn will also be there as well as a number of cool hackers and makers, all interested in energy and automation.</span></div><div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: left;">Many great developments will result from this event and hope to see some of you there as well.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here is the official website: <a href="http://www.elektro-camp.de/">www.elektro-camp.de</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://developer.mysmartgrid.de/lib/exe/fetch.php?media=elektro.camp.2012.05.final.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://developer.mysmartgrid.de/lib/exe/fetch.php?media=elektro.camp.2012.05.final.jpg" width="452" /></a></div><br /></div>
 ]]></content>
   </entry>

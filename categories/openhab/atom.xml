@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: openHAB | Blog | OpenEnergyMonitor]]></title>
-  <link href="http://blog.openenergymonitor.org/categories/openhab/atom.xml" rel="self"/>
-  <link href="http://blog.openenergymonitor.org/"/>
-  <updated>2016-05-05T16:53:59+00:00</updated>
-  <id>http://blog.openenergymonitor.org/</id>
+  <link href="https://blog.openenergymonitor.org/categories/openhab/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-05-05T17:10:37+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
     <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OpenEnergyMonitor, emonPi and openHAB ]]></title>
-    <link href="http://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/"/>
+    <link href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/"/>
     <updated>2015-12-13T18:00:00+00:00</updated>
-    <id>http://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab</id>
+    <id>https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab</id>
     <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><br /></div>
 <div class="" style="clear: both; text-align: left;">Using the emonPi in it's current default configuration works great to post data to Emoncms for logging and visualisation. However there may be times when you want some more flexibility and or ability to interface with other hardware or services&nbsp;</div>
 <div class="separator" style="clear: both; text-align: left;"><br /></div>
