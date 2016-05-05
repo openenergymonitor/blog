@@ -2,12 +2,12 @@
 published: true
 layout: post
 title: "New Forum, Blog and User Guide Website"
-date: 2016-05-02 15:00                                       # This is the indexed published time and date
-date_formatted: "May  3rd 2016"                              # This is the public facing date on the post
+date: 2016-05-03 15:00
+date_formatted: "May  3rd 2016"
 author: Glyn Hudson
 comments: true
 categories:
- - forum                                                    # Lower case
+ - forum
  - website
  - user guide
 ---
