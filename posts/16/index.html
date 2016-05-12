@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/emontx-shield-smt-with-new-layout-in/">Emontx Shield SMT with new layout in development</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-06T08:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-06 08:58:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/emontx-shield-smt-with-new-layout-in/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">Several weeks ago we got an email with a series of pictures showing the problem that the emontx shield does not stack well with many of the base boards and other shields it may be used in conjunction with.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It got me thinking about different ways the shield could be arranged that would make it stack better with a variety of different boards. The main idea I had was to move the AC-AC Adapter and CT inputs over to the other side of the PCB away from the side the Ethernet and USB sockets are usually located on most of the Arduino boards and the NanodeRF. The second idea was to mount these sockets on the underside of the PCB which allows for a really thin profile NanodeRF + EmonTx shield stack which I think is pretty neat if a little unconventional. Here's the concept drawing:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s1600/emontxhield_concept.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="135" src="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s400/emontxhield_concept.jpg" width="400" /></a></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">As you may be aware I have not really ventured into PCB design much before (I usually work on software) but its been something I wanted to do for a while so I thought Id have a go at the emontx shield redesign as its one of the simplest layouts. With Glyn's helpful guidance I started by loading the existing&nbsp;schematic&nbsp;and board files for the through hole emontx shield in eagle, I then ripped up all the existing PCB tracks, rearranged the components in different layouts and&nbsp;switched&nbsp;the resistors and capacitors over to SMT packages. Here's a screenshot of the resultant board design:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s1600/board.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="305" src="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s400/board.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">I spend most of my dev time writing lines of code which becomes a visual output in a second step, PCB design is a different experience as its all&nbsp;immediately&nbsp;visual, dragging and dropping pcb tracks, trying to see if this track that way or another in its place looks neater, its a nice change. If your intrigued to have a go I'd recommend installing eagle, loading up one of the board designs that are all up on solderpad and experiment with routing tracks, maybe adding/removing a temperature sensor.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The PCB's arrived on Tuesday, I built it up and have started to test it, so far everything seems to be working, energy monitoring part, RFM12, Led, DS18B20 temperature sensor, Arduino Uno, Arduino Duemilanove. Next I will test the NanodeRF and Id also like to test an Arduino official Ethernet shield.  </div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s1600/emontxshieldsmt_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="210" src="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s400/emontxshieldsmt_01.jpg" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s1600/emontxshieldsmt_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275" src="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s400/emontxshieldsmt_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Things to improve</b></div><div style="margin-bottom: 0cm;">There is a very slight misalignment on the ISP header that needs fixing although it still stacks together fine and Glyn pointed out that the option to choose different SS (SEL) and IRQ pins for the RFM12 could be achieved using a manual jumper rather than solderable pads. Id also like to add a terminal for the DS18B20 on the edge of the board for neater connection of temperature sensor strings.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Once these are fixed we will get a run of boards made, it will probably be another month or two at least until its in the shop as these things take time.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Open Hardware Schematics and Board files</b></div><div style="margin-bottom: 0cm;">All available on solderpad here:</div><div style="margin-bottom: 0cm;"><a href="http://solderpad.com/trystanlea/emontx-shield-smt/">http://solderpad.com/trystanlea/emontx-shield-smt/</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/removing-redundant-datapoints-algorithm/">Removing redundant datapoints – algorithm 1</a>
   </h1>
   
@@ -447,48 +487,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/testing-ds18b20-temperature-sensing-on/">Testing DS18B20 temperature sensing on emonTx v3</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-25T09:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-25 09:34:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/temperature/'>temperature</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/testing-ds18b20-temperature-sensing-on/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Hello, so I thought Id try something new on this blog, I'm going to try writing short blog posts about progress and general work on things day to day, these are not intended to mark significant developments or milestones which many of the other blog posts have tended to be, something more like a log book that will hopefully give insight into the development process.</div><br /><b>Testing DS18B20 temperature sensing on emonTx v3</b><br /><br />Glyn and I with help from Robert are continuing with testing emontx V3, there have been a few niggling issues that we're working on but its pretty much there. This morning I tested the DS18B20 temperature sensor connection, it all worked fine, one of the nice things of the new emontx is that there are screw terminals for connecting up the temperature sensor which makes connecting up the encapsulated DS18B20 temperature sensors much easier.<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-ffiA6kvc8Gk/UZ6qIJqbXvI/AAAAAAAACms/2qOL0QhZnZs/s1600/2013-05-24+00.40.45.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: center;"><img border="0" height="180" src="http://1.bp.blogspot.com/-ffiA6kvc8Gk/UZ6qIJqbXvI/AAAAAAAACms/2qOL0QhZnZs/s320/2013-05-24+00.40.45.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">DS18B20 connected to emontx v3</td></tr></tbody></table>Another new addition for temperature sensing is the ability to switch the sensor power pin on and off for use when powering the emontx of batteries (this avoids the hack introduced in the low power temperature node that uses the emontx v2.2 pcb). Anyway the circuit was originally designed with analog 5 (used as digital pin 19) being used for data and digital 5 used for power. While reading about using analog inputs as digital pins I came across this note on the arduino site:<br /><br /><i>The Atmega datasheet also cautions against switching analog pins in<br />close temporal proximity to making A/D readings (analogRead) on other<br />analog pins. This can cause electrical noise and introduce jitter in<br />the analog system. It may be desirable, after manipulating analog pins<br />(in digital mode), to add a short delay before using analogRead() to<br />read other analog pins.</i><br /><br />It turns out one can just switch the atmega pins used around so analog 5 (digital 19) is used for power and digital 5 is used for the data which will be higher frequency switching and so good to bring that off the analog pin. As power switching is only needed in battery operation one could make a temperature measurement after the analog read section just before putting the emontx to sleep which should not cause interference.<br /><br /><b>Update (15/06/13): On future emonTx V3 PCB revisions 3.x ADC 5 (Dig 19) and Dig5 have been swapped round on the PCB to fix this issue. Dig 5 is now DS18B20 one-wire signal and ADC5 (Dig19) is now DS18B20 power.</b><br /><b><br /></b><b>If no DS18B20 temperature sensor is connected the ports can be used for other functions. ADC 5 can be used as a analogue input/output and Dig 5 (with R27/R24 4.7K pull up removed) can be used as a general Digital I/O with PWM&nbsp;capabilities.&nbsp;</b><br /><b><br /></b><b>The DS18B20 data 4.7K pull-up resistor on Dig 5 and the Dig 2 IRQ 10K pull-down resistor have been designed to take a thru-hole resistor if the SMT resistor was removed to make it possible to change the value of these resistors.&nbsp;</b>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -511,6 +509,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/05/emoncms-qr/">Emoncms Android App QR Code Scanner Setup</a>
+        </li>
+      
     
       
         <li class="post">
@@ -563,12 +567,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
         </li>
       
     
@@ -632,6 +630,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/srf/">SRF</a></li>
     
       <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
     
@@ -750,6 +750,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/media/">media</a></li>
     
       <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/mobile app/">mobile app</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
     

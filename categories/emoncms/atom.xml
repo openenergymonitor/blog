@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-12T10:47:31+00:00</updated>
+  <updated>2016-05-12T11:06:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Android App QR Code Scanner Setup]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/05/emoncms-qr/"/>
+    <updated>2016-05-11T15:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/05/emoncms-qr</id>
+    <content type="html"><![CDATA[<p>I would like to highlight a nice improvement to Emoncms and the Emoncms Android app that has been contributed by community memebers <a href="https://community.openenergymonitor.org/users/jumpmaster/activity">@jumpmaster</a> and <a href="https://community.openenergymonitor.org/users/andy_taylor/activity">@andy_taylor</a>. See <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a> on our <a href="/2016/05/website-changes/">shiny new forums</a>.</p>
+
+<p>Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</p>
+
+<p><img src="/images/emoncms-qr.png" alt="Emoncms QR code generator" /></p>
+
+<!--more-->
+
+<p><em>This updated has been merged into the stable Emoncms branch V9.6. If your running an emonPi/emonBase jsut hit update to pull in the changes. The update will appear on Emoncms.org in the next few days.</em></p>
+
+<p>This QR code contains the Emoncms URL and read-API key to automate setting up the <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;hl=en_GB">Emoncms Android app</a>. The update for the app to support the QR code scanner has been pushed to Googe Play. After the update just can the QR code to setup the app.</p>
+
+<p><img src="/images/android-qr.png" width="300"></p>
+
+<p>If your feeds are named <strong>use</strong> and <strong>use_kwh</strong> the app will automatically select use these feeds as the Power and kWh feeds.</p>
+
+<p>Any issues, please post on the <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a>.</p>
+
+<p>Thanks again to everyone involved in the development and testing. It’s been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Outdoor Temperature Data from Weather Underground to Emoncms & MQTT]]></title>
@@ -79,15 +106,6 @@
     <updated>2015-11-15T22:22:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
     <content type="html"><![CDATA[<p><br />I have recently been experimented using <a href="http://nodered.org/">Node-RED</a> for a <a href="http://openenergymonitor.blogspot.co.uk/search/label/NodeRed">number of tasks</a>. Thanks to the work of others a Node-RED flow node already existed for Emoncms making it very easy to post data to Emoncms. For my <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">Ambient Wind Energy Indicator</a> I had the need to extract real-time feed data from Emoncms feeds using the Emoncms API. I have now contributed this functionality to the official Node-RED Emoncms node. Using the updated Emoncms node it’s now super easy to post data to extract latest real-time feed values from any Emoncms server including <a href="http://emoncms.org/">Emoncms.org</a>.<br /><br />Get the latest version from: <a href="http://flows.nodered.org/node/node-red-node-emoncms">http://flows.nodered.org/node/node-red-node-emoncms</a>. If you’re interested in viewing and improving the functionality the open-source code behind the node is up on the <a href="https://github.com/node-red/node-red-nodes/tree/master/io/emoncms">Node-RED flows GitHub</a><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Node-RED node&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Install with:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ cd ~/.node-red&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ npm install node-red-node-emoncms&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s1600/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s640/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" width="514" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Node Documentation&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s1600/2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="235" src="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s400/2.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms in Node Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s1600/3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s400/3.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Server Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Interpreting Emoncms Dashboards]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards/"/>
-    <updated>2015-11-04T11:54:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/11/interpreting-emoncms-dashboards</id>
-    <content type="html"><![CDATA[<p><br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it’s possible to identify subtler power signatures. Here’s an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It’s great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br /></p>
 ]]></content>
   </entry>
   

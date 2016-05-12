@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/10/emonth-update-hardware/">emonTH Update - Hardware </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-10-18 12:34:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/10/emonth-update-hardware/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Since my <a href="http://openenergymonitor.blogspot.co.uk/2013/06/emonth-prototype.html">last post on the emonTH</a>&nbsp;wireless Temperature and Humidity monitoring node good progress has been made.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s1600/P1030255.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s320/P1030255.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH cased up</td></tr></tbody></table><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH - unboxed</td></tr></tbody></table><br />The most significant hardware change has been the addition of a DC-DC step-up boost converter to step-up the voltage from discharging AA batteries to a steady 3.3V. The boost converter circuit consists of a tiny (SC-70 package) LTC3525-3.3 chip a 10uH inductor and a couple of small 1uF capacitors. The step-up converter is essential for the DHT22 as this sensor does not perform well with varying supply voltage, &nbsp;specifically once below 3.3V. The addition of the converter will also significantly increase battery life. The LTC3525 was chosen because of its low quiescent power consumption of 7uA and high conversion efficiency of up to 95%. <br /><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s1600/Boost.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s320/Boost.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH LTC3525 DC-DC boost converter circuit</td></tr></tbody></table><br /></div><div>The boost circuit is very impressive, given a minimum input voltage of 0.7V it boosts up to a steady 3.3V.</div><div><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s1600/Vin=2V.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="192" src="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s320/Vin=2V.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: small; text-align: start;">Using scope with AC coupled probe to examine boost converter&nbsp;output&nbsp;when stepping 2V up to 3.3V with no load: output exhibited 9.3mV RMS ripple at 333Khz</span></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s1600/2013-09-28+16.26.59.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s320/2013-09-28+16.26.59.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing &nbsp;emonTH external DS18B20 temperature sensor terminal block connection</td></tr></tbody></table><br /></div><div>We hope to have the emonTH in the shop by December.<br /><br /></div><div>Stay tuned after the break for update on<a href="http://openenergymonitor.blogspot.com/2013/10/emonth-update-software-power.html"> emonTH software, power consumption and batteries</a>...</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/10/carboncoop-openenergymonitor-build/">CarbonCoop & OpenEnergyMonitor build weekend, November 16 & 17th</a>
   </h1>
   
@@ -462,46 +502,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/08/notify-on-inactive-feeds/">Notify on inactive feeds</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-08-20T13:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-20 13:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/08/notify-on-inactive-feeds/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Here's a simple feature that sends an email whenever emoncms feeds become inactive for more than two hours, designed to stop those instances where you login to emoncms after a month and realise that something went wrong and it hasn't been updating for a while.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s1600/notify.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s640/notify.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The notify control page can be accessed via the Extras menu. It can be disabled or enabled and an email address that is different from you main account email can be used if needed.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">A cron job runs every 2 hours on the server to check if any feeds have become inactive for more than 2 hours but less than 4 hours. This ensures only one email is sent and historical inactivity is ignored.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Notify is now running on emoncms.org, you may want to check that your email address is correct before turning it on.</div><div class="separator" style="clear: both; text-align: left;"><br /></div>To install notify on your raspberrypi or own server see installation details here:<br /><a href="http://github.com/emoncms/notify">http://github.com/emoncms/notify</a><br /><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -524,6 +524,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/05/emoncms-qr/">Emoncms Android App QR Code Scanner Setup</a>
+        </li>
+      
     
       
         <li class="post">
@@ -576,12 +582,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/01/french-low-carbon-energy-film-featuring/">Low carbon energy film featuring OpenEnergyMonitor</a>
         </li>
       
     
@@ -645,6 +645,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/srf/">SRF</a></li>
     
       <li><a href="/categories/tasker/">Tasker</a></li>
+    
+      <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
     
@@ -763,6 +765,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/media/">media</a></li>
     
       <li><a href="/categories/mobile/">mobile</a></li>
+    
+      <li><a href="/categories/mobile app/">mobile app</a></li>
     
       <li><a href="/categories/modbus/">modbus</a></li>
     
