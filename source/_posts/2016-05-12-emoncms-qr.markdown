@@ -27,4 +27,4 @@ If your feeds are named **use** and **use_kwh** the app will automatically selec
 
 Any issues, please post on the [development forum thread](https://community.openenergymonitor.org/t/mobile-app-qr-code/149).
 
-Thanks again to everyone involved in the development and testing. It's been great working with an enthusiastic development community over on the new forums :-)
+Thanks again to everyone involved in the development and testing. It's been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)
