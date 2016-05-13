@@ -4,7 +4,7 @@
   <title><![CDATA[Category: raspberry pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-13T15:45:27+00:00</updated>
+  <updated>2016-05-13T16:57:38+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -28,9 +28,9 @@
 
 <p>If you receive an emonPi with a black acrylic fascia like in the photo above this means you have a RaspberryPi 3 inside. The reason for switching from punched-aluminium end-plates to black acrylic plastic is to allow the RaspberryPi 3’s on-board Wifi to propagate out of the enclosure.</p>
 
-<p><em>Note: The Raspberry Pi 3 also includes integrated on-board Bluetooth, however this has been disabled on the emonPi due to a serial port conflict. See our <a href="/2016/03/raspberry-pi-3/">original post on the Raspberry Pi 3</a>.</em></p>
+<p>The Raspberry Pi 3 equipped emonPi’s and emonBase’s will be running the latest <a href="https://guide.openenergymonitor.org/technical/#software-overview">emonSD pre-built SD card image</a> which includes the latest version of Emoncms as well as <a href="https://guide.openenergymonitor.org/integrations/nodered">NodeRED</a> and <a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a> pre-installed. Checkout our <a href="https://guide.openenergymonitor.org/">new Setup &amp; User Guide</a>.</p>
 
-<p>The Raspberry Pi 3 equipped emonPi’s and emonBase’s will be running the latest <a href="https://guide.openenergymonitor.org/technical/#software-overview">emonSD pre-built SD card image</a> which includes the latest version of Emoncms as well as NodeRED and openHAB pre-installed. Checkout our <a href="https://guide.openenergymonitor.org/">new Setup &amp; User Guide</a>.</p>
+<p><em>Note: The Raspberry Pi 3 also includes integrated on-board Bluetooth, however this has been disabled on the emonPi due to a serial port conflict. See our <a href="/2016/03/raspberry-pi-3/">original post on the Raspberry Pi 3</a>.</em></p>
 
 <hr />
 
