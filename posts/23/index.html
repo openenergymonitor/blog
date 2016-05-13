@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/05/visualisation-api/">Visualisation API</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-05-25T22:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-25 22:20:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/05/visualisation-api/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Its now a bit easier to get to the different emoncms visualisations. Just click on the Vis tab to bring up the visualisation API page, enter the feed id/s to be visualised and click on the view button:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-kNP2OnOjVE0/T8ADtFF3b4I/AAAAAAAACc0/ZXpAIUO6r5I/s1600/visapi.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="372" src="http://3.bp.blogspot.com/-kNP2OnOjVE0/T8ADtFF3b4I/AAAAAAAACc0/ZXpAIUO6r5I/s640/visapi.png" width="640" /></a></div><br /><b>Try it out</b><br /><a href="http://vis.openenergymonitor.org/emoncms3/">http://vis.openenergymonitor.org/emoncms3/</a><br /><br /><b>Github</b><br /><a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/05/measurement-of-heat-loss-in-hot-water/">Measurement of heat loss in a hot water cylinder</a>
   </h1>
   
@@ -469,46 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/04/speeding-up-emoncms-feed-data-requests/">Speeding up emoncms feed data requests</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-04-12T17:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-12 17:34:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/04/speeding-up-emoncms-feed-data-requests/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />If you log 5 second data you quickly&nbsp;amass&nbsp;a huge number of&nbsp;datapoints&nbsp;(about 6 million a year). If you then tried to visualise a years data by loading all 6 million datapoints you would be waiting a long time. The most we would want to load is the same number of datapoints as the pixel width of the visualisation, lets say around 1000 datapoints. So we need some way of picking out of our 6 million datapoints 1000 datapoints at&nbsp;equal&nbsp;interval.<br /><br />When I first wrote emoncms I searched&nbsp;for mysql queries that could pick out table rows at given intervals and came across the following query&nbsp;that does this:<br /><br /><pre>SELECT * FROM (SELECT @row := @row +1 AS rownum, time,data FROM ( SELECT @row :=0) r, $feedname) ranked WHERE (rownum % $resolution = 1) AND (time&gt;'$start' AND time&lt;'$end') order by time Desc</pre><br />It seem to work really well. Fast forward 5 months my feed tables are approaching 2.5 million rows &nbsp;and I'm starting to notice query times getting really quite long. After a bit of searching again, I came across a suggestion to a similar problem suggesting the use of an index. So I tried adding an index and creating a php for-loop to request a single row at given intervals:<br /><br /><pre>$range = $end - $start;<br />$interval = $range / 1000;<br /><br />for ($i=0; $i&lt;1000; $i++)<br />{<br />&nbsp; $qtime = $start + $i * $interval;<br />&nbsp; $result = db_query("SELECT * FROM $feedname WHERE `time` &gt;$qtime LIMIT 1");</pre><pre>&nbsp; if($result){<br />&nbsp; &nbsp; $row = db_fetch_array($result);<br />&nbsp; &nbsp; $data[] = array($row['time'] * 1000, $row['data']); &nbsp; &nbsp; <br />&nbsp; }</pre>}<br /><br />The following table shows the typical times for requesting data from both the indexed and non indexed tables and the different methods. At the same time I also tested&nbsp;whether&nbsp;request times where affected by the data type that time is stored as: mysql datetime or a unix timestamp stored as an unsigned int.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-mLgSqKaw8Ng/T4cQ9I1n-XI/AAAAAAAACZw/1zFfpAL2ZPo/s1600/queryspeeddata.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="113" src="http://2.bp.blogspot.com/-mLgSqKaw8Ng/T4cQ9I1n-XI/AAAAAAAACZw/1zFfpAL2ZPo/s640/queryspeeddata.png" width="640" /></a></div><br /><br />So it looks like the optimum configuration is primarily the addition of an index and use of the php data request method and then to reduce disk space use, switching to unix timestamp. The next step is to create a script to automate table conversion from datetime unindexed to timestamp indexed.<br /><div><br /></div><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -531,6 +531,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
+        </li>
+      
     
       
         <li class="post">
@@ -583,12 +589,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/02/heat-pump-testing-initial-results/">Heat pump Testing: Initial results</a>
         </li>
       
     
