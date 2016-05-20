@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "emonPi emonSD pre-built SD card update"
+title: "Substantial update to emonPi"
 date: "2016-05-20 10:00"
 date_formatted: May 10th 2016
 author: Glyn Hudson
@@ -12,11 +12,15 @@ categories:
   - raspberry pi
 ---
 
-> Using the emonPi in it's default configuration works great to posting data to Emoncms for logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed.
+This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support. 
 
-This latest update significantly enchances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.
+> The emonPi in it's default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed. 
 
-For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensivly. We have now given it a name: **emonSD**.
+The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The 'always-on' requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See *Related Blog Posts* at the bottom of this post for inspiration as to what can be achieved.
+
+***
+
+For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: **emonSD**.
 
 The latest update to emonSD (**emonSD-03May16**) now incudes the following all setup and pre-configured:
 
@@ -43,14 +47,14 @@ All emonPi / emonBase's that have been purchased from our online store from June
 
 Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the [Emoncms backup / import](https://guide.openenergymonitor.org/setup/import/) tool to migrate local Emoncms data.
 
-**We would highly recomend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.**
+**We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.**
 
-However if your emonPi is currently stable and is working as indended then don't feel that upgrading is essential, *"If it aint broke, don't f ix it!"*.
+However if your emonPi is currently stable and is working as indented then don't feel that upgrading is essential, *"If it ain’t broke, don't f ix it!"*.
 
 
 ## Documentation
 
-As [previously mentioned on the blog](2016/05/website-changes/) a couple of weeks ago we have launchded a new User Guide website, the launch of this Guide has coincide with the lanch of the new emonSD. The User Guide is designed to be the goto location for eveything a user needs to know to setup, use and configure an OpenEnergyMonitor system:
+As [previously mentioned on the blog](2016/05/website-changes/) a couple of weeks ago we have launched a new User Guide website, the launch of this Guide has coincide with the launch of the new emonSD. The User Guide is designed to be the goto location for everything a user needs to know to setup, use and configure an OpenEnergyMonitor system:
 
 ### [https://guide.openenergymonitor.org](https://guide.openenergymonitor.org)
 
