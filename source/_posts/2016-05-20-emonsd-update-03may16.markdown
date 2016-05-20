@@ -64,11 +64,10 @@ As [previously mentioned on the blog](2016/05/website-changes/) a couple of week
  - [Outdoor Temperature Data from Weather Underground to Emoncms & MQTT](https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/)
  - [Ambient Wind Energy Indicator using Node-RED and Blink(1) USB](https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/)
   
- ### openHAB
+### openHAB
  
  - [OpenEnergyMonitor, emonPi and openHAB](https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/)
  
- ### LightWave RF
+### LightWave RF
  
  - [Controling LightWaveRF plugs using emonPi](https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/)
-
