@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/05/view-your-power-data-as-histogram-in/">View your power data as a histogram in emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-05-26T15:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-26 15:53:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/05/view-your-power-data-as-histogram-in/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div style="text-align: left;">This blog post details how to view your power data as a histogram in emoncms. This is a really useful feature implemented in emoncms by Paul Allen <a href="http://wattdata.blogspot.fr/">http://wattdata.blogspot.com</a>&nbsp;&nbsp;(MarsFlyer on Gitub:&nbsp;<a href="https://github.com/MarsFlyer">https://github.com/MarsFlyer</a>). So a really big thank you to Paul for this!</div><div style="text-align: left;"><br /></div><div style="text-align: left;">The histogram shows the energy (KWh) used at a particular power (watts) which allows analysis of what types of devices (low / medium / high) are using the most energy.&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">Here is the histogram visualisation for my house, embedded directly from emoncms.</div><div style="text-align: left;"><b>Click on a particular day to see a histogram of that day:</b></div><div><div style="text-align: left;"><br /></div></div><div><div style="text-align: left;"><iframe frameborder="0" height="500px" marginheight="0" marginwidth="0" scrolling="no" src="http://vis.openenergymonitor.org/emoncms3/Vis/kwhd_histogram/kwhdzoomer.php?apikey=622568853818f6a340569ec059e340f8&amp;power=106&amp;kwhd=107&amp;whw=691" width="700px"></iframe> </div><div><div style="text-align: left;"><b>Viewing your power data as a histogram</b></div><div style="text-align: left;"><b><br /></b></div><div style="text-align: left;">1) Send power data to <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a> see here for details of doing this with an emontx and emonbase: see&nbsp;<a href="http://openenergymonitor.org/emon/applications/homeenergy">Build a home electricity energy monitor</a></div><div style="text-align: left;"><b><br /></b></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-_OR6Y9jg9R8/T79STfaWeFI/AAAAAAAACcI/k1SqqR4BISA/s1600/histogram01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="186" src="http://4.bp.blogspot.com/-_OR6Y9jg9R8/T79STfaWeFI/AAAAAAAACcI/k1SqqR4BISA/s400/histogram01.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">2) Click on the power input to bring up the input configuration page. Set up processes as in the screenshot, one power process, one kwhd process and one histogram process:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-9xBWLtmVeTg/T79SUEOj1cI/AAAAAAAACcM/anS1IlrCtE0/s1600/histogram02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="312" src="http://2.bp.blogspot.com/-9xBWLtmVeTg/T79SUEOj1cI/AAAAAAAACcM/anS1IlrCtE0/s400/histogram02.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">3) Click on Feeds to bring up the feed/list page, click on the histogram feed:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-qHZN_zHV4K8/T79SUkesV7I/AAAAAAAACcU/RPyVXTV6guQ/s1600/histogram03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="176" src="http://2.bp.blogspot.com/-qHZN_zHV4K8/T79SUkesV7I/AAAAAAAACcU/RPyVXTV6guQ/s400/histogram03.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">4) In the histograms feed/view page click on the graph type histogram:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-oDQ8JIiZNxs/T79SVCg5T8I/AAAAAAAACcc/rPoVnFDd610/s1600/histogram04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="220" src="http://4.bp.blogspot.com/-oDQ8JIiZNxs/T79SVCg5T8I/AAAAAAAACcc/rPoVnFDd610/s400/histogram04.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">5) Once you have been logging histogram data for a few hours you will start to see histogram bars form at the different levels of power that you use. This histogram graph shows energy used at a particular power for all time. So is a really useful tool for measuring what is the total energy used by the electric immersion water heater for example, we've used 62 kWh @ 3500W since April 13th.</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-43z1A8f2BDk/T79SV1jIwCI/AAAAAAAACco/yJWOfUzR3Cc/s1600/histogram05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="324" src="http://2.bp.blogspot.com/-43z1A8f2BDk/T79SV1jIwCI/AAAAAAAACco/yJWOfUzR3Cc/s640/histogram05.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">6) To view your histogram data at a daily basis as in the first embedded visualisation above enter your feed id's and apikey in the following emoncms visualisation url:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>http://vis.openenergymonitor.org/emoncms3/Vis/kwhd_histogram/kwhdzoomer.php?apikey=YOURAPIKEY&amp;power=1&amp;kwhd=2&amp;whw=3</b></div><div class="separator" style="clear: both; text-align: left;"><b><br /></b></div><div class="separator" style="clear: both; text-align: left;">All the source code for the histogram functionality is available in the main emoncms3 repository on github <a href="http://github.com/openenergymonitor/emoncms3">http://github.com/openenergymonitor/emoncms3</a></div><div style="text-align: left;"><br /></div><div style="text-align: left;">Paul Allen has achieved some remarkable reductions in energy use over the last 4 years and uses a version of the histogram&nbsp;beautifully&nbsp;to visualise the changes, see his blog post here:&nbsp;<a href="http://wattdata.blogspot.fr/2011/11/personal-experiences-of-saving-42-on-my.html">Personal experiences of saving 42% on my electricity use</a></div></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/05/visualisation-api/">Visualisation API</a>
   </h1>
   
@@ -467,48 +507,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/04/elektrocamp201205-workshop-offenburg/">elektro:camp(«2012.05») Workshop | Offenburg-Germany</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-04-14T13:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-14 13:00:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/hackathon/'>hackathon</a></li>
-      
-        <li><a class='category' href='/categories/workshop/'>workshop</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/04/elektrocamp201205-workshop-offenburg/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;">Hackathons are great! The next one I am attending will be the electro:camp in Offenburg, in Germany, close to the french border. I think Trystan and Glyn will also be there as well as a number of cool hackers and makers, all interested in energy and automation.</span></div><div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: left;">Many great developments will result from this event and hope to see some of you there as well.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here is the official website: <a href="http://www.elektro-camp.de/">www.elektro-camp.de</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://developer.mysmartgrid.de/lib/exe/fetch.php?media=elektro.camp.2012.05.final.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://developer.mysmartgrid.de/lib/exe/fetch.php?media=elektro.camp.2012.05.final.jpg" width="452" /></a></div><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -531,6 +529,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonsd-update-03may16/">emonPi emonSD pre-built SD card update 03May16</a>
+        </li>
+      
     
       
         <li class="post">
@@ -583,12 +587,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
         </li>
       
     
@@ -706,6 +704,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/emonglcd/">emonGLCD</a></li>
     
       <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonsd/">emonSD</a></li>
     
       <li><a href="/categories/emonth/">emonTH</a></li>
     

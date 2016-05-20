@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/getting-air-quality-egg-to-work-with/">Getting the Air Quality Egg to work with the OpenEnergyMonitor system and emoncms </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-10T21:16:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-10 21:16:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/air-quality-egg/'>Air Quality Egg</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/getting-air-quality-egg-to-work-with/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">I spent a bit of time today putting a sketch together to get the <a href="http://openenergymonitor.blogspot.co.uk/2013/02/air-quality-egg-sensor-shield.html">AirQuality Egg Shield</a> and <a href="http://openenergymonitor.blogspot.co.uk/2013/02/air-quality-egg.html">Air Quality Egg Remote node</a> to work as a standard sensor node with the OpenEnergyMonitor system, so that I could log data into emoncms to visualise changes over time and use the existing raspberrypi + rfm12pi base station setup thats already receiving data from an emontx and low power temperature nodes.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-size: small;">I placed the shield on top of a NanodeRF as it has the RFM12 RF module but Im not actually using the Ethernet part, Im just using the nanode as an arduino with an RFM12 module to form a remote sensor node. This is the same setup as is found inside the&nbsp;</span>Air Quality Egg Remote node.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-hFLyp7hugOI/UbY_UoDQ9rI/AAAAAAAACqk/8k--rKEg83U/s1600/shield.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="357" src="http://1.bp.blogspot.com/-hFLyp7hugOI/UbY_UoDQ9rI/AAAAAAAACqk/8k--rKEg83U/s400/shield.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The sketch is adapted from the PollEggBus_EPA sketch developed by <a href="http://wickeddevice.com/">Wicked Device</a> who develop and make the Air Quality Egg and just puts the NO2, CO, temperature and humidity data in the standard data structure of a series of integer values that the emontx and other nodes use.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Download the sketch here to try it out:</div><div style="margin-bottom: 0cm;"><a href="https://github.com/openenergymonitor/Air-Quality-Egg/blob/master/libraries/EggBus/examples/PollEggBus_openenergymonitor/PollEggBus_openenergymonitor.ino">https://github.com/openenergymonitor/Air-Quality-Egg/blob/master/libraries/EggBus/examples/PollEggBus_openenergymonitor/PollEggBus_openenergymonitor.ino</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I've now been logging for about 3 hours and there's already some interesting data to look at, I got back from being out on my bike and had a shower at 20:50 you can see the RH shoot up, there also seems to be a spike in NO2 and a dip in CO not sure what that means, any ideas?</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-y5QCTJd00pI/UbY_dqJ-P8I/AAAAAAAACqs/uUOOpyo0e6U/s1600/aqe.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="330" src="http://4.bp.blogspot.com/-y5QCTJd00pI/UbY_dqJ-P8I/AAAAAAAACqs/uUOOpyo0e6U/s640/aqe.png" width="640" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">Check out the live dashboard here:</div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/trystan/aqe">http://emoncms.org/trystan/aqe</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Air quality is not something I know much about but after discussing it with the <a href="http://openenergymonitor.blogspot.co.uk/2013/05/carbon-coop.html">Carbon Coop</a> guys recently it sounds like a fascinating and important area to understand, Matt from Carbon Coop explained that high levels of CO2 (not monitored on the AQE shield above but something that would be great to add - but more expensive) in buildings create problems around drowsiness and ability to concentrate and so monitoring these things could be important when designing and making sure a building after having undergone retrofit work has healthy air. It would also be interesting to understand in greater detail the longer term health implications of air quality and the aspects of this that we can measure. There certainly seems to be a lot of resources on this on the Air Quality Egg wiki here which should make interesting reading: <a href="http://airqualityegg.wikispaces.com/AirQualityEgg">http://airqualityegg.wikispaces.com/AirQualityEgg</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/what-kind-of-information-can-we-extract/">What kind of information can we extract from power measurements?</a>
   </h1>
   
@@ -454,37 +494,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/12-input-pulse-counter-idea/">12 input pulse counter idea</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-27T22:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-27 22:36:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2013/05/12-input-pulse-counter-idea/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-             <br /><div style="margin-bottom: 0cm;">A while ago now Glyn and I worked on a design for a 12 input pulse counter, we where doing some work at the Centre for Alternative technology, a stripboard version was built and is in continued use monitoring grid import/export, chp and diesel generator (the last two not actually in active use).</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We wrote up about it here:</div><div style="margin-bottom: 0cm;"><a href="http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting">http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting</a></div><div style="margin-bottom: 0cm;"><a href="http://openenergymonitor.org/emon/buildingblocks/12-input-pulse-counting">http://openenergymonitor.org/emon/buildingblocks/12-input-pulse-counting</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">After visiting CAT again recently and discussing a project they hope to do, it got me thinking again about the 12 input pulse counter. In non-domestic buildings that already have pulse output meters on many of the circuits and a meter room with all the meters in one place, a multiple input pulse counter may be the most effective way to add automatic meter reading.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I've wanted to make a PCB for the 12 input pulse counter for a while so I though I'd do a little work on it this morning, here's a screenshot of where I've got to so far:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-iwNiX7_hZ94/UaPd7SY1PxI/AAAAAAAACnM/FJFCMe3045g/s1600/12inputpulsecounter_pcb01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="http://2.bp.blogspot.com/-iwNiX7_hZ94/UaPd7SY1PxI/AAAAAAAACnM/FJFCMe3045g/s400/12inputpulsecounter_pcb01.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">Here are the features Im thinking it will have:</div><ul><li><div style="margin-bottom: 0cm;">12-input  pulse counter</div></li><li><div style="margin-bottom: 0cm;">Optional pull  down resistor with option for SMT or through hole, see building blocks pages linked above for why pull down resistors are required.</div></li><li><div style="margin-bottom: 0cm;">Input status  LED, driven by pulse signal.</div></li><li><div style="margin-bottom: 0cm;">Dedicated ATmega for pulse counting</div></li><li><div style="margin-bottom: 0cm;">Serial  connection to second ATmega used for ethernet or/and rfm12 comms.</div></li><li><div style="margin-bottom: 0cm;">Enclosed in a  DIN rail mounted enclosure.</div></li></ul><div style="margin-bottom: 0cm;">Here's the eagle design so far:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://solderpad.com/trystanlea/12-input-pulse-counter/">http://solderpad.com/trystanlea/12-input-pulse-counter/</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I used the rfm12pi board design as a starting point as it already had the basic atmega + rfm12 circuit in place.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">One thing I'm still wondering about is&nbsp;whether&nbsp;to add a second optional resistor between the terminals and the pull down resistor which would provide the option of having a voltage divider on the input for stepping down from higher pulse voltages like 24V.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">More to come soon..</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -507,6 +516,12 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonsd-update-03may16/">emonPi emonSD pre-built SD card update 03May16</a>
+        </li>
+      
     
       
         <li class="post">
@@ -559,12 +574,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       
         <li class="post">
           <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
         </li>
       
     
@@ -682,6 +691,8 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <li><a href="/categories/emonglcd/">emonGLCD</a></li>
     
       <li><a href="/categories/emonpi/">emonPi</a></li>
+    
+      <li><a href="/categories/emonsd/">emonSD</a></li>
     
       <li><a href="/categories/emonth/">emonTH</a></li>
     
