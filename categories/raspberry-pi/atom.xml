@@ -4,7 +4,7 @@
   <title><![CDATA[Category: raspberry pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-20T12:22:24+00:00</updated>
+  <updated>2016-05-20T14:33:01+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[emonPi emonSD pre-built SD card update 03May16]]></title>
+    <title type="html"><![CDATA[emonPi emonSD pre-built SD card update]]></title>
     <link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/"/>
     <updated>2016-05-20T10:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id>
@@ -26,7 +26,7 @@
 
 <p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensivly. We have now given it a name: <strong>emonSD</strong>.</p>
 
-<p>The latest update to emonSD (03May16) now incudes the following all setup and pre-configured:</p>
+<p>The latest update to emonSD (<strong>emonSD-03May16</strong>) now incudes the following all setup and pre-configured:</p>
 
 <ul>
   <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
@@ -40,8 +40,8 @@
 <!--more-->
 
 <ul>
-  <li>RASPBIAN JESSIE LITE (2015-11-21)</li>
-  <li>Raspberry Pi 3 Suppport
+  <li><a href="https://www.raspberrypi.org/downloads/raspbian/">RASPBIAN JESSIE LITE</a> (2015-11-21)</li>
+  <li><a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 Suppport</a>
     <ul>
       <li>Including on-board Wifi, external USB Wifi adapter no longer required</li>
     </ul>
@@ -50,9 +50,11 @@
   <li>Root file-system read-only</li>
 </ul>
 
-<h4 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h4>
+<h3 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
 
-<p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases.</p>
+<p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3’s on-board WiFi (<a href="/2016/05/emonpi-raspberrypi3/">see blog post</a>):</p>
+
+<p><img src="/images/emonpi-raspi3.jpg" alt="emonPi Raspberry Pi 3 Acrylic Fascia" /></p>
 
 <p>Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the <a href="https://guide.openenergymonitor.org/setup/import/">Emoncms backup / import</a> tool to migrate local Emoncms data.</p>
 
@@ -66,7 +68,29 @@
 
 <h3 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
 
-<p><br /></p>
+<h2 id="related-blog-posts">Related Blog posts</h2>
+
+<h3 id="nodered">nodeRED</h3>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/categories/nodered/">Node-RED blog post tag</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2015/10/emonpi-nodered-and-mqtt/">emonPi, NodeRed and MQTT</a></li>
+  <li><a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png">Node-RED Emoncms Node</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms &amp; MQTT</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB</a></li>
+</ul>
+
+<p>### openHAB</p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB</a></li>
+</ul>
+
+<p>### LightWave RF</p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/">Controling LightWaveRF plugs using emonPi</a></li>
+</ul>
 
 ]]></content>
   </entry>
