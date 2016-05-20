@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-20T14:34:06+00:00</updated>
+  <updated>2016-05-20T14:52:15+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -80,18 +80,17 @@
   <li><a href="https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB</a></li>
 </ul>
 
-<p>### openHAB</p>
+<h3 id="openhab">openHAB</h3>
 
 <ul>
   <li><a href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB</a></li>
 </ul>
 
-<p>### LightWave RF</p>
+<h3 id="lightwave-rf">LightWave RF</h3>
 
 <ul>
   <li><a href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/">Controling LightWaveRF plugs using emonPi</a></li>
 </ul>
-
 ]]></content>
   </entry>
   
