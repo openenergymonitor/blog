@@ -14,7 +14,7 @@ categories:
 
 This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.
 
-> The emonPi in it's default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed.
+> The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.
 
 The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The 'always-on' requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See *Related Blog Posts* at the bottom of this post for inspiration as to what can be achieved.
 
@@ -22,7 +22,7 @@ The emonPi with this latest software update is perfectly positioned to become th
 
 For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: **emonSD**.
 
-The latest update to emonSD (**emonSD-03May16**) now incudes the following all setup and pre-configured:
+The latest update to emonSD (**[emonSD-03May16](https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&-Change-Log#emonsd-03may16--release)**) now incudes the following all setup and pre-configured:
 
 - [Emoncms V9](https://github.com/emoncms/emoncms)
 - [nodeRED](https://guide.openenergymonitor.org/integrations/nodered)
