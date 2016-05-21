@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-05-20T15:36:39+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Substantial update to emonPi</title><link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/" rel="alternate" type="text/html" title="Substantial update to emonPi" /><published>2016-05-20T10:00:00+00:00</published><updated>2016-05-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/">&lt;p&gt;This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-05-21T16:37:46+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Substantial update to emonPi</title><link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/" rel="alternate" type="text/html" title="Substantial update to emonPi" /><published>2016-05-20T10:00:00+00:00</published><updated>2016-05-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/">&lt;p&gt;This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;The emonPi in it’s default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed.&lt;/p&gt;
@@ -19,6 +19,7 @@
   &lt;li&gt;&lt;a href=&quot;https://guide.openenergymonitor.org/technical/mqtt&quot;&gt;MQTT&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://guide.openenergymonitor.org/integrations/lightwaverf/&quot;&gt;Support for MQTT LightWaveRF OOK Control&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://guide.openenergymonitor.org/integrations/mqtt-relay/&quot;&gt;Support for MQTT WiFi control Relay&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional&quot;&gt;GSM 3G USB modem support&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
@@ -45,6 +46,14 @@
 &lt;p&gt;&lt;strong&gt;We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;However if your emonPi is currently stable and is working as indented then don’t feel that upgrading is essential, &lt;em&gt;“If it ain’t broke, don’t f ix it!”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you-feedback--support&quot;&gt;Thank you, Feedback &amp;amp; Support&lt;/h2&gt;
+
+&lt;p&gt;Releasing this pre-built image update is a significant milestone for us. It’s been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;amp;-Change-Log&quot;&gt;emonSD download repository wiki&lt;/a&gt; for links to forum discussion thread.&lt;/p&gt;
+
+&lt;p&gt;To give feedback or obtain support for the new image please post in the &lt;a href=&quot;https://community.openenergymonitor.org/c/emonsd&quot;&gt;emonSD forum&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
 
@@ -94,7 +103,8 @@ The latest update to emonSD (emonSD-03May16) now incudes the following all setup
   openHAB
   MQTT
   Support for MQTT LightWaveRF OOK Control
-  Support for MQTT WiFi control Relay</summary></entry><entry><title>emonPi / emonBase Raspberry Pi 3</title><link href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/" rel="alternate" type="text/html" title="emonPi / emonBase Raspberry Pi 3" /><published>2016-05-13T15:00:00+00:00</published><updated>2016-05-13T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/">&lt;p&gt;All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.&lt;/p&gt;
+  Support for MQTT WiFi control Relay
+  GSM 3G USB modem support</summary></entry><entry><title>emonPi / emonBase Raspberry Pi 3</title><link href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/" rel="alternate" type="text/html" title="emonPi / emonBase Raspberry Pi 3" /><published>2016-05-13T15:00:00+00:00</published><updated>2016-05-13T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/">&lt;p&gt;All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.&lt;/p&gt;
 
 &lt;p&gt;Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;Moore’s law&lt;/a&gt;.&lt;/p&gt;
 

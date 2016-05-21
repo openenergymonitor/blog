@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonSD | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonsd/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-20T15:36:39+00:00</updated>
+  <updated>2016-05-21T16:37:46+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -39,6 +39,7 @@
   <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
   <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
   <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
+  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
 </ul>
 
 <!--more-->
@@ -65,6 +66,14 @@
 <p><strong>We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.</strong></p>
 
 <p>However if your emonPi is currently stable and is working as indented then don’t feel that upgrading is essential, <em>“If it ain’t broke, don’t f ix it!”</em>.</p>
+
+<h2 id="thank-you-feedback--support">Thank you, Feedback &amp; Support</h2>
+
+<p>Releasing this pre-built image update is a significant milestone for us. It’s been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">emonSD download repository wiki</a> for links to forum discussion thread.</p>
+
+<p>To give feedback or obtain support for the new image please post in the <a href="https://community.openenergymonitor.org/c/emonsd">emonSD forum</a>.</p>
+
+<hr />
 
 <h2 id="documentation">Documentation</h2>
 
