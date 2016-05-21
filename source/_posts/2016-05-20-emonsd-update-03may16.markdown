@@ -6,15 +6,15 @@ date: "2016-05-20 10:00"
 date_formatted: May 10th 2016
 author: Glyn Hudson
 comments: true
-categories: 
+categories:
   - emonSD
   - emonPi
   - raspberry pi
 ---
 
-This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support. 
+This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.
 
-> The emonPi in it's default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed. 
+> The emonPi in it's default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is needed.
 
 The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The 'always-on' requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See *Related Blog Posts* at the bottom of this post for inspiration as to what can be achieved.
 
@@ -30,6 +30,7 @@ The latest update to emonSD (**emonSD-03May16**) now incudes the following all s
 - [MQTT](https://guide.openenergymonitor.org/technical/mqtt)
 - [Support for MQTT LightWaveRF OOK Control](https://guide.openenergymonitor.org/integrations/lightwaverf/)
 - [Support for MQTT WiFi control Relay](https://guide.openenergymonitor.org/integrations/mqtt-relay/)
+- [GSM 3G USB modem support](https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional)
 
 <!--more-->
 
@@ -51,6 +52,19 @@ Existing users can download the new emonSD from the link above and flash to a sp
 
 However if your emonPi is currently stable and is working as indented then don't feel that upgrading is essential, *"If it ain’t broke, don't f ix it!"*.
 
+## Thank you, Feedback & Support
+
+Releasing this pre-built image update is a significant milestone for us. It's been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the [emonSD download repository wiki](https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&-Change-Log) for links to forum discussion thread.
+
+To give feedback or obtain support for the new image please post in the [emonSD forum](https://community.openenergymonitor.org/c/emonsd).
+
+
+
+ 
+
+***
+
+
 
 ## Documentation
 
@@ -58,7 +72,7 @@ As [previously mentioned on the blog](2016/05/website-changes/) a couple of week
 
 ### [https://guide.openenergymonitor.org](https://guide.openenergymonitor.org)
 
-## Related Blog posts 
+## Related Blog posts
 
 ### nodeRED
 
