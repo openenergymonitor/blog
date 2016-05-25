@@ -4,7 +4,7 @@
   <title><![CDATA[Category: raspberry pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-05-25T14:08:16+00:00</updated>
+  <updated>2016-05-25T14:13:29+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -157,9 +157,9 @@
 
 <p>&lt;/a&gt;<a href="https://openenergymonitor.org/emon/node/12311">Forum post discussion</a><br />&lt;div&gt;&lt;pre&gt;&lt;/pre&gt;There is an issue using the RasPi3 in the emonPi enclosure, for obvious reasons (laws of physics) the on-board Wifi does not like being enclosed in a metal box! We are working on getting some acrylic end-plates cut for testing. If this goes well we will look at offering the RasPi3 with the emonPi + acrylic end plates on the enclosure to allow the WiFi signal to roam free.<br /><br />Update: here’s a photo of emonPi with prototype acrylic fascias. On-board WiFi works great :-)<br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://1.bp.blogspot.com/-m2AKbaYuYak/VvEY50spANI/AAAAAAABqGE/NCmZeMkRSEEbGg2EqGdhCPmAxT_J8wkwg/s1600/2016-03-19.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="266" src="https://1.bp.blogspot.com/-m2AKbaYuYak/VvEY50spANI/AAAAAAABqGE/NCmZeMkRSEEbGg2EqGdhCPmAxT_J8wkwg/s400/2016-03-19.jpg" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<span style="font-size: small; text-align: start;">emonPi with prototype acrylic fascias</span>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;/div&gt;
 <br />
-Update: Follow this thread to retain bluetooth functionality &gt;
+Update: Follow &lt;/a&gt;<a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">this thread</a> to retain bluetooth functionality &gt;
 <br />
-https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195</p>
+<br /></p>
 ]]></content>
   </entry>
   
