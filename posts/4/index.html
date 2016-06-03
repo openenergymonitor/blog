@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/09/optical-pulse-counting-with-emonth/">Optical pulse counting with the EmonTH</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-09-02T12:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-09-02 12:53:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/09/optical-pulse-counting-with-emonth/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <style type="text/css">p { margin-bottom: 0.25cm; line-height: 120%; }</style>  <br /><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">In addition to temperature and humidity sensing the <a href="http://openenergymonitor.org/emon/modules/emonTH">EmonTH</a> has a digital input (with interrupt) that can be used for pulse counting.   </div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">This can be used for <a href="http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting">wired pulse counting</a> or with the <a href="http://shop.openenergymonitor.com/optical-utility-meter-led-pulse-sensor/">Optical LED pulse sensor</a>.</div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">To use the Optical LED Pulse sensor the easiest way is to remove the RJ45 connector and then strip back the black sheathing to reveal the red (3.3V power), black (GND) and blue (pulse) wires.</div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">Connect the red wire to the 3.3V terminal, the black wire to the GND terminal and the blue wire to the terminal labelled D3 (top) or IRQ1/D3 Pulse Counting (bottom of the board).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://wiki.openenergymonitor.org/images/thumb/Emonth_pulse.jpg/1600px-Emonth_pulse.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://wiki.openenergymonitor.org/images/thumb/Emonth_pulse.jpg/1600px-Emonth_pulse.jpg" height="347" width="640" /></a></div><br /></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Mq6ZFJuLqcc/VebtplQo9rI/AAAAAAAAT14/NtBwwglgdxo/s1600/SAM_1228.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-Mq6ZFJuLqcc/VebtplQo9rI/AAAAAAAAT14/NtBwwglgdxo/s320/SAM_1228.JPG" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-JKBIFoch2cU/VebtpvkXfcI/AAAAAAAAT18/4NYrBdD0Nlo/s1600/SAM_1229.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/-JKBIFoch2cU/VebtpvkXfcI/AAAAAAAAT18/4NYrBdD0Nlo/s320/SAM_1229.JPG" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-rIL3qPNNzt0/VebtpevfL6I/AAAAAAAAT10/ooswSPyzU_g/s1600/SAM_1230.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="480" src="http://1.bp.blogspot.com/-rIL3qPNNzt0/VebtpevfL6I/AAAAAAAAT10/ooswSPyzU_g/s640/SAM_1230.JPG" width="640" /></a></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div>There are two firmware examples available for the EmonTH for pulse counting, the first is for Pulse counting in addition to DHT22 Temperature + Humidity sensing or DS18B20 temperature sensing:<br /><a href="https://github.com/openenergymonitor/emonTH/tree/master/emonTH_DHT22_DS18B20_RFM69CW_Pulse">https://github.com/openenergymonitor/emonTH/tree/master/emonTH_DHT22_DS18B20_RFM69CW_Pulse</a><br /><br />The second is for pulse counting only if the temperature and humidity sensing is not needed:<br /><a href="https://github.com/openenergymonitor/emonTH/tree/master/emonTH_pulse_lowpower">https://github.com/openenergymonitor/emonTH/tree/master/emonTH_pulse_lowpower</a><br /><br />To upload these firmware examples you will need the <a href="http://openenergymonitor.org/emon/buildingblocks/setting-up-the-arduino-environment">Arduino IDE and libraries installed</a> and a <a href="http://shop.openenergymonitor.com/programmer-usb-to-serial-uart/">USB to serial programmer</a> to upload the firmware to the EmonTH.<br /><br />The pulse count is accumulated on the EmonTH until the EmonTH is reset either by an outage or by turning off and on the power.<br /><br />To record the total accumulated pulse count in emoncms use the wh_accumulator input process which detects resets continuing the total pulse count accumulation from the last value before the reset.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/08/3ch-wifi-relay-control-board/">3CH WiFi Relay Control Board</a>
   </h1>
   
@@ -449,37 +491,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/using-tablet-as-wall-mount-energy/">Using a tablet as a wall mount energy display</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-29T18:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-29 18:25:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2015/06/using-tablet-as-wall-mount-energy/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    We've been discussing for a little while using <a href="http://openenergymonitor.blogspot.co.uk/2015/03/energy-display-options.html">re-purposed tablets for energy display's</a> rather than trying to develop our own pre-assembled version of the EmonGLCD (we're planning on keeping the through-hole version though).<br /><br />I got myself a refurbished Samsung Galaxy tab 3 last week for £50 off ebay and the Koala Tablet Wall Mount Dock by Dockem.<br /><br />Here are a couple of pictures of it in action:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-h5ff1-Cqmuw/VZGL6YWGuzI/AAAAAAAATMs/Kgoi0bORVOY/s1600/solarpv.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="334" src="http://3.bp.blogspot.com/-h5ff1-Cqmuw/VZGL6YWGuzI/AAAAAAAATMs/Kgoi0bORVOY/s640/solarpv.JPG" width="640" /></a><a href="http://2.bp.blogspot.com/-Cn9QaSfB_II/VZGL2WM_0tI/AAAAAAAATMc/zOY3xoU9abM/s1600/IMG_7081.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="426" src="http://2.bp.blogspot.com/-Cn9QaSfB_II/VZGL2WM_0tI/AAAAAAAATMc/zOY3xoU9abM/s640/IMG_7081.JPG" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-fLR_Ke-oRoU/VZGL3PmXNOI/AAAAAAAATMg/T6Ju-ThXDyo/s1600/IMG_7086.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="426" src="http://2.bp.blogspot.com/-fLR_Ke-oRoU/VZGL3PmXNOI/AAAAAAAATMg/T6Ju-ThXDyo/s640/IMG_7086.JPG" width="640" /></a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -596,6 +607,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
         </li>
       
@@ -645,12 +662,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
         </li>
       
     
@@ -716,6 +727,8 @@ window.onclick = function(event) {
       <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/application/">application</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
     
@@ -896,6 +909,8 @@ window.onclick = function(event) {
       <li><a href="/categories/utility meters/">utility meters</a></li>
     
       <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
     

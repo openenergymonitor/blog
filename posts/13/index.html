@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/09/posting-data-from-adafruit-tweet-watt/">Posting data from Adafruit Tweet-A-Watt to emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-09-13T14:10:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-09-13 14:10:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/09/posting-data-from-adafruit-tweet-watt/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <a href="http://www.ladyada.net/make/tweetawatt/">Tweet-a-watt</a> is a project from Ladyada / <a href="http://www.adafruit.com/blog/category/tweetawatt/">Adafruit</a> to modify a Kill-A-Watt appliance power monitor to transmit the power data via Xbee to a computer (could be a Raspberry Pi) and post the value to twitter. Chris Whiting has modified the python code to post the data to <a href="http://emoncms.org/">emoncms</a><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/TweetAWattDiagram.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="476" src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/TweetAWattDiagram.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-CTH2OP7oMss/UjMcGDlyF8I/AAAAAAAAkEI/hLZ0oAdKLpQ/s1600/Selection_007.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="313" src="http://2.bp.blogspot.com/-CTH2OP7oMss/UjMcGDlyF8I/AAAAAAAAkEI/hLZ0oAdKLpQ/s640/Selection_007.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><a href="http://twitter.com/civicsarecool">Chris Whiting</a>&nbsp;writes:&nbsp;<br /><i><br /></i><i>A Tweet-A-Watt is plugged into an outlet with a device plugged into it. A xbee is wired to the Kill-A-Watt electronics, which reads an analog voltage representing the power and current being used by the device plugged into the Kill-A-Watt. The xbee sends the data to a receiving xbee which is plugged into a computer using an USB FTDI TTL-232 cable.</i><br /><i><br /></i><i>I have a script called "wattcher.py" running on a Raspberry Pi which was originally developed by the folks at Adafruit. This script reads the data sent to the receiving xbee through the serial port. The script takes the raw data and processes the data to calculate the power being used. I modified the script to send the collected data to a web socket. The receiving web socket is the oem_gateway.py script that's running on my web server where Emoncms is currently installed.</i><br /><i><br /></i>Chris has kindly put his cod on GitHub for everyone to try:&nbsp;<a href="https://github.com/casestudies/tweetawatt">https://github.com/casestudies/tweetawatt</a><br /><div><br /></div><div><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/08/emontx-v3-progress-update/">emonTx V3 Progress Update</a>
   </h1>
   
@@ -469,48 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/diy-casing/">DIY Casing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-26T14:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-26 14:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
-      
-        <li><a class='category' href='/categories/showcase/'>showcase</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/diy-casing/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    We are working on new designs which which will be better designed to fit into cases in the meantime <a href="http://openenergymonitor.org/emon/user/53">John Cantor </a>&nbsp;(from&nbsp;<a href="http://heatpumps.co.uk/">heatpumps.co.uk</a>)&nbsp;who has been using a <a href="http://openenergymonitor.org/emon/applications/heatpump">modified OpenEnergyMonitor system</a> for<a href="http://openenergymonitor.blogspot.co.uk/2012/03/heat-pump-monitoring.html"> monitoring the performance of air and ground source heatpumps</a> shares a photo of his experiences of boxing up the emonTx and Nanode RF SMT<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-n9f4aR3ePBI/UfKNGjkI7hI/AAAAAAAAiWM/9lpAuj0x82U/s1600/echfghch.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="553" src="http://4.bp.blogspot.com/-n9f4aR3ePBI/UfKNGjkI7hI/AAAAAAAAiWM/9lpAuj0x82U/s640/echfghch.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx setup for temperature monitoring and nanode RF SMT cased up using standard RS cases</td></tr></tbody></table><br />These cases from RS were used:<br /><br />ABS moulded box, 120x65x40mm, ivory<br />RS Stock No.502-641<br />ABS moulded box, 112x62x31mm, ivory<br />RS Stock No.502-635<br />both £3.45+vat.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -627,6 +625,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
         </li>
       
@@ -676,12 +680,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
         </li>
       
     
@@ -747,6 +745,8 @@ window.onclick = function(event) {
       <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/application/">application</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
     
@@ -927,6 +927,8 @@ window.onclick = function(event) {
       <li><a href="/categories/utility meters/">utility meters</a></li>
     
       <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
     

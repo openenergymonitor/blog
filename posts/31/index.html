@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2010/10/energy-monitoring-at-center-for_5557/">Energy monitoring at the Center for Alternative Technology - part 3</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-10-10T17:54:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-10-10 17:54:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/10/energy-monitoring-at-center-for_5557/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <b><div><span class="Apple-style-span" style="font-weight: normal;">continuing from part 2:</span></div><div><b><br /></b></div>Monitoring hardware to public display database interface</b><div><br />Another aspect of the project that has been interesting and I have learned quite a bit from has been connecting the different monitoring hardware up to the display database, We are doing this via three routes:<br /><br />1) Direct access to the SMA Inverters webbox via a cleaver bit of code Carlos has written. Carlos has kindly documented his work and put it up on the website here, have a look: <a href="http://openenergymonitor.org/emon/node/89">http://openenergymonitor.org/emon/node/89</a><br /><br />2) Via a JSON string fetched across the network from a script on the proprietary SCADA pulse counting system. With the JSON string being decoded and the data being inserted in the database via the method documented here: <a href="http://openenergymonitor.org/emon/node/88">http://openenergymonitor.org/emon/node/88</a><br /><br />3) For the pulse output meters: total grid import, chp generation and backup diesel generator that are located on a different part of site were there was no existing pulse counting hardware: I used an arduino to read the pulses and an ethernet shield to send a JSON string with the power and energy data to the public display server. I have documented the Arduino pulse counting here <a href="http://openenergymonitor.org/emon/node/79">http://openenergymonitor.org/emon/node/79</a><br /><br />Finding out about JSON strings was really useful. A JSON string is a string structure that allows you to send a variable key along with its value. It is possible to use this key to automatically register new devices by checking if the device already exists in the database with the same key and also send data from multiple devices in no particular order to the same script on the server.<br /><br />Learning about and using pulse output kwh meters has also been very interesting. It is a nice way of monitoring large systems and there are pulse output meters for all sorts of measurement applications: water, gas etc. Many smart meters are pulse output meters, if they dont have the wired pulse output they probably have the flashing led output that you can bolt a sensor on to as many people are doing. </div><div><br /></div><div>part 4: next steps and the PV lab project...</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2010/10/energy-monitoring-at-center-for_10/">Energy monitoring at the Center for Alternative Technology - part 2</a>
   </h1>
   
@@ -382,37 +413,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2010/04/all-power-labs/">All Power Labs</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2010-04-29T15:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-04-29 15:59:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2010/04/all-power-labs/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <span class="Apple-style-span" style="color: rgb(0, 0, 0); -webkit-text-decorations-in-effect: none; ">A couple of weeks ago I visited </span><a href="http://www.allpowerlabs.org/">All Power Labs</a> over in Berkeley CA on the recommendation of<a href="http://sustburbia.blogspot.com/"> Ken Boak</a> who went over there for a workshop in March. All power labs are:<br /><div><br /></div><div><i>“..an incubator for open source energy experiments and distributed manufacturing solutions. We work to generate physical tools and information resources for people exploring alterative energy through DIY innovation and online collaboration. We believe that a bottom up, participatory ecology in energy is just as possible as it has been in computing. And we expect the impact of such creative self-determination will be no less transforming than its been in digital realms.”</i></div><div><br /></div><div>Their current main project is called the <a href="http://www.gekgasifier.com/">GEK gasifier</a>, (Gasifiers Experimenters Kit). The GEK gasifier converts biomass (woodchip etc) into wood gas, this gas can then be run in a car or burned for heating or used to generate electricity by running a gas turbine (they have a gas turbine!)+ generator or internal combustion engine + generator. The gasifier+engine+generator combination is called the Power pallet and can produce 10kW. </div><div><br /></div><div>Bear Kaufmann who is investigating the performance of the system was looking for energy monitoring equipment and so Mario and I went over to see the operation and work with Bear on getting some energy monitoring working.</div><div><br /></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muSYZND8I/AAAAAAAAB2w/cQ4wqUUxsZc/s1600/DSCF8435.JPG"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muSYZND8I/AAAAAAAAB2w/cQ4wqUUxsZc/s400/DSCF8435.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5465591253599850434" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 300px; " /></a></div><div><br /></div><div>The generator they are using is a single phase 3-wire generator that is effectively the same configuration as household electrical wiring in the states. The energy monitoring setup therefore consisted of 2 CT sensors for current measurement: one for each leg a step down transformer for voltage measurement.</div><div><br /></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muiFxmL-I/AAAAAAAAB24/3a6HKIwdaqk/s1600/DSCF8448.JPG"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9muiFxmL-I/AAAAAAAAB24/3a6HKIwdaqk/s400/DSCF8448.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5465591523479793634" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 300px; " /></a></div><div><br /></div><div>The power pallet has a<a href="http://gekgasifier.pbworks.com/Gasifier-Control-Unit"> gasifier control unit (GCU) </a>which is based on the Atmel ATmega 1280 which is used in the Arduino Mega and so the unit is compatible with and uses the Arduino IDE for programming. The GCU has a lot of things happening on it: it monitors temperatures and pressures and controls things like flow to keep the gasifier working efficiently, there are critical servo updates that happen about every 20ms and so the main challenge of the visit was to try to fit the energy monitoring on to the GCU, to fit the real power, apparent power, powerfactor, vrms, irms sampling and calculation into those 20ms time slots. Up until now I have usually had the arduino dedicate around a second to make these measurements and so the question was could we squash the energy monitoring down and still get accurate results. Luckily we found we could do this, by taking one wavelength long samples and then averaging around 10 of these one wavelength samples to get a more stable result and so now the power output and efficiency of the power pallet can be tested with out a lot of extra equipment just a couple of sensors, resistors and capacitors connected to the GCU.</div><div><br /></div><div>Here's a test output with different loads:</div><div><span class="Apple-style-span"  style="color:#0000EE;"><u><span class="Apple-style-span"  style="color:#000000;"><br /></span></u></span></div><div><a href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9mvgW35WQI/AAAAAAAAB3A/OOPQ572zGAE/s1600/realpower_test_20100419-500.jpg"><img src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S9mvgW35WQI/AAAAAAAAB3A/OOPQ572zGAE/s400/realpower_test_20100419-500.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5465592593221507330" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 400px; height: 87px; " /></a></div><div><br /></div><div>For more information have a look at Bear's post and write up here: <a href="http://gekgasifier.com/forums/showthread.php?p=1295#post1295">http://gekgasifier.com/forums/showthread.php?p=1295#post1295</a></div><br /><br />I will also try to upload the code for single phase 3-wire and the one wavelength sampling soon as I get a chance.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -529,6 +529,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
         </li>
       
@@ -578,12 +584,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
         </li>
       
     
@@ -649,6 +649,8 @@ window.onclick = function(event) {
       <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/application/">application</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
     
@@ -829,6 +831,8 @@ window.onclick = function(event) {
       <li><a href="/categories/utility meters/">utility meters</a></li>
     
       <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
     

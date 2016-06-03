@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2014/01/oem-gateway-serial-port-emoncms-link/">OEM Gateway: Serial Port > Emoncms Link </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-26T19:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-01-26 19:02:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/01/oem-gateway-serial-port-emoncms-link/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    In the past we have recommended our simple <a href="https://github.com/openenergymonitor/EmoncmsPythonLink">EmoncmsPythonLink</a> to post data to emoncms which is received on a serial port (this could be an Arduino or USB device such a JeeLink plugged into a Raspberry Pi).<br><br>The <a href="https://github.com/Jerome-github/oem_gateway">OEM Gateway</a> by Jerome that we use extensively on the Raspberrry Pi to post data received by the <a href="http://shop.openenergymonitor.com/base-stations/">RFM12Pi</a> to emoncms can also (easily) be used to post data received an a serial port to emoncms. Using the OEM Gateay to do this rather than the Emoncms Python Link is a much more robust solution with better error logging.<br><br>I have recently setup a Raspberry Pi with an Arduino connected to receive RF data from my<a href="http://emoncms.org/beehive/live"> honey bee hive temperature monitor</a> and post to emoncms. I found using the OEM gateway in conjunction with <a href="http://openenergymonitor.blogspot.co.uk/2013/12/developing-for-arduino-remotely-on.html">ino to compile and upload code for the Arduino</a> remotely over ssh directly on the Raspberry Pi to be invaluable for remote bug fixing.<br><br>Here's how to use the OEM Gateway to post data to a local or remote emoncms from data received on a serial port:<br><br><b>1. Fist setup the Arduino / JeeLink &nbsp;to write to the serial port using Serial.print() in the following format&nbsp;</b><br><br>NodeID val1 val2<br>NodeID val1 val2<br><br>Example for temperature and relative humidity fluctuating around 19°C and 60% posting as node 11<br><br>11 19.2 60.1<br>11 19.5 60.0<br>11 19.3 60.4<br>(No restriction on number size and decimal part.)<br><br><b>2. Follow the&nbsp;excellent&nbsp;instruction on Jerome's Github for how to setup the OEM gateway&nbsp;</b><br><br>https://github.com/Jerome-github/oem_gateway<br><br><br><b>3. Rename the oemgateway.conf file and edit it as follows adding in your USB port and API keys for local or remote emoncms or both</b>.<br><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;"># Gateway settings #</span></i><br><i><span style="font-size: x-small;">####################</span></i><br><i><span style="font-size: x-small;">[gateway]</span></i><br><i><span style="font-size: x-small;"># loglevel must be one of DEBUG, INFO, WARNING, ERROR, and CRITICAL</span></i><br><i><span style="font-size: x-small;"># see here : http://docs.python.org/2/library/logging.html</span></i><br><i><span style="font-size: x-small;">loglevel = DEBUG</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;"># Listeners #</span></i><br><i><span style="font-size: x-small;">#############</span></i><br><i><span style="font-size: x-small;">[listeners]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># This listener manages the serail</span></i><br><i><span style="font-size: x-small;">[[Serial]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewaySerialListener</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; com_port = /dev/ttyUSB0</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;"># Buffers #</span></i><br><i><span style="font-size: x-small;">###########</span></i><br><i><span style="font-size: x-small;">[buffers]</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;"># The two following buffers instantiate the same class,&nbsp;</span></i><br><i><span style="font-size: x-small;"># that formats the data for an emoncms instance.</span></i><br><i><span style="font-size: x-small;"># One sends the data to a local instance, the other one</span></i><br><i><span style="font-size: x-small;"># to a distant one.</span></i><br><i><span style="font-size: x-small;"># If active is set to False, the buffer neither records nor sends any data,</span></i><br><i><span style="font-size: x-small;"># but it holds unsent data until active becomes True.</span></i><br><i><span style="font-size: x-small;">[[emoncms_local]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = localhost</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey =xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = False</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path = /emoncms</span></i><br><i><span style="font-size: x-small;"><br></span></i><i><span style="font-size: x-small;">[[emoncms_remote]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; type = OemGatewayEmoncmsBuffer</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[init_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; [[[runtime_settings]]]</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; domain = emoncms.org</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; apikey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; protocol = http://</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; active = True</span></i><br><i><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; path =&nbsp;</span></i><br><br><br><b>4. Start the gateway with instruction to use the config from the config file&nbsp;</b><br><br><i>$ ./oemgateway --config-file oemgateway.conf</i><br><br><br>The instructions on Jerome's Github can be followed to set the oemgateway script to run as a deamon service automatically at startup if required.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/01/emonth-multiple-ds18b20-sensors/">emonTH Multiple DS18B20 Sensors</a>
   </h1>
   
@@ -487,50 +529,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/11/adding-control-to-emoncms-rfm12b-packet/">Adding control to emoncms: RFM12b Packet Generator</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-11-27T23:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-27 23:39:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/11/adding-control-to-emoncms-rfm12b-packet/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I've had many conversations with people recently about controlling things like radiator set points, boiler thermostat's, heatpump's and so on.<br /><br />I visited John cantor of <a href="http://heatpumps.co.uk/">http://heatpumps.co.uk/</a> today who is  implementing an impressive control and monitoring system for a heatpump  central heating system which involves EmonGLCD's with relay's connected  to radiator valve actuators in each room. The buttons on the EmonGLCD  are used to set the target temperature for the room and information is  displayed on the EmonGLCD about heatpump power input and outside  temperature.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s1600/BX6HlyfCUAAe0iX.jpg:large.jpeg" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s320/BX6HlyfCUAAe0iX.jpg:large.jpeg" width="320" /></a></div><br />On the way back I stopped at the Centre for Alternative Technology where <span style="font-family: Calibri;">Marnoch who is <a href="http://openenergymonitor.blogspot.co.uk/2013/07/probably-best-student-placement.html">on their student placement</a> there is </span>working on doing something similar but for a radiator system connected to a wood chip boiler.<br /><br />Both Glyn and Ynyr are keen to get boiler thermostat controllers working in their houses and Ken Boak who designed the NanodeRF phoned up the other day suggesting we start an openenergymonitor sub project and discussion on this topic, Ken's been working on central heating control for quite some time.<br /><br />Its something I have a growing interest in too as we will be soon installing a heatpump system at home which has a lot of opportunity for control and monitoring to make sure its running efficiently.<br /><br />So I've been giving some thought to how control features could be added to emoncms in a more integrated way than initial efforts I've made before.<br /><br />I like the simplicity of the way Jean Claude Wippler designed the jeelib library to use c structures as the method in which data is packaged and sent via the RFM12b radio's and so I thought that maybe a good basis for adding control functionality to emoncms would be to first make it possible for emoncms to easily generate RFM12b data packets in the format that can be easily decoded with a struct definition on the listening control nodes. Emoncms would then broadcast this control packet containing all the state information about the system at a regular interval in the same way as an emontx broadcasts it's readings. Listening nodes can then be programmed to selectively use variables in that control packet depending on what they need to do.<br /><br />I've put together an initial working concept of a module that can be used to do this and its up on github here: <a href="https://github.com/emoncms/packetgen">https://github.com/emoncms/packetgen</a><br /><br />Here's a screenshot of the main interface:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s1600/rfm12packetgen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s640/rfm12packetgen.png" width="395" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">One of the nice things about it is that as you generate your control packet the module generates example Arduino code to make it easier to start coding a control node, you can just copy the code any drop it into the Arduino IDE and upload to a atmega+rfm12b based node and it should start receiving the control packet right away. </div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I see this module and control in general being run on a local installation of emoncms running on a raspberrypi + harddrive combination rather than emoncms.org. The next step is an image with all this installed and working out of the box.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s1600/pihdsetup.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s400/pihdsetup.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -647,6 +645,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
         </li>
       
@@ -696,12 +700,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
         </li>
       
     
@@ -767,6 +765,8 @@ window.onclick = function(event) {
       <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/application/">application</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
     
@@ -947,6 +947,8 @@ window.onclick = function(event) {
       <li><a href="/categories/utility meters/">utility meters</a></li>
     
       <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
     

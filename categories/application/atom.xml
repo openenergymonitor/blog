@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: application | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/application/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-06-03T11:41:42+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Electrical Supply Line Vault]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/"/>
+    <updated>2016-06-03T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault</id>
+    <content type="html"><![CDATA[<p>Last week my home emonPi energy monitor came in handy to help diagnose an electrical supply fault.</p>
+
+<p>A neighbour alerted me that her lights were flickering and internet router was dropping offline. At the time I was doing some DIY and had noticed the power drill I was using change speed erratically. I had presumed it was my drill about the give up the ghost.</p>
+
+<p>I checked the Emoncms graph on my emonPi energy monitor and noticed that VRMS was well out of spec at about 150V (we usually get 230V*) and occasionally jumping up to almost 300V! The electrical company was alerted and the fault was traced back to a frayed conductor on our street. I helped the electrical contractors view the real-time VRMS value to confirm the fault was fixed.</p>
+
+<p><img src="/images/vrms.png" alt="VRMS Fault" /></p>
+
+<!--more-->
+
+<h2 id="notes-on-mains-voltage-limits">* Notes on Mains Voltage Limits</h2>
+
+<p>The standard domestic mains supply for Europe is 230 V ± 10%, giving a lower limit of 207 V and an upper limit of 253 V. It is permissible under BS 7671 to have a voltage drop within the installation of 5%, which would give a lower limit of 195.5 V.
+The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of 254.4 V.</p>
+
+<p>Although the UK nominal standard is now 230 V, the supply system has not generally been adjusted, and the voltage centers around 240 V.</p>
+
+<p>Thanks to Robert Wall for summarizing the rather convoluted standards surrounding UK grid voltages.</p>
+
+<p>All of Europe, Africa, Asia, Australia, New Zealand and most of South America, use a supply that is within 6% of 230 V</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Mains_electricity_by_country">Mains Electricity by Country (Wikipedia)</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

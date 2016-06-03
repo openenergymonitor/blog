@@ -107,6 +107,54 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/11/uk-grid-carbon-intensity/">UK Grid Carbon Intensity API</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-11-21T11:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-11-21 11:04:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/11/uk-grid-carbon-intensity/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />Following on from my blog post creating an <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">ambient indicator to indicate wind turbine renewable electricity generation</a> we have extended the <a href="http://emoncms.org/">Emoncms</a>&nbsp;UK electric grid statistic aggregation to calculate and record the UK electric grid carbon intensity i.e. the amount of carbon emitted per kWh (CO2/kWh). As before we have created a dashboard open API for easy access to this data.<br /><br />
+
+
+
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+
+<tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="420" src="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" width="640" /></a></td></tr>
+
+<tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukgrid</a></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="426" src="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukwind</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Dashboards:</b></div><div class="separator" style="clear: both; text-align: left;"><b></b></div><div class="separator" style="clear: both;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid">http://emoncms.org/ukelectricitygrid/ukgrid</a></div><div><a href="http://emoncms.org/ukelectricitygrid/ukwind">http://emoncms.org/ukelectricitygrid/ukwind</a></div><div><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Open-API:</b></div>UK grid carbon intensity: <a href="http://emoncms.org/feed/value.json?id=97715">http://emoncms.org/feed/value.json?id=97715</a><br /><div>UK wind:&nbsp;<a href="http://emoncms.org/feed/value.json?id=67088">http://emoncms.org/feed/value.json?id=67088</a><br /><br />Other feeds are also available including grid fuel mix and current energy demand, just place 'id' in the API with the feed ID's below:&nbsp;</div><div><div class="separator" style="clear: both; text-align: left;"><br /></div><table class="table table-bordered table-hover table-condensed"><tbody><tr><td><b>Feed</b></td><td><b>Name</b></td><td><b>Current Value (22/11/15 22hrs)</b></td></tr><tr><td>97689</td><td>CCGT_val</td><td>11592</td></tr><tr><td>97690</td><td>CCGT_prc</td><td>0.31</td></tr><tr><td>97691</td><td>OCGT_val</td><td>0</td></tr><tr><td>97692</td><td>OCGT_prc</td><td>0</td></tr><tr><td>97693</td><td>OIL_val</td><td>0</td></tr><tr><td>97694</td><td>OIL_prc</td><td>0</td></tr><tr><td>97695</td><td>COAL_val</td><td>10785</td></tr><tr><td>97696</td><td>COAL_prc</td><td>0.29</td></tr><tr><td>97697</td><td>NUCLEAR_val</td><td>7798</td></tr><tr><td>97698</td><td>NUCLEAR_prc</td><td>0.21</td></tr><tr><td>97699</td><td>WIND_val</td><td>1308</td></tr><tr><td>97700</td><td>WIND_prc</td><td>0.03</td></tr><tr><td>97701</td><td>PS_val</td><td>397</td></tr><tr><td>97702</td><td>PS_prc</td><td>0.01</td></tr><tr><td>97703</td><td>NPSHYD_val</td><td>533</td></tr><tr><td>97704</td><td>NPSHYD_prc</td><td>0.01</td></tr><tr><td>97705</td><td>OTHER_val</td><td>1976</td></tr><tr><td>97706</td><td>OTHER_prc</td><td>0.05</td></tr><tr><td>97707</td><td>INTFR_val</td><td>1495</td></tr><tr><td>97708</td><td>INTFR_prc</td><td>0.04</td></tr><tr><td>97709</td><td>INTIRL_val</td><td>0</td></tr><tr><td>97710</td><td>INTIRL_prc</td><td>0</td></tr><tr><td>97711</td><td>INTNED_val</td><td>975</td></tr><tr><td>97712</td><td>INTNED_prc</td><td>0.02</td></tr><tr><td>97713</td><td>INTEW_val</td><td>0</td></tr><tr><td>97714</td><td>INTEW_prc</td><td>0</td></tr><tr><td>97715</td><td>gridintensity</td><td>435.6</td></tr><tr><td>97736</td><td>totalsupply</td><td>36859</td></tr></tbody></table></div><div>If you use the API in your project please drop us a line and give Emoncms some credit :-)<br /><div class="separator" style="clear: both; text-align: left;"><span style="color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="background-color: #edf7fc; font-size: 14px; line-height: 20px;"><br /></span></span></div><div class="separator" style="clear: both; text-align: left;">The data is captured from the&nbsp;<a href="http://www.bmreports.com/bsp/additional/soapfunctions.php?element=generationbyfueltypetable">UK Balancing BM Reports XML</a>. Our figure for grid intensity matched the figure generated by&nbsp;<a href="http://www.gridcarbon.uk/">http://www.gridcarbon.uk/</a>.&nbsp;</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/11/node-red-emoncms-node/">Node-RED Emoncms Node</a>
   </h1>
   
@@ -475,48 +523,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/09/optical-pulse-counting-with-emonth/">Optical pulse counting with the EmonTH</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-09-02T12:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-09-02 12:53:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/09/optical-pulse-counting-with-emonth/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <style type="text/css">p { margin-bottom: 0.25cm; line-height: 120%; }</style>  <br /><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">In addition to temperature and humidity sensing the <a href="http://openenergymonitor.org/emon/modules/emonTH">EmonTH</a> has a digital input (with interrupt) that can be used for pulse counting.   </div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">This can be used for <a href="http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting">wired pulse counting</a> or with the <a href="http://shop.openenergymonitor.com/optical-utility-meter-led-pulse-sensor/">Optical LED pulse sensor</a>.</div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">To use the Optical LED Pulse sensor the easiest way is to remove the RJ45 connector and then strip back the black sheathing to reveal the red (3.3V power), black (GND) and blue (pulse) wires.</div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;">Connect the red wire to the 3.3V terminal, the black wire to the GND terminal and the blue wire to the terminal labelled D3 (top) or IRQ1/D3 Pulse Counting (bottom of the board).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://wiki.openenergymonitor.org/images/thumb/Emonth_pulse.jpg/1600px-Emonth_pulse.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://wiki.openenergymonitor.org/images/thumb/Emonth_pulse.jpg/1600px-Emonth_pulse.jpg" height="347" width="640" /></a></div><br /></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Mq6ZFJuLqcc/VebtplQo9rI/AAAAAAAAT14/NtBwwglgdxo/s1600/SAM_1228.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-Mq6ZFJuLqcc/VebtplQo9rI/AAAAAAAAT14/NtBwwglgdxo/s320/SAM_1228.JPG" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-JKBIFoch2cU/VebtpvkXfcI/AAAAAAAAT18/4NYrBdD0Nlo/s1600/SAM_1229.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/-JKBIFoch2cU/VebtpvkXfcI/AAAAAAAAT18/4NYrBdD0Nlo/s320/SAM_1229.JPG" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-rIL3qPNNzt0/VebtpevfL6I/AAAAAAAAT10/ooswSPyzU_g/s1600/SAM_1230.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="480" src="http://1.bp.blogspot.com/-rIL3qPNNzt0/VebtpevfL6I/AAAAAAAAT10/ooswSPyzU_g/s640/SAM_1230.JPG" width="640" /></a></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div>There are two firmware examples available for the EmonTH for pulse counting, the first is for Pulse counting in addition to DHT22 Temperature + Humidity sensing or DS18B20 temperature sensing:<br /><a href="https://github.com/openenergymonitor/emonTH/tree/master/emonTH_DHT22_DS18B20_RFM69CW_Pulse">https://github.com/openenergymonitor/emonTH/tree/master/emonTH_DHT22_DS18B20_RFM69CW_Pulse</a><br /><br />The second is for pulse counting only if the temperature and humidity sensing is not needed:<br /><a href="https://github.com/openenergymonitor/emonTH/tree/master/emonTH_pulse_lowpower">https://github.com/openenergymonitor/emonTH/tree/master/emonTH_pulse_lowpower</a><br /><br />To upload these firmware examples you will need the <a href="http://openenergymonitor.org/emon/buildingblocks/setting-up-the-arduino-environment">Arduino IDE and libraries installed</a> and a <a href="http://shop.openenergymonitor.com/programmer-usb-to-serial-uart/">USB to serial programmer</a> to upload the firmware to the EmonTH.<br /><br />The pulse count is accumulated on the EmonTH until the EmonTH is reset either by an outage or by turning off and on the power.<br /><br />To record the total accumulated pulse count in emoncms use the wh_accumulator input process which detects resets continuing the total pulse count accumulation from the last value before the reset.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -633,6 +639,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
         </li>
       
@@ -682,12 +694,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
         </li>
       
     
@@ -753,6 +759,8 @@ window.onclick = function(event) {
       <li><a href="/categories/android/">android</a></li>
     
       <li><a href="/categories/app/">app</a></li>
+    
+      <li><a href="/categories/application/">application</a></li>
     
       <li><a href="/categories/arduino/">arduino</a></li>
     
@@ -933,6 +941,8 @@ window.onclick = function(event) {
       <li><a href="/categories/utility meters/">utility meters</a></li>
     
       <li><a href="/categories/voltage sensing/">voltage sensing</a></li>
+    
+      <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
     
