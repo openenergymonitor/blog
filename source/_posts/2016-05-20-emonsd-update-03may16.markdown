@@ -44,7 +44,7 @@ The latest update to emonSD (**[emonSD-03May16](https://github.com/openenergymon
 
 All emonPi / emonBase's that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old [17June15](https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&-Change-Log#emonsd-17jun15) emonSD. The new emonSD 03May16 will now be included by default ([together with a Raspberry Pi 3](/2016/05/emonpi-raspberrypi3/)) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3's on-board WiFi ([see blog post](/2016/05/emonpi-raspberrypi3/)):
 
-![emonPi Raspberry Pi 3 Acrylic Fascia](/images/emonpi-raspi3.jpg)
+![emonPi Raspberry Pi 3 Acrylic Fascia]({{site.image_path}}/emonpi-raspi3.jpg)
 
 Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the [Emoncms backup / import](https://guide.openenergymonitor.org/setup/import/) tool to migrate local Emoncms data.
 

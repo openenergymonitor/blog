@@ -28,7 +28,7 @@ Here is the firmware folder of the [emonPi GitHub Repo](https://github.com/opene
 
 Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.
 
-![Git SubModules](/images/submodules.png)
+![Git SubModules]({{site.image_path}}/submodules.png)
 
 Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it's possible to set the sketchbook location to the project repo to import all the required libs into the IDE.
 

@@ -14,7 +14,7 @@ All emonPi's / emonBase's shipped to date have included a Raspberry Pi 2. In the
 
 Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law).
 
-![emonPi Raspberry Pi 3 Acrylic Fascia](/images/emonpi-raspi3.jpg)
+![emonPi Raspberry Pi 3 Acrylic Fascia]({{site.image_path}}/emonpi-raspi3.jpg)
 
 <!--more-->
 
@@ -32,5 +32,5 @@ The Raspberry Pi 3 equipped emonPi's and emonBase's will be running the latest [
 
 ## [Getting Start Guide ](https://guide.openenergymonitor.org/)
 
-![Raspberry Pi 3](/images/raspberrypi3.jpg)
+![Raspberry Pi 3]({{site.image_path}}/raspberrypi3.jpg)
 

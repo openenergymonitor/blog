@@ -15,7 +15,7 @@ I would like to highlight a nice improvement to Emoncms and the Emoncms android 
 
 Emoncms MyAccount page now displays a QR code and a couple of handy 'Copy to Clipboard' buttons for the API keys:
 
-![Emoncms QR code generator](/images/emoncms-qr.png)
+![Emoncms QR code generator]({{site.image_path}}/emoncms-qr.png)
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Emoncms MyAccount page now displays a QR code and a couple of handy 'Copy to Cli
 
 This QR code contains the Emoncms URL and read-API key to automate setting up the [Emoncms android app](https://play.google.com/store/apps/details?id=org.emoncms.myapps&hl=en_GB). The update for the app to support the QR code scanner has been pushed to Googe Play. After the update just can the QR code to setup the app.
 
-{% img /images/android-qr.png 300 %}
+{% img {{site.image_path}}/android-qr.png 300 %}
 
 If your feeds are named **use** and **use_kwh** the app will automatically select use these feeds as the Power and kWh feeds.
 

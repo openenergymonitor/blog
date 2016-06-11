@@ -43,7 +43,7 @@ Near real-time co2 intensity using grid wide data
 Here the CO2 intensity is calculated by the total CO2 emitted divided by total demand on typically a 10 minute basis. The CO2 intensity calculated this way will often show higher CO2 intensity in the day where gas and coal are a larger percentage of overall supply than at night time. CO2 intensity is also higher when its colder where demand is pushed up by higher heating requirements.
 
 
-![UK Grid Carbon](/images/ukgrid.png)
+![UK Grid Carbon]({{site.image_path}}/ukgrid.png)
 
 [OpenEnergyMonitor UK Grid page](https://openenergymonitor.org/ukgrid) showing real-time CO2 Intensity.
 

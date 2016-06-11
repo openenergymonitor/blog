@@ -22,17 +22,17 @@ Interfacing with our [emonPi Raspberry Pi energy monitor](http://openenergymonit
 
 As yet I have not experimented with creating automations with HA .e.g turning off lights and heating when we're not home. I think I will still prefer using nodeRED for these types of rule based automations. However what HA does well is present a nice clean, mobile friendly and easy to configure front-end interface:
 
-![home assistant](/images/ha1.jpg)
+![home assistant]({{site.image_path}}/ha1.jpg)
 My HA Home Setup So Far
 
-![home assistant](/images/ha2.png)
+![home assistant]({{site.image_path}}/ha2.png)
 Home Assistant has some nice mini graphing features to give you a quick overview.
 
-![home assistant](/images/ha3.png) ![home assistant](/images/ha4.png)
+![home assistant]({{site.image_path}}/ha3.png) ![home assistant]({{site.image_path}}/ha4.png)
 
 On a switch node a quite overview will tell you how long the switch has been on or off for. Very useful for checking long long the heating has been on for
 
-![home assistant](/images/ha5.png)
+![home assistant]({{site.image_path}}/ha5.png)
 
 Generic emonPi Config Example
 
