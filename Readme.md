@@ -30,11 +30,11 @@ Yes more awesomeness
 
 Insert an image which will get scaled to fit the page (responsive)
 
-![image](/images/image.png)
+![image]({{site.image_path}}/image.png)
 
 Insert an image of fixes size e.g. 400 px
 
-{% img /images/image.png 400 %}
+{% img {{site.image_path}}/image.png 400 %}
 
 ```php
 PHP code with hilighting
