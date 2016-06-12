@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-12T15:07:29+00:00</updated>
+  <updated>2016-06-12T15:15:24+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -24,7 +24,7 @@
 
 <p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
 
-<p>Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+<p>Recently I have been using <a href="http://platformio.org">PlatformIO</a> and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
 
 <blockquote>
   <p>PlatformIO is an open-source ecosystem for IoT development.</p>
