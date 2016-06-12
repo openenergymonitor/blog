@@ -4,7 +4,7 @@
   <title><![CDATA[Category: platformio | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/platformio/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-12T15:15:24+00:00</updated>
+  <updated>2016-06-12T16:42:55+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -118,7 +118,7 @@
 <p><strong>emonTx V3</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonTxFirmware`
-$ cd emonTxFirmware/tree/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
 </code></pre>
 </div>
 
