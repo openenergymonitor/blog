@@ -88,7 +88,7 @@ We'll use the emonTx (V3 discrete sampling) as an example here but the steps are
 
 ```
 $ git clone https://github.com/openenergymonitor/emonTxFirmware`
-$ cd emonTxFirmware/tree/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
 ```
 
 **emonPi**
