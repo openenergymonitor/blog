@@ -20,7 +20,7 @@ I'm sure many developers will agree that the tools we for embedded development a
 
 The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS's frequently.
 
-Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent [library manager](http://platformio.org/lib).
+Recently I have been using [PlatformIO](http://platformio.org) and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent [library manager](http://platformio.org/lib).
 
 > PlatformIO is an open-source ecosystem for IoT development.
 
