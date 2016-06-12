@@ -107,6 +107,82 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-12T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 12th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+      
+        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+      
+        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+      
+        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/platformio/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+
+<p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
+
+<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
+
+<p>Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+
+<blockquote>
+  <p>PlatformIO is an open-source ecosystem for IoT development.</p>
+</blockquote>
+
+<blockquote>
+  <p>Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</p>
+</blockquote>
+
+<p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
+
+<p>This post got quite long, therefore, It’s been split into three posts:</p>
+
+<ol>
+  <li>PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li>Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
+  <li>Continuous Deployment (OTA to ESP8266)</li>
+</ol>
+
+
+    
+      <a class="btn pull-right" href="/2016/06/platformio/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
   </h1>
   
@@ -591,56 +667,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-04-01T17:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April  1st 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/home-assistant/'>home Assistant</a></li>
-      
-        <li><a class='category' href='/categories/integrations/'>integrations</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/04/Home-Assistant/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p><a href="http://home-assistant.io/">Home Assistant</a> (HA) is a fully <a href="https://github.com/balloob/home-assistant">open-source</a> home automation platform.</p>
-
-<p>In terms of functionality it’s quite similar to <a href="http://openenergymonitor.blogspot.co.uk/search/label/openHAB">openHAB</a> however it’s architecture is very different it runs on Python 3 as opposed to java.</p>
-
-<p>I found home assistant very easy to setup and configure. It’s got some nice auto detect features e.g. It auto-detected by Chromecast devices. Home Assistant has got <a href="https://home-assistant.io/components/">pre-built component integrations</a> with many home automation and monitoring devices and platforms. I was also impressed with the presence detection support, I tested using <a href="https://home-assistant.io/components/device_tracker.nmap_scanner/">nmap</a> to scan my home router for presence of my phone connected to my home WiFi (indication that I’m home…or I forget my phone!) and <a href="https://home-assistant.io/components/device_tracker.owntracks/">OwnTracks</a> MQTT based GPS tracking.</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/04/Home-Assistant/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -755,6 +781,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
         </li>
       
@@ -804,12 +836,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
         </li>
       
     
@@ -946,6 +972,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
+      <li><a href="/categories/emontx/">emontx</a></li>
+    
       <li><a href="/categories/end-to-end/">end to end</a></li>
     
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
@@ -953,6 +981,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/firmware/">firmware</a></li>
     
       <li><a href="/categories/forum/">forum</a></li>
     
@@ -1020,6 +1050,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/pebble/">pebble</a></li>
     
+      <li><a href="/categories/platformio/">platformio</a></li>
+    
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
@@ -1047,6 +1079,8 @@ window.onclick = function(event) {
       <li><a href="/categories/temperature/">temperature</a></li>
     
       <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/travisci/">travisci</a></li>
     
       <li><a href="/categories/tutorials/">tutorials</a></li>
     

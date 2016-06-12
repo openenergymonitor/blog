@@ -1,0 +1,525 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Part 1/3: PlatformIO open-source embedded development ecosystem - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://blog.openenergymonitor.org/2016/06/platformio/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Part 1/3: PlatformIO open-source embedded development ecosystem">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="https://blog.openenergymonitor.org/2016/06/platformio/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Part 1/3: PlatformIO open-source embedded development ecosystem">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    
+    <span style="color:#555;font-weight:bold;font-family:Arial;font-size:20"'>
+Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-size:20"'>EnergyMonitor</span>
+
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="https://openenergymonitor.org">Main Site</a></li>
+  <li><a href="https://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="https://emoncms.org">Emoncms</a></li>
+  <li><a href="https://community.openenergymonitor.org">Community</a></li>
+  <li><a href="https://shop.openenergymonitor.com    ">Shop<i class="icon icon-shopping-cart"></i></a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/blog/tree/master/source/_posts/2016-06-11-platformio.markdown'>Edit on GitHub</a></div>
+<div class='edit-github'><a href='http://prose.io/#openenergymonitor/blog/edit/master/source/_posts/2016-06-11-platformio.markdown'>Edit on GitHub Prose</a></div>
+  
+  <header>
+  
+  <h1 class="title indent">Part 1/3: PlatformIO open-source embedded development ecosystem</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-12T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 12th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+      
+        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+      
+        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+      
+        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/platformio/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+
+<p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
+
+<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
+
+<p>Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+
+<blockquote>
+  <p>PlatformIO is an open-source ecosystem for IoT development.</p>
+</blockquote>
+
+<blockquote>
+  <p>Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</p>
+</blockquote>
+
+<p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
+
+<p>This post got quite long, therefore, It’s been split into three posts:</p>
+
+<ol>
+  <li>PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li>Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
+  <li>Continuous Deployment (OTA to ESP8266)</li>
+</ol>
+
+<a name="read-more"></a>
+
+<p>Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:</p>
+
+<ul>
+  <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
+  <li><strong>Easy to install</strong> - Pure python based installed using pip
+    <ul>
+      <li>Tool-chains are auto installed on first compile / upload e.g.
+        <ul>
+          <li>If trying to upload to Arduino avrdude will automatically be installed</li>
+          <li>If trying to compile an ESP8266 project the ESP toolchain will be installed</li>
+        </ul>
+      </li>
+      <li>Cross-platform (Linux, Windows and mac all work the same), this will make support much easier</li>
+    </ul>
+  </li>
+  <li><strong>Supports all the main embedded platforms</strong>
+    <ul>
+      <li>atmelavr (Arduino), espressif (ESP8266), ststm32 (ARM etc.)</li>
+    </ul>
+  </li>
+  <li><strong>Command line and IDE</strong>
+    <ul>
+      <li>At work I use pio via Atom IDE on Ubuntu</li>
+      <li>At home, I use a Chromebook with Caret IDE and interact with pio via command-line</li>
+      <li>When developing directly on an emonPi / RaspberryPi pio command-line works great - <em>Yes, that’s right pio works on a RaspberryPi to compile and upload code directly!</em></li>
+    </ul>
+  </li>
+  <li><a href="http://platformio.org/lib"><strong>Excellent library manager</strong></a>
+    <ul>
+      <li>Libraries can be searched and reviewed using command-line or web 2.0 manager</li>
+      <li>Required libraries can be specified in the <code class="highlighter-rouge">platformio.ini</code> file and if not present install is prompted upon compilation</li>
+      <li>Specific library version (as defined in <code class="highlighter-rouge">library.json</code> <a href="https://github.com/openenergymonitor/EmonLib/blob/master/library.json">(emonLib example)</a>) or git commit SHA</li>
+    </ul>
+  </li>
+  <li><strong>Fast compilation &amp; pain-free uploading</strong>
+    <ul>
+      <li>PlatformIO’s compiler is the <a href="https://twitter.com/krzychb2/status/729294573760065536">fastest in the business</a></li>
+      <li>USB / Serial ports auto detected</li>
+      <li>Since the emonPi has been added as a custom board PlatformIO can even upload direct to emonPi via RaspberryPi GPIO and trigger GPIO AVR reset, not more <a href="https://github.com/openenergymonitor/avrdude-rpi">hacked avrdude</a>.</li>
+    </ul>
+  </li>
+  <li><strong>Easy integration with continuous testing &amp; deployment</strong>
+    <ul>
+      <li>Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.</li>
+      <li><a href="http://github.com/openenergymonitor/emonpi/">emonPi</a> and <a href="github.com/openenergymonitor/emonTxFirmware">emonTx</a> git repos are now enabled for continous-testing and auto binary generation on release tag…this is a step change in embedded development.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="example-compiling-emontx--emonpi-firmware">Example: Compiling emonTx / emonPi firmware</h2>
+
+<p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
+
+<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+
+<p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
+
+<h3 id="install-platformio">1. Install PlatformIO</h3>
+
+<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+
+<p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
+
+<h3 id="clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
+
+<p>We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.</p>
+
+<p><strong>emonTx V3</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonTxFirmware`
+$ cd emonTxFirmware/tree/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+</code></pre>
+</div>
+
+<p><strong>emonPi</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
+cd emonpi/firmware
+</code></pre>
+</div>
+
+<h3 id="compile-with-platformio">3. Compile with PlatformIO</h3>
+
+<p><code class="highlighter-rouge">$ platformio run</code></p>
+
+<p>or shorthand for the lazy</p>
+
+<p><code class="highlighter-rouge">$ pio run</code></p>
+
+<p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
+
+<p>The first time platformIO is run it will ask to install the required libraries  and avr toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
+
+<p>e.g.</p>
+
+<p><code class="highlighter-rouge">lib_install = 19,54,116,252</code></p>
+
+<p>These numbers reference the Arduino libraries in the <a href="http://platformio.org/lib">pio library manager</a>:</p>
+
+<ul>
+  <li>19: DHT22</li>
+  <li>54: Dallas Temperature</li>
+  <li>116: emonLib</li>
+  <li>252: JeeLib</li>
+</ul>
+
+<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">~/platformio</code> folder.</p>
+
+<p>If required specific versions can be installed e.g.:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pio lib install 252 --version="e70c9d9f4e"
+$ platformio lib install 54 --version="3.7.7"
+</code></pre>
+</div>
+
+<h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
+
+<h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
+
+<p><code class="highlighter-rouge">$ sudo platformio run --target upload</code></p>
+
+<p>or lazy shorthand</p>
+
+<p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
+
+<p>Pio will attempt to auto detect the USB programmer and upload :-)</p>
+
+<p><em>Note: you will need <code class="highlighter-rouge">sudo</code> unless you have correctly <a href="https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules">configured udev rules</a>.</em></p>
+
+<p>To list available serial ports:</p>
+
+<p><code class="highlighter-rouge">$ pio serialports list</code></p>
+
+<p>There is even a built in serial monitor</p>
+
+<p><code class="highlighter-rouge">$ pio serialports monitor</code></p>
+
+<h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
+
+<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
+
+<p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>board = emonpi
+upload_port = /dev/ttyAMA0
+</code></pre>
+</div>
+
+<p>All that is needed to compile and upload directly on the emonPi is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
+$ sudo pio run -t upload
+</code></pre>
+</div>
+
+<p><em>Thanks a lot to <a href="https://github.com/ivankravets">Ivan Kravets</a> for helping integrate emonPi into the PlatfomIO ecosystem. <a href="https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a">View commit changes</a></em></p>
+
+<hr />
+<p>Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp; emonTx repos if you want a sneak preview. See <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml">travis.yaml</a> file and Travis build status icon on the main emonpi repo <a href="https://github.com/openenergymonitor/emonpi/blob/master/README.md">Readme.md</a>.</p>
+
+<hr />
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <style>
+
+
+div.searchtool {
+  position: relative;
+  display: inline-block;
+  top: -6px;
+}
+
+input[type=text] {
+  border: 3px solid #0699fa;
+}
+
+fieldset {
+  border: 0;
+}
+
+</style>
+<div class="copyright">
+
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
+  <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+
+<div class="searchtool">
+
+
+<form action="https://encrypted.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+    <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+  </fieldset>
+</form>
+
+
+</div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'https://blog.openenergymonitor.org/2016/06/platformio/';
+    var disqus_url = 'https://blog.openenergymonitor.org/2016/06/platformio/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

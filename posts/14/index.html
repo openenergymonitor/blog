@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/07/emontx-shield-smt-progress/">EmonTx Shield SMT progress</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-29T14:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-29 14:47:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/emontx-shield-smt-progress/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The latest emontx shield SMT board revision (v2.4) arrived a couple of days ago.<br /><br />This revision carries on from the developments described in the previous blog post here:&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2013/06/emontx-shield-smt-with-new-layout-in.html">http://openenergymonitor.blogspot.co.uk/2013/06/emontx-shield-smt-with-new-layout-in.html</a><br /><div><br /></div>The improvements in v2.4 are:<br /><ul><li>The DS18B20 connector is bought out to the edge with screw terminals.</li><li>There's an FTDI connector as the shield covers the FTDI connector on the NanodeRF.</li><li>The jumpers are 2.54mm headers rather than surface pads that are soldered, making them easier to change.</li><li>The RFM12 footprint is moved further in on the board so that there is space for the <a href="http://3.bp.blogspot.com/-2kD9f3Dosxc/UfEwb_GzQYI/AAAAAAAAiU8/6ZEmjZ6SHMQ/s320/20130725_145657~01.jpg">Ciseco SRF with its on board chip antenna</a></li></ul><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-_CKiLuqGL3s/UfZ6R_vhOKI/AAAAAAAACvE/0skpCp9xhx0/s1600/emontxshield.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="433" src="http://1.bp.blogspot.com/-_CKiLuqGL3s/UfZ6R_vhOKI/AAAAAAAACvE/0skpCp9xhx0/s640/emontxshield.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">There was one small but crucial mistake, I got the RX and TX on the FTDI connector the wrong way around!!</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Next step:</b> switch the RX and TX around and send the board off for production.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/07/diy-casing/">DIY Casing</a>
   </h1>
   
@@ -479,48 +519,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/load-stats-for-myisam-vs-innodb-for/">Load stat's for MYISAM vs INNODB for feed storage on the RaspberryPI</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-28T08:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-28 08:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/load-stats-for-myisam-vs-innodb-for/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Here are some historic load stats for a raspberrypi running here, with 36 feeds being written to.<br /><div><br /></div><div>First using the INNODB storage engine:<br /><div class="separator" style="clear: both; text-align: center;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-TDFZZ7cyfbE/Uc1E7dSLCeI/AAAAAAAACtI/vbG7etiFS2g/s925/innodb_raspi_load.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="280" src="http://3.bp.blogspot.com/-TDFZZ7cyfbE/Uc1E7dSLCeI/AAAAAAAACtI/vbG7etiFS2g/s640/innodb_raspi_load.png" width="640" /></a></div>A load of 3.5 causes an issue where the time that is recorded for data packets coming in gets messed up creating bunched up datapoints:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Jhg1mpnwIMQ/Uc1HL91zhjI/AAAAAAAACtg/h-vzID3xHro/s948/timingissue.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="http://4.bp.blogspot.com/-Jhg1mpnwIMQ/Uc1HL91zhjI/AAAAAAAACtg/h-vzID3xHro/s640/timingissue.png" width="640" /></a></div><br />Switching the storage engine over the MYISAM, reduced the load to around 0.2 and the timing issue is no longer present:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-vPe12-x2Gtc/Uc1FAYirGeI/AAAAAAAACtQ/Q5bp_VsvwmQ/s944/piloadmyisam.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="274" src="http://4.bp.blogspot.com/-vPe12-x2Gtc/Uc1FAYirGeI/AAAAAAAACtQ/Q5bp_VsvwmQ/s640/piloadmyisam.png" width="640" /></a></div><br />To convert your raspberry pi emoncms Innodb tables to MYISAM you can run the following script on your raspberrypi which will go through each table converting them in turn:<br /><br /><br /><br />&nbsp; $mysqli = new mysqli("localhost","root","raspberry","emoncms");<br /><br />&nbsp; $result = $mysqli-&gt;query("SHOW tables");<br />&nbsp; while ($row = $result-&gt;fetch_array())<br />&nbsp; {<br />&nbsp; &nbsp; echo "ALTER TABLE `".$row[0]."` ENGINE=MYISAM\n";<br />&nbsp; &nbsp; $mysqli-&gt;query("ALTER TABLE `".$row[0]."` ENGINE=MYISAM");<br />&nbsp; }<br /><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -637,6 +635,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
         </li>
       
@@ -686,12 +690,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
         </li>
       
     
@@ -828,6 +826,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
+      <li><a href="/categories/emontx/">emontx</a></li>
+    
       <li><a href="/categories/end-to-end/">end to end</a></li>
     
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
@@ -835,6 +835,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/firmware/">firmware</a></li>
     
       <li><a href="/categories/forum/">forum</a></li>
     
@@ -902,6 +904,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/pebble/">pebble</a></li>
     
+      <li><a href="/categories/platformio/">platformio</a></li>
+    
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
@@ -929,6 +933,8 @@ window.onclick = function(event) {
       <li><a href="/categories/temperature/">temperature</a></li>
     
       <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/travisci/">travisci</a></li>
     
       <li><a href="/categories/tutorials/">tutorials</a></li>
     

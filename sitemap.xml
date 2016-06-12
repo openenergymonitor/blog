@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2016/06/platformio/</loc>
+<lastmod>2016-06-12T10:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/</loc>
 <lastmod>2016-06-03T10:00:00+00:00</lastmod>
 </url>
@@ -1762,6 +1766,18 @@
 <loc>https://blog.openenergymonitor.org/categories/application/</loc>
 </url>
 <url>
+<loc>https://blog.openenergymonitor.org/categories/platformio/</loc>
+</url>
+<url>
+<loc>https://blog.openenergymonitor.org/categories/travisci/</loc>
+</url>
+<url>
+<loc>https://blog.openenergymonitor.org/categories/firmware/</loc>
+</url>
+<url>
+<loc>https://blog.openenergymonitor.org/categories/emontx/</loc>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/posts/2/</loc>
 </url>
 <url>
@@ -1865,6 +1881,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2016-06-11T00:45:54+00:00</lastmod>
+<lastmod>2016-06-12T15:06:21+00:00</lastmod>
 </url>
 </urlset>

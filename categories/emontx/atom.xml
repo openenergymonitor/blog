@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: emonTx | Blog | OpenEnergyMonitor]]></title>
+  <title><![CDATA[Category: emontx | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emontx/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-11T00:46:55+00:00</updated>
+  <updated>2016-06-12T15:07:29+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,74 +14,201 @@
 
   
   <entry>
-    <title type="html"><![CDATA[emonPi Vs emonTx V3 Comparison]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/04/emonpi-vs-emontx-v3-comparison/"/>
-    <updated>2015-04-11T08:46:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/04/emonpi-vs-emontx-v3-comparison</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">Here's a quick comparison table comparing the <a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">emonPi (currently active on Kickstarter!)</a> to our existing <a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3</a> energy monitoring unit:</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-R2YsCBGjAAc/VSjaJ0YRMcI/AAAAAAABGyk/u6qtbAIU_oU/s1600/emonPi%2BVs%2BemonTx%2BComparison%2B(1).png" imageanchor="1"><img border="0" src="http://1.bp.blogspot.com/-R2YsCBGjAAc/VSjaJ0YRMcI/AAAAAAABGyk/u6qtbAIU_oU/s1600/emonPi%2BVs%2BemonTx%2BComparison%2B(1).png" height="486" width="640" /></a></div>
-<table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-Fl_EYQafcOw/VSjZU3Q1T_I/AAAAAAABGyQ/KQtfLrmGri8/s1600/emonPi_montage_white.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-Fl_EYQafcOw/VSjZU3Q1T_I/AAAAAAABGyQ/KQtfLrmGri8/s1600/emonPi_montage_white.JPG" height="340" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="https://www.kickstarter.com/projects/openenergymonitor/emonpi-open-hardware-raspberry-pi-based-energy-mon">emonPi</a></td></tr></tbody></table>
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://cdn2.bigcommerce.com/server4400/98a75/products/108/images/609/top_front_34__92258.1418912875.1280.1280.png?c=2" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://cdn2.bigcommerce.com/server4400/98a75/products/108/images/609/top_front_34__92258.1418912875.1280.1280.png?c=2" height="400" width="313" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3</a></td></tr></tbody></table>
-<div class="separator" style="clear: both; text-align: center;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"></div>
-<p>It is no secret that there is much similarity between the two units, both are cut from the same cloth. Both units use the same ATmega328 Arduino IDE compatible microcontroller and front-end CT channel signal processing which gives identical monitoring accuracy. &lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;The emonPi is most suitable over the e<a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">monTx V3</a> for home or small business whole circuit energy monitoring and also solar PV where Ethernet or WIFI can reach the consumer unit. Being a one-box-solution and with its status LCD the emonPi is quick and simple to install and maintain. &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;For larger systems where there could be multiple transmitter nodes and more channels to be monitored the emonTx V3 could be most suitable. The emonTx V3 transmits it’s readings via RF (433Mhz) to an emonBase web-connected base station (<a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi + RFM69Pi)</a>. Multiple emonTx V3’s can be used with a single emonBase&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;The emonTx V3 has the edge over the emonPi when it comes to powering the unit, the emonTx V3 can be powered directly from the AC-AC adapter while also taking an AC voltage waveform sample. Due to the higher power requirements of the Raspberry Pi the emonPi requires an additional 5V DC USB adapter. &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;Struggling to decide? It’s also worth noting that the emonPi and emonTx V3 can work together. emonPi by default also functions as an emonBase; as well as local monitoring the emonPi can receive data via RF from multiple emonTx V3 and other remote nodes such as <a href="http://shop.openenergymonitor.com/temperature-humidity-nodes/">emonTH</a> temperature and humidity room node. &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;For further details of the units see the <a href="http://wiki.openenergymonitor.org/">Technical Wiki documentation pages</a>.&lt;/div&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;<br />&lt;/div&gt;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[RFM69CW Power Consumption ]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/02/rfm69cw-power-consumption/"/>
-    <updated>2015-02-23T13:33:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/02/rfm69cw-power-consumption</id>
-    <content type="html"><![CDATA[<p>Following on from my <a href="http://openenergymonitor.blogspot.co.uk/2013/07/new-oscilloscope.html">post on RFM12B power consumption</a> here’s the same measurements for the RFM69CW (<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see RFM69CW intro blog post</a>).<br /><br />Current consumption was measured in the same way as explained in the RFM12B post back in July 2013. Voltage drop was measured across 10R current shunt resistor.<br /><br />A fully populated emonTx V3.4 with a 433Mhz RFM69CW running <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM69CW/emonTxV3_RFM69CW_DiscreteSampling/emonTxV3_RFM69CW_DiscreteSampling.ino">discrete sampling code </a>with a single CT connected was used in the test. The V3.4 was powered directly with 3.3V DC from bench PSU.<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" height="266" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx V3.4 with RFM69CW Test Setup&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Test setup illustration&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" height="266" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Test Bench&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<i>Please excuse my photos of the scope traces rather than screen captures, for some reason the USB socket on the scope did not seem to be working today :-(</i><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" height="426" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Full sample and RFM69CW transmit trace capture&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;When an AC-AC adapter is not connected the emonTx goes to sleep in between readings. The above current trace shows the ATmega328 waking up for 295ms to sample from one CT channel the spike at the end is the RFM69CW transmitting. The trace below is a zoomed in capture of the RFM69CW transmission and LED. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" height="426" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;RFM69CW transmission current consumption &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>The current trace above shows the RFM69CW transmission: 33mA @ 3.3V (109mW) for 4ms. The current spike at the end (up to 39mA) is the emonTx LED. </b>In this test the emonTx was running the standard discrete sampling firmware transmitting a JeeLib packet structure with six integers. Since we were only sampling from one CT four out of the five integers will be zero. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;This equates to a 15 bytes payload plus 9 byte overhead @ 48kb/s. See J<a href="http://jeelabs.org/2011/06/09/rf12-packet-format-and-design/">eeLib packet structure</a>. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;In comparison I measured the RFM12B to consume 25.5mA @ 3.3V (84.2mW) for 3ms.&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;My measurements pretty much agree with the datasheets, here’s a comparison table compiled by Low Power Labs:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="142" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" width="640" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Even though the RFM69CW does consume more power while it’s transmitting it does have a lower sleep consumption than the RFM12B. This increased transmission power should result in an increased transmission range.&lt;/div&gt;<br />I’ve started a forum thread for discussion: <a href="http://openenergymonitor.org/emon/node/10210">http://openenergymonitor.org/emon/node/10210</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introducing emonTx V3.4]]></title>
-    <link href="https://blog.openenergymonitor.org/2014/12/introducing-emontx-v34/"/>
-    <updated>2014-12-17T12:03:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2014/12/introducing-emontx-v34</id>
-    <content type="html"><![CDATA[<p>Now shipping later this week in the shop is an updated version to the emonTx V3. This is a relatively minor update feature and form factor wise, most users probably won’t notice the difference. However when hardware is involved, no update is a minor update!<br />&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;<a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3.4 is now available from the OpenEnergyMonitor Shop</a><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/--FoIIAZu6DA/VJMa4fb1F-I/AAAAAAABB5k/1ho4Bo3Fbnw/s1600/top_front_34.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/--FoIIAZu6DA/VJMa4fb1F-I/AAAAAAABB5k/1ho4Bo3Fbnw/s1600/top_front_34.png" height="400" width="313" /></a>&lt;/div&gt;<br />&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;The main changes  are under the hood; the ATmega328 Arduino compatible microprocessor is now is now laid down directly on the PCB. This will help with manufacture and give us a few extra I/O to pay with that were inaccessible on RFu328 module that we used on the original emonTx V3.2. The changes also bring us back in line with JeenNode hardware (IRQ and INT connections) which allow us to use the latest RF12 <a href="https://github.com/jcw/jeelib">JeeLib</a> library to support the RFM69CW (<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see separate post</a>).&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-bPUlSXtzkAA/VJFi8Uj9bRI/AAAAAAABByY/fq4XpOnft0I/s1600/IMG_20141128_103932.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-bPUlSXtzkAA/VJFi8Uj9bRI/AAAAAAABByY/fq4XpOnft0I/s1600/IMG_20141128_103932.jpg" height="285" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx V3.4 Installed&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-Tl7fbNoLntY/VJFjHgLHyMI/AAAAAAABBy4/CBWoMcoYq14/s1600/DSCF6076.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-Tl7fbNoLntY/VJFjHgLHyMI/AAAAAAABBy4/CBWoMcoYq14/s1600/DSCF6076.JPG" height="300" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx V3.4 - production units will have battery holder fitted - omitted for photo to show components&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div&gt;&lt;h3&gt;Features &lt;/h3&gt;New features on emonTx V3.4 over V3 shown in bold:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Measure AC Apparent Power, AC Real power* and AC RMS voltage<em>&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;3 x single-phase CT current sensor inputs (100A / 24KW @ 240V max)&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;1 x high sensitivity single-phase CT current sensor input channel (18.8A / 4.5KW @ 240V max)&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;<b>1 x RJ45 input for connecting DS18B20 temperature sensors</b>&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Single AC-AC adapter can power the unit and provide AC voltage measurement&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;An on-board 3x AA battery option <b>with</b> <b>remote monitoring of battery voltage</b>&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Terminal block access to power rails, digital and analogue I/O and IRQ port for connecting pulse counting sensor / DS18B20 temperature / Aux sensors&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;<b>DIP switch selection of RF node ID and 240V/110V AC adapter selection, see <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#DIP_Switch_Config">#DIP Switch Config</a></b>&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;<b>SMA antenna included as standard </b>&lt;/li&gt;&lt;/ul&gt;</em>when AC-AC voltage adapter is connected<br />&lt;blockquote class="tr_bq"&gt;&lt;blockquote class="tr_bq"&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;h3&gt;&lt;/h3&gt;&lt;div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-x4rreUa3hJ4/VJFi94HiUVI/AAAAAAABByg/h5B5VkjxObs/s1600/Screenshot%2B2014-12-09%2Bat%2B09.45.00.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-x4rreUa3hJ4/VJFi94HiUVI/AAAAAAABByg/h5B5VkjxObs/s1600/Screenshot%2B2014-12-09%2Bat%2B09.45.00.png" height="355" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx as part of the OpenEnergyMonitor system&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The emonTx V3.4 uses an edge SMA connector with an SMA antenna included as standard. We have standardised on 433Mhz (<a href="http://openenergymonitor.org/emon/node/6211">see forum post</a>). The emonTx V3.4 supports and will eventually ship with the new RFM69CW module, this module is backwards compatible with RFM12B. However due to sourcing and lead time issues we have had to use RFM12B on the first batch of 500 units of emonTx V3.4 (now in the shop). When the RFM69CW is used a RSSI (Received Signal Strength Indicator) will appear in emoncms giving indication of signal strength. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-q3rdic6ri3U/VJFjCo0P7HI/AAAAAAABByw/bTgsgrNMs4M/s1600/DSCF6074%2B(1).JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-q3rdic6ri3U/VJFjCo0P7HI/AAAAAAABByw/bTgsgrNMs4M/s1600/DSCF6074%2B(1).JPG" height="320" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTx V3.4 with RFM69CW and edge SMA connector &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;The emonTx V3.4 has the addition of an RJ45 socket to allow ease of connecting multiple DS18B20 temperature sensors. Screened RJ45 cabling (Ethernet) is commonly available as well as RJ45 splitters and extenders. This makes a quick and easy way to wire up a house / heat-pump etc for temperature monitoring. Power, GND, IRQ, ADC and PWM I/O’s are also available through the RJ45 connector, <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#RJ45_Connection">s</a><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#RJ45_Connection">ee wiki for pinout and technical details</a>.<br /><br /><b>Note: the RJ45 connection is not Ethernet, TCP network switches and routers should not be used </b><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-ff460Za5Zbs/VJFjAvNDAvI/AAAAAAABByo/Dn6kTJRrPyY/s1600/emonTx_RJ45_DS18B20.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-ff460Za5Zbs/VJFjAvNDAvI/AAAAAAABByo/Dn6kTJRrPyY/s1600/emonTx_RJ45_DS18B20.jpg" height="360" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;RJ45 connector used with <a href="http://shop.openenergymonitor.com/rj45-to-terminal-block-breakout-for-ds18b20-temperature-sensors/">RJ45 terminal breakout</a> for connection of multiple <a href="http://shop.openenergymonitor.com/encapsulated-ds18b20-temperature-sensor/">encapsulated DS18B20 temperature sensors</a>, DS18B20 temperature sensors are also available <a href="http://shop.openenergymonitor.com/rj45-encapsulated-ds18b20-temperature-sensor/">wired directly on RJ45 connector</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-JdmeZBx7Qv0/VJMckGk_KzI/AAAAAAABB5w/bHdylaYuaW8/s1600/V34%2Btemp%2Band%2Bant.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-JdmeZBx7Qv0/VJMckGk_KzI/AAAAAAABB5w/bHdylaYuaW8/s1600/V34%2Btemp%2Band%2Bant.JPG" height="256" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<a href="http://shop.openenergymonitor.com/rj45-encapsulated-ds18b20-temperature-sensor/">DS18B20 Temperature Sensor on RJ45</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h3&gt;<br />&lt;/h3&gt;&lt;h3&gt;Certification &amp; Environmental&lt;/h3&gt;&lt;div&gt;The emonTx V3.4 is EMC compliant, CE certified. &lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;The unit is manufactured and assembled in the UK using lead free processes, with RoHS and conflict material free components. The enclosure is made in the UK using recyclable aluminium and recycled acrylic plastic is used for the front and rear fascia. &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div&gt;<a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3.4 is now available from the OpenEnergyMonitor Shop</a>&lt;/div&gt;&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;h3&gt;Links &lt;/h3&gt;&lt;div&gt;<a href="http://openenergymonitor.org/emon/guide">Getting Started Guide</a>&lt;/div&gt;&lt;div&gt;<a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4">emonTx V3.4 Technical Documentation Wiki </a>&lt;/div&gt;&lt;div&gt;<a href="https://github.com/openenergymonitor/Hardware/tree/master/emonTxV3/emonTx_V3.4">emonTx V3.4 open-source hardware design available on GitHub</a>&lt;/div&gt;&lt;div&gt;<a href="https://github.com/openenergymonitor/emonTxFirmware">emonTx Arduino compatible firmware GitHub</a>&lt;/div&gt;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[emonTx V3 Antenna Testing]]></title>
-    <link href="https://blog.openenergymonitor.org/2014/03/emontx-v3-antenna-testing/"/>
-    <updated>2014-03-12T12:57:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2014/03/emontx-v3-antenna-testing</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;">Today we did some quick testing regarding using different antennas with the emonTx V3.&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;">Four antenna options were tested (Farnell part numbers listed for SMA antennas) :</div>
-<div class="separator" style="clear: both; text-align: center;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" height="321" width="640" /></a></div>
-<p><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" height="358" width="640" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Note: the graph sub-title has a typo, it should read ‘RFM69CW’, ‘CRW’ module does not exist.. At least to my knowledge! &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;It was found that the wire-whip antenna as shipped by default with the emonTx V3 performed best. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;However using an SMA could be preferable in some environments; it’s more robust and can  be extended easier. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Now we have a way to measure RSSI (received signel strength indicator) using  an rfm69cw module we plan  to  do some more antenna and range testing. I’m interested to test to see how many db we’re loosing in the antenna pcb trace from the module to the RFu328 then the emonTx V3 pcb trace then finally into the 90 degree sma connector. In future version will probably but the rf module and MCU directly on the PCB keeping the antenna trace as short as possible and use an edge mounted sma connector (these are also cheaper and easier to solder in manufacture). &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;For more info on the test see the emonTx V3 wiki page:  &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna">http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna</a>&lt;/div&gt;<br /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Direct connection emonTx V3 > Raspberry Pi GPIO]]></title>
-    <link href="https://blog.openenergymonitor.org/2014/03/direct-connection-emontx-v3-raspberry/"/>
-    <updated>2014-03-07T15:58:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2014/03/direct-connection-emontx-v3-raspberry</id>
-    <content type="html"><![CDATA[<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Sometimes it's more convenient to connect the emonTx V3 directly to a Raspberry Pi base station rather than use RF.&nbsp;</div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Both the Raspberry Pi and emonTx V3 run at 3.3V so the serial Rx and Tx serial lines can be directly connected. The raspberrypi's 5V supply can be used to power the emontx which is then stepped down to to 3.3V through the emonTx V3's voltage regulator. 5V is provided by the red wire. The ground connection is the black wire and the data going from the emontx to the raspberrypi is the green wire. I haven't connected a wire for serial data going the other way but this is a possible option if two-way serial is required.</div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div>
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-dIbbU2v-Sng/UxnnWNj4lPI/AAAAAAAAu6o/c_fs3tFFRGM/s1600/400px-Piplusemontx.JPG" height="222" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 &gt; Raspberry Pi Connection&nbsp;</td></tr></tbody></table>
-<div class="separator" style="clear: both; text-align: center;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-Q26hV8S9D8k/UxnnWdFaQYI/AAAAAAAAu60/OC2i1xH477U/s1600/400px-Emontx_to_pi_serial.JPG" height="251" width="320" /></a></div>
-<div class="separator" style="clear: both; text-align: center;"><br /></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">Here's a simple direct serial output sketch for the emontx v3&nbsp;<a class="external text" href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM12B/Examples/emonTxV3_DirectSerial/emonTxV3_DirectSerial.ino" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">on GitHub here</a></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">On the raspberrypi if you just want to forward the emontx data to a remote emoncms this can be done with the oem_gateway developed by Jerome which is on the&nbsp;<a class="external text" href="http://emoncms.org/site/docs/raspberrypigateway" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">standard rock solid forwarder image</a></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">See our&nbsp;<a class="external text" href="http://openenergymonitor.blogspot.co.uk/2014/01/oem-gateway-serial-port-emoncms-link.html" rel="nofollow" style="background-image: url(data:image/png; background-position: 100% 50%; background-repeat: no-repeat no-repeat; color: #663366; padding-right: 13px; text-decoration: none;">blog post</a>&nbsp;about how to configure the oem_gateway for work over a serial link rather than RFM12B&nbsp;</div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">This info was taken from the <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Direct_connection_emonTx_V3_.3E_Raspberry_Pi_GPIO">emonTx wiki</a> and written up after a<a href="http://openenergymonitor.org/emon/node/3872"> forum thread</a>.&nbsp;</div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;"><br /></div>
-<div style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.200000762939453px; margin-bottom: 0.5em; margin-top: 0.4em;">For the future we are working on developing an energy monitoring shield for the Pi to create an all-in-on Pi-energy-monitoring unit, see dev forum thread:&nbsp;http://openenergymonitor.org/emon/node/3937</div>
+    <title type="html"><![CDATA[Part 1/3: PlatformIO open-source embedded development ecosystem]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/platformio/"/>
+    <updated>2016-06-12T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/platformio</id>
+    <content type="html"><![CDATA[<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+
+<p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
+
+<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
+
+<p>Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+
+<blockquote>
+  <p>PlatformIO is an open-source ecosystem for IoT development.</p>
+</blockquote>
+
+<blockquote>
+  <p>Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</p>
+</blockquote>
+
+<p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
+
+<p>This post got quite long, therefore, It’s been split into three posts:</p>
+
+<ol>
+  <li>PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li>Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
+  <li>Continuous Deployment (OTA to ESP8266)</li>
+</ol>
+
+<!--more-->
+
+<p>Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:</p>
+
+<ul>
+  <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
+  <li><strong>Easy to install</strong> - Pure python based installed using pip
+    <ul>
+      <li>Tool-chains are auto installed on first compile / upload e.g.
+        <ul>
+          <li>If trying to upload to Arduino avrdude will automatically be installed</li>
+          <li>If trying to compile an ESP8266 project the ESP toolchain will be installed</li>
+        </ul>
+      </li>
+      <li>Cross-platform (Linux, Windows and mac all work the same), this will make support much easier</li>
+    </ul>
+  </li>
+  <li><strong>Supports all the main embedded platforms</strong>
+    <ul>
+      <li>atmelavr (Arduino), espressif (ESP8266), ststm32 (ARM etc.)</li>
+    </ul>
+  </li>
+  <li><strong>Command line and IDE</strong>
+    <ul>
+      <li>At work I use pio via Atom IDE on Ubuntu</li>
+      <li>At home, I use a Chromebook with Caret IDE and interact with pio via command-line</li>
+      <li>When developing directly on an emonPi / RaspberryPi pio command-line works great - <em>Yes, that’s right pio works on a RaspberryPi to compile and upload code directly!</em></li>
+    </ul>
+  </li>
+  <li><a href="http://platformio.org/lib"><strong>Excellent library manager</strong></a>
+    <ul>
+      <li>Libraries can be searched and reviewed using command-line or web 2.0 manager</li>
+      <li>Required libraries can be specified in the <code class="highlighter-rouge">platformio.ini</code> file and if not present install is prompted upon compilation</li>
+      <li>Specific library version (as defined in <code class="highlighter-rouge">library.json</code> <a href="https://github.com/openenergymonitor/EmonLib/blob/master/library.json">(emonLib example)</a>) or git commit SHA</li>
+    </ul>
+  </li>
+  <li><strong>Fast compilation &amp; pain-free uploading</strong>
+    <ul>
+      <li>PlatformIO’s compiler is the <a href="https://twitter.com/krzychb2/status/729294573760065536">fastest in the business</a></li>
+      <li>USB / Serial ports auto detected</li>
+      <li>Since the emonPi has been added as a custom board PlatformIO can even upload direct to emonPi via RaspberryPi GPIO and trigger GPIO AVR reset, not more <a href="https://github.com/openenergymonitor/avrdude-rpi">hacked avrdude</a>.</li>
+    </ul>
+  </li>
+  <li><strong>Easy integration with continuous testing &amp; deployment</strong>
+    <ul>
+      <li>Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.</li>
+      <li><a href="http://github.com/openenergymonitor/emonpi/">emonPi</a> and <a href="github.com/openenergymonitor/emonTxFirmware">emonTx</a> git repos are now enabled for continous-testing and auto binary generation on release tag…this is a step change in embedded development.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="example-compiling-emontx--emonpi-firmware">Example: Compiling emonTx / emonPi firmware</h2>
+
+<p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
+
+<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+
+<p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
+
+<h3 id="install-platformio">1. Install PlatformIO</h3>
+
+<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+
+<p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
+
+<h3 id="clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
+
+<p>We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.</p>
+
+<p><strong>emonTx V3</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonTxFirmware`
+$ cd emonTxFirmware/tree/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+</code></pre>
+</div>
+
+<p><strong>emonPi</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
+cd emonpi/firmware
+</code></pre>
+</div>
+
+<h3 id="compile-with-platformio">3. Compile with PlatformIO</h3>
+
+<p><code class="highlighter-rouge">$ platformio run</code></p>
+
+<p>or shorthand for the lazy</p>
+
+<p><code class="highlighter-rouge">$ pio run</code></p>
+
+<p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
+
+<p>The first time platformIO is run it will ask to install the required libraries  and avr toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
+
+<p>e.g.</p>
+
+<p><code class="highlighter-rouge">lib_install = 19,54,116,252</code></p>
+
+<p>These numbers reference the Arduino libraries in the <a href="http://platformio.org/lib">pio library manager</a>:</p>
+
+<ul>
+  <li>19: DHT22</li>
+  <li>54: Dallas Temperature</li>
+  <li>116: emonLib</li>
+  <li>252: JeeLib</li>
+</ul>
+
+<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">~/platformio</code> folder.</p>
+
+<p>If required specific versions can be installed e.g.:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pio lib install 252 --version="e70c9d9f4e"
+$ platformio lib install 54 --version="3.7.7"
+</code></pre>
+</div>
+
+<h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
+
+<h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
+
+<p><code class="highlighter-rouge">$ sudo platformio run --target upload</code></p>
+
+<p>or lazy shorthand</p>
+
+<p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
+
+<p>Pio will attempt to auto detect the USB programmer and upload :-)</p>
+
+<p><em>Note: you will need <code class="highlighter-rouge">sudo</code> unless you have correctly <a href="https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules">configured udev rules</a>.</em></p>
+
+<p>To list available serial ports:</p>
+
+<p><code class="highlighter-rouge">$ pio serialports list</code></p>
+
+<p>There is even a built in serial monitor</p>
+
+<p><code class="highlighter-rouge">$ pio serialports monitor</code></p>
+
+<h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
+
+<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
+
+<p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>board = emonpi
+upload_port = /dev/ttyAMA0
+</code></pre>
+</div>
+
+<p>All that is needed to compile and upload directly on the emonPi is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
+$ sudo pio run -t upload
+</code></pre>
+</div>
+
+<p><em>Thanks a lot to <a href="https://github.com/ivankravets">Ivan Kravets</a> for helping integrate emonPi into the PlatfomIO ecosystem. <a href="https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a">View commit changes</a></em></p>
+
+<hr />
+<p>Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp; emonTx repos if you want a sneak preview. See <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml">travis.yaml</a> file and Travis build status icon on the main emonpi repo <a href="https://github.com/openenergymonitor/emonpi/blob/master/README.md">Readme.md</a>.</p>
+
+<hr />
 ]]></content>
   </entry>
   

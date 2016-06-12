@@ -107,6 +107,50 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2014/08/monitoring-solarpv-heatpump-and-house/">Monitoring SolarPV, Heatpump and house electric, EmonTx v2 system upgrade example</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-08-06T17:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-08-06 17:25:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
+      
+        <li><a class='category' href='/categories/emontx-v2/'>emonTx V2</a></li>
+      
+        <li><a class='category' href='/categories/upgrade/'>upgrade</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/08/monitoring-solarpv-heatpump-and-house/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Several years ago we did a community energy monitoring project in our local area, Penrhyndeudraeth, North Wales. It involved installing 20 openenergymonitor energy monitors in 20 households and carrying out energy assessment looking at electricity, heating and transport, there is a little more about it and some of the tools we developed <a href="http://openenergymonitor.blogspot.co.uk/2012/01/community-energy-plan-maker.html">here.</a><br /><br />The houses that where most engaged in the monitoring part of the project still have those energy monitors installed and yesterday I went to upgrade one of these systems, I thought Id write a blog post on what I did (written half as a guide) as it might be useful for those using older hardware such as the emonTx V2 and its also quite an interesting example of what you can do with the monitoring system.<br /><br />The upgrade essentially involved replacing a first generation nanode basestation with a RaspberryPI basestation running the latest image and also upgrading the emontx v2 that was in place with new firmware that both does the higher accuracy continuous sampling (developed by Robin Emley) and the watt hour calculation on board.<br /><br />This particular system is measuring Solar PV generation, household electric consumption and the electrical consumption of a heatpump. It has an EmonGLCD Display running the SolarPV firmware, with the red/green glowing ambient light depending on whether more power is being used than generated or vice versa and the data is also posted to emoncms.org for graphing.<br /><br />Here's a system diagram: <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-NSjTs-IBrD8/U-IYZE55v0I/AAAAAAAAFXI/miI26ZPQKDI/s1600/hp_pv_h_systemdiagram.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-NSjTs-IBrD8/U-IYZE55v0I/AAAAAAAAFXI/miI26ZPQKDI/s1600/hp_pv_h_systemdiagram.png" height="370" width="640" /><b></b></a></div><b>EmonTx:</b><br /><br />Upload to the EmonTxV2 the continuous sampling + watt hour firmware:<br /><a href="https://github.com/openenergymonitor/emonTxFirmware/tree/master/emonTxV2/emonTx_continuous_watthours">https://github.com/openenergymonitor/emonTxFirmware/tree/master/emonTxV2/emonTx_continuous_watthours&nbsp;</a><br /><br />The same thing can of course be achieved with an EmonTxV3 but with the added benefit of a fourth channel and only needing the one ACAC Power adapter. If you have the EmonTxV3 upload the continuous sampling + watt hour firmware found here:<a href="https://github.com/openenergymonitor/emonTxFirmware/tree/master/emonTxV3/RFM12B/Examples/emonTxV3_continuous_kwhtotals_noeeprom"> https://github.com/openenergymonitor/emonTxFirmware/tree/master/emonTxV3/RFM12B/Examples/emonTxV3_continuous_kwhtotals_noeeprom </a><br /><br /><b>EmonGLCD</b><br />Open the SolarPV example: https://github.com/openenergymonitor/EmonGLCD/tree/master/SolarPV<br /><br />On <a href="https://github.com/openenergymonitor/EmonGLCD/blob/master/SolarPV/SolarPV.ino#L68">lines 68 and 69</a> change the emontx radio packet defenition from:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; typedef struct { int power1, power2, power3, Vrms; } PayloadTX;<br />&nbsp;&nbsp;&nbsp; PayloadTX emontx;</span></span><br /><br />to:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; typedef struct { <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long msgNumber; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int heatpump; // heatpump<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int power1; // house power<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int power2; // solar power<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long wh_CT1;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long wh_CT2;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long wh_CT3;<br />&nbsp;&nbsp;&nbsp; } PayloadTX;<br />&nbsp;&nbsp;&nbsp; PayloadTX emontx;</span></span><br /><br />I've named the second variable here heatpump instead of power1 and then powers 1 to 3 because power1 and power2 are used as house power and solar power lower down in the firmware.<br /><br /><b>RaspberryPI Basestation</b><br />I used the latest (28th of July emonSD image) that has EmonHub (thanks to Jerome and Paul Burnell) and emoncms ready to go but without the local emoncms installation enabled, the PI was just used as an EmonHub gateway forwarder to emoncms.org. I used the nice pimoroni berryblack raspberrypi case so that the installation was tidy.<br /><br /><a href="http://files.openenergymonitor.org/emonSD-13-08-14.img.zip">Download ready-to-go image: emonSD-13-08-14.img.zip [link updated]</a> <br /><br />To configure EmonHub to post to emoncms.org, SSH into the raspberrypi and put the PI in read/write mode with:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">&nbsp;&nbsp;&nbsp; rpi-rw</span></span><br /><br />and then open the emonhub configuration file:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; nano /boot/emonhub.conf</span></span><br /><br />Set the dispatcher url to: http://emoncms.org and the apikey to your emoncms.org account write apikey.<br /><br />In order to decode the emontx continuous + watt hour radio packet add a node decoder to the nodes section in the emonhub config file at the bottom:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; [nodes]<br />&nbsp;&nbsp;&nbsp; [[10]]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Datacodes = L,h,h,h,l,l,l</span></span><br /><br /><br />Secure the pi user by changing the password (the default password is raspberry)<br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;"><br /></span></span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">&nbsp;&nbsp;&nbsp; passwd</span></span><br /><br />Place the PI back in read only mode:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">&nbsp;&nbsp;&nbsp; rpi-ro</span></span><br /><br /><b>Emoncms configuration</b><br /><br />With the emontx running and the raspberrypi configured as above the inputs will now appear in emoncms.org, but they will be un-named. For this particular installation I named them as in the picture below to correspond to the radio packet format and what I knew I was monitoring on each CT channel.<br /><br />I then logged each of the power inputs to a fixed interval with averaging (PHPFiwa) feed and used the Wh Accumulator input processor to record the Watt hour totals. The Wh Accumulator checks if the watt hour total has reset and if it does it continues the accumulation from the last point. I used the fixed interval without averaging feed engine for the watt hour feeds.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-MAZGbUyY-Q4/U-IhT7TGOdI/AAAAAAAAFXY/Oe5O3m7RZWc/s1600/inputconfig.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-MAZGbUyY-Q4/U-IhT7TGOdI/AAAAAAAAFXY/Oe5O3m7RZWc/s1600/inputconfig.png" height="524" width="640" /></a></div><br />To make use of the higher accuracy calculating of watt hours on the emontx and the recording of watt hour feeds<b>, </b>there is a slightly different procedure for creating dashboard kwh per day graphs: <br /><br /><b>Creating a daily electricity consumption graph in a dashboard using watt hour feeds (instead of the old power_to_kwhd method).&nbsp;</b>&nbsp; <b><br /></b><br /><br />Create a new dashboard and select visualisations &gt; bargraph.<br /><br />Click on the bargraph and click configure to bring up the configuration dialog. Select the watt hour feed that you want to display daily totals from, enter interval, units, dp, scale and delta=1 as below: (Note that you could change the interval here to any interval: hourly, half day, week etc)<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Tn1o4o0gNUA/U-IwqaYrUlI/AAAAAAAAFXo/eTAOIhczZqU/s1600/bargraphconfig.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-Tn1o4o0gNUA/U-IwqaYrUlI/AAAAAAAAFXo/eTAOIhczZqU/s1600/bargraphconfig.png" height="338" width="640" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: left;">Click save and continue to add any other text and widgets as required. A simple dashboard showing daily consumption and the current power could look like the screenshot below and could be repeated adding a graph for each channel, heatpump, solarpv and house consumption.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-adMy8oRQCqs/U-IwqgFm4VI/AAAAAAAAFXs/pH0NkxKeIgc/s1600/simpledashboard.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-adMy8oRQCqs/U-IwqgFm4VI/AAAAAAAAFXs/pH0NkxKeIgc/s1600/simpledashboard.png" height="300" width="640" /></a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/08/pebble-smart-watch-emoncms-heating/">Pebble Smart Watch Emoncms Heating Control Demo</a>
   </h1>
   
@@ -485,50 +529,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/06/how-to-build-energy-monitoring-android/">How to build an Energy Monitoring android App part 1</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-06-01T11:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-06-01 11:53:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/android/'>android</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/mobile/'>mobile</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/06/how-to-build-energy-monitoring-android/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <style type="text/css">P { margin-bottom: 0.21cm; }A:link {  }</style>  <br /><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://github.com/openenergymonitor/documentation/raw/master/BuildingBlocks/androidApp/files/OnPhone.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="480" src="https://github.com/openenergymonitor/documentation/raw/master/BuildingBlocks/androidApp/files/OnPhone.JPG" width="640" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Glyn and I have wanted to have an android app to make it easier to access energy monitoring data from phone's and tablets for sometime.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Last year we took part in a student project to develop an Emoncms android App with Mathew Keegan who was studying at the time at Aberystwyth University. Mathew made good progess on the foundations of the app which I've uploaded to github here: <a href="https://github.com/emoncms/androidAppDev/tree/master/MathewKeeganAberUni">https://github.com/emoncms/androidAppDev/tree/master/MathewKeeganAberUni</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I've been trying to learn a bit of android app programming to understand what Mathew has developed. I followed a couple of Hello World tutorials and then explored networking and how to update the display. I've written up my notes as a tutorial: How to build an Energy Monitoring android App part 1 here:</div><h3 style="margin-bottom: 0cm;"><a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/androidApp/androidAppPart1.md">How to build an Energy Monitoring android App part 1</a></h3><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Im going to try and continue development in this style by writing tutorials of how to do each step.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I think we should all be able to build our own software (if we want to)  and given the rising use of tablets and mobiles as our personal  computing devices having at least a basic understanding of how to build  an app is enlightening and satisfying to see the results on your phone.  Even if you've only dabbled in software before I would like to encourage  you to try the tutorial, please ask me if I can clarify anything and  feel free to send me a github pull request with edits to the tutorial.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">My next tutorial will focus on how to use android graphics canvas to draw a graph that looks like the myelectric graph in the myelectric emoncms module.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I've posted this blog post on the forum's here which is a better place to discuss:</div><div style="margin-bottom: 0cm;"><a href="http://openenergymonitor.org/emon/node/5250">http://openenergymonitor.org/emon/node/5250 </a></div><div style="margin-bottom: 0cm;"><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -645,6 +645,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
         </li>
       
@@ -694,12 +700,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
         </li>
       
     
@@ -836,6 +836,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
+      <li><a href="/categories/emontx/">emontx</a></li>
+    
       <li><a href="/categories/end-to-end/">end to end</a></li>
     
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
@@ -843,6 +845,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/firmware/">firmware</a></li>
     
       <li><a href="/categories/forum/">forum</a></li>
     
@@ -910,6 +914,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/pebble/">pebble</a></li>
     
+      <li><a href="/categories/platformio/">platformio</a></li>
+    
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
@@ -937,6 +943,8 @@ window.onclick = function(event) {
       <li><a href="/categories/temperature/">temperature</a></li>
     
       <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/travisci/">travisci</a></li>
     
       <li><a href="/categories/tutorials/">tutorials</a></li>
     

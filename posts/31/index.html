@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2010/10/energy-monitoring-at-cat-part-4/">Energy monitoring at the CAT - part 4</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-10-10T18:11:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-10-10 18:11:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/10/energy-monitoring-at-cat-part-4/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <b><div><span class="Apple-style-span" style="font-weight: normal;">continues from part 3</span></div><div><b><br /></b></div>Next Steps and the PV Lab project</b><div><div><br /></div><div>With the pulse output kwh meters on all the renewable generators and un-interruptible loads connected up to the display server. The next step on the monitoring data acquisition side is to get detailed data from the 20kW PV roof array.</div><div><br /></div><div><b>The PV Lab project</b></div><div><br /></div><div>This is quite a big project with a lot of different measurements being made including energy measurements on the DC outputs of the panels and AC energy measurements on the outputs of 6 inverters and to research the effect of panel temperature on performance the temperature at multiple points under the array and the wind speed over the array. </div><div><br /></div><div>Thankfully Glyn Hudson a good friend of mine, who has just graduated from doing electronic engineering at Warwick university is working with me on this and Suneil is also just about to join us this coming week, so we will have a good team on it!</div><div><br /></div><div>Last week we spent quite a bit of time doing some further development on arduino based pulse counting, using low level port manipulation to read from multiple digital inputs at the same time and also much faster. We are just writing up about that at the moment.</div><div><br /></div><div><b>Microgrid display next steps</b></div><div>We are also hoping to develop the public display software further. We want to make it easy to use, simple to setup and flexible enough to be used for home scale energy visualization to CAT scale energy visualisation. A downloadable energy monitoring content management system, like wordpress or drupal say but for energy... more to come on this soon<br /></div><div><br /></div><div>Thanks for reading the update!</div><div><div></div></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2010/10/energy-monitoring-at-center-for_5557/">Energy monitoring at the Center for Alternative Technology - part 3</a>
   </h1>
   
@@ -382,37 +413,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2010/06/solar-hot-water-controller/">Solar hot water controller</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2010-06-14T12:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-06-14 12:14:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2010/06/solar-hot-water-controller/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TSwojgZXHsI/AAAAAAAACFE/AdaHM5VVMNQ/s1600/SHW.png"></a><div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/TBZKD7-C-0I/AAAAAAAAB4g/RC3K7jonOlU/s1600/hotwatergraph.png"></a><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/TBZGa4YJ4bI/AAAAAAAAB4U/ipnbvXZ87bI/s1600/DSCF0014.JPG"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/TBZGa4YJ4bI/AAAAAAAAB4U/ipnbvXZ87bI/s320/DSCF0014.JPG" border="0" alt="" id="BLOGGER_PHOTO_ID_5482647023994397106" /></a><div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div>Well its been a while since I last updated, I managed to get some time over the last month to build a solar hot water controller for the navitron evacuated tube system we have installed here on our house, its been a project I wanted to do for a while. I've documented version 1.0 of the design here:</div><div><br /></div><div><a href="http://openenergymonitor.org/emon/solarhotwater">Solar hot water controller v2.0</a></div><div><br /></div></div><div>Apart from the usefulness of being able to log data from the solar hot water controller I'm interested in looking at combining data from the solar hot water controller with data from the energy monitor. It would be interesting to see if its possible to calculate accurately how much immersion heating is displaced by the solar hot water system as well as how well the system is working compared with its expected output.</div><div><br /></div><div>Here is a graph of the different system temperatures plotted with flot</div><div><br /></div><div><span class="Apple-style-span"  style=" color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; font-size:15.8333px;"><img src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/TSwojgZXHsI/AAAAAAAACFE/AdaHM5VVMNQ/s200/SHW.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5560864230352559810" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 240px; height: 134px; " /></span></div><div><span class="Apple-style-span"  style=" color: rgb(0, 0, 238); -webkit-text-decorations-in-effect: underline; font-size:15.8333px;"><br /></span></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -529,6 +529,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
         </li>
       
@@ -578,12 +584,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Home-Assistant/">Home Assistant and emonPi</a>
         </li>
       
     
@@ -720,6 +720,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
+      <li><a href="/categories/emontx/">emontx</a></li>
+    
       <li><a href="/categories/end-to-end/">end to end</a></li>
     
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
@@ -727,6 +729,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
+    
+      <li><a href="/categories/firmware/">firmware</a></li>
     
       <li><a href="/categories/forum/">forum</a></li>
     
@@ -794,6 +798,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/pebble/">pebble</a></li>
     
+      <li><a href="/categories/platformio/">platformio</a></li>
+    
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
@@ -821,6 +827,8 @@ window.onclick = function(event) {
       <li><a href="/categories/temperature/">temperature</a></li>
     
       <li><a href="/categories/three phase/">three phase</a></li>
+    
+      <li><a href="/categories/travisci/">travisci</a></li>
     
       <li><a href="/categories/tutorials/">tutorials</a></li>
     

@@ -1,4 +1,217 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-11T00:46:55+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Electrical Supply Line Vault</title><link href="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/" rel="alternate" type="text/html" title="Electrical Supply Line Vault" /><published>2016-06-03T10:00:00+00:00</published><updated>2016-06-03T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/">&lt;p&gt;Last week my home emonPi energy monitor came in handy to help diagnose an electrical supply fault.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-12T15:07:29+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.&lt;/p&gt;
+
+&lt;p&gt;I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.&lt;/p&gt;
+
+&lt;p&gt;The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.&lt;/p&gt;
+
+&lt;p&gt;Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent &lt;a href=&quot;http://platformio.org/lib&quot;&gt;library manager&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;PlatformIO is an open-source ecosystem for IoT development.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pio-ide.png&quot; alt=&quot;PlatformIO IDE&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This post got quite long, therefore, It’s been split into three posts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/li&gt;
+  &lt;li&gt;Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/li&gt;
+  &lt;li&gt;Continuous Deployment (OTA to ESP8266)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/platformio&quot;&gt;&lt;strong&gt;Fully open-source&lt;/strong&gt;&lt;/a&gt; with active and friendly dev community.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Easy to install&lt;/strong&gt; - Pure python based installed using pip
+    &lt;ul&gt;
+      &lt;li&gt;Tool-chains are auto installed on first compile / upload e.g.
+        &lt;ul&gt;
+          &lt;li&gt;If trying to upload to Arduino avrdude will automatically be installed&lt;/li&gt;
+          &lt;li&gt;If trying to compile an ESP8266 project the ESP toolchain will be installed&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Cross-platform (Linux, Windows and mac all work the same), this will make support much easier&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Supports all the main embedded platforms&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;atmelavr (Arduino), espressif (ESP8266), ststm32 (ARM etc.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Command line and IDE&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;At work I use pio via Atom IDE on Ubuntu&lt;/li&gt;
+      &lt;li&gt;At home, I use a Chromebook with Caret IDE and interact with pio via command-line&lt;/li&gt;
+      &lt;li&gt;When developing directly on an emonPi / RaspberryPi pio command-line works great - &lt;em&gt;Yes, that’s right pio works on a RaspberryPi to compile and upload code directly!&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://platformio.org/lib&quot;&gt;&lt;strong&gt;Excellent library manager&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Libraries can be searched and reviewed using command-line or web 2.0 manager&lt;/li&gt;
+      &lt;li&gt;Required libraries can be specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; file and if not present install is prompted upon compilation&lt;/li&gt;
+      &lt;li&gt;Specific library version (as defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;library.json&lt;/code&gt; &lt;a href=&quot;https://github.com/openenergymonitor/EmonLib/blob/master/library.json&quot;&gt;(emonLib example)&lt;/a&gt;) or git commit SHA&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fast compilation &amp;amp; pain-free uploading&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;PlatformIO’s compiler is the &lt;a href=&quot;https://twitter.com/krzychb2/status/729294573760065536&quot;&gt;fastest in the business&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;USB / Serial ports auto detected&lt;/li&gt;
+      &lt;li&gt;Since the emonPi has been added as a custom board PlatformIO can even upload direct to emonPi via RaspberryPi GPIO and trigger GPIO AVR reset, not more &lt;a href=&quot;https://github.com/openenergymonitor/avrdude-rpi&quot;&gt;hacked avrdude&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Easy integration with continuous testing &amp;amp; deployment&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://github.com/openenergymonitor/emonpi/&quot;&gt;emonPi&lt;/a&gt; and &lt;a href=&quot;github.com/openenergymonitor/emonTxFirmware&quot;&gt;emonTx&lt;/a&gt; git repos are now enabled for continous-testing and auto binary generation on release tag…this is a step change in embedded development.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;example-compiling-emontx--emonpi-firmware&quot;&gt;Example: Compiling emonTx / emonPi firmware&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://docs.platformio.org/en/latest/quickstart.html&quot;&gt;PlatformIO has some excellent quick start docs&lt;/a&gt; to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.&lt;/p&gt;
+
+&lt;p&gt;This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see &lt;a href=&quot;http://platformio.org/get-started&quot;&gt;PlatformIO Getting Started Page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-platformio&quot;&gt;1. Install PlatformIO&lt;/h3&gt;
+
+&lt;p&gt;The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See &lt;a href=&quot;http://docs.platformio.org/en/latest/installation.html#installer-script&quot;&gt;PlatformIO installation docs&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo python -c &quot;$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clone-emontx--emonpi-repo&quot;&gt;2. Clone emonTx / emonPi repo&lt;/h3&gt;
+
+&lt;p&gt;We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;emonTx V3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/openenergymonitor/emonTxFirmware`
+$ cd emonTxFirmware/tree/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;emonPi&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/openenergymonitor/emonpi`
+cd emonpi/firmware
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;compile-with-platformio&quot;&gt;3. Compile with PlatformIO&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ platformio run&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;or shorthand for the lazy&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio run&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;That’s it!&lt;/strong&gt; That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D&lt;/p&gt;
+
+&lt;p&gt;The first time platformIO is run it will ask to install the required libraries  and avr toolchain. The required libraries are defined in &lt;a href=&quot;https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; in the emonTx discrete sampling firmware folder&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lib_install = 19,54,116,252&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These numbers reference the Arduino libraries in the &lt;a href=&quot;http://platformio.org/lib&quot;&gt;pio library manager&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;19: DHT22&lt;/li&gt;
+  &lt;li&gt;54: Dallas Temperature&lt;/li&gt;
+  &lt;li&gt;116: emonLib&lt;/li&gt;
+  &lt;li&gt;252: JeeLib&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The latest version of the libraries are automatically cloned from their native git repos into the &lt;code class=&quot;highlighter-rouge&quot;&gt;~/platformio&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;If required specific versions can be installed e.g.:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pio lib install 252 --version=&quot;e70c9d9f4e&quot;
+$ platformio lib install 54 --version=&quot;3.7.7&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;upload-using-platformio&quot;&gt;3. Upload using PlatformIO&lt;/h3&gt;
+
+&lt;h4 id=&quot;a-via-usb-to-uart-programmer-to-emontx&quot;&gt;3a. Via USB to UART programmer to emonTx&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo platformio run --target upload&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;or lazy shorthand&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo pio run -t upload&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Pio will attempt to auto detect the USB programmer and upload :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: you will need &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; unless you have correctly &lt;a href=&quot;https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules&quot;&gt;configured udev rules&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;To list available serial ports:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio serialports list&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There is even a built in serial monitor&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio serialports monitor&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b-using-ttyama0-gpio-to-upload-direct-to-emonpi&quot;&gt;3b. Using ttyAMA0 GPIO to upload direct to emonPi&lt;/h3&gt;
+
+&lt;p&gt;This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4&lt;/p&gt;
+
+&lt;p&gt;The emonPi board is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; in the &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini&quot;&gt;emonpi/firmware folder&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;board = emonpi
+upload_port = /dev/ttyAMA0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;All that is needed to compile and upload directly on the emonPi is:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/emonpi/firmware
+$ sudo pio run -t upload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Thanks a lot to &lt;a href=&quot;https://github.com/ivankravets&quot;&gt;Ivan Kravets&lt;/a&gt; for helping integrate emonPi into the PlatfomIO ecosystem. &lt;a href=&quot;https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a&quot;&gt;View commit changes&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp;amp; emonTx repos if you want a sneak preview. See &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml&quot;&gt;travis.yaml&lt;/a&gt; file and Travis build status icon on the main emonpi repo &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/README.md&quot;&gt;Readme.md&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.
+
+I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.
+
+The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.
+
+Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent library manager.
+
+
+  PlatformIO is an open-source ecosystem for IoT development.
+
+
+
+  Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.
+
+
+
+
+This post got quite long, therefore, It’s been split into three posts:
+
+
+  PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
+  Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
+  Continuous Deployment (OTA to ESP8266)</summary></entry><entry><title>Electrical Supply Line Vault</title><link href="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/" rel="alternate" type="text/html" title="Electrical Supply Line Vault" /><published>2016-06-03T10:00:00+00:00</published><updated>2016-06-03T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/">&lt;p&gt;Last week my home emonPi energy monitor came in handy to help diagnose an electrical supply fault.&lt;/p&gt;
 
 &lt;p&gt;A neighbour alerted me that her lights were flickering and internet router was dropping offline. At the time I was doing some DIY and had noticed the power drill I was using change speed erratically. I had presumed it was my drill about the give up the ghost.&lt;/p&gt;
 
@@ -416,34 +629,4 @@ $ git submodule update
 
 Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.
 
-However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</summary></entry><entry><title>Home Assistant and emonPi</title><link href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/" rel="alternate" type="text/html" title="Home Assistant and emonPi" /><published>2016-04-01T17:00:00+00:00</published><updated>2016-04-01T17:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/04/Home-Assistant</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/04/Home-Assistant/">&lt;p&gt;&lt;a href=&quot;http://home-assistant.io/&quot;&gt;Home Assistant&lt;/a&gt; (HA) is a fully &lt;a href=&quot;https://github.com/balloob/home-assistant&quot;&gt;open-source&lt;/a&gt; home automation platform.&lt;/p&gt;
-
-&lt;p&gt;In terms of functionality it’s quite similar to &lt;a href=&quot;http://openenergymonitor.blogspot.co.uk/search/label/openHAB&quot;&gt;openHAB&lt;/a&gt; however it’s architecture is very different it runs on Python 3 as opposed to java.&lt;/p&gt;
-
-&lt;p&gt;I found home assistant very easy to setup and configure. It’s got some nice auto detect features e.g. It auto-detected by Chromecast devices. Home Assistant has got &lt;a href=&quot;https://home-assistant.io/components/&quot;&gt;pre-built component integrations&lt;/a&gt; with many home automation and monitoring devices and platforms. I was also impressed with the presence detection support, I tested using &lt;a href=&quot;https://home-assistant.io/components/device_tracker.nmap_scanner/&quot;&gt;nmap&lt;/a&gt; to scan my home router for presence of my phone connected to my home WiFi (indication that I’m home…or I forget my phone!) and &lt;a href=&quot;https://home-assistant.io/components/device_tracker.owntracks/&quot;&gt;OwnTracks&lt;/a&gt; MQTT based GPS tracking.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Interfacing with our &lt;a href=&quot;http://openenergymonitor.org/emon/modules/emonpi&quot;&gt;emonPi Raspberry Pi energy monitor&lt;/a&gt; was easy, using MQTT component to connect to emonPi’s MQTT server and subscribe to the power and sensor readings of interest.&lt;/p&gt;
-
-&lt;p&gt;As yet I have not experimented with creating automations with HA .e.g turning off lights and heating when we’re not home. I think I will still prefer using nodeRED for these types of rule based automations. However what HA does well is present a nice clean, mobile friendly and easy to configure front-end interface:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ha1.jpg&quot; alt=&quot;home assistant&quot; /&gt;
-My HA Home Setup So Far&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ha2.png&quot; alt=&quot;home assistant&quot; /&gt;
-Home Assistant has some nice mini graphing features to give you a quick overview.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ha3.png&quot; alt=&quot;home assistant&quot; /&gt; &lt;img src=&quot;/images/ha4.png&quot; alt=&quot;home assistant&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;On a switch node a quite overview will tell you how long the switch has been on or off for. Very useful for checking long long the heating has been on for&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ha5.png&quot; alt=&quot;home assistant&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Generic emonPi Config Example&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/openenergymonitor/oem_home-assistant&quot;&gt;I have published setup guide to setting up Home Assistant on an emonPi with example config&lt;/a&gt;.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Home Assistant (HA) is a fully open-source home automation platform.
-
-In terms of functionality it’s quite similar to openHAB however it’s architecture is very different it runs on Python 3 as opposed to java.
-
-I found home assistant very easy to setup and configure. It’s got some nice auto detect features e.g. It auto-detected by Chromecast devices. Home Assistant has got pre-built component integrations with many home automation and monitoring devices and platforms. I was also impressed with the presence detection support, I tested using nmap to scan my home router for presence of my phone connected to my home WiFi (indication that I’m home…or I forget my phone!) and OwnTracks MQTT based GPS tracking.</summary></entry></feed>
+However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</summary></entry></feed>
