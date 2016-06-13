@@ -167,7 +167,9 @@ All that is needed to compile and upload directly on the emonPi is:
 
 ```
 cd ~/emonpi/firmware
+$ sudo service emonhub stop
 $ sudo pio run -t upload
+$ sudo service emonhub start
 ```
 
 *Thanks a lot to [Ivan Kravets](https://github.com/ivankravets) for helping integrate emonPi into the PlatfomIO ecosystem. [View commit changes](https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a)*
