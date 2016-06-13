@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-12T16:42:55+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-13T16:23:18+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.&lt;/p&gt;
 
 &lt;p&gt;I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.&lt;/p&gt;
 
@@ -179,7 +179,9 @@ upload_port = /dev/ttyAMA0
 &lt;p&gt;All that is needed to compile and upload directly on the emonPi is:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/emonpi/firmware
+$ sudo service emonhub stop
 $ sudo pio run -t upload
+$ sudo service emonhub start
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 

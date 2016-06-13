@@ -324,7 +324,9 @@ upload_port = /dev/ttyAMA0
 <p>All that is needed to compile and upload directly on the emonPi is:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
+$ sudo service emonhub stop
 $ sudo pio run -t upload
+$ sudo service emonhub start
 </code></pre>
 </div>
 
