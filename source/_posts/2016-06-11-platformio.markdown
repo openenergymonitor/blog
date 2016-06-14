@@ -16,15 +16,15 @@ categories:
 
 **This post is part of a series:**
 
- - 1/3: PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi
+ - **1/3: PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi**
  - 2/3: Continuous testing and auto release binary generation using PlatformIO & TravisCI
  - 3/3: Continuous Deployment (OTA to ESP8266)
 
 ***
 
-Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.
+Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.
 
-I'm sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.
+I'm sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.
 
 The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS's frequently.
 
@@ -44,7 +44,7 @@ Recently I have been using [PlatformIO](http://platformio.org) and am rather imp
 Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:
 
 - [**Fully open-source**](https://github.com/platformio) with active and friendly dev community.
-- **Easy to install** - Pure python based installed using pip
+- **Easy to install** - Pure python based, installed using pip
   - Tool-chains are auto installed on first compile / upload e.g.
     - If trying to upload to Arduino avrdude will automatically be installed
     - If trying to compile an ESP8266 project the ESP toolchain will be installed
@@ -74,13 +74,13 @@ Here are some things that have impressed me about PlatformIO (pio) after using i
 
 [PlatformIO has some excellent quick start docs](http://docs.platformio.org/en/latest/quickstart.html) to cover setting up your first 'blinky' project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.
 
-This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see [PlatformIO Getting Started Page](http://platformio.org/get-started).
+This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see [PlatformIO Getting Started Page](http://platformio.org/get-started).
 
 The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.
 
 ### 1. Install PlatformIO
 
-The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See [PlatformIO installation docs](http://docs.platformio.org/en/latest/installation.html#installer-script):
+The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See [PlatformIO installation docs](http://docs.platformio.org/en/latest/installation.html#installer-script):
 
 `$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"`
 
