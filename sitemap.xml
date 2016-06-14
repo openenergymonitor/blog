@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/</loc>
+<lastmod>2016-06-14T10:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2016/06/platformio/</loc>
 <lastmod>2016-06-12T10:00:00+00:00</lastmod>
 </url>
@@ -1778,6 +1782,9 @@
 <loc>https://blog.openenergymonitor.org/categories/emontx/</loc>
 </url>
 <url>
+<loc>https://blog.openenergymonitor.org/categories/continuous-testing/</loc>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/posts/2/</loc>
 </url>
 <url>
@@ -1881,6 +1888,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2016-06-14T09:48:56+00:00</lastmod>
+<lastmod>2016-06-14T17:30:14+00:00</lastmod>
 </url>
 </urlset>

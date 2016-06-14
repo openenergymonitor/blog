@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: continuous testing | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/continuous-testing/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-06-14T17:31:26+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/"/>
+    <updated>2016-06-14T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
+  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>- Coming soon…</em></li>
+</ul>
+
+<hr />
+
+<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
+
+<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
+
+<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
+
+<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
+
+<!--more-->
+
+<p>The advantages of <a href="https://en.wikipedia.org/wiki/Continuous_testing">continuous testing</a> have been long established in the software industry. The test we are performing is <em>‘does this firmware compile?’</em>; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ol>
+  <li>A commit or pull request is made to the firmware repository on GitHub
+    <ul>
+      <li>So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test.</li>
+    </ul>
+  </li>
+  <li>
+    <p>This triggers Travis CI to start a ‘build’</p>
+  </li>
+  <li>
+    <p>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>.</p>
+  </li>
+  <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
+</ol>
+
+<p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
+
+<ol>
+  <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
+</ol>
+
+<p><img src="/images/emonpi-draft-release.png" alt="image" /></p>
+
+<p><img src="/images/emonpi-travis-release.png" alt="image" /></p>
+
+<hr />
+
+<p>Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this excellent blog post</a> which was a source of inspiration and information.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+</feed>

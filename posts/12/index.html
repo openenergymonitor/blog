@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/11/bulk-sd-card-loading/">Bulk SD Card Loading </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-04T11:12:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-04 11:12:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/linux/'>linux</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/11/bulk-sd-card-loading/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Here's a neat little trick which should be useful for anyone needing to flash the same SD card .img onto lots of SD cards in parallel. We have been using it to load up the <a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi pre-loaded emoncms gateway SD cards</a>. Thanks to&nbsp;<a href="https://twitter.com/dpslwk">@dpslwk</a>&nbsp;for the initial idea. <br /><br />Tested on Ubuntu Linux 13.10 64-bit<br /><br />First install <a href="http://dcfldd.sourceforge.net/">dcfldd</a> which is an enhanced version of dd<br /><br /><i>$ sudo apt-get install&nbsp;dcfldd</i><br /><br />I used a USB hub with five SD card readers<br /><i><br /></i><i>$ sudo fdisk -l&nbsp;</i><br /><br />can be used to determine the drive letter of the SD cards, depending on your hard disk configuration it will usually be something like /dev/sdx where x is b-f. &nbsp;Make sure you check this carefully, selecting the wrong disk can result in one of your hard drives being wiped! dd is not nicknamed 'delete disk' for nothing!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VGZEhCM3mws/Und_IN4bgSI/AAAAAAAAmwg/TmQ50UQDycs/s1600/20131104_105215_Ffordd+Y+Parc.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-VGZEhCM3mws/Und_IN4bgSI/AAAAAAAAmwg/TmQ50UQDycs/s320/20131104_105215_Ffordd+Y+Parc.jpg" width="320" /></a></div><br /><br />Finally run dcfld selecting each SD card as the output file:<br /><br /><i>$ sudo dcfldd if=SD_CARD_IMAGE.img bs=4M sizeprobe=if of=/dev/sdb of=/dev/sdc of=/dev/sdd of=/dev/sde of=/dev/sdf</i><br /><br />Flashing five SD cards with a 2GB image takes about 4 min for me:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-tRreIhTiEPI/UneBAA1GlgI/AAAAAAAAmws/XP3dcwYxTCA/s1600/Selection_006.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="114" src="http://3.bp.blogspot.com/-tRreIhTiEPI/UneBAA1GlgI/AAAAAAAAmws/XP3dcwYxTCA/s640/Selection_006.png" width="640" /></a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/10/new-office-space-and-new-units/">New office space and new hardware units</a>
   </h1>
   
@@ -464,48 +506,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/09/measuring-building-thermal-performance/">Measuring building thermal performance - coheating tests</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-09-20T13:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-09-20 13:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/09/measuring-building-thermal-performance/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Improving the thermal performance of buildings is an area where some of the largest energy and carbon savings can be made. Building energy use and carbon emissions can be reduced by as much as 60-80% through better insulation, draught proofing (improved thermal performance) and heating efficiency and controls. But how do you go about working out the performance of your house and what measures are best to undertake to reach this level of performance improvement? Improving building fabric is expensive, how do you work out which measures will be most cost-effective? and how do you make sure that your house actually achieves the target performance? how do you measure and check it?<br /><br />These are the questions I’m currently grappling with for my own house and the openenergymonitor lab, these are also the questions we’re trying to develop improved processes for answering with our work with <a href="http://openenergymonitor.blogspot.co.uk/2013/05/carbon-coop.html">Carbon Coop</a>.<br /><br />Here’s a graphic from the <a href="http://zerocarbonbritain.com/">Centre for Alternative Technology’s Zero Carbon Report</a>&nbsp;illustrating the kind of performance improvements that are possible:<br /><div><br /></div><div><div style="text-align: center;"><img height="408" src="https://lh4.googleusercontent.com/IawY7i3x1WLGkRDyl0mv-SMap9VzNxzfvjWNw933ikxI0BPythd58a1asyYHwGl6NqBhLhqltkykbtuWJbht2YCIsB3IyF58fQUKW6KL2EgSnHqbAwOjDErMEg" width="640" /></div><br />The most common way to investigate domestic building performance is by using simple building energy models such as SAP:</div><div><a href="http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-carbon-coop.html">http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-carbon-coop.html</a><br /><br />The accuracy of a model is always dependent on its input data and assumptions, work that has been done on comparing modelled energy consumption as calculated by SAP vs actual energy consumption show that there is often a discrepancy and in some cases the discrepancy is so large (even a 100% or more) as to undermine decisions made based on model outputs.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><img height="245" src="https://lh4.googleusercontent.com/VlT6g2k6w09l4anb5WRV47GYtIQKvn8FZApwUafwiQzvqzrzLsN3KxL3wY9FcKoF4BvNte15jX2PBRMyY9R-0roymQSh8PH0aju-oL_Xjeu_BLXVtp7PV9SM2A" style="margin-left: auto; margin-right: auto;" width="400" /></td></tr><tr><td class="tr-caption" style="text-align: center;"><a class="src-url" href="https://www.bsria.co.uk/download/asset/agm-2011-co-heating-tests-sarah-birchall.pdf" style="color: #5566dd; display: inline-block; font-family: Ubuntu, Arial, sans-serif; font-size: 12px; max-width: 500px; overflow: hidden; padding-bottom: 1px; padding-top: 4px; text-align: start; text-decoration: none; text-overflow: ellipsis; white-space: nowrap;" target="_blank">https://www.bsria.co.uk/download/asset/agm-2011-co-heating-tests-sarah-birchall.pdf</a></td></tr></tbody></table><div style="text-align: left;">To rely therefore on modelled performance only can be misleading.</div><br />It is possible however to measure the total building thermal performance by measuring how much energy it takes to heat a building up to a given temperature above the outside temperature. This procedure is known as a coheating test and was <a href="http://www.leedsmet.ac.uk/as/cebe/projects/coheating_test_protocol.pdf">pioneered by the Center for the Built Environment at Leeds Met University</a>. (There's also a good info sheet on coheating tests here by Peter Warm&nbsp;<span id="docs-internal-guid-079ade9d-3ba6-00da-229a-975b3d49fdab"><span style="color: #1155cc; font-family: Arial; font-size: 15px; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"><a href="http://www.peterwarm.co.uk/?dl_id=6" style="text-decoration: none;">www.peterwarm.co.uk/?dl_id=6</a> </span></span>)</div><div><br />The standard co-heating test involves heating building when unoccupied to an elevated internal temperature of 25C over a period of 1-3 weeks with electric heating and monitoring the electrical heat input, internal and external temperatures. Keeping the building unoccupied reduces unknown variables and so increases the accuracy of the measurement but it alongside the elevated temperature makes widespread testing of this kind difficult.<br /><br />The question that several people have been asking and I’m aware of several groups working on this (<a href="http://www.housahedron.co.uk/">@Housahedron</a> and <a href="http://www.lboro.ac.uk/departments/cv/docs/docSem/121213/Jack.pdf">Richard Jack, lboro</a>)  is; can a method be developed for undertaking an ongoing co-heating equivalent test that can be undertaken while the building is being used, that could even measure thermal performance over time as measures are undertaken. The analogy is a car MPG meter but for your house.<br /><br />Over the last few weeks I’ve been working on an approach that I think is showing promising results, it involves applying a dynamic model to realtime monitored heating input and external temperature data to model indoor temperature. The modelled internal temperature is then compared to the actual indoor temperature.<br /><br /><div style="text-align: center;"><img height="508" src="https://lh6.googleusercontent.com/fZyZiAT9XcS6B6OwzBbWQiR9AKsp7oZXoNCdx-AVNHIlxZeIxLiwofbjGX8wMhfSXKUpq0cEhk6zqW93cp1uo57dkAHJGRr1TZoikCl1No9lQN2R7UBL7T4arA" width="640" /></div><br />The model parameters that give a good match tell you the heat loss factor of your building and also it’s thermal mass. The heat loss factor is your MPG equivalent for household fabric thermal performance.<br /><br />The model type is a multi stage resistor-capacitor model, using the resistor-capacitor analogy for thermal modelling is a standard approach used in many thermal models, there's an interesting page on it here: <a href="http://lpsa.swarthmore.edu/Systems/Thermal/SysThermalModel.html">http://lpsa.swarthmore.edu/Systems/Thermal/SysThermalModel.html</a><br /><br /><div style="text-align: center;"><img height="177" src="https://lh6.googleusercontent.com/nnfKC3yzKI9FTo1b3RfaZAhRDFWqDA8uNJDKnCCbtdjE-wIj5J6fn4-Z69w6ars3BZfFiKOcVXmlvC8qY_67e4Kg_SsshZ-BlYUpWQCoMXpW5fTkJC7err3aZg" width="640" /></div><br />This is all open source and the code so far is up on github here: <a href="https://github.com/emoncms/openbem">https://github.com/emoncms/openbem</a>, <br />There's also a forum thread here with a bit more information on the model and tests&nbsp;<a href="http://openenergymonitor.org/emon/node/2783">http://openenergymonitor.org/emon/node/2783</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -622,6 +622,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
@@ -671,12 +677,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
         </li>
       
     
@@ -764,6 +764,8 @@ window.onclick = function(event) {
       <li><a href="/categories/community energy/">community energy</a></li>
     
       <li><a href="/categories/community smart grid/">community smart grid</a></li>
+    
+      <li><a href="/categories/continuous testing/">continuous testing</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

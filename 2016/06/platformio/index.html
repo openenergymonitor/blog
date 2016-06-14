@@ -146,16 +146,16 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   <p><strong>This post is part of a series:</strong></p>
 
 <ul>
-  <li>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li><strong>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</strong></li>
   <li>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
   <li>3/3: Continuous Deployment (OTA to ESP8266)</li>
 </ul>
 
 <hr />
 
-<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.</p>
 
-<p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
+<p>I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.</p>
 
 <p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
 
@@ -177,7 +177,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 <ul>
   <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
-  <li><strong>Easy to install</strong> - Pure python based installed using pip
+  <li><strong>Easy to install</strong> - Pure python based, installed using pip
     <ul>
       <li>Tool-chains are auto installed on first compile / upload e.g.
         <ul>
@@ -228,13 +228,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 <p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
 
-<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+<p>This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
 
 <p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
 
 <h3 id="install-platformio">1. Install PlatformIO</h3>
 
-<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+<p>The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
 
 <p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
 
@@ -362,6 +362,12 @@ $ sudo service emonhub start
   <ul class="divided">
     
       
+        <li class="post">
+          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+        </li>
+      
+    
+      
     
       
         <li class="post">
@@ -408,12 +414,6 @@ $ sudo service emonhub start
       
         <li class="post">
           <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
         </li>
       
     

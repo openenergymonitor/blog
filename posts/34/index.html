@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2010/01/finished-working-functional-home-energy/">Finished, working, functional home energy monitor!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-01-13T21:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-01-13 21:47:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/01/finished-working-functional-home-energy/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I have spent some time over the last couple of weeks working on getting a finished energy monitor for the house together and installed in a more permanent way. I managed to finished the build yesterday and it's now working away logging energy consumption data, giving some informative readouts and nice looking graphs :)<br /><br />I decided on having a real time display that can be mounted in some ware visible with a cable running to the main unit that holds the sensor electronics situated near were the mains comes in to the house. The main unit also has a USB pen data logger in it to store detailed data. I also wanted to send data to be graphed on the net and so I have another box near my router that has a second arduino and an arduino ethernet shield in it. The ethernet box is connected to the main unit with a wireless xbee connection.<br /><br />Its quite a complex setup and a bit pricey but I wanted to learn about each element and since I had bought a couple of arduinos, xbee's etc I thought I'd through it all together and make something with lots of crazy and useful things going on in it...<br /><br />Here are some pics of the setup:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S05CSiL2pvI/AAAAAAAAA-E/i7-MUpDQu1Y/s1600-h/display.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/S05CSiL2pvI/AAAAAAAAA-E/i7-MUpDQu1Y/s400/display.jpg" alt="" id="BLOGGER_PHOTO_ID_5426347487209629426" border="0" /></a>The display unit consisting of 4 large green led 7 segments. On the right is a 6 mode – mode chooser so that you can select by turning the potentiometer (bottom – right) whether the display shows real power, apparent power, power factor, RMS Voltage, RMS Current, frequency or cumulative kWh used. The display is connected to the main unit by a cable that goes through the wall at the back of the display.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05Chj5YALI/AAAAAAAAA-U/3yWAbDS1W5M/s1600-h/mainunit.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05Chj5YALI/AAAAAAAAA-U/3yWAbDS1W5M/s400/mainunit.jpg" alt="" id="BLOGGER_PHOTO_ID_5426347745367031986" border="0" /></a>The main unit is the small box in the far left of pic with the white CT sensor wire crossing the shelf over to the sensor clipped on to the main mains wire on the right.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S05ChJXJryI/AAAAAAAAA-M/2-y9ijDq798/s1600-h/ethernet.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/S05ChJXJryI/AAAAAAAAA-M/2-y9ijDq798/s400/ethernet.jpg" alt="" id="BLOGGER_PHOTO_ID_5426347738244165410" border="0" /></a>The ethernet unit connected to the router, the small box on top of the larger box houses the xbee and can be detached if one wanted a wire connection instead.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05C8Uepv6I/AAAAAAAAA-c/sUFFU9whVjw/s1600-h/graph.PNG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 339px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05C8Uepv6I/AAAAAAAAA-c/sUFFU9whVjw/s400/graph.PNG" alt="" id="BLOGGER_PHOTO_ID_5426348205084884898" border="0" /></a>A screenshot of the web based graphing that can be seen live <a href="http://power.openenergymonitor.org/">here</a>.<br />Graphing is done using flot – a very nice piece of software.<br />I'd like to thank John from <a href="http://jarv.org/projects.shtml">jarv.org</a> for his work and help on logging using the ethernet board although he is using open flash charts much of the implementation is very similar.<br /><br />For more pictures of the setup check out the picassa album <a href="http://picasaweb.google.com/trystan.lea/FinishedEnergyMonitor?feat=directlink">here</a>.<br /><br />Over the next two weeks I hope to document it the setup. I hope to manage a section every couple of days in the order of the features below:<br /><br /><span style="font-weight: bold;">Main Features</span><br /><ul><li>Voltage measurement with step down AC to AC adapter,</li><li>Current measurement with CT sensor.</li><li>Power for sensor board provided with same AC to AC adapter used for voltage measurement.</li><li>Calculation of Real power, Apparent power, power factor, RMS voltage, RMS current, frequency, cumulative kWh.<br /></li></ul><ul><li>Display unit consisting of large green 7 segment display, 6 mode – mode chooser and red/green led indicator to indicate when grid is below and above 50Hz.</li></ul><ul><li>USB pen data logging using VDIP1 board</li></ul><ul><li>Xbee wireless link from sensor unit to the Ethernet unit.</li></ul><ul><li>Ethernet board for logging and graphing on internet. </li></ul><ul><li>Flot based graphing on website.</li></ul><br /><span style="font-weight: bold;">Block diagram of the setup:</span><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05DXGPOrSI/AAAAAAAAA-k/aU-100yqgik/s1600-h/block.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 283px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/S05DXGPOrSI/AAAAAAAAA-k/aU-100yqgik/s400/block.png" alt="" id="BLOGGER_PHOTO_ID_5426348665118567714" border="0" /></a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2009/10/micro-maker-fair-wales/">Micro Maker Fair Wales</a>
   </h1>
   
@@ -408,50 +439,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2009/08/measuring-ac-mains-energy-use-non/">Measuring AC mains energy use the non-invasive current transformer method - part 2</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2009-08-05T13:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2009-08-05 13:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/arduino/'>arduino</a></li>
-      
-        <li><a class='category' href='/categories/current-transformer/'>current transformer</a></li>
-      
-        <li><a class='category' href='/categories/efergy/'>efergy</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2009/08/measuring-ac-mains-energy-use-non/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Over the last few weeks I have been working on measuring AC mains energy use using the non-invasive current transformer method. I've updated the website with a page about what I've done and how it works <a href="http://openenergymonitor.org/emon/node/28">here</a> (there's still some work to be done on the page, but most of the info is there now).<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SnmHOcRSRAI/AAAAAAAAAY4/c_G8bq4cDtg/s1600-h/noninv01s2.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 194px;" src="http://3.bp.blogspot.com/_Yqa3j9ZhET8/SnmHOcRSRAI/AAAAAAAAAY4/c_G8bq4cDtg/s400/noninv01s2.JPG" alt="" id="BLOGGER_PHOTO_ID_5366469113165267970" border="0" /></a><span style="font-style: italic;">Measuring energy use in a power strip above- but is just as easy to measure whole house electrical energy use by cliping the sensor to the mains input to the house. </span>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -568,6 +555,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
@@ -617,12 +610,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
         </li>
       
     
@@ -710,6 +697,8 @@ window.onclick = function(event) {
       <li><a href="/categories/community energy/">community energy</a></li>
     
       <li><a href="/categories/community smart grid/">community smart grid</a></li>
+    
+      <li><a href="/categories/continuous testing/">continuous testing</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

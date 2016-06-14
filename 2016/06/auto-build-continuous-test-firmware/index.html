@@ -1,0 +1,390 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Part 2/3: Firmware Continuous Test & Build - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Part 2/3: Firmware Continuous Test & Build">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Part 2/3: Firmware Continuous Test & Build">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+    
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	
+  </head>
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item three-tenths lap-two-sixths palm-one-whole ha-title">
+  <a href="/" class="site-title">
+    <!--<img width='40' src='/images/favicon-192x192.png'> -->
+    
+    <span style="color:#555;font-weight:bold;font-family:Arial;font-size:20"'>
+Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-size:20"'>EnergyMonitor</span>
+
+  </a>
+</div>
+
+<div class="grid__item seven-tenths lap-four-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="https://openenergymonitor.org">Main Site</a></li>
+  <li><a href="https://guide.openenergymonitor.org">User Guide</a></li>
+  <li><a href="https://emoncms.org">Emoncms</a></li>
+  <li><a href="https://community.openenergymonitor.org">Community</a></li>
+  <li><a href="https://shop.openenergymonitor.com    ">Shop<i class="icon icon-shopping-cart"></i></a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/blog/tree/master/source/_posts/2016-06-14-auto-build-continuous-test-firmware.markdown'>Edit on GitHub</a></div>
+<div class='edit-github'><a href='http://prose.io/#openenergymonitor/blog/edit/master/source/_posts/2016-06-14-auto-build-continuous-test-firmware.markdown'>Edit on GitHub Prose</a></div>
+  
+  <header>
+  
+  <h1 class="title indent">Part 2/3: Firmware Continuous Test & Build</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-14T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 14th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/continuous-testing/'>continuous testing</a></li>
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+      
+        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+      
+        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+      
+        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/auto-build-continuous-test-firmware/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
+  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>- Coming soon…</em></li>
+</ul>
+
+<hr />
+
+<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
+
+<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
+
+<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
+
+<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
+
+<a name="read-more"></a>
+
+<p>The advantages of <a href="https://en.wikipedia.org/wiki/Continuous_testing">continuous testing</a> have been long established in the software industry. The test we are performing is <em>‘does this firmware compile?’</em>; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ol>
+  <li>A commit or pull request is made to the firmware repository on GitHub
+    <ul>
+      <li>So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test.</li>
+    </ul>
+  </li>
+  <li>
+    <p>This triggers Travis CI to start a ‘build’</p>
+  </li>
+  <li>
+    <p>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>.</p>
+  </li>
+  <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
+</ol>
+
+<p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
+
+<ol>
+  <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
+</ol>
+
+<p><img src="/images/emonpi-draft-release.png" alt="image" /></p>
+
+<p><img src="/images/emonpi-travis-release.png" alt="image" /></p>
+
+<hr />
+
+<p>Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this excellent blog post</a> which was a source of inspiration and information.</p>
+
+<hr />
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Vault</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <style>
+
+
+div.searchtool {
+  position: relative;
+  display: inline-block;
+  top: -6px;
+}
+
+input[type=text] {
+  border: 3px solid #0699fa;
+}
+
+fieldset {
+  border: 0;
+}
+
+</style>
+<div class="copyright">
+
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
+  <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+
+<div class="searchtool">
+
+
+<form action="https://encrypted.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+    <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+  </fieldset>
+</form>
+
+
+</div>
+</div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/';
+    var disqus_url = 'https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+  </body>
+</html>

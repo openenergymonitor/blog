@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/09/cleanweb-uk/">Cleanweb UK</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-09-18T15:37:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-18 15:37:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/presentation/'>presentation</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/09/cleanweb-uk/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Last&nbsp;Thursday&nbsp;Glyn and I attended the Ignite&nbsp;<a href="http://www.cleanweb.org.uk/ignite.html">Cleanweb UK</a> event in London, an event exploring the power and potential of the web to help us solve our environmental challenges.<br /><br />The format of the talks where all 5&nbsp;minute,&nbsp;20 slides, 15 seconds per slide which was a challenge to create but makes for a really fascinating event where you here about a lot of different projects in a short space of time. Videos of all the presentations talks are up on the web here:&nbsp;<a href="http://www.cleanweb.org.uk/ignite.html">http://www.cleanweb.org.uk/ignite.html</a>.<br /><br />Here's a video of our presentation on OpenEnergyMonitor:<br /><br /><iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="http://www.youtube.com/embed/zqKMDogFuNU" width="560"></iframe> <br /><br />The slides on their own can be viewed on slideshare:<br /><br /><iframe allowfullscreen="allowfullscreen" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/14308610" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="http://www.slideshare.net/OpenEnergyMonitor/ignite-cleanweb-openenergymonitor-presentation" target="_blank" title="Ignite CleanWeb OpenEnergyMonitor presentation">Ignite CleanWeb OpenEnergyMonitor presentation</a> </strong> from <strong><a href="http://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> </div><br /><br />Thanks a lot to James Smith (<a href="https://twitter.com/Floppy">@floppy)</a> for organising the event and inspiring us with the <a href="http://www.youtube.com/watch?v=j68tLsRRJ90&amp;feature=player_embedded">cleanweb uk manifesto</a> at the end.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/09/emontx-and-nanoderf-code-guides/">EmonTx and NanodeRF Code guides</a>
   </h1>
   
@@ -468,46 +508,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/07/emonglcd-template-based-displays/">EmonGLCD Template based display's</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-07-29T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-29 10:00:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/07/emonglcd-template-based-displays/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div><div>I have been thinking about how it could be possible to program an EmonGLCD display remotely or at least specify which displays are shown i.e if you could construct a command to tell the display to:</div><div><br /></div><div><i>display solar pv page as page 1, use the solar power value from node 10.&nbsp;</i></div><div><i><br /></i></div><div>Skipping for now the how the commands are sent and interpreted, I think the first part of creating these specifiable displays is to convert the current display code into template functions which should be of benefit whether the displays are remotely programmed or not.</div><div><br /></div><div>Here's my first attempt at this:</div><div><br /></div><b>draw_power_page( "POWER" ,use, "USE", usekwh);</b><br /><div><b>draw_temperature_time_footer(temp, mintemp, maxtemp, hour,minute);</b></div><div>draws the following page:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" /></a></div><div><br /></div><div><br /></div><div><b>draw_solar_page(use, usekwh, gen, 2050, genkwh, temp, mintemp, maxtemp,&nbsp;hour,minute<span class="Apple-style-span">);</span></b></div><div><span class="Apple-style-span">draws:</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" /></a></div><div><span class="Apple-style-span"><br /></span></div><div>(thanks to drsdre for <a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-icons-by-drsdre.html">the icons!</a>)</div><div><br /></div><div>This is what the full code looks like:</div><div><br /></div><pre>#include&nbsp;&lt;JeeLib.h&gt;<br />#include&nbsp;&lt;GLCD_ST7565.h&gt;<br />#include&nbsp;&lt;avr/pgmspace.h&gt;<br />GLCD_ST7565&nbsp;glcd;<br /><br /><span style="color: #cc6600;">unsigned</span> <span style="color: #cc6600;">long</span> fast_update;<br /><br /><span style="color: #7e7e7e;">//&nbsp;Fixed&nbsp;values&nbsp;for&nbsp;this&nbsp;example</span><br /><span style="color: #cc6600;">double</span> temp = 17.4 ,maxtemp = 19 ,mintemp = 16;<br /><span style="color: #cc6600;">int</span> hour = 23, minute = 43;<br /><span style="color: #cc6600;">double</span> use = 252, usekwh = 2.5;<br /><span style="color: #cc6600;">double</span> gen = 1760, genkwh = 4.8;<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>setup</b></span>()<br />{<br />&nbsp;&nbsp;glcd.<span style="color: #cc6600;">begin</span>(0x20);<br />&nbsp;&nbsp;glcd.backLight(200);<br />}<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>loop</b></span>()<br />{<br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">// Display update every 200ms</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #cc6600;">if</span> ((<span style="color: #cc6600;">millis</span>()-fast_update)&gt;200)<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;fast_update&nbsp;=&nbsp;<span style="color: #cc6600;">millis</span>();<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S1 = <span style="color: #cc6600;">digitalRead</span>(15);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S2 = <span style="color: #cc6600;">digitalRead</span>(16);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S3 = <span style="color: #cc6600;">digitalRead</span>(19);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">if</span> (S1==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"POWER"</span> ,use, <span style="color: #006699;">"USE"</span>, usekwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span> <span style="color: #cc6600;">if</span> (S2==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"SOLAR"</span> ,gen, <span style="color: #006699;">"GEN"</span>, genkwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span><br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// use, usekwh, gen, maxgen, genkwh, temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_solar_page(use,&nbsp;usekwh,&nbsp;gen,&nbsp;2050,&nbsp;genkwh,&nbsp;temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;12,43);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;}&nbsp;<br />}<br /><br /><span class="Apple-style-span" style="font-family: 'Times New Roman'; white-space: normal;">To run this you will need the accompanying icons and templates files, its all available in the EmonGLCD repo here:&nbsp;<a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev</a></span></pre><pre><br /></pre>Interested to hear any thoughts on how best to take this forward.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -624,6 +624,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
@@ -673,12 +679,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
         </li>
       
     
@@ -766,6 +766,8 @@ window.onclick = function(event) {
       <li><a href="/categories/community energy/">community energy</a></li>
     
       <li><a href="/categories/community smart grid/">community smart grid</a></li>
+    
+      <li><a href="/categories/continuous testing/">continuous testing</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

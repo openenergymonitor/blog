@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/modelling-hourly-demand-and-supply-for/">Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-10T07:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-10 07:42:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2015/06/modelling-hourly-demand-and-supply-for/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s1600/model.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="340" src="http://2.bp.blogspot.com/-XqXSFousFsg/VXfmiVOc1yI/AAAAAAAASX8/QjHvLeo5Gmk/s640/model.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s1600/intro.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://2.bp.blogspot.com/-1NKli5AqqMI/VXfmoK_PwSI/AAAAAAAASYE/yKbEsAfxkj8/s640/intro.png" width="640" /></a></div>Earlier this year I did some work with Philip James from the Centre for Alternative Technology and a researcher on the ZeroCarbonBritain project on creating an open source online zero carbon energy modelling tool based on the ZeroCarbonBritain energy model which is one of the Uk's leading energy scenarios outlining a positive, aspirational 100% renewable zero carbon energy future.<br /><br />This first tool is available online <a href="http://zerocarbonbritain.org/energy_model/">here</a> and <a href="http://openenergymonitor.blogspot.co.uk/2015/02/an-open-source-hourly-zero-carbon.html">blog post</a>, using it it is possible to explore how its possible to supply energy demands such as space heating and electric vehicles from a variable renewable supply consisting of wind, solar, tide and wave power and a mix of storage technologies. The tool models supply and demand on an hourly basis which is a significant improvement over simpler annual approach.<br /><br /><b>Understanding its workings</b><br />I had been wanting to dig down deeper into the workings of the model and unpick the effect of the different components, the full model has so many different things going on that its hard to see how each component such as space heating demand from heatpumps, space heating profiles, electric vehicle charging profiles, water heating, or different generation technologies affects the bigger picture of the overall supply/demand balance and resulting storage requirements and so over the last month and a half I've spent some time looking into this in more detail. <br /><br /><b>Python and javascript example models</b><br />I started by writing a series of python models that modelled many of the key components in turn using the full 10 year hourly dataset used in the ZeroCarbonBritain spreadsheet model, exploring the level of supply/demand matching for each generation technology. As I started to model some of the more complex demands such as space heating from heatpumps, including the effect of solar and internal gains, I needed to be able to see what was going on in more detail so I converted the models to javascript and wrote a data viewer using flot.<br /><br /><b>Online visual tool</b><br />I've put all these model examples together into an online tool and added alongside each model a brief analysis and extended results of the many model run's I ran with different parameters. The tool also includes an introduction and overview of the uk energy context which is intended to help put the model examples which focus on domestic traditional electricity demand, space heating and electric transport in context. This tool is now available online here:<br /><br /><br />Launch online zero carbon energy system example models: <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a><br /><br />and its all open source with the code and full website on github here:<br /><a href="https://github.com/TrystanLea/zcem">https://github.com/TrystanLea/zcem</a><br /><br />The tool covers the following model examples and context pages:<br /><br />&nbsp;&nbsp;&nbsp; Introduction<br />&nbsp;&nbsp;&nbsp; Energy Overview<br />&nbsp;&nbsp;&nbsp; 1. Variable supply<br />&nbsp;&nbsp;&nbsp; 2. Variable supply and flat demand<br />&nbsp;&nbsp;&nbsp; 3. Variable supply, traditional electricity demand and oversupply<br />&nbsp;&nbsp;&nbsp; 4. Mixed supply and flat demand<br />&nbsp;&nbsp;&nbsp; 5. Variable supply and space heating demand<br />&nbsp;&nbsp;&nbsp; 6. Electric Vehicles<br />&nbsp;&nbsp;&nbsp; 7. All<br />&nbsp;&nbsp;&nbsp; Aggregation<br />&nbsp;&nbsp;&nbsp; ZCB Dataset<br />&nbsp;&nbsp;&nbsp; ZCB web model<br />&nbsp;&nbsp;&nbsp; Python models <br /><br />I have found it really interesting doing this work, but it also feels like a chapter early on in a large book. There is a lot more I'd like to understand in more detail and expand on which I hope to continue with over time. <br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/06/emontx-v25-and-throughhole-kits/">EmonTx v2.5 and throughhole kits</a>
   </h1>
   
@@ -469,46 +500,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/02/an-open-source-hourly-zero-carbon/">An open source hourly zero carbon energy system model</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-02-06T01:05:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-06 01:05:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/02/an-open-source-hourly-zero-carbon/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I've been doing some work recently with Philip James from the Centre for Alternative Technology  on developing a set of open source zero carbon energy system models  based on <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> that visualise in a javascript based web page application how energy demand  can be supplied by a variable renewable energy supply using a mix of  storage technologies. You can create your own scenarios, choosing how  much wind, solar, storage technologies etc are used.<br /><br />Its still work in progress but the models we have built<span class="text_exposed_show"> so far are now online and can be explored here:<br /> <a href="http://zerocarbonbritain.org/energy_model/" rel="nofollow" target="_blank">http://zerocarbonbritain.org/energy_model</a></span><br /><br />The source code is all available there too as well as the original ZeroCarbonBritain spreadsheet model:&nbsp;<a href="https://github.com/philJam/energymodel">https://github.com/philJam/energymodel</a><br /><br />Visualising hourly surplus and shortfall:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GvNCSRnIum0/VNQO64pJuYI/AAAAAAAAOWU/FwIXxOjYfxE/s1600/screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-GvNCSRnIum0/VNQO64pJuYI/AAAAAAAAOWU/FwIXxOjYfxE/s1600/screenshot.png" height="336" width="400" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Visualising battery, hydrogen, synthetic liquid and gas store levels:</div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-GpTxQG9x5ps/VNQO8Vc2BWI/AAAAAAAAOWc/uHHiIVeKVgk/s1600/store.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-GpTxQG9x5ps/VNQO8Vc2BWI/AAAAAAAAOWc/uHHiIVeKVgk/s1600/store.png" height="321" width="400" /></a></div><br />This builds partly on findings and questions raised from our earlier work on the Snowdonia household energy study: here;<a href="http://openenergymonitor.blogspot.co.uk/2014/11/snowdonia-household-energy-study.html">http://openenergymonitor.blogspot.co.uk/2014/11/snowdonia-household-energy-study.html</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-knYU11AkW_A/VNQPjbpKzLI/AAAAAAAAOWk/OFmPN42NIU8/s1600/0present.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-knYU11AkW_A/VNQPjbpKzLI/AAAAAAAAOWk/OFmPN42NIU8/s1600/0present.png" height="176" width="400" /></a></div><br />The aim will be to extend that analysis to look at the amount of  renewable energy and energy storage required to supply the energy demand  after implementing measures like building insulation/retrofit,  heatpumps and electric transport.<br /><br /><br />I find it very interesting looking at how all of these  different elements can come together to create a zero carbon energy  system, to understand better the relevance of different solutions. With a  framework like this it becomes more possible to put ideas like smart  electric car charging or excess pv diversion to immersion heaters and  battery stores in context, to get a better idea of actually how much  effect different solutions can have.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -625,6 +616,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
@@ -674,12 +671,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
         </li>
       
     
@@ -767,6 +758,8 @@ window.onclick = function(event) {
       <li><a href="/categories/community energy/">community energy</a></li>
     
       <li><a href="/categories/community smart grid/">community smart grid</a></li>
+    
+      <li><a href="/categories/continuous testing/">continuous testing</a></li>
     
       <li><a href="/categories/control/">control</a></li>
     

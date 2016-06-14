@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-14T09:50:14+00:00</updated>
+  <updated>2016-06-14T17:31:26+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,6 +14,68 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/"/>
+    <updated>2016-06-14T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
+  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>- Coming soon…</em></li>
+</ul>
+
+<hr />
+
+<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
+
+<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
+
+<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
+
+<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
+
+<!--more-->
+
+<p>The advantages of <a href="https://en.wikipedia.org/wiki/Continuous_testing">continuous testing</a> have been long established in the software industry. The test we are performing is <em>‘does this firmware compile?’</em>; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ol>
+  <li>A commit or pull request is made to the firmware repository on GitHub
+    <ul>
+      <li>So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test.</li>
+    </ul>
+  </li>
+  <li>
+    <p>This triggers Travis CI to start a ‘build’</p>
+  </li>
+  <li>
+    <p>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>.</p>
+  </li>
+  <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
+</ol>
+
+<p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
+
+<ol>
+  <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
+</ol>
+
+<p><img src="https://blog.openenergymonitor.org/images/emonpi-draft-release.png" alt="image" /></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/emonpi-travis-release.png" alt="image" /></p>
+
+<hr />
+
+<p>Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this excellent blog post</a> which was a source of inspiration and information.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Part 1/3: PlatformIO open-source embedded development ecosystem]]></title>
     <link href="https://blog.openenergymonitor.org/2016/06/platformio/"/>
     <updated>2016-06-12T10:00:00+00:00</updated>
@@ -21,16 +83,16 @@
     <content type="html"><![CDATA[<p><strong>This post is part of a series:</strong></p>
 
 <ul>
-  <li>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li><strong>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</strong></li>
   <li>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
   <li>3/3: Continuous Deployment (OTA to ESP8266)</li>
 </ul>
 
 <hr />
 
-<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.</p>
 
-<p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
+<p>I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.</p>
 
 <p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
 
@@ -52,7 +114,7 @@
 
 <ul>
   <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
-  <li><strong>Easy to install</strong> - Pure python based installed using pip
+  <li><strong>Easy to install</strong> - Pure python based, installed using pip
     <ul>
       <li>Tool-chains are auto installed on first compile / upload e.g.
         <ul>
@@ -103,13 +165,13 @@
 
 <p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
 
-<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+<p>This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
 
 <p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
 
 <h3 id="install-platformio">1. Install PlatformIO</h3>
 
-<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+<p>The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
 
 <p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
 
@@ -810,14 +872,6 @@ The design is up on github here:<br /><a href="https://github.com/openenergymoni
 <!--more-->
 
 &nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2015/10/emonpi-nodered-and-mqtt.html">Integrating&nbsp;Node-RED and MQTT&nbsp;on the emonPi</a></div><div class="separator" style="clear: both; text-align: left;">2. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/node-red-emoncms-node.html">Node-RED and Emoncms</a></div><div class="" style="clear: both; text-align: left;">3. <a href="http://openenergymonitor.blogspot.co.uk/2015/11/remote-control-of-lightwave-rf-plugs.html">Controlling LightWaveRF devices on the emonPi</a>&nbsp;(OOK RF Tx)&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Following on from my last post on controlling LightWaveRF devices from the emonPi using MQTT we now need a front end interface to handle the control. I have recently been taking a look at how openHAB can be configured to provide a front end interface to OpenEnergyMonitor hardware and control.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /><a href="http://2.bp.blogspot.com/-Mn4SF-hLCuQ/Vm2cvhlvFCI/AAAAAAABkr4/cq8GoyQEYkc/s1600/openhab.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="179" src="http://2.bp.blogspot.com/-Mn4SF-hLCuQ/Vm2cvhlvFCI/AAAAAAABkr4/cq8GoyQEYkc/s320/openhab.jpg" width="320" /></a><br /><br /></div><div class="" style="clear: both; text-align: left;">We are working on releasing an updated pre-built SD card stack for the emonPi which will include Emoncms V9, MQTT, Node-RED and openHAB all pre-configured. I hope to post a beta image download to the forums in the next few days.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;"><a href="http://www.openhab.org/">Open Home Automation Bus (openHAB)</a> is "a vendor and technology agnostic open source automation software for your home". OpenHAB can run on an emonPi (Raspberry Pi) and is very flexible and can be configured for just about any home automation task. This high level of configurability can also make it seem quite hard to understand to start with. I've have put together a <a href="https://github.com/openenergymonitor/oem_openHab">skeleton config to setup openHAB with to OpenEnergyMonitor</a> pulling data from the MQTT server running on an emonPi.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Once setup you simply browse to&nbsp;<a href="http://emonpi:8080/openhab.app?sitemap=oem">http://emonpi:8080/openhab.app?sitemap=oem</a>&nbsp;to view the openHAB user interface. openHAB also has a nice android or IOS app which can be pointed at the same URL. &nbsp; <br /><br /></div><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: left;"><tbody><tr><td style="text-align: left;"><a href="http://1.bp.blogspot.com/-lAn2SNSzyLQ/VmVkYfsFDxI/AAAAAAABkic/Wqhp7g4R4uA/s1600/OpenEnergyMonitor_openHAB.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-lAn2SNSzyLQ/VmVkYfsFDxI/AAAAAAABkic/Wqhp7g4R4uA/s400/OpenEnergyMonitor_openHAB.png" width="385" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB OpenEnergyMonitor skeleton setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: left;"><a href="http://2.bp.blogspot.com/--fxB-426-Hs/VmXNqpc1KJI/AAAAAAABkk4/lzBoHKFz5g8/s1600/Screenshot_2015-12-07-10-23-42.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/--fxB-426-Hs/VmXNqpc1KJI/AAAAAAABkk4/lzBoHKFz5g8/s400/Screenshot_2015-12-07-10-23-42.png" width="225" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB android app</td></tr></tbody></table><table align="left" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: left;"><a href="http://4.bp.blogspot.com/-Y_6-BnAJWcE/VmXNqpDvxjI/AAAAAAABkkw/4kpSmg9rdtU/s1600/Screenshot_2015-12-07-10-23-52.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/-Y_6-BnAJWcE/VmXNqpDvxjI/AAAAAAABkkw/4kpSmg9rdtU/s400/Screenshot_2015-12-07-10-23-52.png" width="225" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;">openHAB LightWaveRF control using openHAB android app</td></tr></tbody></table><br /><br /><br /><br /><div class="separator" style="clear: both; text-align: left;"></div><br /><h3>Installing OpenHAB</h3><div><span id="goog_2128785651"></span>I have put together a <a href="https://github.com/openenergymonitor/oem_openHab">guide from installing OpenHAB on an emonPi</a> with the config shown above to work with OpenEnergyMonitor on the oem_openHAB GitHub<span id="goog_2128785652"></span>.&nbsp;</div><div><br /></div><h3>OpenHAB Configuration&nbsp;</h3>OpenHAB configuration is based around two files 'items and 'sitemap'. In my openHAB emonPi install instructions I recommend cloning the&nbsp;oem_openHAB to the home directory then soft linking the Items and Sitemap files to the relevant config locations in /etc/openhab/configurations/. This makes the files easier to edit.<br /><br />It's possible to have multiple user interfaces defined by multiple sitemaps e.g oem.sitemap, kids.sitemap or admin.sitemap etc.<br /><br /><b>Items</b><br /><b><br /></b>The items file defines all the 'things' you might want to view or control in openHAB. Items can be bound to 'bindings' which are optional packages that used to extend functionality of openHAB. This example makes use of the MQTT and HTTP bindings. The items file is usually located in&nbsp;/etc/openhab/configurations/items.<br /><br />For example the line in the items file to pull power 1 from emonhub MQTT is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Number  emonpi_ct1       "Power 1 [%d W]"    { mqtt="&lt;[mosquitto:emonhub/rx/5/values:state:REGEX((.*),.*,.*,.*,.*,.*,.*,.*,.*,.*,.*)]" }</span><br /><br /><br />Notice the REGEX is used to tell openHAB that we want the first value in the 11 part CSV emonhub posts to MQTT to emonhub/rx/5/values.<br /><br />and the items line to control LightWaveRF plug 1 (publish "1 1" to /lwrf mqtt topic) is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Switch lwrf1   "LWRF Socket 1"  {mqtt="&gt;[mosquitto:lwrf:command:ON:1 1],&gt;[mosquitto:lwrf:command:OFF:1 0]"}</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><a href="https://github.com/openenergymonitor/oem_openHab/blob/master/oem.items">See the full items file used for this example on the open_openhab GitHub repo</a><br /><br /><b>Sitemap</b><br /><b><br /></b>The second openHAB config file of interest is 'sitemap'.&nbsp;Sitemaps are used to create elements of a user interface for making openHAB items accessible to the frontend interface.<br /><br />For example the sitemap config line to produce the emonPi Power1 in the interface is as follows:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Text item=emonpi_ct1 icon="firstfloor"</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span>And to produce the LightWaveRF control swithches:<br /><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">Switch item=lwrf1 label="LWRF Plug 1"</span><br /><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><span style="background-color: white; color: #333333; font-family: &quot;consolas&quot; , &quot;liberation mono&quot; , &quot;menlo&quot; , &quot;courier&quot; , monospace; font-size: 12px; line-height: 16.8px; white-space: pre;"><br /></span><a href="https://github.com/openenergymonitor/oem_openHab/blob/master/oem.sitemap">See the full sitemap file used for this example on the open_openhab GitHub repo</a><br /><br />I have intentionally kept this 'skeleton' example as simple as possible. To view the full capabilities of openHAB including using groups checkout the <a href="http://demo.openhab.org:8080/openhab.app?sitemap=demo">openHAB demo</a>&nbsp;and corresponding demo <a href="https://github.com/openhab/openhab/blob/master/distribution/openhabhome/configurations/items/demo.items">items</a> and <a href="https://github.com/openhab/openhab/blob/master/distribution/openhabhome/configurations/sitemaps/demo.sitemap">sitemap</a> files.<br /><br /><h3>Demo</h3><br />Here's a quick demo I made using openHAB to control LightWave RF plugs:<br /><br /><div class="separator" style="clear: both; text-align: left;"><a href="http://3.bp.blogspot.com/-SzaE2KRbyrY/Vm2tX_kJbzI/AAAAAAABksQ/j_A9OuXi6KA/s1600/Screenshot%2B2015-12-13%2Bat%2B17.35.56.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="411" src="http://3.bp.blogspot.com/-SzaE2KRbyrY/Vm2tX_kJbzI/AAAAAAABksQ/j_A9OuXi6KA/s640/Screenshot%2B2015-12-13%2Bat%2B17.35.56.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;"><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/6uF0qU30q-g/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/6uF0qU30q-g?feature=player_embedded" width="320"></iframe></div>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[North Wales Tech Meetup Presentations]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations/"/>
-    <updated>2015-12-10T11:13:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/12/north-wales-tech-meetup-presentations</id>
-    <content type="html"><![CDATA[Yesterday evening Trystan and I attend a local meetup in Bangor, North Wales hosted by <a href="http://northwales.technology/">NorthWalesTech</a> It was a good event with some interesting talks. Here are the slides from the 5min lightning talks we gave:<br />&nbsp;<br />My slides give a brief overview of the OpenEnergyMontor project before diving in to MQTT and node-RED with a live demo controlling LightWave RF plugs switching Christmas lights over the web using MQTT and nodeRED:<br /><br /><iframe allowfullscreen="" frameborder="0" height="485" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/key/Heh5JMIHbvRTUy" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="595"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/OpenEnergyMonitor/connecting-all-the-things-with-mqtt-nodered" target="_blank" title="Connecting all the things with MQTT &amp; Node-RED">Connecting all the things with MQTT &amp; Node-RED</a> </strong> from <strong><a href="https://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> </div><br />Slides from N.Wales Tech meetup Dec 15. Brief overview of OpenEnergyMonitor and MQTT, nodeRED and LightWaveRF demo.<br /><br />Related blog posts:<br /><a href="http://openenergymonitor.blogspot.com/2015/10/emonpi-nodered-and-mqtt.html">http://openenergymonitor.blogspot.com/2015/10/emonpi-nodered-and-mqtt.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/remote-control-of-lightwave-rf-plugs.html">http://openenergymonitor.blogspot.com/2015/11/remote-control-of-lightwave-rf-plugs.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/node-red-emoncms-node.html">http://openenergymonitor.blogspot.com/2015/11/node-red-emoncms-node.html&nbsp;</a><br /><a href="http://openenergymonitor.blogspot.com/2015/11/ambient-wind-energy-indicator-using.html">http://openenergymonitor.blogspot.com/2015/11/ambient-wind-energy-indicator-using.html</a><br /><br />---------------------------------------------------------------------------------------------------------<br /><br />Trystan's lightning talk was focused on a heatpump which he has recently installed with <a href="http://heatpumps.co.uk/">John Cantor</a> to heat his home. Trystan gave an overview of heatpump technology, his monitoring setup and the preliminary performance results:<br /><br /><iframe allowfullscreen="" frameborder="0" height="485" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/key/3kihW4kk5CsHco" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="595"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/OpenEnergyMonitor/heatpumps-and-heatpump-monitoring" target="_blank" title="Heatpumps and Heatpump Monitoring">Heatpumps and Heatpump Monitoring</a> </strong> from <strong><a href="https://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> </div>]]></content>
   </entry>
   
 </feed>

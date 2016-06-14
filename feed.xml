@@ -1,16 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-14T09:50:14+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;&lt;strong&gt;This post is part of a series:&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-14T17:31:26+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266) &lt;em&gt;- Coming soon…&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Following on from the &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;last blog post&lt;/a&gt; on using &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;PlatformIO&lt;/a&gt; to compile and upload firmware locally, we’re now going to take things a step further and do the same but in &lt;em&gt;The Cloud&lt;/em&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this instance when we say &lt;em&gt;‘compile in the cloud’&lt;/em&gt; I mean use GitHub, &lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis IO&lt;/a&gt; and &lt;a href=&quot;https://platformio.org&quot;&gt;PlatfromIO&lt;/a&gt; to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.&lt;/p&gt;
+
+&lt;p&gt;The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (&lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP dev&lt;/a&gt;) inspired by &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;this blog post&lt;/a&gt; by Daniel Eichhorn (&lt;a href=&quot;https://twitter.com/squix78&quot;&gt;@squix78&lt;/a&gt;).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The advantages of &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_testing&quot;&gt;continuous testing&lt;/a&gt; have been long established in the software industry. The test we are performing is &lt;em&gt;‘does this firmware compile?’&lt;/em&gt;; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A commit or pull request is made to the firmware repository on GitHub
+    &lt;ul&gt;
+      &lt;li&gt;So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp;amp; test.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This triggers Travis CI to start a ‘build’&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Code compilation is generated using platformIO in the same way as when compiling locally, &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;See blog post&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If the build fails for whatever reason (syntax error, library error etc) then the green &lt;code class=&quot;highlighter-rouge&quot;&gt;build passing&lt;/code&gt; icon changes to a ominous red &lt;code class=&quot;highlighter-rouge&quot;&gt;build Failed&lt;/code&gt; and we get an alert email. For a full build log example see the &lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;emonPi Travis CI build page&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;&lt;img src=&quot;https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master&quot; alt=&quot;Build Status&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;.hex&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;.bin&lt;/code&gt; is uploaded to the GitHub release page:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/emonpi-draft-release.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/emonpi-travis-release.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;this excellent blog post&lt;/a&gt; which was a source of inspiration and information.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>This post is part of a series
+
+
+  1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
+  2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
+  3/3: Continuous Deployment (OTA to ESP8266) - Coming soon…
+
+
+
+
+Following on from the last blog post on using PlatformIO to compile and upload firmware locally, we’re now going to take things a step further and do the same but in The Cloud!
+
+Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!
+
+In this instance when we say ‘compile in the cloud’ I mean use GitHub, Travis IO and PlatfromIO to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.
+
+The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (EmonESP dev) inspired by this blog post by Daniel Eichhorn (@squix78).</summary></entry><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;&lt;strong&gt;This post is part of a series:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/li&gt;
   &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.&lt;/p&gt;
+&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.&lt;/p&gt;
 
-&lt;p&gt;I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.&lt;/p&gt;
+&lt;p&gt;I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.&lt;/p&gt;
 
 &lt;p&gt;The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.&lt;/p&gt;
 
@@ -32,7 +101,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/platformio&quot;&gt;&lt;strong&gt;Fully open-source&lt;/strong&gt;&lt;/a&gt; with active and friendly dev community.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Easy to install&lt;/strong&gt; - Pure python based installed using pip
+  &lt;li&gt;&lt;strong&gt;Easy to install&lt;/strong&gt; - Pure python based, installed using pip
     &lt;ul&gt;
       &lt;li&gt;Tool-chains are auto installed on first compile / upload e.g.
         &lt;ul&gt;
@@ -83,13 +152,13 @@
 
 &lt;p&gt;&lt;a href=&quot;http://docs.platformio.org/en/latest/quickstart.html&quot;&gt;PlatformIO has some excellent quick start docs&lt;/a&gt; to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.&lt;/p&gt;
 
-&lt;p&gt;This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see &lt;a href=&quot;http://platformio.org/get-started&quot;&gt;PlatformIO Getting Started Page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see &lt;a href=&quot;http://platformio.org/get-started&quot;&gt;PlatformIO Getting Started Page&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.&lt;/p&gt;
 
 &lt;h3 id=&quot;install-platformio&quot;&gt;1. Install PlatformIO&lt;/h3&gt;
 
-&lt;p&gt;The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See &lt;a href=&quot;http://docs.platformio.org/en/latest/installation.html#installer-script&quot;&gt;PlatformIO installation docs&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See &lt;a href=&quot;http://docs.platformio.org/en/latest/installation.html#installer-script&quot;&gt;PlatformIO installation docs&lt;/a&gt;:&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo python -c &quot;$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)&quot;&lt;/code&gt;&lt;/p&gt;
 
@@ -202,9 +271,9 @@ $ sudo service emonhub start
 
 
 
-Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.
+Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.
 
-I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.
+I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.
 
 The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.
 
@@ -595,42 +664,4 @@ An electric car achieving a real world mountainous north Wales terrain driving e
 
 We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.
 
-The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</summary></entry><entry><title>GitHub Submodules</title><link href="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/" rel="alternate" type="text/html" title="GitHub Submodules" /><published>2016-04-18T15:00:00+00:00</published><updated>2016-04-18T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/">&lt;p&gt;Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.&lt;/p&gt;
-
-&lt;p&gt;Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.&lt;/p&gt;
-
-&lt;p&gt;However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;github-submodules&quot;&gt;GitHub Submodules&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;With git submodules a repository can contain a checkout of another repository as a subdirectory.
-The subfolder stores the submodule repository location and a commit ID. This means you can, for example, keep some common code in a separate repository and use a specific, known-working version of this code in other projects.
-If the submodule gets an update, the submodule will not get updated in the repo until you specifically pull the changes into them. Also, you can make changes to the submodule from within a project and push those changes to the submodule’s repository to make them available to other projects.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;Here is the firmware folder of the &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/tree/master/firmware/libraries&quot;&gt;emonPi GitHub Repo&lt;/a&gt;. The visible sub folders contain the required Arduino libs at a specific point in time.&lt;/p&gt;
-
-&lt;p&gt;Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/submodules.png&quot; alt=&quot;Git SubModules&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it’s possible to set the sketchbook location to the project repo to import all the required libs into the IDE.&lt;/p&gt;
-
-&lt;p&gt;To obtain the submodules the repo must be Git cloned (not zip downloaded) then once the repo has been cloned a couple of extra steps are required to import the submodules. Here is an example for cloning the emonPi repo in pull in the sub modules:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/openenergymonitor/emonpi
-$ cd emonpi
-$ git submodule update
-$ git submodule init
-$ git submodule update
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>Glyn Hudson</name></author><summary>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.
-
-Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.
-
-However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</summary></entry></feed>
+The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</summary></entry></feed>
