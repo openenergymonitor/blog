@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firmware | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/firmware/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-14T17:38:26+00:00</updated>
+  <updated>2016-06-14T17:41:03+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -42,17 +42,17 @@
 
 <h2 id="how-it-works">How it works</h2>
 
-<ol>
+<ul>
   <li>A commit or pull request is made to the firmware repository on GitHub
     <ul>
-      <li>So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test.</li>
+      <li><em>To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test</em></li>
     </ul>
   </li>
   <li>
     <p>This triggers Travis CI to start a ‘build’</p>
   </li>
   <li>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>. The <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code> file in the repo</a> configures the Travis CI build using platformIO:</li>
-</ol>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>language: python
 python:
@@ -79,15 +79,15 @@ deploy:
 </code></pre>
 </div>
 
-<ol>
+<ul>
   <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
-</ol>
+</ul>
 
 <p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
 
-<ol>
+<ul>
   <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
-</ol>
+</ul>
 
 <p><img src="/images/emonpi-draft-release.png" alt="image" /></p>
 

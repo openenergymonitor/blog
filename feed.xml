@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-14T17:38:26+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-14T17:41:03+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
@@ -22,17 +22,17 @@
 
 &lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
   &lt;li&gt;A commit or pull request is made to the firmware repository on GitHub
     &lt;ul&gt;
-      &lt;li&gt;So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp;amp; test.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp;amp; test&lt;/em&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;This triggers Travis CI to start a ‘build’&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Code compilation is generated using platformIO in the same way as when compiling locally, &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;See blog post&lt;/a&gt;. The &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file in the repo&lt;/a&gt; configures the Travis CI build using platformIO:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;language: python
 python:
@@ -59,15 +59,15 @@ deploy:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
   &lt;li&gt;If the build fails for whatever reason (syntax error, library error etc) then the green &lt;code class=&quot;highlighter-rouge&quot;&gt;build passing&lt;/code&gt; icon changes to a ominous red &lt;code class=&quot;highlighter-rouge&quot;&gt;build Failed&lt;/code&gt; and we get an alert email. For a full build log example see the &lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;emonPi Travis CI build page&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;&lt;img src=&quot;https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master&quot; alt=&quot;Build Status&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
   &lt;li&gt;If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;.hex&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;.bin&lt;/code&gt; is uploaded to the GitHub release page:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/emonpi-draft-release.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
