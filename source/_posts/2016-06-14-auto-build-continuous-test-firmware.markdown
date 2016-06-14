@@ -42,7 +42,32 @@ The advantages of [continuous testing](https://en.wikipedia.org/wiki/Continuous_
 
 2. This triggers Travis CI to start a 'build'
 
-3. Code compilation is generated using platformIO in the same way as when compiling locally, [See blog post](https://blog.openenergymonitor.org/2016/06/platformio/).
+3. Code compilation is generated using platformIO in the same way as when compiling locally, [See blog post](https://blog.openenergymonitor.org/2016/06/platformio/). The [`.travis.yml` file in the repo](https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml) configures the Travis CI build using platformIO:
+
+```
+language: python
+python:
+- '2.7'
+sudo: false
+cache:
+  directories:
+  - "~/.platformio"
+install:
+- pip install -U platformio
+script:
+- platformio run -d firmware -e emonpi_deploy
+deploy:
+  on:
+    repo: openenergymonitor/emonpi
+    all_branches: true
+    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+  skip_cleanup: true
+  provider: releases
+  overwrite: true
+  api_key:
+    secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
+  file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
+```
 
 4. If the build fails for whatever reason (syntax error, library error etc) then the green `build passing` icon changes to a ominous red `build Failed` and we get an alert email. For a full build log example see the [emonPi Travis CI build page](https://travis-ci.org/openenergymonitor/emonpi).
 
@@ -54,7 +79,7 @@ The advantages of [continuous testing](https://en.wikipedia.org/wiki/Continuous_
 
  ![image]({{site.image_path}}/emonpi-travis-release.png)
 
-
+For a detailed explanation of how the release binary is generated and deployed see Daniel Eichhorn's ([@squix78](https://twitter.com/squix78)) [excellent blog post](http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html).
 
 ***
 
