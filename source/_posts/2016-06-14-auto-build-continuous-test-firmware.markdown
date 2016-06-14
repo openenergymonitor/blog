@@ -37,12 +37,12 @@ The advantages of [continuous testing](https://en.wikipedia.org/wiki/Continuous_
 
 ## How it works
 
-1. A commit or pull request is made to the firmware repository on GitHub
-  - So far emonPi, emonTx and EmonESP repositories have been enabled for continuous build & test.
+- A commit or pull request is made to the firmware repository on GitHub
+  - *To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build & test*
 
-2. This triggers Travis CI to start a 'build'
+- This triggers Travis CI to start a 'build'
 
-3. Code compilation is generated using platformIO in the same way as when compiling locally, [See blog post](https://blog.openenergymonitor.org/2016/06/platformio/). The [`.travis.yml` file in the repo](https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml) configures the Travis CI build using platformIO:
+- Code compilation is generated using platformIO in the same way as when compiling locally, [See blog post](https://blog.openenergymonitor.org/2016/06/platformio/). The [`.travis.yml` file in the repo](https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml) configures the Travis CI build using platformIO:
 
 ```
 language: python
@@ -69,11 +69,11 @@ deploy:
   file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
 ```
 
-4. If the build fails for whatever reason (syntax error, library error etc) then the green `build passing` icon changes to a ominous red `build Failed` and we get an alert email. For a full build log example see the [emonPi Travis CI build page](https://travis-ci.org/openenergymonitor/emonpi).
+- If the build fails for whatever reason (syntax error, library error etc) then the green `build passing` icon changes to a ominous red `build Failed` and we get an alert email. For a full build log example see the [emonPi Travis CI build page](https://travis-ci.org/openenergymonitor/emonpi).
 
 [![Build Status](https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master)](https://travis-ci.org/openenergymonitor/emonpi)
 
-5. If the GitHub branch is tagged with a 'release tag' and compilation is successful then the generated `.hex` or `.bin` is uploaded to the GitHub release page:
+-  If the GitHub branch is tagged with a 'release tag' and compilation is successful then the generated `.hex` or `.bin` is uploaded to the GitHub release page:
 
  ![image]({{site.image_path}}/emonpi-draft-release.png)
 
