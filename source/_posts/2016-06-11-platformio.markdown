@@ -17,7 +17,7 @@ categories:
 **This post is part of a series:**
 
  - **1/3: PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi**
- - 2/3: Continuous testing and auto release binary generation using PlatformIO & TravisCI
+ - [2/3: Continuous testing and auto release binary generation using PlatformIO & TravisCI](https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/)
  - 3/3: Continuous Deployment (OTA to ESP8266)
 
 ***
