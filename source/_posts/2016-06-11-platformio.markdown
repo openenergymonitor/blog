@@ -14,6 +14,14 @@ categories:
   - emontx
 ---
 
+**This post is part of a series:**
+
+ - 1/3: PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi
+ - 2/3: Continuous testing and auto release binary generation using PlatformIO & TravisCI
+ - 3/3: Continuous Deployment (OTA to ESP8266)
+
+***
+
 Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.
 
 I'm sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.
@@ -29,11 +37,7 @@ Recently I have been using [PlatformIO](http://platformio.org) and am rather imp
 
 ![PlatformIO IDE]({{site.image_path}}/pio-ide.png)
 
-This post got quite long, therefore, It's been split into three posts:
 
- 1. PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi
- 2. Continuous testing and auto release binary generation using PlatformIO & TravisCI
- 3. Continuous Deployment (OTA to ESP8266)
 
 <!--more-->
 
