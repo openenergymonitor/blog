@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonpi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonpi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-13T17:28:22+00:00</updated>
+  <updated>2016-06-14T09:50:14+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -18,7 +18,17 @@
     <link href="https://blog.openenergymonitor.org/2016/06/platformio/"/>
     <updated>2016-06-12T10:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2016/06/platformio</id>
-    <content type="html"><![CDATA[<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series:</strong></p>
+
+<ul>
+  <li>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
+  <li>3/3: Continuous Deployment (OTA to ESP8266)</li>
+</ul>
+
+<hr />
+
+<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
 
 <p>I’m sure many developers will agree that the tools we for embedded development are generally not as good as those used for web application development.</p>
 
@@ -35,14 +45,6 @@
 </blockquote>
 
 <p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
-
-<p>This post got quite long, therefore, It’s been split into three posts:</p>
-
-<ol>
-  <li>PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
-  <li>Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
-  <li>Continuous Deployment (OTA to ESP8266)</li>
-</ol>
 
 <!--more-->
 
