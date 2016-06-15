@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Substantial update to emonPi"
+title: "Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release"
 date: "2016-05-20 10:00"
 date_formatted: May 10th 2016
 author: Glyn Hudson
