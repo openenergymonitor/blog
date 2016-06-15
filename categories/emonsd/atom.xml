@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonSD | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonsd/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-14T22:38:19+00:00</updated>
+  <updated>2016-06-15T10:31:24+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Substantial update to emonPi]]></title>
+    <title type="html"><![CDATA[Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release]]></title>
     <link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/"/>
     <updated>2016-05-20T10:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id>
