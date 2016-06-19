@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-19T16:48:20+00:00</updated>
+  <updated>2016-06-19T16:49:16+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -279,7 +279,9 @@ $ platformio lib install 54 --version="3.7.7"
 
 <h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
 
-<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (<del>due to be released in the next few weeks</del>, <a href="https://community.platformio.org/t/platformio-cli-2-10-0/381">released 2.10.0</a>) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
+<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (<del>due to be released in the next few weeks</del>, <a href="https://community.platformio.org/t/platformio-cli-2-10-0/381">released 2.10.0</a>) will have built in support for the emonPi auto-reset on upload using GPIO4. See <a href="http://platformio.org/boards?count=1000&amp;filter%5Bname%5D=emonpi&amp;page=1&amp;sorting%5Bvendor%5D=asc">emonPi listed on PlatformIO boards page</a>:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/source/_posts/emonpi-platformio.png" alt="emonpi-platformio.png" /></p>
 
 <p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
 
