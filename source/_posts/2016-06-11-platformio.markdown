@@ -161,7 +161,7 @@ There is even a built in serial monitor
 
 This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (~~due to be released in the next few weeks~~, [released 2.10.0](https://community.platformio.org/t/platformio-cli-2-10-0/381)) will have built in support for the emonPi auto-reset on upload using GPIO4. See [emonPi listed on PlatformIO boards page](http://platformio.org/boards?count=1000&filter%5Bname%5D=emonpi&page=1&sorting%5Bvendor%5D=asc):
 
-![emonpi-platformio.png]({{site.image_path}}/source/_posts/emonpi-platformio.png)
+![emonpi-platformio.png]({{site.image_path}}/emonpi-platformio.png)
 
 The emonPi board is defined in `platformio.ini` in the [emonpi/firmware folder](https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini):
 
