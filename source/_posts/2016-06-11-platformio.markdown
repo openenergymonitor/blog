@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-title: "Part 1/3: PlatformIO open-source embedded development ecosystem"
-date: "2016-06-12 10:00"
+title: 'Part 1/3: PlatformIO open-source embedded development ecosystem'
+date: '2016-06-12 10:00'
 date_formatted: June 12th 2016
 author: Glyn Hudson
 comments: true
@@ -13,6 +13,7 @@ categories:
   - emonpi
   - emontx
 ---
+
 
 **This post is part of a series:**
 
@@ -158,7 +159,9 @@ There is even a built in serial monitor
 
 ### 3b. Using ttyAMA0 GPIO to upload direct to emonPi
 
-This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (~~due to be released in the next few weeks~~, [released 2.10.0](https://community.platformio.org/t/platformio-cli-2-10-0/381)) will have built in support for the emonPi auto-reset on upload using GPIO4
+This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (~~due to be released in the next few weeks~~, [released 2.10.0](https://community.platformio.org/t/platformio-cli-2-10-0/381)) will have built in support for the emonPi auto-reset on upload using GPIO4. See [emonPi listed on PlatformIO boards page](http://platformio.org/boards?count=1000&filter%5Bname%5D=emonpi&page=1&sorting%5Bvendor%5D=asc):
+
+![emonpi-platformio.png]({{site.image_path}}/source/_posts/emonpi-platformio.png)
 
 The emonPi board is defined in `platformio.ini` in the [emonpi/firmware folder](https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini):
 
