@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-19T23:25:50+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-20T11:27:13+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.&lt;/p&gt;
+
+&lt;p&gt;We are at the moment working on three initial uses of the ESP8266:&lt;/p&gt;
+
+&lt;h2 id=&quot;emontx-v3--esp8266-module&quot;&gt;1. &lt;strong&gt;EmonTx V3&lt;/strong&gt; + ESP8266 module&lt;/h2&gt;
+
+&lt;p&gt;We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as &lt;a href=&quot;https://www.adafruit.com/product/2471&quot;&gt;adafruit&lt;/a&gt; (USA) and &lt;a href=&quot;https://shop.pimoroni.com/products/adafruit-huzzah-esp8266-breakout&quot;&gt;Pimoroni&lt;/a&gt; (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/emontx-esp.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There will be another post very soon detailing how to use this module with the EmonTx v3.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;heatpumpenergy-monitor&quot;&gt;2. Heatpump/Energy Monitor&lt;/h2&gt;
+
+&lt;p&gt;Heatpump / energy monitor through-hole development board, essentially and EmonTx v2 with additional features for interfacing with heat meters and multiple DS18B20 temperature sensors as well as an integrated ESP8266 WIFI module.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/heatpumpmonitor.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The heatpump monitor board currently supports:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3x CT + ACAC Channels&lt;/li&gt;
+  &lt;li&gt;Elster A100C Irda meter reader (watt hours)&lt;/li&gt;
+  &lt;li&gt;Pulse Counting&lt;/li&gt;
+  &lt;li&gt;Supports MBUS heat meters (Kamstrup 402)&lt;/li&gt;
+  &lt;li&gt;Supports SIKA flow meters&lt;/li&gt;
+  &lt;li&gt;4x DS18B20 Temperature Sensors&lt;/li&gt;
+  &lt;li&gt;Miniature solid state relay for heating control (not yet tested)&lt;/li&gt;
+  &lt;li&gt;ESP8266 Low cost Wifi&lt;/li&gt;
+  &lt;li&gt;RFM69 option&lt;/li&gt;
+  &lt;li&gt;Raspberry PI connector option&lt;/li&gt;
+  &lt;li&gt;A Through-hole ESP Wifi development platform&lt;/li&gt;
+  &lt;li&gt;Fits in the EmonTx V3 Aluminum case&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Guide cost ~£50 (ex VAT) for full heatpump monitor kit with case, ~£30 (ex VAT) for cut down WIFI energy monitor only kit without case.. To be finalised.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/openenergymonitor/HeatpumpMonitor&quot;&gt;See Heatpump monitor development repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;esp8266-based-wifi-pixel-energy-display&quot;&gt;3. ESP8266 based WIFI Pixel Energy Display,&lt;/h2&gt;
+
+&lt;p&gt;This is an idea thanks to David Hunninsett (&lt;a href=&quot;http://twitter.com/m0untainpenguin&quot;&gt;@m0untainpenguin&lt;/a&gt;) with hardware being developed by &lt;a href=&quot;https://github.com/Protoneer/WifiPixels&quot;&gt;Protoneer&lt;/a&gt;. It fits into a project we are more recently part of here in North Wales called &lt;a href=&quot;http://www.energylocal.co.uk/cydynni/&quot;&gt;CydYnni by EnergyLocal&lt;/a&gt; where 100 households within the boundary of the substation get cheap electricity when a local community hydro is running. David Hunninsett is one of the households on the project and he is keen to have a display that shows when it’s a good time to use electricity among other uses. The wifi pixel could become a nice platform for a ambient home energy indicator.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wifi-pixel1.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wifi-pixel2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://community.openenergymonitor.org/uploads/default/original/1X/c72e375230597049c0d8a9e06645a8d088d70774.mp4&quot;&gt;See video&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/davehun/mqtt-wifi-pixel&quot;&gt;See software development  repo on&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;emonesp-easier-setup-and-installation&quot;&gt;EmonESP, easier setup and installation&lt;/h1&gt;
+
+&lt;p&gt;One of the really nice things about using the ESP module is that it can really simplify setup for installations that only need to post to a remote emoncms server. The wifi module starts by broadcasting a hotspot that you connect to directly, you can then scan for wifi networks, select the network, get the ip address of the monitor on the network (which saves using fing or accessing your router device list), enter your emoncms.org apikey to connect to an emoncms.org account (to be replaced with username and passowrd login + ability to register and link the monitor to a emoncms account in one step).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/emonesp.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We plan to extend EmonESP to also support MQTT.&lt;/p&gt;
+
+&lt;p&gt;The EmonESP software is based on work by Chris Howel of &lt;a href=&quot;http://www.openevse.com&quot;&gt;OpenEVSE&lt;/a&gt; which is a really nice open hardware electric vehicle charging station, it’s been really nice to find a common development like this that can be beneficial to two open hardware and software projects. OpenEVSE &lt;a href=&quot;https://data.openevse.com/&quot;&gt;already use Emoncms&lt;/a&gt; for logging and graphing.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/openenergymonitor/emonesp&quot;&gt;EmonESP firmware developments can be found on github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;over-the-air-firmware-upload&quot;&gt;Over the air firmware upload&lt;/h2&gt;
+
+&lt;p&gt;Glyn has been doing a lot of work on how we can do over the air updates to ESP8266 based units. Being able to do this will make it a lot easier to maintain and keep the firmware on these updated especially as the software goes through the larger number of iterations in initial development. Check out his blog posts here to follow the development:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;Part 1/3: PlatformIO open-source embedded development ecosystem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware&quot;&gt;Part 2/3: Firmware Continuous Test &amp;amp; Build&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266) &lt;em&gt;…In the making!&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;forum-discussion&quot;&gt;Forum discussion&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://community.openenergymonitor.org/t/esp8266-wifi-developments/784&quot;&gt;this forum topic&lt;/a&gt; for discussion.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Trystan Lea</name></author><summary>Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as emoncms.org.
+
+Note: we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.
+
+We are at the moment working on three initial uses of the ESP8266:
+
+1. EmonTx V3 + ESP8266 module
+
+We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as adafruit (USA) and Pimoroni (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.
+
+
+
+There will be another post very soon detailing how to use this module with the EmonTx v3.</summary></entry><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
@@ -648,50 +741,4 @@ The last post described two approaches to grid carbon intensity that consider th
 
 If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.
 
-There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.</summary></entry><entry><title>Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</title><link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/" rel="alternate" type="text/html" title="Part 1: Attempting to measure and understand the CO2 intensity of grid electricity" /><published>2016-04-27T15:00:00+00:00</published><updated>2016-04-27T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/">&lt;p&gt;Zero carbon energy scenarios such as &lt;a href=&quot;http://zerocarbonbritain.org/&quot;&gt;ZeroCarbonBritain&lt;/a&gt; feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.&lt;/p&gt;
-
-&lt;p&gt;We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.&lt;/p&gt;
-
-&lt;p&gt;The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;As an example the CO2 intensity of combined cycle gas turbines (CCGT) which provide the majority of electricity generated from gas in the UK have a co2 intensity of 360gCO2/kWh.
-
-At this intensity a well installed heat pump that achieves an average COP of 3.0 delivers heat at a CO2 intensity of 129gCO2/kWh heat including 7% grid losses. This provides a significant 44% co2 emissions reduction compared to having an efficient gas boiler which delivers heat at a CO2 intensity of 230gCO2/kWh.
-
-An electric car achieving a real world mountainous north Wales terrain driving efficiency of 3.7 miles per kWh (5.9km/kWh) including charging losses powered by gas electricity has a co2 intensity of 61gCO2/kWh which again provides a significant 44% co2 emissions reduction compared to real world efficient small petrol car co2 emissions of110 gCO2/km based on: 10.6 kgCO2 per gallon [1] and 60mpg (typical of the most efficient small car real world mpg [2].
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.carbonindependent.org/sources_car.html&quot;&gt;[1]&lt;/a&gt;
-&lt;a href=&quot;http://www.whatcar.com/car-news/real-world-mpg-efficient-small-cars/1214063&quot;&gt;[2]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The average CO2 intensity for the UK grid as a whole in 2015 was &lt;a href=&quot;http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html&quot;&gt;367gCO2/kWh&lt;/a&gt; http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015 - providing similar CO2 emission reduction potential to the gas only calculations above.&lt;/p&gt;
-
-&lt;p&gt;It is interesting to note that this average, results from coal generation with a CO2 intensity of 910gCO2/kWh being offset somewhat by generation from renewable energy and nuclear at 0gCO2/kWh resulting in a CO2 intensity that is close to what it would be if gas CCGT was our only supply source – which really highlights how carbon intensive coal is.&lt;/p&gt;
-
-&lt;p&gt;When we move energy demands from one form to another such as replacing a gas boiler with a heat pump the carbon reduction benefits depend heavily on what kind of generation provides for that additional demand. If the additional demand is provided for by CCGT gas turbines the switch makes sense, if it is provided by coal generation at 910gCO2/kWh it does not make so much sense. If it is provided by mix of renewable energy and CCGT is will make even more sense.&lt;/p&gt;
-
-&lt;p&gt;There are several different approaches to calculating the co2 intensity of delivered electricity each with their benefits and drawbacks which I will try and explore below and in further posts.&lt;/p&gt;
-
-&lt;p&gt;Whole grid averageHere we consider the grid as one big system with the CO2 intensity calculated as the total CO2 emitted by all forms of generation divided by the total demand over an extended period of time – one or more years. The co2 intensity of the UK electricity grid for 2015 was 367gCO2/kWh.&lt;/p&gt;
-
-&lt;p&gt;Near real-time co2 intensity using grid wide data&lt;/p&gt;
-
-&lt;p&gt;Here the CO2 intensity is calculated by the total CO2 emitted divided by total demand on typically a 10 minute basis. The CO2 intensity calculated this way will often show higher CO2 intensity in the day where gas and coal are a larger percentage of overall supply than at night time. CO2 intensity is also higher when its colder where demand is pushed up by higher heating requirements.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ukgrid.png&quot; alt=&quot;UK Grid Carbon&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openenergymonitor.org/ukgrid&quot;&gt;OpenEnergyMonitor UK Grid page&lt;/a&gt; showing real-time CO2 Intensity.&lt;/p&gt;
-
-&lt;p&gt;If we use this real-time CO2 intensity in order to choose when to use electricity it gets more complicated, we may decide to shift electric vehicle charging or heat pump hot water heating to the night time in order to make use of grid carbon intensities that can often be 50-100gCO2/kWh less than day-time rates, but is this really a valid approach? The lower CO2 intensities at night are as a result of demand being lower and nuclear + renewables making up a larger share of generation, if night time demand is increased through demand shifting, turning on more gas and coal power plants, the carbon intensity would increase as well.&lt;/p&gt;
-
-&lt;p&gt;Given that most of the dis-patchable generation is gas and coal and assuming low levels of wind curtailment at night then it could be argued that the effective carbon intensity of moving demand to the night time should be calculated at the carbon intensity of this dis-patchable generation which depends on the proportion of gas to coal, a more in depth understanding as to how the proportion of gas and coal generation is decided would be needed to assess the carbon value of demand shifting. If the proportions are constant, shifting would make no difference, if gas is ramped up to meet the additional demand there may well be a benefit to shifting on the other hand if the difference is made up with more coal generation there would not be. There’s a bit more on this here using 2011 data from &lt;a href=&quot;http://people.bath.ac.uk/en8sc/GridCarbonIntensity.pdf&quot;&gt;Sam Cooper of Bath University&lt;/a&gt; &lt;a href=&quot;http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html&quot;&gt;linked from earth notes here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Shifting demand away from peak times may well make sense from a transmission and distribution grid capacity perspective but this is largely a different argument and would require a different calculation to assess. It may also be the case that some wind curtailment does take place although the precise extent of this and where on the grid using more will reduce curtailment is difficult to quantify.&lt;/p&gt;
-
-&lt;p&gt;In the next blog I will discuss the work I’ve been doing with Dominic McCann from the Carbon Coop on estimating CO2 intensity with onsite and green tariff renewable energy considered.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>Zero carbon energy scenarios such as ZeroCarbonBritain feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.
-
-We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.
-
-The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</summary></entry></feed>
+There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.</summary></entry></feed>

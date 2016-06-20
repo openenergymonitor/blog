@@ -107,6 +107,53 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-12-13T18:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-12-13 18:00:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/openhab/'>openHAB</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/12/openenergymonitor-emonpi-and-openhab/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Using the emonPi in it's current default configuration works great to post data to Emoncms for logging and visualisation. However there may be times when you want some more flexibility and or ability to interface with other hardware or services&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In my last few blog posts I have been taking a look at making the <a href="http://shop.openenergymonitor.com/emonpi-1/">emonPi</a> the heart of a smart energy optimised home and how live energy monitoring data from the emonPi can easily be used to inform other services: &nbsp;&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">1.
+
+
+
+    
+      <a class="btn pull-right" href="/2015/12/openenergymonitor-emonpi-and-openhab/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/12/north-wales-tech-meetup-presentations/">North Wales Tech Meetup Presentations</a>
   </h1>
   
@@ -488,46 +535,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/09/how-to-setup-wifi-hotspot-on-emonpi/">Using emonPi Offline: How to setup a WIFI Hotspot on an emonPi</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-09-09T16:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-09-09 16:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 10 minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/09/how-to-setup-wifi-hotspot-on-emonpi/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    This guide details how to setup a WIFI Hotspot using the Edimax USB WIFI adapter on an EmonPi or EmonBase to make it possible to connect directly to an EmonPi from a tablet or computer without the need for a router or internet connection.<br /><br />The guide is based on <a href="http://www.daveconroy.com/turn-your-raspberry-pi-into-a-wifi-hotspot-with-edimax-nano-usb-ew-7811un-rtl8188cus-chipset">Dave Conroy's guide</a> here but also covers setting up a DHCP server rather than ethernet to WIFI bridge.<br /><br />There are 3 pieces of software that need to be installed to get this to work:<br /><ul><li>hostapd – WIFI Hotspot</li><li>edimax version of hostapd</li><li>isc-dhcp-server – DHCP Server</li></ul><b>1) Install dhcp server&nbsp;</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo apt-get install isc-dhcp-server&nbsp;</span><br /><br /><b>2) Install Edimax version of hostapd</b><br /><br />Either use precompiled binary or compile yourself:<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><b>Pre-compiled (update: does not seem to work with&nbsp;</b></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><b>wheezy, use self compile see below)</b></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wget http://www.daveconroy.com/wp3/wp-content/uploads/2013/07/hostapd.zip</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>unzip hostapd.zip <br />sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.bak<br />sudo mv hostapd /usr/sbin/hostapd.edimax <br />sudo ln -sf /usr/sbin/hostapd.edimax /usr/sbin/hostapd <br />sudo chown root.root /usr/sbin/hostapd <br />sudo chmod 755 /usr/sbin/hostapd</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><b>Compile yourself (recommended&nbsp;for&nbsp;wheezy, tested March16)</b></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><i style="font-family: 'courier new', courier, monospace; font-size: small;">sudo apt-get install libnl-genl-3-dev libnl-3-dev</i><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>git clone https://github.com/lostincynicism/hostapd-rtl8188</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>cd hostapd-rtl8188/hostapd</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>sudo make</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>sudo make install&nbsp;</i></span><br /><br /><b>3) Configure /etc/network/interfaces</b><br /><br />Open the network interfaces file to edit:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">sudo nano /etc/network/interfaces </span><br /><br />Replace content with:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">auto lo</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">iface lo inet loopback</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">auto eth0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">allow-hotplug eth0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">iface eth0 inet manual</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">#allow-hotplug wlan0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">#iface wlan0 inet manual</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"># &nbsp; &nbsp;wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">iface wlan0 inet static</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">address 192.168.42.1</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">netmask 255.255.255.0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">allow-hotplug eth1</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">iface eth1 inet dhcp</span><br /><br />If required add bridge to bridge eth0 to wlan0 - although it's better to use NAT iptables forwarding since then we can still access pi via ssh (see below)<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">auto br0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">iface br0 inet dhcp</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">bridge_ports eth0 wlan0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">pre-up ifconfig eth0 0.0.0.0 up</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">pre-up ifconfig wlan0 0.0.0.0 up</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">pre-up brctl addbr br0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">pre-up brctl addif br0 eth0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">post-down ifconfig wlan0 0.0.0.0 down</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">post-down ifconfig eth0 0.0.0.0 down</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">post-down brctl delif br0 eth0</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">post-down brctl delbr br0</span><br /><br /><b>4) Configure /etc/hostapd/hostapd.conf</b><br />Open hostapd config file with:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">sudo nano /etc/hostapd/hostapd.conf</span><br /><br />Add the following lines to hostapd.conf (set SSID and password of your choice)<br /><b><br /></b><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><b>WITHOUT AUTHENTICATION &nbsp;USE</b></i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><b><br /></b></i></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>interface=wlan0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>ssid=emonPi</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>driver=rtl871xdrv</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>hw_mode=g</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>channel=6</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>auth_algs=1</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wmm_enabled=0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><b><br /></b></i></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><b>WITH_AUTENTICATION USE</b></i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><b><br /></b></i></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>interface=wlan0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>driver=rtl871xdrv</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>ssid=emonPi</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>hw_mode=g</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>channel=6</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>macaddr_acl=0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wmm_enabled=0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>auth_algs=1</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>ignore_broadcast_ssid=0</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wpa=2</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wpa_passphrase=raspberry</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wpa_key_mgmt=WPA-PSK</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>wpa_pairwise=TKIP</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>rsn_pairwise=CCMP</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br /><br />Manual start to test everything is working, you should see a Wifi network called 'emonPi':<br /><br /><i>$ sudo hostapd -dd /etc/hostapd/hostapd.conf</i><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><br /><br /><br /><b>5) Configure /etc/default/hostapd</b><br /><b><br /></b><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">sudo nano /etc/default/hostapd</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br />Set<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">DAEMON_CONF="/etc/hostapd/hostapd.conf"</span><br /><br /><br /><b>6) Configure /etc/dhcp/dhcpd.conf</b><br />Open dhcpd config file:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">sudo nano /etc/dhcp/dhcpd.conf</span><br /><span style="font-size: x-small;"><br /></span><span style="font-size: x-small;">Add the following to the end of the file:</span><br /><span style="font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">lease-file-name "/home/pi/data/dhcpd.leases";</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">subnet 192.168.42.0 netmask 255.255.255.0 {</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; range 192.168.42.2 192.168.42.20;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; option broadcast-address 192.168.42.255;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; option routers 192.168.42.1;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; default-lease-time 600;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; max-lease-time 7200;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; option domain-name "local";</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; option domain-name-servers 8.8.8.8, 8.8.4.4;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">}</span><br /><br />comment out <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>#option domain-name "example.org";</i></span><br /><i><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"></span></i><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>#option domain-name-servers ns1.example.org, ns2.example.org;</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i><br /></i></span>uncomment<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">authoritative;</span><br /><br /><b>7) Configure /etc/default/isc-dhcp-server</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo nano /etc/default/isc-dhcp-server&nbsp;</span><br /><br />Remove the comment from DHCPD_CONF, DHCPD_PID and then set the INTERFACES to "wlan0" (including ""), see example below:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"># Defaults for isc-dhcp-server initscript <br /># sourced by /etc/init.d/isc-dhcp-server <br /># installed at /etc/default/isc-dhcp-server by the maintainer scripts <br /># <br /># This is a POSIX shell fragment <br /># <br /><br /># Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf). <br />DHCPD_CONF=/etc/dhcp/dhcpd.conf <br /><br /># Path to dhcpd's PID file (default: /var/run/dhcpd.pid). <br />DHCPD_PID=/var/run/dhcpd.pid <br /><br /># Additional options to start dhcpd with. <br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead <br />#OPTIONS="" <br /><br /># On what interfaces should the DHCP server (dhcpd) serve DHCP requests? <br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Separate multiple interfaces with spaces, e.g. "eth0 eth1". <br />INTERFACES="<b>wlan0</b>"</span><a href="http://askubuntu.com/questions/140126/how-do-i-configure-a-dhcp-server"></a><br /><b><br /></b><b><br /></b><b>8.) Setup NAT forwarding to bridge eth0 the wlan0 while still allowing us to access the Pi via SSH (pure network bridge does not)</b><br /><br />To set this up automatically on boot, edit the file /etc/sysctl.conf and add the following line to the bottom of the file:<br /><br /><i>net.ipv4.ip_forward=1</i><br /><br />Second, to enable NAT in the kernel, run the following commands:<br /><br /><i>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</i><br /><div><i>sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT</i></div><i></i><div><i>sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT</i></div><i><div><br /></div></i><br /><div><b><i>If bride is also required to eth1 (for 3G dongle) add:</i></b><br /><i>sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE</i></div><div><i>sudo iptables -A FORWARD -i eth1 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT<br />sudo iptables -A FORWARD -i wlan0 -o eth1 -j ACCEPT</i><br /><br /><br /><br />sudo sh -c "iptables-save &gt; /etc/iptables.ipv4.nat"<br /><br />Now edit the file /etc/network/interfaces and add the following line to the bottom of the file:<br /><br />up iptables-restore &lt; /etc/iptables.ipv4.nat # This did not work for me I had to add entry to rc.local (see below)<br /><br /><b>8) Edit /etc/rc.local</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;">sudo nano /etc/rc.local </span><br /><br />Add before exit 0 the following lines to tell the wlan interface to use ip address 10.0.1.1 and then start the isc-dhcp-server:<br /><br /><i>sudo iptables-restore &lt; /etc/iptables.ipv4.nat</i><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>sudo ifconfig wlan0 192.168.42.1</i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i></i></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><i>sudo service isc-dhcp-server restart</i></span><br /><pre style="-webkit-user-select: text; position: absolute; top: -99px;">sudo iptables-restore &lt; /etc/iptables.ipv4.nat</pre><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: x-small;"><br /></span></span><br /><b><br />9) Start services at boot </b><br /><br /><i>sudo update-rc.d isc-dhcp-server defaults<br />sudo update-rc.d hostapd defaults</i><br /><br /><br />Thats it restart your emonpi/emonbase to finish and then connect to network emonPi with password: raspberry <br /><br /><b>11) Add a Real Time Clock (RTC)</b><br />When running an emonPi in offline mode we recommend adding a hardware RTC to ensure the system time is always correct. See <a href="http://wiki.openenergymonitor.org/index.php?title=EmonPi#Adding_a_Real_Time_Clock_.28RTC.29">emonPi Wiki:</a><br /><br /><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://wiki.openenergymonitor.org/images/EmonPi_RTC.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://wiki.openenergymonitor.org/images/EmonPi_RTC.JPG" height="191" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Hardware RTC</td></tr></tbody></table><b><br /></b><b><br /></b><b><br /></b><b><br /></b><b><br /></b><b>Resources&nbsp;</b><br />Useful blogs, guides and forum threads that I used to work out how to set up the above:<br /><a href="http://www.daveconroy.com/turn-your-raspberry-pi-into-a-wifi-hotspot-with-edimax-nano-usb-ew-7811un-rtl8188cus-chipset">http://www.daveconroy.com/turn-your-raspberry-pi-into-a-wifi-hotspot-with-edimax-nano-usb-ew-7811un-rtl8188cus-chipset</a><br /><a href="http://askubuntu.com/questions/140126/how-do-i-configure-a-dhcp-server">http://askubuntu.com/questions/140126/how-do-i-configure-a-dhcp-server</a><br /><a href="http://ubuntuforums.org/showthread.php?t=2068111">http://ubuntuforums.org/showthread.php?t=2068111</a><br /><a href="http://raspberrypi.stackexchange.com/questions/9678/static-ip-failing-for-wlan0">http://raspberrypi.stackexchange.com/questions/9678/static-ip-failing-for-wlan0</a><br /><a href="https://forums.opensuse.org/showthread.php/438756-DHCP-can-t-write-to-dhcpd-leases">https://forums.opensuse.org/showthread.php/438756-DHCP-can-t-write-to-dhcpd-leases</a><br /><a href="http://elinux.org/RPI-Wireless-Hotspot">http://elinux.org/RPI-Wireless-Hotspot</a><br /><a href="http://askubuntu.com/questions/140126/how-do-i-configure-a-dhcp-server">http://askubuntu.com/questions/140126/how-do-i-configure-a-dhcp-server</a><br />http://www.instructables.com/id/Raspberry-Pi-as-a-3g-Huawei-E303-wireless-Edima/?ALLSTEPS<br /><br /><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -644,6 +651,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
         </li>
       
@@ -693,12 +706,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -835,6 +842,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emoncms/">emoncms</a></li>
     
+      <li><a href="/categories/emonesp/">emonesp</a></li>
+    
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
       <li><a href="/categories/emontx/">emontx</a></li>
@@ -844,6 +853,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
     
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/esp8266/">esp8266</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
@@ -862,6 +873,8 @@ window.onclick = function(event) {
       <li><a href="/categories/hardware/">hardware</a></li>
     
       <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/heatpumpmonitor/">heatpumpmonitor</a></li>
     
       <li><a href="/categories/home assistant/">home Assistant</a></li>
     
@@ -960,6 +973,8 @@ window.onclick = function(event) {
       <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
+    
+      <li><a href="/categories/wifipixel/">wifipixel</a></li>
     
       <li><a href="/categories/wind/">wind</a></li>
     

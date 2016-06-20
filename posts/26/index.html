@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2011/12/how-to-contribute-on-openenergymonitor/">How to contribute on OpenEnergyMonitor dev + development plans</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2011-12-19T23:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-19 23:46:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2011/12/how-to-contribute-on-openenergymonitor/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />If your wondering how best to get involved with OpenEnergyMonitor development here are a couple of&nbsp;thoughts&nbsp;and possible pointers.<br /><br />First a few insights and ideas from an another open source project we follow: DIYdrones. Thanks to Amin Zayani for the heads up on these:<a href="http://diydrones.com/profiles/blogs/how-to-contribute-to-the"> [1]</a>&nbsp;<a href="http://www.diydrones.com/profiles/blogs/how-to-contribute-to-a-diy-drones-project-start-with-something-sm">[2]</a><a href="http://diydrones.com/profiles/blogs/how-to-contribute-on-arducopter-project">&nbsp;[3]</a><br />In Chris Anderson of DIY drones's words, who we think has articulated it well:<br /><i>“The best way to participate is to do something cool on your own and share it here. All of our code bases and hardware design files are open. If you see an opportunity to improve something, just do it, post it and then tell the community about what you've done. If it's good, people will use it, help improve it, and we'll get a sense of what you can do. That makes it much easier for us to figure out what your skills are and where you'd fit in best.”</i><br /><br />If your looking for ideas here are a list of things we would like to do but no one is currently leading on them, Many of these problems are quite large, it would probably good to break them down into smaller sub projects.&nbsp;If you have a feature you would like to implement or would like to take the lead on any of the features below that would be really great, please post with your thoughts.<br /><ul><li>Appliance inference - infer from a single power feed of a house what each appliance uses and so providing a energy use by appliance breakdown.</li><li>PCB and casing for the 12 input pulse counter (a DIN rail and non din rail option)</li><li>Plug based energy monitor - for per appliance monitoring &nbsp;- an alternative method to appliance inference.</li><li>Larger&nbsp;monitoring PCB's: maybe 12 input CT?</li><li>3 phase monitoring sketch for emontx - quite a few people are asking for this so this would be really useful.</li><li>Develop a series of control modules, that extend the emon system into an open source monitoring and control system that can be used for domestic and industrial situations.&nbsp;Control modules could include:</li><ul><li>multiple relay board (for dump load control, immertion heaters, pumps, lighting)</li><li>solenoid valve driver board for central heating control.</li><li>motor control</li><li>This emon monitoring and control system could link together by either a wireless bus say rfm12 or a wired bus (maybe rs485). The modules could be designed to fit in both DIN rail style casing or non-DIN rail casing.</li></ul><li>Merge emonTx firmware examples into an Arduino library.</li></ul><div><b>Short term goals</b></div><div>For a general overview here are the short term goals that are being worked on at the moment and in the very near future:<br /><ul><li dir="ltr">New casing design for emontx and emonbase</li><li dir="ltr">Transfer emonbase sketches over to EtherCard library</li><li dir="ltr">Compatibility of main sketches with Arduino 1.0</li><li dir="ltr">Complete watchdog addition</li><li dir="ltr">Emoncms development <a href="http://openenergymonitor.org/emon/node/296">see feature plans and discussion page on forums.</a></li><li dir="ltr">Complete and publish energy audit software v1.0</li><li dir="ltr">Improve full emon system documentation.</li></ul><div>This blogpost is repeated as a <a href="http://openenergymonitor.org/emon/node/308">forum post here</a>, lets discuss this on the forum as its a better place for it.<br /><br /><i>Thankyou</i><br /><i>Trystan</i></div></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2011/12/how-to-move-feed-data-between-servers/">How to move feed data between servers</a>
   </h1>
   
@@ -451,37 +482,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/10/home-camp-4-london-29th-30th-oct/">Home camp 4: London 29th-30th Oct</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-10-21T19:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-10-21 19:00:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2011/10/home-camp-4-london-29th-30th-oct/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Next weekend Trystan Lea and I (Glyn Hudson) will be down in London for <a href="http://homecamp.org.uk/2011/09/01/announcing-home-camp-4-hack-the-house/">Home Camp 4 'Hack the house</a>' event. We will be presenting our end-to-end open-source web-connected energy monitoring system. If you live within traveling distance of London please come along, we would love to meet anyone who is involved or interested in open-source&nbsp;energy monitoring.<br /><br />Home Camp is a series of un-conferences that brings together members of the technical community interested in using open systems to bring about a positive change in the way we use energy and appliances around the home.  With ever-increasing energy prices, the race is on to develop ways to utilise smart technology to help offset domestic energy consumption and lower carbon footprints.<br /><br />The event will be a combination of informal presentations on the&nbsp;Saturday&nbsp;and more 'hands on' making, hacking and tinkering on the Sunday. Trystan and I will be around on both days will be more than happy to help anyone build their own open-source energy monitoring system and deploy a server installation of&nbsp;<a href="http://openenergymonitor.org/emon/emoncms">emoncms</a>. We will also have <a href="http://openenergymonitor.org/emon/emontx">emonTx</a>, <a href="http://openenergymonitor.org/emon/emonbase">emonBase</a> and <a href="http://openenergymonitor.org/emon/emonGLCD">emonGLCD</a> kits for sale at special prices.<br /><br />When: 29th - 30th Oct<br /><br />Where: Central London in the&nbsp;<a href="http://www.creativecollaboration.org.uk/">Center&nbsp;for&nbsp;Creative&nbsp;Collaboration&nbsp;</a><br /><br />Cost: The event is now free! Registration&nbsp;is required on <a href="http://homecamp4-eorgf.eventbrite.com/">EventBrite</a><br /><br />Who: See the event&nbsp;crowd&nbsp;sourcing page at <a href="http://lanyrd.com/2011/homecamp4">Lanyrd&nbsp;</a><br /><br />We will also be attending the Open Source Hardware Camp on Thursday 27th Oct at the same location (C4CC). This looks like it will also be a good event:&nbsp;<a href="http://oshug.org/event/oshcamp">http://oshug.org/event/oshcamp</a><br /><br />See you there, Glyn.<br /><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -598,6 +598,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
         </li>
       
@@ -647,12 +653,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -789,6 +789,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emoncms/">emoncms</a></li>
     
+      <li><a href="/categories/emonesp/">emonesp</a></li>
+    
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
       <li><a href="/categories/emontx/">emontx</a></li>
@@ -798,6 +800,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
     
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/esp8266/">esp8266</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
@@ -816,6 +820,8 @@ window.onclick = function(event) {
       <li><a href="/categories/hardware/">hardware</a></li>
     
       <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/heatpumpmonitor/">heatpumpmonitor</a></li>
     
       <li><a href="/categories/home assistant/">home Assistant</a></li>
     
@@ -914,6 +920,8 @@ window.onclick = function(event) {
       <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
+    
+      <li><a href="/categories/wifipixel/">wifipixel</a></li>
     
       <li><a href="/categories/wind/">wind</a></li>
     

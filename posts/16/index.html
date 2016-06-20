@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/fridge-defrosting/">Fridge Defrosting</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-18T08:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-18 08:33:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
+      
+        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/fridge-defrosting/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <i>Update 27/06/13:</i><br /><br /><i>As kindly pointed out by Jörg Becker in the comments below I mad an error with the timebase. I had assumed If I zoomed in the same amount that the time base would be the same, I had not realised that this was not actually the case. Below is an updated screen grab with the correct time period. As we can see the power in the window is pretty much the same 0.28/0.29Kwh. <b>Defrosting the fridge does not seem to have had much of a reduction effect in the power consumption, just an increased duty cycle. </b>Apologies for my original misleading post below.&nbsp;</i><br /><i><br /></i><i>Thanks again to Jörg Becker for pointing this out.&nbsp;</i><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s878/Selection_001.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="290" src="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s640/Selection_001.png" width="640" /></a></div><br /><br />Yesterday I defrosted my fridge, I was amazed at the effect it had on it's energy consumption and pattern.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s1600/fridge+defrost.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s640/fridge+defrost.jpg" width="640" /></a></div><br /><strike>Energy consumption due to fridge dropped from 2.29 Kwh/d to 1.09Kwh/d, about a 50% readuction. The pattern of energy consumption changed a fair bit, now defrosted the fridge switches on for a much shorter period of time, &nbsp;obviously getting up to&nbsp;down to temperature much quicker.</strike><br /><strike><br /></strike><strike>If I keep the fridge defrosted regularly all year it should save me around £60 a year.</strike><br /><br />I am aware that my fridge is quite an old model and a new model would use less energy overall and not require defrosting. Something to thing about for the future..
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/building-energy-modelling-part-2-first/">Building Energy Modelling part 2 - First attempts and research</a>
   </h1>
   
@@ -463,37 +505,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/the-current-emoncms-feed-storage/">The current emoncms feed storage implementation</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-31T21:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-31 21:39:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2013/05/the-current-emoncms-feed-storage/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div>Following on from the last blog post on <a href="http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-load-stats.html">emoncms.org server load and disk use</a>, lets look at the current emoncms implementation of feed storage in a bit more depth before going on to look at how it can be improved.</div><div><br /></div><div>Emoncms currently stores realtime feed data in a mysql database, every feed has its own mysql table. A feed table contains two fields: timestore and data value. Feed data is usually on a regular time interval, ie: 5,10,60s data. The time interval is set by the posting sensor node rather than emoncms.</div><div><b><br /></b></div><div><b>Calculating feed disk use</b></div><div>We can calculate the estimated feed table size using the current implementation used in emoncms.</div><br />Lets say we want to store a year of 10s data. There are 31536000 seconds in a year and so 3153600 datapoints at a 10s data rate.<br /><br />A single datapoint is made up of a timestamp which is stored as an unsigned integer, which takes up 4 bytes, and a float data value which also takes up 4 bytes.<br /><br />3153600 datapoints x 8 bytes per datapoint (table row) = 24 Mb<br /><br />In addition to the feed data we also have a table index which speeds up queries considerably. The worst case index size can be estimated with the equation detailed on this page:<br /><br /><a href="http://dev.mysql.com/doc/refman/5.0/en/key-space.html" style="color: #3465a4;">http://dev.mysql.com/doc/refman/5.0/en/key-space.html</a><br /><br />index row size = (key_length+4) / 0.67<br /><br />The key we are using is the time field which is 4 bytes and so the index row size is = (4 + 4) / 0.67 =~ 12 bytes<br /><br />The index size for 3153600 datapoints is&nbsp;therefore&nbsp;approximately = 3153600 * (4 + 4) / 0.67  = 36Mb<br /><br />The total feed table size will therefore be approximately 60Mb.<div><br /></div><div><b>Feed query speeds</b></div><div>        <div style="margin-bottom: 0cm;">As emoncms has developed a fair bit of work has gone into improving the method that realtime data is queried.&nbsp;At first improvements seem promising, see this documentation page for detailed discussion on the query implementation and query speeds:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/site/docs/developdatastorage">http://emoncms.org/site/docs/developdatastorage</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">But&nbsp;growing&nbsp;server demand on emoncms.org and feed table size means they have often only staved off an eventual slow down.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I think the last idea I had of using a php for-loop to request a single row at given intervals that originally &nbsp;reduced query times by about 10x is no longer working well on emoncms.org, it still gives the 1.6s query time on my local installation of emoncms but on emoncms.org Im getting a mixture of short query times 500ms and much longer query times 20s+ (in the more than 55 hour timewindow).&nbsp;The reason for this I think is due to the php for loop having to wait when the server is under heavy load for other mysql queries to complete. I think another solution is needed.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next few blog posts I will look at some of the potential solutions to both disk use and query speeds.</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -610,6 +621,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
         </li>
       
@@ -659,12 +676,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -801,6 +812,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emoncms/">emoncms</a></li>
     
+      <li><a href="/categories/emonesp/">emonesp</a></li>
+    
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
       <li><a href="/categories/emontx/">emontx</a></li>
@@ -810,6 +823,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
     
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/esp8266/">esp8266</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
@@ -828,6 +843,8 @@ window.onclick = function(event) {
       <li><a href="/categories/hardware/">hardware</a></li>
     
       <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/heatpumpmonitor/">heatpumpmonitor</a></li>
     
       <li><a href="/categories/home assistant/">home Assistant</a></li>
     
@@ -926,6 +943,8 @@ window.onclick = function(event) {
       <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
+    
+      <li><a href="/categories/wifipixel/">wifipixel</a></li>
     
       <li><a href="/categories/wind/">wind</a></li>
     

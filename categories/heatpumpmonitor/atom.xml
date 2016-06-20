@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: heatpumpmonitor | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/heatpumpmonitor/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-06-20T11:27:13+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ESP8266 WIFI developments]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/"/>
+    <updated>2016-06-20T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id>
+    <content type="html"><![CDATA[<p>Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as <a href="https://emoncms.org">emoncms.org</a>.</p>
+
+<p><strong>Note:</strong> we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.</p>
+
+<p>We are at the moment working on three initial uses of the ESP8266:</p>
+
+<h2 id="emontx-v3--esp8266-module">1. <strong>EmonTx V3</strong> + ESP8266 module</h2>
+
+<p>We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as <a href="https://www.adafruit.com/product/2471">adafruit</a> (USA) and <a href="https://shop.pimoroni.com/products/adafruit-huzzah-esp8266-breakout">Pimoroni</a> (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.</p>
+
+<p><img src="/images/emontx-esp.png" alt="image" /></p>
+
+<p>There will be another post very soon detailing how to use this module with the EmonTx v3.</p>
+
+<!--more-->
+
+<h2 id="heatpumpenergy-monitor">2. Heatpump/Energy Monitor</h2>
+
+<p>Heatpump / energy monitor through-hole development board, essentially and EmonTx v2 with additional features for interfacing with heat meters and multiple DS18B20 temperature sensors as well as an integrated ESP8266 WIFI module.</p>
+
+<p><img src="/images/heatpumpmonitor.png" alt="image" /></p>
+
+<p>The heatpump monitor board currently supports:</p>
+
+<ul>
+  <li>3x CT + ACAC Channels</li>
+  <li>Elster A100C Irda meter reader (watt hours)</li>
+  <li>Pulse Counting</li>
+  <li>Supports MBUS heat meters (Kamstrup 402)</li>
+  <li>Supports SIKA flow meters</li>
+  <li>4x DS18B20 Temperature Sensors</li>
+  <li>Miniature solid state relay for heating control (not yet tested)</li>
+  <li>ESP8266 Low cost Wifi</li>
+  <li>RFM69 option</li>
+  <li>Raspberry PI connector option</li>
+  <li>A Through-hole ESP Wifi development platform</li>
+  <li>Fits in the EmonTx V3 Aluminum case</li>
+</ul>
+
+<p>Guide cost ~£50 (ex VAT) for full heatpump monitor kit with case, ~£30 (ex VAT) for cut down WIFI energy monitor only kit without case.. To be finalised.</p>
+
+<p><a href="https://github.com/openenergymonitor/HeatpumpMonitor">See Heatpump monitor development repo</a></p>
+
+<h2 id="esp8266-based-wifi-pixel-energy-display">3. ESP8266 based WIFI Pixel Energy Display,</h2>
+
+<p>This is an idea thanks to David Hunninsett (<a href="http://twitter.com/m0untainpenguin">@m0untainpenguin</a>) with hardware being developed by <a href="https://github.com/Protoneer/WifiPixels">Protoneer</a>. It fits into a project we are more recently part of here in North Wales called <a href="http://www.energylocal.co.uk/cydynni/">CydYnni by EnergyLocal</a> where 100 households within the boundary of the substation get cheap electricity when a local community hydro is running. David Hunninsett is one of the households on the project and he is keen to have a display that shows when it’s a good time to use electricity among other uses. The wifi pixel could become a nice platform for a ambient home energy indicator.</p>
+
+<p><img src="/images/wifi-pixel1.jpg" alt="image" /></p>
+
+<p><img src="/images/wifi-pixel2.jpg" alt="image" /></p>
+
+<p><a href="http://community.openenergymonitor.org/uploads/default/original/1X/c72e375230597049c0d8a9e06645a8d088d70774.mp4">See video</a></p>
+
+<p><a href="https://github.com/davehun/mqtt-wifi-pixel">See software development  repo on</a></p>
+
+<h1 id="emonesp-easier-setup-and-installation">EmonESP, easier setup and installation</h1>
+
+<p>One of the really nice things about using the ESP module is that it can really simplify setup for installations that only need to post to a remote emoncms server. The wifi module starts by broadcasting a hotspot that you connect to directly, you can then scan for wifi networks, select the network, get the ip address of the monitor on the network (which saves using fing or accessing your router device list), enter your emoncms.org apikey to connect to an emoncms.org account (to be replaced with username and passowrd login + ability to register and link the monitor to a emoncms account in one step).</p>
+
+<p><img src="/images/emonesp.jpg" alt="image" /></p>
+
+<p>We plan to extend EmonESP to also support MQTT.</p>
+
+<p>The EmonESP software is based on work by Chris Howel of <a href="http://www.openevse.com">OpenEVSE</a> which is a really nice open hardware electric vehicle charging station, it’s been really nice to find a common development like this that can be beneficial to two open hardware and software projects. OpenEVSE <a href="https://data.openevse.com/">already use Emoncms</a> for logging and graphing.</p>
+
+<p><a href="https://github.com/openenergymonitor/emonesp">EmonESP firmware developments can be found on github</a></p>
+
+<h2 id="over-the-air-firmware-upload">Over the air firmware upload</h2>
+
+<p>Glyn has been doing a lot of work on how we can do over the air updates to ESP8266 based units. Being able to do this will make it a lot easier to maintain and keep the firmware on these updated especially as the software goes through the larger number of iterations in initial development. Check out his blog posts here to follow the development:</p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware">Part 2/3: Firmware Continuous Test &amp; Build</a></li>
+  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>…In the making!</em></li>
+</ul>
+
+<h2 id="forum-discussion">Forum discussion</h2>
+
+<p>See <a href="https://community.openenergymonitor.org/t/esp8266-wifi-developments/784">this forum topic</a> for discussion.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+</feed>

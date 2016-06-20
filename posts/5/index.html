@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/07/open-source-hourly-zero-carbon-energy/">Open source hourly zero carbon energy model, combining traditional electric, heating and electric vehicle demand.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-04T13:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-04 13:20:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2015/07/open-source-hourly-zero-carbon-energy/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The last 6 zero carbon energy model examples (linked below) have explored the core parts of a household energy model looking at supply and demand including the electrification of space heating demand and transport demand so that it can be provided for with renewable electricity.<br /><br />This final model in this series  brings all these components together to see how the combination of  demands interact and how they affect the supply and demand matching.<br /><br />It also explores the contribution of two small scale stores a 7kWh electrical store (such as a Tesla power wall) and a 10kWh heatstore.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-BRUPMwiPZsE/VZfRMe-vH7I/AAAAAAAATSs/oZCasHAvinI/s1600/all.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://4.bp.blogspot.com/-BRUPMwiPZsE/VZfRMe-vH7I/AAAAAAAATSs/oZCasHAvinI/s640/all.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;"><b>The interactive modelling tool can be opened here: </b></div><div class="separator" style="clear: both; text-align: left;"><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>7. All</i></div><br />The following table show the results in terms of percentage of demand supplied directly of running the model with different electric vehicle charging profiles, and storage options. There is a small 4% oversupply.<br /><br /><table class="table"> <tbody><tr><td><b>No stores</b></td><td></td></tr><tr><td>4% OS + night charging</td><td>62.3%</td></tr><tr><td>4% OS + 1/2day 1night charging</td><td>76.2%</td></tr><tr><td>4% OS + flat charging</td><td>78.3%</td></tr><tr><td>4% OS + smartcharging</td><td>86.3%</td></tr><tr><td><b>Liion store</b></td><td></td></tr><tr><td>4% OS + night charging + 7 kWh li-ion store</td><td>84.4%</td></tr><tr><td>4% OS + 1/2day 1night charging + 7 kWh li-ion store</td><td>86.0%</td></tr><tr><td>4% OS + flat charging + 7 kWh li-ion store</td><td>86.2%</td></tr><tr><td>4% OS + smart charging + 7 kWh li-ion store</td><td>88.6%</td></tr><tr><td><b>Heatstore</b></td><td></td></tr><tr><td>4% OS + night charging + 10 kWh heatstore</td><td>70.2%</td></tr><tr><td>4% OS + 1/2day 1night charging + 10 kWh heatstore</td><td>81.0%</td></tr><tr><td>4% OS + flat charging + 10 kWh heatstore</td><td>82.4%</td></tr><tr><td>4% OS + smartcharging + 10 kWh heatstore</td><td>87.5%</td></tr><tr><td><b>Liion + heatstore</b></td><td></td></tr><tr><td>4% OS + 7 kWh li-ion store + 10 kWh heatstore + nightcharging</td><td>85.5%</td></tr><tr><td>4% OS + 7 kWh li-ion store + 10 kWh heatstore + 1/2d 1n</td><td>86.9%</td></tr><tr><td>4% OS + 7 kWh li-ion store + 10 kWh heatstore + flatcharging</td><td>87.1%</td></tr><tr><td>4% OS + 7 kWh li-ion store + 10 kWh heatstore + smartcharging</td><td>89.3%</td></tr></tbody></table><br />Its interesting that a matching of 89.3% can be achieved with 7 kWh li-ion store, 10 kWh heatstore and electric car smartcharging up from a minimum of 62.3% with no stores and night time charging only. I think its quite impressive and encouraging that this high a level of matching can be achieved from a relatively small amount of storage and that 86% can be achieved with the smartcharging option only.<br /><br />There are clearly different routes possible to achieve higher degree's of matching. If smart charging is technically possible with the flexibility used within the model and that it doesn’t provide too much of a burden on the user and only requires potentially a relatively small amount of electronics, embodied energy and cost compared to the li-ion store and heatstore then smart charging may be a more effective option.<br /><br />A li-ion store and flat rate charging provides about the same benefit as smart charging and so if smart charging does not pan out to be practical then there may be an option to make up for it with a li-ion store, especially if the embodied energy and cost of storage reduces significantly.<br /><br />The combination of measures provide smaller gains (if you apply smart charging first then the li-ion store only provides ~3% additional gains, however if you apply the li-ion first it looks like its the smart charging that only provides the small gain). Perhaps an important aspect is that a combination could provide important redundancy. It looks worthwhile to explore and develop each of the above solutions with a focus on how they integrate, the flexibility at which they can match supply, their costs and embodied energy. <br /><br />The other blog posts in this series are linked below and the next model will explore the use of large capacity energy stores such as power to gas to reach 100% supply/demand matching. All the modelling behind this work is open source and available on github here: https://github.com/TrystanLea/zcem&nbsp; <br /><ul><li><a href="http://openenergymonitor.blogspot.com/2015/06/modelling-hourly-demand-and-supply-for.html">Modelling hourly demand and supply for renewable powered domestic electricity, heating with heatpumps and electric vehicles</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/06/hourly-energy-model-example-1-variable.html">Hourly energy model example 1: Variable Supply</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/06/hourly-energy-model-example-2-variable.html">Hourly energy model example 2: Variable supply and flat demand (python code included)</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/06/hourly-energy-model-example-3-variable.html">Hourly energy model example 3: Variable supply and traditional electricity demand</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/06/hourly-energy-model-example-4.html">Hourly energy model example 4: Complementarity of different renewable generating technologies</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/06/hourly-energy-model-example-5-simple.html">Hourly energy model example 5: Simple space heating model with heatpump's powered by renewable energy</a>&nbsp;</li><li><a href="http://openenergymonitor.blogspot.com/2015/07/hourly-energy-model-example-5-electric.html">Hourly energy model example 6: Electric vehicles and a renewable energy supply</a></li></ul>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/07/hourly-energy-model-example-5-electric/">Hourly energy model example 6: Electric vehicles and a renewable energy supply</a>
   </h1>
   
@@ -411,37 +442,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/hourly-energy-model-example-1-variable/">Hourly energy model example 1: Variable Supply</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-11T09:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-11 09:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2015/06/hourly-energy-model-example-1-variable/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    This first example in the hourly energy modelling tool model's the hourly output of a given installed  capacity of wind, wave, tidal or solar. The model really isn’t doing  much its just loading the capacity factors for every hour from the 10  year dataset and multiplying the capacity factor by the installed  capacity.<br /><br />The total electricity generated is calculated as the sum of  the electricity generation in each hour and printed along with the  capacity factor at the end.<br /><br />This example is useful for just seeing what the <a href="http://openenergymonitor.org/energymodel/#dataset">ZeroCarbonBritain renewable capacity factor dataset</a> looks like, you can zoom and pan through the datasets for onshore wind, offshore wind, tidal, wave and solar pv, click on the link below to open the tool:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-T7q21zj15Vo/VXlOl1119MI/AAAAAAAASbc/3WNsO_O2ayo/s1600/variablesupply.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="454" src="http://2.bp.blogspot.com/-T7q21zj15Vo/VXlOl1119MI/AAAAAAAASbc/3WNsO_O2ayo/s640/variablesupply.png" width="640" /></a></div>&nbsp;&nbsp; <br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>1. variable supply</i><br /><br />The units are really not important the example could just as  well be in MW's or GW's. kW's where chosen as the other model examples in the series are  focused around building a hourly model that's relatable to an average  households energy demand. The kW's of installed capacity could just  relate to a small share of a much larger wind turbine, solar farm, wave  or tidal power installation.<br /><br />Running the model for each of these generation types with the same installed capacity the results are as follows:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.0kW</td><td>1.0kW</td><td>1.0kW</td><td>1.0kW</td><td>1.0kW</td>    </tr><tr>        <td>Annual generation</td>        <td>2834 kWh</td><td>4204 kWh</td><td>2482 kWh</td><td>2092 kWh</td><td>826 kWh</td>     </tr><tr>        <td>Capacity factor</td>        <td>32%</td><td>47%</td><td>28%</td><td>23%</td><td>9%</td>     </tr></tbody></table><br />In all of the examples above the installed capacity of the renewable generator was the same (1.0kW) but we can see straight away that there is a significant difference in the total electricity generated by each type. A unit of offshore wind generates just over 5 times as much energy as a unit of solar pv using the <a href="http://openenergymonitor.org/energymodel/#dataset">zerocarbonbritain dataset</a>. By itself this is not enough information to evaluate the effectiveness of a technology, we would need to compare the costs per unit of installed capacity, embodied energy per unit of installed capacity, how well a particular solution matches demand, the land areas required, the availability of the resource to name just a few of the many factors that need to be weighed up but it does highlight one of the important factors.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of python versions of the examples which are simpler to follow as they dont include all the code to create the visual output, they just print out the main results at the end.<br /><br />The following 19 lines of python code are all you need to load the ZeroCarbonBritain dataset and run through all 87,648 hours, calculating the power output for each hour and accumulating the total energy supplied over the 10 year model period:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 4<br /><br />installed_capacity = 1.0 # kW<br /><br /># Load dataset<br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br /><br />total_supply = 0<br /><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />print "Installed capacity: %s kW" % installed_capacity<br />print "Total supply: %d kWh" % total_supply<br />print "Capacity factor: %0.2f%%" % capacity_factor</span><br /><br /><b>Next:</b> Variable supply and flat demand - investigating the degree of supply/demand matching
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -558,6 +558,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
         </li>
       
@@ -607,12 +613,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
         </li>
       
     
@@ -749,6 +749,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/emoncms/">emoncms</a></li>
     
+      <li><a href="/categories/emonesp/">emonesp</a></li>
+    
       <li><a href="/categories/emonpi/">emonpi</a></li>
     
       <li><a href="/categories/emontx/">emontx</a></li>
@@ -758,6 +760,8 @@ window.onclick = function(event) {
       <li><a href="/categories/energy monitor/">energy monitor</a></li>
     
       <li><a href="/categories/energy monitoring/">energy monitoring</a></li>
+    
+      <li><a href="/categories/esp8266/">esp8266</a></li>
     
       <li><a href="/categories/feed storage/">feed storage</a></li>
     
@@ -776,6 +780,8 @@ window.onclick = function(event) {
       <li><a href="/categories/hardware/">hardware</a></li>
     
       <li><a href="/categories/heating/">heating</a></li>
+    
+      <li><a href="/categories/heatpumpmonitor/">heatpumpmonitor</a></li>
     
       <li><a href="/categories/home assistant/">home Assistant</a></li>
     
@@ -874,6 +880,8 @@ window.onclick = function(event) {
       <li><a href="/categories/vrms/">vrms</a></li>
     
       <li><a href="/categories/website/">website</a></li>
+    
+      <li><a href="/categories/wifipixel/">wifipixel</a></li>
     
       <li><a href="/categories/wind/">wind</a></li>
     
