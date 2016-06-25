@@ -39,6 +39,8 @@ $ cd emoncms-docker
 $ docker-compose up
 ```
 
+**That's it! Emoncms should now be runnning, browse to [http://localhost:8080](http://localhost:8080)**
+
 <!--more-->
 
 ## Emoncms Docker
