@@ -30,7 +30,18 @@ Docker is an exciting tool to help make development, testing and deployment of w
 > Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.
 
 
+## Quick Start
+
+```
+$ docker pull openenergymonitor/emoncms
+$ git clone https://github.com/emoncms/emoncms-docker
+$ cd emoncms-docker
+$ docker-compose up
+```
+
 <!--more-->
+
+## Emoncms Docker
 
 Using Docker it's possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install & config taken care of.
 
