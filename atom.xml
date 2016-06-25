@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-25T14:13:57+00:00</updated>
+  <updated>2016-06-25T14:20:11+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -48,6 +48,8 @@ $ cd emoncms-docker
 $ docker-compose up
 </code></pre>
 </div>
+
+<p><strong>That’s it! Emoncms should now be runnning, browse to <a href="http://localhost:8080">http://localhost:8080</a></strong></p>
 
 <!--more-->
 

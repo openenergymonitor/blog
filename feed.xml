@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-25T14:13:57+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-25T14:20:11+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
 
 &lt;p&gt;Dockerfiles and setup notes are in the emoncms-docker repository:&lt;/p&gt;
 
@@ -28,6 +28,8 @@ $ cd emoncms-docker
 $ docker-compose up
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;That’s it! Emoncms should now be runnning, browse to &lt;a href=&quot;http://localhost:8080&quot;&gt;http://localhost:8080&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -76,7 +78,11 @@ Quick Start
 $ docker pull openenergymonitor/emoncms
 $ git clone https://github.com/emoncms/emoncms-docker
 $ cd emoncms-docker
-$ docker-compose up</summary></entry><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
+$ docker-compose up
+
+
+
+That’s it! Emoncms should now be runnning, browse to http://localhost:8080</summary></entry><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.&lt;/p&gt;
 
