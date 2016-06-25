@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/09/backing-up-your-raspberrypi-emoncms-or/">Backing up your raspberrypi emoncms or emoncms.org account</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-09-30T20:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-09-30 20:00:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/backup/'>backup</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/09/backing-up-your-raspberrypi-emoncms-or/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">I've added a couple of scripts to the emoncms usefulscripts directory that makes backing up an emoncms account whether on a local raspberrypi or emoncms.org much easier than the sync module solution, although still not as easy as I would like it to be, I would like setting up a backup to be as easy as installing a dropbox client.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The scripts work with Linux at the moment, hopefully soon I'l get a solution running on Windows. I would highly recommend keeping your own backup of your data, a backup of your emoncms data on your main computer can also be useful for both quicker access to the data and doing additional analysis of the data.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s1600/backup.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s640/backup.png" width="640" /></a></div><b>1) Install emoncms</b> <b>on your backup machine</b> following the guide here:&nbsp;<a href="http://emoncms.org/site/docs/installlinux">http://emoncms.org/site/docs/installlinux</a><br />Create an account and note down your mysql credentials.<br /><br /><b>2) Download the usefulscripts repository</b><br /><a href="https://github.com/emoncms/usefulscripts">https://github.com/emoncms/usefulscripts</a><br /><br />There are two scripts available under usefulscripts/replication<br /><br /><ul><li>import_full.php</li><li>import_inputs.php</li></ul><br />3) Try<b> importing your inputs</b> first to test that it works: Open to edit <i>import_inputs.php</i>.<br />Set your mysql database name, username and password, the same credentials as for the settings.php step of the emoncms installation. Set the $server variable to the location of the raspberrypi or emoncms.org account you want to backup and set the $apikey to the write apikey of that account.<br /><br />In terminal, goto the usefulscripts/replication directory. Run import_inputs.php:<br /><br />&nbsp; &nbsp; php import_inputs.php<br /><br />If successful you should now see your input list and all input processing information backed up in your local emoncms account.<br /><br /><b>4) Backup all your feed data:</b><br /><br />As for importing inputs open import_full.php and set the database credentials and remote emoncms account details.<br /><br />Run the backup script with <b>sudo</b><br /><b><br /></b>&nbsp; &nbsp; sudo php import_full.php<br /><br />That's it, it should now work through all your feeds whether mysql or timestore (no phptimeseries support yet) making a local backup. When you first run this script it can take a long time. When you run this script again it will only download the most recent data and so will complete much faster. I run this script once every few days to keep an up-to-date backup.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/09/raspberrypi-sd-cards-hdd-gateway/">RaspberryPI: SD Cards, HDD, Gateway Forwarder</a>
   </h1>
   
@@ -471,46 +513,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/08/preparing-emoncmsorg-feeds-for/">Preparing emoncms.org feeds for conversion to timestore</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-08-01T14:16:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-01 14:16:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/08/preparing-emoncmsorg-feeds-for/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    One of the central principles behind the <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="mikestirling.co.uk/redmine/projects/timestore">Timestore data storage</a> approach is that datapoints are stored at a fixed interval. Because you know that there is a datapoint every 10s you dont need to store the timestamp for each datapoint, you only need to store the timestamp for the first datapoint. The timestamp for every other datapoint can be worked out i.e:<br /><br /><pre>timestamp = start + position * interval.</pre><br />Storing time series data in this way makes it really easy and very fast to query. The tests so far have shown timestore to be <a href="http://www.blogger.com/blogger.g?blogID=2472065242652647619" src="http://openenergymonitor.blogspot.co.uk/2013/07/from-13-minutes-to-196ms-timestore-on.html">several magnitudes faster</a> while also using significantly less disk space.<br /><br />If your logging to emoncms.org there is now an interface that can be used to select the interval rate that you would like your feeds converted too, its linked from the feeds page.<br /><br /><b>On the feed/convert page:</b><br /><br />The new interval column states the average interval rate of the existing feed and is calculated simply as the end time minus the start time divided by the number of datapoints in the feed. This interval rate can be skewed if the monitor dropped off for a period, so its worth double checking that it is correct.<br /><br />You may wish to change your interval rate, if your logging temperature data at 5s intervals and 60s is enough to see the changes in temperature you want to see then select 60s as this reduces the disk use of the feed considerably.<br /><br />To set the interval rate you wish your feed to be converted to, click on the <b>pencil button</b> to bring up in-line editing:<br /><img src="http://emoncms.org/Modules/feed/Views/step1.png" /> <br />Click on the drop down menu under convert to and select from the list the interval you wish to use. Click on the tick button to complete.<br /><img src="http://emoncms.org/Modules/feed/Views/step2.png" /> <br />Repeat the above steps for every feed you wish to convert and then once your done click on <b>Add feeds to conversion queue</b> button that is at the bottom of the conversion page.<br /><br />As mentioned in the last post, its going to take up to a month for the server to convert through all the feeds so you wont see anything straight away. I will update with conversion progress.<br /><br />I've put all the code for the above on github under an <a href="https://github.com/emoncms/emoncms/tree/emoncmsorg">emoncmsorg branch of emoncms</a>, the conversion scripts can also be found in the repo <a href="https://github.com/emoncms/usefulscripts">usefulscripts</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -627,6 +629,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
         </li>
       
@@ -676,12 +684,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
         </li>
       
     
@@ -783,6 +785,8 @@ window.onclick = function(event) {
       <li><a href="/categories/display/">display</a></li>
     
       <li><a href="/categories/diy drones/">diy drones</a></li>
+    
+      <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
     

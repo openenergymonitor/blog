@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: docker | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/docker/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-06-25T13:02:00+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Docker]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/"/>
+    <updated>2016-06-25T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id>
+    <content type="html"><![CDATA[<p>We have made the first steps towards running Emoncms to run in a <a href="https://www.docker.com/">Docker</a> container.</p>
+
+<p>Dockerfiles and setup notes are in the emoncms-docker repository:</p>
+
+<h3 id="httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker"><a href="https://github.com/emoncms/emoncms-docker">https://github.com/emoncms/emoncms-docker</a></h3>
+
+<p><img src="/images/docker-logo.png" alt="image" /></p>
+
+<p>Docker is an exciting tool to help make development, testing and deployment of web-applications easier.</p>
+
+<h2 id="what-is-docker-the-short-version">What is docker? (the short version):</h2>
+
+<blockquote>
+  <p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.</p>
+</blockquote>
+
+<h3 id="what-is-docker-the-long-version">What is docker? (the long version):</h3>
+
+<blockquote>
+  <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
+</blockquote>
+
+<!--more-->
+
+<p>Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp; config taken care of.</p>
+
+<p>This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.</p>
+
+<p>In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.</p>
+
+<p>We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using <a href="https://docs.docker.com/compose/overview/">docker-compose</a>.</p>
+
+<p><strong>See <a href="https://github.com/emoncms/emoncms-docker">emoncms-docker Readme</a> for setup &amp; build instructions.</strong></p>
+
+<p><em>Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.</em></p>
+
+<h2 id="forum-discussion">Forum discussion</h2>
+
+<p>See <a href="https://community.openenergymonitor.org/t/emoncms-docker/823/4">this forum topic</a> for discussion.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+</feed>

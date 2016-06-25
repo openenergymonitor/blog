@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-20T11:27:13+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-25T13:02:00+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
+
+&lt;p&gt;Dockerfiles and setup notes are in the emoncms-docker repository:&lt;/p&gt;
+
+&lt;h3 id=&quot;httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker&quot;&gt;&lt;a href=&quot;https://github.com/emoncms/emoncms-docker&quot;&gt;https://github.com/emoncms/emoncms-docker&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/docker-logo.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker is an exciting tool to help make development, testing and deployment of web-applications easier.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-docker-the-short-version&quot;&gt;What is docker? (the short version):&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;what-is-docker-the-long-version&quot;&gt;What is docker? (the long version):&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp;amp; config taken care of.&lt;/p&gt;
+
+&lt;p&gt;This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.&lt;/p&gt;
+
+&lt;p&gt;In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.&lt;/p&gt;
+
+&lt;p&gt;We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using &lt;a href=&quot;https://docs.docker.com/compose/overview/&quot;&gt;docker-compose&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See &lt;a href=&quot;https://github.com/emoncms/emoncms-docker&quot;&gt;emoncms-docker Readme&lt;/a&gt; for setup &amp;amp; build instructions.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;forum-discussion&quot;&gt;Forum discussion&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-docker/823/4&quot;&gt;this forum topic&lt;/a&gt; for discussion.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>We have made the first steps towards running Emoncms to run in a Docker container.
+
+Dockerfiles and setup notes are in the emoncms-docker repository:
+
+https://github.com/emoncms/emoncms-docker
+
+
+
+Docker is an exciting tool to help make development, testing and deployment of web-applications easier.
+
+What is docker? (the short version):
+
+
+  Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+
+What is docker? (the long version):
+
+
+  Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</summary></entry><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.&lt;/p&gt;
 
@@ -682,63 +741,4 @@ One solution to increasing supply &amp;amp; demand matching at the household lev
 
 Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.
 
-In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a ‘virtual microgrid’ concept, we have a provisional front page for this here - please note that its still in early development:</summary></entry><entry><title>Part 2: Exploring carbon intensity and renewable energy matching</title><link href="https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/" rel="alternate" type="text/html" title="Part 2: Exploring carbon intensity and renewable energy matching" /><published>2016-04-28T15:00:00+00:00</published><updated>2016-04-28T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/04/Part2-Exploring-carbon-intensity/">&lt;p&gt;&lt;img src=&quot;/images/winderful.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual &lt;a href=&quot;https://github.com/TrystanLea/VirtualSmartGrid&quot;&gt;smart grids&lt;/a&gt; with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the &lt;a href=&quot;http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype&quot;&gt;Carbon Coop blog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;/2016/04/Understand-CO2-intensity-grid-electricity/&quot;&gt;last post&lt;/a&gt; described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.&lt;/p&gt;
-
-&lt;p&gt;If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.&lt;/p&gt;
-
-&lt;p&gt;There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Calculating a households share of real-time wind output
-
-Between March 2015 and March 2016 the output of UK wind power was on average 2630MW.
-
-If a household buys 54% of 3300 kWh (typical annual household electricity consumption) or about 1800 kWh this converts to an average power of 205 Watts.
-
-The scaling factor to convert total wind power output in MW to a household share is therefore:
-
-scaling factor = 205 W / 2630 MW
-
-The wind power available at any given moment would then be
-
-wind power available = ( 205W / 2630MW ) x uk wind power output (MW)
-
-If total UK wind power is 4000MW the estimated amount available in this example for the household is = (205W/2630MW) x 4000MW = 312 Watts.
-
-Over the year the average available wind power for the household will work out to being 205W but for any given moment it could be more or less than this depending on how much power is being generated at that moment.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With data on household demand, onsite solar and a share of UK wind, we then work out how much backup supply is needed and from this an estimate of household CO2 intensity.&lt;/p&gt;
-
-&lt;p&gt;The backup CO2 intensity could be a single source such as CCGT gas power or a grid CO2 intensity with the wind power component removed in order to avoid double counting. Using an intensity based on grid: coal, gas, nuclear and interconnectors with the wind component removed may help incentivise use outside of peak periods but as discussed in the last post an extended analysis would be needed to establish what’s best from a carbon perspective.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/week6.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Above: Emoncms MyEnergy App showing onsite solar (yellow), share of uk wind estimate (green) and household demand (blue). Available on emoncms.org or self-hosted installations.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The average CO2 intensities that result from this approach depend on the degree of matching between household demand and the renewable supply. From our experience so far matching can be anywhere between 40% and 70% depending on the nature of the household demand and how much demand shifting effort is undertaken. The resulting average carbon intensity is directly proportional to the level of matching: 40% matching means we need backup supply to cover 60% of the demand reducing the carbon intensity by 40% compared to grid average or perhaps CCGT gas CO2 intensity.&lt;/p&gt;
-
-&lt;p&gt;While far from perfect as no account is taken of what is actually happening on the local network, this approach could be seen as a good middle ground between on the one hand saying that all grid electricity has to be counted at grid average carbon intensity and on the other that all electricity from a green tariff is zero carbon at all times. It provides an incentive for demand shifting to times of high renewable output, while reflecting a substantial carbon reduction benefit that should be available from buying renewable energy across the grid.&lt;/p&gt;
-
-&lt;h3 id=&quot;excessexported-renewable-energy&quot;&gt;Excess/exported renewable energy&lt;/h3&gt;
-&lt;p&gt;There is an interesting question as to what happens to excess renewable energy not used by the household in this approach. If the energy is exported to the grid and used by others effectively displacing otherwise needed fossil fuel generation then this carbon saving could offset the carbon emissions emitted by the household when backup electricity was used. The result could mean that regardless of the degree of matching achieved between renewable supply and demand, whether on-site solar or wider grid renewable, the household could achieve net zero carbon by generating and equal amount of renewable supply as demand over a longer time period such as a year. This is a commonly used argument for net zero buildings. On the one hand it makes sense but on the other it relies on there being a wider fossil fuel powered grid in order to displace the fossil fuel generation and it substantially removes the incentive for renewable supply/demand matching.&lt;/p&gt;
-
-&lt;h3 id=&quot;displaced-carbon&quot;&gt;Displaced carbon&lt;/h3&gt;
-&lt;p&gt;Perhaps a better way to look at the displaced carbon issue is who is it that actually gets to claim the zero carbon benefit of that electricity. It would make sense that exported electricity is sold and then bought by the other party, once you’re buying renewable energy you would expect to be able to claim the zero carbon benefit of that energy as the user. Counting the exported electricity if bought by another user as displaced carbon would result in double counting in this case.&lt;/p&gt;
-
-&lt;p&gt;This is somewhat complicated by fact that exported solar pv electricity is not metered for small domestic installations in the UK. Instead the amount exported is assumed to be 50% of total generation. The exported electricity is paid for at around 4.91p/kWh but not measured. It’s not clear who gets to claim the carbon saved.&lt;/p&gt;
-
-&lt;h3 id=&quot;next-aggregation&quot;&gt;Next: Aggregation&lt;/h3&gt;
-&lt;p&gt;The degree of matching can be increased by aggregating supply and demand across several households. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s. We have been testing with a limited number of households so far, the effect of aggregation on the degree of supply/demand matching which I will come on to in the next post.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual smart grids with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the Carbon Coop blog.
-
-The last post described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.
-
-If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.
-
-There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.</summary></entry></feed>
+In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a ‘virtual microgrid’ concept, we have a provisional front page for this here - please note that its still in early development:</summary></entry></feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-20T11:27:13+00:00</updated>
+  <updated>2016-06-25T13:02:00+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Docker]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/"/>
+    <updated>2016-06-25T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id>
+    <content type="html"><![CDATA[<p>We have made the first steps towards running Emoncms to run in a <a href="https://www.docker.com/">Docker</a> container.</p>
+
+<p>Dockerfiles and setup notes are in the emoncms-docker repository:</p>
+
+<h3 id="httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker"><a href="https://github.com/emoncms/emoncms-docker">https://github.com/emoncms/emoncms-docker</a></h3>
+
+<p><img src="/images/docker-logo.png" alt="image" /></p>
+
+<p>Docker is an exciting tool to help make development, testing and deployment of web-applications easier.</p>
+
+<h2 id="what-is-docker-the-short-version">What is docker? (the short version):</h2>
+
+<blockquote>
+  <p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.</p>
+</blockquote>
+
+<h3 id="what-is-docker-the-long-version">What is docker? (the long version):</h3>
+
+<blockquote>
+  <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
+</blockquote>
+
+<!--more-->
+
+<p>Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp; config taken care of.</p>
+
+<p>This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.</p>
+
+<p>In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.</p>
+
+<p>We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using <a href="https://docs.docker.com/compose/overview/">docker-compose</a>.</p>
+
+<p><strong>See <a href="https://github.com/emoncms/emoncms-docker">emoncms-docker Readme</a> for setup &amp; build instructions.</strong></p>
+
+<p><em>Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.</em></p>
+
+<h2 id="forum-discussion">Forum discussion</h2>
+
+<p>See <a href="https://community.openenergymonitor.org/t/emoncms-docker/823/4">this forum topic</a> for discussion.</p>
+
+<hr />
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emoncms android App QR Code Scanner Setup]]></title>
@@ -97,15 +146,6 @@
 
 <tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukgrid</a></td></tr></tbody></table>
 <p><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="426" src="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<a href="http://emoncms.org/ukelectricitygrid/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukwind</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>Dashboards:</b>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b></b>&lt;/div&gt;&lt;div class="separator" style="clear: both;"&gt;<a href="http://emoncms.org/ukelectricitygrid/ukgrid">http://emoncms.org/ukelectricitygrid/ukgrid</a>&lt;/div&gt;&lt;div&gt;<a href="http://emoncms.org/ukelectricitygrid/ukwind">http://emoncms.org/ukelectricitygrid/ukwind</a>&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>Open-API:</b>&lt;/div&gt;UK grid carbon intensity: <a href="http://emoncms.org/feed/value.json?id=97715">http://emoncms.org/feed/value.json?id=97715</a><br />&lt;div&gt;UK wind: <a href="http://emoncms.org/feed/value.json?id=67088">http://emoncms.org/feed/value.json?id=67088</a><br /><br />Other feeds are also available including grid fuel mix and current energy demand, just place ‘id’ in the API with the feed ID’s below: &lt;/div&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;table class="table table-bordered table-hover table-condensed"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;<b>Feed</b>&lt;/td&gt;&lt;td&gt;<b>Name</b>&lt;/td&gt;&lt;td&gt;<b>Current Value (22/11/15 22hrs)</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97689&lt;/td&gt;&lt;td&gt;CCGT_val&lt;/td&gt;&lt;td&gt;11592&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97690&lt;/td&gt;&lt;td&gt;CCGT_prc&lt;/td&gt;&lt;td&gt;0.31&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97691&lt;/td&gt;&lt;td&gt;OCGT_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97692&lt;/td&gt;&lt;td&gt;OCGT_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97693&lt;/td&gt;&lt;td&gt;OIL_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97694&lt;/td&gt;&lt;td&gt;OIL_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97695&lt;/td&gt;&lt;td&gt;COAL_val&lt;/td&gt;&lt;td&gt;10785&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97696&lt;/td&gt;&lt;td&gt;COAL_prc&lt;/td&gt;&lt;td&gt;0.29&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97697&lt;/td&gt;&lt;td&gt;NUCLEAR_val&lt;/td&gt;&lt;td&gt;7798&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97698&lt;/td&gt;&lt;td&gt;NUCLEAR_prc&lt;/td&gt;&lt;td&gt;0.21&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97699&lt;/td&gt;&lt;td&gt;WIND_val&lt;/td&gt;&lt;td&gt;1308&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97700&lt;/td&gt;&lt;td&gt;WIND_prc&lt;/td&gt;&lt;td&gt;0.03&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97701&lt;/td&gt;&lt;td&gt;PS_val&lt;/td&gt;&lt;td&gt;397&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97702&lt;/td&gt;&lt;td&gt;PS_prc&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97703&lt;/td&gt;&lt;td&gt;NPSHYD_val&lt;/td&gt;&lt;td&gt;533&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97704&lt;/td&gt;&lt;td&gt;NPSHYD_prc&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97705&lt;/td&gt;&lt;td&gt;OTHER_val&lt;/td&gt;&lt;td&gt;1976&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97706&lt;/td&gt;&lt;td&gt;OTHER_prc&lt;/td&gt;&lt;td&gt;0.05&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97707&lt;/td&gt;&lt;td&gt;INTFR_val&lt;/td&gt;&lt;td&gt;1495&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97708&lt;/td&gt;&lt;td&gt;INTFR_prc&lt;/td&gt;&lt;td&gt;0.04&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97709&lt;/td&gt;&lt;td&gt;INTIRL_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97710&lt;/td&gt;&lt;td&gt;INTIRL_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97711&lt;/td&gt;&lt;td&gt;INTNED_val&lt;/td&gt;&lt;td&gt;975&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97712&lt;/td&gt;&lt;td&gt;INTNED_prc&lt;/td&gt;&lt;td&gt;0.02&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97713&lt;/td&gt;&lt;td&gt;INTEW_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97714&lt;/td&gt;&lt;td&gt;INTEW_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97715&lt;/td&gt;&lt;td&gt;gridintensity&lt;/td&gt;&lt;td&gt;435.6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97736&lt;/td&gt;&lt;td&gt;totalsupply&lt;/td&gt;&lt;td&gt;36859&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div&gt;If you use the API in your project please drop us a line and give Emoncms some credit :-)<br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span style="color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="background-color: #edf7fc; font-size: 14px; line-height: 20px;"><br /></span></span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The data is captured from the <a href="http://www.bmreports.com/bsp/additional/soapfunctions.php?element=generationbyfueltypetable">UK Balancing BM Reports XML</a>. Our figure for grid intensity matched the figure generated by <a href="http://www.gridcarbon.uk/">http://www.gridcarbon.uk/</a>. &lt;/div&gt;&lt;/div&gt;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Node-RED Emoncms Node]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node/"/>
-    <updated>2015-11-15T22:22:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/11/node-red-emoncms-node</id>
-    <content type="html"><![CDATA[<p><br />I have recently been experimented using <a href="http://nodered.org/">Node-RED</a> for a <a href="http://openenergymonitor.blogspot.co.uk/search/label/NodeRed">number of tasks</a>. Thanks to the work of others a Node-RED flow node already existed for Emoncms making it very easy to post data to Emoncms. For my <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">Ambient Wind Energy Indicator</a> I had the need to extract real-time feed data from Emoncms feeds using the Emoncms API. I have now contributed this functionality to the official Node-RED Emoncms node. Using the updated Emoncms node it’s now super easy to post data to extract latest real-time feed values from any Emoncms server including <a href="http://emoncms.org/">Emoncms.org</a>.<br /><br />Get the latest version from: <a href="http://flows.nodered.org/node/node-red-node-emoncms">http://flows.nodered.org/node/node-red-node-emoncms</a>. If you’re interested in viewing and improving the functionality the open-source code behind the node is up on the <a href="https://github.com/node-red/node-red-nodes/tree/master/io/emoncms">Node-RED flows GitHub</a><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Node-RED node&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Install with:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ cd ~/.node-red&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;$ npm install node-red-node-emoncms&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s1600/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://1.bp.blogspot.com/-4AtaOCmThHA/VkkD6w2dT6I/AAAAAAABjCU/BbSfVrUgJQc/s640/Screenshot%2B2015-11-15%2Bat%2B22.14.16.png" width="514" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Node Documentation&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s1600/2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="235" src="http://3.bp.blogspot.com/-uCYC7R9TS8E/Vii2O8kylCI/AAAAAAABhRY/IwTzboRY2Pc/s400/2.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms in Node Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s1600/3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-eBOVh1G3bsk/Vii2O9QJ0cI/AAAAAAABhRU/QIxOJr5dY20/s400/3.png" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Server Config&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;</p>
 ]]></content>
   </entry>
   
