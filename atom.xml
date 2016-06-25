@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-25T13:02:00+00:00</updated>
+  <updated>2016-06-25T14:13:57+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -40,7 +40,18 @@
   <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
 </blockquote>
 
+<h2 id="quick-start">Quick Start</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ docker pull openenergymonitor/emoncms
+$ git clone https://github.com/emoncms/emoncms-docker
+$ cd emoncms-docker
+$ docker-compose up
+</code></pre>
+</div>
+
 <!--more-->
+
+<h2 id="emoncms-docker">Emoncms Docker</h2>
 
 <p>Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp; config taken care of.</p>
 
