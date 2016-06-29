@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-28T20:26:24+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-29T19:06:00+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/" rel="alternate" type="text/html" title="Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)" /><published>2016-06-29T10:00:00+00:00</published><updated>2016-06-29T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/auto-build-continuous-test-firmware/&quot;&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Related post: &lt;a href=&quot;/2016/06/esp8266-emonesp-developments&quot;&gt;EmonESP ESP8266 WiFi developments&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp;amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Code change is committed to the &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP repo on GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.&lt;/li&gt;
+  &lt;li&gt;If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.&lt;/li&gt;
+  &lt;li&gt;If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/emonesp-update.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The OTA (over-the-air) firmware deployment process is based on Daniel Eichhorn’s (&lt;a href=&quot;https://twitter.com/squix78&quot;&gt;@squix78&lt;/a&gt;) &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;excellent blog post&lt;/a&gt;. In summary the process is as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/esp-update-process.png&quot; alt=&quot;image&quot; /&gt;
+Diagram from &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;Daniel Eichhorn’s blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The build is tagged with a version number using PlatformIO build-flag, see EmonESP &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP/blob/master/platformio.ini&quot;&gt;platformio.ini&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;An intermediate PHP script connects to the GitHub API to check the latest release version and returns this as a string.&lt;/li&gt;
+  &lt;li&gt;ESP sends it’s current running firmware version to the PHP script using tag argument &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;tag=1.0.2&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;If the running firmware version does not match the latest release version, the PHP script grabs the latest release .bin from github-releases API and serves it up as a download to the ESP.&lt;/li&gt;
+  &lt;li&gt;ESP then flashes the compiled .bin OTA update using the &lt;a href=&quot;https://github.com/esp8266/Arduino/tree/master/libraries&quot;&gt;ESP8266httpUpdate library&lt;/a&gt; which is built-in to the espressif Arduino tool-chain&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;intermediate-php-script&quot;&gt;Intermediate PHP script&lt;/h3&gt;
+
+&lt;p&gt;Ideally the production ESP8266 would be able to contact the GitHub-release API directly negating the need for the intermediate PHP script. However, there are a number of reasons why this is not practical at the moment. To quote Daniel’s blog post:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;The ESPhttpUpdate currently cannot follow redirects. This is important since github hosts the release artefacts on Amazon AWS. But in the API JSON &amp;gt; object the address points to github, so the http client has to follow a redirect to download the artefact.&lt;/li&gt;
+    &lt;li&gt;Github uses https for its API and will redirect you to it if you are trying plain HTTP. This means that you would have to know the SSL fingerprints &amp;gt; of the github API server and the AWS hosting instance since this is required by the ESPs secure client interface. After all the ESPs don’t have a chain &amp;gt; of trusted certificates stored somewhere. While the fingerprint of the github API might be stable, the redirection on Amazon AWS might not always use &amp;gt; the same certificate.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;There is currently working example of this process (ESP8266 firmware + intermediate PHP script) in the &lt;code class=&quot;highlighter-rouge&quot;&gt;ota&lt;/code&gt; branch of &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP GitHub Repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;In it’s current implementation the update process described above is not secure.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Obviously secure delivery and verification of the update binary is essential.&lt;/p&gt;
+
+&lt;p&gt;Ideally the binary download to the ESP would be done over secure https. This maybe be possible, however https support on the ESP is currently not super stable and limited by the available memory (as mentioned above).&lt;/p&gt;
+
+&lt;p&gt;A method to verify the compiled binary could be to sign the compiled binary with a private key which is verified by the ESP before firmware is updated.&lt;/p&gt;
+
+&lt;p&gt;I would be interested to hear from anyone with any thoughts / advice as to how secure ESP OTA firmware delivery can be achieved.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>This post is part of a series
+
+
+  1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
+  2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
+    
+      Related post: EmonESP ESP8266 WiFi developments
+    
+  
+  3/3: Continuous Deployment (OTA to ESP8266)
+
+
+
+
+Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp;amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:
+
+
+  Code change is committed to the EmonESP repo on GitHub
+  TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.
+  If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.
+  If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.
+
+
+The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</summary></entry><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
 
 &lt;p&gt;Dockerfiles and setup notes are in the emoncms-docker repository:&lt;/p&gt;
 
@@ -178,9 +268,9 @@ We are initially using the Adafruit HUZZAH ESP8266 module as a development platf
 There will be another post very soon detailing how to use this module with the EmonTx v3.</summary></entry><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266) &lt;em&gt;- Coming soon…&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/esp8266-ota-update/&quot;&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -261,7 +351,7 @@ deploy:
 
   1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
   2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
-  3/3: Continuous Deployment (OTA to ESP8266) - Coming soon…
+  3/3: Continuous Deployment (OTA to ESP8266)
 
 
 
@@ -276,8 +366,12 @@ The motivation behind this automated-build and testing is working towards creati
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/&quot;&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/auto-build-continuous-test-firmware/&quot;&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Related post: &lt;a href=&quot;/2016/06/esp8266-emonesp-developments&quot;&gt;EmonESP ESP8266 WiFi developments&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/06/esp8266-ota-update/&quot;&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -473,6 +567,10 @@ $ sudo service emonhub start
 
   1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
   2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
+    
+      Related post: EmonESP ESP8266 WiFi developments
+    
+  
   3/3: Continuous Deployment (OTA to ESP8266)
 
 
@@ -734,36 +832,4 @@ Introducing a shiny new:
   Blog
 
 
-Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</summary></entry><entry><title>Part 3: Aggregated supply and demand across multiple households</title><link href="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/" rel="alternate" type="text/html" title="Part 3: Aggregated supply and demand across multiple households" /><published>2016-05-02T15:00:00+00:00</published><updated>2016-05-02T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/">&lt;p&gt;One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.&lt;/p&gt;
-
-&lt;p&gt;One solution to increasing supply &amp;amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.&lt;/p&gt;
-
-&lt;p&gt;Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.&lt;/p&gt;
-
-&lt;p&gt;In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a &lt;a href=&quot;https://openenergymonitor.org/dev/smartgrid&quot;&gt;&lt;strong&gt;‘virtual microgrid’ concept&lt;/strong&gt;&lt;/a&gt;, we have a provisional front page for this here - please note that its still in early development:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/smart-grid.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;With only four households aggregating on-site solar, off-site wind, hydro and consumption and with total supply matching total demand over the whole period achieved by scaling the wind component, we can see matching increasing from 46% in the previous example to around 64% here. The resulting average carbon intensity is 132gCO2/kWh.&lt;/p&gt;
-
-&lt;p&gt;At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.&lt;/p&gt;
-
-&lt;p&gt;The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Center for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See &lt;a href=&quot;(https://openenergymonitor.org/energymodel/)&quot;&gt;modelled supply/demand matching&lt;/a&gt; based on ZeroCarbonBritain data:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openenergymonitor.org/dev/smartgrid&quot;&gt;Smart grid test intro page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Visible currently on the community smart grid test front page is the participating households renewable supply mix, real-time information on grid CO2 intensity and grid wind, solar and hydro. Household demand is not currently shown as there are not enough participants for the demand profile to be sufficiently anonymous.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/supply.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in &lt;a href=&quot;http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2&quot;&gt;Dominic’s blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/smartgrid2.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.
-
-One solution to increasing supply &amp;amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.
-
-Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.
-
-In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a ‘virtual microgrid’ concept, we have a provisional front page for this here - please note that its still in early development:</summary></entry></feed>
+Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</summary></entry></feed>

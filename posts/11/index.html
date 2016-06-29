@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/12/emoncms-control-developments-and-demos/">Emoncms control developments and demo's</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-26T16:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-12-26 16:23:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/control/'>control</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/12/emoncms-control-developments-and-demos/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div id="example1heatingonoff">First Happy Christmas everyone for yesterday!<br /><br />One of the things I enjoy about the Christmas period is that you get some nice time to relax and with relaxation comes ideas and energy to try out some new things.<br /><br />Glyn and I had been talking about control interfaces that could work well on a mobile or tablet and Id been working on a touch enabled dial earlier this month so I thought Id package it up as a emoncms module that sets the control variables in the packetgen module, I've also created a couple of simpler control interface examples using buttons and edit boxes. To try out the following demo's for yourself see the steps at the bottom of the post.</div><h2 id="example1heatingonoff">Example 1: Heating On/Off</h2>A simple example using a bootstrap styled html button as our heating on/off button. Clicking the button toggles the state and updates the “packetgen” control packet with the new state.<br /><br /><img alt="button off" height="144" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button.png" title="" width="640" /><br /><br /><img alt="button on" height="145" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button_on.png" title="" width="640" /><br /><h2 id="example2heatingonoffplussetpoint">Example 2: Heating On/Off plus set point</h2>Very similar to the first example but now with a text input for setting the set point temperature for the room/building. The microcontroller on the control node checks the room temperature and turns on and off the heater depending on the setpoint setting it recieves from emoncms.<br /><br /><img alt="setpoint" height="178" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/setpoint.png" title="" width="640" /><br /><h2 id="example3nestinspireddial">Example 3: Nest inspired dial</h2>A nest inspired dial interface for setting the setpoint temperature. The set point can be adjusted by spinning the dial wheel with your finger:<br /><br /><img alt="heating dial" height="391" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial_expanded.png" title="" width="640" /><br /><br />The dial and page resizes to fit different screen types from widescreen laptop's to mobile phones and tablets and touch can be used to spin the dial.<br /><br /><img alt="heating dial mobile" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial.png" title="" /><br /><h2 id="solarpvgeneration">Solar PV Generation</h2>Not really control but developing the idea of custom html/javascript canvas based graphics further.<br /><br />I've always liked the standard “news &amp; weather” app that came with my android phone. It's a good example of how clean an intuitive graphs can be and how touch can be used to browse temperature/humidity at different times of the day.<br />This example is a start on creating a graph that looks and behaves in much the same way implemented in canvas.<br /><br /><img alt="solarpv" height="263" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/solarpv.png" title="" width="640" /><br /><h2 id="whatyouwillneedtoruntheseexamples">What you will need to run these examples</h2>You will need your own installation of emoncms to try these out, such as an emoncms + raspberrypi + harddrive setup.<br /><br /><a href="http://emoncms.org/site/docs/raspberrypihdd">RaspberryPI with harddrive</a><br /><br />You will also need the packetgen module (installed as default with the harddrive image):<br /><br />http://github.com/emoncms/packetgen<br /><br />and the 'development' repository <br /><br />http://github.com/emoncms/development<br /><br />Copy the folder titled myheating from the development repository to your emoncms/Modules folder. (from development/Modules/control)<br /><br />You should now be able to load the examples by clicking on the My Heating menu item.<br /><br />The example does not yet allow for any gui based configuration and so assumes that the control packet structure looks like this:<br /><br /><img alt="packet structure" height="288" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/packetgen.png" title="" width="640" /><br /><br />This packet will work with the Arduino electricradiator control node example that can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/Modules/control/Arduino%20Examples/electricradiator">Arduino Examples / electricradiator</a><br /><br />This sketch could be run on an emontx with jeeplug relay's attached or other rfm12b + arduino + relay type hardware builds.<br /><br /><b>Coding your own control interface</b><br /><br />The code for the simple button example above which may be useful as a foundation for building something else can be found here:<br /><br /><a href="https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php">https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php</a><br /><br />The interface is all in html and javascript jquery and uses bootstrap style buttons it just sends the updated heating state to the packetgen module via ajax.<br /><br /><b>More posts on controlling things </b><br /><br />Glyn's post on controlling his boiler: <a href="http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html">http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html</a><br /><br />The packet generator: <a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html">http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/12/emoncms-early-heating-control-demo/">Emoncms (early) Heating Control Demo</a>
   </h1>
   
@@ -503,46 +545,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/11/documentation-highlight-application/">Documentation highlight: Application guides</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-11-12T19:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-12 19:36:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/11/documentation-highlight-application/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: left;">To try and bring the work on the application guides more to the fore, I've rearranged the OpenEnergyMonitor Getting Started Guide bringing the application guide list up to the top of the page.</div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><img border="0" height="452" src="http://3.bp.blogspot.com/-B0Ws60h-mzU/UoJ5aa1hctI/AAAAAAAACzM/k9z_J8KsyOs/s640/applicationguides.png" width="640" /></div><br />There you will find Robin Emley's documentation on his MK2 PV diverter and Martin Robert PLL PV diverter documentation. I have also made a start on updating the heat-pump application guide and writing a guide on building thermal performance monitoring.<br /><br />Here's the full application guide list so far:<br /><br /><a href="http://openenergymonitor.org/emon/applications/homeenergy">Home Electricity monitor</a><br /><a href="http://openenergymonitor.org/emon/applications/solarpv">Solar PV Monitoring</a><br /><a href="http://openenergymonitor.org/emon/mk2">Diverting surplus PV Power, by Robin Emley</a><br /><a href="http://openenergymonitor.org/emon/pvdiversion/pll">Solar PV power diversion with emonTx using a PLL, emonGLCD and temperature measurement, by Martin Roberts</a><br /><a href="http://openenergymonitor.org/emon/openbem">Building thermal performance monitoring and modelling</a><br /><a href="http://openenergymonitor.org/emon/applications/heatpump">Heatpump Monitoring</a><br /><a href="http://openenergymonitor.org/emon/applications/shw">Solar Hot Water monitoring and control</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -659,6 +661,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
@@ -708,12 +716,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
         </li>
       
     

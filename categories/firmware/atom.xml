@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firmware | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/firmware/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-28T20:26:24+00:00</updated>
+  <updated>2016-06-29T19:06:00+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,6 +14,82 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/"/>
+    <updated>2016-06-29T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><a href="/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a>
+    <ul>
+      <li>Related post: <a href="/2016/06/esp8266-emonesp-developments">EmonESP ESP8266 WiFi developments</a></li>
+    </ul>
+  </li>
+  <li><strong>3/3: Continuous Deployment (OTA to ESP8266)</strong></li>
+</ul>
+
+<hr />
+
+<p>Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:</p>
+
+<ol>
+  <li>Code change is committed to the <a href="https://github.com/openenergymonitor/EmonESP">EmonESP repo on GitHub</a></li>
+  <li>TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.</li>
+  <li>If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.</li>
+  <li>If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.</li>
+</ol>
+
+<p>The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</p>
+
+<p><img src="/images/emonesp-update.png" alt="image" /></p>
+
+<!--more-->
+
+<p>The OTA (over-the-air) firmware deployment process is based on Daniel Eichhorn’s (<a href="https://twitter.com/squix78">@squix78</a>) <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">excellent blog post</a>. In summary the process is as follows:</p>
+
+<p><img src="/images/esp-update-process.png" alt="image" />
+Diagram from <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">Daniel Eichhorn’s blog</a></p>
+
+<ul>
+  <li>The build is tagged with a version number using PlatformIO build-flag, see EmonESP <a href="https://github.com/openenergymonitor/EmonESP/blob/master/platformio.ini">platformio.ini</a>.</li>
+  <li>An intermediate PHP script connects to the GitHub API to check the latest release version and returns this as a string.</li>
+  <li>ESP sends it’s current running firmware version to the PHP script using tag argument <code class="highlighter-rouge">&amp;tag=1.0.2</code>.</li>
+  <li>If the running firmware version does not match the latest release version, the PHP script grabs the latest release .bin from github-releases API and serves it up as a download to the ESP.</li>
+  <li>ESP then flashes the compiled .bin OTA update using the <a href="https://github.com/esp8266/Arduino/tree/master/libraries">ESP8266httpUpdate library</a> which is built-in to the espressif Arduino tool-chain</li>
+</ul>
+
+<h3 id="intermediate-php-script">Intermediate PHP script</h3>
+
+<p>Ideally the production ESP8266 would be able to contact the GitHub-release API directly negating the need for the intermediate PHP script. However, there are a number of reasons why this is not practical at the moment. To quote Daniel’s blog post:</p>
+
+<blockquote>
+  <ul>
+    <li>The ESPhttpUpdate currently cannot follow redirects. This is important since github hosts the release artefacts on Amazon AWS. But in the API JSON &gt; object the address points to github, so the http client has to follow a redirect to download the artefact.</li>
+    <li>Github uses https for its API and will redirect you to it if you are trying plain HTTP. This means that you would have to know the SSL fingerprints &gt; of the github API server and the AWS hosting instance since this is required by the ESPs secure client interface. After all the ESPs don’t have a chain &gt; of trusted certificates stored somewhere. While the fingerprint of the github API might be stable, the redirection on Amazon AWS might not always use &gt; the same certificate.</li>
+  </ul>
+</blockquote>
+
+<p><strong>There is currently working example of this process (ESP8266 firmware + intermediate PHP script) in the <code class="highlighter-rouge">ota</code> branch of <a href="https://github.com/openenergymonitor/EmonESP">EmonESP GitHub Repo</a>.</strong></p>
+
+<h3 id="security">Security</h3>
+
+<p><strong>In it’s current implementation the update process described above is not secure.</strong></p>
+
+<p>Obviously secure delivery and verification of the update binary is essential.</p>
+
+<p>Ideally the binary download to the ESP would be done over secure https. This maybe be possible, however https support on the ESP is currently not super stable and limited by the available memory (as mentioned above).</p>
+
+<p>A method to verify the compiled binary could be to sign the compiled binary with a private key which is verified by the ESP before firmware is updated.</p>
+
+<p>I would be interested to hear from anyone with any thoughts / advice as to how secure ESP OTA firmware delivery can be achieved.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
     <link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/"/>
     <updated>2016-06-14T10:00:00+00:00</updated>
@@ -21,9 +97,9 @@
     <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
 
 <ul>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
   <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
-  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>- Coming soon…</em></li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
 </ul>
 
 <hr />
@@ -112,8 +188,12 @@ deploy:
 
 <ul>
   <li><strong>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</strong></li>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a></li>
-  <li>3/3: Continuous Deployment (OTA to ESP8266)</li>
+  <li><a href="/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a>
+    <ul>
+      <li>Related post: <a href="/2016/06/esp8266-emonesp-developments">EmonESP ESP8266 WiFi developments</a></li>
+    </ul>
+  </li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
 </ul>
 
 <hr />

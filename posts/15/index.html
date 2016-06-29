@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/07/a-new-backup-system-for-emoncmsorg/">A new backup system for emoncms.org</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-09T22:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-09 22:42:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/backup/'>backup</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/a-new-backup-system-for-emoncmsorg/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The current emoncms.org backup system works by using two&nbsp;separate&nbsp;servers with data being synced from the main one to the second backup server using the same implementation used in the emoncms sync module&nbsp;<a href="http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-backup.html">http://openenergymonitor.blogspot.co.uk/2013/05/emoncmsorg-backup.html</a><br /><div><br /></div><div>A couple of weeks after getting all that setup BigV announced a new feature: archive storage which they say is ideal for backups. Archive storage works in much the same way as connecting a second external drive to a computer. Archive storage on bigv is guaranteed to be on a separate storage pool from the main vm disc which is good news as it&nbsp;wasn't&nbsp;guaranteed that the two&nbsp;separate&nbsp;server method used seperate storage pools (If I understand correctly)</div><div><a href="http://blog.bytemark.co.uk/2013/06/13/archive-storage-and-web-based-vm-manager-launched">http://blog.bytemark.co.uk/2013/06/13/archive-storage-and-web-based-vm-manager-launched</a></div><div><br /></div><div>Another advantage to the new archive storage is that its much cheaper to run, costing £2/month for 50GB rather than £16/month for another vm and 30GB extra space.</div><div><br /></div><div>A simple php script is used to perform the backup, it makes use of the direct file access stuff I recently learnt about (<a href="http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html">http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html</a>)&nbsp;to do incremental backup file copy using php file access commands making it potentially very fast, it can backup files at full file copy speeds:</div><div><a href="https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php">https://github.com/emoncms/usefulscripts/blob/master/backup_method2.php</a></div><div><br /></div><div>It accesses the mysql data directly, copying the content of the mysql feed data file i.e: &nbsp;/var/lib/mysql/emoncms/feed_1.MYD to the backup drive.</div><div><br /></div><div>On another slightly related note the data in&nbsp;feed_1.MYD is stored simply as:</div><div><br /></div><div>1 byte for null flag</div><div>4 bytes for the timestamp</div><div>4 bytes for the float data value<br />repeated...</div><div><br /></div><div>and because the readings are inserted one after the other in ascending time we can actually use the mysql feed data files directly with the direct file get_feed_data method to get 10-20x query speed improvement for generating visualisations: <a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php">https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php</a></div><div><br /></div><div>We could even get rid of the mysql feed table index's to save disk space although that will probably slow down mysql updates (I need to look into it). This could be a short term measure before a full timestore emoncms implementation is complete which provides many other benefits.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/07/probably-best-student-placement/">Probably the best student placement opportunity ever!? developing an open energy management system at the Center for Alternative Technology </a>
   </h1>
   
@@ -477,46 +519,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/how-much-energy-does-it-take-to-heat/">How much energy does it take to heat a simple cube house?</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-20T14:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-20 14:45:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/how-much-energy-does-it-take-to-heat/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Imagine a house that is a hollow cube of uniform material, no windows, no openings, no draughts, just a simple hollow cube.<br /><br />Lets say this cube house is made of nothing but mineral insulation 100mm thick, with internal dimensions: 7m wide, 7m long and 7m high.<br /><br />Our cube house is situated in a climate with no wind or solar gain just a stable 12C outside air temperature year round.<br /><br />How much energy would it take to keep this hypothetical house at a stable 21C?<br /><div style="text-align: center;"><a href="http://4.bp.blogspot.com/-RWXJVAkb1ts/UcLM7FaclsI/AAAAAAAACsg/bUMkai1JvKw/s1600/bem01.jpg"><img border="0" height="249" src="http://4.bp.blogspot.com/-RWXJVAkb1ts/UcLM7FaclsI/AAAAAAAACsg/bUMkai1JvKw/s640/bem01.jpg" width="640" /></a></div><br />As we heat the house, heat will flow from the hotter internal air through the walls to the colder external air via conduction and so the equation that we need is the fundamental physics equation for heat conduction.<br /><br />H = (kA / l) x (T<sub>internal</sub> – T<sub>external</sub>)<br /><br />See the great hyperphysics site for more on the <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">heat conduction equation</a>&nbsp;and everything else physics.<br /><br />The <a href="http://en.wikipedia.org/wiki/List_of_thermal_conductivities">Wikipedia table on material thermal conductivity</a> tells us that mineral insulation has a thermal conductivity of 0.04 W/mK. We can take the area of the material to be the internal area of our cube house (imagine folding the cube house out so that we just have this one dimensional wall of area A and thickness l), there is of course a difference between the internal area and the external area of our cube house but lets come back to that one later and take the internal area for now which is:<br /><br />7m x 7m x 6 surfaces = 294 m2<br /><br />Putting the numbers into the heat conductivity equation we get:<br /><br />H = (0.04 x 294 / 0.1) x (21 – 12) = <b>1529 Watts</b><br /><br />And so we find we would need a fairly standard 1.5kW heater to keep our cube house at 21C.<br />1529W continuously would work out to being 37 kWh per day and 13392 kWh/year.<br /><br />Heat loss through building elements is one of the main cornerstones of a building energy model.&nbsp;But in models such as SAP its not usually referred to as the heat conductivity equation nor is the thermal conductivity of a material the usual starting point.&nbsp;Instead models like SAP start with a building elements U-value and an equation that looks like this:<br /><br />Heat loss = U-value x Area x Temperature Difference<br /><br />For an element made of a single uniform material the U-value is simply the materials thermal conductivity k divided by its thickness. But building elements are only sometimes single uniform materials, a building element can also be an assembly of different materials such as a timber stud wall with insulation, membranes and air inside. The physical process of heat transfer through the element may also be a mixture of conductive, convective and radiative heat transfer.<br /><br />Coming from a physics background I found it useful to start with what I was familiar with and I think its useful to understand that in the case where a material is uniform the heat loss through a building element equation is the same as the basic equation for heat conductivity and the U-value is just the k/l part lumped together into one constant.<br /><br />The U-value of our 100mm mineral insulation wall would&nbsp;therefore&nbsp;be: U-value = k / l = 0.04 / 0.1 = 0.4 &nbsp;W/m2.K.<br /><br />If you have a composite of materials, say a layer of wood and then a layer of insulation its possible to calculate the overall U-value in the same way as we calculate the equivalent resistance of parallel resistors in electronics.<br /><br />In the next post I will go through an example of a slightly more complicated but still very simple house model made up a series of different elements with different U-values.<br /><br />For further reading on U-values see <a href="http://www.architecture.com/SustainabilityHub/Designstrategies/Earth/1-1-1-10-Uvalues(INCOMPLETE).aspx">U-values definition and calculation</a>&nbsp;by the RIBA.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -633,6 +635,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
@@ -682,12 +690,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
         </li>
       
     

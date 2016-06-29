@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/11/raspberry-pi-emonbase/">Raspberry Pi emonBase</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-11-08T13:16:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-11-08 13:16:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/11/raspberry-pi-emonbase/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><div class="separator" style="clear: both; text-align: left;">The&nbsp;<a href="http://www.raspberrypi.org/">Raspberry Pi</a>&nbsp;needs no introduction, it's a great&nbsp;piece&nbsp;of hardware. A low power, low cost Linux credit-card sized computer <a href="http://www.raspberrypi.org/archives/1925">made in the UK</a>. As soon as we heard of the Raspberry Pi we knew it would make a great emonBase energy monitoring base station.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-Y9nfjgrsqKs/UJuiaRDJ7gI/AAAAAAAAcwo/WXkyHHCR48M/s1600/onpi_rfm12pi.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://4.bp.blogspot.com/-Y9nfjgrsqKs/UJuiaRDJ7gI/AAAAAAAAcwo/WXkyHHCR48M/s400/onpi_rfm12pi.png" width="231" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi with RFM12Pi Expansion</td></tr></tbody></table></div><br /><div class="" style="clear: both; text-align: left;">The Raspberry Pi is powerful enough to run a web server running&nbsp;<a href="http://emoncms.org/">emoncms</a>&nbsp;open-source logging and visualisation&nbsp;web-app while being low power enough to be left running 24/7.&nbsp;&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">Using the Raspberry Pi to log energy monitoring data locally (onto it's SD card) has advantage of not having to be reliant on a stable web connection when logging to a remote sever and gives you total control over your data.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Working with <a href="http://harizanov.com/">Martin Harizanov</a> we have designed an open-source expansion board for the Raspberry Pi which enables the Pi to&nbsp;receive data via&nbsp;wireless&nbsp;from other <a href="http://openenergymonitor.org/emon/Modules">OpenEnergyMonitor modules</a> e.g <a href="http://openenergymonitor.org/emon/emontx">emonTx</a>&nbsp;energy and temperature monitoring node or an <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a>&nbsp;wireless LCD display. The <a href="http://wiki.openenergymonitor.org/index.php?title=Raspberry_Pi">RFM12Pi</a> is now&nbsp;available&nbsp;to buy through the&nbsp;<a href="http://shop.openenergymonitor.com/base-stations/">OpenEnergyMonitor shop</a>.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-BWrzzL7OceI/UJuiUJu-jDI/AAAAAAAAcwg/Xn8yXpzxDnw/s1600/front_rfm12pi.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://3.bp.blogspot.com/-BWrzzL7OceI/UJuiUJu-jDI/AAAAAAAAcwg/Xn8yXpzxDnw/s320/front_rfm12pi.png" width="264" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM12Pi Raspberry Pi GPIO Wireless Expansion Board &nbsp;</td></tr></tbody></table><br /><div class="" style="clear: both; text-align: left;">A&nbsp;Raspberry Pi running <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a>&nbsp;with an RFM12Pi expansion board can be used as a powerful emonBase base-station to log, process and visualise energy, temperature and other environmental data.&nbsp;Data can be logged locally to the Raspberry Pi's SD card and/or to a remote emoncms server. Emoncms graphs and dashboards are served from the Raspberry Pi's web-server. Checkout the documentation links below for more information and setup instructions. In the future we plan to release a 'ready to go' Pi SD card image with emoncms pre installed and configured to work with the RFM12Pi. &nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-tTKGHG8tpjA/UJusZnNttsI/AAAAAAAAcw8/QfaOK8MfGtQ/s1600/A6uBBGOCAAAelQ3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="383" src="http://4.bp.blogspot.com/-tTKGHG8tpjA/UJusZnNttsI/AAAAAAAAcw8/QfaOK8MfGtQ/s400/A6uBBGOCAAAelQ3.png" width="400" /></a></td></tr><tr><td class="tr-caption">Thanks to <a href="http://baptistegaultier.fr/emoncms/baptiste">Baptiste Gaultier</a>&nbsp;for this nice emoncms dashboard example</td></tr></tbody></table><div class="separator" style="clear: both;"></div><br /><b>Documentation Links:</b><br /><br /><ul><li>RFM12Pi Setup Guide &amp; Documentation Wiki:&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=Raspberry_Pi">http://wiki.openenergymonitor.org/index.php?title=Raspberry_Pi</a></li><li>RFM12Pi Shop Item:&nbsp;<a href="http://shop.openenergymonitor.com/raspberry-pi/">http://shop.openenergymonitor.com/raspberry-pi/</a></li></ul><br /><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/11/updated-installation-and-upgrade-guides/">Updated installation and upgrade guides for latest emoncms release</a>
   </h1>
   
@@ -467,46 +507,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/09/data-portability-exporting-feed-data/">Data portability: exporting feed data from emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-09-19T21:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-19 21:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/09/data-portability-exporting-feed-data/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Following on from the previous two posts:<br /><a href="http://openenergymonitor.blogspot.com/2012/09/making-emoncms-data-portable.html">Making emoncms data portable</a><br /><a href="http://openenergymonitor.blogspot.com/2012/09/data-portability-challenges.html">Data portability challenges</a><br /><br />Here's my initial solution for feed export code that also&nbsp;allows&nbsp;it's load on the server to be regulated.<br /><br />In trying to work this out I first tired requesting all the feed data (which could be millions of rows) in one mysql query and then writing the data to a file in one push, Testing on my laptop server installation and monitoring the load with the linux top tool the mysql query can use around 97% of the cpu for up to tens of seconds depending on the feed size. Once the query is complete the writing of the file (an apache process) then takes up another block of 97% cpu use until the file has completed downloading. Emoncms still seems fairly responsive in that time.<br /><br />My next thought was to break up that larger query into smaller blocks and introducing a delay between the reading of each block, maybe the delay could wait for other actions to finish before continuing in future versions.<br /><br />Spiting&nbsp;the query into blocks of 400 rows,&nbsp;alternately&nbsp;loading and writing to the file without a delay drops the load to around 50% for both the mysql and apache processes.<br /><br />By introducing a delay of about 80 microseconds its then possible to drop the load down to roughly 10% for the apache process and a little less for the mysql process.<br /><br />Increasing the block size or/and reducing the delay speeds the transfer rate up, reducing the block size or/and increasing the delay slows the transfer rate down.<br /><br />Any thoughts on improving this would be welcome, I will try and add it to the emoncms repo soon.<br /><br />Here's the code:<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #bc7a00;">&lt;?php</span><br /><span class="Apple-style-span" style="font-family: 'Times New Roman'; line-height: normal; white-space: normal;"><pre style="line-height: 16px;">  <span style="color: #408080; font-style: italic;">// Open database etc here</span></pre></span><span class="Apple-style-span" style="font-family: 'Times New Roman'; line-height: normal; white-space: normal;"><pre style="line-height: 16px;">  <span style="color: #408080; font-style: italic;">// Extend timeout limit from 30s to 2mins</span></pre></span><span class="Apple-style-span">  <span style="color: green;">set_time_limit</span> (<span style="color: #666666;">120</span>);    <span style="color: #408080; font-style: italic;">// Feed id and start time of feed to export</span>  <span style="color: #19177c;">$feedid</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span></span>;<span class="Apple-style-span">  <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span></span>;<span class="Apple-style-span">     <span style="color: #408080; font-style: italic;">// Regulate mysql and apache load.</span>  <span style="color: #19177c;">$block_size</span> <span style="color: #666666;">=</span> <span style="color: #666666;">400</span>;   <span style="color: #19177c;">$sleep</span> <span style="color: #666666;">=</span> <span style="color: #666666;">80000</span>;    <span style="color: #19177c;">$feedname</span> <span style="color: #666666;">=</span> <span style="color: #ba2121;">"feed_"</span><span style="color: #666666;">.</span>trim(<span style="color: #19177c;">$feedid</span>)<span style="color: #666666;">.</span><span style="color: #ba2121;">""</span>;   <span style="color: #19177c;">$fileName</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$feedname</span><span style="color: #666666;">.</span><span style="color: #ba2121;">'.csv'</span>;     <span style="color: #408080; font-style: italic;">// There is no need for the browser to cache the output</span>  header(<span style="color: #ba2121;">"Cache-Control: no-cache, no-store, must-revalidate"</span>);    <span style="color: #408080; font-style: italic;">// Tell the browser to handle output as a csv file to be downloaded</span>  header(<span style="color: #ba2121;">'Content-Description: File Transfer'</span>);   header(<span style="color: #ba2121;">"Content-type: text/csv"</span>);   header(<span style="color: #ba2121;">"Content-Disposition: attachment; filename=</span><span style="color: #bb6688; font-weight: bold;">{</span><span style="color: #19177c;">$fileName</span><span style="color: #bb6688; font-weight: bold;">}</span><span style="color: #ba2121;">"</span>);    header(<span style="color: #ba2121;">"Expires: 0"</span>);   header(<span style="color: #ba2121;">"Pragma: no-cache"</span>);    <span style="color: #408080; font-style: italic;">// Write to output stream</span>  <span style="color: #19177c;">$fh</span> <span style="color: #666666;">=</span> <span style="color: #666666;">@</span><span style="color: green;">fopen</span>( <span style="color: #ba2121;">'php://output'</span>, <span style="color: #ba2121;">'w'</span> );    <span style="color: #408080; font-style: italic;">// Load new feed blocks until there is no more data </span>  <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span>;   <span style="color: green; font-weight: bold;">while</span> (<span style="color: #19177c;">$moredata_available</span>)   {     <span style="color: #408080; font-style: italic;">// 1) Load a block</span>    <span style="color: #19177c;">$result</span> <span style="color: #666666;">=</span> db_query(<span style="color: #ba2121;">"SELECT * FROM </span><span style="color: #bb6688; font-weight: bold;">$feedname</span><span style="color: #ba2121;"> WHERE time&gt;</span><span style="color: #bb6688; font-weight: bold;">$start</span><span style="color: #ba2121;"> &nbsp;</span></span></pre><pre style="line-height: 125%; margin: 0;"><span style="color: #ba2121;">    ORDER BY time Asc Limit </span><span style="color: #bb6688; font-weight: bold;">$block_size</span><span style="color: #ba2121;">"</span>);<br /><br />    <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>;<br />    <span style="color: green; font-weight: bold;">while</span>(<span style="color: #19177c;">$row</span> <span style="color: #666666;">=</span> db_fetch_array(<span style="color: #19177c;">$result</span>)) {<br /><br />      <span style="color: #408080; font-style: italic;">// Write block as csv to output stream</span><br />      <span style="color: green;">fputcsv</span>(<span style="color: #19177c;">$fh</span>, <span style="color: green; font-weight: bold;">array</span>(<span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'time'</span>],<span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'data'</span>]));<br /><br />      <span style="color: #408080; font-style: italic;">// Set new start time so that we read the next block along</span><br />      <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'time'</span>];<br />      <span style="color: #19177c;">$moredata_available</span> <span style="color: #666666;">=</span> <span style="color: #666666;">1</span>;<br />    }<br />    <span style="color: #408080; font-style: italic;">// 2) Sleep for a bit</span><br />    <span style="color: green;">usleep</span>(<span style="color: #19177c;">$sleep</span>);<br />  }<br /><br />  <span style="color: green;">fclose</span>(<span style="color: #19177c;">$fh</span>);<br /></pre></div><br />In the next post I will discuss creating a script to import feed data by pointing directly at the export script on the other server, plus a background running&nbsp;daemon&nbsp;process and queueing&nbsp;mechanism&nbsp;to manage the import process.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -623,6 +623,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
@@ -672,12 +678,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
         </li>
       
     

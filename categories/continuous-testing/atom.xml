@@ -4,7 +4,7 @@
   <title><![CDATA[Category: continuous testing | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/continuous-testing/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-28T20:26:24+00:00</updated>
+  <updated>2016-06-29T19:06:00+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -21,9 +21,9 @@
     <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
 
 <ul>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
   <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
-  <li>3/3: Continuous Deployment (OTA to ESP8266) <em>- Coming soon…</em></li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
 </ul>
 
 <hr />
