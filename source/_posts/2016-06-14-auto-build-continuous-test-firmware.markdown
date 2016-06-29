@@ -17,9 +17,9 @@ categories:
 
 **This post is part of a series**
 
- - [1/3 PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi](https://blog.openenergymonitor.org/2016/06/platformio/)
+ - [1/3 PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi](/2016/06/platformio/)
  - **2/3: Continuous testing and auto release binary generation using PlatformIO & TravisCI**
- - 3/3: Continuous Deployment (OTA to ESP8266) *- Coming soon...*
+ - [3/3: Continuous Deployment (OTA to ESP8266)](/2016/06/esp8266-ota-update/)
 
 ***
 
@@ -27,7 +27,7 @@ Following on from the [last blog post](https://blog.openenergymonitor.org/2016/0
 
 *Groan...I know I just used the clichéd 'C' word, however there are many advantages to compiling and testing the code in the cloud. At least I didn't mention 'IoT'...whoops, just doing my bit for SEO!*
 
-In this instance when we say *'compile in the cloud'* I mean use GitHub, [Travis IO](https://travis-ci.org) and [PlatfromIO](https://platformio.org) to compile the firmware and if the branch is tagged with a 'Git Release' auto-generate a compiled binary and upload it back to GitHub release page.  
+In this instance when we say *'compile in the cloud'* I mean use GitHub, [Travis IO](https://travis-ci.org) and [PlatfromIO](https://platformio.org) to compile the firmware and if the branch is tagged with a 'Git Release' auto-generate a compiled binary and upload it back to GitHub release page.
 
 The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes ([EmonESP dev](https://github.com/openenergymonitor/EmonESP)) inspired by [this blog post](http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html) by Daniel Eichhorn ([@squix78](https://twitter.com/squix78)).
 
