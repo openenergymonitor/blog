@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/05/open-source-hardware-users-group-oshug/">Open Source Hardware Users Group (OSHUG) #26 Meetup </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-17T07:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-17 07:45:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/presentation/'>presentation</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/05/open-source-hardware-users-group-oshug/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Last night I attended<a href="http://oshug.org/event/26"> OSHUG event #26</a>&nbsp;in London and gave a short talk on Low Power Wireless sensors as well as the brief overview of the OpenMonitorProject and a quick look at what we've been working on recently.<br /><br />There are a couple of new screenshots in the presentation from the open-source <a href="http://emoncms.org/sap/introduction">SAP building&nbsp;modelling&nbsp;emoncms module</a> that Trystan is been working in with Manchester&nbsp;<a href="http://twitter.com/CarbonCoop">@CarbonCoop</a>&nbsp;recently. This is an exciting bit of development. The idea is that the building model could be matched up to the monitoring results (temperature profile &amp; heat input) of a building, the model could then be used to investigate the effect of undertaking improvement measures such as wall, loft insulation or external&nbsp;cladding&nbsp;etc.. Finally after&nbsp;completion&nbsp;of improvement measures the monitoring data can again be used to evaluate the actual performance of the improvement measures.<br /><br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" mozallowfullscreen="" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/21307459" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" webkitallowfullscreen="" width="427"> </iframe><br /><div style="margin-bottom: 5px;"><strong> <a href="http://www.slideshare.net/OpenEnergyMonitor/osug-26-low-power-wireless-sensors" target="_blank" title="Osug #26 low power wireless sensors">Osug #26 low power wireless sensors</a> </strong> from <strong><a href="http://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> <br /><br />It was great to meet everyone and put faces to (twitter) names! Big thanks to Andrew Back&nbsp;<a href="https://twitter.com/9600">@9600</a>&nbsp;for organising the event and&nbsp;<a href="https://twitter.com/skpang_uk">@skpang_uk</a>&nbsp;for&nbsp;sponsoring the event...and buying me a beer afterwards!&nbsp;&nbsp;</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/one-year-of-solar-pv-monitoring/">One Year of Solar PV Monitoring</a>
   </h1>
   
@@ -473,48 +513,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/01/power-emontx-from-single-ac-power/">Power emonTx from single AC power supply - Part 2 bench testing </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-01-31T23:49:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-01-31 23:49:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> seven minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/01/power-emontx-from-single-ac-power/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Back in May last year we did some work (with the help of Robert Wall and others) into the design of an AC-DC circuit to allow the emonTx to run off a single AC power adapter while at the same time taking accurate AC voltage samples to be used for Vrms, real power, frequency and power factor calculations. <a href="http://openenergymonitor.blogspot.co.uk/2012/05/emontx-single-ac-power-supply.html">Read the original blog post detailing how the circuit works</a>. Basicly, it's a half wave rectifier circuit with a carefully chosen value current limiting resistor.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Just to recap, the challenge is powering the emonTx with 3.3V DC while not loading the AC adapter as to not effect the quality of the AC sine wave sample. An as close to perfect AC sample is desirable for best accuracy of real power readings,&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We have finally got round to testing the circuit we simulated using LT SPICE. In summary, results are positive, the circuit works as expected!</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Here's what I did: the following circuit was built on a bread board, using an emonTx with the voltage regulator. The <a href="http://shop.openenergymonitor.com/ac-ac-adapter-uk-plug/">standard Ideal Power 9V AC-AC adapter</a> from the shop was used for the test.<br /><br /></div><div style="margin-bottom: 0cm;"><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-efRwc-_9iZo/UQsBx0N6oJI/AAAAAAAAdH0/ueIjVqug5Eg/s1600/2013-01-31+20.50.48.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-efRwc-_9iZo/UQsBx0N6oJI/AAAAAAAAdH0/ueIjVqug5Eg/s320/2013-01-31+20.50.48.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Scope trace showing input to voltage regulator</td></tr></tbody></table></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3El_MoBPMCI/T8H-QwqxftI/AAAAAAAAbn4/Zl-kBlwbQRI/s1600/Half+wave+rectifier+power+supply+labeled+diagram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="188" src="http://1.bp.blogspot.com/-3El_MoBPMCI/T8H-QwqxftI/AAAAAAAAbn4/Zl-kBlwbQRI/s640/Half+wave+rectifier+power+supply+labeled+diagram.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Half-wave rectifier circuit</td></tr></tbody></table><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">A sketch was uploaded to the ATmega328 on the emonTx to cycle through a number of different power levels while using a scope to measure the sawtooth voltage waveform going into the MCP1702 voltage regulator. The following was recorded  </div><div style="margin-bottom: 0cm;"><br /></div><table cellpadding="4" cellspacing="0" style="width: 100%px;"> <colgroup><col width="51*"></col> <col width="51*"></col> <col width="51*"></col> <col width="51*"></col> <col width="51*"></col> </colgroup><tbody><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Power State</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Current draw</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Vrms into MCP1702</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Delta V into MCP1702</b></td>  <td style="border: 1px solid #000000; padding: 0.1cm;" width="20%"><b>AC Voltage sample ripple     </b></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Sleep</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">25uA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">16.4V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">0V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 only</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">7.7mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">12.7V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.72V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + RFM12B     </td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">8.1mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">12.5V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.8V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + LED</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">16.9mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">10.1V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">5.5V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + LED + RFM12B</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">17.3mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">10V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">5.53V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%">Approx 80mV (limit of the scope)</td> </tr></tbody></table><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The voltage limited zener diode was omitted from the test setup but will be present in the main circuit to avoid over volting the MCP1702 when supply is un-loaded.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The AC voltage sample will be taken when the emonTx is consuming 7.7mA (ATmega328 only running), the test has assured me that the circuit will be able to provide 3.3V DC without hardly any distortion to the AC waveform. There was only a 80mV ripple when drawing 17mA we can expect the ripple to be under half this when the emonTx is drawing 7.7mA.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It's interesting to note that the RMF12B (when idle, not sleeping) draws 0.4mA and the LED draws 9.2mA. The circuit is speed up to 20mA max so it would be possible to add one DS28B20 that will at maxim consume 2.3mA for short periods.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">AC-DC circuit will be incorporated into the next version of the emonTx. Further testing will be done on this prototype to double check everything.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Roll on single power supply Real Power accurate energy monitoring. As well as being a neater setup it will also significantly reduce the carbon footprint and amount of electrical waste which will eventually go into landfill if we can enable the emonTx to only need the one plug-in power adapter.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -631,6 +629,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -683,12 +687,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -715,6 +713,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

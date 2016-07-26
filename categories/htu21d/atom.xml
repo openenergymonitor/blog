@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: HTU21D | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/htu21d/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2016-07-26T21:36:24+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTU21D Temperature and Humidity Sensor]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/"/>
+    <updated>2016-07-26T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id>
+    <content type="html"><![CDATA[<p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.</p>
+
+<p><img src="/images/htu21d_1.png" alt="image" /></p>
+
+<ul>
+  <li><a href="https://octopart.com/htu21d-measurement+specialties-30374934">OctoPart list</a></li>
+  <li><a href="http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf">Datasheet</a></li>
+  <li><a href="http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART">Farnell item</a></li>
+  <li>DFM footprint</li>
+  <li>Digital, pre-clibrated</li>
+  <li>I2C</li>
+</ul>
+
+<p>The metrics speak for themselves:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>HTU21D</th>
+      <th>DHT22</th>
+      <th>Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cost in 1k off</td>
+      <td>£1.42 (July16)</td>
+      <td>£4.57 (July16)</td>
+      <td>3.2 times cheaper (£3.15 less!)</td>
+    </tr>
+    <tr>
+      <td>Humidity accuracy</td>
+      <td>±2% RH</td>
+      <td>±2%RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Humidity Range</td>
+      <td>0-100% RH</td>
+      <td>0-100% RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Temperature accuracy</td>
+      <td>±0.3°C</td>
+      <td>±0.5°C</td>
+      <td>40% more accurate</td>
+    </tr>
+    <tr>
+      <td>Temperature Range</td>
+      <td>-40°C to +125°C</td>
+      <td>-40°C to +80°C</td>
+      <td>56% more accurate</td>
+    </tr>
+    <tr>
+      <td>Sleep Current</td>
+      <td>0.02uA</td>
+      <td>15uA</td>
+      <td>750 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement Current</td>
+      <td>0.045mA</td>
+      <td>0.5mA</td>
+      <td>11 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement time</td>
+      <td>0.01s</td>
+      <td>2s</td>
+      <td>200 times faster</td>
+    </tr>
+    <tr>
+      <td>Energy consumed per sample</td>
+      <td>0.00045mW</td>
+      <td>1mW</td>
+      <td>2222 times less power</td>
+    </tr>
+    <tr>
+      <td>Time sampling per day*</td>
+      <td>14.4s</td>
+      <td>2800s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Time sleeping per day*</td>
+      <td>86386s</td>
+      <td>83600s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Energy consumed per day*</td>
+      <td>2.36mW [1]</td>
+      <td>2836mW [2]</td>
+      <td>1201 times less energy per day!</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--more-->
+
+<p>*Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a <a href="https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d">sub-repository of the emonTH</a> for full calculations.</p>
+
+<p><strong>An upgraded emonTH with a HTU21D sensor instead of DHT22 should benefit from substantially increased battery life, increased accuracy and lower cost.</strong></p>
+
+<p>I’ve obtained <a href="https://www.sparkfun.com/products/retired/12064">HTU21D Sparkfun breakout to test</a> and easily got it working with an Arduino using the <a href="https://github.com/adafruit/Adafruit_HTU21DF_Library">Adafruit library</a>.</p>
+
+<p><img src="/images/htu21d_2.jpg" alt="image" /></p>
+
+<hr />
+
+<p>There is some confusion with regard to the variants of this sensor <em>I believe</em> from my research that the HTU21D <strong>replaces</strong> the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don’t think they are software compatible.</p>
+
+<ul>
+  <li><a href="https://octopart.com/sht21-sensirion-19013846">SHT21</a> made by Sensirion</li>
+  <li><a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si7021-A10</a> made by Silicon Labs</li>
+</ul>
+
+<hr />
+
+<p>I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.</p>
+
+<p>For disucssion see <a href="https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106">HTU21D forum thread.</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/building-energy-modelling-ventilation/">Building Energy Modelling: Ventilation and infiltration</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-23T19:01:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-23 19:01:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/building-energy-modelling-ventilation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />Following from the <a href="http://openenergymonitor.blogspot.com/2013/06/how-much-energy-does-it-take-to-heat.html">previous blog that described a simple example of heat loss via heat conduction through the building fabric</a>, the second primary cause of heat loss is ventilation and infiltration. The movement of heated air from inside the house into its surroundings.<br /><div><br />I wrote the following as a start for the <a href="http://github.com/emoncms/sap">Emoncms SAP module</a> documentation and can be found under <a href="http://emoncms.org/sap/airchange">emoncms.org/sap/airchange</a><br /><br />The rate of air movement is typically measured in air-changes per hour. An air-change is when the full volume of air inside a house is replaced with a new volume of air. This happens surprisingly frequently.<br /><br />The heat lost is equal to the energy stored in the warm air relative to the external temperature, which can be found with another fundamental physics equation, the equation for specific heat:<br /><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); margin-bottom: 10px; padding: 9.5px; word-break: break-all; word-wrap: break-word;"><span style="color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; white-space: pre-wrap;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = c x m x (T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">INTERNAL</sub> - T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">EXTERNAL</sub>)<br /><br />Where:<br /><br />c = Specific heat of air (1006 J/kg.K)<br />m = Mass of air that has moved out of the building per second</span><br /></pre>(HyperPhysics: <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">Specific heat</a>)<br /><br /><b>Example:</b><br /><br />A house that measures 7 meters wide, 7 meters long and 6 meters high encloses a volume of: 294 m3. The house has an average air tightness for a modern house of around 1.5 air changes an hour and the internal temperature is 20C while the external temperature is 12C.<br /><br />The first step is to work out the m: the mass of air that has moved out of the building per second. We know the volume of air that has moved and the rate at which the volume moved and so we can calculate the mass from this.</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">mass of one air change = volume x air density</pre><div>There are 1.5 air changes per hour or 1.5 / 3600 air changes per second. The mass of air that has moved per second is therefore:</div></div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">m = (air-change / 3600) x volume x air density</pre>The division by density of air and 3600 and also the multiplication by the specific heat of air is in many models bundled together into one constant to reduce on the calculation steps:</div><div><br /></div><div><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">m x c = air-change x volume x (density x c / 3600)</pre>Where:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">density x c / 3600 = 1.205 x 1005 / 3600 = <b>0.336</b></pre>The heat loss from ventilation and infiltration becomes:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = 0.33 x air-change x volume x (T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">INTERNAL</sub> - T<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">EXTERNAL</sub>)</pre><br /><br />This is the form of the equation used in the SAP model in section 4 (<a href="http://emoncms.org/sap/4">emoncms.org/sap/4</a>). 0.336 has been rounded down to 0.33 in accordance with the SAP value. The density and specific heat figures above come from: <a href="http://www.engineeringtoolbox.com/air-properties-d_156.html">http://www.engineeringtoolbox.com/air-properties-d_156.html</a><br /><br />Entering our example values in the simplified equation, we get:</div><div><br /><pre style="background-color: whitesmoke; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); color: #333333; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 20px; margin-bottom: 10px; padding: 9.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;">H<sub style="bottom: -0.25em; font-size: 10px; line-height: 0; position: relative; vertical-align: baseline;">LOSS</sub> = 0.33 x 1.5 x 294 x (20 - 13) = <b>1018.71 Watts</b></pre><b></b><br /><div><b><b><br /></b></b></div><b>Working out air-changes per hour</b><br /><br />The hard part in the equation above to work out is of course the air changes per hour of a building. The most accurate way to find it out is to perform an air tightness test of the building. This involves de-pressurising the building with specialist fans attached to the front door.<br /><br />The SAP model provides a method to estimate the air-change rate in the absence of a measured value. This method is detailed in full in section 2 (<a href="http://emoncms.org/sap/2">emoncms.org/sap/2</a>) and takes into account factors from number of chimneys and flues to wind speed and the degree the building is sheltered from the wind.<br /><br /><b>Typical air-change per hour values</b><br /><br />As a guide Pat Borer and Cindy Harris give the following values in <a href="http://openenergymonitor.blogspot.com/2013/06/building-energy-modelling-part-1-whole.html">the Whole House Book</a>.<br /><br />Old undraught stripped house: 4 air changes per hour<br /><br />Average modern house: 1 to 2 air changes per hour<br /><br />Very tight, super-insulated house: 0.6 air changes per hour</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/how-much-energy-does-it-take-to-heat/">How much energy does it take to heat a simple cube house?</a>
   </h1>
   
@@ -467,46 +507,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/removing-redundant-datapoints-algorithm/">Removing redundant datapoints – algorithm 1</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-05T11:22:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-05 11:22:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/removing-redundant-datapoints-algorithm/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;">You could probably say that the aim of an algorithm that removes redundant datapoints is to create a line plot who's standard deviation compared to the raw data line is as small as possible while minimising the number of datapoints. This is probably a good rough criteria for evaluating a prospective algorithm.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Here's one idea for an algorithm, I think it can certainly be improved upon but its a start.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If we start with our monitor that's posting once every 10 seconds. If we note down the first datapoint received and then as subsequent datapoints come in draw a line between the first and the last datapoint.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s1600/algorithm1_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s400/algorithm1_01.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">Then lets say there is a step change, a light goes on, suddenly the line is much higher than the actual data for most datapoints:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s1600/algorithm1_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="185" src="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s400/algorithm1_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">If we measure the standard deviation of the raw datapoints vs the line to begin with it will be small, once that step change happens it will become much larger.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">At this point we note a significant change has happened (stdev is larger than a threshold) and create a datapoint one back from the last datapoint (the bottom of the step).</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We can then move our 'start' datapoint forward to this created datapoint and repeat the process. This should do a pretty good job of tracking the raw data.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To test it I have created a visualisation that applies this algorithm using javascript in the browser here is the result:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s1600/algorithm01_3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="173" src="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s400/algorithm01_3.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It works pretty well reducing 1064 datapoints to 52, but it does look messy in places.</div><div style="margin-bottom: 0cm;">To try out the code for the above, make a backup of the script:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><i>emoncms/Modules/vis/visualisations/rawdata.php</i> in your local emoncms installation.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">and replace with this:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php">https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If you can think of a good algorithm to do this, It would be great to hear about it.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -623,6 +623,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -675,12 +681,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -707,6 +707,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

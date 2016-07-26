@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/07/adding-rtc-to-emonpi/">Adding a RTC to the emonPi</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-09T14:05:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-09 14:05:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/07/adding-rtc-to-emonpi/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The emonPi updates its internal linux time from NTP when connected to the internet. However if the emonPi is to be used on an offline network or for an application when accurate timestamp is essential then a hardware Real Time Clock (RTC) can easily be added to the Pi's GPIO. We have tested using a<a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi"> DS3231 based RTC module</a>. This RTC module communicates with the emonPi via I2C, it can be easily connected as follows by soldering a four-pin header onto the emonPi aux GPIO pins:<div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s1600/EmonPi_RTC.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="380" src="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s640/EmonPi_RTC.JPG" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonPi with hardware RTC module added</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" height="294" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi" style="font-size: medium; text-align: start;">DS3231 based RTC module</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" height="153" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">I2C bus scan showing LCD &amp; RTC</td></tr></tbody></table><br />Full install guide can be found on the wiki:<br /><a href="http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29">http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/07/what-is-embodied-energy-of/">What is the embodied energy of a microcontroller?</a>
   </h1>
   
@@ -436,37 +476,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/hourly-energy-model-example-4/">Hourly energy model example 4: Complementarity of different renewable generating technologies</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-18T07:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-18 07:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2015/06/hourly-energy-model-example-4/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    We hear a lot that a renewable energy system benefits from having a mix of generating technologies. Combining wind and solar for example is said to provide a higher supply/demand matching than relying on one technology alone. When the wind isn’t blowing it may be sunny or vice versa.<br />How do we work out the best mix of different renewable generating technologies. When is it cheaper to add more wind than to add more solar, what is the balance point for a particular demand profile?<br /><br />This example explore's the balance point for onshore wind + solar, both having large resource availabilities associated with them. The mix will be balanced based on energy cost. It would also be good to explore the balance based on embodied energy. As with all modelling based on costs the outcome will change as costs change, the important thing here is to understand the method so that we can explore for a given set of costs what the optimum mix might be.<br />In the recent contracts for a difference auction in the UK for renewable generation many of the onshore wind farms received a strike price of £82.50 per MWh. Two offshore wind projects received £115 per MWh and three solar farms received £79.23 per MWh. <br />Source: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/407059/Contracts_for_Difference_-_Auction_Results_-_Official_Statistics.pdf">Contracts for Difference Auction Results</a><br /><br />In this example we will use these cost figures, the ZCB capacity dataset for onshore wind and solar and a simple flat demand profile.<br /><br />If we look at the results from example 2 investigating annual matching for wind and solar and add in the cost information:<br /><ul><li>1.164kW of onshore wind delivers 3300 kWh/y at £272/y and a supply/demand matching of 65.88%.</li><li>3.99kW of solar delivers 3300 kWh/y at £261/y and a supply/demand matching of 40.61%. </li></ul>One way to investigate the best mix is to fix the total annual energy cost and change the installed capacities of both solar and wind to achieve the greatest level of matching for a given energy cost. <br /><br />So lets take an annual energy cost of £272 and work out for this cost what is the maximum level of matching we can obtain from a wind + solar mix.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-zoor-og-PhQ/VYJx-BoKMCI/AAAAAAAASo0/OGcr5CPCxHA/s1600/windandsun.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="620" src="http://1.bp.blogspot.com/-zoor-og-PhQ/VYJx-BoKMCI/AAAAAAAASo0/OGcr5CPCxHA/s640/windandsun.png" width="640" /></a></div><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>4. Mixed supply and flat demand</i><br /><br /><table class="table"><tbody><tr><th>Cost</th><th>Wind capacity</th><th>Solar capacity</th><th>Matching</th></tr><tr><td>£272.02</td><td>1.1635</td><td>0</td><td>65.86 %</td></tr><tr><td>£272.03</td><td>1.0235</td><td>0.5</td><td>70.04 %</td></tr><tr><td>£272.03</td><td>0.9395</td><td>0.8</td><td>71.22 %</td></tr><tr><td>£272.03</td><td>0.9115</td><td>0.9</td><td>71.33%</td></tr><tr><td>£272.04</td><td>0.8975</td><td>0.95</td><td>71.35%</td></tr><tr><td>£272.04</td><td>0.8835</td><td>1.0</td><td>71.34 %</td></tr><tr><td>£272.04</td><td>0.8695</td><td>1.05</td><td>71.31 %</td></tr><tr><td>£272.04</td><td>0.8555</td><td>1.1</td><td>71.26 %</td></tr><tr><td>£272.04</td><td>0.8275</td><td>1.2</td><td>71.09%</td></tr></tbody></table><br />At an energy cost of £272/year a flat demand and the ZCB dataset we can see a clear benefit from combining solar and wind in the energy mix, increasing solar pv capacity appears to make sense up to 105.8% of installed wind capacity after which the matching starts to drop again for the given energy cost.<br /><br />Its important to note however that wind still provides the majority of the electricity at 2543 kWh of the 3300 kWh generated annually (76%). This is because of wind's higher capacity factor in comparison with solar.<br /><br />How does the mix change if we decide to oversupply and pay a higher cost for the electricity. If we fix our annual cost to say £320<br /><br /><table class="table"><tbody><tr><th>Cost</th><th>Wind capacity</th><th>Solar capacity</th><th>Matching</th></tr><tr><td>£320.06</td><td>1.369</td><td>0</td><td>69.88 %</td></tr><tr><td>£320.07</td><td>1.229</td><td>0.5</td><td>73.98 %</td></tr><tr><td>£320.08</td><td>1.144</td><td>0.8</td><td>75.20 %</td></tr><tr><td>£320.08</td><td>1.089</td><td>1.0</td><td>75.44 %</td></tr><tr><td>£320.08</td><td>1.075</td><td>1.05</td><td>75.45 %</td></tr><tr><td>£320.08</td><td>1.061</td><td>1.1</td><td>75.44 %</td></tr><tr><td>£320.08</td><td>1.047</td><td>1.15</td><td>75.41 %</td></tr><tr><td>£320.08</td><td>1.033</td><td>1.2</td><td>75.37 %</td></tr></tbody></table><br />The maximum matching we obtained in this case happened where solar capacity was 97.7% of wind capacity.<br /><br />It appears that in these model runs, the optimal mix between solar and wind is to install an equal capacity of both, its interesting that this happens to be the case and that its not say half the wind capacity. The model results confirm the often discussed complementarity between solar and wind supply and that the benefit of their combination increases supply demand matching by around 5% points for no additional cost and is a similar scale of supply/demand matching improvement seen by increasing the oversupply of wind to 120% of demand but without the additional cost.<br /><br />Download python model:<br /><a href="http://openenergymonitor.org/energymodel/python/windandsun.py">http://openenergymonitor.org/energymodel/python/windandsun.py </a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -583,6 +592,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -635,12 +650,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -667,6 +676,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

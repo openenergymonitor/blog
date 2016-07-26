@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/hourly-energy-model-example-4/">Hourly energy model example 4: Complementarity of different renewable generating technologies</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-18T07:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-18 07:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2015/06/hourly-energy-model-example-4/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    We hear a lot that a renewable energy system benefits from having a mix of generating technologies. Combining wind and solar for example is said to provide a higher supply/demand matching than relying on one technology alone. When the wind isn’t blowing it may be sunny or vice versa.<br />How do we work out the best mix of different renewable generating technologies. When is it cheaper to add more wind than to add more solar, what is the balance point for a particular demand profile?<br /><br />This example explore's the balance point for onshore wind + solar, both having large resource availabilities associated with them. The mix will be balanced based on energy cost. It would also be good to explore the balance based on embodied energy. As with all modelling based on costs the outcome will change as costs change, the important thing here is to understand the method so that we can explore for a given set of costs what the optimum mix might be.<br />In the recent contracts for a difference auction in the UK for renewable generation many of the onshore wind farms received a strike price of £82.50 per MWh. Two offshore wind projects received £115 per MWh and three solar farms received £79.23 per MWh. <br />Source: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/407059/Contracts_for_Difference_-_Auction_Results_-_Official_Statistics.pdf">Contracts for Difference Auction Results</a><br /><br />In this example we will use these cost figures, the ZCB capacity dataset for onshore wind and solar and a simple flat demand profile.<br /><br />If we look at the results from example 2 investigating annual matching for wind and solar and add in the cost information:<br /><ul><li>1.164kW of onshore wind delivers 3300 kWh/y at £272/y and a supply/demand matching of 65.88%.</li><li>3.99kW of solar delivers 3300 kWh/y at £261/y and a supply/demand matching of 40.61%. </li></ul>One way to investigate the best mix is to fix the total annual energy cost and change the installed capacities of both solar and wind to achieve the greatest level of matching for a given energy cost. <br /><br />So lets take an annual energy cost of £272 and work out for this cost what is the maximum level of matching we can obtain from a wind + solar mix.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-zoor-og-PhQ/VYJx-BoKMCI/AAAAAAAASo0/OGcr5CPCxHA/s1600/windandsun.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="620" src="http://1.bp.blogspot.com/-zoor-og-PhQ/VYJx-BoKMCI/AAAAAAAASo0/OGcr5CPCxHA/s640/windandsun.png" width="640" /></a></div><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>4. Mixed supply and flat demand</i><br /><br /><table class="table"><tbody><tr><th>Cost</th><th>Wind capacity</th><th>Solar capacity</th><th>Matching</th></tr><tr><td>£272.02</td><td>1.1635</td><td>0</td><td>65.86 %</td></tr><tr><td>£272.03</td><td>1.0235</td><td>0.5</td><td>70.04 %</td></tr><tr><td>£272.03</td><td>0.9395</td><td>0.8</td><td>71.22 %</td></tr><tr><td>£272.03</td><td>0.9115</td><td>0.9</td><td>71.33%</td></tr><tr><td>£272.04</td><td>0.8975</td><td>0.95</td><td>71.35%</td></tr><tr><td>£272.04</td><td>0.8835</td><td>1.0</td><td>71.34 %</td></tr><tr><td>£272.04</td><td>0.8695</td><td>1.05</td><td>71.31 %</td></tr><tr><td>£272.04</td><td>0.8555</td><td>1.1</td><td>71.26 %</td></tr><tr><td>£272.04</td><td>0.8275</td><td>1.2</td><td>71.09%</td></tr></tbody></table><br />At an energy cost of £272/year a flat demand and the ZCB dataset we can see a clear benefit from combining solar and wind in the energy mix, increasing solar pv capacity appears to make sense up to 105.8% of installed wind capacity after which the matching starts to drop again for the given energy cost.<br /><br />Its important to note however that wind still provides the majority of the electricity at 2543 kWh of the 3300 kWh generated annually (76%). This is because of wind's higher capacity factor in comparison with solar.<br /><br />How does the mix change if we decide to oversupply and pay a higher cost for the electricity. If we fix our annual cost to say £320<br /><br /><table class="table"><tbody><tr><th>Cost</th><th>Wind capacity</th><th>Solar capacity</th><th>Matching</th></tr><tr><td>£320.06</td><td>1.369</td><td>0</td><td>69.88 %</td></tr><tr><td>£320.07</td><td>1.229</td><td>0.5</td><td>73.98 %</td></tr><tr><td>£320.08</td><td>1.144</td><td>0.8</td><td>75.20 %</td></tr><tr><td>£320.08</td><td>1.089</td><td>1.0</td><td>75.44 %</td></tr><tr><td>£320.08</td><td>1.075</td><td>1.05</td><td>75.45 %</td></tr><tr><td>£320.08</td><td>1.061</td><td>1.1</td><td>75.44 %</td></tr><tr><td>£320.08</td><td>1.047</td><td>1.15</td><td>75.41 %</td></tr><tr><td>£320.08</td><td>1.033</td><td>1.2</td><td>75.37 %</td></tr></tbody></table><br />The maximum matching we obtained in this case happened where solar capacity was 97.7% of wind capacity.<br /><br />It appears that in these model runs, the optimal mix between solar and wind is to install an equal capacity of both, its interesting that this happens to be the case and that its not say half the wind capacity. The model results confirm the often discussed complementarity between solar and wind supply and that the benefit of their combination increases supply demand matching by around 5% points for no additional cost and is a similar scale of supply/demand matching improvement seen by increasing the oversupply of wind to 120% of demand but without the additional cost.<br /><br />Download python model:<br /><a href="http://openenergymonitor.org/energymodel/python/windandsun.py">http://openenergymonitor.org/energymodel/python/windandsun.py </a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/06/hourly-energy-model-example-3-variable/">Hourly energy model example 3: Variable supply and traditional electricity demand</a>
   </h1>
   
@@ -427,48 +458,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/03/energy-display-options/">Energy Display Options...</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-03-19T11:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-03-19 11:24:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/display/'>display</a></li>
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/03/energy-display-options/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Sadly as of last week we have run out of emonGLCD kits in the shop and have decided to discontinue the emonGLCD for the moment. Preparing the through-hole kits is very labour intensive and the time and skill required to solder assemble is lagging behind our other pre-assembled SMT units.<br /><br />Work has begun on a SMT pre-assembled replacement (<a href="http://openenergymonitor.org/emon/node/5374">see forum thread</a>). However this would probably require significant investment in injection moulding tooling and commitment to high volume production. This would not would be a problem if we were sure on the design. However, I'm not sure if a standalone display is the right avenue to go down...<br /><br />I am aware there that there is certainly value in an 'always on' wall mount / coffee table energy display. Being able to easily glance at the display throughout the day when your home really does remind me to switch off lights and appliances when not in use. As well as checking everything is turned off (base level energy consumption) when leaving the house. An always on display gives users a 'feel' for how much energy various devices use as the display increases or decreases in real-time as a device is switched on or turned off.<br /><br />The future is mobile, everyone has at least one mobile device and increasingly as these devices are upgraded there are a large number of perfectly working just a bit slow older devices which could easily be given a second life as an energy display. This could help reduce the number of devices which end up being recycled or worse put into landfill, therefore helping to save energy in more ways the one! Old second hand android phones or tablets can be picked up on Ebay for less than we could make an emonGLCD!<br /><br />I recently repurposed an old Nexus 7 tablet (2012 model) with a cracked screen as a home energy display displaying Emoncms MyElectric. I installed <a href="https://play.google.com/store/apps/details?id=com.nbondarchuk.android.keepscn&amp;hl=en">an app</a>&nbsp;to keep the screen on all the time when plugged in charging. The tablet uses 5W of power. An added advantage of using a mobile device as an energy display is they are 'mobile'! The display can easily be moved around the house to support investigation power consumption of various appliances.<br /><br />Much work could be done on the software side to make a really nice packaged android app for Emoncms which would support an energy display mode, useful features might be:<br /><br /><ul><li>Intelligent screen-on-off e.g the display could turn off at night, when energy falls to base level consumption indicating the house is unoccupied&nbsp;</li><li>Using the tablets motion / proximity / light sensor to sense movement to turn screen on-off</li><li>If device has an&nbsp;AMOLED display only certain pixels could be lit up to save power, like on the <a href="http://www.androidcentral.com/moto-x-best-feature-active-display">Moto-x Active Display&nbsp;</a></li><li>Auto start at startup and full screen mode&nbsp;</li><li>Home screen widget to be used if user does not want to decicate a devices solely as an energy display or to be placed on current mobile home screen to enable quick checking of power consumption / temperature etc when out and about. &nbsp; &nbsp;</li></ul><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-CrEw0VbSe2Y/VQqrwBhpBZI/AAAAAAABF6A/LcUyS_41CF4/s1600/CAN-eRQWcAAP8y0.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-CrEw0VbSe2Y/VQqrwBhpBZI/AAAAAAABF6A/LcUyS_41CF4/s1600/CAN-eRQWcAAP8y0.jpg" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms MyElectric on Nexus 7 with cracked screen</td></tr></tbody></table><br />A super low power alternative could be to use an old e-reader with an E-ink display. Here's Emoncms MyElectric running on a hacked Nook Touch.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-G1QTijq_mqA/VQqr710ke7I/AAAAAAABF6I/M4yq4Fwchtk/s1600/2014-11-13%2B08.10.28-1.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-G1QTijq_mqA/VQqr710ke7I/AAAAAAABF6I/M4yq4Fwchtk/s1600/2014-11-13%2B08.10.28-1.jpg" height="336" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: 12.8000001907349px;">Emoncms MyElectric on Nook Touch</span></td></tr></tbody></table>Head over to the forums and let us know what you think...<br /><div>Discussion Thread: <a href="http://openenergymonitor.org/emon/node/10353">http://openenergymonitor.org/emon/node/10353</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -585,6 +574,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -637,12 +632,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -669,6 +658,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

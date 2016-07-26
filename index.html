@@ -107,6 +107,150 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-07-26T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 26th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/htu21d/'>HTU21D</a></li>
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/07/HTU21D-Temperature-Humidity-sensor/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.</p>
+
+<p><img src="/images/htu21d_1.png" alt="image" /></p>
+
+<ul>
+  <li><a href="https://octopart.com/htu21d-measurement+specialties-30374934">OctoPart list</a></li>
+  <li><a href="http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf">Datasheet</a></li>
+  <li><a href="http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART">Farnell item</a></li>
+  <li>DFM footprint</li>
+  <li>Digital, pre-clibrated</li>
+  <li>I2C</li>
+</ul>
+
+<p>The metrics speak for themselves:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>HTU21D</th>
+      <th>DHT22</th>
+      <th>Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cost in 1k off</td>
+      <td>£1.42 (July16)</td>
+      <td>£4.57 (July16)</td>
+      <td>3.2 times cheaper (£3.15 less!)</td>
+    </tr>
+    <tr>
+      <td>Humidity accuracy</td>
+      <td>±2% RH</td>
+      <td>±2%RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Humidity Range</td>
+      <td>0-100% RH</td>
+      <td>0-100% RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Temperature accuracy</td>
+      <td>±0.3°C</td>
+      <td>±0.5°C</td>
+      <td>40% more accurate</td>
+    </tr>
+    <tr>
+      <td>Temperature Range</td>
+      <td>-40°C to +125°C</td>
+      <td>-40°C to +80°C</td>
+      <td>56% more accurate</td>
+    </tr>
+    <tr>
+      <td>Sleep Current</td>
+      <td>0.02uA</td>
+      <td>15uA</td>
+      <td>750 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement Current</td>
+      <td>0.045mA</td>
+      <td>0.5mA</td>
+      <td>11 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement time</td>
+      <td>0.01s</td>
+      <td>2s</td>
+      <td>200 times faster</td>
+    </tr>
+    <tr>
+      <td>Energy consumed per sample</td>
+      <td>0.00045mW</td>
+      <td>1mW</td>
+      <td>2222 times less power</td>
+    </tr>
+    <tr>
+      <td>Time sampling per day*</td>
+      <td>14.4s</td>
+      <td>2800s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Time sleeping per day*</td>
+      <td>86386s</td>
+      <td>83600s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Energy consumed per day*</td>
+      <td>2.36mW [1]</td>
+      <td>2836mW [2]</td>
+      <td>1201 times less energy per day!</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+      <a class="btn pull-right" href="/2016/07/HTU21D-Temperature-Humidity-sensor/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
   </h1>
   
@@ -697,64 +841,6 @@ $ docker-compose up
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-05-03T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May  3rd 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/forum/'>forum</a></li>
-      
-        <li><a class='category' href='/categories/user-guide/'>user guide</a></li>
-      
-        <li><a class='category' href='/categories/website/'>website</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/05/website-changes/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.</p>
-
-<p>Introducing a shiny new:</p>
-
-<ol>
-  <li>Community Forum</li>
-  <li>User Guide website</li>
-  <li>Blog</li>
-</ol>
-
-<p><strong>Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</strong></p>
-
-
-    
-      <a class="btn pull-right" href="/2016/05/website-changes/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -869,6 +955,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -921,12 +1013,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -953,6 +1039,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

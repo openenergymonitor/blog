@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-06-29T19:06:00+00:00</updated>
+  <updated>2016-07-26T21:36:24+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,138 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTU21D Temperature and Humidity Sensor]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/"/>
+    <updated>2016-07-26T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id>
+    <content type="html"><![CDATA[<p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/htu21d_1.png" alt="image" /></p>
+
+<ul>
+  <li><a href="https://octopart.com/htu21d-measurement+specialties-30374934">OctoPart list</a></li>
+  <li><a href="http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf">Datasheet</a></li>
+  <li><a href="http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART">Farnell item</a></li>
+  <li>DFM footprint</li>
+  <li>Digital, pre-clibrated</li>
+  <li>I2C</li>
+</ul>
+
+<p>The metrics speak for themselves:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>HTU21D</th>
+      <th>DHT22</th>
+      <th>Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cost in 1k off</td>
+      <td>£1.42 (July16)</td>
+      <td>£4.57 (July16)</td>
+      <td>3.2 times cheaper (£3.15 less!)</td>
+    </tr>
+    <tr>
+      <td>Humidity accuracy</td>
+      <td>±2% RH</td>
+      <td>±2%RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Humidity Range</td>
+      <td>0-100% RH</td>
+      <td>0-100% RH</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Temperature accuracy</td>
+      <td>±0.3°C</td>
+      <td>±0.5°C</td>
+      <td>40% more accurate</td>
+    </tr>
+    <tr>
+      <td>Temperature Range</td>
+      <td>-40°C to +125°C</td>
+      <td>-40°C to +80°C</td>
+      <td>56% more accurate</td>
+    </tr>
+    <tr>
+      <td>Sleep Current</td>
+      <td>0.02uA</td>
+      <td>15uA</td>
+      <td>750 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement Current</td>
+      <td>0.045mA</td>
+      <td>0.5mA</td>
+      <td>11 times less power</td>
+    </tr>
+    <tr>
+      <td>Measurement time</td>
+      <td>0.01s</td>
+      <td>2s</td>
+      <td>200 times faster</td>
+    </tr>
+    <tr>
+      <td>Energy consumed per sample</td>
+      <td>0.00045mW</td>
+      <td>1mW</td>
+      <td>2222 times less power</td>
+    </tr>
+    <tr>
+      <td>Time sampling per day*</td>
+      <td>14.4s</td>
+      <td>2800s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Time sleeping per day*</td>
+      <td>86386s</td>
+      <td>83600s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Energy consumed per day*</td>
+      <td>2.36mW [1]</td>
+      <td>2836mW [2]</td>
+      <td>1201 times less energy per day!</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--more-->
+
+<p>*Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a <a href="https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d">sub-repository of the emonTH</a> for full calculations.</p>
+
+<p><strong>An upgraded emonTH with a HTU21D sensor instead of DHT22 should benefit from substantially increased battery life, increased accuracy and lower cost.</strong></p>
+
+<p>I’ve obtained <a href="https://www.sparkfun.com/products/retired/12064">HTU21D Sparkfun breakout to test</a> and easily got it working with an Arduino using the <a href="https://github.com/adafruit/Adafruit_HTU21DF_Library">Adafruit library</a>.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/htu21d_2.jpg" alt="image" /></p>
+
+<hr />
+
+<p>There is some confusion with regard to the variants of this sensor <em>I believe</em> from my research that the HTU21D <strong>replaces</strong> the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don’t think they are software compatible.</p>
+
+<ul>
+  <li><a href="https://octopart.com/sht21-sensirion-19013846">SHT21</a> made by Sensirion</li>
+  <li><a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si7021-A10</a> made by Silicon Labs</li>
+</ul>
+
+<hr />
+
+<p>I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.</p>
+
+<p>For disucssion see <a href="https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106">HTU21D forum thread.</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)]]></title>
@@ -1077,20 +1209,6 @@ The heat pump is located at the back and is a Mitsubushi Ecodan 5kW air-to-water
 <br /><br /><a href="http://video.capatv.com/index.php?Lien=ca608d1a258e4de2cf9f26210711518bbc7467fa">http://video.capatv.com/index.php?Lien=ca608d1a258e4de2cf9f26210711518bbc7467fa</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-R7JmmEn0nek/VobJQJ8iUsI/AAAAAAABllI/n8QWj0DDKDU/s1600/CXduRhVWEAA_hRm.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://1.bp.blogspot.com/-R7JmmEn0nek/VobJQJ8iUsI/AAAAAAABllI/n8QWj0DDKDU/s640/CXduRhVWEAA_hRm.png" width="578" /></a></div><br /><br />Here is the blurb translated from French:<br /><br /><i>"Globally 40% of greenhouse gas emissions are caused by the production of electricity required for industry, heating and everyday life. More than two thirds of the electricity is actually produced in thermal power plants from fossil fuels, ie coal, gas or oil, which releases large amounts of CO2. This production increasing with the construction of new power plants in emerging countries.&nbsp;</i><br /><i><br /></i><i>By 2050, with 3 billion additional inhabitants, the electricity demand will still grow enormously. So how do you reverse to generate electricity without emitting greenhouse gases to limit global warming to 2 ° C by the end of the century?
 
 &nbsp;</i><br /><i><br /></i><i>We started to meet those have opted for autonomy through renewable energies, which have learned to control and optimize power consumption. This is the case in Britain, where the communities of common shiner is to succeed the challenge of energy independence, with the implementation of wind and electricity production from bio-methane from swine manure. Everywhere Worldwide solutions are found to save and optimize energy. Some, like in Boston in the United States live in houses positive energy, which produce more energy than they consume through "smart habitats." Other innovate by using waste heat from factories, which can heat homes. Each in their own way, these precursors are revolutionizing existing models of energy production, to build a world more respectful of the planet."</i>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Heatpumps in the ZeroCarbonBritain model by the Centre for Alternative Technology.]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by/"/>
-    <updated>2015-12-24T13:31:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/12/heatpumps-in-zerocarbonbritain-model-by</id>
-    <content type="html"><![CDATA[Following on from <a href="http://guide.openenergymonitor.org/2015/12/heat-pump-monitoring">last blog post on heat pump monitoring</a> I will try in this post to give a bit of context on heat pumps. Heat pumps are interesting because they provide a way to make efficient use of renewable electricity for heating. They are used in many zero carbon energy scenario's including the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario from the Centre for Alternative Technology which is one of the most comprehensive UK based 100% renewable energy scenarios created.<br /><br />This sankey diagram from the ZeroCarbonBritain report gives an overview of the energy flows in their scenario, with heat pumps providing the bulk of the heating and hot water demand:
-
-<!--more-->
-
-<br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-5F5-MOj1SmQ/VnsPYpcAC5I/AAAAAAAAUIQ/yJBgfMYF_dQ/s1600/ZCBoverview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="379" src="http://4.bp.blogspot.com/-5F5-MOj1SmQ/VnsPYpcAC5I/AAAAAAAAUIQ/yJBgfMYF_dQ/s640/ZCBoverview.png" width="640" /></a></div><div style="clear: left; float: left; line-height: 100%; margin-bottom: 1em; margin-right: 1em;"><br />Heat pumps provide 66% of final space and water heating demand, providing 155 TWh of heat from 50 TWh of electricity – an average coefficient of performance of 3.1. </div><div style="clear: left; float: left; line-height: 100%; margin-bottom: 1em; margin-right: 1em;">ZeroCarbonBritain also include 30 TWh of direct electric heating. The total input electricity for heating is 80 TWh and total heat delivered 185 TWh which together is an average COP of 2.3. <br /><br />
-
-This 80 TWh of electricity demand is around 20% of the final direct electricity demand or 11% of the total renewable electricity generated as 47% of the electricity generated is used during times of excess production for export and synthetic fuel production, plus backup power to gas. <br /><br />By using heat pumps for heating ZCB reduces the amount of renewable energy that would otherwise be needed to provide our energy needs. <br /><br />The total domestic space heating demand projected is 114.4 Twh, divided by the projected 2030 number of households of 30.1 million this equates to 3800 kWh/year per household. This is the space heating demand after fairly ambitious space heating energy savings (62% reduction), made by improving building fabric with insulation, draught proofing and better heating control.</div><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><br /><br /><a href="http://1.bp.blogspot.com/-A7JGU-altNA/VnsPakChFBI/AAAAAAAAUIY/lUfq4VFfkXc/s1600/buildingefficiency.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="408" src="http://1.bp.blogspot.com/-A7JGU-altNA/VnsPakChFBI/AAAAAAAAUIY/lUfq4VFfkXc/s640/buildingefficiency.png" width="640" /></a> <br />The total domestic water heating demand is projected to be 76 TWh, or 2525 kWh/year per household. ZeroCarbonBritain has 33% of this coming from solar hot water. The hot water demand provided for by heat pumps and direct electric heating is therefore 1694 kWh.<br /><br />If the use of direct electric heating and heatpumps are evenly shared between all buildings achieving an average COP of 2.3 as above then our total delivered heat requirement of 3800 kWh + 1694 kWh = 5494 kWh becomes an input electricity requirement of 5495 / 2.3 = 2389 kWh/year per household or 6.5 kWh per day per household.<br /><br />The average household in 2030 is assumed to have the same average occupancy as today of 2.34. <br /><br />Our per person target would therefore become 2.8 kWh/d/pp of input electricity for space and water heating.<br /><br /><table cellpadding="4" cellspacing="0" style="width: 100%;"> <tbody><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><br /><br /></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%">Space heating only</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%">Water heating</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%">Space heating and water heating</td>  <td style="border: 1px solid #000000; padding: 0.1cm;" width="20%">Lighting, cooking and appliances</td> </tr><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Heat demand</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">3800 kWh</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">1694 kWh</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">5494 kWh</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Input electric</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">1542 kWh<br />@ 2.5 COP</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">847 kWh<br />@ 2.0 COP</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2389 kWh<br />@ 2.3 COP</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%">1636 kWh</td> </tr><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Daily input electric</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">4.2 kWh/d</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.3 kWh/d</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">6.5 kWh/d</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%">4.5 kWh/d</td> </tr><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Per person</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">1.8 kWh/d/pp</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">1.0 kWh/d/pp</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.8 kWh/d/pp</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%">1.9 kWh/d/pp</td> </tr></tbody></table><br /><span style="font-size: xx-small;"><i>- 346 kWh cooking after 40% reduction, 1290 kWh lighting and appliances after 61% reduction</i></span><br /><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div>These figures provide a useful guide to the level of electricity consumption per household and per person that a scenario like ZeroCarbonBritain is aiming for and highlights the role of building fabric efficiency in reducing the heating requirements to start with. <br /><br />The average COP achieved taking into account a mix of heat pump heating at a COP of 3.1 and direct electric is 2.3. If it where achievable to increase the combined COP to 3.0 by reducing the amount of direct electric heating this could either be used to reduce the input electric demand by 23% reducing the total amount of renewable energy that would need to be installed or it could alternatively be used perhaps to reduce the amount of building fabric improvement required to 45% rather than a 60% reduction. <br /><br />The exact target will always be something that is in flux and will be a balance point between all the demands for renewable electricity and the degree to which we deploy renewable energy but the above figures give an idea for what we might want to try aiming for when designing homes that are ready for a zero carbon renewable energy supply. <br /><br />Interestingly the total electricity demand including lighting, appliances, cooking, space heating and water heating is 11 kWh/d per household in the ZeroCarbonBritain scenario which is only 3.3% above the 2007 electricity only baseline. The additional demand from the electrification of heating is negated by the increase in efficiency in lighting, cooking and appliances.<br /><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><table cellpadding="4" cellspacing="0" style="width: 100%;"> <colgroup><col width="256*"></col> </colgroup><tbody><tr>  <td bgcolor="#e6e6e6" style="border: 1px solid #000000; padding: 0.1cm;" valign="top" width="100%"><div style="margin-bottom: 0cm;"><b>Passivhaus</b></div><div style="font-weight: normal; margin-bottom: 0cm;">The 60% energy    saving target for space heating taken into account above is not    actually state of the art. 3800 kWh/year in an typical uk home    with a floor area of 85m2 is 45 kWh/m2/year. Passivhaus new build    achieves a space heating energy demand of 15 kWh/m2/year and    retrofit 25 kWh/m2/year.</div><div style="font-weight: normal; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal;">A passivhaus retrofit with floor    area of 85m2 would require 2125 kWh/year of heat, delivered at a    COP of 3.0 would require 708 kWh of input electric, or 850 kWh if a COP of 2.5 is achieved, which may be more likely as a larger portion of the heat supplied will be at a higher temperature for hot water heating rather than space heating.&nbsp; </div></td> </tr></tbody></table><div style="line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; line-height: 100%; margin-bottom: 0cm;"><br /></div><table cellpadding="4" cellspacing="0" style="width: 100%;"> <colgroup><col width="128*"></col> <col width="128*"></col> </colgroup><tbody><tr valign="top">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="50%"><b>Average home today</b><br /><br />Lighting, Appliances and cooking<br />electric input:<br />3885 kWh, <b>10.6 kWh/d</b><br /><br />Space heating gas input:<br />12500 kWh, <b>34 kWh/d</b><br /><br />Water heating gas input:<br />2118 kWh, <b>5.8 kWh/d</b><br /><br /><br />Total: 18,503 kWh provided by a mix of gas and 2007 grid    average electric = ~ 5 tonnes of CO2//year</td>  <td style="border: 1px solid #000000; padding: 0.1cm;" width="50%"><b>Average ZeroCarbonBritain home</b><br /><br />Lighting, Appliances and cooking<br />electric input:<br />1636 kWh, <b>4.5 kWh/d</b><br /><br />Space heating electric input:<br />1542 kWh,<b> 4.2 kWh/d</b><br /><br />Water heating electric input:<br />847 kWh, <b>2.3 kWh/d</b><br /><br /><br />Total: 4025 kWh provided by renewable electric<br />at zero carbon</td> </tr></tbody></table><div style="font-weight: normal; line-height: 100%; margin-bottom: 0cm;"><br /></div><div style="font-weight: normal; line-height: 100%; margin-bottom: 0cm;"><ul><li><i><span style="font-size: x-small;">ZeroCarbonBritain 100% renewable energy scenario for the UK: <a href="http://zerocarbonbritain.org/">http://zerocarbonbritain.org/</a></span></i></li><li><i><span style="font-size: x-small;">ZeroCarbonBritain power down methodology <a href="http://zerocarbonbritain.org/component/k2/item/88?Itemid=290">http://zerocarbonbritain.org/component/k2/item/88?Itemid=290</a></span></i></li><li><i><span style="font-size: x-small;">Sustainable Energy without the hot air section on heat pump's by David MacKay: <a href="http://withouthotair.com/c21/page_146.shtml">http://withouthotair.com/c21/page_146.shtml </a></span></i></li></ul></div>]]></content>
   </entry>
   
 </feed>

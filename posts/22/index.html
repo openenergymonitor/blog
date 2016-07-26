@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/08/overload-protection-of-mains-electrical/">Overload Protection of Mains Electrical Circuits by Robert Wall</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-04T18:29:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-04 18:29:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2012/08/overload-protection-of-mains-electrical/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    A new guide by Robert Wall on&nbsp;overload protection of mains electrical circuits.<br /><br /><a href="http://openenergymonitor.org/emon/user/924">Robert Wall </a>writes:<br /><br /><div style="background-color: #eeeeee; border: 1px solid #ccc; margin: 5px; padding: 10px;"><b>The fundamentals.</b><br /><br />All electrical circuits must have some means of protecting against overload. This may be done by including a fuse or circuit breaker in the circuit, or the protection may be designed in to the supply that is feeding the circuit. We will only consider fuses and circuit breakers, as these are most likely the device that will be encountered in a normal environment.<br /><br /><b>How to determine the ratings.</b><br /><br />First, you need to know the current that the load demands, under all conditions. You then need to choose a fuse or circuit breaker that will not blow (or trip) when carrying that current, but with only the smallest safety margin under worst-case conditions. Finally, you must choose everything in between – cable, switches, plug &amp; sockets, etc – so that each will safely carry the current that will guarantee that the fuse will blow, or the circuit breaker will trip, under all conditions (paying particular regard to ambient temperature and the ability of the cable expecially to stay cool, i.e. it must not be buried in insulation).<br /><br />Read the full guide here:&nbsp;<a href="http://openenergymonitor.org/emon/buildingblocks/overload-protection-of-mains-electrical-circuits">Overload Protection of Mains Electrical Circuits</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/08/plug-and-play-sensor-nodes/">Plug and play sensor nodes</a>
   </h1>
   
@@ -471,48 +502,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/07/triac-based-mk2-pv-controller-by/">Triac based MK2 PV Controller by Calypso Rye</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-07-16T13:42:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-16 13:42:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
-      
-        <li><a class='category' href='/categories/solarpv/'>solarPV</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/07/triac-based-mk2-pv-controller-by/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s1600/IMGP9704.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-Y8lRjQvqoZg/UAQXPSAleMI/AAAAAAAACdU/9CxAGNIB73Y/s400/IMGP9704.JPG" width="400" /></a></div><br /><br /><a href="http://openenergymonitor.org/emon/user/956">Calypso Rye</a> writes:<br /><br /><div style="background-color: #dddddd; font-size: 90%; padding: 10px;">Based on the standard VI sketch which uses calcVI() in EmonLib, I’ve had a system in place for the last couple of months which diverts surplus PV power to our immersion heater.  This system has proved to be both effective and reliable, and I am most grateful for everyone who has helped me along the way.  The main downside to this arrangement is that it requires an expensive item of third-party kit to distribute the power.  (I know that others have found cheaper ways, but my Carlo Gavazzi unit cost me £70).<br /><br />Other contributors to this forum have shown that a standard triac can be easily controlled by an Arduino.  By using a zero-crossing detector such as the Motorola MOC3041, it should be possible for the Arduino to allocate mains cycles directly to the load rather than delegating this task to a separate device.<br /><br />A Mk2 system of this type has been working in our garage for the last few days.  The sketch and a schematic diagram are attached, its main features being:<br /><br />- a comprehensive 'debug' mode which allows real world conditions to be simulated ;<br /><div><br />- a continuous mode of operation, for both measurement and distribution of power;</div><div><br />- an "energy bucket" concept which gives precise control of surplus power;<br /><br />- interleaved windows for measurement and generation, each only 20mS;<br /><br />- a rapid response time to changing conditions (50mS);<br /><br />- suitable timing for 'arming' a zero-crossing trigger device;<br /><br />- a single LPF which determines the dc-offset of raw VI samples;<br /><br />- a programmable safety margin for biassing import v. export;<br /><br />- minimal calibration is required.</div></div><br />Read the full post on the forum here: <a href="http://openenergymonitor.org/emon/node/841">http://openenergymonitor.org/emon/node/841</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -629,6 +618,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -681,12 +676,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -713,6 +702,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     

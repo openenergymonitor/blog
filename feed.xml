@@ -1,4 +1,222 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-06-29T19:06:00+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/" rel="alternate" type="text/html" title="Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)" /><published>2016-06-29T10:00:00+00:00</published><updated>2016-06-29T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-07-26T21:36:24+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>HTU21D Temperature and Humidity Sensor</title><link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/" rel="alternate" type="text/html" title="HTU21D Temperature and Humidity Sensor" /><published>2016-07-26T10:00:00+00:00</published><updated>2016-07-26T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">&lt;p&gt;I have been been evaluating the &lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;HTU21D&lt;/a&gt; temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/htu21d_1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;OctoPart list&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf&quot;&gt;Datasheet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART&quot;&gt;Farnell item&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;DFM footprint&lt;/li&gt;
+  &lt;li&gt;Digital, pre-clibrated&lt;/li&gt;
+  &lt;li&gt;I2C&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The metrics speak for themselves:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Metric&lt;/th&gt;
+      &lt;th&gt;HTU21D&lt;/th&gt;
+      &lt;th&gt;DHT22&lt;/th&gt;
+      &lt;th&gt;Difference&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cost in 1k off&lt;/td&gt;
+      &lt;td&gt;£1.42 (July16)&lt;/td&gt;
+      &lt;td&gt;£4.57 (July16)&lt;/td&gt;
+      &lt;td&gt;3.2 times cheaper (£3.15 less!)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Humidity accuracy&lt;/td&gt;
+      &lt;td&gt;±2% RH&lt;/td&gt;
+      &lt;td&gt;±2%RH&lt;/td&gt;
+      &lt;td&gt;n/a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Humidity Range&lt;/td&gt;
+      &lt;td&gt;0-100% RH&lt;/td&gt;
+      &lt;td&gt;0-100% RH&lt;/td&gt;
+      &lt;td&gt;n/a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Temperature accuracy&lt;/td&gt;
+      &lt;td&gt;±0.3°C&lt;/td&gt;
+      &lt;td&gt;±0.5°C&lt;/td&gt;
+      &lt;td&gt;40% more accurate&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Temperature Range&lt;/td&gt;
+      &lt;td&gt;-40°C to +125°C&lt;/td&gt;
+      &lt;td&gt;-40°C to +80°C&lt;/td&gt;
+      &lt;td&gt;56% more accurate&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sleep Current&lt;/td&gt;
+      &lt;td&gt;0.02uA&lt;/td&gt;
+      &lt;td&gt;15uA&lt;/td&gt;
+      &lt;td&gt;750 times less power&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Measurement Current&lt;/td&gt;
+      &lt;td&gt;0.045mA&lt;/td&gt;
+      &lt;td&gt;0.5mA&lt;/td&gt;
+      &lt;td&gt;11 times less power&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Measurement time&lt;/td&gt;
+      &lt;td&gt;0.01s&lt;/td&gt;
+      &lt;td&gt;2s&lt;/td&gt;
+      &lt;td&gt;200 times faster&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Energy consumed per sample&lt;/td&gt;
+      &lt;td&gt;0.00045mW&lt;/td&gt;
+      &lt;td&gt;1mW&lt;/td&gt;
+      &lt;td&gt;2222 times less power&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Time sampling per day*&lt;/td&gt;
+      &lt;td&gt;14.4s&lt;/td&gt;
+      &lt;td&gt;2800s&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Time sleeping per day*&lt;/td&gt;
+      &lt;td&gt;86386s&lt;/td&gt;
+      &lt;td&gt;83600s&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Energy consumed per day*&lt;/td&gt;
+      &lt;td&gt;2.36mW [1]&lt;/td&gt;
+      &lt;td&gt;2836mW [2]&lt;/td&gt;
+      &lt;td&gt;1201 times less energy per day!&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;*Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a &lt;a href=&quot;https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d&quot;&gt;sub-repository of the emonTH&lt;/a&gt; for full calculations.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;An upgraded emonTH with a HTU21D sensor instead of DHT22 should benefit from substantially increased battery life, increased accuracy and lower cost.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve obtained &lt;a href=&quot;https://www.sparkfun.com/products/retired/12064&quot;&gt;HTU21D Sparkfun breakout to test&lt;/a&gt; and easily got it working with an Arduino using the &lt;a href=&quot;https://github.com/adafruit/Adafruit_HTU21DF_Library&quot;&gt;Adafruit library&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/htu21d_2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There is some confusion with regard to the variants of this sensor &lt;em&gt;I believe&lt;/em&gt; from my research that the HTU21D &lt;strong&gt;replaces&lt;/strong&gt; the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don’t think they are software compatible.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://octopart.com/sht21-sensirion-19013846&quot;&gt;SHT21&lt;/a&gt; made by Sensirion&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://octopart.com/si7021-a10-gm-silicon+labs-31448011&quot;&gt;Si7021-A10&lt;/a&gt; made by Silicon Labs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.&lt;/p&gt;
+
+&lt;p&gt;For disucssion see &lt;a href=&quot;https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106&quot;&gt;HTU21D forum thread.&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I have been been evaluating the HTU21D temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.
+
+
+
+
+  OctoPart list
+  Datasheet
+  Farnell item
+  DFM footprint
+  Digital, pre-clibrated
+  I2C
+
+
+The metrics speak for themselves:
+
+
+  
+    
+      Metric
+      HTU21D
+      DHT22
+      Difference
+    
+  
+  
+    
+      Cost in 1k off
+      £1.42 (July16)
+      £4.57 (July16)
+      3.2 times cheaper (£3.15 less!)
+    
+    
+      Humidity accuracy
+      ±2% RH
+      ±2%RH
+      n/a
+    
+    
+      Humidity Range
+      0-100% RH
+      0-100% RH
+      n/a
+    
+    
+      Temperature accuracy
+      ±0.3°C
+      ±0.5°C
+      40% more accurate
+    
+    
+      Temperature Range
+      -40°C to +125°C
+      -40°C to +80°C
+      56% more accurate
+    
+    
+      Sleep Current
+      0.02uA
+      15uA
+      750 times less power
+    
+    
+      Measurement Current
+      0.045mA
+      0.5mA
+      11 times less power
+    
+    
+      Measurement time
+      0.01s
+      2s
+      200 times faster
+    
+    
+      Energy consumed per sample
+      0.00045mW
+      1mW
+      2222 times less power
+    
+    
+      Time sampling per day*
+      14.4s
+      2800s
+       
+    
+    
+      Time sleeping per day*
+      86386s
+      83600s
+       
+    
+    
+      Energy consumed per day*
+      2.36mW [1]
+      2836mW [2]
+      1201 times less energy per day!</summary></entry><entry><title>Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/" rel="alternate" type="text/html" title="Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)" /><published>2016-06-29T10:00:00+00:00</published><updated>2016-06-29T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
@@ -764,72 +982,4 @@ Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required;
 
 &lt;p&gt;Thanks again to everyone involved in the development and testing. It’s been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I would like to highlight a nice improvement to Emoncms and the Emoncms android app that has been contributed by community memebers @jumpmaster and @andy_taylor. See development forum thread on our shiny new forums.
 
-Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</summary></entry><entry><title>New Forum, Blog and User Guide Website</title><link href="https://blog.openenergymonitor.org/2016/05/website-changes/" rel="alternate" type="text/html" title="New Forum, Blog and User Guide Website" /><published>2016-05-03T15:00:00+00:00</published><updated>2016-05-03T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/website-changes</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/website-changes/">&lt;p&gt;We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.&lt;/p&gt;
-
-&lt;p&gt;Introducing a shiny new:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Community Forum&lt;/li&gt;
-  &lt;li&gt;User Guide website&lt;/li&gt;
-  &lt;li&gt;Blog&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;new-community-forum&quot;&gt;1. New Community Forum&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Selection_037.png&quot; alt=&quot;image&quot; /&gt;&lt;img src=&quot;/images/Selection_038.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;httpscommunityopenenergymonitororghttpscommunityopenenergymonitororg&quot;&gt;&lt;a href=&quot;https://community.openenergymonitor.org&quot;&gt;https://community.openenergymonitor.org&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;The current &lt;a href=&quot;http://openenergymonitor.org/emon/forum&quot;&gt;OpenEnergyMonitor Forums&lt;/a&gt; have been running (since 2010) on Drupal 6. As of February 2016 Drupal 6 reached EOL. This does not mean that the site will stop working, however, it does mean we have decided the time has come to upgrade the highest traffic and most interacted-with part of the site &amp;gt; The Community Forums.&lt;/p&gt;
-
-&lt;p&gt;Later this week &lt;strong&gt;on Thursday 5th May 2016 the old forum will be frozen&lt;/strong&gt; and we will be moving to the new forum powered by &lt;a href=&quot;https://www.discourse.org/&quot;&gt;Discourse&lt;/a&gt; open-source forum platform hosted and managed us (OpenEnergyMonitor) on our servers.&lt;/p&gt;
-
-&lt;p&gt;You will need to create an account on the new forum. You should receive an email soon inviting you to the new forum, if you join via the link in the email you will receive elevated privileges on the new forum since you have already proved yourself as a trusted user.&lt;/p&gt;
-
-&lt;p&gt;Thanks a lot to the team of community volunteers who have prepare the new forum over the past few weeks.&lt;/p&gt;
-
-&lt;h2 id=&quot;new-user-guide&quot;&gt;2. New User Guide&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Selection_036.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;httpsguideopenenergymonitororghttpsguideopenenergymonitororg&quot;&gt;&lt;a href=&quot;https://guide.openenergymonitor.org&quot;&gt;https://guide.openenergymonitor.org&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openenergymonitor.org/emon/&quot;&gt;OpenEnergyMonitor.org&lt;/a&gt; contains has a wealth of information (specifically the &lt;a href=&quot;http://openenergymonitor.org/emon/buildingblocks&quot;&gt;Building Blocks&lt;/a&gt; resources section), however a common issue raised by new users is they feel lost swimming in a sea of information. The user guide has been created to provide just the right amount of information to setup and configure and OpenEnergyMonitor system. The guide is focused on the emonPi but will also cover emonBase (Raspberry Pi + RFM69Pi), emonTx and emonTH.&lt;/p&gt;
-
-&lt;p&gt;The launch of the Guide site coincides with the launch of the new emonSD Raspberry Pi emonPi / emonBase pre built image which includes the latest version of Emoncms as well as MQTT, nodeRED, openHAB and Raspberry Pi 3 support all setup and pre-configured. &lt;a href=&quot;https://community.openenergymonitor.org/t/emonsd-03may16-release/145&quot;&gt;See forum post&lt;/a&gt;. This new emonSD image will be installed as standard with all emonPi/emonBase’s shipped from our store in the next few weeks. &lt;em&gt;We soon be selling the Raspberry Pi 3 as standard with emonPi / emonBase, another blog post on this coming soon..&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The User Guide site will attempt to create a distinction between ‘user’ documentation and ‘developer’ documentation and discussions. The Guide site has been designed to look and work great on mobile devices. We think this is important since stats indicated that users often follow the setup guide on a mobile or tablet while at the install site (think head stuck inside a meter cabinet!). Going forward we would like to standardise on the following locations for documentation:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;User Guide Site - User documentation&lt;/li&gt;
-  &lt;li&gt;Forums - User support / Developer discussion separated with categories.&lt;/li&gt;
-  &lt;li&gt;GitHub - Technical documentation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The Hardware Wiki will still exist, however expect hardware documentation to move to &lt;a href=&quot;https://github.com/openenergymonitor/hardware&quot;&gt;GitHub Hardware Repo&lt;/a&gt; over time.&lt;/p&gt;
-
-&lt;h2 id=&quot;new-blog&quot;&gt;3. New Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Selection_039.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;httpsblogopenenergymonitororghttpsblogopenenergymonitororg&quot;&gt;&lt;a href=&quot;https://blog.openenergymonitor.org&quot;&gt;https://blog.openenergymonitor.org&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;We have wanted to move away from our &lt;a href=&quot;http://openenergymonitor.blogspot.co.uk/&quot;&gt;old Google blogger&lt;/a&gt; for a while. During the learning process building the Guide website I realised that using GitHub and Jekyll would also be a good solution for the blog. Thanks to Google export and a nice &lt;a href=&quot;https://import.jekyllrb.com/docs/blogger/&quot;&gt;Jekyll import script&lt;/a&gt; we managed to migrate over the blog without too much difficulty. Please update your RSS subscription to the &lt;a href=&quot;http://blog.openenergymonitor.org/feed.xml&quot;&gt;new Atom feed.xml&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;technical-info&quot;&gt;Technical info&lt;/h3&gt;
-
-&lt;p&gt;The new Guide and Blog are built using &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; static site generator with Octopress &lt;a href=&quot;https://github.com/coogie/oscailte&quot;&gt;Oscailte theme&lt;/a&gt; to convert markdown files to html. The sites are &lt;a href=&quot;https://github.com/openenergymonitor/guide&quot;&gt;fully open-source on GitHub &lt;/a&gt; and are hosted by GitHub pages. &lt;a href=&quot;https://travis-ci.org/openenergymonitor/guide/&quot;&gt;Travis CI&lt;/a&gt; has been configured to re-build the static html pages each time a change commit is made. Hosting the site on github will make it easy for anyone to propose a change/fix. The site is served and secured via Cloud Flare using CF’s &lt;a href=&quot;https://blog.cloudflare.com/cloudflare-ca-encryption-origin/&quot;&gt;Universal SSL/TLS to origin&lt;/a&gt;.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>We have been busy for the past couple of months building some new websites to improve OpenEnergyMonitor.
-
-Introducing a shiny new:
-
-
-  Community Forum
-  User Guide website
-  Blog
-
-
-Later this week on Thursday 5th May 2016 the old forums will be frozen and we will be moving to the new community forums</summary></entry></feed>
+Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</summary></entry></feed>

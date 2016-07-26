@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/removing-redundant-datapoints-algorithm/">Removing redundant datapoints – algorithm 1</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-05T11:22:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-05 11:22:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/removing-redundant-datapoints-algorithm/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">You could probably say that the aim of an algorithm that removes redundant datapoints is to create a line plot who's standard deviation compared to the raw data line is as small as possible while minimising the number of datapoints. This is probably a good rough criteria for evaluating a prospective algorithm.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Here's one idea for an algorithm, I think it can certainly be improved upon but its a start.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If we start with our monitor that's posting once every 10 seconds. If we note down the first datapoint received and then as subsequent datapoints come in draw a line between the first and the last datapoint.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s1600/algorithm1_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-POXZpyzURpw/Ua8dhYHXDZI/AAAAAAAACos/u0n-xrGlb7Q/s400/algorithm1_01.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">Then lets say there is a step change, a light goes on, suddenly the line is much higher than the actual data for most datapoints:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s1600/algorithm1_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="185" src="http://1.bp.blogspot.com/-0uEjg3xFhN0/Ua8dpNt6r5I/AAAAAAAACo0/THdnRwLHAKE/s400/algorithm1_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;">If we measure the standard deviation of the raw datapoints vs the line to begin with it will be small, once that step change happens it will become much larger.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">At this point we note a significant change has happened (stdev is larger than a threshold) and create a datapoint one back from the last datapoint (the bottom of the step).</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We can then move our 'start' datapoint forward to this created datapoint and repeat the process. This should do a pretty good job of tracking the raw data.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To test it I have created a visualisation that applies this algorithm using javascript in the browser here is the result:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s1600/algorithm01_3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="173" src="http://1.bp.blogspot.com/-2S_rUF2Qns8/Ua8dyeX9RtI/AAAAAAAACo8/TXvcY5KBAC4/s400/algorithm01_3.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It works pretty well reducing 1064 datapoints to 52, but it does look messy in places.</div><div style="margin-bottom: 0cm;">To try out the code for the above, make a backup of the script:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><i>emoncms/Modules/vis/visualisations/rawdata.php</i> in your local emoncms installation.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">and replace with this:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php">https://github.com/emoncms/usefulscripts/blob/master/ideas/rawdata.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If you can think of a good algorithm to do this, It would be great to hear about it.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/removing-redundant-datapoints-part-1/">Removing redundant datapoints - part 1</a>
   </h1>
   
@@ -449,46 +489,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/open-source-hardware-users-group-oshug/">Open Source Hardware Users Group (OSHUG) #26 Meetup </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-17T07:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-17 07:45:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/presentation/'>presentation</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/open-source-hardware-users-group-oshug/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Last night I attended<a href="http://oshug.org/event/26"> OSHUG event #26</a>&nbsp;in London and gave a short talk on Low Power Wireless sensors as well as the brief overview of the OpenMonitorProject and a quick look at what we've been working on recently.<br /><br />There are a couple of new screenshots in the presentation from the open-source <a href="http://emoncms.org/sap/introduction">SAP building&nbsp;modelling&nbsp;emoncms module</a> that Trystan is been working in with Manchester&nbsp;<a href="http://twitter.com/CarbonCoop">@CarbonCoop</a>&nbsp;recently. This is an exciting bit of development. The idea is that the building model could be matched up to the monitoring results (temperature profile &amp; heat input) of a building, the model could then be used to investigate the effect of undertaking improvement measures such as wall, loft insulation or external&nbsp;cladding&nbsp;etc.. Finally after&nbsp;completion&nbsp;of improvement measures the monitoring data can again be used to evaluate the actual performance of the improvement measures.<br /><br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" mozallowfullscreen="" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/21307459" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" webkitallowfullscreen="" width="427"> </iframe><br /><div style="margin-bottom: 5px;"><strong> <a href="http://www.slideshare.net/OpenEnergyMonitor/osug-26-low-power-wireless-sensors" target="_blank" title="Osug #26 low power wireless sensors">Osug #26 low power wireless sensors</a> </strong> from <strong><a href="http://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> <br /><br />It was great to meet everyone and put faces to (twitter) names! Big thanks to Andrew Back&nbsp;<a href="https://twitter.com/9600">@9600</a>&nbsp;for organising the event and&nbsp;<a href="https://twitter.com/skpang_uk">@skpang_uk</a>&nbsp;for&nbsp;sponsoring the event...and buying me a beer afterwards!&nbsp;&nbsp;</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -605,6 +605,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
@@ -657,12 +663,6 @@ window.onclick = function(event) {
         </li>
       
     
-      
-        <li class="post">
-          <a href="/2016/05/website-changes/">New Forum, Blog and User Guide Website</a>
-        </li>
-      
-    
   </ul>
 </section>
   
@@ -689,6 +689,8 @@ window.onclick = function(event) {
       <li><a href="/categories/dc current sensing/">DC current sensing</a></li>
     
       <li><a href="/categories/esp8266/">ESP8266</a></li>
+    
+      <li><a href="/categories/htu21d/">HTU21D</a></li>
     
       <li><a href="/categories/heat pump/">Heat Pump</a></li>
     
