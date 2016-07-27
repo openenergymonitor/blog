@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "HTU21D Temperature and Humidity Sensor"
+title: "HTU21D / Si72021 Temperature and Humidity Sensor"
 date: "2016-07-26 10:00"
 date_formatted: June 26th 2016
 author: Glyn Hudson
@@ -12,7 +12,8 @@ categories:
 ---
 
 
-I have been been evaluating the [HTU21D](https://octopart.com/htu21d-measurement+specialties-30374934) temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.
+I have been been evaluating the [HTU21D](https://octopart.com/htu21d-measurement+specialties-30374934) temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The [Si72021](https://octopart.com/si7021-a10-gm-silicon+labs-31448011) is also a posiblity with an identical pin-out and specs.
+
 
 ![image]({{site.image_path}}/htu21d_1.png)
 
@@ -27,20 +28,23 @@ I have been been evaluating the [HTU21D](https://octopart.com/htu21d-measurement
 The metrics speak for themselves:
 
 
-| Metric              | HTU21D             | DHT22          | Difference|
-| ------------- | ------------- | ------------- | ------------- |
-| Cost in 1k off      | £1.42 (July16)     |  £4.57 (July16)    | 3.2 times cheaper (£3.15 less!) |
-| Humidity accuracy   | ±2% RH             |  ±2%RH         | n/a |
-| Humidity Range      | 0-100% RH          |  0-100% RH     | n/a|
-| Temperature accuracy | ±0.3°C            |  ±0.5°C        | 40% more accurate |
-| Temperature Range   | -40°C to +125°C       |  -40°C to +80°C   | 56% more accurate |
-| Sleep Current       | 0.02uA             |  15uA          | 750 times less power |
-| Measurement Current | 0.045mA            |  0.5mA         | 11 times less power |
-| Measurement time    | 0.01s              |  2s            | 200 times faster |
-| Energy consumed per sample | 0.00045mW   |  1mW           | 2222 times less power |
-| Time sampling per day* |  14.4s          |  2800s         | |
-| Time sleeping per day* | 86386s          |  83600s        | |
-| Energy consumed per day* | 2.36mW [1]    |  2836mW [2]    | 1201 times less energy per day!  |
+
+| Metric              | HTU21D             |Si72021| DHT22          | DHT22 vs HTU21D Difference|
+| ------------- | -------------            |------------- | ------------- | ------------- |
+| Cost in 1k off      | £1.42 (July16)     |£2.15|  £4.57 (July16)    | 3.2 times cheaper (£3.15 less!) |
+| Vcc                 | 2.1v - 3.6V        | 1.9V - 3.6V | | |
+| Humidity accuracy   | ±2% RH             | ±2% RH |  ±2%RH         | n/a |
+| Humidity Range      | 0-100% RH          | 0-100% RH |  0-100% RH     | n/a|
+| Temperature accuracy | ±0.3°C            | ±0.4°C|  ±0.5°C        | 40% more accurate |
+| Temperature Range   | -40°C +125°C       |  -40°C +125°C  |  -40°C +80°C   | 56% more accurate |
+| Sleep Current       | 0.02uA             | 0.06uA |  15uA          | 750 times less power |
+| Measurement Current | 0.045mA            | 0.09 mA |  0.5mA         | 11 times less power |
+| Measurement time    | 0.01s - 0.0026s    | 0.01s - 0.0026s |  2s            | 200 times faster |
+| Energy consumed per sample | 0.00045mW   ||  1mW           | 2222 times less power |
+| Time sampling per day* |  14.4s          ||  2800s         | |
+| Time sleeping per day* | 86386s          ||  83600s        | |
+| Energy consumed per day* | 2.36mW [1]    ||  2836mW [2]    | 1201 times less energy per day!  |
+
 
 
 <!--more-->
@@ -57,10 +61,8 @@ I've obtained [HTU21D Sparkfun breakout to test](https://www.sparkfun.com/produc
 
 ***
 
-There is some confusion with regard to the variants of this sensor *I believe* from my research that the HTU21D **replaces** the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don't think they are software compatible.
+There is some confusion with regard to the variants of this sensor *I believe* from my research that the HTU21D **replaces** the [SHT21](https://octopart.com/sht21-sensirion-19013846) made by Sensirion. Both sensors have identical pin-outs.
 
-- [SHT21](https://octopart.com/sht21-sensirion-19013846) made by Sensirion
-- [Si7021-A10](https://octopart.com/si7021-a10-gm-silicon+labs-31448011) made by Silicon Labs
 
 ***
 
