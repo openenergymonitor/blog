@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTU21D | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/htu21d/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-07-27T11:17:40+00:00</updated>
+  <updated>2016-07-27T12:29:47+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -55,7 +55,7 @@
       <td>Vcc</td>
       <td>2.1v - 3.6V</td>
       <td>1.9V - 3.6V</td>
-      <td> </td>
+      <td>3.3-6V</td>
       <td> </td>
     </tr>
     <tr>
