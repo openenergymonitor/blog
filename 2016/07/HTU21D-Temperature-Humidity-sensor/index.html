@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>HTU21D Temperature and Humidity Sensor - Blog | OpenEnergyMonitor</title>
+    <title>HTU21D / Si72021 Temperature and Humidity Sensor - Blog | OpenEnergyMonitor</title>
     <meta name="author" content="Glyn Hudson">
     <meta name="description" content="OpenEnergyMonitor Blog">
     
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">
 
     <meta property="fb:app_id" content="">
-    <meta property="og:title" content="HTU21D Temperature and Humidity Sensor">
+    <meta property="og:title" content="HTU21D / Si72021 Temperature and Humidity Sensor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
     <meta property="og:url" content="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">
     <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@openenergymon">
     
-    <meta name="twitter:title" content="HTU21D Temperature and Humidity Sensor">
+    <meta name="twitter:title" content="HTU21D / Si72021 Temperature and Humidity Sensor">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
@@ -107,7 +107,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   
   <header>
   
-  <h1 class="title indent">HTU21D Temperature and Humidity Sensor</h1>
+  <h1 class="title indent">HTU21D / Si72021 Temperature and Humidity Sensor</h1>
   
 
   
@@ -137,7 +137,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 </header>
 
 
-  <p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.</p>
+  <p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The <a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si72021</a> is also a posiblity with an identical pin-out and specs.</p>
 
 <p><img src="/images/htu21d_1.png" alt="image" /></p>
 
@@ -157,19 +157,29 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <tr>
       <th>Metric</th>
       <th>HTU21D</th>
+      <th>Si72021</th>
       <th>DHT22</th>
-      <th>Difference</th>
+      <th>DHT22 vs HTU21D Difference</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Cost in 1k off</td>
       <td>£1.42 (July16)</td>
+      <td>£2.15</td>
       <td>£4.57 (July16)</td>
       <td>3.2 times cheaper (£3.15 less!)</td>
     </tr>
     <tr>
+      <td>Vcc</td>
+      <td>2.1v - 3.6V</td>
+      <td>1.9V - 3.6V</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
       <td>Humidity accuracy</td>
+      <td>±2% RH</td>
       <td>±2% RH</td>
       <td>±2%RH</td>
       <td>n/a</td>
@@ -178,59 +188,69 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
       <td>Humidity Range</td>
       <td>0-100% RH</td>
       <td>0-100% RH</td>
+      <td>0-100% RH</td>
       <td>n/a</td>
     </tr>
     <tr>
       <td>Temperature accuracy</td>
       <td>±0.3°C</td>
+      <td>±0.4°C</td>
       <td>±0.5°C</td>
       <td>40% more accurate</td>
     </tr>
     <tr>
       <td>Temperature Range</td>
-      <td>-40°C to +125°C</td>
-      <td>-40°C to +80°C</td>
+      <td>-40°C +125°C</td>
+      <td>-40°C +125°C</td>
+      <td>-40°C +80°C</td>
       <td>56% more accurate</td>
     </tr>
     <tr>
       <td>Sleep Current</td>
       <td>0.02uA</td>
+      <td>0.06uA</td>
       <td>15uA</td>
       <td>750 times less power</td>
     </tr>
     <tr>
       <td>Measurement Current</td>
       <td>0.045mA</td>
+      <td>0.09 mA</td>
       <td>0.5mA</td>
       <td>11 times less power</td>
     </tr>
     <tr>
       <td>Measurement time</td>
-      <td>0.01s</td>
+      <td>0.01s - 0.0026s</td>
+      <td>0.01s - 0.0026s</td>
       <td>2s</td>
       <td>200 times faster</td>
     </tr>
     <tr>
       <td>Energy consumed per sample</td>
       <td>0.00045mW</td>
+      <td> </td>
       <td>1mW</td>
       <td>2222 times less power</td>
     </tr>
     <tr>
       <td>Time sampling per day*</td>
       <td>14.4s</td>
+      <td> </td>
       <td>2800s</td>
       <td> </td>
     </tr>
     <tr>
       <td>Time sleeping per day*</td>
       <td>86386s</td>
+      <td> </td>
       <td>83600s</td>
       <td> </td>
     </tr>
     <tr>
       <td>Energy consumed per day*</td>
       <td>2.36mW [1]</td>
+      <td> </td>
       <td>2836mW [2]</td>
       <td>1201 times less energy per day!</td>
     </tr>
@@ -249,12 +269,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 <hr />
 
-<p>There is some confusion with regard to the variants of this sensor <em>I believe</em> from my research that the HTU21D <strong>replaces</strong> the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don’t think they are software compatible.</p>
-
-<ul>
-  <li><a href="https://octopart.com/sht21-sensirion-19013846">SHT21</a> made by Sensirion</li>
-  <li><a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si7021-A10</a> made by Silicon Labs</li>
-</ul>
+<p>There is some confusion with regard to the variants of this sensor <em>I believe</em> from my research that the HTU21D <strong>replaces</strong> the <a href="https://octopart.com/sht21-sensirion-19013846">SHT21</a> made by Sensirion. Both sensors have identical pin-outs.</p>
 
 <hr />
 

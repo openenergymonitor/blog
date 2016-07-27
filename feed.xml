@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-07-27T09:13:37+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>HTU21D Temperature and Humidity Sensor</title><link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/" rel="alternate" type="text/html" title="HTU21D Temperature and Humidity Sensor" /><published>2016-07-26T10:00:00+00:00</published><updated>2016-07-26T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">&lt;p&gt;I have been been evaluating the &lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;HTU21D&lt;/a&gt; temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-07-27T11:17:40+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>HTU21D / Si72021 Temperature and Humidity Sensor</title><link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/" rel="alternate" type="text/html" title="HTU21D / Si72021 Temperature and Humidity Sensor" /><published>2016-07-26T10:00:00+00:00</published><updated>2016-07-26T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">&lt;p&gt;I have been been evaluating the &lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;HTU21D&lt;/a&gt; temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The &lt;a href=&quot;https://octopart.com/si7021-a10-gm-silicon+labs-31448011&quot;&gt;Si72021&lt;/a&gt; is also a posiblity with an identical pin-out and specs.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/htu21d_1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
@@ -18,19 +18,29 @@
     &lt;tr&gt;
       &lt;th&gt;Metric&lt;/th&gt;
       &lt;th&gt;HTU21D&lt;/th&gt;
+      &lt;th&gt;Si72021&lt;/th&gt;
       &lt;th&gt;DHT22&lt;/th&gt;
-      &lt;th&gt;Difference&lt;/th&gt;
+      &lt;th&gt;DHT22 vs HTU21D Difference&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;Cost in 1k off&lt;/td&gt;
       &lt;td&gt;£1.42 (July16)&lt;/td&gt;
+      &lt;td&gt;£2.15&lt;/td&gt;
       &lt;td&gt;£4.57 (July16)&lt;/td&gt;
       &lt;td&gt;3.2 times cheaper (£3.15 less!)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
+      &lt;td&gt;Vcc&lt;/td&gt;
+      &lt;td&gt;2.1v - 3.6V&lt;/td&gt;
+      &lt;td&gt;1.9V - 3.6V&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
       &lt;td&gt;Humidity accuracy&lt;/td&gt;
+      &lt;td&gt;±2% RH&lt;/td&gt;
       &lt;td&gt;±2% RH&lt;/td&gt;
       &lt;td&gt;±2%RH&lt;/td&gt;
       &lt;td&gt;n/a&lt;/td&gt;
@@ -39,59 +49,69 @@
       &lt;td&gt;Humidity Range&lt;/td&gt;
       &lt;td&gt;0-100% RH&lt;/td&gt;
       &lt;td&gt;0-100% RH&lt;/td&gt;
+      &lt;td&gt;0-100% RH&lt;/td&gt;
       &lt;td&gt;n/a&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Temperature accuracy&lt;/td&gt;
       &lt;td&gt;±0.3°C&lt;/td&gt;
+      &lt;td&gt;±0.4°C&lt;/td&gt;
       &lt;td&gt;±0.5°C&lt;/td&gt;
       &lt;td&gt;40% more accurate&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Temperature Range&lt;/td&gt;
-      &lt;td&gt;-40°C to +125°C&lt;/td&gt;
-      &lt;td&gt;-40°C to +80°C&lt;/td&gt;
+      &lt;td&gt;-40°C +125°C&lt;/td&gt;
+      &lt;td&gt;-40°C +125°C&lt;/td&gt;
+      &lt;td&gt;-40°C +80°C&lt;/td&gt;
       &lt;td&gt;56% more accurate&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Sleep Current&lt;/td&gt;
       &lt;td&gt;0.02uA&lt;/td&gt;
+      &lt;td&gt;0.06uA&lt;/td&gt;
       &lt;td&gt;15uA&lt;/td&gt;
       &lt;td&gt;750 times less power&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Measurement Current&lt;/td&gt;
       &lt;td&gt;0.045mA&lt;/td&gt;
+      &lt;td&gt;0.09 mA&lt;/td&gt;
       &lt;td&gt;0.5mA&lt;/td&gt;
       &lt;td&gt;11 times less power&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Measurement time&lt;/td&gt;
-      &lt;td&gt;0.01s&lt;/td&gt;
+      &lt;td&gt;0.01s - 0.0026s&lt;/td&gt;
+      &lt;td&gt;0.01s - 0.0026s&lt;/td&gt;
       &lt;td&gt;2s&lt;/td&gt;
       &lt;td&gt;200 times faster&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Energy consumed per sample&lt;/td&gt;
       &lt;td&gt;0.00045mW&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt;1mW&lt;/td&gt;
       &lt;td&gt;2222 times less power&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Time sampling per day*&lt;/td&gt;
       &lt;td&gt;14.4s&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt;2800s&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Time sleeping per day*&lt;/td&gt;
       &lt;td&gt;86386s&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt;83600s&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Energy consumed per day*&lt;/td&gt;
       &lt;td&gt;2.36mW [1]&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt;2836mW [2]&lt;/td&gt;
       &lt;td&gt;1201 times less energy per day!&lt;/td&gt;
     &lt;/tr&gt;
@@ -110,18 +130,13 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;There is some confusion with regard to the variants of this sensor &lt;em&gt;I believe&lt;/em&gt; from my research that the HTU21D &lt;strong&gt;replaces&lt;/strong&gt; the following sensors which are pin identical but with slightly lower specs. Even though the sensors are pin identical I don’t think they are software compatible.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://octopart.com/sht21-sensirion-19013846&quot;&gt;SHT21&lt;/a&gt; made by Sensirion&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://octopart.com/si7021-a10-gm-silicon+labs-31448011&quot;&gt;Si7021-A10&lt;/a&gt; made by Silicon Labs&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;There is some confusion with regard to the variants of this sensor &lt;em&gt;I believe&lt;/em&gt; from my research that the HTU21D &lt;strong&gt;replaces&lt;/strong&gt; the &lt;a href=&quot;https://octopart.com/sht21-sensirion-19013846&quot;&gt;SHT21&lt;/a&gt; made by Sensirion. Both sensors have identical pin-outs.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.&lt;/p&gt;
 
-&lt;p&gt;For disucssion see &lt;a href=&quot;https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106&quot;&gt;HTU21D forum thread.&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I have been been evaluating the HTU21D temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013.
+&lt;p&gt;For disucssion see &lt;a href=&quot;https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106&quot;&gt;HTU21D forum thread.&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I have been been evaluating the HTU21D temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The Si72021 is also a posiblity with an identical pin-out and specs.
 
 
 
@@ -141,19 +156,29 @@ The metrics speak for themselves:
     
       Metric
       HTU21D
+      Si72021
       DHT22
-      Difference
+      DHT22 vs HTU21D Difference
     
   
   
     
       Cost in 1k off
       £1.42 (July16)
+      £2.15
       £4.57 (July16)
       3.2 times cheaper (£3.15 less!)
     
     
+      Vcc
+      2.1v - 3.6V
+      1.9V - 3.6V
+       
+       
+    
+    
       Humidity accuracy
+      ±2% RH
       ±2% RH
       ±2%RH
       n/a
@@ -162,59 +187,69 @@ The metrics speak for themselves:
       Humidity Range
       0-100% RH
       0-100% RH
+      0-100% RH
       n/a
     
     
       Temperature accuracy
       ±0.3°C
+      ±0.4°C
       ±0.5°C
       40% more accurate
     
     
       Temperature Range
-      -40°C to +125°C
-      -40°C to +80°C
+      -40°C +125°C
+      -40°C +125°C
+      -40°C +80°C
       56% more accurate
     
     
       Sleep Current
       0.02uA
+      0.06uA
       15uA
       750 times less power
     
     
       Measurement Current
       0.045mA
+      0.09 mA
       0.5mA
       11 times less power
     
     
       Measurement time
-      0.01s
+      0.01s - 0.0026s
+      0.01s - 0.0026s
       2s
       200 times faster
     
     
       Energy consumed per sample
       0.00045mW
+       
       1mW
       2222 times less power
     
     
       Time sampling per day*
       14.4s
+       
       2800s
        
     
     
       Time sleeping per day*
       86386s
+       
       83600s
        
     
     
       Energy consumed per day*
       2.36mW [1]
+       
       2836mW [2]
       1201 times less energy per day!</summary></entry><entry><title>Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/" rel="alternate" type="text/html" title="Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)" /><published>2016-06-29T10:00:00+00:00</published><updated>2016-06-29T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
 
