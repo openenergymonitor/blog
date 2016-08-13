@@ -19,9 +19,9 @@ Last night I attended [EcoHomeLab meetup](https://www.meetup.com/Eco-Home-Lab-Ma
 
 >EcoHomeLab monthly meetups at [MadLab](https://madlab.org.uk/) brings householders and green-technologists together to take control of home energy use and generation.
 
-It was great fun to catup with regular faces as well as meeet many new interesting people.
+It was great fun to catch up with regular faces as well as meet many new interesting people.
 
-I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.
+I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.
 
 I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.
 
