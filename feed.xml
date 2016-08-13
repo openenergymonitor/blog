@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-08-13T00:02:51+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-08-13T00:13:38+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;EcoHomeLab monthly meetups at &lt;a href=&quot;https://madlab.org.uk/&quot;&gt;MadLab&lt;/a&gt; brings householders and green-technologists together to take control of home energy use and generation.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;It was great fun to catup with regular faces as well as meeet many new interesting people.&lt;/p&gt;
+&lt;p&gt;It was great fun to catch up with regular faces as well as meet many new interesting people.&lt;/p&gt;
 
-&lt;p&gt;I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.&lt;/p&gt;
+&lt;p&gt;I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.&lt;/p&gt;
 
 &lt;p&gt;I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.&lt;/p&gt;
 
@@ -22,9 +22,9 @@
   EcoHomeLab monthly meetups at MadLab brings householders and green-technologists together to take control of home energy use and generation.
 
 
-It was great fun to catup with regular faces as well as meeet many new interesting people.
+It was great fun to catch up with regular faces as well as meet many new interesting people.
 
-I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.
+I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.
 
 I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.
 
