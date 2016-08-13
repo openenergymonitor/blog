@@ -107,6 +107,52 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/emonth-prototype/">emonTH Prototype </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-24T08:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-24 08:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+        <li><a class='category' href='/categories/humidity/'>humidity</a></li>
+      
+        <li><a class='category' href='/categories/temperature/'>temperature</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/emonth-prototype/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I'm currently working on a little unit called the emonTH, a remote temperature and humidity monitoring node. We wanted a tidy looking, easy to deploy little unit for monitoring the environmental conditions in various rooms of our houses. The temperature and humidity data gathered can be fed into emoncms and used for <a href="http://openenergymonitor.blogspot.co.uk/search/label/Building%20Energy%20Modelling">building energy modelling</a>, heating system optimisation etc.<br /><br />The design so far has got options for DS18B20 temperature sensor or DHT22 sensor for humidity &amp; temperature. External sensors can be connected via terminal block (not soldered in on prototype). The enclosure can be wall mountable. The unit will be battery powered with option for mini-usb power. We have estimated around 6-9 months battery. I hope we might be able to get a year or so battery life with optimization and slowing down the readings to once every few min.<br /><div><br /></div><div>I'm currently testing prototype #1.&nbsp;</div><div><br /></div><div>To keep power consumption down the ATmega328 microcontroller is put to sleep in-between reading and the sensors are powered from digital outputs and are turned off altogether in between readings, this should stop any self heating effects (see <a href="http://openenergymonitor.org/emon/node/2484#comment-13108">forum thread</a>), I'm planning to do some accuracy testing on prototype soon.</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-bbtjnWvcv4o/UcNKNyQh0-I/AAAAAAAAe2w/aWQ1Pm4-xTU/s1600/2013-06-12+09.08.36.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-bbtjnWvcv4o/UcNKNyQh0-I/AAAAAAAAe2w/aWQ1Pm4-xTU/s320/2013-06-12+09.08.36.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH first prototype with DTH22 and DS18B20</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-G-IkJdFn8uU/UcNKOb7yI7I/AAAAAAAAe20/GcGRXoEM5Hc/s1600/2013-06-12+09.07.50.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-G-IkJdFn8uU/UcNKOb7yI7I/AAAAAAAAe20/GcGRXoEM5Hc/s320/2013-06-12+09.07.50.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH enclosure</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">As with other the other OpenEnergyMonitor hardware the emonTH has got an ATmega328 with the Arduino bootloader so it's nice and easy to modify and upload new the code (sketches). For the wireless there is an RFM12B module to be compatible with our other hardware (RFM12Pi base station etc). Again, as with all our other hardware units the schematic and CAD filed will be open-sourced.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">The emonTH uses a little module from <a href="http://shop.ciseco.co.uk/about-us/">Ciseco</a> called <a href="http://shop.ciseco.co.uk/rf-328-bare-arduino-atmega-328-compatible-micro-board-rfu-328/">RFu328</a>. This unit is an ATmega328 plus a radio RFM12B or <a href="http://shop.ciseco.co.uk/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328/">SRF</a> in the same small form factor as an Xbee. We decided to use the RFu328 partly because it's nice and small and makes manufacture easier for us and party since it allows to to easily swap between using the RFM12B radio or the SRF while keeping the flexibly and ease of use of the ATmega328 with Arduino Uno serial bootloader.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://openmicros.org/images/RFu-328/RF%C2%B5-328-RFM12-Resistors.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="150" src="http://openmicros.org/images/RFu-328/RF%C2%B5-328-RFM12-Resistors.JPG" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFu328 with RFM12B</td></tr></tbody></table><br /><div>The little red circle on the image above indicates the only hardware charge required when using an RFM12B radio on the RFu328. The SMT resistor is rotated routed 90 degrees swapping over Dig 1 SRF UART (Tx ) to Dig3 (INT 1) to be used as the RFM12B SPI interrupt. The RFu328 with the RFM12B requires a modified JeeLib Arduino library called <a href="https://github.com/openenergymonitor/RFu_jeelib">RFu_JeeLib</a>.<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="298" src="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFu328 with SRF &amp; Chip Antenna</td></tr></tbody></table></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/building-energy-modelling-ventilation/">Building Energy Modelling: Ventilation and infiltration</a>
   </h1>
   
@@ -467,46 +513,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/emontx-shield-smt-with-new-layout-in/">Emontx Shield SMT with new layout in development</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-06T08:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-06 08:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/emontx-shield-smt-with-new-layout-in/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;">Several weeks ago we got an email with a series of pictures showing the problem that the emontx shield does not stack well with many of the base boards and other shields it may be used in conjunction with.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It got me thinking about different ways the shield could be arranged that would make it stack better with a variety of different boards. The main idea I had was to move the AC-AC Adapter and CT inputs over to the other side of the PCB away from the side the Ethernet and USB sockets are usually located on most of the Arduino boards and the NanodeRF. The second idea was to mount these sockets on the underside of the PCB which allows for a really thin profile NanodeRF + EmonTx shield stack which I think is pretty neat if a little unconventional. Here's the concept drawing:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s1600/emontxhield_concept.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="135" src="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s400/emontxhield_concept.jpg" width="400" /></a></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">As you may be aware I have not really ventured into PCB design much before (I usually work on software) but its been something I wanted to do for a while so I thought Id have a go at the emontx shield redesign as its one of the simplest layouts. With Glyn's helpful guidance I started by loading the existing&nbsp;schematic&nbsp;and board files for the through hole emontx shield in eagle, I then ripped up all the existing PCB tracks, rearranged the components in different layouts and&nbsp;switched&nbsp;the resistors and capacitors over to SMT packages. Here's a screenshot of the resultant board design:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s1600/board.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="305" src="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s400/board.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">I spend most of my dev time writing lines of code which becomes a visual output in a second step, PCB design is a different experience as its all&nbsp;immediately&nbsp;visual, dragging and dropping pcb tracks, trying to see if this track that way or another in its place looks neater, its a nice change. If your intrigued to have a go I'd recommend installing eagle, loading up one of the board designs that are all up on solderpad and experiment with routing tracks, maybe adding/removing a temperature sensor.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The PCB's arrived on Tuesday, I built it up and have started to test it, so far everything seems to be working, energy monitoring part, RFM12, Led, DS18B20 temperature sensor, Arduino Uno, Arduino Duemilanove. Next I will test the NanodeRF and Id also like to test an Arduino official Ethernet shield.  </div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s1600/emontxshieldsmt_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="210" src="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s400/emontxshieldsmt_01.jpg" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s1600/emontxshieldsmt_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275" src="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s400/emontxshieldsmt_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Things to improve</b></div><div style="margin-bottom: 0cm;">There is a very slight misalignment on the ISP header that needs fixing although it still stacks together fine and Glyn pointed out that the option to choose different SS (SEL) and IRQ pins for the RFM12 could be achieved using a manual jumper rather than solderable pads. Id also like to add a terminal for the DS18B20 on the edge of the board for neater connection of temperature sensor strings.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Once these are fixed we will get a run of boards made, it will probably be another month or two at least until its in the shop as these things take time.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Open Hardware Schematics and Board files</b></div><div style="margin-bottom: 0cm;">All available on solderpad here:</div><div style="margin-bottom: 0cm;"><a href="http://solderpad.com/trystanlea/emontx-shield-smt/">http://solderpad.com/trystanlea/emontx-shield-smt/</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -623,6 +629,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -672,12 +684,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -785,6 +791,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

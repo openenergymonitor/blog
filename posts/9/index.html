@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2014/07/reducing-emoncms-write-load-and-minimal/">Reducing emoncms write load and a minimal python version of emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-07-07T12:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-07-07 12:36:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/07/reducing-emoncms-write-load-and-minimal/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Over the last few weeks I have been investigating how to reduce the write load of emoncms to explore if it might be possible to achieve long term logging on SD cards.<br /><br /><b>A brief summary</b><br /><br />Through a mix of buffered writing of feed data to disk, reduction of the number of meta and average data files written to and use of the FAT filesystem, my home raspberrypi now has a write load of 0.4kb_wrtn/s down from 197kb_wrtn/s.. almost 500x less and the writes are all append only (there's no regular writing of the same part of a file again and again). The question is could this mean years of SD card logging rather than months?<br /><br /><b>Write buffering</b><br /><br />A single Emoncms PHPFina (PHP Fixed Interval No averaging) or PHPTimeSeries datapoint uses between 4 and 9 bytes. The write load on the disk however is a bit more complicated than that. Most filesystems and disk's have a minimum IO size that is much larger than 4-9 bytes, on a FAT filesystem the minimum IO size is 512 bytes this means that if you try and write 4 bytes the operation will actually cause 512 bytes of write load. But its not just the datafile that gets written to, every file has inode meta data which can also result in a further 512 bytes of write load. A single 4 byte write can therefore cause 1kb of write load.<br /><br />By buffering writes for as long as we can in memory and then writing in larger blocks its possible to reduce the write load significantly. The full investigation with a lot of benchmarking of different configurations including differences between FAT and Ext4 can be found here:<br /><br /><a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md">https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md</a><br /><br /><b>A minimal version of emoncms in python</b><br /><br />To make the investigation easier I simplified emoncms down to the core parts needed on a raspberrypi to get basic timeseries graphing: serial listener, node decoder, basic feed engine and a ui consisting of a nodelist and a single rawdata visualisation type and wrote the result in python making use of Jerome and Paul's (pb66) excellent work on the emonhub serial listener and node decoder.<br />Here's a diagram of the main components of the python app:<br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/emon-py-system-diagram.png" style="height: 387px; width: 600px;" /><br /><br />And some screenshots of what it looks like:<br /><br />Node list:<br /><br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/emon-py_0.png" style="height: 409px; width: 600px;" /><br /><br />Basic graphing:<br /><br /><br /><br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/graph_1.png" style="height: 283px; width: 600px;" /><br /><br />The source code and an installation guide for this minimal python version of emoncms can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/experimental/emon-py">https://github.com/emoncms/development/tree/master/experimental/emon-py</a><br /><br /><b>Further development questions</b> (copied from the end of the write load investigation page)<br /><br />Is the reduced write load and longer SD card lifespan that might result from using the FAT filesystem worth the increased chance of data corruption from power failure that Ext4 might prevent?<br /><br />It would be interesting to compare the performance of the FAT filesystem + 5 min application based commit time with the EXT4 filesystem with Journaling turned off and filesystem delayed allocation set to 5 min instead of write buffering in the application.<br /><br /><br />I posted on the EmonHub issues list about this last friday and  I've been having a bit of a discussion there with Paul  <a href="https://github.com/emonhub/emonhub/issues/48">https://github.com/emonhub/emonhub/issues/48</a><br /><br />I've also posted this on the forum's here: <br /><a href="http://openenergymonitor.org/emon/node/5387">http://openenergymonitor.org/emon/node/5387 </a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/07/emonglcd-v2-smt-development/">emonGLCD V2 SMT Development</a>
   </h1>
   
@@ -477,37 +517,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/05/zerocarbonbritain-report-in-short/">ZeroCarbonBritain: Report in short</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-05-21T09:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-05-21 09:34:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2014/05/zerocarbonbritain-report-in-short/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I've just come across the 'report in short' flyer by zerocarbonbritian giving a very nice overview of their more in-depth report that I've mentioned before that outlines a very positive and thorough vision for a sustainable future. If you haven’t seen it already its worth checking out:<br /><br /><i>"We have the technology to power ourselves with 100% renewable energy, to feed ourselves sustainably and to leave a safe and habitable climate for our children and future generations" - ZeroCarbonBritain</i><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-jK-fbrdMEMI/U3xvTmDVfpI/AAAAAAAAC9w/Iaw86QNOU0Q/s1600/p1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-jK-fbrdMEMI/U3xvTmDVfpI/AAAAAAAAC9w/Iaw86QNOU0Q/s1600/p1.png" height="444" width="640" /></a></div><br />Download the flyer here: <a href="http://www.zerocarbonbritain.org/images/pdfs/ZCB_RTF%20-%20Report%20in%20Short%20-%20A4%20printable.pdf">ZCB_RTF - Report in Short - A4 printable.pdf</a><br /><br />Download the full report here: <a href="http://zerocarbonbritain.com/">http://zerocarbonbritain.com/</a><br /><br />Id also very much recommend Alice of ZeroCarbonBritain's inspiring talk on their work:<br /><br />&nbsp;<iframe allowfullscreen="" frameborder="0" height="375" mozallowfullscreen="" src="//player.vimeo.com/video/81962195" webkitallowfullscreen="" width="500"></iframe> <br /><a href="http://vimeo.com/81962195">Alice Hooker-Stroud, Centre for Alternative Technology, ‘Zero Carbon Britain (Energy)’</a> from <a href="http://vimeo.com/tyndallcentre">tyndallcentre</a> on <a href="https://vimeo.com/">Vimeo</a>.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -624,6 +633,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -673,12 +688,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -786,6 +795,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

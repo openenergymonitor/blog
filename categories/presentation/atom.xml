@@ -4,7 +4,7 @@
   <title><![CDATA[Category: presentation | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/presentation/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-07-27T12:29:47+00:00</updated>
+  <updated>2016-08-13T00:02:51+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[EcoHome Lab: From Monitoring to Control]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/"/>
+    <updated>2016-08-12T18:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id>
+    <content type="html"><![CDATA[<p>Last night I attended <a href="https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/">EcoHomeLab meetup</a> in Manchester organised by the <a href="http://carbon.coop/">CarbonCoop</a>.</p>
+
+<blockquote>
+  <p>EcoHomeLab monthly meetups at <a href="https://madlab.org.uk/">MadLab</a> brings householders and green-technologists together to take control of home energy use and generation.</p>
+</blockquote>
+
+<p>It was great fun to catup with regular faces as well as meeet many new interesting people.</p>
+
+<p>I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.</p>
+
+<p>I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.</p>
+
+<p><strong>See the <a href="http://guide.openenergymonitor.org/integrations/">Integrations section of our user guide for more info</a></strong></p>
+
+<p>Here are copy of my slides from the event:</p>
+
+<iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;loop=false&amp;delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
+
+<p><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View the slides in Google Slides format (with clickable hyperlinks)</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[North Wales Tech Meetup Presentations]]></title>
@@ -46,20 +74,6 @@
     <updated>2012-09-18T15:37:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2012/09/cleanweb-uk</id>
     <content type="html"><![CDATA[<p>Last Thursday Glyn and I attended the Ignite <a href="http://www.cleanweb.org.uk/ignite.html">Cleanweb UK</a> event in London, an event exploring the power and potential of the web to help us solve our environmental challenges.<br /><br />The format of the talks where all 5 minute, 20 slides, 15 seconds per slide which was a challenge to create but makes for a really fascinating event where you here about a lot of different projects in a short space of time. Videos of all the presentations talks are up on the web here: <a href="http://www.cleanweb.org.uk/ignite.html">http://www.cleanweb.org.uk/ignite.html</a>.<br /><br />Here’s a video of our presentation on OpenEnergyMonitor:<br /><br />&lt;iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="http://www.youtube.com/embed/zqKMDogFuNU" width="560"&gt;&lt;/iframe&gt; <br /><br />The slides on their own can be viewed on slideshare:<br /><br />&lt;iframe allowfullscreen="allowfullscreen" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/14308610" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" width="427"&gt; &lt;/iframe&gt; <br />&lt;div style="margin-bottom: 5px;"&gt;<strong> <a href="http://www.slideshare.net/OpenEnergyMonitor/ignite-cleanweb-openenergymonitor-presentation" target="_blank" title="Ignite CleanWeb OpenEnergyMonitor presentation">Ignite CleanWeb OpenEnergyMonitor presentation</a> </strong> from <strong><a href="http://www.slideshare.net/OpenEnergyMonitor" target="_blank">OpenEnergyMonitor</a></strong> &lt;/div&gt;<br /><br />Thanks a lot to James Smith (<a href="https://twitter.com/Floppy">@floppy)</a> for organising the event and inspiring us with the <a href="http://www.youtube.com/watch?v=j68tLsRRJ90&amp;feature=player_embedded">cleanweb uk manifesto</a> at the end.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cleanweb UK - Ignite Evening - London 13th Sep]]></title>
-    <link href="https://blog.openenergymonitor.org/2012/09/cleanweb-uk-ignite-evening-london-13th/"/>
-    <updated>2012-09-04T09:58:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2012/09/cleanweb-uk-ignite-evening-london-13th</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: center;"><a href="http://www.cleanweb.org.uk/images/ignite_cleanweb.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://www.cleanweb.org.uk/images/ignite_cleanweb.png" width="320" /></a></div>
-<div class="separator" style="clear: both; text-align: center;"></div>
-<h1 style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 30px; line-height: 40px; margin: 0px 0px 15px; text-rendering: optimizelegibility;">Thursday, September 13, 2012</h1>
-<h3 style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 30px; margin: 0px; text-rendering: optimizelegibility;">7:00pm, at&nbsp;<a href="http://forwardtechnology.co.uk/venue" style="color: #cc0000; text-decoration: none;">Forward Technology</a>&nbsp;in London</h3>
-<div><br /></div>
-<p><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;Trystan and I are looking forward to attending and speaking at the first <a href="http://www.cleanweb.org.uk/">Cleanweb UK</a> <a href="http://igniteshow.com/">Ignite</a> evening in London. It looks like it will be a great event, there will be 12 short (5min) fast paced talks to do with sustainability and the internet. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Please come along and joins us, registration and full event details here: <a href="http://www.cleanweb.org.uk/ignite.html">http://www.cleanweb.org.uk/ignite.html</a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://www.cleanweb.org.uk/images/tree.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://www.cleanweb.org.uk/images/tree.png" width="184" /></a>&lt;/div&gt;</p>
 ]]></content>
   </entry>
   

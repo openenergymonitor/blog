@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/09/data-portability-version-1-complete/">Data portability: Version 1 complete!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-09-25T18:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-25 18:34:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/09/data-portability-version-1-complete/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Following on from the<a href="http://openenergymonitor.blogspot.co.uk/2012/09/data-portability-importing-feed-data.html"> last series of posts</a> detailing an implementation for exporting and importing data into emoncms to make it possible to move feed data between emoncms instances with ease, these features are now fully integrated in to the<a href="https://github.com/openenergymonitor/emoncms3"> latest emoncms version</a>.<br /><br />I have also created a rough initial interface for selecting the remote account to download from and for selecting the feeds to download, you can get to this page by clicking on the Sync feeds button on the feedlist page:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-amhA1bKxg0c/UGHyvmnvsvI/AAAAAAAACfU/f5llCeQkeWo/s1600/sync_01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="252" src="http://1.bp.blogspot.com/-amhA1bKxg0c/UGHyvmnvsvI/AAAAAAAACfU/f5llCeQkeWo/s640/sync_01.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">To select an account enter the account URL and write apikey and click ok, after a moment the feed list of the remote account will appear.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">You can then click on the feeds you wish to download. This will enter the feeds into a download queue. As detailed in the last post the download and import process is run by a&nbsp;separate&nbsp;script.&nbsp;&nbsp;The script is called import.php and can be found in the root directory of the emoncms install. You can either run this script manually or set up a cron job to run it periodically.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-tCmNdNFJY18/UGHyusPl3GI/AAAAAAAACfM/XEli3nyrIEw/s1600/sync.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-tCmNdNFJY18/UGHyusPl3GI/AAAAAAAACfM/XEli3nyrIEw/s640/sync.png" width="640" /></a></div><br />Once you start downloading feeds, if you refresh the page you will see the<i> remote ahead by</i> value decrease as data is downloaded starting with the oldest data first.&nbsp;It is also possible to sync the data again at a later data to bring the local copy up to date.<br /><br />This feature makes for a really convenient way to backup feed data, as you only need to download the latest changes rather than all the data every time.<br /><br />There are still a few things missing in the current implementation, that would be great to add:<br /><br />- The first is that histogram data is not downloaded correctly as the import and export script only works at present with one column of data.<br /><br />- It would be great to have a feature to select all the remote feeds to download, rather than having to click each one.<br /><br />- It would be nice to have the sync&nbsp;interface&nbsp;page built in javascript/jquery to have it automatically update on progress without having to refresh the page.<br /><br />But I think other than these which can be fixed and improved in time, its largely functional and good to go.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/09/data-portability-importing-feed-data/">Data portability: Importing feed data into emoncms</a>
   </h1>
   
@@ -469,48 +509,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/08/emontx-smt-progress-update/">emonTx SMT - Progress Update</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-08-08T11:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-08 11:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/emontxsmt/'>emonTxSMT</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/08/emontx-smt-progress-update/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div class="western" style="margin-bottom: 0cm;">Hello Everyone,  </div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="western" style="margin-bottom: 0cm;">Here's another progress update on the emonTx SMT design.</div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="western" style="margin-bottom: 0cm;">This week I've sent the PCB CAD design files off to get a few prototype PCB's made. It's a very exciting moment, quite a milestone but also nerve wrecking! These prototypes will be assembled by hand and tested extensively. Eventually we plan to get the board ready assembled using factory SMT pick-and-place machines, selling the emonTX SMT as a kit is not an option! We don't plan to discontinue the current through-hole emonTx, we believe there is value in having a simpler through-hole kit version as an option.&nbsp;</div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="western" style="margin-bottom: 0cm;">It will be sometime before emonTx SMT's are rolling off the production line, there are many hoops which need to be jumped through before then, but getting the first prototype off the ground is a good step forward!&nbsp;</div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="western" style="margin-bottom: 0cm;">As a quick re-cap the main features of the emonTx SMT are:</div><ul><li><div class="western" style="margin-bottom: 0cm;"><b>Improved  accuracy when monitoring low power levels</b> with a programmable  gain op-amp input stage on the CT inputs..<a href="http://openenergymonitor.blogspot.com/2012/06/high-accuracy-current-measurement-over.html">see blog post</a></div></li><li><div class="western" style="margin-bottom: 0cm;"><b>Single power  supply</b>  - Half-wave rectifier AC-DC circuit to power the unit  (under basic operation) and monitor mains voltage (enabling real  power readings) from a single AC-AC PSU..see <a href="http://openenergymonitor.blogspot.com/2012/05/emontx-single-ac-power-supply.html">blog post</a></div></li><li><div class="western" style="margin-bottom: 0cm;"><b>Direct USB  programming</b>  - No USB to UART or  FTDI cable required - built in  USB host using the ATmega32u4 building on Arduino Leonardo design.   </div></li><li><div class="western" style="margin-bottom: 0cm;"><b>On-board  Ethernet and multiple wireless radio options</b> – RFM12B will  remain the default option.</div></li><li><div class="western" style="margin-bottom: 0cm;"><b>Pluggable-terminal block</b> - Pulse-counting input, 2 x one-wire temperature inputs and other spare I/O broken out on a  pluggable-terminal block.   </div></li><li><div class="western" style="margin-bottom: 0cm;"><b>Casing</b> - designed  to fit in a nice wall-mountable extruded aluminium case with laser  cut fascias and external SMA antenna.</div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-7oKuevJaDK8/UCJKdMwMzbI/AAAAAAAAch4/VvYwGVzu16A/s1600/emonTXSMT06_2_brd_components_white.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="550" src="http://4.bp.blogspot.com/-7oKuevJaDK8/UCJKdMwMzbI/AAAAAAAAch4/VvYwGVzu16A/s640/emonTXSMT06_2_brd_components_white.png" width="640" /></a></div><div class="western" style="margin-bottom: 0cm;"><br /></div></li></ul><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-sUIZXWler4o/UCJKNCbgiPI/AAAAAAAAcho/OOjA3X60d7s/s1600/emonTxSMT06_2_labeled.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="552" src="http://4.bp.blogspot.com/-sUIZXWler4o/UCJKNCbgiPI/AAAAAAAAcho/OOjA3X60d7s/s640/emonTxSMT06_2_labeled.png" width="640" /></a></div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-d9rjG-eQWJE/UCJKboQzTcI/AAAAAAAAchw/iSGt0GqOJ9I/s1600/emonTXSMT06_2_brd_tracks.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="550" src="http://2.bp.blogspot.com/-d9rjG-eQWJE/UCJKboQzTcI/AAAAAAAAchw/iSGt0GqOJ9I/s640/emonTXSMT06_2_brd_tracks.png" width="640" /></a></div><div class="western" style="margin-bottom: 0cm;"><br /></div><div class="western" style="margin-bottom: 0cm;">For more info, design notes and my general ramblings see my&nbsp;<a href="http://openenergymonitor.org/emon/node/736#comment-5592">forum post</a>...</div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -627,6 +625,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -676,12 +680,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -789,6 +787,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: openHAB | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/openhab/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-07-27T12:29:47+00:00</updated>
+  <updated>2016-08-13T00:02:51+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[EcoHome Lab: From Monitoring to Control]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/"/>
+    <updated>2016-08-12T18:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id>
+    <content type="html"><![CDATA[<p>Last night I attended <a href="https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/">EcoHomeLab meetup</a> in Manchester organised by the <a href="http://carbon.coop/">CarbonCoop</a>.</p>
+
+<blockquote>
+  <p>EcoHomeLab monthly meetups at <a href="https://madlab.org.uk/">MadLab</a> brings householders and green-technologists together to take control of home energy use and generation.</p>
+</blockquote>
+
+<p>It was great fun to catup with regular faces as well as meeet many new interesting people.</p>
+
+<p>I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.</p>
+
+<p>I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.</p>
+
+<p><strong>See the <a href="http://guide.openenergymonitor.org/integrations/">Integrations section of our user guide for more info</a></strong></p>
+
+<p>Here are copy of my slides from the event:</p>
+
+<iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;loop=false&amp;delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
+
+<p><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View the slides in Google Slides format (with clickable hyperlinks)</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenEnergyMonitor, emonPi and openHAB ]]></title>

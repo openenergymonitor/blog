@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/01/emonglcd-getting-time-for-internet/">emonGLCD - getting time for the internet</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-01-17T11:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-01-17 11:36:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/01/emonglcd-getting-time-for-internet/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> is an open-hardware wireless graphical LCD display based on the&nbsp;ATmega328&nbsp;microcontroller&nbsp;and is Arduino&nbsp;compatible.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/--piGVImV4Jc/TxTIRxzzGRI/AAAAAAAAZO8/u3XS1GuN0gA/s1600/emonGLCD_lab.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/--piGVImV4Jc/TxTIRxzzGRI/AAAAAAAAZO8/u3XS1GuN0gA/s320/emonGLCD_lab.jpg" width="320" /></a></div><br /><br />The emonGLCD works very well as a real-time living room energy monitoring display. For the <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> to calculate and display how much energy has been used on the current day it must know when the day begins and ends. Therefore it must know the current time.<br /><br />The emonGLCD does not have a hardware RTC but its possible to implement a very accurate clock using the<a href="https://github.com/jcw/rtclib"> Jeelabs software RTC library</a> and a web-connected Nanode RF. In the <a href="http://openenergymonitor.blogspot.com/2012/01/full-web-connected-home-energy.html">OpenEnergyMonitor end-to-end energy monitoring system</a> the emonGLCD is used in conjunction with the <a href="http://openenergymonitor.org/emon/emontx">emonTx</a> (transmitter) and <a href="http://openenergymonitor.org/emon/emonbase">emonBase/NanodeRF </a>which is used to post data&nbsp;on-line&nbsp;to <a href="http://openenergymonitor.org/emon/emoncms">emoncms.</a><br /><br />When data is posted to the emoncms sever with a http request the sever&nbsp;response contains the current time of the sever. We have written a code example to extract this time from the http header reply and pass it via RFM12B wireless to the emonGLCD. The time on the emonGLCD is always correct. Both the emonGLCD and the NanodeRF receive power monitoring data from the emonTx<br /><br />Demo video (single CT sensor system):<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/QeEXKzrEJ6U" width="420"></iframe><br /><br />Demo video (solar PV monitor system):<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/bGyoscibR04" width="420"></iframe><br /><br />Taking this a step further: when the emonGLCD receives the time from the NanodeRF the emonGLCD&nbsp;transmits&nbsp;back the current room temperature from it's on-board temperature sensor, then the NanodeRF posts this online to emoncms.<br /><br />The Arduino sketch examples are up on github:<br /><br />emonBase/NanodeRF:<br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_singleCT_RTCrelay_GLCDtemp">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_singleCT_RTCrelay_GLCDtemp</a><br /><br />emonGLCD single CT:<br /><a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_singleCT_AutoTime_TempLog">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_singleCT_AutoTime_TempLog</a><br /><br />emonGLCd solar PV:&nbsp;<a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_solarPV_type_1_and_2">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_solarPV_type_1_and_2</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/01/full-web-connected-home-energy/">Full web-connected home energy monitoring system</a>
   </h1>
   
@@ -438,46 +478,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/emoncms-v3-beta/">Emoncms v3 beta</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-07T22:06:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-07 22:06:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/emoncms-v3-beta/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    It is time for another big update to emoncms, our openenergymonitor open source energy visualisation web application!<br /><div><br /></div><div>Over the last four and a half weeks several different threads have come together all&nbsp;centering&nbsp;around the idea of widgets and dashboards, last week it came to a head with an in your browser dashboard editor, it was clear that a&nbsp;major&nbsp;release was called for and so here it is emoncms version 3 in good time for the holidays.</div><div><br /></div><div>It is also optimised (well nearly) for viewing on mobile devices and there is for the first time a hosted demo site available for trying it out, see the launch page the link and use notes.</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-4ZrdsU4T7LA/Tt_llW3fuxI/AAAAAAAACU4/OikHSh-dAZQ/s1600/emoncms_devices.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="207" src="http://4.bp.blogspot.com/-4ZrdsU4T7LA/Tt_llW3fuxI/AAAAAAAACU4/OikHSh-dAZQ/s320/emoncms_devices.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><b><span class="Apple-style-span" style="font-size: large;"><a href="http://vis.openenergymonitor.org/">Go to the Emoncms v3 beta launch page</a></span></b></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -594,6 +594,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -643,12 +649,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -756,6 +756,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

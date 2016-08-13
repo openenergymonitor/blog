@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-07-27T12:29:47+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>HTU21D / Si72021 Temperature and Humidity Sensor</title><link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/" rel="alternate" type="text/html" title="HTU21D / Si72021 Temperature and Humidity Sensor" /><published>2016-07-26T10:00:00+00:00</published><updated>2016-07-26T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">&lt;p&gt;I have been been evaluating the &lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;HTU21D&lt;/a&gt; temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The &lt;a href=&quot;https://octopart.com/si7021-a10-gm-silicon+labs-31448011&quot;&gt;Si72021&lt;/a&gt; is also a posiblity with an identical pin-out and specs.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-08-13T00:02:51+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;EcoHomeLab monthly meetups at &lt;a href=&quot;https://madlab.org.uk/&quot;&gt;MadLab&lt;/a&gt; brings householders and green-technologists together to take control of home energy use and generation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It was great fun to catup with regular faces as well as meeet many new interesting people.&lt;/p&gt;
+
+&lt;p&gt;I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.&lt;/p&gt;
+
+&lt;p&gt;I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://guide.openenergymonitor.org/integrations/&quot;&gt;Integrations section of our user guide for more info&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are copy of my slides from the event:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;amp;loop=false&amp;amp;delayms=10000&quot; frameborder=&quot;0&quot; width=&quot;529&quot; height=&quot;426&quot; allowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing&quot;&gt;View the slides in Google Slides format (with clickable hyperlinks)&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Last night I attended EcoHomeLab meetup in Manchester organised by the CarbonCoop.
+
+
+  EcoHomeLab monthly meetups at MadLab brings householders and green-technologists together to take control of home energy use and generation.
+
+
+It was great fun to catup with regular faces as well as meeet many new interesting people.
+
+I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home auomation) with a sustainability / energy saving focus.
+
+I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.
+
+See the Integrations section of our user guide for more info
+
+Here are copy of my slides from the event:
+
+
+
+View the slides in Google Slides format (with clickable hyperlinks)</summary></entry><entry><title>HTU21D / Si72021 Temperature and Humidity Sensor</title><link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/" rel="alternate" type="text/html" title="HTU21D / Si72021 Temperature and Humidity Sensor" /><published>2016-07-26T10:00:00+00:00</published><updated>2016-07-26T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/">&lt;p&gt;I have been been evaluating the &lt;a href=&quot;https://octopart.com/htu21d-measurement+specialties-30374934&quot;&gt;HTU21D&lt;/a&gt; temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The &lt;a href=&quot;https://octopart.com/si7021-a10-gm-silicon+labs-31448011&quot;&gt;Si72021&lt;/a&gt; is also a posiblity with an identical pin-out and specs.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/htu21d_1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
@@ -997,24 +1033,4 @@ The latest update to emonSD (emonSD-03May16) now incudes the following all setup
 
 &lt;p&gt;&lt;img src=&quot;/images/raspberrypi3.jpg&quot; alt=&quot;Raspberry Pi 3&quot; /&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.
 
-Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of Moore’s law.</summary></entry><entry><title>Emoncms android App QR Code Scanner Setup</title><link href="https://blog.openenergymonitor.org/2016/05/emoncms-qr/" rel="alternate" type="text/html" title="Emoncms android App QR Code Scanner Setup" /><published>2016-05-11T15:00:00+00:00</published><updated>2016-05-11T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emoncms-qr</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emoncms-qr/">&lt;p&gt;I would like to highlight a nice improvement to Emoncms and the Emoncms android app that has been contributed by community memebers &lt;a href=&quot;https://community.openenergymonitor.org/users/jumpmaster/activity&quot;&gt;@jumpmaster&lt;/a&gt; and &lt;a href=&quot;https://community.openenergymonitor.org/users/andy_taylor/activity&quot;&gt;@andy_taylor&lt;/a&gt;. See &lt;a href=&quot;https://community.openenergymonitor.org/t/mobile-app-qr-code/149&quot;&gt;development forum thread&lt;/a&gt; on our &lt;a href=&quot;/2016/05/website-changes/&quot;&gt;shiny new forums&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emoncms-qr.png&quot; alt=&quot;Emoncms QR code generator&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;em&gt;This updated has been merged into the stable Emoncms branch V9.6. If your running an emonPi/emonBase jsut hit update to pull in the changes. The update will appear on Emoncms.org in the next few days.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This QR code contains the Emoncms URL and read-API key to automate setting up the &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;amp;hl=en_GB&quot;&gt;Emoncms android app&lt;/a&gt;. The update for the app to support the QR code scanner has been pushed to Googe Play. After the update just can the QR code to setup the app.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/android-qr.png&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If your feeds are named &lt;strong&gt;use&lt;/strong&gt; and &lt;strong&gt;use_kwh&lt;/strong&gt; the app will automatically select use these feeds as the Power and kWh feeds.&lt;/p&gt;
-
-&lt;p&gt;Any issues, please post on the &lt;a href=&quot;https://community.openenergymonitor.org/t/mobile-app-qr-code/149&quot;&gt;development forum thread&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thanks again to everyone involved in the development and testing. It’s been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I would like to highlight a nice improvement to Emoncms and the Emoncms android app that has been contributed by community memebers @jumpmaster and @andy_taylor. See development forum thread on our shiny new forums.
-
-Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</summary></entry></feed>
+Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of Moore’s law.</summary></entry></feed>

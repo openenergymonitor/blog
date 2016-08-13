@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/07/new-myelectric-app-realtime-power-graph/">New MyElectric Emoncms app, realtime power graph and energy totals</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-30T15:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-30 15:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/dashboard/'>dashboard</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/07/new-myelectric-app-realtime-power-graph/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><a href="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s1600/newmyelectric.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s400/newmyelectric.png" width="281" /></a><a href="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s1600/SAM_0929.JPG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s400/SAM_0929.JPG" width="300" />&nbsp;</a><br /><br />The MyElectric app has long been needing some work so that it both provides more useful information and also reports the daily kwh data correctly for different timezones and when the app is used as an always on display and the day changes.<br /><br />There is now a new version available that adds a real-time power graph as well as totals for the week, month, year and all time and the daily kwh bar graph as before.<br /><br />To generate the kWh per day graph this version focuses on supporting feeds either created with the "power to kWh" processor or "Wh accumulator" processor rather than the "power to kWh/d" processor and average power feeds. Trying to support each one was leading to quite a lot of bugs in addition to more fundamental issues with time zones present with the power to Kwh/d daily feed approach. <br /><br />The "power to kWh" and "Wh accumulator" processors are both fully supported on the emonPi and emonBase running the low-write image. There's more on how this accumulating watt hour or kWh approach works here: <a href="http://openenergymonitor.org/emon/node/3995">Development: Calculating Wh totals on the emontx</a><br /><br />I now have the new MyElectric app running alongside the MySolarPV app in my home and I'm really quite pleased with the results. The totals at the bottom and average kWh per day for each period gives me most of what data to see at a glance how my electricity consumption is fairing and having this information available on a wall mounted tablet really makes all the difference compared with having to login to emoncms on my computer to see the data.<br /><br />I would like to make it easier to switch in between the different apps, a side swipe would be really nice. I would also like to look into a way to make it possible to download apps from an app repository from within emoncms itself so that new apps could be added without them having to be in the app repository on github, there's quite a bit of work needed to get there thought.<br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/07/adding-rtc-to-emonpi/">Adding a RTC to the emonPi</a>
   </h1>
   
@@ -436,46 +478,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/optical-utility-meter-led-pulse-sensor/">Optical Utility Meter LED Pulse Sensor</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-19T11:19:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-19 11:19:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/06/optical-utility-meter-led-pulse-sensor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-gPDYR47gDXw/VYP4XG7lgpI/AAAAAAABLK8/rdKGFA3BKzw/s1600/optical_pulse.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="263" src="http://3.bp.blogspot.com/-gPDYR47gDXw/VYP4XG7lgpI/AAAAAAABLK8/rdKGFA3BKzw/s320/optical_pulse.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Optical Utility Meter LED Pulse Sensor attached to meter via removable sticky pad</td></tr></tbody></table><br />We have just taken delivery of a batch of custom made Optical Utility Meter LED Pulse Sensor units. We're very excited about these new sensors, they will enable the emonPi and emonTx to interface directly with Utility Meters measuring exactly the amount of energy being measured by the utility meter.<br /><br />The Optical Pulse Sensor works by sensing the LED pulse output from utility meters. Each pulse corresponds to a certain amount of energy passing through the meter. The amount of energy each pulse corresponds to depends on the meter. By counting these pulses the meters KWh value can be calculated.<br /><br />Unlike clip-on CT based monitoring pulse counting is measuring exactly what the utility meter is measuring i.e. what you get billed for. The pulse counting cannot provide an instantaneous power reading like CT based can. Where possible we recommend using pulse counting in conjunction with CT monitoring. The emonPi and emonTx can simultaneously perform pulse counting and CT based monitoring.<br /><br />In the future we plan to look at how the pulse counting energy value can be used to calibrate the CT based power calculations.<br /><br />The Optical Pulse sensor will work plug-and-play with emonPi / emonTx connecting via RJ45 socket, older units will require a firmware update. See documentation page for update instructions.<br /><br /><a href="http://openenergymonitor.org/emon/buildingblocks/opticalpulsesensor">Optical Pulse Sensor Documentation Page</a><br /><br /><a href="http://shop.openenergymonitor.com/optical-utility-meter-led-pulse-sensor/">Optical Pulse Sensor&nbsp;is now available to purchase from the OpenEnergyMonitor online shop</a><br /><br />If you have backed us on Kickstarter or have purchased an emonPi from us as a thank you for your support we would like to offer you 20% off the Optical Pulse Sensor, use code&nbsp;PYN5031978E9T at checkout (valid until 1st July 2015).<br /><br /><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-w_OfopSMeKI/VYP4ZTLDvUI/AAAAAAABLLE/3SL_h8AKwKo/s1600/optical_pulse_emonpi.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="473" src="http://4.bp.blogspot.com/-w_OfopSMeKI/VYP4ZTLDvUI/AAAAAAABLLE/3SL_h8AKwKo/s640/optical_pulse_emonpi.JPG" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Pulse sensor installed &amp; connected to emonPi via RJ45</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/vq5EmMRrOY0/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/vq5EmMRrOY0?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;">Green LED on sensor flashes in sync with LED pulse</div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-n-ULDY85GEE/VYP5cqaTqdI/AAAAAAABLLM/urTCz9A46Cw/s1600/IMG_20150618_103617229.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="225" src="http://4.bp.blogspot.com/-n-ULDY85GEE/VYP5cqaTqdI/AAAAAAABLLM/urTCz9A46Cw/s400/IMG_20150618_103617229.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Big box of pulse sensors arrived today! :-)&nbsp;</td></tr></tbody></table><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -592,6 +594,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -641,12 +649,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -754,6 +756,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

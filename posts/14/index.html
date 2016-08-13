@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/08/notify-on-inactive-feeds/">Notify on inactive feeds</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-08-20T13:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-20 13:18:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/08/notify-on-inactive-feeds/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Here's a simple feature that sends an email whenever emoncms feeds become inactive for more than two hours, designed to stop those instances where you login to emoncms after a month and realise that something went wrong and it hasn't been updating for a while.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s1600/notify.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s640/notify.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The notify control page can be accessed via the Extras menu. It can be disabled or enabled and an email address that is different from you main account email can be used if needed.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">A cron job runs every 2 hours on the server to check if any feeds have become inactive for more than 2 hours but less than 4 hours. This ensures only one email is sent and historical inactivity is ignored.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Notify is now running on emoncms.org, you may want to check that your email address is correct before turning it on.</div><div class="separator" style="clear: both; text-align: left;"><br /></div>To install notify on your raspberrypi or own server see installation details here:<br /><a href="http://github.com/emoncms/notify">http://github.com/emoncms/notify</a><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/08/pcb-manufacturer-meeting/">PCB Manufacturer Meeting</a>
   </h1>
   
@@ -475,46 +515,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/emoncms-powered-by-timestore/">Emoncms powered by timestore</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-22T15:29:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-22 15:29:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/emoncms-powered-by-timestore/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <span style="font-size: small;">I've been making some good progress with a timestore powered version of emoncms, its available on github here:&nbsp;</span><a href="https://github.com/emoncms/emoncms/tree/timestore">https://github.com/emoncms/emoncms/tree/timestore</a>. The basics now work, its not ready for stable switchover, but if your interested in experimenting, its good to go for trying out. There are instructions for installation in the github repo readme.<br /><br />To recap: timestore is time-series database designed specifically for time-series data developed by Mike Stirling.<br /><div><br /></div><div><a href="https://github.com/emoncms/emoncms/blob/timestore/mikestirling.co.uk/redmine/projects/timestore">mikestirling.co.uk/redmine/projects/timestore</a><br /><br />Benefits include:</div><div><br /><b>Faster Query speeds</b></div><div>With timestore feed data query requests are about 10x faster (2700ms using mysql vs 210ms using timestore). The initial benchmarks I mentioned in previous blog posts show timestore request time to be around 45ms so I still need to investigate the slightly slower performance which may be on the emoncms end rather than timestore.<br /><br /><b>Reduced Disk use</b></div><div>Disk use is much smaller, A test feed stored in an indexed mysql table used 170mb, stored using timestore which does not need an index and is based on a fixed time interval the same feed used 42mb of disk space.<br /><br /><b>In-built averaging</b></div><div>Timestore also has an additional benefit of using averaged layers which ensures that requested data is representative of the window of time each datapoint covers.<br /><br /><br /><div style="margin-bottom: 0cm;"><span style="font-size: small;">Due to the integration of averaging in timestore there are significant implications for input processing and visualisations. Rather than compute kwh/d data from power data in an emoncms input process this can now be moved to timestore by querying timestore for average power in a day and converting this value to kwh/d by multiplying the average power by 0.024.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-size: small;">This means we no longer have two feeds one for kwh/d data and another for power data which changes the way many of the visualisations need to work. Visualisations such as simple zoomer need to query the same feed at different average levels.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-size: small;">To fully integrate timestore in emoncms and reach a similar level of input process and visualisation options is a big task. To simplify things, the current release has cut down functionality with only a few input processes and visualisations.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To create feeds with a fixed datapoint interval I added an interval selector to the input processing configure input page:</div><div style="margin-bottom: 0cm;"><span style="font-size: small;"><br /></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-8VArGMQWjog/Ue1HEs96egI/AAAAAAAACuc/32XQ8amhR9E/s1600/timestore_inputproc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="203" src="http://2.bp.blogspot.com/-8VArGMQWjog/Ue1HEs96egI/AAAAAAAACuc/32XQ8amhR9E/s640/timestore_inputproc.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The data point interval is displayed as a field in feeds page:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-phDBIAYLJ2Y/Ue1HH18aSBI/AAAAAAAACuk/1Qjjuh8R5Og/s1600/timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="444" src="http://3.bp.blogspot.com/-phDBIAYLJ2Y/Ue1HH18aSBI/AAAAAAAACuk/1Qjjuh8R5Og/s640/timestore.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;">Example of timestore working displaying solar production here over the last few hours:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-AK5in_foEVw/Ue1HLN4OH6I/AAAAAAAACus/s5SwzOhkVC0/s1600/rawdata_timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://2.bp.blogspot.com/-AK5in_foEVw/Ue1HLN4OH6I/AAAAAAAACus/s5SwzOhkVC0/s640/rawdata_timestore.png" width="640" /></a></div><div style="margin-bottom: 0cm;">Try it out following the instructions here for installation on a raspberrypi:</div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/emoncms/tree/timestore">https://github.com/emoncms/emoncms/tree/timestore</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Next I intend to test the histogram datatype, ensure that works ok. The input processors for plus, minus, divide and multiply by another input also need looking at and then the more complex kwhd to power feed type zoomer visualisations. If a timestore version of emoncms is useful for you and your interested in helping to get it working well, I would be glad to have your help.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Blog posts on emoncms data storage for further context:<br /><a href="http://openenergymonitor.blogspot.co.uk/2013/06/timestore-timeseries-database.html">http://openenergymonitor.blogspot.co.uk/2013/06/timestore-timeseries-database.html</a><br /><a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html</a><br /><a href="http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html">http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html</a></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -631,6 +631,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -680,12 +686,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -793,6 +793,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     

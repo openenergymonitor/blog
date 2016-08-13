@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2015/11/interpreting-emoncms-dashboards/">Interpreting Emoncms Dashboards</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-11-04T11:54:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-11-04 11:54:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/11/interpreting-emoncms-dashboards/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it's possible to identify subtler power signatures. Here's an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It's great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB </a>
   </h1>
   
@@ -468,48 +508,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/07/new-myelectric-app-realtime-power-graph/">New MyElectric Emoncms app, realtime power graph and energy totals</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-07-30T15:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-30 15:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/dashboard/'>dashboard</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/07/new-myelectric-app-realtime-power-graph/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><a href="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s1600/newmyelectric.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s400/newmyelectric.png" width="281" /></a><a href="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s1600/SAM_0929.JPG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s400/SAM_0929.JPG" width="300" />&nbsp;</a><br /><br />The MyElectric app has long been needing some work so that it both provides more useful information and also reports the daily kwh data correctly for different timezones and when the app is used as an always on display and the day changes.<br /><br />There is now a new version available that adds a real-time power graph as well as totals for the week, month, year and all time and the daily kwh bar graph as before.<br /><br />To generate the kWh per day graph this version focuses on supporting feeds either created with the "power to kWh" processor or "Wh accumulator" processor rather than the "power to kWh/d" processor and average power feeds. Trying to support each one was leading to quite a lot of bugs in addition to more fundamental issues with time zones present with the power to Kwh/d daily feed approach. <br /><br />The "power to kWh" and "Wh accumulator" processors are both fully supported on the emonPi and emonBase running the low-write image. There's more on how this accumulating watt hour or kWh approach works here: <a href="http://openenergymonitor.org/emon/node/3995">Development: Calculating Wh totals on the emontx</a><br /><br />I now have the new MyElectric app running alongside the MySolarPV app in my home and I'm really quite pleased with the results. The totals at the bottom and average kWh per day for each period gives me most of what data to see at a glance how my electricity consumption is fairing and having this information available on a wall mounted tablet really makes all the difference compared with having to login to emoncms on my computer to see the data.<br /><br />I would like to make it easier to switch in between the different apps, a side swipe would be really nice. I would also like to look into a way to make it possible to download apps from an app repository from within emoncms itself so that new apps could be added without them having to be in the app repository on github, there's quite a bit of work needed to get there thought.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -626,6 +624,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
@@ -675,12 +679,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emoncms-qr/">Emoncms android App QR Code Scanner Setup</a>
         </li>
       
     
@@ -788,6 +786,8 @@ window.onclick = function(event) {
       <li><a href="/categories/docker/">docker</a></li>
     
       <li><a href="/categories/documentation/">documentation</a></li>
+    
+      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
     
       <li><a href="/categories/efergy/">efergy</a></li>
     
