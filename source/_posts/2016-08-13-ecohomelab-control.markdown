@@ -31,5 +31,9 @@ Here are copy of my slides from the event:
 
 <iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&loop=false&delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
 
-[View the slides in Google Slides format (with clickable hyperlinks)](https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing)
+
+- <a class="attachment" href="https://community.openenergymonitor.org/uploads/default/original/2X/1/1a55b8c172086f743b1b0abe1d01d7c10963d88c.pdf">Download in PDF format</a> (6.8 MB)
+
+- [View in HTML (hosted from Google Slides)](https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&loop=false&delayms=3000)
+- [View in full Google Slides format (with clickable hyperlinks & selectable text)](https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing)
 
