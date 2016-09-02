@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/what-kind-of-information-can-we-extract/">What kind of information can we extract from power measurements?</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-10T11:05:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-10 11:05:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> seven minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/what-kind-of-information-can-we-extract/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">The most direct representation of power data is power over time which is what we get if we simply log the power values transmitted from a monitor.  With this we can see what our power consumption or power generation looks like throughout a day, you can see the relative magnitude of different loads, identify visually different appliances from kettle's to LED&nbsp;light bulbs.</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-pVwxv1iYDHc/UbWl2mW8CtI/AAAAAAAACp0/BowLPfaHiaI/s1600/realtimepowerdata.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="275" src="http://4.bp.blogspot.com/-pVwxv1iYDHc/UbWl2mW8CtI/AAAAAAAACp0/BowLPfaHiaI/s640/realtimepowerdata.png" width="640" /></a></td></tr><tr><td class="tr-caption">The power vs time visualisation can be found under the Vis tab in emoncms by selecting the rawdata visualisation.</td></tr></tbody></table><div style="margin-bottom: 0cm;">Its a useful visual tool and with a little extra stats overlayed on the graph such as how many kwh are  contained in the window being viewed and the average power you can start to do things like calculate roughly how much energy individual appliances use such as a fridge or a particular evenings immersion heater use.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Beyond the basic power vs time graph we can gain more information by processing the incoming power data into kwh per day data. kwh per day data can be calculated as either the average power in watts for a day x 0.024 or the sum of the time spent at different powers divided by the energy in 1 kwh. A graph of kwh per day vs time makes it easy to compare one day against another and see trends over months or years.</div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-dJHKrtPOmqs/UbWmDU3HFoI/AAAAAAAACp8/dNmlIyznDVE/s1600/kwhddata.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-dJHKrtPOmqs/UbWmDU3HFoI/AAAAAAAACp8/dNmlIyznDVE/s640/kwhddata.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">The daily visualisation can be found under the Vis tab in emoncms by selecting the bargraph visualisation.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">That's pretty good but we can extract more information from the power data if we process the power data to record the energy used at different power levels in a particular day, how much energy is used at 100W, 200W or 3000W. This is what the histogram input processor does in emoncms. The following graph shows the result of recording energy used at different power levels with a 25W resolution over 7 months from my own house. The spike at 2.5kW is an electric heater which we used a lot throughout the winter, the 3.5kW spike is the immersion heater and 0-500W is lights, laptops, hifi etc.</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-XTKqi4OoA04/UbWmPv8ozAI/AAAAAAAACqE/odjmArEnBvs/s1600/detailedhistogram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://2.bp.blogspot.com/-XTKqi4OoA04/UbWmPv8ozAI/AAAAAAAACqE/odjmArEnBvs/s640/detailedhistogram.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;"><b>Note: </b>The histogram visualisation can be found under the Vis tab by selecting histgraph. The default histogram has smaller resolution bars at higher power levels, i need to add an option for higher detailed histogram data calculation in the input process model to make this easier to achieve. To produce the graph above I&nbsp;actual&nbsp;converted the power data feed to histogram data using a conversion module that can be found <a href="https://github.com/emoncms/feedconvert">here</a>. The code that produces the histogram as data is coming in can be found on lines 543 to 608 in the <a href="http://process_model.php/">process_model.php</a>.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">The histogram data can also be visualised within the kwh per day type graph so that we can see how a particular days energy consumption breaks down into energy used at less than say 1kw, energy used between 1 and 3 kW and 3kW up but then also easily compare one day to the next:</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-W9ab4J6RzzE/UbWmaCVzmPI/AAAAAAAACqM/Qd9blj7h1FM/s1600/colhistogram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="248" src="http://4.bp.blogspot.com/-W9ab4J6RzzE/UbWmaCVzmPI/AAAAAAAACqM/Qd9blj7h1FM/s400/colhistogram.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">From the emoncms report module.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">For me, what I want to get out of monitoring my electricity consumption is to first understand how I use electricity and then work out what definite actions I can take to reduce any my electricity consumption and then be able to confirm that those actions did indeed produce the expected result. After all optimisations are done, Id like the monitor and reporting tools to help keep me informed that I am maintaining an optimum electricity use level overtime, that it does not creep up again.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To answer these questions  directly I found I needed one other thing that goes hand in hand with the monitoring and visualisations above, I needed a rough model of my electricity consumption that breaks electricity consumption down on a per appliance basis. Any actions that we take are on an per appliance basis and so we really need a per appliance level of&nbsp;specificity.&nbsp; In the absence of per appliance monitoring or working <a href="http://openenergymonitor.org/emon/buildingblocks/appliance-inference">applianceinference </a>which would be the ultimate solution, this can be done with a simple model where a list of all the appliances in a house is entered manually including how many watts they use (which the energy monitor can be used to find out) and roughly how many hours per day they are used. This produces an estimate for how much electricity is used in a day, what the baseload should be and how much energy is consumed at different powers which can then be cross checked with the actual monitored data, the model can then be adjusted until the values align.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The<a href="https://github.com/emoncms/report"> reporting module</a> in emoncms bring all this together on one page, the screen below shows the monitored data and model for the openenergymonitor lab and the small cottage next door:</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-yHfVXBfcvWg/UbWmtMkigWI/AAAAAAAACqU/4r5H2W8V_4Y/s1600/report.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://2.bp.blogspot.com/-yHfVXBfcvWg/UbWmtMkigWI/AAAAAAAACqU/4r5H2W8V_4Y/s640/report.png" width="403" /></a></td></tr><tr><td class="tr-caption">You can find the reporting module in emoncms.org by clicking on Extras and then report. For local installations install the report module from github <a href="https://github.com/emoncms/report">here</a></td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">To align the model to the monitored data its a matter of aligning the model pie chart to the monitored data pie chart. In our case electricity consumption is highly variable day to day, month to month so the model can only apply to either the average of the days in the selected view or a single particular day, its informative to adjust the model for different times of the year.&nbsp;Once the model aligns well, its then possible to experiment with changing the appliances in the model and how many hours they are used for to see what effect that might have on total daily consumption.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The conclusion of our electricity consumption investigation is that we could save 5-10% by changing all CFL's to LED's and turning standby items off at the plug (especially the hifi and soldering iron station), continuing to optimise kettle use and immersion heater is also super important as leaving a 2800W kettle on for an extra minute uses as much as a 6W LED left on for 7-8 hours and so can easily remove any savings achieved by turning lights off.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To significantly reduce electricity consumption further we would need to change the heating system and to take a whole house view: improve the building fabric performance by increasing insulation levels, reducing draughts and improving solar gain in order to reduce heating demand in the first place which is where recent work on temperature sensing, building energy modelling, the SAP calculator comes in but I will come back to that in further blog posts.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It would be nice to add additional tabs to the report module so that current and projected consumption levels can be easily compared, Id also like to add a feature to send a regular report email that keeps me updated on my week to week electricity consumption so that I can get at a glance information that minimises the effort I need to go to to see how I'm doing.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/emontx-shield-smt-with-new-layout-in/">Emontx Shield SMT with new layout in development</a>
   </h1>
   
@@ -445,48 +485,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/continuation-of-emontx-testing-feed/">Continuation of emontx testing - feed comparison tool</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-25T21:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-25 21:52:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/continuation-of-emontx-testing-feed/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;">Glyn has been running a parallel test of the new emontx v3 vs the old emontx v2 for over a month now. See Glyn's original post introducing emontx v3 here: <a href="http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html">http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In testing a new emontx version here are a few questions that we would like to answer:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How does emonTx v3 accuracy compare at lower power's?</div><div style="margin-bottom: 0cm;">Is there any difference in low power readings with or without the powered from AC-AC adapter feature?</div><div style="margin-bottom: 0cm;">Can differences be explained by calibration error?</div><div style="margin-bottom: 0cm;">Are there any other measurement variations that need investigating?</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To make it easier to compare the parallel test power feeds I though Id create a visualisation tool in emoncms that made it easier to see the difference between the feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s1600/compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s400/compare.png" width="272" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If difference is caused by calibration error then applying a calibration to the measured data should bring the difference down close to zero.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Any deviations in measurements that remain should be non-calibration errors, and they will appear off to one side of the linear PowerX vs PowerY plot.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">The above visualisation can be viewed here:</div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809">http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">This visualisation tool is available in the emoncms visualisations list if youd like to try this on your own monitor, even comparing say two different CT channels on a single emontx.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">There are some issues I need to fix with the visualisation tool implementation that gives rise to some incorrect comparisons at some scales to do with the way it selects datapoint id's to compare.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next post I will explore differences between the two parallel test power feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;"><b>On another topic:</b></div><div style="margin-bottom: 0cm;">One of the interesting things I did yesterday was use the raspberrypi emoncms module on my ubuntu laptop. I used a jeelink connected to the usb port of the laptop and then configured raspberrypi_run.php to connect on port /dev/ttyUSB4 instead of the default raspberrypi port, this could be a useful configuration for anyone who just wants to log data from the nodes locally to their laptop and as Jerome pointed out <a href="https://github.com/emoncms/raspberrypi/issues/30">here</a>,&nbsp;maybe the emoncms raspberrypi module should just be called the emoncms linux board module or just serial interface module.</div><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -603,6 +601,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/summer-placement/">Summer Placement</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
@@ -652,12 +656,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
         </li>
       
     
@@ -885,6 +883,8 @@ window.onclick = function(event) {
       <li><a href="/categories/pcb/">pcb</a></li>
     
       <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/placement/">placement</a></li>
     
       <li><a href="/categories/platformio/">platformio</a></li>
     

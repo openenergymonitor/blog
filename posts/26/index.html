@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/01/openenergymonitor-in-france/">University campus energy monitoring in France</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-01-18T14:44:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-01-18 14:44:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Baptiste Gaultier</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/01/openenergymonitor-in-france/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Hello, my name is Baptiste Gaultier<span class="Apple-style-span" style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 14px; font-weight: bold; white-space: nowrap;">.&nbsp;</span>When I started working on the project of monitoring the energy consumption of <a href="http://www.telecom-bretagne.eu/index.php?lang=en_GB" target="_blank">Telecom Bretagne</a> (an engineering school in Brittany, France), I was looking for products which can measure, store, and track the energy consumption data of a typical university campus.<br /><br />After spending some time researching the available solutions, I found a lot of expensive proprietary products and a project you may have heard of, called openenergymonitor. This project provides a very powerful, web-connected energy monitoring system, and the best part is that it is open-source !<br /><br />I started to work on top of emonTx and emoncms and here are some new features I added to emoncms (the new hardware features will be addressed in a future blog post)&nbsp; :<br /><ul><li><b>Map widget :</b> allows you to see a map with all the sensors used for energy monitoring</li><li><b>Device manager :</b> provides an easy way to add devices on the map widget</li><li><b>Node information widget :</b> allows you to see all information (hostname, IP addresses, device type, power measured...) of a monitoring node</li></ul><br /><b><span style="font-size: large;">Screenshots</span></b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Oip7SvjTItk/TxbYbhp0D2I/AAAAAAAAApM/GI-XQCGa3bU/s1600/Screenshot+emoncms.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="330" src="http://3.bp.blogspot.com/-Oip7SvjTItk/TxbYbhp0D2I/AAAAAAAAApM/GI-XQCGa3bU/s400/Screenshot+emoncms.png" width="400" /></a></div><div style="text-align: center;"><span style="font-size: x-small;"><b>Dashboard with my university campus map</b></span></div><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-y2LQMvjvSKA/TxbY1QyQ-MI/AAAAAAAAApU/rMtGncCPhgA/s1600/Device+manager+screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="362" src="http://1.bp.blogspot.com/-y2LQMvjvSKA/TxbY1QyQ-MI/AAAAAAAAApU/rMtGncCPhgA/s400/Device+manager+screenshot.png" width="400" /></a></div><div style="text-align: center;"><span style="font-size: x-small;"><b>Device manager tab</b></span></div><br /><br />We have made some progress, but we have still a lot of work to do before our goals are met, most notably:<br /><ul><li>Tagging and renaming the devices</li><li>Displaying the energy chart when clicking on a node</li><li>Drag and drop node positioning on a map (device manager)</li><li>Node filtering (depending on power consumption for instance)</li><li>How to use the map widget (documentation)&nbsp;</li></ul>The code has been released on github (I forked couple of days ago) : <a href="https://github.com/bgaultier/emoncms3/tree/devicemanager">https://github.com/bgaultier/emoncms3/tree/devicemanager</a><br /><br />The entire team working on the project at <a href="http://www.telecom-bretagne.eu/index.php?lang=en_GB" target="_blank">Telecom Bretagne</a> is convinced of the great quality of the openenergymonitor project and we hope our work may be useful in any way.<br /><br />Cheers !
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/01/emonglcd-getting-time-for-internet/">emonGLCD - getting time for the internet</a>
   </h1>
   
@@ -438,46 +478,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/ac-ac-adapters/">AC-AC Adapters</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-08T22:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-08 22:04:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/ac-ac-adapters/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Today we have taken delivery of a load of AC-AC&nbsp;adapters&nbsp;in&nbsp;preparation for opening our online shop in the new year.<br /><br />Using an AC-AC adapter with the emonTx to measure the AC voltage as well as a CT to measure current is is optional but it does increase accuracy by enabling real power measurements to be made. Using an emonTx with only a CT assumes RMS AC voltage to be fixed at a&nbsp;certain&nbsp;level (240V UK) and power factor to be equal to 1.<br /><br />Real power measurements take into account the power factor of the AC circuit, inductive loads such as motors reduce the power factor thus giving an&nbsp;artificially&nbsp;higher apparent power reading. It is real power which you are billed for by the utility company. For more information on the differance between real and apparent power see AC power&nbsp;<a href="http://openenergymonitor.org/emon/node/61">theory 1</a>&nbsp;and&nbsp;<a href="http://openenergymonitor.org/emon/node/62">theory 2.</a><br /><br />Using an AC-AC adapter also enables the direction of the current flow to be&nbsp;determined by providing a&nbsp;relative&nbsp;point of&nbsp;reference. &nbsp;Knowledge of the direction of current is&nbsp;crucial in monitoring a domestic solar PV systems when due to how the generated power from the solar PV is connected into the fuse box consumption cannot be monitored&nbsp;separately&nbsp;to generation. More on this to come...<br /><br />Our tests have shown that typically the apparent power reading of in a domestic home is 5-20% higher than a real power reading. Although this seems like quite a&nbsp;difference in reality the&nbsp;purpose&nbsp;of domestic energy monitoring is to increase understanding of how energy is consumed in the home, apparent power readings are accurate enough for this. Also installing an AC-AC with the emonTx next to the utility meter can be tricky since there are often no power sockets to hand. This offset can also be calibrated out by calibrating the apparent power kWh/d readings&nbsp;against&nbsp;the readings from the utility meter.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-m-6-DHVyI8s/TuE3JRfGINI/AAAAAAAAY_c/Lclo1sHD9Xc/s1600/real_vs_app+power.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="180" src="http://4.bp.blogspot.com/-m-6-DHVyI8s/TuE3JRfGINI/AAAAAAAAY_c/Lclo1sHD9Xc/s400/real_vs_app+power.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Instantaneous real and apparent power readings of a domestic house AC circuit during the night, notice the fridge (compressor motor) reduces the PF thus reducing the real-power reading. Power in W is on the left axis, PF is on the right axis&nbsp;</td></tr></tbody></table>As I mentioned at the&nbsp;beginning&nbsp;of the this post, we have just taken delivery of a load of AC-AC adapters, now time to test their quality.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Ca6bTthH0-s/TuE3TQUHJ0I/AAAAAAAAY_k/Kw-Q1Sjg7u4/s1600/IMAG002.BMP" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/-Ca6bTthH0-s/TuE3TQUHJ0I/AAAAAAAAY_k/Kw-Q1Sjg7u4/s400/IMAG002.BMP" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">The blue trace is the new adapter (pictures below) as you can see it's slightly better than the old one were were using (yellow trace), it is more like a perfect sine wave without the slight 'kink' in the middle that the old (yellow trace) adapter exhibits. Also the new model does not have the +2V offset, switching to the new model will require re-calibration of the emonTx in software.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-p2slG2BBAnY/TuE8OnpTxDI/AAAAAAAAY_0/0Tly7SdywnU/s1600/IMG1000.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://1.bp.blogspot.com/-p2slG2BBAnY/TuE8OnpTxDI/AAAAAAAAY_0/0Tly7SdywnU/s320/IMG1000.jpg" width="240" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">The new AC-AC adapters. We have plenty in stock&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Testing these AC-AC adapters also gave us the chance to test out our new DSO Quad mini-digital scope. Very nice!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -594,6 +594,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/summer-placement/">Summer Placement</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
@@ -643,12 +649,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
         </li>
       
     
@@ -876,6 +876,8 @@ window.onclick = function(event) {
       <li><a href="/categories/pcb/">pcb</a></li>
     
       <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/placement/">placement</a></li>
     
       <li><a href="/categories/platformio/">platformio</a></li>
     

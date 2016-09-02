@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-08-29T13:55:52+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2016-09-02T10:06:04+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Summer Placement</title><link href="https://blog.openenergymonitor.org/2016/08/summer-placement/" rel="alternate" type="text/html" title="Summer Placement" /><published>2016-08-30T18:00:00+00:00</published><updated>2016-08-30T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/summer-placement</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/summer-placement/">&lt;p&gt;Hi! My name is Eben I’ve been working with OpenEnergyMonitor as part of a summer placement organised by &lt;a href=&quot;http://www.arloesigwyneddwledig.com/&quot;&gt;Arloesi Gwynedd Wledig&lt;/a&gt;; a local project aimed at highlighting the local tech sector employment opportunities on Parc Menai the business park where we are located in North Wales, and the difficulties that they face, as well as the great perks of living in such a beautiful area.&lt;/p&gt;
+
+&lt;!--This is a comment!--&gt;
+
+&lt;!--Insert photo of you e.g.--&gt;
+
+&lt;p&gt;![&lt;img src=&quot;https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/r90/12321204_10207912968654511_3910132011624254171_n.jpg?oh=58a67605a670874c18e1f51d57621800&amp;amp;oe=584F10A9&quot; width=&quot;200&quot; /&gt;]&lt;/p&gt;
+
+&lt;p&gt;##Me, and Gwynedd
+I am currently studying physics at Cardiff University, and originally hail from Dyffryn Nantlle. As you can probably tell by my failure to find a decent photo of myself doing anything else, I’m (like Glyn and Trystan)  a keen climber, and that’s been my primary reason for wanting to return to Gwynedd to work, with a long list of climbs in the Llanberis Pass, Ogwen Valley, and Tremadog, and more that I wanted to have a go at. It’s a great way to appreciate Gwynedd, in my opinion, and I even got to go climbing with Glyn.&lt;/p&gt;
+
+&lt;p&gt;Check out the video here: https://www.youtube.com/watch?v=CzPMPY-I3_I A little cheesy, but we got to climb with drones filming, so that was pretty sweet.&lt;/p&gt;
+
+&lt;p&gt;The other strong pull, for me, was the language; Cymraeg. I’ve spent two years now living and studying down in Cardiff, and the switch to the academic and leisure medium of English has been a little challenging, and it’s always amazing to come back to Gwynedd, and hear Welsh on the street and in the shop, and at home, and (at OpenEnergyMonitor) at the workplace as well. A lot of our culture is tied intimately to the language, and it’s been good to feel that again.&lt;/p&gt;
+
+&lt;p&gt;##What I’ve been up to
+During my time at the company, I’ve learnt how to write basic software from scratch (I’ve only ever done experimental analysis using python previously) to Arduino boards and the ESP8266, my eyes have been opened to the possibilities of GitHub, and other resources. I’ve played around with adding a DHT22 sensor to the &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP/pull/7&quot;&gt;ESP8266&lt;/a&gt; and posted an example. I’ve also had the pleasure of working with Gwil on preparation and order fulfilment, which has been fun! Another interesting experience was the few times I visited the local electronics factory, &lt;a href=&quot;http://www.dferrantigroup.com/pcb-population-test/&quot;&gt;Denis Ferranti&lt;/a&gt;  where the boards are all manufactured. It was really cool to see the manufacture process, and the quality of the equipment there, and great to know that OpenEnergyMonitor are able to source their PCB’s locally, for zero economic sacrifice.&lt;/p&gt;
+
+&lt;p&gt;Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.&lt;/p&gt;
+
+&lt;p&gt;##The Scheme
+Through the project that organised this placement opportunity, the four of us (all at different companies) were asked to come to a conclusion on the situation regarding tech jobs in Gwynedd, and the so-called ‘brain drain’, as the best and brightest graduates leave the area to embrace city life.&lt;/p&gt;
+
+&lt;p&gt;The overall conclusion was that perceptions need to change. People overwhelmingly do not view Gwynedd as a place with lots of potential for tech jobs, but research has shown that the truth is the very opposite, with Parc Menai alone set to be the location of around 200 new jobs in the next few years. At a presentation at Pontio, at Bangor university, the four of us students reccomended modernisation of the school syllabus, a closer relationship between companies and schools, more grassroots tech events (a brilliant example of this sort of thing are the events held by &lt;a href=&quot;https://www.facebook.com/NorthWalesTechnology/?fref=ts&quot;&gt;North Wales Tech&lt;/a&gt; (check them out!), and better utilisation of social media by companies looking for skilled graduates.&lt;/p&gt;
+
+&lt;p&gt;I’d like to thank Glyn, Trystan, and Gwil for making this summer such an incredibly fun and rewarding one, as well as an extremely eye opening one. I’m sure the company has a huge future, and I for one will be following future products and developments with keen interest.&lt;/p&gt;
+
+&lt;p&gt;Today is my last day, and it’s a little sad. I’m writing this blog but should probably stop and help Gwil with these EmonTH’s..&lt;/p&gt;
+
+&lt;p&gt;Eben, out.&lt;/p&gt;
+
+&lt;p&gt;ps. here’s an introduction video to the scheme I was a part of: www.youtube.com/watch?v=RJxHQBpLgWk, and highlights video of the whole 10 week scheme: https://www.youtube.com/watch?v=N2v2a3ZJq0E
+There also will soon be footage of the Dennis Ferranti factory we visited, I will post it here as soon as it arrives!
+Thanks for reading!&lt;/p&gt;</content><author><name>Eben Myrddin Muse</name></author><summary>Hi! My name is Eben I’ve been working with OpenEnergyMonitor as part of a summer placement organised by Arloesi Gwynedd Wledig; a local project aimed at highlighting the local tech sector employment opportunities on Parc Menai the business park where we are located in North Wales, and the difficulties that they face, as well as the great perks of living in such a beautiful area.
+
+
+
+
+
+![]
+
+##Me, and Gwynedd
+I am currently studying physics at Cardiff University, and originally hail from Dyffryn Nantlle. As you can probably tell by my failure to find a decent photo of myself doing anything else, I’m (like Glyn and Trystan)  a keen climber, and that’s been my primary reason for wanting to return to Gwynedd to work, with a long list of climbs in the Llanberis Pass, Ogwen Valley, and Tremadog, and more that I wanted to have a go at. It’s a great way to appreciate Gwynedd, in my opinion, and I even got to go climbing with Glyn.
+
+Check out the video here: https://www.youtube.com/watch?v=CzPMPY-I3_I A little cheesy, but we got to climb with drones filming, so that was pretty sweet.
+
+The other strong pull, for me, was the language; Cymraeg. I’ve spent two years now living and studying down in Cardiff, and the switch to the academic and leisure medium of English has been a little challenging, and it’s always amazing to come back to Gwynedd, and hear Welsh on the street and in the shop, and at home, and (at OpenEnergyMonitor) at the workplace as well. A lot of our culture is tied intimately to the language, and it’s been good to feel that again.
+
+##What I’ve been up to
+During my time at the company, I’ve learnt how to write basic software from scratch (I’ve only ever done experimental analysis using python previously) to Arduino boards and the ESP8266, my eyes have been opened to the possibilities of GitHub, and other resources. I’ve played around with adding a DHT22 sensor to the ESP8266 and posted an example. I’ve also had the pleasure of working with Gwil on preparation and order fulfilment, which has been fun! Another interesting experience was the few times I visited the local electronics factory, Denis Ferranti  where the boards are all manufactured. It was really cool to see the manufacture process, and the quality of the equipment there, and great to know that OpenEnergyMonitor are able to source their PCB’s locally, for zero economic sacrifice.
+
+Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.
+
+##The Scheme
+Through the project that organised this placement opportunity, the four of us (all at different companies) were asked to come to a conclusion on the situation regarding tech jobs in Gwynedd, and the so-called ‘brain drain’, as the best and brightest graduates leave the area to embrace city life.
+
+The overall conclusion was that perceptions need to change. People overwhelmingly do not view Gwynedd as a place with lots of potential for tech jobs, but research has shown that the truth is the very opposite, with Parc Menai alone set to be the location of around 200 new jobs in the next few years. At a presentation at Pontio, at Bangor university, the four of us students reccomended modernisation of the school syllabus, a closer relationship between companies and schools, more grassroots tech events (a brilliant example of this sort of thing are the events held by North Wales Tech (check them out!), and better utilisation of social media by companies looking for skilled graduates.
+
+I’d like to thank Glyn, Trystan, and Gwil for making this summer such an incredibly fun and rewarding one, as well as an extremely eye opening one. I’m sure the company has a huge future, and I for one will be following future products and developments with keen interest.
+
+Today is my last day, and it’s a little sad. I’m writing this blog but should probably stop and help Gwil with these EmonTH’s..
+
+Eben, out.
+
+ps. here’s an introduction video to the scheme I was a part of: www.youtube.com/watch?v=RJxHQBpLgWk, and highlights video of the whole 10 week scheme: https://www.youtube.com/watch?v=N2v2a3ZJq0E
+There also will soon be footage of the Dennis Ferranti factory we visited, I will post it here as soon as it arrives!
+Thanks for reading!</summary></entry><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;EcoHomeLab monthly meetups at &lt;a href=&quot;https://madlab.org.uk/&quot;&gt;MadLab&lt;/a&gt; brings householders and green-technologists together to take control of home energy use and generation.&lt;/p&gt;
@@ -1020,28 +1086,4 @@ The latest update to emonSD (emonSD-03May16) now incudes the following all setup
   MQTT
   Support for MQTT LightWaveRF OOK Control
   Support for MQTT WiFi control Relay
-  GSM 3G USB modem support</summary></entry><entry><title>emonPi / emonBase Raspberry Pi 3</title><link href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/" rel="alternate" type="text/html" title="emonPi / emonBase Raspberry Pi 3" /><published>2016-05-13T15:00:00+00:00</published><updated>2016-05-13T15:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/">&lt;p&gt;All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.&lt;/p&gt;
-
-&lt;p&gt;Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;Moore’s law&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-raspi3.jpg&quot; alt=&quot;emonPi Raspberry Pi 3 Acrylic Fascia&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;If you receive an emonPi with a black acrylic fascia like in the photo above this means you have a RaspberryPi 3 inside. The reason for switching from punched-aluminium end-plates to black acrylic plastic is to allow the RaspberryPi 3’s on-board Wifi to propagate out of the enclosure.&lt;/p&gt;
-
-&lt;p&gt;The Raspberry Pi 3 equipped emonPi’s and emonBase’s will be running the latest &lt;a href=&quot;https://guide.openenergymonitor.org/technical/#software-overview&quot;&gt;emonSD pre-built SD card image&lt;/a&gt; which includes the latest version of Emoncms as well as &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/nodered&quot;&gt;NodeRED&lt;/a&gt; and &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/openhab&quot;&gt;openHAB&lt;/a&gt; pre-installed. Checkout our &lt;a href=&quot;https://guide.openenergymonitor.org/&quot;&gt;new Setup &amp;amp; User Guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: The Raspberry Pi 3 also includes integrated on-board Bluetooth, however this has been disabled on the emonPi due to a serial port conflict. See our &lt;a href=&quot;/2016/03/raspberry-pi-3/&quot;&gt;original post on the Raspberry Pi 3&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;emonpi-online-store-itemhttpsshopopenenergymonitorcomemonpi-3&quot;&gt;&lt;a href=&quot;https://shop.openenergymonitor.com/emonpi-3/&quot;&gt;emonPi Online Store Item&lt;/a&gt;&lt;/h2&gt;
-
-&lt;h2 id=&quot;emonbase-online-store-itemhttpsshopopenenergymonitorcomemonbase-web-connected-base-station&quot;&gt;&lt;a href=&quot;https://shop.openenergymonitor.com/emonbase-web-connected-base-station/&quot;&gt;emonBase Online Store Item&lt;/a&gt;&lt;/h2&gt;
-
-&lt;h2 id=&quot;getting-start-guide-httpsguideopenenergymonitororg&quot;&gt;&lt;a href=&quot;https://guide.openenergymonitor.org/&quot;&gt;Getting Start Guide &lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/raspberrypi3.jpg&quot; alt=&quot;Raspberry Pi 3&quot; /&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.
-
-Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of Moore’s law.</summary></entry></feed>
+  GSM 3G USB modem support</summary></entry></feed>

@@ -107,6 +107,52 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/11/new-hardware-is-in-shop-and-starting-to/">New hardware is in the shop and starting to ship this week</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-24T19:28:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-24 19:28:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
+      
+        <li><a class='category' href='/categories/shop/'>shop</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/11/new-hardware-is-in-shop-and-starting-to/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    If you have been following the blog and twitter over the past couple of weeks you will probably have noticed that we've been gearing up for and starting manufacture (<a href="http://openenergymonitor.blogspot.com/2013/11/hardware-manufacture-begins-part-1.html">part 1</a> and <a href="http://openenergymonitor.blogspot.com/2013/11/hardware-manufacture-begins-part-2.html">part 2</a>)&nbsp;of a trio of new hardware units:<br /><br /><h2>1. emonTx V3</h2><br />The emonTx V3 is our new flagship <i>energy monitoring wireless node</i>. Thanks to community contributions and user feedback we've improved on the previous through-hole emonTx design while trying to keep as much flexibility and user customisation potential as possible.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-oBQFKBN1f2k/UpaHL8VspyI/AAAAAAAArJU/pbXZZmDhkUo/s1600/emonTxV3_3CT_ACAC2_cutout.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="332" src="http://2.bp.blogspot.com/-oBQFKBN1f2k/UpaHL8VspyI/AAAAAAAArJU/pbXZZmDhkUo/s640/emonTxV3_3CT_ACAC2_cutout.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Full emonTx V3 system with 4 x CT-sensors an AC-AC power adapter: Real Power, Power Factor and VRMS measurements</td></tr></tbody></table><br /><br /><b>Hardware</b><br />The unit uses the same Atmel ATmega328 Arduino compatible microprocessor and all free I/O pins have been made accessible on a screw-terminal block for easy expandability.<br /><br />Apart from the obvious change in enclosure and move to SMT pre-assembled electronics, the most notable hardware improvement is the addition of an AC-DC circuit. This enables the emonTx V3 to be powered from a single AC-AC plug-in adapter while simultaneously providing an AC voltage sample for VRMS and Real Power measurements.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-Srt0vZJNYMc/UpJtyoyAo5I/AAAAAAAAqzw/Cw7dSbrAuJ8/s1600/emonTxV3_full_noCase_RFM12B.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="254" src="http://2.bp.blogspot.com/-Srt0vZJNYMc/UpJtyoyAo5I/AAAAAAAAqzw/Cw7dSbrAuJ8/s320/emonTxV3_full_noCase_RFM12B.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 with ATmega328, RFM12B and on-board 3 x AA batteries</td></tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br /><b>Software</b><br />Instead of having a separate firmware sketch example for each function as we had with the emonTx V2 (e.g. Real Power (CT123_voltage), Apparent Power (CT123), Temperature etc.) we have for the emonTx V3 made progress combining all these into one 'auto-adaptable' piece of firmware. We have called it emonTxV3_discrete_sampling, it's &nbsp;based on EmonLib but no longer relies on the internal bandgap of the Atmel chip for ADC measurements. This will increase ADC accuracy and reduce the need for additional calibration. The main features of the firmware at present are:<br /><br /><br /><ul><li>CT detection – only sampling from required channels</li><li>Power supply detection &amp; presence of AC-AC adapter – VRMS and Real Power measurements are enabled if powering from AC-AC adapter and power saving mode is enabled of powering from batteries</li><li>Temperature sensor detection – external DS18B20 temperature sensors are auto detected and temperature readings added to measurements</li></ul><br /><br />The name 'discrete sampling' was used to draw distinction between the EmonLib based discrete sampling approach and Continuous Sampling. A Continuous Sampling PLL example is included in the emonTx V3 examples, after some testing we hope to integrate this into the main firmware: the emonTx V3 could switch to a more accurate continuous sampling mode when powered from AC-AC adapter of 5V DC USB. <br /><br /><i><b><a href="http://shop.openenergymonitor.com/emontx-v3/">The emonTx V3 is now available from the OpenEnergyMonitor shop.&nbsp;</a></b></i><br /><br /><h2>2. emonTH&nbsp;</h2><i>Wireless Temperature and Humidity Node</i><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-KUQmETj9I4g/UpJuyPKt4CI/AAAAAAAAqz8/gLRock3_ur8/s1600/emonTH_wall_lab.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="223" src="http://4.bp.blogspot.com/-KUQmETj9I4g/UpJuyPKt4CI/AAAAAAAAqz8/gLRock3_ur8/s320/emonTH_wall_lab.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH Temperature and Humidity Node</td></tr></tbody></table><br />The emonTH is a new unit to replace the Low Power emonTx Temperature node (which was bit of a cludge!).<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-fCrzdXHBEZk/UpJtuGN0jAI/AAAAAAAAqzY/qhTPorJjIAY/s1600/emonTH_fire.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="248" src="http://2.bp.blogspot.com/-fCrzdXHBEZk/UpJtuGN0jAI/AAAAAAAAqzY/qhTPorJjIAY/s320/emonTH_fire.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH installed in my house, I will be keeping a close eye on temperature and humidity in my house over the winter in North Wales</td></tr></tbody></table><br />Working with community groups like the <a href="http://carbon.coop/">Manchester Carbon Coop</a> who are involved in retro-fitting houses with insulation we realised the need for an easy to deploy, long lasting temperature and humidity monitoring node. Many emonTHs can be deployed thought a house or building to inform a <a href="http://openenergymonitor.blogspot.com/2013/09/measuring-building-thermal-performance.html">building performance model</a>, heating control system or just for general interest! The emonTH supports DHT22 and DS18B20 sensors as well as simultaneous indoor and outdoor temperature readings using a <a href="http://shop.openenergymonitor.com/components/">remote DS18B20 sensor</a> wired into terminal block.<br /><br />As with the emonTx the data is logged via a web-connected base station to emoncms server for logging, graphing and analysis. As with all our hardware, the emonTH is open-source and Arduino IDE compatible using the ATmega328 with the Arduino serial bootloader.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-G5Yd_LxQXy8/UpJtr3hQPII/AAAAAAAAqzQ/sJR8bPN7EvI/s1600/emonTH_remoteDS18B20.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="242" src="http://1.bp.blogspot.com/-G5Yd_LxQXy8/UpJtr3hQPII/AAAAAAAAqzQ/sJR8bPN7EvI/s320/emonTH_remoteDS18B20.JPG" width="320" /></a></div><br /><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-F24gMHuHWNE/UpJuc7AQs6I/AAAAAAAAqz0/jTfaqDpPJpU/s1600/emonTH_boost.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="190" src="http://2.bp.blogspot.com/-F24gMHuHWNE/UpJuc7AQs6I/AAAAAAAAqz0/jTfaqDpPJpU/s320/emonTH_boost.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: small; text-align: start;">The emonTH comes pre assembled and has an on board DC-DC converter to increase battery life.</span></td></tr></tbody></table><br /><br /><br /><i><a href="http://shop.openenergymonitor.com/temperature-humidity-nodes/"><b>The emonTH is now available from the OpenEnergyMonitor shop.&nbsp;</b></a></i><br /><br /><h2>3. emonTx Arduino Shield SMT</h2><br /><i>Arduino compatible energy monitor shield add-on.&nbsp;</i><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-U_WzfZu9VWQ/UpJtv5FLqeI/AAAAAAAAqzg/s9h45y0epuQ/s1600/Sheild_SMT_Leonardo.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="221" src="http://3.bp.blogspot.com/-U_WzfZu9VWQ/UpJtv5FLqeI/AAAAAAAAqzg/s9h45y0epuQ/s320/Sheild_SMT_Leonardo.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx Shied SMT on Arduino Leonardo</td></tr></tbody></table><br />For prototyping and lab experiences an Arduino is a great tool to quickly try something. The emonTx Shield allows energy monitoring functions to be added to a standard Arduino Uno / Leonardo or Yun as well as a <a href="http://shop.openenergymonitor.com/nanoderf/">Nanode RF</a>. As with all our hardware units we provide as many software examples to help you get up and running. The emonTx Shield SMT uses Surface Mount (SMT) pre-assembled electronics. To keep costs down the through-hole components (headers and connectors) require manual solder assembly.<br /><br /><b><i><a href="http://shop.openenergymonitor.com/emontx-shield/">The emonTx Shield SMT is now available from the OpenEnergyMonitor shop.&nbsp;</a></i></b><br /><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/11/hardware-manufacture-begins-part-2/">Hardware Manufacture Begins! Part 2: emonTx V3 and emonTx Arduino Shield SMT</a>
   </h1>
   
@@ -489,46 +535,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/10/emonth-update-software-power/">emonTH Update - Software and Power Consumption</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-10-18T12:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-10-18 12:47:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/10/emonth-update-software-power/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Today I have spent some time writing the software for the emonTH. The goal for the emonTH is for it to last as long as possible from batteries (2 x AA's). The boost converter circuit as highlighted in my previous post will go someway to increasing battery life, however most gains in battery life will come from the software (ATmega328 Arduino sketch) .<br /><br />The emonTH supports both the DHT22 (humidity and temperature) and DS18B20 either onboard or remote temperature sensor. The default software will search for the presence of either sensor at startup. If both sensors are found it will return humidity from the DHT22 and temperature from the DS128B20. If only the DHT22 is found it will return both humidity and temperature readings from this sensor, finally if only the DS18B20 is found only temperature readings will be returned. In the future I would like to expand the code to support multiple DS18B20 sensors on the one-wire bus.<br /><br />I have implemented many of the power saving tricks as <a href="http://harizanov.com/2013/08/every-%CE%BCa-counts/">Martin Harizanov</a> has used in his <a href="https://github.com/mharizanov/new_Funky/blob/master/examples/Funky_DS18B20_plus_powersave/Funky_DS18B20_plus_powersave.ino">Funky Sensor code</a>, in particular the his&nbsp;<a href="http://harizanov.com/2013/07/optimizing-ds18b20-code-for-low-power-applications/">DS18B20 power saving tweaks</a>. Martin has done some great work optimising power and designing some very small low power nodes, his blog is well worth a read.<br /><br />The emonTH code (in beta) is now up on Github:&nbsp;<a href="https://github.com/openenergymonitor/emonth">https://github.com/openenergymonitor/emonth</a><br /><br />The power consumption results are as follows, assuming one reading is taken per min and using this <a href="http://oregonembedded.com/batterycalc.htm">battery estimation tool</a>&nbsp;assuming AA capacity of 2200mAh and not taking into account AA self-discharge*<br /><br /><h3>emonTH with DS18b20 temperature only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s1600/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s640/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DS18B20 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><i>Sleep Current:</i> 0.12mA<br /><i>On current: </i>9.7mA for 70ms then peaking to 26mA for 2.8ms for RFM12B transmission, giving average of 10.2mA for 9.8ms<br /><br /><i><u>Approximate battery life of 3.5 years*</u></i><br /><br /><h3>emonTH with DHT22 (temperature &amp; humidity) only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s1600/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s640/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DHT22 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><b><br /></b><i>Sleep Current: </i>0.12mA<br /><i>On current:&nbsp;</i>9.5mA for 1700ms then peaking to 26mA for 2.8 ms for RFM12B transmission giving average of 9.525mA for 1703ms<br /><br /><i><u>Approximate battery life of 1.1 years*</u></i><br /><b><br /></b> <br />*Stay tuned for the next post on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">AA battery considerations including how to deal with self-discharge issues</a>...
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -645,6 +651,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/08/summer-placement/">Summer Placement</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
@@ -694,12 +706,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
         </li>
       
     
@@ -927,6 +933,8 @@ window.onclick = function(event) {
       <li><a href="/categories/pcb/">pcb</a></li>
     
       <li><a href="/categories/pebble/">pebble</a></li>
+    
+      <li><a href="/categories/placement/">placement</a></li>
     
       <li><a href="/categories/platformio/">platformio</a></li>
     

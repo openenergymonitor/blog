@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2016/08/summer-placement/</loc>
+<lastmod>2016-08-30T18:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2016/08/ecohomelab-control/</loc>
 <lastmod>2016-08-12T18:00:00+00:00</lastmod>
 </url>
@@ -1826,6 +1830,9 @@
 <loc>https://blog.openenergymonitor.org/categories/ecohomelab/</loc>
 </url>
 <url>
+<loc>https://blog.openenergymonitor.org/categories/placement/</loc>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/posts/2/</loc>
 </url>
 <url>
@@ -1932,6 +1939,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2016-08-29T13:54:03+00:00</lastmod>
+<lastmod>2016-09-02T10:04:53+00:00</lastmod>
 </url>
 </urlset>
