@@ -4,7 +4,7 @@
   <title><![CDATA[Category: placement | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/placement/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-09-02T10:06:04+00:00</updated>
+  <updated>2016-09-02T10:43:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -15,42 +15,60 @@
   
   <entry>
     <title type="html"><![CDATA[Summer Placement]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/08/summer-placement/"/>
-    <updated>2016-08-30T18:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/08/summer-placement</id>
-    <content type="html"><![CDATA[<p>Hi! My name is Eben I’ve been working with OpenEnergyMonitor as part of a summer placement organised by <a href="http://www.arloesigwyneddwledig.com/">Arloesi Gwynedd Wledig</a>; a local project aimed at highlighting the local tech sector employment opportunities on Parc Menai the business park where we are located in North Wales, and the difficulties that they face, as well as the great perks of living in such a beautiful area.</p>
+    <link href="https://blog.openenergymonitor.org/2016/09/summer-placement/"/>
+    <updated>2016-09-01T09:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/09/summer-placement</id>
+    <content type="html"><![CDATA[<p>Hi! My name is Eben I’ve been working with OpenEnergyMonitor for the past 10 weeks as part of a summer placement organised by <a href="http://www.arloesigwyneddwledig.com/">Arloesi Gwynedd Wledig</a>; a local project aimed at highlighting the local tech sector employment opportunities on <a href="http://parcmenai.co.uk/">Parc Menai</a> the business park where we are located in North Wales, and the difficulties that they face, as well as the great perks of living in such a beautiful area.</p>
 
-<!--This is a comment!-->
+<p><img src="/images/eben.jpg" alt="image" /></p>
 
-<!--Insert photo of you e.g.-->
+<p>The scheme organised placements for four students in four seperate tech companies in Parc Menai. Here is a video with highlights the whole 10 week scheme:</p>
 
-<p>![<img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/r90/12321204_10207912968654511_3910132011624254171_n.jpg?oh=58a67605a670874c18e1f51d57621800&amp;oe=584F10A9" width="200" />]</p>
+<div class="videoWrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=N2v2a3ZJq0E" frameborder="0" allowfullscreen=""></iframe>
+</div>
 
-<p>##Me, and Gwynedd
-I am currently studying physics at Cardiff University, and originally hail from Dyffryn Nantlle. As you can probably tell by my failure to find a decent photo of myself doing anything else, I’m (like Glyn and Trystan)  a keen climber, and that’s been my primary reason for wanting to return to Gwynedd to work, with a long list of climbs in the Llanberis Pass, Ogwen Valley, and Tremadog, and more that I wanted to have a go at. It’s a great way to appreciate Gwynedd, in my opinion, and I even got to go climbing with Glyn.</p>
+<blockquote>
+  <p>Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.</p>
+</blockquote>
 
-<p>Check out the video here: https://www.youtube.com/watch?v=CzPMPY-I3_I A little cheesy, but we got to climb with drones filming, so that was pretty sweet.</p>
+<!--more-->
 
-<p>The other strong pull, for me, was the language; Cymraeg. I’ve spent two years now living and studying down in Cardiff, and the switch to the academic and leisure medium of English has been a little challenging, and it’s always amazing to come back to Gwynedd, and hear Welsh on the street and in the shop, and at home, and (at OpenEnergyMonitor) at the workplace as well. A lot of our culture is tied intimately to the language, and it’s been good to feel that again.</p>
+<h2 id="me-and-gwynedd">Me, and Gwynedd</h2>
 
-<p>##What I’ve been up to
-During my time at the company, I’ve learnt how to write basic software from scratch (I’ve only ever done experimental analysis using python previously) to Arduino boards and the ESP8266, my eyes have been opened to the possibilities of GitHub, and other resources. I’ve played around with adding a DHT22 sensor to the <a href="https://github.com/openenergymonitor/EmonESP/pull/7">ESP8266</a> and posted an example. I’ve also had the pleasure of working with Gwil on preparation and order fulfilment, which has been fun! Another interesting experience was the few times I visited the local electronics factory, <a href="http://www.dferrantigroup.com/pcb-population-test/">Denis Ferranti</a>  where the boards are all manufactured. It was really cool to see the manufacture process, and the quality of the equipment there, and great to know that OpenEnergyMonitor are able to source their PCB’s locally, for zero economic sacrifice.</p>
+<p><a href="https://en.wikipedia.org/wiki/Gwynedd">Gwynedd</a> is area that we live in North Wales. I am currently studying physics at Cardiff University, and originally from <a href="https://cy.wikipedia.org/wiki/Dyffryn_Nantlle">Dyffryn Nantlle</a>. As you can probably tell by my failure to find a decent photo of myself doing anything else, I’m (like Glyn and Trystan)  a keen climber, and that’s been my primary reason for wanting to return to Gwynedd to work, with a long list of climbs in the Llanberis Pass, Ogwen Valley, and Tremadog, and more that I wanted to have a go at. It’s a great way to appreciate Gwynedd, in my opinion, and I even got to go climbing with Glyn.</p>
 
-<p>Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.</p>
+<p>Check out the video here:</p>
 
-<p>##The Scheme
-Through the project that organised this placement opportunity, the four of us (all at different companies) were asked to come to a conclusion on the situation regarding tech jobs in Gwynedd, and the so-called ‘brain drain’, as the best and brightest graduates leave the area to embrace city life.</p>
+<div class="videoWrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CzPMPY-I3_I" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>It’s a little cheesy, but we got to climb with RC drones filming, so that was pretty sweet :-)</p>
+
+<p>The other strong pull, for me, was the Welsh language; <a href="https://en.wikipedia.org/wiki/Welsh_language">Cymraeg</a>. I’ve spent two years now living and studying down in Cardiff, and the switch to the academic and leisure medium of English has been a little challenging, and it’s always amazing to come back to Gwynedd, and hear Welsh on the street and in the shops, as well as at home, and in the OpenEnergyMonitor workplace. A lot of our culture is tied intimately to the language, and it’s been good to feel that again.</p>
+
+<h2 id="what-ive-been-up-to">What I’ve been up to</h2>
+
+<p>During my time at the company, I’ve learnt how to write basic software from scratch (I’ve only ever done experimental analysis using python previously) to Arduino boards and the ESP8266, my eyes have been opened to the possibilities of GitHub, and other resources. I’ve played around with adding a DHT22 sensor to the ESP8266 and <a href="https://github.com/openenergymonitor/EmonESP/pull/7">creating an DHT22 &gt; Emoncms example</a> which I contributed to the emonESP GitHub repository.</p>
+
+<p>I’ve also had the pleasure of working with Gwil on preparation and order fulfilment for the OpenEnergyMonitor shop, which has been fun!</p>
+
+<p>Another interesting experience was the few times I visited the local electronics factory, <a href="http://www.dferrantigroup.com/pcb-population-test/">Denis Ferranti</a>  where the boards are all manufactured. It was really cool to see the manufacturing process, and the quality of the equipment there. It’s great to know that OpenEnergyMonitor are able to manufacuture locally, which contributes to the local economy.</p>
+
+<h2 id="the-scheme">The Scheme</h2>
+
+<p>Through the project that organised this placement opportunity, the four of us students (all at different companies) were asked to come to a conclusion on the situation regarding tech jobs in Gwynedd, and the so-called ‘brain drain’, as the best and brightest graduates leave the area to embrace city life.</p>
 
 <p>The overall conclusion was that perceptions need to change. People overwhelmingly do not view Gwynedd as a place with lots of potential for tech jobs, but research has shown that the truth is the very opposite, with Parc Menai alone set to be the location of around 200 new jobs in the next few years. At a presentation at Pontio, at Bangor university, the four of us students reccomended modernisation of the school syllabus, a closer relationship between companies and schools, more grassroots tech events (a brilliant example of this sort of thing are the events held by <a href="https://www.facebook.com/NorthWalesTechnology/?fref=ts">North Wales Tech</a> (check them out!), and better utilisation of social media by companies looking for skilled graduates.</p>
 
 <p>I’d like to thank Glyn, Trystan, and Gwil for making this summer such an incredibly fun and rewarding one, as well as an extremely eye opening one. I’m sure the company has a huge future, and I for one will be following future products and developments with keen interest.</p>
 
-<p>Today is my last day, and it’s a little sad. I’m writing this blog but should probably stop and help Gwil with these EmonTH’s..</p>
+<p>Today is my last day, and it’s a little sad. I’m writing this blog but should probably stop and help Gwil assemble some more emonTH’s.. :-)</p>
 
 <p>Eben, out.</p>
 
-<p>ps. here’s an introduction video to the scheme I was a part of: www.youtube.com/watch?v=RJxHQBpLgWk, and highlights video of the whole 10 week scheme: https://www.youtube.com/watch?v=N2v2a3ZJq0E
-There also will soon be footage of the Dennis Ferranti factory we visited, I will post it here as soon as it arrives!
+<p>There also will soon be footage of the Dennis Ferranti factory we visited, I will post it here as soon as it arrives!
 Thanks for reading!</p>
 
 ]]></content>
