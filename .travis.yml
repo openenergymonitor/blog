@@ -2,7 +2,7 @@ language: ruby
 sudo: false
 cache: bundler
 script: bundle exec rake generate
-after_success: bundle exec rake deploy
+after_success:
 - '[ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec rake deploy || false'
 env:
   global:
