@@ -17,7 +17,7 @@ Hi! My name is Eben I've been working with OpenEnergyMonitor for the past 10 wee
 The scheme organised placements for four students in four seperate tech companies in Parc Menai. Here is a video with highlights the whole 10 week scheme:
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=N2v2a3ZJq0E" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N2v2a3ZJq0E" frameborder="0" allowfullscreen></iframe>
 </div>
 
 >Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.
@@ -31,8 +31,9 @@ The scheme organised placements for four students in four seperate tech companie
 Check out the video here:
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CzPMPY-I3_I" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CzPMPY-I3_I" frameborder="0" allowfullscreen></iframe>
 </div>
+
 
 It's a little cheesy, but we got to climb with RC drones filming, so that was pretty sweet :-)
 
