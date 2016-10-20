@@ -4,7 +4,7 @@
   <title><![CDATA[Category: travisci | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/travisci/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-10-20T23:46:50+00:00</updated>
+  <updated>2016-10-20T23:48:20+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -311,20 +311,18 @@ cd emonpi/firmware
 
 <p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
 
-<p>The first time platformIO is run it will ask to install the required libraries  and avr toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
+<p>The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
 
 <p>e.g.</p>
 
-<p><code class="highlighter-rouge">lib_install = 19,54,116,252</code></p>
-
-<p>These numbers reference the Arduino libraries in the <a href="http://platformio.org/lib">pio library manager</a>:</p>
-
-<ul>
-  <li>19: DHT22</li>
-  <li>54: Dallas Temperature</li>
-  <li>116: emonLib</li>
-  <li>252: JeeLib</li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps_external =
+  DHT sensor library @1.2.3
+  DallasTemperature @3.7.7
+  EmonLib
+  JeeLib@c057b5f4c0
+  LiquidCrystal_I2C @4bb48bd648
+</code></pre>
+</div>
 
 <p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">~/platformio</code> folder.</p>
 
