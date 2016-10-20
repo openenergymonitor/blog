@@ -8,6 +8,8 @@ comments: true
 categories: github
 ---
 
+**Update: PlatformIO does library management much better then git-submodules, we have switched to using PatformIO to manage library dependencies, [see blog posts](http://blog.openenergymonitor.org/2016/06/platformio/) **
+
 Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.
 
 Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.
