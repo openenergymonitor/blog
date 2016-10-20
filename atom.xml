@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-10-17T10:14:08+00:00</updated>
+  <updated>2016-10-20T23:45:59+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -1186,7 +1186,9 @@ An electric car achieving a real world mountainous north Wales terrain driving e
     <link href="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
     <updated>2016-04-18T15:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
-    <content type="html"><![CDATA[<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
+    <content type="html"><![CDATA[<p>**Update: PlatformIO does library management much better then git-submodules, we have switched to using PatformIO to manage library dependencies, <a href="http://blog.openenergymonitor.org/2016/06/platformio/">see blog posts</a> **</p>
+
+<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
 
 <p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
 
