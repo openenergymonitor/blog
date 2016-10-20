@@ -114,18 +114,18 @@ or shorthand for the lazy
 
 **That's it!** That's all that's needed to setup pio from scratch and compile emonTx firmware :-D
 
-The first time platformIO is run it will ask to install the required libraries  and avr toolchain. The required libraries are defined in [`platformio.ini` in the emonTx discrete sampling firmware folder](https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini):
+The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in [`platformio.ini` in the emonTx discrete sampling firmware folder](https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini):
 
 e.g.
 
-`lib_install = 19,54,116,252`
-
-These numbers reference the Arduino libraries in the [pio library manager](http://platformio.org/lib):
-
-- 19: DHT22
-- 54: Dallas Temperature
-- 116: emonLib
-- 252: JeeLib
+```
+lib_deps_external =
+  DHT sensor library @1.2.3
+  DallasTemperature @3.7.7
+  EmonLib
+  JeeLib@c057b5f4c0
+  LiquidCrystal_I2C @4bb48bd648
+```
 
 The latest version of the libraries are automatically cloned from their native git repos into the `~/platformio` folder.
 
