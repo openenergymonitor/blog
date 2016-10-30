@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Electrical Supply Line Vault"
+title: "Electrical Supply Line Fault"
 date: "2016-06-03 10:00"
 date_formatted: June 3rd 2016
 author: Glyn Hudson
