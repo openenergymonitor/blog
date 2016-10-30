@@ -45,11 +45,15 @@ The metrics speak for themselves:
 | Time sleeping per day* | 86386s          ||  83600s        | |
 | Energy consumed per day* | 2.36mW [1]    ||  2836mW [2]    | 1201 times less energy per day!  |
 
-*-energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)*  
-*-charge (coulomb, C) = current (ampere, A) × time (second, s) 
-*-energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s)* 
-
 <!--more-->
+
+```
+energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)  
+charge (coulomb, C) = current (ampere, A) × time (second, s) 
+energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s) 
+```
+
+
 
 *Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a [sub-repository of the emonTH](https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d) for full calculations.
 
