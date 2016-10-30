@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-10-30T19:36:07+00:00</updated>
+  <updated>2016-10-30T19:38:01+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -233,11 +233,13 @@ Thanks for reading!</p>
   </tbody>
 </table>
 
-<p><em>-energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)</em><br />
-<em>-charge (coulomb, C) = current (ampere, A) × time (second, s) 
-*-energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s)</em></p>
-
 <!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)  
+charge (coulomb, C) = current (ampere, A) × time (second, s) 
+energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s) 
+</code></pre>
+</div>
 
 <p>*Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a <a href="https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d">sub-repository of the emonTH</a> for full calculations.</p>
 
