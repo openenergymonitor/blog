@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTU21D | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/htu21d/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-10-30T19:23:54+00:00</updated>
+  <updated>2016-10-30T19:36:07+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -109,10 +109,10 @@
     </tr>
     <tr>
       <td>Energy consumed per sample</td>
-      <td>0.00045mW</td>
-      <td> </td>
-      <td>1mW</td>
-      <td>2222 times less power</td>
+      <td>1.5uJ</td>
+      <td>2.97uJ</td>
+      <td>3300uJ</td>
+      <td>2000 times less power</td>
     </tr>
     <tr>
       <td>Time sampling per day*</td>
@@ -137,6 +137,10 @@
     </tr>
   </tbody>
 </table>
+
+<p><em>-energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)</em><br />
+<em>-charge (coulomb, C) = current (ampere, A) × time (second, s) 
+*-energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s)</em></p>
 
 <!--more-->
 
