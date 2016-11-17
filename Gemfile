@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 group :development do
   gem 'rake', '~> 10.5.0'
-  gem 'jekyll', '~> 3.0'
+  gem 'jekyll', '~> 3.1.3'
   gem 'pygments.rb', '~> 0.6.3'
   gem 'rdiscount', '~> 2.0'
   gem 'RedCloth', '~> 4.2.9'
@@ -22,8 +22,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-sitemap'
   gem 'jekyll-time-to-read'
-  gem 'jekyll-feed'
-  gem 'octopress', '~> 3.0'
+  gem 'octopress', '~> 3.0.11'
   gem 'octopress-filters'
   gem 'octopress-include-tag'
 end

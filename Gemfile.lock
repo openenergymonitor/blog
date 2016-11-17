@@ -23,7 +23,6 @@ GEM
       mercenary (~> 0.3.3)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-feed (0.4.0)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.3.0)
       sass (~> 3.2)
@@ -107,12 +106,11 @@ DEPENDENCIES
   compass (~> 0.12.2)
   execjs
   haml (~> 4.0)
-  jekyll (~> 3.0)
-  jekyll-feed
+  jekyll (~> 3.1.3)
   jekyll-paginate
   jekyll-sitemap
   jekyll-time-to-read
-  octopress (~> 3.0)
+  octopress (~> 3.0.11)
   octopress-filters
   octopress-include-tag
   pygments.rb (~> 0.6.3)
@@ -127,4 +125,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   1.11.2
+   1.13.5
