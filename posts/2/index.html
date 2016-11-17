@@ -107,6 +107,76 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-05-20T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 10th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/emonsd/'>emonSD</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/05/emonsd-update-03may16/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
+
+<blockquote>
+  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
+</blockquote>
+
+<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
+
+<hr />
+
+<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
+
+<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
+
+<ul>
+  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
+  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
+  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
+</ul>
+
+
+    
+      <a class="btn pull-right" href="/2016/05/emonsd-update-03may16/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/05/emonpi-raspberrypi3/">emonPi / emonBase Raspberry Pi 3</a>
   </h1>
   
@@ -567,58 +637,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-02-29T19:08:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2016-02-29 19:08:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/mqtt/'>MQTT</a></li>
-      
-        <li><a class='category' href='/categories/nodered/'>NodeRed</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/temperature/'>temperature</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/02/outdoor-temperature-data-from-weather/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Monitoring the temperature outside your house is super useful to inform your home automation systems and calculate domestic heating (and dressing!) requirements.<br /><br />One way is to monitor external temperature is to install your own external <a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">emonTH wireless temperature node</a> or use a commercial web-connected weather station. However a cheaper way is to tap into the Internet of Things and connect to another weather station in your area. &nbsp;<a href="https://www.wunderground.com/weather/api/">Weather Underground</a> have over 18K weather stations online in the USA and a <a href="https://www.wunderground.com/weather/api/">free API</a> for non commercial use.<br /><br />Here's an example of using nodeRED to poll the Weather Underground API and post to Emoncms (using <a href="http://flows.nodered.org/node/node-red-node-emoncms">nodeRED Emoncms flow</a>) and MQTT.
-
-
-
-
-    
-      <a class="btn pull-right" href="/2016/02/outdoor-temperature-data-from-weather/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -691,7 +709,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   <div id="myDropdown" class="dropdown-content">
     <a href="https://openenergymonitor.org/"><i class="icon-globe" style="color:#FFA500"></i>&nbsp;&nbsp;Main Site</a>
     <a href="https://guide.openenergymonitor.org/"><i class="icon-bookmark"  style="color:#FFA500"></i>&nbsp;&nbsp;User Guide</a>
-    <a href="https://shop.openenergymonitor.org/"><i class="icon-shopping-cart"  style="color:#FFA500"></i>&nbsp;&nbsp;Shop</a>
+    <a href="https://shop.openenergymonitor.com/"><i class="icon-shopping-cart"  style="color:#FFA500"></i>&nbsp;&nbsp;Shop</a>
     <a href="https://community.openenergymonitor.org/"><i class="icon-comment" style="color:#FFA500"></i>&nbsp;&nbsp;Community</a>
     <a href="https://guide.openenergymonitor.org/technical/resources/"><i class="icon-book"  style="color:#FFA500"></i>&nbsp;&nbsp;Resources</a>
     <a href="https://twitter.com/Openenergymon/"><i class="icon-twitter"  style="color:#FFA500"></i>&nbsp;&nbsp;Twitter</a>
@@ -732,6 +750,12 @@ window.onclick = function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
+        </li>
+      
     
       
         <li class="post">
@@ -784,12 +808,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
         </li>
       
     
