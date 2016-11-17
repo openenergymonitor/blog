@@ -22,6 +22,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-sitemap'
   gem 'jekyll-time-to-read'
+  gem 'jekyll-feed'
   gem 'octopress', '~> 3.0.11'
   gem 'octopress-filters'
   gem 'octopress-include-tag'
