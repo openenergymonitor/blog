@@ -107,173 +107,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
-    <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-09-20T09:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Nov 20th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/09/emonth2/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>The emonTH V2 is an update to the popular emonTH loe wireless temperature and humidity node.</p>
-
-<p>The emonTH V2 replaces the DHT22 sensor with a <strong>Si7021</strong> temperature and humidty sensor. The Si7021 is more accurate and significnatly lower power then the DHT22. This will result in the emonTH battery life increasing from 10 months to several years! The Si7021 is also <em>much</em> smaller than the DHT22.</p>
-
-<p>See DHT22 VS Si7021 comparison table</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th><a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a></th>
-      <th><a href="https://octopart.com/si7021-a20-im-silicon+labs-52675246">Si72021</a></th>
-      <th>DHT22</th>
-      <th>DHT22 vs HTU21D Difference</th>
-      <th><a href="https://octopart.com/bme280-bosch-52931981">BME280</a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cost in 1k off</td>
-      <td>£1.42 (July16)</td>
-      <td>£2.15</td>
-      <td>£4.57 (July16)</td>
-      <td>3.2 times cheaper (£3.15 less!)</td>
-      <td>£3.07</td>
-    </tr>
-    <tr>
-      <td>Vcc</td>
-      <td>2.1v - 3.6V</td>
-      <td>1.9V - 3.6V</td>
-      <td>3.3-6V</td>
-      <td> </td>
-      <td>1.71 V - 3.6V</td>
-    </tr>
-    <tr>
-      <td>Humidity accuracy</td>
-      <td>±2% RH</td>
-      <td>±2% RH</td>
-      <td>±2%RH</td>
-      <td>n/a</td>
-      <td>±3%RH</td>
-    </tr>
-    <tr>
-      <td>Humidity Range</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>n/a</td>
-      <td>0-100% RH</td>
-    </tr>
-    <tr>
-      <td>Temperature accuracy</td>
-      <td>±0.3°C</td>
-      <td>±0.4°C</td>
-      <td>±0.5°C</td>
-      <td>40% more accurate</td>
-      <td>±0.5 - ±1.0</td>
-    </tr>
-    <tr>
-      <td>Temperature Range</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +80°C</td>
-      <td>56% more accurate</td>
-      <td>-40°C +80°C</td>
-    </tr>
-    <tr>
-      <td>Sleep Current</td>
-      <td>0.02uA</td>
-      <td>0.06uA</td>
-      <td>15uA</td>
-      <td>750 times less power</td>
-      <td>0.1uA - 0.3uA</td>
-    </tr>
-    <tr>
-      <td>Measurement Current</td>
-      <td>0.045mA</td>
-      <td>0.09 mA</td>
-      <td>0.5mA</td>
-      <td>11 times less power</td>
-      <td>0.714mA - 0.350mA</td>
-    </tr>
-    <tr>
-      <td>Measurement time</td>
-      <td>0.01s - 0.0026s</td>
-      <td>0.01s - 0.0026s</td>
-      <td>2s</td>
-      <td>200 times faster</td>
-      <td>0.013s</td>
-    </tr>
-    <tr>
-      <td>Energy consumed per sample</td>
-      <td>1.5uJ</td>
-      <td>2.97uJ</td>
-      <td>3300uJ</td>
-      <td>2000 times less power</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sampling per day*</td>
-      <td>14.4s</td>
-      <td> </td>
-      <td>2800s</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sleeping per day*</td>
-      <td>86386s</td>
-      <td> </td>
-      <td>83600s</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Energy consumed per day*</td>
-      <td>7.8mJ [1]</td>
-      <td> </td>
-      <td>8700mJ [2]</td>
-      <td>1115 times less energy per day!</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-      <a class="btn pull-right" href="/2016/09/emonth2/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/2016/09/summer-placement/">Summer Placement</a>
   </h1>
   
@@ -988,6 +821,76 @@ $ docker-compose up
   </article>
   <hr>
   
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-05-20T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 10th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+        <li><a class='category' href='/categories/emonsd/'>emonSD</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/05/emonsd-update-03may16/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
+
+<blockquote>
+  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
+</blockquote>
+
+<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
+
+<hr />
+
+<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
+
+<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
+
+<ul>
+  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
+  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
+  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
+</ul>
+
+
+    
+      <a class="btn pull-right" href="/2016/05/emonsd-update-03may16/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
  
   <div class="pagination">
     
@@ -1102,12 +1005,6 @@ window.onclick = function(event) {
     
       
         <li class="post">
-          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
@@ -1157,6 +1054,12 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
         </li>
       
     

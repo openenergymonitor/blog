@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-11-17T00:25:40+00:00</updated>
+  <updated>2016-11-20T23:24:39+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,140 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Introducing emonTH V2]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/09/emonth2/"/>
-    <updated>2016-09-20T09:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/09/emonth2</id>
-    <content type="html"><![CDATA[<p>The emonTH V2 is an update to the popular emonTH loe wireless temperature and humidity node.</p>
-
-<p>The emonTH V2 replaces the DHT22 sensor with a <strong>Si7021</strong> temperature and humidty sensor. The Si7021 is more accurate and significnatly lower power then the DHT22. This will result in the emonTH battery life increasing from 10 months to several years! The Si7021 is also <em>much</em> smaller than the DHT22.</p>
-
-<p>See DHT22 VS Si7021 comparison table</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th><a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a></th>
-      <th><a href="https://octopart.com/si7021-a20-im-silicon+labs-52675246">Si72021</a></th>
-      <th>DHT22</th>
-      <th>DHT22 vs HTU21D Difference</th>
-      <th><a href="https://octopart.com/bme280-bosch-52931981">BME280</a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cost in 1k off</td>
-      <td>£1.42 (July16)</td>
-      <td>£2.15</td>
-      <td>£4.57 (July16)</td>
-      <td>3.2 times cheaper (£3.15 less!)</td>
-      <td>£3.07</td>
-    </tr>
-    <tr>
-      <td>Vcc</td>
-      <td>2.1v - 3.6V</td>
-      <td>1.9V - 3.6V</td>
-      <td>3.3-6V</td>
-      <td> </td>
-      <td>1.71 V - 3.6V</td>
-    </tr>
-    <tr>
-      <td>Humidity accuracy</td>
-      <td>±2% RH</td>
-      <td>±2% RH</td>
-      <td>±2%RH</td>
-      <td>n/a</td>
-      <td>±3%RH</td>
-    </tr>
-    <tr>
-      <td>Humidity Range</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>n/a</td>
-      <td>0-100% RH</td>
-    </tr>
-    <tr>
-      <td>Temperature accuracy</td>
-      <td>±0.3°C</td>
-      <td>±0.4°C</td>
-      <td>±0.5°C</td>
-      <td>40% more accurate</td>
-      <td>±0.5 - ±1.0</td>
-    </tr>
-    <tr>
-      <td>Temperature Range</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +80°C</td>
-      <td>56% more accurate</td>
-      <td>-40°C +80°C</td>
-    </tr>
-    <tr>
-      <td>Sleep Current</td>
-      <td>0.02uA</td>
-      <td>0.06uA</td>
-      <td>15uA</td>
-      <td>750 times less power</td>
-      <td>0.1uA - 0.3uA</td>
-    </tr>
-    <tr>
-      <td>Measurement Current</td>
-      <td>0.045mA</td>
-      <td>0.09 mA</td>
-      <td>0.5mA</td>
-      <td>11 times less power</td>
-      <td>0.714mA - 0.350mA</td>
-    </tr>
-    <tr>
-      <td>Measurement time</td>
-      <td>0.01s - 0.0026s</td>
-      <td>0.01s - 0.0026s</td>
-      <td>2s</td>
-      <td>200 times faster</td>
-      <td>0.013s</td>
-    </tr>
-    <tr>
-      <td>Energy consumed per sample</td>
-      <td>1.5uJ</td>
-      <td>2.97uJ</td>
-      <td>3300uJ</td>
-      <td>2000 times less power</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sampling per day*</td>
-      <td>14.4s</td>
-      <td> </td>
-      <td>2800s</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sleeping per day*</td>
-      <td>86386s</td>
-      <td> </td>
-      <td>83600s</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Energy consumed per day*</td>
-      <td>7.8mJ [1]</td>
-      <td> </td>
-      <td>8700mJ [2]</td>
-      <td>1115 times less energy per day!</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<!--more-->
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Summer Placement]]></title>
@@ -1420,6 +1286,18 @@ Update: Follow </a><a href="https://www.raspberrypi.org/forums/viewtopic.php?f=2
 <br>
 <br>
 ]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Outdoor Temperature Data from Weather Underground to Emoncms & MQTT]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/"/>
+    <updated>2016-02-29T19:08:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather</id>
+    <content type="html"><![CDATA[Monitoring the temperature outside your house is super useful to inform your home automation systems and calculate domestic heating (and dressing!) requirements.<br /><br />One way is to monitor external temperature is to install your own external <a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">emonTH wireless temperature node</a> or use a commercial web-connected weather station. However a cheaper way is to tap into the Internet of Things and connect to another weather station in your area. &nbsp;<a href="https://www.wunderground.com/weather/api/">Weather Underground</a> have over 18K weather stations online in the USA and a <a href="https://www.wunderground.com/weather/api/">free API</a> for non commercial use.<br /><br />Here's an example of using nodeRED to poll the Weather Underground API and post to Emoncms (using <a href="http://flows.nodered.org/node/node-red-node-emoncms">nodeRED Emoncms flow</a>) and MQTT.
+
+<!--more-->
+
+&nbsp;See bottom of the post for nodeRED flow export which you can import into your nodeRED by pasting into the import box.<br /><br />NodRED included pre-installed on <a href="https://openenergymonitor.org/emon/node/12212">the latest emonPi image (currently in release-candidate)</a>. The Emoncms flow is pre-installed, you will need to add the <a href="http://flows.nodered.org/node/node-red-node-weather-underground">nodeRED Weather Underground</a> flow by connecting via SSH and running :<br /><br />$ rpi-rw<br />$ cd ~/data/node-red<br />$ sudo npm install node-red-node-weather-underground<br />$ rpi-rw<br />$ exit<br /><br />Once installed you will need to paste in your API key and latitude and longitude (or city) into the Weather Underground node.<br /><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="https://2.bp.blogspot.com/-mZJm0O0-xZM/VtSO8FO7O-I/AAAAAAABpIA/9wzoEv7Pz54/s1600/capture%2Bimage.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="290" src="https://2.bp.blogspot.com/-mZJm0O0-xZM/VtSO8FO7O-I/AAAAAAABpIA/9wzoEv7Pz54/s640/capture%2Bimage.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Example NodeRED flow pulling temperature data from Weather Underground to Emoncms and MQTT</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="https://4.bp.blogspot.com/-Q4L4K6rrVkY/VtSSuTC03sI/AAAAAAABpIQ/hXwY9yTgj-A/s1600/capture%2Bimage2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="224" src="https://4.bp.blogspot.com/-Q4L4K6rrVkY/VtSSuTC03sI/AAAAAAABpIQ/hXwY9yTgj-A/s640/capture%2Bimage2.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms Internal &amp; External Temperature Multigraph</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="https://3.bp.blogspot.com/-WQkcdh5STpY/VtSVU6WGhAI/AAAAAAABpIc/eWEaw8v0jj8/s1600/capture%2Bimage3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://3.bp.blogspot.com/-WQkcdh5STpY/VtSVU6WGhAI/AAAAAAABpIc/eWEaw8v0jj8/s640/capture%2Bimage3.png" width="304" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">My openHAB dashboard displaying outdoor temperature and emonPi data from MQTT</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Example nodeRED flow:&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><span style="font-size: x-small;"><br /></span></div><div style="clear: both; text-align: left;"><span style="font-size: x-small;">[{"id":"14e3d598.a7352a","type":"emoncms-server","z":"4cd40f47.6c38f","server":"http://192.168.0.35/emoncms","name":"emonpi"},{"id":"286b0130.d794fe","type":"mqtt-broker","z":"","broker":"192.168.0.35","port":"1883","clientid":"","usetls":false,"verifyservercert":true,"compatmode":true,"keepalive":"15","cleansession":true,"willTopic":"","willQos":"0","willRetain":null,"willPayload":"","birthTopic":"","birthQos":"0","birthRetain":null,"birthPayload":""},{"id":"8e40f136.25c8c","type":"inject","z":"4cd40f47.6c38f","name":"Poke every 30min","topic":"","payload":"","payloadType":"str","repeat":"1800","crontab":"","once":true,"x":293.33331298828125,"y":616.3333740234375,"wires":[["801e0088.7a2eb"]]},{"id":"1d8fc53b.c7453b","type":"mqtt out","z":"4cd40f47.6c38f","name":"MQTT: weather/temp","topic":"weather/temp","qos":"","retain":"","broker":"286b0130.d794fe","x":840,"y":479,"wires":[]},{"id":"9dfe39d9.afac48","type":"debug","z":"4cd40f47.6c38f","name":"","active":true,"console":"false","complete":"payload","x":772,"y":395,"wires":[]},{"id":"c647a520.c30618","type":"debug","z":"4cd40f47.6c38f","name":"View full output","active":true,"console":"false","complete":"payload","x":581.3333129882812,"y":589.3333740234375,"wires":[]},{"id":"17551590.ce038a","type":"function","z":"4cd40f47.6c38f","name":"Return temp deg C","func":"context.global.outdoor_temp = msg.payload.tempc; &nbsp;\nreturn {payload:context.global.outdoor_temp};","outputs":1,"noerr":0,"x":533.3333129882812,"y":454.3333435058594,"wires":[["1d8fc53b.c7453b","9dfe39d9.afac48","50f404a6.f89bac"]]},{"id":"801e0088.7a2eb","type":"wunderground","z":"4cd40f47.6c38f","name":"","lon":"-4.1716485","lat":"53.1429426","city":"","country":"","x":321,"y":529,"wires":[["17551590.ce038a","c647a520.c30618"]]},{"id":"50f404a6.f89bac","type":"emoncms","z":"4cd40f47.6c38f","name":"Emoncms","emonServer":"14e3d598.a7352a","nodegroup":"weather","x":800,"y":539,"wires":[]}]</span></div>]]></content>
   </entry>
   
 </feed>
