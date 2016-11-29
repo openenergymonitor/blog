@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonTH | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonth/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2016-11-29T13:17:31+00:00</updated>
+  <updated>2016-11-29T23:55:38+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing emonTH V2]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/09/emonth2/"/>
+    <updated>2016-09-29T09:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/09/emonth2</id>
+    <content type="html"><![CDATA[<p>The emonTH V2 is an open-source, wireless, battery-powered temperature and humidity monitoring node.</p>
+
+<p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years. The Si7021 is also <em>much</em> smaller than the DHT22.</p>
+
+<p><img src="/images/emonth2.jpg" alt="emonTH V2" /></p>
+
+<p>The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.</p>
+
+<p><strong><a href="https://shop.openenergymonitor.com/emonth-temperature-humidity-node/">The emonTH V2 is now shipping via our online shop</a></strong></p>
+
+<p>As with all our hardware units the emonTH V2 is <a href="https://github.com/openenergymonitor/emonth2">fully open-source</a> and manufactured locally in North Wales, UK using non-conflict materials lead-free processes.</p>
+
+<!--more-->
+
+<h3 id="emonth-v2-features">emonTH V2 Features</h3>
+
+<ul>
+  <li>Microcontroller: Arduino compatible ATmega328p</li>
+  <li>Internal Sensor: Si7021 (internal temperature &amp; Humidity)</li>
+  <li>External Sensor (OPTIONAL): DS18B20 external temperature sensor. See hardware wiki for connections</li>
+  <li>Power: 2 x AA from onboard holder, LTC3525 3.3V DC-DC boost converter to extend battery life</li>
+  <li>RF Radio: RFM69CW 433Mhz</li>
+</ul>
+
+<h3 id="si7021-temperature--humidity-sensor">Si7021 Temperature &amp; Humidity Sensor</h3>
+
+<ul>
+  <li>Silicon Labs SI7021-A20-GM1R</li>
+  <li>Power supply 1.9V - 3.6V</li>
+  <li>Operating range humidity 0-80%RH; temperature -40~125 deg C</li>
+  <li>Accuracy humidity +-3%RH</li>
+  <li>Accuracy Temperature: +-0.4 degC</li>
+  <li>Active current: 150uA</li>
+  <li>Sleep current 0.06uA</li>
+  <li>Measurement time: 2.6ms = 10ms</li>
+</ul>
+
+<p>See <a href="https://github.com/openenergymonitor/emonth2/tree/master/sensor">DHT22 VS Si7021 technical comparison table</a></p>
+
+<ul>
+  <li><a href="https://github.com/openenergymonitor/emonth2">emonTH V2 GitHub</a> (open-hardware &amp; software)</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTU21D / Si72021 Temperature and Humidity Sensor]]></title>
@@ -191,32 +242,6 @@ energy consumed (joule, J)  = potential difference (volt, V) × current (ampere,
     <updated>2015-05-11T13:59:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2015/05/introducing-emonth-v15</id>
     <content type="html"><![CDATA[<p>The emonTH Temperature and Humidity wireless sensing room node is back in stock in the shop today with an updated version to V1.5.<br /><br /><a href="http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/">http://shop.openenergymonitor.com/emonth-433mhz-temperature-humidity-node/</a><br /><br />V1.5 is a minor hardware update adds support for <a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">RFM69CW</a> radio and includes a DIP -switch which allows setting four RF node ID’s (19-22) easily and quickly. <a href="http://wiki.openenergymonitor.org/index.php/EmonTH_V1.5#DIP_Switch_node_ID">See emonTH wiki for updated documentation</a><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-ssubwpabD_I/VVC0lmHVdRI/AAAAAAABIdc/P3NanJAr2WY/s1600/IMG_7496.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="348" src="http://3.bp.blogspot.com/-ssubwpabD_I/VVC0lmHVdRI/AAAAAAABIdc/P3NanJAr2WY/s400/IMG_7496.jpg" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTH V1.5 with DT22 Temperature and Humidity Sensor&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table cellpadding="0" cellspacing="0" class="tr-caption-container" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-c43pUNU0Z2Y/VVC0ltK_4MI/AAAAAAABIdg/qRDmVltkOvA/s1600/IMG_7494.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="361" src="http://3.bp.blogspot.com/-c43pUNU0Z2Y/VVC0ltK_4MI/AAAAAAABIdg/qRDmVltkOvA/s400/IMG_7494.jpg" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonTH V1.5 with RF node ID DIP switch and RFM69CW&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEXA/ZZA1WQO3imI/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="425" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEXA/ZZA1WQO3imI/s640/IMG_5000.JPG" width="640" /></a>&lt;/div&gt;<br /><br /><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;<br /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Real World emonTH Battery Life ]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/02/real-world-emonth-battery-life/"/>
-    <updated>2015-02-27T10:07:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/02/real-world-emonth-battery-life</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" height="266" width="400" /></a></div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;">The battery on my home <a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">emonTH Temperature &amp; Humidity Node</a> has just died for the second time in 14 months. Each set of batteries lasted exactly 221 days (7 months and 9 days)! The 2 x AA alkaline battery voltage started at 3.1V and the emonTH stopped working just after the voltage dropped below 1.2V (final dying breath was at a battery voltage of 0.8V!). &nbsp;The two AA batteries installed were low cost alkaline batteries <a href="http://www.espares.co.uk/product/es1660092/espares-ultra-alkaline-aa-batteries---pack-of?ApplianceTypeId=1090&amp;ManufacturerId=596">unbranded from e-spares</a>. Battery life would not doubt be longer from some quality cells.&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;">I recommend using rechargeable alkaline batteries if possible in the emonTH, for least environmental impact. See my previous posts on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">emonTH battery selection</a> and <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">power consumption optimisation</a>.&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;">My emonTH had a DHT22 temperature and humidity sensor connected and was set to the default post rate of one minute in-between samples. The unit was running V1.0 firmware (the firmware is now at V1.2, there have been a couple of minor battery life improvements).&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;">It's very impressive how the DC-DC boost converter onboard the emonTH continues to boost the depleting battery voltage to 3.3V, using this method allows the battery to be drained much further than powering the unit directly.&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" height="356" width="640" /></a></div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="separator" style="clear: both; text-align: center;"></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" height="300" width="640" /></a></div>
-<p><br /><br /></p>
 ]]></content>
   </entry>
   

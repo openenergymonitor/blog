@@ -107,6 +107,60 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-09-29T09:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Nov 29th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/09/emonth2/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>The emonTH V2 is an open-source, wireless, battery-powered temperature and humidity monitoring node.</p>
+
+<p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years. The Si7021 is also <em>much</em> smaller than the DHT22.</p>
+
+<p><img src="/images/emonth2.jpg" alt="emonTH V2" /></p>
+
+<p>The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.</p>
+
+<p><strong><a href="https://shop.openenergymonitor.com/emonth-temperature-humidity-node/">The emonTH V2 is now shipping via our online shop</a></strong></p>
+
+<p>As with all our hardware units the emonTH V2 is <a href="https://github.com/openenergymonitor/emonth2">fully open-source</a> and manufactured locally in North Wales, UK using non-conflict materials lead-free processes.</p>
+
+
+    
+      <a class="btn pull-right" href="/2016/09/emonth2/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/09/summer-placement/">Summer Placement</a>
   </h1>
   
@@ -821,76 +875,6 @@ $ docker-compose up
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-05-20T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 10th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
-      
-        <li><a class='category' href='/categories/emonsd/'>emonSD</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/05/emonsd-update-03may16/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
-
-<blockquote>
-  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
-</blockquote>
-
-<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
-
-<hr />
-
-<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
-
-<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
-
-<ul>
-  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
-  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
-  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
-</ul>
-
-
-    
-      <a class="btn pull-right" href="/2016/05/emonsd-update-03may16/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -1005,6 +989,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
@@ -1054,12 +1044,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
         </li>
       
     

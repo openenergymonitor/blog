@@ -107,6 +107,48 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2012/08/reading-watt-hour-data-from-elster/">Reading Watt-hour data from an Elster A100C electricity meter using IrDA by Dave Berkeley part 2</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-27T11:02:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-27 11:02:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/pluse/'>pluse</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/08/reading-watt-hour-data-from-elster/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><div style="text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-O6Rbpza8DRI/UDtMZHQNG7I/AAAAAAAACeo/i6Xx0PCuLdo/s1600/IMAG0876.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-O6Rbpza8DRI/UDtMZHQNG7I/AAAAAAAACeo/i6Xx0PCuLdo/s1600/IMAG0876.jpg" /></a></div><br /><br />As mentioned <a href="http://openenergymonitor.blogspot.co.uk/2012/07/reading-watt-hour-data-from-elster.html">before</a> if you have an Elster meter this is a fantastic way to read the exact accumulated watt hours that you have generated or used and can compliment and cross check a CT based measurement.<br /><br />Dave Berkeley has now packaged the code into a nice library which makes it really easy to use. We have uploaded the library to a repository on github here:&nbsp;<a href="https://github.com/openenergymonitor/ElsterMeterReader">https://github.com/openenergymonitor/ElsterMeterReader</a><br /><br /><b>How to build it</b><br /><b><br /></b>1) To build the <a href="http://shop.openenergymonitor.com/tsl261r-ir-sensor-kit/">TSL261R</a> based sensor for use with the emontx, follow the jack plug connection diagram on the emontx reference page here:&nbsp;<a href="http://openenergymonitor.org/emon/emontx/reference%20">http://openenergymonitor.org/emon/emontx/reference</a><br /><br />We've put together a small kit <a href="http://shop.openenergymonitor.com/tsl261r-ir-sensor-kit/">available in the shop</a> of all the components needed to connect it to an emontx including the TSL261R a male 3.5mm jack, 1m of cable and heat-shrink.<br /><br />2) Plug the sensor into the pulse input on the emontx (digital pin 3,&nbsp;interrupt&nbsp;pin 1)<br /><br />3) Download the ElsterMeterReader library and place in the arduino libraries folder.<br /><br />4) Open the Arduino IDE and run the following example:<br /><br /><pre>#include&nbsp;<span style="color: #006699;">"elster.h"</span><br /><br /><span style="color: #cc6600;">void</span> meter_reading(<span style="color: #cc6600;">unsigned</span> <span style="color: #cc6600;">long</span> r)<br />{<br />&nbsp;&nbsp;<span style="color: #cc6600;"><b>Serial</b></span>.<span style="color: #cc6600;">print</span>(r);<br />&nbsp;&nbsp;<span style="color: #cc6600;"><b>Serial</b></span>.<span style="color: #cc6600;">print</span>(<span style="color: #006699;">"\r\n"</span>);<br />}<br /><br />ElsterA100C&nbsp;meter(meter_reading);<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>setup</b></span>()<br />{<br />&nbsp;&nbsp;<span style="color: #cc6600;"><b>Serial</b></span>.<span style="color: #cc6600;">begin</span>(9600);<br />&nbsp;&nbsp;<span style="color: #cc6600;"><b>Serial</b></span>.<span style="color: #cc6600;">println</span>(<span style="color: #006699;">"IRDA Meter reader"</span>);<br />&nbsp;&nbsp;meter.init(1);<br />}<br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>loop</b></span>()<br />{<br />&nbsp;&nbsp;<span style="color: #7e7e7e;">// Decode the meter stream</span><br />&nbsp;&nbsp;<span style="color: #cc6600;">const</span> <span style="color: #cc6600;">int</span> byte_data = meter.decode_bit_stream();<br />&nbsp;&nbsp;<span style="color: #cc6600;">if</span> (byte_data != -1) {<br />&nbsp;&nbsp;&nbsp;&nbsp;meter.on_data(byte_data);<br />&nbsp;&nbsp;}<br />}</pre><br />5) If you now go to the serial window and place the sensor over the IrDA port (bottom-left of the meter) you should see the Watt-hours elapsed printed out to the serial window:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-fyAeGjqtaYw/UDtTSJ4AtNI/AAAAAAAACe4/nJS88EiX8lc/s1600/outputirda.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-fyAeGjqtaYw/UDtTSJ4AtNI/AAAAAAAACe4/nJS88EiX8lc/s1600/outputirda.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Thanks a lot to Dave Berkeley for this, for more information see his project page:&nbsp;<a href="http://www.rotwang.co.uk/projects/meter.html">http://www.rotwang.co.uk/projects/meter.html</a></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/08/open-kontrol-gateway-emonbase/">Open Kontrol Gateway - emonBase</a>
   </h1>
   
@@ -466,46 +508,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/07/almost-at-next-emoncms-release-point/">Almost at the next emoncms release point</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-07-26T15:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-26 15:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/07/almost-at-next-emoncms-release-point/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div>Over the last couple of months I have been working closely with Ildefonso Martínez Marchena from Spain on developing <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a> to the next level and we have been making really good progress.<br /><br />We are almost at the next release point with a lot of big additions including:<br /><br /><span class="Apple-style-span" style="font-size: large;">Dashboards</span><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s1600/dashscreen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s640/dashscreen.png" width="640" /></a></div><div><ul><li>Support for multiple dashboards</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#creating_a_dashboard">A fully visual dashboard editor</a></li><li>Public dashboards via username i.e <a href="http://emoncms.org/trystan">emoncms.org/trystan</a></li><li>Support for ckeditor and simeo file manager</li><li>8 different dial types and a hot water cylinder</li><li>LED’s widgets thanks to Lloyd</li><li>Published and unpublished dashboards for dashboards that are being worked on.</li><li>A reworked dashboard renderer implementation</li></ul><span class="Apple-style-span" style="font-size: large;">Visualisations</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s1600/threshold_order.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="294" src="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s640/threshold_order.png" width="640" /></a></div><div><ul><li>A simple <a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_dp_edit">data-point editor.</a></li><li>Many histogram based visualisations based on <a href="http://openenergymonitor.blogspot.co.uk/2012/05/view-your-power-data-as-histogram-in.html">Paul Allen's histogram input process</a>.</li><li>kWh Comparison Visualisation thanks to <a href="https://twitter.com/galouf/status/217938127430492160">Baptise Gaultier</a></li><li>A new API screen, detailing all the available visualisations and other key features available.</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_multigrapg">Editable multigraph.</a></li></ul><span class="Apple-style-span" style="font-size: large;">Data and core</span><br /><ul><li>CSV data input and identification by sensor node inputs.</li><li>Feed Autoconfig</li><li>New averaging process for creating daily temperature averages.</li><li>Setup script improvements</li><li>Thanks to Juan Sidrach for help with general code formatting and multilingual implementation.&nbsp;</li><li><a href="http://twitter.github.com/bootstrap/">Twitter bootstrap</a> based theme.</li></ul><span class="Apple-style-span" style="font-size: large;">Multilingual</span><br /><ul><li><a href="http://openenergymonitor.org/emon/emoncms/using-gettext-on-ubuntu">Multilingual implementation based on gettext</a></li><li>Thanks to Alco for the Dutch translation.</li></ul>All this is available now on github and has been of course throughout development. At this stage we are just polishing the release and updating and writing documentation.<br /><br /><span class="Apple-style-span" style="font-size: large;"><a href="http://emoncms.org/">emoncms.org</a></span><br />We've got the domain and have the latest version running there off the same server and database as vis.openenergymonitor.org so you can still access your<a href="http://vis.openenergymonitor.org/"> vis.openenergymonitor.org</a> data through <a href="http://emoncms.org/">emoncms.org</a>.<br /><br />The idea here is to create a really nice launch page for emoncms and have the live instance hosted there which can be used as a main logging site or for testing before running it on your own server or both. Emoncms.org will still be a beta service for now as its stability and reliability is established.<br /><br /><span class="Apple-style-span" style="font-size: large;">Bug testing</span><br />It would be great if you can try out the new version and let us know of any bugs you find so that we can try to get it as rock solid as possible before this release is complete.<br /><br />Due to a couple of core implementation changes to visualisations and dashboards many of the visualisation URL’s and dashboard scripting have changed so it best to build any old dashboards from scratch using the new visual editor.</div><div><br /></div><div>Have a look at the using emoncms documentation here if you need help with any of the steps:<br /><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms">openenergymonitor.org/emon/emoncms/using-emoncms</a></div><div><br /></div><div>Please submit any bug details either to the issue tracker on github here:</div><div><a href="https://github.com/openenergymonitor/emoncms3/issues">https://github.com/openenergymonitor/emoncms3/issues</a></div><div>or on the forums here:</div><div><a href="http://openenergymonitor.org/emon/forum/5">http://openenergymonitor.org/emon/forum/5</a><br /></div><div>There is also a beginning on code documentation <a href="http://openenergymonitor.org/emon/node/312">here</a>&nbsp;that may come in useful.</div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Github</span></div><div><span class="Apple-style-span" style="font-size: large;"><a href="http://github.com/openenergymonitor/emoncms3">github.com/openenergymonitor/emoncms3</a></span></div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Installation guides</span></div><div>To install emoncms on your own server have a look at these guides:</div><div><a href="http://openenergymonitor.org/emon/emoncms/installation">General Installation details</a>,&nbsp;<a href="http://openenergymonitor.org/emon/emoncms/installing-ubuntu-debian-pi">PI, Debian, Ubuntu installation</a></div><div><br /></div><div>Let us know how you get on with it.</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -622,6 +624,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
@@ -671,12 +679,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/05/emonsd-update-03may16/">Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release</a>
         </li>
       
     
