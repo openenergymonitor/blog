@@ -18,7 +18,10 @@ The emonTH V2 features a Silicon Labs **[Si7021](https://www.silabs.com/Support%
 
 ![emonTH V2]({{site.image_path}}/emonth2.jpg)
 
-The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.
+*The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.*
+
+![emonTH image]({{site.image_path}}/emonth_green.png)
+
 
 **[The emonTH V2 is now shipping via our online shop](https://shop.openenergymonitor.com/emonth-temperature-humidity-node/)**
 
