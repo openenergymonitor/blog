@@ -107,6 +107,37 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2010/02/calibration/">Calibration</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-02-02T14:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-02-02 14:39:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/02/calibration/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've updated the calibration information for the voltage and current measurement board and also done some accuracy and precision testing. Both can be found here:<div><br /></div><div><a href="http://openenergymonitor.org/emon/node/42">http://openenergymonitor.org/emon/node/42</a><br /><div><br /></div><div><br /><div><br /></div></div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2010/01/documentation-finished/">Documentation finished</a>
   </h1>
   
@@ -382,37 +413,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2009/10/7-segment-display-and-more-internet/">7 segment display and more internet stuff</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2009-10-09T21:44:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2009-10-09 21:44:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2009/10/7-segment-display-and-more-internet/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Finally got the 7 segment display I've been meaning to build for a while built, its great being able to see power usage without having to have the computer on and the big green digits are really nice and clear.<br /><br />Here's a video of it in action with a bit on pachube and appspot at the end:<br /><br /><object height="300" width="400"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="always"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=6987923&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1"><embed src="http://vimeo.com/moogaloop.swf?clip_id=6987923&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" height="300" width="400"></embed></object><p><a href="http://vimeo.com/6987923">CT sensor with Display and Internet</a> from <a href="http://vimeo.com/user853442">Trystan Lea</a> on <a href="http://vimeo.com/">Vimeo</a>.</p><br />I using a MAX7221CNG driver chip with four 1" green digits, following the tutorial (a very good tutorial I may add!) on the arduino site by <span class="diffauthor" title="80.130.103.5">wayoda</span> here:<br /><br /><a href="http://www.arduino.cc/playground/Main/MAX72XXHardware?action=diff">http://www.arduino.cc/playground/Main/MAX72XXHardware?action=diff</a><br /><br />Here's the arduino sketch I used in the above video:<br /><br /><a href="http://openenergymonitor.org/emon/sites/default/files/CTDisplaySerial.pde"><small>http://openenergymonitor.org/emon/sites/default/files/CTDisplaySerial.pde</small></a><br /><br />and after playing about with ladyada's python code from tweet-a-watt Im now using python on the computer side.<br /><br />Here's the python script that outputs values to terminal, a file, pachube and google appspot:<br /><br /><a href="http://openenergymonitor.org/emon/sites/default/files/main9oct.tar.gz"> <small>http://openenergymonitor.org/emon/sites/default/files/main9oct.tar.gz</small></a><br /><br />Feels like things are coming together :)<br /><br />Ive got an asus rooter on order and an arduino ethernet board to play about with so hopefully will not need the computer to be on all the time for data logging soon. Id also like to have a look at enclosures for the display to make things look nice.
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -529,6 +529,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
@@ -578,12 +584,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
         </li>
       
     
@@ -738,6 +738,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/esp8266/">esp8266</a></li>
     
+      <li><a href="/categories/ev/">ev</a></li>
+    
       <li><a href="/categories/feed-storage/">feed storage</a></li>
     
       <li><a href="/categories/firmware/">firmware</a></li>
@@ -803,6 +805,8 @@ window.onclick = function(event) {
       <li><a href="/categories/openhab/">openHAB</a></li>
     
       <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/openevse/">openevse</a></li>
     
       <li><a href="/categories/optical-pulse/">optical pulse</a></li>
     

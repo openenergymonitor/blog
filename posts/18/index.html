@@ -107,6 +107,46 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
     <header>
   
   <h1 class="beta">
+    <a href="/2013/05/emoncmsorg-backup/">Emoncms.org backup</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-28T11:15:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-28 11:15:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/05/emoncmsorg-backup/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p dir=ltr>I'm happy to announce that emoncms.org is fully backed up and has incremental backup implemented, all data is incrementally backed up once every 24 hours, a backup cron job runs hourly syncing 640 feeds each time so 15360 feeds every 24 hours. emoncms.org disk use is currently growing at a rate of about 300MB a day and the transfer format is csv which gives you an idea of the volume of data that the backup implementation needs to sync. The total volume of data I have synced so far using this is 49 GB. </p><p dir=ltr>The backup implementation uses many of the things already developed as part of the sync module which allows you to download feed data from a remote server. I've put the full emoncms backup script in the tools repository on github here:</p><p dir=ltr><a href="https://github.com/emoncms/usefulscripts/blob/master/backupemoncms.php">https://github.com/emoncms/usefulscripts/blob/master/backupemoncms.php</a></p><p dir=ltr>For the above script to run, you need to first copy the users and feeds table from the master server to the backup server using the more common backup procedure of using mysqldump and scp, the steps to do this are described in the header comments of the backup script.</p><p dir=ltr>This method of backing up is much faster than using rsync which I originally tried for incremental backup as it does not go through each feed looking for changes it just checks when was the last datapoint in the backed up feed and downloads every new datapoint from the master server recorded after that time, one disadvantage of this is that any changes to feed data using the datapoint editor tools in emoncms will not get updated to the backup server. It would be good though to make it possible to delete data on the backup server if its deleted off the master server, as disk space is expensive and if you delete data off emoncms.org you would expect no copy to remain from a data privacy point of view.</p><p dir=ltr>I implemented the backup system like this because I had most of what I needed already in place in the sync module and so it was the quickest way for me to get this up and running using what I already knew. I'm aware the database replication can be performed with mysql replication, where a transaction log is stored on the master server and transferred to and then executed on the backup server. I'm interested in exploring this option too and if anyone can tell me that using mysql replication will offer significant performance benefits over the method above and why, that would certainly motivate me to look at it sooner.</p><p dir=ltr>I'm still reluctant to guarantee data on emoncms.org as both vm servers are in the same datacenter and they are part of bigv cloud which could even mean that both share the same disk (which would invalidate one of the reasons for a separate backup to protect against disk failure) although bigv suggested that this is unlikely as there are plenty of tails. They recognise this as a weakness and something they hope to change soon. </p><p dir=ltr>So if you want extra peace of mind I suggest installing a local installation of emoncms on your own computer and downloading your data periodically using the sync module, I do this both for extra backup and so that I can access the raw data for trying new visualisation and data analysis, processing ideas. I will write a guide on how to do this soon. The sync module is available here:</p><p dir=ltr><a href="http://github.com/emoncms/sync">http://github.com/emoncms/sync</a></p><p dir=ltr>I'm interested in being transparent about how emoncms.org is hosted, so that rather than give opaque promises you can asses things like how its backed up for yourself. You often here people say that no system is absolutely secure and completely safe from failure so I hope that by being transparent about this you can see what has been done. I'm relatively new to administering web services and I'm sure if your a more experienced web admin reading this you may know how this can be done better, I would appreciate hearing how you think it could be improved.</p>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/12-input-pulse-counter-idea/">12 input pulse counter idea</a>
   </h1>
   
@@ -466,48 +506,6 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/02/emontx-smt-update-introducing-emontx-v3/">emonTx SMT update > Introducing emonTx V3 </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-02-10T13:30:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-02-10 13:30:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/emontxsmt/'>emonTxSMT</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/02/emontx-smt-update-introducing-emontx-v3/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    If you're a regular follower of our blog you might remember towards the end of the summer of last year (2012) we posted up a&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/08/emontx-smt-progress-update.html">design of an emonTx SMT</a> (pre-assembled using surface mount electronics).<br /><br />Since that original post progress on the new design has been rather slow (I've been trying to document progress on <a href="http://openenergymonitor.org/emon/node/736">this forum thread</a>). Slow progress has mainly been due to the success of the shop! Order fulfilment, stock organisation and <a href="http://openenergymonitor.blogspot.com/2012/12/tax-and-seasons-greetings.html">administration</a> has been taking up most of our time. However, we have built a prototype emonTx SMT with the&nbsp;original design from Aug 2012. The functions tested so far have worked well. Although we are yet to do a proper accuracy test, however we are confident that it will perform well as it's based on the <a href="http://openenergymonitor.blogspot.co.uk/2012/06/high-accuracy-current-measurement-over.html">Atmel energy monitor app note</a>.<br /><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-ZYI2UKpFHyY/UReeAg-0hTI/AAAAAAAAdLU/SXaZZjYRmTI/s1600/emonTxSMT_built.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-ZYI2UKpFHyY/UReeAg-0hTI/AAAAAAAAdLU/SXaZZjYRmTI/s320/emonTxSMT_built.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx SMT prototype</td></tr></tbody></table><div>The original emonTx SMT was designed with high accuracy and flexibility (everything but the kitchen sink on one PCB!) in mind. However being a complex design with many components assembly costs will be high. At some stage in the future we would like to get it manufactured but we feel that a lower cost less complex board with <a href="http://openenergymonitor.org/emon/emontx/accuracy">comparable performance to the current emonTx</a> but in SMT form and nicely cased will be more&nbsp;suitable as a next step for us. The performance of the current emonTx is adequate for most monitoring applications and with real power monitoring performance is better than most domestic energy monitors currently on the market. <br /><div><br /></div><div>**</div><h3>Introducing the emonTx V3:</h3><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ME2cdpLXstg/URedGutbYrI/AAAAAAAAdK8/P9YJR4Qm5Ow/s1600/emonTx+SMT+V3+proto+labeled+ports.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="584" src="http://4.bp.blogspot.com/-ME2cdpLXstg/URedGutbYrI/AAAAAAAAdK8/P9YJR4Qm5Ow/s640/emonTx+SMT+V3+proto+labeled+ports.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 prototype CAD design</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div>The form factor is the same as the emonTx SMT design. It's been designed to fit in a wall mountable extruded aluminium case with laser cut plastic fascia for the openings.&nbsp;</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-mBPt4FAnviU/URebzcYUY-I/AAAAAAAAdKw/n-KSXhdcgBg/s1600/emonTxV3_caseMockup.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://1.bp.blogspot.com/-mBPt4FAnviU/URebzcYUY-I/AAAAAAAAdKw/n-KSXhdcgBg/s320/emonTxV3_caseMockup.jpg" width="237" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 case mockup</td></tr></tbody></table><div><br /></div><div>The energy monitoring parts of the emonTx V3 are the same as the current emonTx but using SMT components. However unlike the original emonTx (V2) we have put effort into designing the PCB with best analogue performance in mind, time will tell if this will result in&nbsp;improved&nbsp;performance:</div><div><br /></div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-JCkJzZhHJgg/URedpzyD9HI/AAAAAAAAdLM/0ac0a4RZtHw/s1600/emonTx+SMT+V3+proto+analogue.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="410" src="http://4.bp.blogspot.com/-JCkJzZhHJgg/URedpzyD9HI/AAAAAAAAdLM/0ac0a4RZtHw/s640/emonTx+SMT+V3+proto+analogue.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3&nbsp;analogue&nbsp;performance design considerations&nbsp;</td></tr></tbody></table><div><br />We have added an extra <b>'high sensitivity' reduced range CT channel</b> to be used to monitor up to 4.5kW (@240V). Reducing the monitoring range by using a higher value burden resistor increase the sensitivity when monitoring lower power levels. This channel will be perfect for monitoring single circuits or&nbsp;appliances&nbsp;e.g. solar PV output, heatpump power etc. <br /><br />Like on the emonTx SMT the emonTx V3 will have the option to be <b>powered from a single AC-AC adapter using a AC-DC</b> half-wave rectifier circuit (see blog post <a href="http://openenergymonitor.blogspot.co.uk/2012/05/emontx-single-ac-power-supply.html">part1</a> and<a href="http://openenergymonitor.blogspot.co.uk/2013/01/power-emontx-from-single-ac-power.html"> part2</a>). This circuit has been carefully designed so that it does not effect the quality of the AC sample wave form. Being able to use only one power adapter to power the unit and simultaneously provide an AC voltage sample to be used for Real Power, Vrms, Power Factor and frequency measurements will reduce the cost and overall embodied energy of the system. <br /><br /><b>The 'heart' of the emonTx V3 is provided by an <a href="http://openmicros.org/index.php/articles/88-ciseco-product-documentation/236-rfu328-starter-guide">Rfu</a></b>. An Rfu is a tiny little Atmega328 with a radio in an SMT XBEE footprint (the final design will also have thru-hole Xbee pads).&nbsp;</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/--86yETfdgik/URebnRDIRxI/AAAAAAAAdKo/M_x7h74lvss/s1600/2013-01-10+19.04.26.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/--86yETfdgik/URebnRDIRxI/AAAAAAAAdKo/M_x7h74lvss/s320/2013-01-10+19.04.26.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Ciseco RFu - ATmega328 plus RFM12B&nbsp;</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="238" src="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Ciseco RFu - ATmega328 witth SRF radio</td></tr></tbody></table><div><br /></div><div>The RFu has been designed and manufactured in the UK by <a href="http://openenergymonitor.blogspot.co.uk/2012/11/ciseco-visit.html">Ciseco</a>. The radio on the Rfu can be an RFM12B or SRF. We will be using the RFM12B, but it's nice to have a 'drop-in' option for a different radio. Using the Rfu makes the emonTx V3 more modular and it will allow us to manufacture the emonTx V3 easier and cheaper. As with the current emonTx the ATmega328 will be programmable using an FTDI and the Arduino IDE.   </div></div><div><br /></div><div>A barebone emonTx V3 prototype PCB arrived from PCB Train over the weekend, if all goes well we should have a working prototype by the end of the week. Fingers crossed!&nbsp;</div><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-HyAcGlNP_rE/UU9bclRDstI/AAAAAAAAeZE/J9AwbIy00Jc/s1600/emonTxV3_PCB_Front_small.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="326" src="http://1.bp.blogspot.com/-HyAcGlNP_rE/UU9bclRDstI/AAAAAAAAeZE/J9AwbIy00Jc/s400/emonTxV3_PCB_Front_small.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 prototype PCB</td></tr></tbody></table><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
  
   <div class="pagination">
     
@@ -624,6 +622,12 @@ window.onclick = function(event) {
     
       
         <li class="post">
+          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Build</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
@@ -673,12 +677,6 @@ window.onclick = function(event) {
       
         <li class="post">
           <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
         </li>
       
     
@@ -833,6 +831,8 @@ window.onclick = function(event) {
     
       <li><a href="/categories/esp8266/">esp8266</a></li>
     
+      <li><a href="/categories/ev/">ev</a></li>
+    
       <li><a href="/categories/feed-storage/">feed storage</a></li>
     
       <li><a href="/categories/firmware/">firmware</a></li>
@@ -898,6 +898,8 @@ window.onclick = function(event) {
       <li><a href="/categories/openhab/">openHAB</a></li>
     
       <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
+    
+      <li><a href="/categories/openevse/">openevse</a></li>
     
       <li><a href="/categories/optical-pulse/">optical pulse</a></li>
     

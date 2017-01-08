@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ev | Blog | OpenEnergyMonitor]]></title>
+  <link href="https://blog.openenergymonitor.org/categories/ev/atom.xml" rel="self"/>
+  <link href="https://blog.openenergymonitor.org/"/>
+  <updated>2017-01-08T16:40:12+00:00</updated>
+  <id>https://blog.openenergymonitor.org/</id>
+  <author>
+    <name><![CDATA[Glyn Hudson]]></name>
+    <email><![CDATA[support@openenergymonitor.zendesk.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenEVSE EV Charge Controller Build]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/01/openevse-build/"/>
+    <updated>2017-01-04T09:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/01/openevse-build</id>
+    <content type="html"><![CDATA[<p>OpenEVSE (recently renamed to <a href="https://www.openevse.com/">OpenEV</a>) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.</p>
+
+<blockquote>
+  <p>An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.</p>
+</blockquote>
+
+<p><em>Note: this post is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
+
+<h2 id="features">Features</h2>
+
+<p>The features that make the OpenEVSE charge controller interesting to us are:</p>
+
+<ul>
+  <li><a href="http://openevse.dozuki.com/Guide/OpenEVSE+WiFi+%28Beta%29/14">WiFi connectivity and remote control (via ESP8266)</a></li>
+  <li>Variable rate of charge: e.g. charge current can be varied to match available power</li>
+  <li>Integrated energy monitoring via custom hosted Emoncms <a href="http://data.openevse.com/emoncms">data.openevse.com</a></li>
+  <li>Fully open-source :-)</li>
+</ul>
+
+<p>I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!</p>
+
+<h2 id="safety">Safety</h2>
+
+<p>Even though it is possible to charge an EV via a standard electrical outlet, it is not recommended for a number of reasons:</p>
+
+<ol>
+  <li>Charging is very slow since the current is limited by the electrical outlet.</li>
+  <li>Drawing a significant current (approx 10/12A) for an extended period (up to 10hrs for a 24KWh Nissan LEAF and 30hrs for a 90KWh Tesla Model S!) puts stress on the domestic wiring resulting in heating of the wire <a href="https://speakev.com/threads/house-fire-using-120v-trickle-charger.1708/">or worse</a> if the wiring is in a poor state.</li>
+</ol>
+
+<blockquote>
+  <p>Charging via a properly installed EVSE is the fastest and safest way to charge an EV at home.</p>
+</blockquote>
+
+<p>OpenEVSE units have been designed to exceed the safety requirements for EV Charging Stations from SAE J1772, NEC and UL. Before supplying power to the car (and continuously while charging) the EVSE unit conducts a number of checks, no power is supplied until all the checks have passed. See <a href="https://openev.freshdesk.com/support/solutions/articles/6000113537-openevse-safety-features">OpenEVSE Safety Features</a></p>
+
+<h2 id="purchase">Purchase</h2>
+
+<p>OpenEVSE units can be purchased (kit or fully assembled) from the <a href="https://store.openevse.com">OpenEVSE online store</a>, the units are shipped from California USA. I went for a <a href="https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure">P50D Level 2 (208-240V AC) 50A (40A continous) Deluxe OpenEVSE kit</a> with the <a href="https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit">WiFi connection kit</a> and <a href="https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only">J1772 Cable</a>.</p>
+
+<p>The OpenEVSE unit will charge any J1772 compliant car at up to 40A. However, you can dial it back by setting the ‘max charge current’ to suit your supply.</p>
+
+<p><em>Full disclosure: Chris Howell from OpenEVSE made the unit available free of charge for me to evaluate and improve the Emoncms / OpenEnergyMonitor integration.</em></p>
+
+<h2 id="assembly">Assembly</h2>
+
+<p><strong><em>Warning:</em></strong> <em>Assembly of an EVSE requires wiring Alternating Current (AC) components that will be exposed to voltages from 100 to 250v. If you do not have the experience and knowledge required to safely work with AC voltages please consult with an experienced electrician for assistance and inspection of your work.</em></p>
+
+<p>Assembly of the unit was straight forward following the <a href="http://openevse.dozuki.com/Guide/OpenEVSE+50A+Charging+Station/8">openEVSE build guide</a>. No soldering was required, only basic tools e.g. screwdriver, wire strippers etc. Assembly probably took me a couple of hours. I took my time to do a high-quality job of assembling, this is particularly important given the high currents involved.</p>
+
+<p>OpenEVSE unit kit contents:</p>
+
+<p><img src="/images/openevse-build1.jpg" alt="openevse build1" /></p>
+
+<p>The hardware components are all top quality, I was impressed by the attention to detail such as rubber seals around the LCD to waterproof the unit.</p>
+
+<p>The hardware inside the unit is split into two main components which are physically separated: a high voltage and high current relay and a low voltage control electronics which is the microcontroller (ATmega328p) ‘brains’ of the unit. My unit contained an OpenEVSE Plus V4 control unit <a href="http://files.openevse.com/OpenEVSE_Plus_v4.pdf.">see Datasheet</a>:</p>
+
+<p><img src="/images/openevse-build5.jpg" alt="openevse build5" /></p>
+
+<p>Rear PCB showing ATmega328p on the OpenEVSE Plus V4 controller:</p>
+
+<p><img src="/images/openevse-build7.jpg" alt="openevse build7" /></p>
+
+<p>Build progress: charge controller, ground busbar, relay, LCD and mode button fixed into enclosure</p>
+
+<p><img src="/images/openevse-build2.jpg" alt="openevse build2" /></p>
+
+<p>The finished build: WiFi ESP8266 module is visible on the top left.</p>
+
+<p><img src="/images/openevse-build3.jpg" alt="openevse build3" /></p>
+
+<h3 id="installation">Installation</h3>
+
+<p>Installation should be undertaken by a qualified electrician. The unit should be wired in using suitably rated cable ideally with a dedicated RCD circuit breaker. The max charge current of the unit should be set to match the supply circuit wiring.</p>
+
+<h2 id="operation">Operation</h2>
+
+<p>On first powerup some basic settings are set via the LCD menu using a combination of short/long presses of the front button. The menu system is impressively responsive considering it’s running from an ATmega328! The basic settings include max charge rate (set to match wiring), charging service level and date-time. Settings are saved to EEPROM and date-time is kept up-to-date via a RTC battery backup.</p>
+
+<p>The basic operation is very straightforward: just plug the car in and charging begins! Charging can be stopped/resumed by pressing the button on the front of the unit. Charging state is indicated by the backlight colour of the LCD and basic info such as current charging current and total kWh is displayed on the LCD.</p>
+
+<p>Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate my 6.6Kw charge (24Kwh battery) Nissan LEAF will charge from flat in about 4hrs:</p>
+
+<p><img src="/images/openevse-build4.jpg" alt="openevse build4" /></p>
+
+<h3 id="remote-datalogging">Remote Datalogging</h3>
+
+<p>The Wifi kit (ESP8266) enables data logging from the OpenEVSE unit to a custom Emoncms server <a href="http://data.openevse.com">data.openevse.com</a> via a local Wifi connection. The Wifi kit also allows remote control (see RAPI commands below).</p>
+
+<p><img src="/images/openevse-build-emoncms.png" alt="openevse build4" /></p>
+
+<h3 id="remote-contol-via-rapi-commands">Remote Contol (via RAPI commands)</h3>
+
+<p>The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be <a href="http://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13">issued directly via serial</a> or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.</p>
+
+<h4 id="variable-charge-rate">Variable Charge Rate</h4>
+
+<p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of opperation</a>. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
+
+<p>Example:</p>
+
+<p><code class="highlighter-rouge">$SC13</code> will set the current charge current to 13A. The screen shot on the right below illustrates issuing the <code class="highlighter-rouge">$SC 13</code> RAPI command into the OpenEVSE local web page interface (served from ESP8266). The screenshot on the left shows the effect of reduction in charge rate as monitored by emonPi displayed using Emoncms:</p>
+
+<p><img src="/images/openevse-build6.png" alt="openevse build6" /></p>
+
+<p>Rapi commands can also be issued directly via a single HTTP request. Eg. the same rapi command to set charging rate to 13A:</p>
+
+<p><a href="http://192.168.0.108/r?rapi=%24SC+13">http://192.168.0.108/r?rapi=%24SC+13</a></p>
+
+<p><em>Assuming <code class="highlighter-rouge">192.168.0.108</code> is the local IP address of the OpenEVSE ESP.</em></p>
+
+<p>There is also an <a href="https://github.com/tiramiseb/python-openevse">OpenEVSE RAPI command python library</a>.</p>
+
+<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE plus source code</a>.</p>
+
+<h4 id="future-developments">Future developments</h4>
+
+<p>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</p>
+
+<p>See <a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">this forum thread</a> for related discussion.</p>
+
+<h3 id="open-source">Open Source</h3>
+
+<p>The source code and CAD hardware designs for the OpenEVSE unit can be found on github:</p>
+
+<ul>
+  <li><a href="https://github.com/OpenEVSE/OpenEVSE_LCD">OpenEVSE I2C LCD + RTC</a></li>
+  <li><a href="https://github.com/OpenEVSE/OpenEVSE_PLUS">OpenEVSE Plus Controller Hardware</a></li>
+  <li><a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE Plus Controller Firmware</a></li>
+  <li><a href="https://github.com/OpenEVSE/Default_Firmware_Loads">OpenEVSE Plus Controller Pre Compiled Firmware</a></li>
+  <li><a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE ESP8266 Wifi firmware</a></li>
+  <li><a href="https://github.com/OpenEVSE/Enclosures">OpenEVSE Enclosure</a></li>
+</ul>
+
+<h3 id="related-forum-threads">Related Forum Threads</h3>
+
+<p><a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">OpenEnergyMonitor community forum thread documenting OpenEVSE build</a></p>
+]]></content>
+  </entry>
+  
+</feed>
