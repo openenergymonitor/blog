@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "OpenEVSE EV Charge Controller Build"
+title: "OpenEVSE EV Charge Controller"
 date: "2017-01-04 09:00"
 date_formatted: Jan 4th 2017
 author: Glyn Hudson
