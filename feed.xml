@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-01-08T18:07:41+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>OpenEVSE EV Charge Controller</title><link href="https://blog.openenergymonitor.org/2017/01/openevse-build/" rel="alternate" type="text/html" title="OpenEVSE EV Charge Controller" /><published>2017-01-04T09:00:00+00:00</published><updated>2017-01-04T09:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/openevse-build</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/openevse-build/">&lt;p&gt;OpenEVSE (recently renamed to &lt;a href=&quot;https://www.openevse.com/&quot;&gt;OpenEV&lt;/a&gt;) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-01-08T18:29:22+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>OpenEVSE EV Charge Controller</title><link href="https://blog.openenergymonitor.org/2017/01/openevse-build/" rel="alternate" type="text/html" title="OpenEVSE EV Charge Controller" /><published>2017-01-04T09:00:00+00:00</published><updated>2017-01-04T09:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/openevse-build</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/openevse-build/">&lt;p&gt;OpenEVSE (recently renamed to &lt;a href=&quot;https://www.openevse.com/&quot;&gt;OpenEV&lt;/a&gt;) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.&lt;/p&gt;
@@ -102,13 +102,13 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/openevse-build-emoncms.png&quot; alt=&quot;openevse build4&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;remote-contol-via-rapi-commands&quot;&gt;Remote Contol (via RAPI commands)&lt;/h3&gt;
+&lt;h3 id=&quot;remote-control-via-rapi-commands&quot;&gt;Remote Control (via RAPI commands)&lt;/h3&gt;
 
 &lt;p&gt;The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be &lt;a href=&quot;http://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13&quot;&gt;issued directly via serial&lt;/a&gt; or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.&lt;/p&gt;
 
 &lt;h4 id=&quot;variable-charge-rate&quot;&gt;Variable Charge Rate&lt;/h4&gt;
 
-&lt;p&gt;OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle &lt;a href=&quot;https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation&quot;&gt;see OpenEVSE technical theory of opperation&lt;/a&gt;. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.&lt;/p&gt;
+&lt;p&gt;OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle &lt;a href=&quot;https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation&quot;&gt;see OpenEVSE technical theory of operation&lt;/a&gt;. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.&lt;/p&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
@@ -251,13 +251,13 @@ The Wifi kit (ESP8266) enables data logging from the OpenEVSE unit to a custom E
 
 
 
-Remote Contol (via RAPI commands)
+Remote Control (via RAPI commands)
 
 The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be issued directly via serial or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.
 
 Variable Charge Rate
 
-OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle see OpenEVSE technical theory of opperation. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
+OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle see OpenEVSE technical theory of operation. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
 
 Example:
 

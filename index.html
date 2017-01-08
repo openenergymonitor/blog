@@ -243,13 +243,13 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 <p><img src="/images/openevse-build-emoncms.png" alt="openevse build4" /></p>
 
-<h3 id="remote-contol-via-rapi-commands">Remote Contol (via RAPI commands)</h3>
+<h3 id="remote-control-via-rapi-commands">Remote Control (via RAPI commands)</h3>
 
 <p>The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be <a href="http://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13">issued directly via serial</a> or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.</p>
 
 <h4 id="variable-charge-rate">Variable Charge Rate</h4>
 
-<p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of opperation</a>. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
+<p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of operation</a>. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
 
 <p>Example:</p>
 
