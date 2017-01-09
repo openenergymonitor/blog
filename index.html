@@ -249,7 +249,7 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 
 <h4 id="variable-charge-rate">Variable Charge Rate</h4>
 
-<p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of operation</a>. The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
+<p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of opperation</a>. Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
 
 <p>Example:</p>
 
@@ -260,6 +260,14 @@ Open</span><span style="color:#0699fa;font-weight:bold;font-family:Arial;font-si
 <p>Rapi commands can also be issued directly via a single HTTP request. Eg. the same rapi command to set charging rate to 13A:</p>
 
 <p><a href="http://192.168.0.108/r?rapi=%24SC+13">http://192.168.0.108/r?rapi=%24SC+13</a></p>
+
+<p>To sleep (pause a charge) issue RAPI command <code class="highlighter-rouge">$FS</code></p>
+
+<p><a href="http://192.168.0.108/r?rapi=%24FS">http://192.168.0.108/r?rapi=%24FS</a></p>
+
+<p>To enable (start a charge) issue RAPI command <code class="highlighter-rouge">$FE</code></p>
+
+<p><a href="http://192.168.0.108/r?rapi=%24FE">http://192.168.0.108/r?rapi=%24FE</a></p>
 
 <p><em>Assuming <code class="highlighter-rouge">192.168.0.108</code> is the local IP address of the OpenEVSE ESP.</em></p>
 
