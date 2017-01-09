@@ -17,6 +17,9 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 ![openevse build9]({{site.image_path}}/openevse-build9.jpg)
 
+![nissan-leaf-solar-pv]({{site.image_path}}/nissan-leaf-solar-pv.jpg)
+
+
 <div class='videoWrapper'>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen></iframe>
 </div>
