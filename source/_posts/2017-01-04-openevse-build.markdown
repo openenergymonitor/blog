@@ -113,13 +113,14 @@ The Wifi kit (ESP8266) enables data logging from the OpenEVSE unit to a custom E
 ![openevse build4]({{site.image_path}}/openevse-build-emoncms.png)
 
 
-### Remote Contol (via RAPI commands)
+### Remote Control (via RAPI commands)
 
 The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be [issued directly via serial](http://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13) or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.
 
 #### Variable Charge Rate
 
 OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can 'request' a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle [see OpenEVSE technical theory of opperation](https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation). Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
+
 
 Example:
 
