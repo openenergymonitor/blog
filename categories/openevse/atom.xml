@@ -4,7 +4,7 @@
   <title><![CDATA[Category: openevse | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/openevse/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-01-09T13:52:40+00:00</updated>
+  <updated>2017-01-09T15:06:36+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -62,9 +62,11 @@
 
 <h2 id="purchase">Purchase</h2>
 
-<p>OpenEVSE units can be purchased (kit or fully assembled) from the <a href="https://store.openevse.com">OpenEVSE online store</a>, the units are shipped from California USA. I went for a <a href="https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure">P50D Level 2 (208-240V AC) 50A (40A continous) Deluxe OpenEVSE kit</a> with the <a href="https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit">WiFi connection kit</a> and <a href="https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only">J1772 Cable</a>.</p>
+<p><em>Update: we are in communication with OpenEVSE to put together a UK/Europe specific OpeneEVSE package to resell via the <a href="https://shop.openenergymonitor.com">OpenEnergyMonitor Online Shop</a>.</em></p>
 
-<p>The OpenEVSE unit will charge any J1772 compliant car at up to 40A. However, you can dial it back by setting the ‘max charge current’ to suit your supply.</p>
+<p>OpenEVSE units can be purchased (kit or fully assembled) from the <a href="https://store.openevse.com">OpenEVSE online store</a>, the units are shipped from California USA. I went for a <a href="https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure">P50D Level 2 Deluxe OpenEVSE kit</a> with the <a href="https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit">WiFi connection kit</a> and <a href="https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only">J1772 Cable</a>.</p>
+
+<p>The OpenEVSE 50A L2 unit will charge any J1772 compliant car at up to 40A continous from a single phase 208-240V AC supply. However, you can dial back the current by setting the ‘max charge current’ to match your supply.</p>
 
 <p><em>Full disclosure: Chris Howell from OpenEVSE made the unit available free of charge for me to evaluate and improve the Emoncms / OpenEnergyMonitor integration.</em></p>
 
@@ -73,10 +75,6 @@
 <p><strong><em>Warning:</em></strong> <em>Assembly of an EVSE requires wiring Alternating Current (AC) components that will be exposed to voltages from 100 to 250v. If you do not have the experience and knowledge required to safely work with AC voltages please consult with an experienced electrician for assistance and inspection of your work.</em></p>
 
 <p>Assembly of the unit was straight forward following the <a href="http://openevse.dozuki.com/Guide/OpenEVSE+50A+Charging+Station/8">openEVSE build guide</a>. No soldering was required, only basic tools e.g. screwdriver, wire strippers etc. Assembly probably took me a couple of hours. I took my time to do a high-quality job of assembling, this is particularly important given the high currents involved.</p>
-
-<p>OpenEVSE unit kit contents:</p>
-
-<p><img src="/images/openevse-build1.jpg" alt="openevse build1" /></p>
 
 <p>The hardware components are all top quality, I was impressed by the attention to detail such as rubber seals around the LCD to waterproof the unit.</p>
 
