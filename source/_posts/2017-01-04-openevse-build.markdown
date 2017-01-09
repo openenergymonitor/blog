@@ -119,7 +119,7 @@ The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remo
 
 #### Variable Charge Rate
 
-OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can 'request' a particular charge rate from the car. It is actually the cars charging control electronics that vary the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle [see OpenEVSE technical theory of opperation](https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation). The Nissan LEAF with (6.6KW charge option) charge rate can be varied from 6A to 28A (I have the 6.6KW charge option) in 1A increments, the car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
+OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can 'request' a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle [see OpenEVSE technical theory of opperation](https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation). Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
 
 Example:
 
@@ -130,6 +130,14 @@ Example:
 Rapi commands can also be issued directly via a single HTTP request. Eg. the same rapi command to set charging rate to 13A:
 
 [http://192.168.0.108/r?rapi=%24SC+13](http://192.168.0.108/r?rapi=%24SC+13)
+
+To sleep (pause a charge) issue RAPI command `$FS`
+
+[http://192.168.0.108/r?rapi=%24FS](http://192.168.0.108/r?rapi=%24FS)
+
+To enable (start a charge) issue RAPI command `$FE`
+
+[http://192.168.0.108/r?rapi=%24FE](http://192.168.0.108/r?rapi=%24FE)
 
 *Assuming `192.168.0.108` is the local IP address of the OpenEVSE ESP.*
 
