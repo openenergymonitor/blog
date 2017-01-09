@@ -48,9 +48,11 @@ OpenEVSE units have been designed to exceed the safety requirements for EV Charg
 
 ## Purchase
 
-OpenEVSE units can be purchased (kit or fully assembled) from the [OpenEVSE online store](https://store.openevse.com), the units are shipped from California USA. I went for a [P50D Level 2 (208-240V AC) 50A (40A continous) Deluxe OpenEVSE kit](https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure) with the [WiFi connection kit](https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit) and [J1772 Cable](https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only).
+*Update: we are in communication with OpenEVSE to put together a UK/Europe specific OpeneEVSE package to resell via the [OpenEnergyMonitor Online Shop](https://shop.openenergymonitor.com).*
 
-The OpenEVSE unit will charge any J1772 compliant car at up to 40A. However, you can dial it back by setting the 'max charge current' to suit your supply.
+OpenEVSE units can be purchased (kit or fully assembled) from the [OpenEVSE online store](https://store.openevse.com), the units are shipped from California USA. I went for a [P50D Level 2 Deluxe OpenEVSE kit](https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure) with the [WiFi connection kit](https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit) and [J1772 Cable](https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only).
+
+The OpenEVSE 50A L2 unit will charge any J1772 compliant car at up to 40A continous from a single phase 208-240V AC supply. However, you can dial back the current by setting the 'max charge current' to match your supply.
 
 *Full disclosure: Chris Howell from OpenEVSE made the unit available free of charge for me to evaluate and improve the Emoncms / OpenEnergyMonitor integration.*
 
@@ -61,11 +63,6 @@ The OpenEVSE unit will charge any J1772 compliant car at up to 40A. However, you
 ***Warning:*** *Assembly of an EVSE requires wiring Alternating Current (AC) components that will be exposed to voltages from 100 to 250v. If you do not have the experience and knowledge required to safely work with AC voltages please consult with an experienced electrician for assistance and inspection of your work.*
 
 Assembly of the unit was straight forward following the [openEVSE build guide](http://openevse.dozuki.com/Guide/OpenEVSE+50A+Charging+Station/8). No soldering was required, only basic tools e.g. screwdriver, wire strippers etc. Assembly probably took me a couple of hours. I took my time to do a high-quality job of assembling, this is particularly important given the high currents involved.
-
-
-OpenEVSE unit kit contents:
-
-![openevse build1]({{site.image_path}}/openevse-build1.jpg)
 
 The hardware components are all top quality, I was impressed by the attention to detail such as rubber seals around the LCD to waterproof the unit.
  
