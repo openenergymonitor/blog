@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-01-09T15:55:54+00:00</updated>
+  <updated>2017-01-09T16:27:11+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -26,8 +26,6 @@
 
 <p><img src="https://blog.openenergymonitor.org/images/openevse-build9.jpg" alt="openevse build9" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
-
 <div class="videoWrapper">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen=""></iframe>
 </div>
@@ -46,6 +44,10 @@
 </ul>
 
 <p>I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!</p>
+
+<p>Nissan LEAF charging from solar PV on a frosty morning:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
 
 <h2 id="safety">Safety</h2>
 
