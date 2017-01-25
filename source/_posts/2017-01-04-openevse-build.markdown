@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "OpenEVSE EV Charge Controller"
+title: "OpenEVSE EV Charge Controller Review"
 date: "2017-01-04 09:00"
 date_formatted: Jan 4th 2017
 author: Glyn Hudson
@@ -125,7 +125,7 @@ The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remo
 OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can 'request' a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle [see OpenEVSE technical theory of opperation](https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation). Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.
 
 
-Example:
+**Example:**
 
 `$SC13` will set the current charge current to 13A. The screen shot on the right below illustrates issuing the `$SC 13` RAPI command into the OpenEVSE local web page interface (served from ESP8266). The screenshot on the left shows the effect of reduction in charge rate as monitored by emonPi displayed using Emoncms:
 
@@ -152,6 +152,9 @@ RAPI commands can be used to control and check the status of all OpenEVSE functi
 #### Future developments
 
 I would like to add MQTT support to the [OpenEVSE WiFi ESP8266 firmware](https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266), this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.
+
+**Update:** I have recently added RAPI commands over MQTT support to the [OpenEVSE ESP8266 code currently in the dev branch](https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266/tree/Devolopment).
+
 
 See [this forum thread](https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21) for related discussion.
 
