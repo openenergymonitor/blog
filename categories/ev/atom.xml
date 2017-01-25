@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ev | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/ev/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-01-17T21:22:46+00:00</updated>
+  <updated>2017-01-25T16:34:53+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[OpenEVSE EV Charge Controller]]></title>
+    <title type="html"><![CDATA[OpenEVSE EV Charge Controller Review]]></title>
     <link href="https://blog.openenergymonitor.org/2017/01/openevse-build/"/>
     <updated>2017-01-04T09:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2017/01/openevse-build</id>
@@ -132,7 +132,7 @@
 
 <p>OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle <a href="https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation">see OpenEVSE technical theory of opperation</a>. Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.</p>
 
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 
 <p><code class="highlighter-rouge">$SC13</code> will set the current charge current to 13A. The screen shot on the right below illustrates issuing the <code class="highlighter-rouge">$SC 13</code> RAPI command into the OpenEVSE local web page interface (served from ESP8266). The screenshot on the left shows the effect of reduction in charge rate as monitored by emonPi displayed using Emoncms:</p>
 
@@ -159,6 +159,8 @@
 <h4 id="future-developments">Future developments</h4>
 
 <p>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</p>
+
+<p><strong>Update:</strong> I have recently added RAPI commands over MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266/tree/Devolopment">OpenEVSE ESP8266 code currently in the dev branch</a>.</p>
 
 <p>See <a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">this forum thread</a> for related discussion.</p>
 
