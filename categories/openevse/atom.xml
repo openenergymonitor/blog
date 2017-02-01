@@ -4,7 +4,7 @@
   <title><![CDATA[Category: openevse | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/openevse/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-01-25T16:34:53+00:00</updated>
+  <updated>2017-02-01T22:57:02+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -24,13 +24,15 @@
   <p>An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.</p>
 </blockquote>
 
-<p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
+<p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
 <div class="videoWrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-<p><em>Note: this post is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
+<p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
+
+<p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
 
 <h2 id="features">Features</h2>
 
