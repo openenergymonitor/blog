@@ -15,15 +15,19 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 > An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.
 
-![openevse build9]({{site.image_path}}/openevse-build9.jpg)
+
+
+![openevse leaf]({{site.image_path}}/leaf-openevse.jpg)
 
 
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen></iframe>
+<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen></iframe>
 </div>
 
-*Note: this post is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides*
+![openevse build9]({{site.image_path}}/openevse-build9.jpg)
+
+*Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides*
 
 ## Features
 
