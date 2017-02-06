@@ -38,11 +38,13 @@ The features that make the OpenEVSE charge controller interesting to us are:
 - Integrated energy monitoring via custom hosted Emoncms [data.openevse.com](http://data.openevse.com/emoncms)
 - Fully open-source :-)
 
-I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it's fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!
+*I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it's fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!*
 
 Nissan LEAF charging from solar PV on a frosty morning:
 
 ![nissan-leaf-solar-pv]({{site.image_path}}/nissan-leaf-solar-pv.jpg)
+
+<!--more-->
 
 ## Safety
 
