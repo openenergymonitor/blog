@@ -63,6 +63,10 @@
 
 <style>
 
+html, body {
+  word-wrap: break-word;
+}
+
 .communityWrapper {
   box-sizing: border-box;
   margin: 0 auto;
@@ -392,6 +396,9 @@ $(".blackOut").click(function() {
   closeStatus = false;
 });
 
+$(document).ready(function(){
+  $("table").wrap("<div style='max-width:100%;overflow-x:scroll'></div>");
+});
 
 $(window).resize(function(){
   if ($(window).width() > 1079 && closeStatus == true) {
@@ -544,6 +551,18 @@ $(window).resize(function(){
 
  
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <div class="searchtool">
+
+  
+  <form action="https://encrypted.google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+      <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+    </fieldset>
+  </form>
+  
+
+  </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
     
@@ -645,11 +664,11 @@ fieldset {
   <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
   <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
 
-  <div class="credit">
+  <div class="credit" style="text-align:center;">
     Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
     Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
   </div>
-
+<!--
 <div class="searchtool">
 
 
@@ -661,7 +680,7 @@ fieldset {
 </form>
 
 
-</div>
+</div> -->
 </div>
     </div>
   </div>
