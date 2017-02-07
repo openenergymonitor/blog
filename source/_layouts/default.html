@@ -2,6 +2,10 @@
 
 <style>
 
+html, body {
+  word-wrap: break-word;
+}
+
 .communityWrapper {
   box-sizing: border-box;
   margin: 0 auto;
@@ -292,6 +296,9 @@ $(".blackOut").click(function() {
   closeStatus = false;
 });
 
+$(document).ready(function(){
+  $("table").wrap("<div style='max-width:100%;overflow-x:scroll'></div>");
+});
 
 $(window).resize(function(){
   if ($(window).width() > 1079 && closeStatus == true) {
