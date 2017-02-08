@@ -67,12 +67,53 @@ html, body {
   word-wrap: break-word;
 }
 
+a:visited, .a:hover, a:focus, a {
+  color: #44b3e2;
+}
+
+.meta.clearfix {
+  overflow-x: hidden;
+}
+
+.searchtool {
+  width: 100%;
+}
+
+input[type=text] {
+  border: 3px solid #44b3e2;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  width: 100%;
+  color: #000000;
+  padding: 14px 20px;
+  margin: 0;
+  outline: none;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: #44b3e2;
+    color: white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+}
+
 .communityWrapper {
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
   height: 42px;
 }
+
 @media (min-width: 1080px) {
   .communityWrapper {
   width: 1080px;
@@ -324,7 +365,7 @@ html, body {
 </div>
 
 <div class="blackOut"></div>
-<div style="position:relative;width:100%;top:0;height:42px"></div>
+<div style="position:relative;width:100%;top:0;height:20px"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script defer src="/javascripts/octopress.js"></script>
@@ -397,7 +438,7 @@ $(".blackOut").click(function() {
 });
 
 $(document).ready(function(){
-  $("table").wrap("<div style='max-width:100%;overflow-x:scroll'></div>");
+  $("table").wrap("<div style='max-width:100%;overflow-x:auto'></div>");
 });
 
 $(window).resize(function(){
@@ -417,8 +458,6 @@ $(window).resize(function(){
     
 
       <article class="post">
-  <div class='edit-github'><a href='https://github.com/openenergymonitor/blog/tree/master/source/_posts/2010-03-18-maker-faire-how-to-build-energy-monitor.html'>Edit on GitHub</a></div>
-<div class='edit-github'><a href='http://prose.io/#openenergymonitor/blog/edit/master/source/_posts/2010-03-18-maker-faire-how-to-build-energy-monitor.html'>Edit on GitHub Prose</a></div>
   
   <header>
   
@@ -448,6 +487,7 @@ $(window).resize(function(){
 
 
 
+
     </div>
 
     
@@ -463,6 +503,9 @@ $(window).resize(function(){
     <fieldset role="search">
       <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
       <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+      <button type="submit">
+         <i class="fa fa-search"></i> Search
+      </button>
     </fieldset>
   </form>
   
@@ -545,25 +588,7 @@ $(window).resize(function(){
   <div class="grid-wrapper">
   <div class="grid">
     <div class="grid__item">
-      <style>
-
-
-div.searchtool {
-  position: relative;
-  display: inline-block;
-  top: -6px;
-}
-
-input[type=text] {
-  border: 3px solid #44b3e2;
-}
-
-fieldset {
-  border: 0;
-}
-
-</style>
-<div class="copyright">
+      <div class="copyright">
 
   <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
   <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
