@@ -6,12 +6,53 @@ html, body {
   word-wrap: break-word;
 }
 
+a:visited, .a:hover, a:focus, a {
+  color: #44b3e2;
+}
+
+.meta.clearfix {
+  overflow-x: hidden;
+}
+
+.searchtool {
+  width: 100%;
+}
+
+input[type=text] {
+  border: 3px solid #44b3e2;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  width: 100%;
+  color: #000000;
+  padding: 14px 20px;
+  margin: 0;
+  outline: none;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: #44b3e2;
+    color: white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+}
+
 .communityWrapper {
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
   height: 42px;
 }
+
 @media (min-width: 1080px) {
   .communityWrapper {
   width: 1080px;
@@ -265,7 +306,7 @@ html, body {
 </div>
 
 <div class="blackOut"></div>
-<div style="position:relative;width:100%;top:0;height:42px"></div>
+<div style="position:relative;width:100%;top:0;height:20px"></div>
 
 {% include javascripts/scripts.html %}
 
@@ -297,7 +338,7 @@ $(".blackOut").click(function() {
 });
 
 $(document).ready(function(){
-  $("table").wrap("<div style='max-width:100%;overflow-x:scroll'></div>");
+  $("table").wrap("<div style='max-width:100%;overflow-x:auto'></div>");
 });
 
 $(window).resize(function(){
