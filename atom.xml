@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-21T13:58:11+00:00</updated>
+  <updated>2017-02-21T15:33:58+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -20,9 +20,9 @@
     <id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id>
     <content type="html"><![CDATA[<p><img src="https://blog.openenergymonitor.org/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
 
-<p>I would like to highlight a piece of work by Carlos Alonso Gabizón which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see people use.</p>
+<p>I would like to highlight a piece of work by <a href="https://community.openenergymonitor.org/users/cagabi">Carlos Alonso Gabizón</a> which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.</p>
 
-<p>Carlos has been working for <a href="http://carbon.coop/">CarbonCoop</a> over the last year and a half on MyHomeEnergyPlanner – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.</p>
+<p>Carlos has been working for <a href="http://carbon.coop/">CarbonCoop</a> over the last year and a half on <a href="(http://myhome.emoncms.org)">MyHomeEnergyPlanner</a> – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.</p>
 
 <p>MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.</p>
 
@@ -30,33 +30,29 @@
 
 <p>It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.</p>
 
-<p>MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your emoncms.org account)</p>
+<p>MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your <a href="https://emoncms.org">Emoncms.org</a> account)</p>
 
-<p><a href="http://myhome.emoncms.org">http://myhome.emoncms.org</a></p>
+<p><strong><a href="http://myhome.emoncms.org">http://myhome.emoncms.org</a></strong></p>
 
-<p>I have written an initial getting started guide here that goes over the main parts of creating an initial household assessment:</p>
+<!--more-->
 
-<p><a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner">https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner</a></p>
+<p>I have written an <a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner">initial getting started guide</a> here that goes over the main parts of creating an initial household assessment:</p>
 
-<p>When I was last working on building energy modelling I also wrote a brief guide on how a simple household energy model works which can also be found here:</p>
+<p>When I was last working on building energy modelling I also wrote a <a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme">brief guide on how a simple household energy model</a> works which can also be found here:</p>
 
-<p><a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme">https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme</a></p>
+<h3 id="myhomeenergyplanner-github">MyHomeEnergyPlanner Github</h3>
 
-<p><strong>MyHomeEnergyPlanner Github</strong> 
-<a href="http://github.com/emoncms/MyHomeEnergyPlanner">http://github.com/emoncms/MyHomeEnergyPlanner</a></p>
+<p><strong><a href="http://github.com/emoncms/MyHomeEnergyPlanner">http://github.com/emoncms/MyHomeEnergyPlanner</a></strong></p>
 
 <hr />
 
 <p>For further context: MyHomeEnergyPlanner is used by CarbonCoop as part of their work on household retrofit, improving insulation and air-tightness of existing households in Manchester to achieve carbon emission reductions of 80% compared to the 1990 baseline. More information can be found about their work here:</p>
 
-<p>Whole House Retrofit - A Community Green Deal
-<a href="http://carbon.coop/content/whole-house-retrofit-community-green-deal">http://carbon.coop/content/whole-house-retrofit-community-green-deal</a></p>
-
-<p>Whole House Retrofit Assessment Method:
-<a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf</a></p>
-
-<p>Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project:
-<a href="https://twitter.com/CarbonCoop/status/802176377785028608/photo/1">https://twitter.com/CarbonCoop/status/802176377785028608/photo/1</a></p>
+<ul>
+  <li><a href="http://carbon.coop/content/whole-house-retrofit-community-green-deal">Whole House Retrofit - A Community Green Deal</a></li>
+  <li><a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">Whole House Retrofit Assessment Method</a></li>
+  <li><a href="https://twitter.com/CarbonCoop/status/802176377785028608/photo/1">Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project (twitter)</a></li>
+</ul>
 ]]></content>
   </entry>
   
@@ -67,29 +63,33 @@
     <id>https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy</id>
     <content type="html"><![CDATA[<p>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The <a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy section of Learn</a> brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.</p>
 
-<p>It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario.</p>
+<p><img src="https://blog.openenergymonitor.org/images/learn-laptop.png" alt="New Front Page" /></p>
+
+<p>It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario:</p>
 
 <ul>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">https://learn.openenergymonitor.org/sustainable-energy/energy/introduction</a></li>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101">https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy Introduction</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101">Energy 101</a></li>
 </ul>
 
-<p>There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote <a href="http://www.inference.eng.cam.ac.uk/withouthotair/">Sustainable energy without the hot air</a>, to visualise the different uses of energy from traditional electricity demand to heating and transport.</p>
+<p>There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote <a href="http://www.inference.eng.cam.ac.uk/withouthotair/">Sustainable energy without the hot air</a>, to visualise the different uses of energy from traditional electricity demand to heating and transport:</p>
 
 <ul>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study">https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study">Snowdonia Energy Study</a></li>
 </ul>
 
-<p>Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model.</p>
+<!--more-->
+
+<p>Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model:</p>
 
 <ul>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain">https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain">Zero Carbon Britain</a></li>
 </ul>
 
 <p>The latest version of the 10 year hourly energy modelling tool can be found here:</p>
 
 <ul>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">Zero Carbon Britain Modelling Tool</a></li>
 </ul>
 
 <p>It can be used to explore supply &amp; demand matching for a large number of different supply and demand side technologies. Everything from wind, solar, heatpumps, biomass heat, electric vehicles, hydrogen, battery storage to long term biomass energy backup.</p>
@@ -97,9 +97,9 @@
 <p>Pages 6,7 &amp; 8 and the appendixes go into further detail looking briefly at costs, renewable heat and community (large village/small town) scale scenarios, discussing the results of running different options through the model.</p>
 
 <ul>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios">https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios</a></li>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat">https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat</a></li>
-  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/costs">https://learn.openenergymonitor.org/sustainable-energy/energy/costs</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios">Energy Scenarios</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat">Renewable Heat</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/costs">Sustainable Cnergy Costs</a></li>
 </ul>
 
 <p><strong>Screenshot: Snowdonia household energy study:</strong></p>
@@ -115,36 +115,39 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Launching our new home page and Learn website!]]></title>
+    <title type="html"><![CDATA[New home page and Learn website!]]></title>
     <link href="https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn/"/>
     <updated>2017-01-31T10:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn</id>
-    <content type="html"><![CDATA[<p>As you may well have noticed we have recently launched a new front page website for OpenEnergyMonitor and a common theme across our multiple sites, We have also launched a new website called Learn.</p>
+    <content type="html"><![CDATA[<p>As you may well have noticed we have recently launched a new <a href="https://openenergymonitor.org">front page</a> for OpenEnergyMonitor and a common navigation bar theme across all our sites. We have also launched a new website called <a href="https://learn.openenergymonitor.org">Learn</a> to replace the <a href="https://openenergymonitor.org/emon/buildingblocks">Building Blocks section</a> of the old site. All URL’s directed to building blocks should re-direct automatically to the relevant Learn page.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/home-page-devices.png" alt="devices" /></p>
 
 <p>A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.</p>
 
-<p>This website redesign completes the shift away from using drupal that was started with the OpenEnergyMonitor Guide website launched April 2016 and the use of <a href="http://discourse.org">discource</a> for our forums launched May 2016.</p>
+<p>This website redesign completes the shift away from using Drupal 6 cms that was started with the <a href="https://guide.openenergymonitor.org">User Guide website</a> launched April 2016 and a new <a href="https://Community.openenergymonitor.org">Community Form</a> using <a href="http://discourse.org">Discource</a> launched May 2016. The <a href="https://openenergymonitor.org/emon/forum">old forums</a> are still accessible as a read-only archive.</p>
 
 <p>Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.</p>
 
 <p>Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.</p>
 
-<p>The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes.</p>
+<p>The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes:</p>
 
-<p>New OpenEnergyMonitor front page:</p>
+<!--more-->
 
-<p><a href="http://openenergymonitor.org">http://openenergymonitor.org</a></p>
+<h3 id="new-front-page">New front page:</h3>
 
-<p>Learn:</p>
-
-<p><a href="http://learn.openenergymonitor.org">http://learn.openenergymonitor.org</a></p>
-
-<p>Screenshots:</p>
+<p><strong><a href="https://openenergymonitor.org">https://openenergymonitor.org</a></strong></p>
 
 <p><img src="https://blog.openenergymonitor.org/images/new-oem-site.png" alt="New Front Page" /></p>
 
+<h3 id="learn-website">Learn Website:</h3>
+
+<p><strong><a href="https://learn.openenergymonitor.org">https://learn.openenergymonitor.org</a></strong></p>
+
 <p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy.png" alt="Learn: Sustainable Energy" /></p>
 
+<p><img src="https://blog.openenergymonitor.org/images/mobile-learn.png" alt="1" /> <img src="https://blog.openenergymonitor.org/images/ct-sensors-phone.png" alt="2" /></p>
 ]]></content>
   </entry>
   

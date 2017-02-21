@@ -4,7 +4,7 @@
   <title><![CDATA[Category: website | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/website/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-21T13:58:11+00:00</updated>
+  <updated>2017-02-21T15:33:58+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New home page and Learn website!]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn/"/>
+    <updated>2017-01-31T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn</id>
+    <content type="html"><![CDATA[<p>As you may well have noticed we have recently launched a new <a href="https://openenergymonitor.org">front page</a> for OpenEnergyMonitor and a common navigation bar theme across all our sites. We have also launched a new website called <a href="https://learn.openenergymonitor.org">Learn</a> to replace the <a href="https://openenergymonitor.org/emon/buildingblocks">Building Blocks section</a> of the old site. All URL’s directed to building blocks should re-direct automatically to the relevant Learn page.</p>
+
+<p><img src="/images/home-page-devices.png" alt="devices" /></p>
+
+<p>A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.</p>
+
+<p>This website redesign completes the shift away from using Drupal 6 cms that was started with the <a href="https://guide.openenergymonitor.org">User Guide website</a> launched April 2016 and a new <a href="https://Community.openenergymonitor.org">Community Form</a> using <a href="http://discourse.org">Discource</a> launched May 2016. The <a href="https://openenergymonitor.org/emon/forum">old forums</a> are still accessible as a read-only archive.</p>
+
+<p>Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.</p>
+
+<p>Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.</p>
+
+<p>The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes:</p>
+
+<!--more-->
+
+<h3 id="new-front-page">New front page:</h3>
+
+<p><strong><a href="https://openenergymonitor.org">https://openenergymonitor.org</a></strong></p>
+
+<p><img src="/images/new-oem-site.png" alt="New Front Page" /></p>
+
+<h3 id="learn-website">Learn Website:</h3>
+
+<p><strong><a href="https://learn.openenergymonitor.org">https://learn.openenergymonitor.org</a></strong></p>
+
+<p><img src="/images/learn-sustainable-energy.png" alt="Learn: Sustainable Energy" /></p>
+
+<p><img src="/images/mobile-learn.png" alt="1" /> <img src="/images/ct-sensors-phone.png" alt="2" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Forum, Blog and User Guide Website]]></title>
