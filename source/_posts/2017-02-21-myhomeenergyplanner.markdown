@@ -6,7 +6,7 @@ date: "2017-02-21 13:43"
 date_formatted: Feb 21st 2017
 author: Trystan Lea
 comments: true
-categories:
+categories: sustainability 
 ---
 
 
