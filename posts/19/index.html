@@ -462,6 +462,128 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2013/04/introducing-rfm12pi-v2-raspberry-pi/">Introducing the RFM12Pi V2 - Raspberry Pi Wireless Expansion Board </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-04-26T18:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-04-26 18:25:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/04/introducing-rfm12pi-v2-raspberry-pi/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Since, November last year we have more and more been leaning towards using a Raspberry Pi as our web connected base station of choice. See&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/11/raspberry-pi-emonbase.html">here</a>&nbsp;for our original&nbsp;blog post on using the Raspberry Pi as an emoncms logging &nbsp;and visualisation&nbsp;server.<br /><br />Here is the latest version of the RFM12Pi Raspberry Pi wireless expansion board. Like the V1 the RFM12Pi V2 allows the Raspberry Pi to receive and transmit data via RFM12B 433/868mhz from and to other wireless nodes such as the <a href="http://openenergymonitor.org/emon/emontx">emonTx</a>, <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> and <a href="http://openenergymonitor.org/emon/emontx/tempnode">Remote Temperature</a> nodes.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-jaZMslEY3zA/UXXFwc4uSDI/AAAAAAAAee8/vqDdsJqPCGo/s1600/RFM12PiV2_Pi_small.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="256" src="http://3.bp.blogspot.com/-jaZMslEY3zA/UXXFwc4uSDI/AAAAAAAAee8/vqDdsJqPCGo/s400/RFM12PiV2_Pi_small.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM12Pi V2 - Raspberry Pi Expansion Board</td></tr></tbody></table><br />The RFM12Pi V2 is now&nbsp;<a href="http://shop.openenergymonitor.com/raspberry-pi/">for sale in the OpenEnergyMonitor online shop</a>, it comes pre-assembled and ready loaded with firmware, when used in conjunction with the read-to-go emoncms Raspberry Pi SD card image&nbsp;it makes for a truly plug-and-play energy monitor web-connected base-station setup. We're also selling a PCB only version and of course the hardware design, Arduino based firmware all Raspberry Pi emoncms setup is all open-source.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-kvaEcEb-_YM/UZFQNVhLKrI/AAAAAAAAeo8/eclD4tkXnAI/s1600/RFM12PiV2_Top_angle_small.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-kvaEcEb-_YM/UZFQNVhLKrI/AAAAAAAAeo8/eclD4tkXnAI/s200/RFM12PiV2_Top_angle_small.png" width="180" /></a><a href="http://4.bp.blogspot.com/-hGz4QEGTlGA/UXbtEK_0XqI/AAAAAAAAefc/F0YfFncPEVE/s1600/RFM12PiV2_bottom.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="165" src="http://4.bp.blogspot.com/-hGz4QEGTlGA/UXbtEK_0XqI/AAAAAAAAefc/F0YfFncPEVE/s200/RFM12PiV2_bottom.png" width="200" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For the ultimate super-quick and easy setup we have also made available <a href="http://shop.openenergymonitor.com/emoncms-pre-loaded-raspberry-pi-4gb-sd-card/">pre-loaded Emoncms Raspberry Pi SD cards</a>.&nbsp;</div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-axDPbDuB160/UXrFGNcK-ZI/AAAAAAAAegE/tycnq-iOfzw/s1600/emoncmsPi+SD+CARD.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="190" src="http://4.bp.blogspot.com/-axDPbDuB160/UXrFGNcK-ZI/AAAAAAAAegE/tycnq-iOfzw/s200/emoncmsPi+SD+CARD.png" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Emoncms Raspberry Pi Pre-loaded SD card&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div>The new features of the RFM12Pi V2 are:<br /><ul><li>ATmega328 based, has more memory and hardware serial support</li><li>Using the ATmega328 hardware serial (+optiboot) and AVRdude (pre-installed on SD card image) it's possible to upgrade the firmware on the RFM12Pi V2 direct from Raspberry Pi,<a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2#Upgrading_RFM12Pi_Firmware_Direct_from_the_Pi"> </a><a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2#Upgrading_RFM12Pi_Firmware_Direct_from_the_Pi">instructions are on the wiki</a>.</li><li>Runs on ATmega328 internal 8Mhz oscillator (to save unnecessary components)</li><li>SMT used, board layout is optimised for pick-and-place assembly</li><li>Lower profile to fit inside most Raspberry Pi enclosures</li></ul>See the the <a href="http://wiki.openenergymonitor.org/index.php?title=RFM12Pi_V2">RFM12Pi V2 wiki </a>for more technical details regarding the hardware and firmware. <br /><br />To get up and running all that's needed is to connect the RFM12Pi onto the Raspberry Pi's GPIO pins, insert the pre-build SD card and bootup the Pi. Once booted up browse to the Pi's local IP address or the host name (<a href="http://emoncmspi/">http://emoncmspi)</a> and then configure the RFM12B network setting from within emoncms.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/Raspi_emoncms.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="408" src="http://openenergymonitor.org/emon/sites/default/files/Raspi_emoncms.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms Raspberry Pi Module Config Page</td></tr></tbody></table><br /><br />Monitoring data is logged to the Raspberry Pi's SD card and can be mirrored to <a href="http://emoncms.org/">emoncms.org</a> or any other emoncms server for backup and remote viewing. The Raspberry Pi is powerful enough to be able to serve emoncms graphs and widgets.    <br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><img border="0" src="http://lh3.ggpht.com/-mW_ZAzB018I/UXcDcf8e1fI/AAAAAAAAef0/iiBTxla5bfg/s640/Skitch.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: center;">emoncms dashboard served from the Raspberry Pi - viewed on a Nexus 7 Tablet&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><a href="http://lh3.ggpht.com/-mW_ZAzB018I/UXcDcf8e1fI/AAAAAAAAef0/iiBTxla5bfg/s1600/Skitch.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;">  </a> </div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/04/pictures-from-openenergymonitor-cat/">Pictures from the OpenEnergyMonitor CAT course</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-04-17T20:56:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-04-17 20:56:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/workshop/'>workshop</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/04/pictures-from-openenergymonitor-cat/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">A couple of weeks ago we held our first openenergymonitor course at the Center for Alternative Technology in Mid Wales. It was well attended with 17 of us in total including tutors: myself, Carlos and Suneil. We where also lucky to have Robin Emley come down to demo his MK2 Surplus PV diverter and lend a helping hand.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here are a few pictures of everyone getting stuck in with building emontx's and rfm12pi adapter boards:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SFQZK8DQ0O0/UVn4lifvx_I/AAAAAAAACjE/MIjwWs0p-3A/s1600/2013-03-26+11.37.06.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="180" src="http://2.bp.blogspot.com/-SFQZK8DQ0O0/UVn4lifvx_I/AAAAAAAACjE/MIjwWs0p-3A/s320/2013-03-26+11.37.06.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">Carlos and Sebastian who came all the way from Germany going through the Raspberry PI setup process:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-GboPwPV_rgM/UVn4mqVr1kI/AAAAAAAACjM/ypCWHG9sGZU/s1600/2013-03-26+11.36.33.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="180" src="http://2.bp.blogspot.com/-GboPwPV_rgM/UVn4mqVr1kI/AAAAAAAACjM/ypCWHG9sGZU/s320/2013-03-26+11.36.33.jpg" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ow3IK2F_TUI/UVn4nNmmSvI/AAAAAAAACjU/Puf7fgOlGkg/s1600/2013-03-26+11.36.16.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="180" src="http://2.bp.blogspot.com/-ow3IK2F_TUI/UVn4nNmmSvI/AAAAAAAACjU/Puf7fgOlGkg/s320/2013-03-26+11.36.16.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">Robin Emley helping out above and his solar pv diversion setup below:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qfJzJk8XImw/UVn4n3Y1mkI/AAAAAAAACjc/vaNf_9ZJSVI/s1600/2013-03-25+19.34.25.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="180" src="http://4.bp.blogspot.com/-qfJzJk8XImw/UVn4n3Y1mkI/AAAAAAAACjc/vaNf_9ZJSVI/s320/2013-03-25+19.34.25.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">The course was held in the beautiful Welsh&nbsp;Institute&nbsp;for Sustainable Education (WISE) &nbsp;building at CAT:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-8PEEv1-emj8/UVqYYV47qPI/AAAAAAAACjs/YKiDI59C8s8/s1600/WISE-building-at-Centre-f-007.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="192" src="http://4.bp.blogspot.com/-8PEEv1-emj8/UVqYYV47qPI/AAAAAAAACjs/YKiDI59C8s8/s320/WISE-building-at-Centre-f-007.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both;">I'm in Manchester this coming weekend (20th April) helping Matt Fawcett and the rest of the Carbon Coop team with their:&nbsp;<a href="http://carbon.coop/news/2013-04-03/ecohome-lab-launch-workshop-build-day-first-meet">Ecohome lab launch workshop and build day</a>.&nbsp;Looking forward to it.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/03/course-at-centre-for-alternative/">Course at the Centre for Alternative Technology</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-03-02T23:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-03-02 23:21:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Carlos AG</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/workshop/'>workshop</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/03/course-at-centre-for-alternative/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    by Carlos Alonso Gabizón<br /><h2><style type="text/css"> <!--   @page { margin: 2cm }   P { margin-bottom: 0.21cm }  </style> Open Source Tools For Energy Monitoring</h2><h3 style="margin-bottom: 0cm;">25th - 28th March</h3><h3 style="margin-bottom: 0cm;"></h3><div style="margin-bottom: 0cm;">When working towards sustainable energy it is important that we work towards it in a way that adds up. Energy monitoring is a vital tool for helping us do this from measuring our home electricity consumption to working out the performance of sustainable heating systems.</div><div style="margin-bottom: 0cm;">During this short workshop we will explore and build monitoring solutions that are based on open source technology developed as part of the openenergymonitor.org online research project. Solutions that can be configured for a wide range of applications including:</div><ul><li>Household Electricity monitoring</li><li>Heat-pump monitoring</li><li>Solar PV generation monitoring</li></ul><div style="margin-bottom: 0cm;">The workshop will focus around a practical case study of monitoring electricity generation and use at the Centre for Alternative Technology designing a public energy display to engage visitors that can be accessed both at the site and on the web.</div><h3 style="margin-bottom: 0cm;">Workshop content outline</h3><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-QFgtAhsvzMA/UTKHc6opBhI/AAAAAAAAACE/WG9p-nDTiCs/s1600/content_outline.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="376" src="http://2.bp.blogspot.com/-QFgtAhsvzMA/UTKHc6opBhI/AAAAAAAAACE/WG9p-nDTiCs/s640/content_outline.jpg" width="640" /></a></div><h3 style="margin-bottom: 0cm;">&nbsp;</h3><h3>Course tutors</h3><div style="margin-bottom: 0cm;"><i><b>Carlos Alonso Gabizón</b></i> – Is the course leader. Worked on microgrid energy display project at CAT and open source software for extracting energy data from PV inverter equipment. Carlos has an electronic engineering and computer science background.</div><div style="margin-bottom: 0cm;"><i><b>Trystan Lea</b></i> – As a core developer on the openenergymonitor project Trystan will be introducing the hardware and software workshops. Trystan codeveloped with Glyn Hudson many of the main elements of the openenergymonitor system with a focus on software and firmware including emoncms an open source web application for energy visualisation. Trystan also runs the openenergymonitor kit shop with Glyn Hudson.Trystan has a Physics background with a BSc in Physics at Cardiff University.</div><div style="margin-bottom: 0cm;"><i><b>Suneil Tagore</b></i> – Will be giving an introduction to open source 3D fabrication/printing using the reprap. Suneil has also worked on DC monitoring for theHugh Piggot wind turbine. Suneil has a background in Engineering andcomputer science with an MEng in Engineering at UCL London and a MSc inComputer Science at Cardiff University.</div><h4>Course cost and how to book</h4><div style="margin-bottom: 0cm;">The course cost is £520. Concession: £340 (unemployed, retired or full time student). This covers accommodation, food and course tuition.<br />You can reserve a place on the course online at: <a href="http://courses.cat.org.uk/energyrenewables/open-source-tools-for-energy-monitoring-detail" target="_blank">courses.cat.org.uk/</a> or by phone calling the CAT Courses Department on 01654 704 952.</div><h4>What will you get from this course?</h4><div style="margin-bottom: 0cm;">Firstly, the knowledge and practical skills to build and set up a monitor solution based in the openenergymonitor kit and how to expand its functionality beyond what is done in the course.<br />Secondly, you will be able to install emonCMS, set it up and create really nice visualizations.<br />And lastly but more exciting than the previous, you will take home your own energy monitor completely ready to use!!!</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/02/emontx-smt-update-introducing-emontx-v3/">emonTx SMT update > Introducing emonTx V3 </a>
   </h1>
   
@@ -742,126 +864,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/12/the-openenergymonitor-meetup-last/">OpenEnergyMonitor Meetup</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-12-11T23:06:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-12-11 23:06:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/oem-labs/'>OEM Labs</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/12/the-openenergymonitor-meetup-last/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div>We had a very enjoyable OpenEnergyMonitor meetup last weekend. <a href="http://sustburbia.blogspot.co.uk/">Ken Boak</a>&nbsp;and Paul Allen (<a href="http://wattdata.blogspot.co.uk/">MarsFlyer</a>) &nbsp;came up from London, <a href="http://www.meetup.com/Cleanweb-London/members/61999412/">Matt Fawcett</a>&nbsp;from Manchester and&nbsp;Carlos Alonso Gabizó from Machynlleth.</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-xhG9CVG7DA0/UMe3aCyMmwI/AAAAAAAACh8/dzSKv8rkovk/s1600/IMAG1020.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="225" src="http://4.bp.blogspot.com/-xhG9CVG7DA0/UMe3aCyMmwI/AAAAAAAACh8/dzSKv8rkovk/s400/IMAG1020.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">From left to right: Glyn, Matt, Ken</td></tr></tbody></table>We did a surprising amount of development in such as short time as well having some great discussions. Here's a summary of what we worked on:<br /><div><br /><b>Controlling wireless nodes from emoncms </b><br />Ken Boak and I worked on furthering a way for emoncms to be able to send commands back to the gateway and wireless nodes, which could be used as part of a system for turning on and off heating systems and setting set point temperatures. There's now a new optional emoncms module called command where you can add commands to a queue that can then be requested by the gateway. Download the module here:&nbsp;<a href="https://github.com/emoncms/command">https://github.com/emoncms/command</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jQInd15tukc/UMe5Kou25SI/AAAAAAAACiU/-88G1VI91k0/s1600/command+module.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="306" src="http://3.bp.blogspot.com/-jQInd15tukc/UMe5Kou25SI/AAAAAAAACiU/-88G1VI91k0/s640/command+module.png" width="640" /></a></div><div><br /></div><div><br /></div><div><b>Gas monitoring&nbsp;</b><br />There was a lot of discussion around gas monitoring. Paul brought with him a jeenode with a hall effect sensor connected for sensing the magnetic pulse given off by certain types of gas meter. The jeenode goes to sleep between pulses so that it can run on a single AA battery for a long time which is a big benefit for installations where there are no near electrical sockets. Glyn worked on adding this to the gas monitoring page on the website here:&nbsp;<a href="http://openenergymonitor.org/emon/buildingblocks/gas-meter-monitoring">http://openenergymonitor.org/emon/buildingblocks/gas-meter-monitoring</a></div><div><br /></div><div>Paul also<a href="https://github.com/emoncms/emoncms/commit/cbccc9922e2a563488f6997cc8333863db123a5a"> implemented a pulse to power input processor</a> for emoncms to allow conversion of pulse data coresponding to energy use increments to power values for use with the low power gas pulse counter.</div><div><br /></div><div><b>EmonTx accuracy experiment replication</b></div><div>Carlos replicated the EmonTx accuracy experiment, with the results comparing well with the previous investigation take a look at his results here&nbsp;<a href="http://openenergymonitor.org/emon/emontx/accuracy">http://openenergymonitor.org/emon/emontx/accuracy</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/cagabi-Accuracy%20test%20emonTX.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://openenergymonitor.org/emon/sites/default/files/cagabi-Accuracy%20test%20emonTX.jpg" width="640" /></a></div><div><br /></div><div><br /></div><div><b>An open source SAP calculator -</b> Matt and I made a start on an open source web based SAP worksheet - SAP is the UK Government’s Standard Assessment Procedure for Energy Rating of Dwellings produced by BRE the Building Research Establishment. We've put the progress we have made so far up on github here: <a href="https://github.com/emoncms/sap">https://github.com/emoncms/sap</a>&nbsp;</div><div>Please get in touch if your interested in helping to develop this, we could do with more help with completing the form and checking and implementing the remaining calculations.</div><div>Matt is working on a really exciting project in Manchester with Carbon Coop to do building retrofits of which monitoring and sap calculation is an important part, its well worth a look at their work here&nbsp;<a href="http://carbon.coop/">http://carbon.coop/</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-cGDoBrMU3IE/UMe5E9wKwYI/AAAAAAAACiM/MDJlXUk4eeg/s1600/sapscreen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="392" src="http://3.bp.blogspot.com/-cGDoBrMU3IE/UMe5E9wKwYI/AAAAAAAACiM/MDJlXUk4eeg/s640/sapscreen.png" width="640" /></a></div><div><br /><b></b>  <br />We also looked at humidity sensing and built up a couple of low-power wireless humidity nodes using an emonTx's with a DHT22 humidity sensor.<br /><br />Throughout the weekend I think we had a good emphasis on how the tools that we are developing are applied with much discussion of how it all fits into the wider picture of sustainable energy.&nbsp;</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-zzSdle2hvdc/UMe3uj29ZKI/AAAAAAAACiE/LsPtHby8YQo/s1600/oemmeetup01.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-zzSdle2hvdc/UMe3uj29ZKI/AAAAAAAACiE/LsPtHby8YQo/s400/oemmeetup01.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Finishing the first day with well earned homebrew ale thanks to Carlos<br />From left to right: Paul, Carlos, Matt, Ken, Trystan (Glyn taking the photo)</td></tr></tbody></table><div>It was a great weekend and I'm really looking forward to the next one already, we're thinking maybe next April on a bank holiday weekend.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/12/rfm12b-wireless-transmission-explained/">RFM12B Wireless Transmission Explained</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-12-04T23:09:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-12-04 23:09:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/12/rfm12b-wireless-transmission-explained/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div><br /></div><div><a href="http://4.bp.blogspot.com/-wAK7ujuyW74/UL6CdPOgCTI/AAAAAAAAdDI/BnSuuYG715M/s1600/rfm12.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-wAK7ujuyW74/UL6CdPOgCTI/AAAAAAAAdDI/BnSuuYG715M/s1600/rfm12.png" /></a>All OpenEnergyMonitor hardware modules (emonTx, emonGLCD emonBase etc) currently use the RFM12B 433/868/915Mhz module to communicate via wireless.&nbsp;</div><div><br /></div><div>We use the <a href="https://github.com/jcw/jeelib">JeeLib Arduino library</a> from <a href="http://jeelabs.org/">JeeLabs</a> as the software driver for the RFM12B.</div><div><br /></div><div><a href="http://openenergymonitor.org/emon/user/924">Robert Wall</a> has recently contributed a well written bit of documentation to explain the basics&nbsp;RFM12B wireless transmission:<br /><br /><br /><br /><br /></div><div style="background-color: #dddddd; padding: 10px;"><b><i>RFM12B - Part 2 -</i></b><br /><b><i>Sending data by radio between emonTx, emonBase and emonGLCD</i></b></div><div style="background-color: #dddddd; padding: 10px;"><i>The data is sent by radio between the sensor nodes, the base station (including the RFM12Pi) and the display. This note describes the way in which the data is assembled and addressed in order to pass values between units.<br /><br />The Arduino-based emon modules are programmed with application sketches that make use of the JeeLib library to handle the transmission and reception of the data, using the function calls provided by the library. The RFM12Pi is programmed in PHP but uses exactly the same methods and data structure. <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2#appendix1">Appendix 1</a>&nbsp;contains instructions for configuring the Raspberry Pi module.</i><br /><br /><i><b>Configuring &amp; Addressing</b></i></div><div style="background-color: #dddddd; padding: 10px;"><i>All the devices that communicate with each other must all use the same frequency. For the Arduino-based devices, this is specified in the software and must be one of the pre-defined constants. It must match the frequency of the hardware. (You should check which frequencies are permitted in your locality. It is possible to operate at the wrong frequency, e.g. 868 MHz hardware at 433 MHz, but the range can be very small, maybe less than 1 m).<br /><br />The addressing scheme has two parts, the “Network Group” and the “Node ID”. The RFM12B module supports 250 network groups, the RFM12 module can have only one network group, 212. Only devices that belong to the same group can talk to and listen to each other. If you like, you can think of a network group as being like a room: everyone in the room can talk to anyone else, but can neither talk to nor hear someone in a different room.<br /><br />Within the network group, there can be 31 Node Ids, but nodes 0 and 31 are special. Node 0 is used for On/Off Keying (OOK) and node 31 is for broadcast messages. The way we use it, each device must have its own unique ID. You can think of the ID as the name of a person in the room. <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2#appendix2">Appendix 2</a> lists our standardised Node IDs.<br /><br />There is one further but very important restriction: all the devices in all the network groups all use the same frequency, so only one device is allowed to transmit at any time.</i></div><div style="background-color: #dddddd; padding: 10px;"><a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2">Read Item in full from the Building Blocks Section&nbsp;</a></div><br />This documentation forms part 2 of RFM12B documentation. Part 1 details an <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless">overview of the RFM12B module</a>.  <br /><br />I would also like to take this opportunity to thank <a href="http://openenergymonitor.org/emon/user/1741">ukmoose</a> for his contributions to the Raspberry Pi&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=Raspberry_Pi">RFM12pi documentation wiki page</a>.
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/12/public-and-private-feeds/">Public and private feeds </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-12-03T18:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-12-03 18:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/12/public-and-private-feeds/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Another new feature in the latest commit is what I hope is clearer feed authentication levels:</div><br /><b>Public access to feeds -</b> no authentication required accessible to everyone - these are for use in public dashboards&nbsp;which also require no authentication, but is wider than dashboards only as it also means&nbsp;sharing feed data publicly in general either directly through the feed api or visualisations.<br /><div><br /></div><div><b>Private feeds</b><br /><br /><b>Read only access to feeds -</b> accessible via read apikey (but not public unless you share your read apikey publicly) useful for sharing with someone privately, ie sending a link via email to a trusted person. To do this you make the feed private and send the link to whatever it is you want to share privately with an &amp;apikey=YOURREADAPIKEY at the end.<br /><br /><b>Write access to feeds - </b>accessible via write apikey, strictly a private apikey (not to be shared as this would give others write access to your account). Write access is needed for connected devices such as the basestation to upload data to emoncms.</div><div><br /></div><div>All feeds are by default private. To make a feed public click on the lock icon in the feed list, the globe icon represents public access:<br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-UXTb_DlsTCc/ULzpr-GhNeI/AAAAAAAAChg/KlKAsOai5hY/s1600/public01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="291" src="http://2.bp.blogspot.com/-UXTb_DlsTCc/ULzpr-GhNeI/AAAAAAAAChg/KlKAsOai5hY/s400/public01.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">This is my feed list, I have granted public access to my solar hot water system temperatures and made the house power private as this could be particularly sensitive data as it would be possible to see my daily activity in detail.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Private feeds and public dashboards</b></div><div class="separator" style="clear: both; text-align: left;"><b><br /></b></div><div class="separator" style="clear: both; text-align: left;">If you include a private feed in a public dashboard, the dashboard will not be able to retrieve the feed data and your dashboard is likely to look like this:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-u0pFnJUAJVI/ULzpuXLOAxI/AAAAAAAACho/_ZFI9pKGWc0/s1600/public02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="227" src="http://3.bp.blogspot.com/-u0pFnJUAJVI/ULzpuXLOAxI/AAAAAAAACho/_ZFI9pKGWc0/s400/public02.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">As all feeds with the implementation of this feature have been set to private all public dashboards will either have dials that are 0 and possibly visualisations that show the above message. If your visualisation is still working it may be because the javascript from the page is cached in your browser and you need to clear it.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">If you see any bugs or to see the latest status of bug fixing and features on their way have a look at the <a href="http://openenergymonitor.org/emon/node/1540">bug and dev list</a></div><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -902,6 +904,24 @@ $(window).resize(function(){
     
       
         <li class="post">
+          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/new-home-page-and-learn/">Launching our new home page and Learn website!</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
         </li>
       
@@ -939,24 +959,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
     

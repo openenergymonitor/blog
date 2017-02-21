@@ -462,6 +462,132 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/emonglcd-v13-pcb/">emonGLCD V1.3 PCB</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-28T13:09:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-28 13:09:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/emonglcd-v13-pcb/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Introducing the latest version of the emonGLCD PCB.<br /><br />This latest version (V1.3) fixes a <a href="http://openenergymonitor.org/emon/node/273">few minor issues</a> with the previous version (V1.2) but also has some issues of its own. It's a case of two steps forward and one step back.<br /><br />The good news:<br /><br /><ul><li>The LDR light sensor no longer suffers from reduced&nbsp;sensitivity due to sharing a port with one of the LCD pins&nbsp;</li><li>Both tri-colour LEDs are on ATmega328's hardware PWM ports allowing the brightness to be controlled with some nice dimming effects&nbsp;</li><li>New new rear silkscreen design&nbsp;featuring&nbsp;a handy RFM12B frequency note area and a large Welsh dragon graphic!&nbsp;</li></ul>The bad news:<br /><br /><ul><li>The new feature in V1.3 was suppose to be two extra push switches to allow for future screen navigation. Unfortunately due to a PCB layout error non of the switches on V1.3 are functional. While this is&nbsp;frustrating&nbsp;since it was an easily avoidable mistake the display is still very functional. The current firmware example for single CT energy monitoring and solar PV monitoring don't really make much use of the switch.&nbsp;</li></ul><div>The good news!</div><div><br /></div><div>Everything else LCD, wireless, ATmega 328, Light sensor, Temperature sensor and multi-colour LED's work great. We have decided to go with the switches not working for now as it still makes a very functional energy monitor display.&nbsp;</div><div><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-mZVa3YtA_fc/T0vZUnFBJPI/AAAAAAAAZf8/VIaKBCNs6aU/s1600/emonGLCD_PCB_V1.3_front.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-mZVa3YtA_fc/T0vZUnFBJPI/AAAAAAAAZf8/VIaKBCNs6aU/s320/emonGLCD_PCB_V1.3_front.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.3 front</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-m6oT0oN8qrk/T0vZgUbu3zI/AAAAAAAAZgE/mlnwxzxFYeM/s1600/emonGLCD_PCB_V1.3_rear.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-m6oT0oN8qrk/T0vZgUbu3zI/AAAAAAAAZgE/mlnwxzxFYeM/s320/emonGLCD_PCB_V1.3_rear.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.3 rear&nbsp;</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b2Md9kSXgCM/T0vy5TRCAZI/AAAAAAAAZgM/PU1OQgo2K6g/s1600/DSCF4655.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-b2Md9kSXgCM/T0vy5TRCAZI/AAAAAAAAZgM/PU1OQgo2K6g/s320/DSCF4655.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">V1.3 assembled</td></tr></tbody></table>The&nbsp;schematic&nbsp;and board design for emonGLCD V1.3 are up on solderpad:&nbsp;<a href="http://solderpad.com/openenergymon/emonglcd/">http://solderpad.com/openenergymon/emonglcd/</a><br /><br />The emonGLCD documentation page has been updated with the new port mappings:&nbsp;<a href="http://openenergymonitor.org/emon/emonglcd">http://openenergymonitor.org/emon/emonglcd</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/02/documentation-reorganisation/">Documentation reorganisation proposal</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-21T19:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-21 19:21:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/documentation-reorganisation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s1600/oem_site_now.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s400/oem_site_now.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span class="Apple-style-span" style="font-size: small;"><i>The current front page</i></span></td></tr></tbody></table><div style="text-align: center;"></div><div style="text-align: -webkit-auto;"><br /></div><br />It has been pointed out several times that the documentation on this site is hard to follow.&nbsp;We've&nbsp;been giving this some thought and have come up with a plan for hopefully what will be a clearer structure.<br /><br />Here are our initial thoughts:<br /><br />1) We start with the following headings, these form the main menu:<br /><br /><b>Community |&nbsp;Applications | Modules | Fundamentals | Tools | Archive</b><br /><br />These headings contain:<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Community</span></b><br /><ul><li>Forums</li><li>Development plans</li><li>Links to community builds and blogs</li></ul><b><span class="Apple-style-span" style="font-size: large;">Applications</span></b><br />Applications are step by step guides of how to assemble modules to create a particular system. They start with a short description then a step-by-step type structure. Detailed application discussion would be on a second page or blog post with link through.<br /><ul><li>Power monitoring</li><li>Solar PV</li><li>Solar hot water</li><li>Pulse counting</li><li>Heatpump monitoring</li></ul><div>Applications reference&nbsp;through&nbsp;to modules below.</div><br />Separate github folder for each application containing sketches for all the modules that make up the application.<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Modules</span></b><br /><ul><li>Hardware</li><ul><li>emontx</li><li>emonglcd</li><li>emonbase</li><li>See-a-watt</li></ul><li>Software</li><ul><li>emoncms</li><li>Pachube</li></ul></ul>Each module contains the pages:<br /><ul><li>page1: overview + features (maybe use it: application list is referenced here?)</li><li>page2: built it / install it /&nbsp;buy it</li><li>page3: detailed design documentation</li></ul>All emon system sections reference through to fundamentals section below<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Fundamentals</span></b><br /><br />Getting started with arduino, uploading sketches etc.<br /><br /><b>Electricity monitoring</b><br /><ul><li>AC Theory - Introduction</li><li>AC Theory - Advanced</li><li>AC Theory - 3 phase</li><li>Power in different countries</li></ul><ul><li>Non-invasive</li><ul><li>CT sensors - Introduction</li><li>CT sensors - Advanced</li><li>Current only - Single Phase</li><li>Current and voltage - Single Phase</li><li>3-phase Monitoring</li></ul><li>Invasive</li><ul><li>AC shunt</li><li>DC Shunt &amp; hall effect sensing</li></ul></ul><ul><li>Appliance inference - labs</li><li>Interfacing with inverters</li></ul><b>Pulse counting</b><br /><ul><li>Single pulse counting</li><li>12 input pulse counting</li></ul><b>Temperature</b><br /><ul><li>DS18B20 temperature sensing</li><li>PT1000 temperature sensing</li></ul><b>Networking</b><br /><ul><li>RF</li><li>RFM12B</li><li>xbee, zigbee, old rf</li><li>Master/slave simple serial networking</li><li>Ethernet</li></ul><b>Displays</b><br /><ul><li>GLCD</li><li>7segment, 3310</li></ul><b>Storage</b><br /><ul><li>USB Pen drive data-logging</li><li>SD Card logging</li></ul><b>Control</b><br /><ul><li>Relay</li></ul><b>Firmware</b><br /><ul><li>Watchdog timer</li><li>Structures for transmitting data.</li><li>Sleep mode</li><li>String constructor</li></ul>Github sketches for the fundamentals section could be contained in one github folder called fundamentals.<br /><br /><span class="Apple-style-span" style="font-size: large;"><b>Tools</b></span><br />Tools that can be useful in debugging / development of systems:<br /><ul><li>VI Sampler</li><li>KST based graphing and statistics</li><li>Programming nanode with arduino</li></ul><span class="Apple-style-span" style="font-size: large;"><b>Archive</b></span><br />Items for archive<br /><br /><b>Other changes</b><br />We've disabled comments on pages, the thinking here is that its getting quite hard to navigate the page comments as conversations at different dates and topics are all getting mixed together and that it would be better to have these discussions on the forum, where each forum thread has its own clear topic.<br /><br />Every page can be put in a&nbsp;hierarchical&nbsp;order such as modules/hardware/emontx making navigation clearer.<br /><br />A site map with all of the above.<br /><br /><span class="Apple-style-span" style="font-size: large;">Do you think this is a good idea?&nbsp;</span><br />Any suggestions on how the website content can be better arranged would be greatly welcomed!<br />Thankyou!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/02/emoncms-features-part-2-email-notifier/">New emoncms features part 2 - Email notifier</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-18T23:31:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-18 23:31:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/email-notifications/'>email notifications</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
+      
+        <li><a class='category' href='/categories/openenergymonitor/'>openenergymonitor</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/emoncms-features-part-2-email-notifier/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Its good to know as soon as possible if there is an issue with an installed energy monitor, such as the base station dropping offline or a problem with RF connection. This is a rough and ready first implementation of an email notifier for emoncms, that sends you an email to say that a feed has become inactive or a feed is&nbsp;equal&nbsp;to a certain value. No longer are the days when you log in to emoncms just to find that there are two days of missing data as&nbsp;happened&nbsp;to me on feb 6-7 <a href="http://openenergymonitor.org/emon/emoncms/showcase">here</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>A walkthrough</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">1) Click on a feed in the feed list to bring up the feed view page, scroll down to the bottom and click on set notifications:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-oUq0bwGDyiQ/T0AoJkpEZNI/AAAAAAAACX0/cI3odOAz6P8/s1600/notift_feedview.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="230" src="http://1.bp.blogspot.com/-oUq0bwGDyiQ/T0AoJkpEZNI/AAAAAAAACX0/cI3odOAz6P8/s320/notift_feedview.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">2) Select the events that you want notifications for. Notification on value and on inactive both work. Periodic notification is yet to be implemented.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Q8in3h0PPZ0/T0AoeSLmCFI/AAAAAAAACX8/GXJCyeeQjZU/s1600/notify_feedsettings.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Q8in3h0PPZ0/T0AoeSLmCFI/AAAAAAAACX8/GXJCyeeQjZU/s320/notify_feedsettings.png" width="216" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />3) Click on edit mail settings and enter in the recipient email address. This only has to be done once as it is the same for all notifications.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4U29I5trf2c/T0ApRWFl_5I/AAAAAAAACYE/0z7LJZ02xMQ/s1600/notify_recipients.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4U29I5trf2c/T0ApRWFl_5I/AAAAAAAACYE/0z7LJZ02xMQ/s320/notify_recipients.png" width="320" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />If you want to send the notifications to multiple&nbsp;addresses, just put in a comma between each address.<br /><br />4) Unplug your emonbase!! and check your email:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-_woWFUXfPMo/T0ApmAkoAlI/AAAAAAAACYM/GlkiXxJQ-uM/s1600/notify_emailsubject.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="19" src="http://3.bp.blogspot.com/-_woWFUXfPMo/T0ApmAkoAlI/AAAAAAAACYM/GlkiXxJQ-uM/s320/notify_emailsubject.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-r3iUkNr2rbs/T0AppLU7ICI/AAAAAAAACYU/CHQufBFe38s/s1600/notift_emailbody.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="95" src="http://1.bp.blogspot.com/-r3iUkNr2rbs/T0AppLU7ICI/AAAAAAAACYU/CHQufBFe38s/s320/notift_emailbody.png" width="320" /></a></div><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><div style="text-align: left;"><b><br /></b></div><div style="text-align: left;">It can be tried out here:&nbsp;<a href="http://vis.openenergymonitor.org/emoncms3">http://vis.openenergymonitor.org/emoncms3</a></div><b><br /></b><br /><b>Behind the scenes</b><br /><b><br /></b><br /><b>Main scripts:</b><br /><b><span class="Apple-style-span" style="font-weight: normal;"></span></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Models/notify_model.php">notify_model.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Models/mail_model.php">mail_model.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Controllers/notify_controller.php">notify_controller.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Views/notify_view.php">notify_view.php</a></b><br /><br /><b><br /></b><br /><b>Installation/Setup</b><br />1) To use the notifier on your own server you will need php mail installed, to do this on ubuntu enter the following into terminal<br /><br /><span class="Apple-style-span" style="background-color: white; color: #222222; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px; line-height: 18px;">sudo apt-get install php-pear<br />sudo pear install mail<br />sudo pear install Net_SMTP<br />sudo pear install Auth_SASL<br />sudo pear install mail_mime</span><br /><b><br /></b><br />2) In emoncms3/Includes copy the default.mail_settings.php file and rename too<a href="https://github.com/openenergymonitor/emoncms3/blob/master/Includes/default.mail_settings.php"> mail_settings.php</a> and enter in your mail server settings.<br /><br />3) Open the file <a href="https://github.com/openenergymonitor/emoncms3/blob/master/cron.php">cron.php</a>&nbsp;and change the key password to something unique, this is used to ensure that only you can run the cron.php script.<br /><br />4) Create a cronjob, in ubuntu start by opening crontab:&nbsp;$ crontab -e<br />Then add a cronjob that calls the cron.php script including the key that you created. To call the cron.php script once a&nbsp;minute&nbsp;try the following:<br /><br /><br /># m h &nbsp;dom mon dow &nbsp; command<br />* * * * * wget -q -O /dev/null "http://localhost/emoncms3/cron.php?key=YOURKEY<br /><br /><br />5) If your using the same database as a previous emoncms version, you will need to create the new notify database tables. This can be done in index.php by pasting <b>require "Includes/setup.php"; </b>in the top. Its probably worth removing it afterwards.<br /><br />6) Configure your feeds as in the screens above!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/02/new-emoncms-features-part-1-blue/">New emoncms features part 1: blue message bar</a>
   </h1>
   
@@ -742,117 +868,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/how-to-contribute-on-openenergymonitor/">How to contribute on OpenEnergyMonitor dev + development plans</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-19T23:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-19 23:46:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2011/12/how-to-contribute-on-openenergymonitor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />If your wondering how best to get involved with OpenEnergyMonitor development here are a couple of&nbsp;thoughts&nbsp;and possible pointers.<br /><br />First a few insights and ideas from an another open source project we follow: DIYdrones. Thanks to Amin Zayani for the heads up on these:<a href="http://diydrones.com/profiles/blogs/how-to-contribute-to-the"> [1]</a>&nbsp;<a href="http://www.diydrones.com/profiles/blogs/how-to-contribute-to-a-diy-drones-project-start-with-something-sm">[2]</a><a href="http://diydrones.com/profiles/blogs/how-to-contribute-on-arducopter-project">&nbsp;[3]</a><br />In Chris Anderson of DIY drones's words, who we think has articulated it well:<br /><i>“The best way to participate is to do something cool on your own and share it here. All of our code bases and hardware design files are open. If you see an opportunity to improve something, just do it, post it and then tell the community about what you've done. If it's good, people will use it, help improve it, and we'll get a sense of what you can do. That makes it much easier for us to figure out what your skills are and where you'd fit in best.”</i><br /><br />If your looking for ideas here are a list of things we would like to do but no one is currently leading on them, Many of these problems are quite large, it would probably good to break them down into smaller sub projects.&nbsp;If you have a feature you would like to implement or would like to take the lead on any of the features below that would be really great, please post with your thoughts.<br /><ul><li>Appliance inference - infer from a single power feed of a house what each appliance uses and so providing a energy use by appliance breakdown.</li><li>PCB and casing for the 12 input pulse counter (a DIN rail and non din rail option)</li><li>Plug based energy monitor - for per appliance monitoring &nbsp;- an alternative method to appliance inference.</li><li>Larger&nbsp;monitoring PCB's: maybe 12 input CT?</li><li>3 phase monitoring sketch for emontx - quite a few people are asking for this so this would be really useful.</li><li>Develop a series of control modules, that extend the emon system into an open source monitoring and control system that can be used for domestic and industrial situations.&nbsp;Control modules could include:</li><ul><li>multiple relay board (for dump load control, immertion heaters, pumps, lighting)</li><li>solenoid valve driver board for central heating control.</li><li>motor control</li><li>This emon monitoring and control system could link together by either a wireless bus say rfm12 or a wired bus (maybe rs485). The modules could be designed to fit in both DIN rail style casing or non-DIN rail casing.</li></ul><li>Merge emonTx firmware examples into an Arduino library.</li></ul><div><b>Short term goals</b></div><div>For a general overview here are the short term goals that are being worked on at the moment and in the very near future:<br /><ul><li dir="ltr">New casing design for emontx and emonbase</li><li dir="ltr">Transfer emonbase sketches over to EtherCard library</li><li dir="ltr">Compatibility of main sketches with Arduino 1.0</li><li dir="ltr">Complete watchdog addition</li><li dir="ltr">Emoncms development <a href="http://openenergymonitor.org/emon/node/296">see feature plans and discussion page on forums.</a></li><li dir="ltr">Complete and publish energy audit software v1.0</li><li dir="ltr">Improve full emon system documentation.</li></ul><div>This blogpost is repeated as a <a href="http://openenergymonitor.org/emon/node/308">forum post here</a>, lets discuss this on the forum as its a better place for it.<br /><br /><i>Thankyou</i><br /><i>Trystan</i></div></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/how-to-move-feed-data-between-servers/">How to move feed data between servers</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-17T10:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-17 10:40:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/how-to-move-feed-data-between-servers/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    There is often a need to transfer large feed tables between different servers. Here is one way to do it via ssh that does not require downloading the data to a local machine. This makes it particularly fast especially if your local internet connection is relatively slow.<br /><br /><b>1) Login via ssh to the source server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (source server ip)<br /><br /><b>2) Export feed table from source instance database</b><br />mysqldump -u <i>username</i> -p <i>database</i> feed_1 &gt; feed_1.sql<br /><br /><b>3) Transfer feed table via ssh to destination instance server</b><br />tar -cjvf - feed_1.sql | ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> tar -xjf - -C <a href="http://www.blogger.com/home/user" style="color: #3465a4;">/home/user</a>            (destination server ip)<br /><br /><b>4) Login via ssh to the destination server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (destination server ip)<br /><br /><b>5) Import feed table into destination instance database</b><br />mysql -u root -p <i>database</i> &lt; feed_1.sql<br /><br />It would be great to have some kind of utility within emoncms that makes it possible to move large feed tables between emoncms instances efficiently and easily without having to use terminal and ssh. If you know of an efficient way of doing this,&nbsp;advice&nbsp;would be most welcome.
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/open-source-and-software-as-service/">Open source and software as a service</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-16T00:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-16 00:14:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/open-source-and-software-as-service/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    In addition to developing emoncms as an application that can be downloaded and installed on any server, interest willing, I would like to work towards offering emoncms as a service. So if you just want to build up your hardware and connect to a ready to go, maintained service with support, the option will be available to you.<br /><br />One of the reasons I wanted to develop emoncms in the first place was that I was frustrated with fact that all available services where proprietary, I wanted to be able to download, install, modify, take part in development because I very much enjoy doing so and wanted to take part in collaborative innovation on important problems as&nbsp;Irving Wladawsky-Berger&nbsp;described so well in his post on the essence of open source which I <a href="http://openenergymonitor.blogspot.com/2011/12/essence-of-open-source.html">blogged about</a> last week.<br /><br />As this article by <a href="http://mygnulinux.com/">mygnulinux.com</a> and another article here by <a href="http://williamjudd.com/2011/01/28/the-threat-of-saas-to-open-source/">William Judd</a> describe, there is a concern that as more an more of our applications move into the cloud and are run by organisations who adopt the proprietary software as a service business model we will loose the ground that we have gained in the open source software movement, there is also a complication to do with licensing.<br /><br />There are however a great deal of advantages in having applications in the cloud many of which are also very beneficial for energy monitoring, such as: access to your data from any location and any device and possibilities that open up by using shared platforms.<br /><br />The answer: cloud based software as a service does not have to be proprietary software, it can be open source and this opens up some really exciting opportunities.<br /><br />So the idea is that the installed web application's code is placed on github or other code sharing location and is a mirror of the installation on the main server/servers. The service can be used as one would normally use a software service. However if you want to improve the code, modify, add something you can. You just need to fork the repository, do something cool, share it with the community and if its adoption is agreed it can be added to the service install. So this allows for taking part in development, for modification and improvement. It is a little more complicated than editing your own instance of a particular piece of software as changes need to be agreed on by those using the service as any changes will effect everyone, but this is not a prohibitive problem as there are systems that have already been worked out for determining what makes it into the final release in many large open source projects.<br /><br />As mygnulinux.com and William Judd's articles explain, the other important problems in software as a service is: lock in, data ownership and licensing.<br /><br />The first can be addressed by creating a comprehensive API that makes it possible to move data from one service to another or to a local installation if one desires to do so.<br /><br />The second can be addressed through good policy by the service providers.<br /><br />Licensing is important. The GPL up to and including v3 does not ensure openness for software as a service provided over a network as the requirement to release the source code and any modifications to that source code is only triggered when the software is distributed not when that program is run. This essentially as I understand turns the GPL into BSD like licence as there is no requirement for open sourcing when providing the software as a service across a network.<br /><br />In response to this loophole the Free Software Foundation bought out another licence called the <a href="http://www.gnu.org/licenses/agpl.html">GPL Affero licence (AGPL)</a> which essentially requires anyone providing a service using the software across a network to release the source code, the one additional provision over GPL v3 being:<br /><blockquote class="tr_bq">“if you modify the Program, your modified version must prominently offer all users interacting with it remotely through a computer network (if your version supports such interaction) an opportunity to receive the Corresponding Source of your version by providing access to the Corresponding Source from a network server at no charge, through some standard or customary means of facilitating copying of software.”</blockquote><b>In conclusion</b><br />It's possible to get the benefits of open source and the benefits of the cloud and software as a service platforms.&nbsp;I think its going to be exciting to explore this with emoncms.<br /><ul><li>The code for the latest version of emoncms is available on github:&nbsp;<a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a></li><li>Its the exact same version as is deployed here:&nbsp;<a href="http://vis.openenergymonitor.org/emoncms3/">http://vis.openenergymonitor.org/emoncms3/</a></li><li>It is&nbsp;licensed under AGPL</li><li>A comprehensive API and tools for easy porting of data between instances is a core aim and will be an important part of continued feature development.</li><li>A template terms of service needs to be worked out and written.</li></ul><b>Examples of open source software as a service</b><br /><a href="http://www.sugarcrm.com/crm/">SugarCRM</a> - a customer relationship management package&nbsp;<b>(</b>From the articles linked above)<br /><a href="http://identi.ca/">Identi.ca</a>&nbsp;-&nbsp;a micro-blogging service&nbsp;<b>(</b>From the articles linked above)<br /><a href="https://thingspeak.com/">Thingspeak</a>&nbsp;- internet of things application<br /><br />Drop a comment below if you know of others that can be added to the list.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -893,6 +908,24 @@ $(window).resize(function(){
     
       
         <li class="post">
+          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/new-home-page-and-learn/">Launching our new home page and Learn website!</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
         </li>
       
@@ -930,24 +963,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
     

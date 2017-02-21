@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-02-08T11:27:13+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>OpenEVSE EV Charge Controller Review</title><link href="https://blog.openenergymonitor.org/2017/01/openevse-build/" rel="alternate" type="text/html" title="OpenEVSE EV Charge Controller Review" /><published>2017-01-04T09:00:00+00:00</published><updated>2017-01-04T09:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/openevse-build</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/openevse-build/">&lt;p&gt;OpenEVSE (recently renamed to &lt;a href=&quot;https://www.openevse.com/&quot;&gt;OpenEV&lt;/a&gt;) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-02-21T13:58:11+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>MyHomeEnergyPlanner - open source home energy assessment</title><link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/" rel="alternate" type="text/html" title="MyHomeEnergyPlanner - open source home energy assessment" /><published>2017-02-21T13:43:00+00:00</published><updated>2017-02-21T13:43:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/">&lt;p&gt;&lt;img src=&quot;/images/myhomeenergyplanner2.png&quot; alt=&quot;MyHomeEnergyPlanner&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I would like to highlight a piece of work by Carlos Alonso Gabizón which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see people use.&lt;/p&gt;
+
+&lt;p&gt;Carlos has been working for &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt; over the last year and a half on MyHomeEnergyPlanner – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.&lt;/p&gt;
+
+&lt;p&gt;MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.&lt;/p&gt;
+
+&lt;p&gt;MyHomeEnergyPlanner can be used to calculate the space and water heating requirements for a home from a detailed breakdown of the building fabric: floor, walls, roof, windows etc. It uses U-values and areas to calculate building fabric heat loss rates, combined with calculated heat loss from infiltration and ventilation and heat gains from solar radiation, lighting, household appliances, cooking and occupants.&lt;/p&gt;
+
+&lt;p&gt;It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.&lt;/p&gt;
+
+&lt;p&gt;MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your emoncms.org account)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://myhome.emoncms.org&quot;&gt;http://myhome.emoncms.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I have written an initial getting started guide here that goes over the main parts of creating an initial household assessment:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When I was last working on building energy modelling I also wrote a brief guide on how a simple household energy model works which can also be found here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MyHomeEnergyPlanner Github&lt;/strong&gt; 
+&lt;a href=&quot;http://github.com/emoncms/MyHomeEnergyPlanner&quot;&gt;http://github.com/emoncms/MyHomeEnergyPlanner&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;For further context: MyHomeEnergyPlanner is used by CarbonCoop as part of their work on household retrofit, improving insulation and air-tightness of existing households in Manchester to achieve carbon emission reductions of 80% compared to the 1990 baseline. More information can be found about their work here:&lt;/p&gt;
+
+&lt;p&gt;Whole House Retrofit - A Community Green Deal
+&lt;a href=&quot;http://carbon.coop/content/whole-house-retrofit-community-green-deal&quot;&gt;http://carbon.coop/content/whole-house-retrofit-community-green-deal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Whole House Retrofit Assessment Method:
+&lt;a href=&quot;http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf&quot;&gt;http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project:
+&lt;a href=&quot;https://twitter.com/CarbonCoop/status/802176377785028608/photo/1&quot;&gt;https://twitter.com/CarbonCoop/status/802176377785028608/photo/1&lt;/a&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>I would like to highlight a piece of work by Carlos Alonso Gabizón which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see people use.
+
+Carlos has been working for CarbonCoop over the last year and a half on MyHomeEnergyPlanner – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.
+
+MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.
+
+MyHomeEnergyPlanner can be used to calculate the space and water heating requirements for a home from a detailed breakdown of the building fabric: floor, walls, roof, windows etc. It uses U-values and areas to calculate building fabric heat loss rates, combined with calculated heat loss from infiltration and ventilation and heat gains from solar radiation, lighting, household appliances, cooking and occupants.
+
+It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.
+
+MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your emoncms.org account)
+
+http://myhome.emoncms.org
+
+I have written an initial getting started guide here that goes over the main parts of creating an initial household assessment:
+
+https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner
+
+When I was last working on building energy modelling I also wrote a brief guide on how a simple household energy model works which can also be found here:
+
+https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme
+
+MyHomeEnergyPlanner Github 
+http://github.com/emoncms/MyHomeEnergyPlanner
+
+
+
+For further context: MyHomeEnergyPlanner is used by CarbonCoop as part of their work on household retrofit, improving insulation and air-tightness of existing households in Manchester to achieve carbon emission reductions of 80% compared to the 1990 baseline. More information can be found about their work here:
+
+Whole House Retrofit - A Community Green Deal
+http://carbon.coop/content/whole-house-retrofit-community-green-deal
+
+Whole House Retrofit Assessment Method:
+http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf
+
+Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project:
+https://twitter.com/CarbonCoop/status/802176377785028608/photo/1</summary></entry><entry><title>Launching Learn: Sustainable Energy</title><link href="https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy/" rel="alternate" type="text/html" title="Launching Learn: Sustainable Energy" /><published>2017-02-14T10:18:00+00:00</published><updated>2017-02-14T10:18:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy/">&lt;p&gt;Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The &lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/introduction&quot;&gt;Sustainable Energy section of Learn&lt;/a&gt; brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.&lt;/p&gt;
+
+&lt;p&gt;It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the &lt;a href=&quot;http://zerocarbonbritain.org/&quot;&gt;ZeroCarbonBritain&lt;/a&gt; scenario.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/introduction&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote &lt;a href=&quot;http://www.inference.eng.cam.ac.uk/withouthotair/&quot;&gt;Sustainable energy without the hot air&lt;/a&gt;, to visualise the different uses of energy from traditional electricity demand to heating and transport.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The latest version of the 10 year hourly energy modelling tool can be found here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It can be used to explore supply &amp;amp; demand matching for a large number of different supply and demand side technologies. Everything from wind, solar, heatpumps, biomass heat, electric vehicles, hydrogen, battery storage to long term biomass energy backup.&lt;/p&gt;
+
+&lt;p&gt;Pages 6,7 &amp;amp; 8 and the appendixes go into further detail looking briefly at costs, renewable heat and community (large village/small town) scale scenarios, discussing the results of running different options through the model.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/costs&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/energy/costs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshot: Snowdonia household energy study:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/learn-sustainable-energy.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshot: 10 year hourly energy model&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/learn-sustainable-energy-zcem.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have any question’s about this work please feel free to email me on trystan dot lea at openenergymonitor.org.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The Sustainable Energy section of Learn brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.
+
+It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the ZeroCarbonBritain scenario.
+
+
+  https://learn.openenergymonitor.org/sustainable-energy/energy/introduction
+  https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101
+
+
+There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote Sustainable energy without the hot air, to visualise the different uses of energy from traditional electricity demand to heating and transport.
+
+
+  https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study
+
+
+Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model.
+
+
+  https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain
+
+
+The latest version of the 10 year hourly energy modelling tool can be found here:
+
+
+  https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold
+
+
+It can be used to explore supply &amp;amp; demand matching for a large number of different supply and demand side technologies. Everything from wind, solar, heatpumps, biomass heat, electric vehicles, hydrogen, battery storage to long term biomass energy backup.
+
+Pages 6,7 &amp;amp; 8 and the appendixes go into further detail looking briefly at costs, renewable heat and community (large village/small town) scale scenarios, discussing the results of running different options through the model.
+
+
+  https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios
+  https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat
+  https://learn.openenergymonitor.org/sustainable-energy/energy/costs
+
+
+Screenshot: Snowdonia household energy study:
+
+
+
+Screenshot: 10 year hourly energy model
+
+
+
+If you have any question’s about this work please feel free to email me on trystan dot lea at openenergymonitor.org.</summary></entry><entry><title>Launching our new home page and Learn website!</title><link href="https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn/" rel="alternate" type="text/html" title="Launching our new home page and Learn website!" /><published>2017-01-31T10:00:00+00:00</published><updated>2017-01-31T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn/">&lt;p&gt;As you may well have noticed we have recently launched a new front page website for OpenEnergyMonitor and a common theme across our multiple sites, We have also launched a new website called Learn.&lt;/p&gt;
+
+&lt;p&gt;A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.&lt;/p&gt;
+
+&lt;p&gt;This website redesign completes the shift away from using drupal that was started with the OpenEnergyMonitor Guide website launched April 2016 and the use of &lt;a href=&quot;http://discourse.org&quot;&gt;discource&lt;/a&gt; for our forums launched May 2016.&lt;/p&gt;
+
+&lt;p&gt;Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.&lt;/p&gt;
+
+&lt;p&gt;Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.&lt;/p&gt;
+
+&lt;p&gt;The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes.&lt;/p&gt;
+
+&lt;p&gt;New OpenEnergyMonitor front page:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://openenergymonitor.org&quot;&gt;http://openenergymonitor.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Learn:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://learn.openenergymonitor.org&quot;&gt;http://learn.openenergymonitor.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Screenshots:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/new-oem-site.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/learn-sustainable-energy.png&quot; alt=&quot;Learn: Sustainable Energy&quot; /&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>As you may well have noticed we have recently launched a new front page website for OpenEnergyMonitor and a common theme across our multiple sites, We have also launched a new website called Learn.
+
+A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.
+
+This website redesign completes the shift away from using drupal that was started with the OpenEnergyMonitor Guide website launched April 2016 and the use of discource for our forums launched May 2016.
+
+Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.
+
+Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.
+
+The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes.
+
+New OpenEnergyMonitor front page:
+
+http://openenergymonitor.org
+
+Learn:
+
+http://learn.openenergymonitor.org
+
+Screenshots:</summary></entry><entry><title>OpenEVSE EV Charge Controller Review</title><link href="https://blog.openenergymonitor.org/2017/01/openevse-build/" rel="alternate" type="text/html" title="OpenEVSE EV Charge Controller Review" /><published>2017-01-04T09:00:00+00:00</published><updated>2017-01-04T09:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/openevse-build</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/openevse-build/">&lt;p&gt;OpenEVSE (recently renamed to &lt;a href=&quot;https://www.openevse.com/&quot;&gt;OpenEV&lt;/a&gt;) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.&lt;/p&gt;
@@ -789,419 +997,4 @@ $ docker-compose up
 
 
 
-That’s it! Emoncms should now be runnning, browse to http://localhost:8080</summary></entry><entry><title>ESP8266 WIFI developments</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/" rel="alternate" type="text/html" title="ESP8266 WIFI developments" /><published>2016-06-20T10:00:00+00:00</published><updated>2016-06-20T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">&lt;p&gt;Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as &lt;a href=&quot;https://emoncms.org&quot;&gt;emoncms.org&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.&lt;/p&gt;
-
-&lt;p&gt;We are at the moment working on three initial uses of the ESP8266:&lt;/p&gt;
-
-&lt;h2 id=&quot;emontx-v3--esp8266-module&quot;&gt;1. &lt;strong&gt;EmonTx V3&lt;/strong&gt; + ESP8266 module&lt;/h2&gt;
-
-&lt;p&gt;We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as &lt;a href=&quot;https://www.adafruit.com/product/2471&quot;&gt;adafruit&lt;/a&gt; (USA) and &lt;a href=&quot;https://shop.pimoroni.com/products/adafruit-huzzah-esp8266-breakout&quot;&gt;Pimoroni&lt;/a&gt; (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emontx-esp.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There will be another post very soon detailing how to use this module with the EmonTx v3.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;heatpumpenergy-monitor&quot;&gt;2. Heatpump/Energy Monitor&lt;/h2&gt;
-
-&lt;p&gt;Heatpump / energy monitor through-hole development board, essentially and EmonTx v2 with additional features for interfacing with heat meters and multiple DS18B20 temperature sensors as well as an integrated ESP8266 WIFI module.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/heatpumpmonitor.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The heatpump monitor board currently supports:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;3x CT + ACAC Channels&lt;/li&gt;
-  &lt;li&gt;Elster A100C Irda meter reader (watt hours)&lt;/li&gt;
-  &lt;li&gt;Pulse Counting&lt;/li&gt;
-  &lt;li&gt;Supports MBUS heat meters (Kamstrup 402)&lt;/li&gt;
-  &lt;li&gt;Supports SIKA flow meters&lt;/li&gt;
-  &lt;li&gt;4x DS18B20 Temperature Sensors&lt;/li&gt;
-  &lt;li&gt;Miniature solid state relay for heating control (not yet tested)&lt;/li&gt;
-  &lt;li&gt;ESP8266 Low cost Wifi&lt;/li&gt;
-  &lt;li&gt;RFM69 option&lt;/li&gt;
-  &lt;li&gt;Raspberry PI connector option&lt;/li&gt;
-  &lt;li&gt;A Through-hole ESP Wifi development platform&lt;/li&gt;
-  &lt;li&gt;Fits in the EmonTx V3 Aluminum case&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Guide cost ~£50 (ex VAT) for full heatpump monitor kit with case, ~£30 (ex VAT) for cut down WIFI energy monitor only kit without case.. To be finalised.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/openenergymonitor/HeatpumpMonitor&quot;&gt;See Heatpump monitor development repo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;esp8266-based-wifi-pixel-energy-display&quot;&gt;3. ESP8266 based WIFI Pixel Energy Display,&lt;/h2&gt;
-
-&lt;p&gt;This is an idea thanks to David Hunninsett (&lt;a href=&quot;http://twitter.com/m0untainpenguin&quot;&gt;@m0untainpenguin&lt;/a&gt;) with hardware being developed by &lt;a href=&quot;https://github.com/Protoneer/WifiPixels&quot;&gt;Protoneer&lt;/a&gt;. It fits into a project we are more recently part of here in North Wales called &lt;a href=&quot;http://www.energylocal.co.uk/cydynni/&quot;&gt;CydYnni by EnergyLocal&lt;/a&gt; where 100 households within the boundary of the substation get cheap electricity when a local community hydro is running. David Hunninsett is one of the households on the project and he is keen to have a display that shows when it’s a good time to use electricity among other uses. The wifi pixel could become a nice platform for a ambient home energy indicator.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wifi-pixel1.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wifi-pixel2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://community.openenergymonitor.org/uploads/default/original/1X/c72e375230597049c0d8a9e06645a8d088d70774.mp4&quot;&gt;See video&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/davehun/mqtt-wifi-pixel&quot;&gt;See software development  repo on&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;emonesp-easier-setup-and-installation&quot;&gt;EmonESP, easier setup and installation&lt;/h1&gt;
-
-&lt;p&gt;One of the really nice things about using the ESP module is that it can really simplify setup for installations that only need to post to a remote emoncms server. The wifi module starts by broadcasting a hotspot that you connect to directly, you can then scan for wifi networks, select the network, get the ip address of the monitor on the network (which saves using fing or accessing your router device list), enter your emoncms.org apikey to connect to an emoncms.org account (to be replaced with username and passowrd login + ability to register and link the monitor to a emoncms account in one step).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonesp.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We plan to extend EmonESP to also support MQTT.&lt;/p&gt;
-
-&lt;p&gt;The EmonESP software is based on work by Chris Howel of &lt;a href=&quot;http://www.openevse.com&quot;&gt;OpenEVSE&lt;/a&gt; which is a really nice open hardware electric vehicle charging station, it’s been really nice to find a common development like this that can be beneficial to two open hardware and software projects. OpenEVSE &lt;a href=&quot;https://data.openevse.com/&quot;&gt;already use Emoncms&lt;/a&gt; for logging and graphing.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/openenergymonitor/emonesp&quot;&gt;EmonESP firmware developments can be found on github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;over-the-air-firmware-upload&quot;&gt;Over the air firmware upload&lt;/h2&gt;
-
-&lt;p&gt;Glyn has been doing a lot of work on how we can do over the air updates to ESP8266 based units. Being able to do this will make it a lot easier to maintain and keep the firmware on these updated especially as the software goes through the larger number of iterations in initial development. Check out his blog posts here to follow the development:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;Part 1/3: PlatformIO open-source embedded development ecosystem&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware&quot;&gt;Part 2/3: Firmware Continuous Test &amp;amp; Build&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;3/3: Continuous Deployment (OTA to ESP8266) &lt;em&gt;…In the making!&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;forum-discussion&quot;&gt;Forum discussion&lt;/h2&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://community.openenergymonitor.org/t/esp8266-wifi-developments/784&quot;&gt;this forum topic&lt;/a&gt; for discussion.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Trystan Lea</name></author><summary>Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as emoncms.org.
-
-Note: we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp;amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.
-
-We are at the moment working on three initial uses of the ESP8266:
-
-1. EmonTx V3 + ESP8266 module
-
-We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as adafruit (USA) and Pimoroni (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.
-
-
-
-There will be another post very soon detailing how to use this module with the EmonTx v3.</summary></entry><entry><title>Part 2/3: Firmware Continuous Test &amp;amp; Build</title><link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/" rel="alternate" type="text/html" title="Part 2/3: Firmware Continuous Test &amp; Build" /><published>2016-06-14T10:00:00+00:00</published><updated>2016-06-14T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/esp8266-ota-update/&quot;&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Following on from the &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;last blog post&lt;/a&gt; on using &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;PlatformIO&lt;/a&gt; to compile and upload firmware locally, we’re now going to take things a step further and do the same but in &lt;em&gt;The Cloud&lt;/em&gt;!&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In this instance when we say &lt;em&gt;‘compile in the cloud’&lt;/em&gt; I mean use GitHub, &lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis IO&lt;/a&gt; and &lt;a href=&quot;https://platformio.org&quot;&gt;PlatfromIO&lt;/a&gt; to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.&lt;/p&gt;
-
-&lt;p&gt;The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (&lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP dev&lt;/a&gt;) inspired by &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;this blog post&lt;/a&gt; by Daniel Eichhorn (&lt;a href=&quot;https://twitter.com/squix78&quot;&gt;@squix78&lt;/a&gt;).&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;The advantages of &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_testing&quot;&gt;continuous testing&lt;/a&gt; have been long established in the software industry. The test we are performing is &lt;em&gt;‘does this firmware compile?’&lt;/em&gt;; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A commit or pull request is made to the firmware repository on GitHub
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp;amp; test&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;This triggers Travis CI to start a ‘build’&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Code compilation is generated using platformIO in the same way as when compiling locally, &lt;a href=&quot;https://blog.openenergymonitor.org/2016/06/platformio/&quot;&gt;See blog post&lt;/a&gt;. The &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file in the repo&lt;/a&gt; configures the Travis CI build using platformIO:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;language: python
-python:
-- &#39;2.7&#39;
-sudo: false
-cache:
-  directories:
-  - &quot;~/.platformio&quot;
-install:
-- pip install -U platformio
-script:
-- platformio run -d firmware -e emonpi_deploy
-deploy:
-  on:
-    repo: openenergymonitor/emonpi
-    all_branches: true
-    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
-  skip_cleanup: true
-  provider: releases
-  overwrite: true
-  api_key:
-    secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
-  file: &quot;firmware/.pioenvs/emonpi_deploy/firmware.hex&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If the build fails for whatever reason (syntax error, library error etc) then the green &lt;code class=&quot;highlighter-rouge&quot;&gt;build passing&lt;/code&gt; icon changes to a ominous red &lt;code class=&quot;highlighter-rouge&quot;&gt;build Failed&lt;/code&gt; and we get an alert email. For a full build log example see the &lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;emonPi Travis CI build page&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/openenergymonitor/emonpi&quot;&gt;&lt;img src=&quot;https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master&quot; alt=&quot;Build Status&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;.hex&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;.bin&lt;/code&gt; is uploaded to the GitHub release page:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-draft-release.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-travis-release.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For a detailed explanation of how the release binary is generated and deployed see Daniel Eichhorn’s (&lt;a href=&quot;https://twitter.com/squix78&quot;&gt;@squix78&lt;/a&gt;) &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;excellent blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;this excellent blog post&lt;/a&gt; which was a source of inspiration and information.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>This post is part of a series
-
-
-  1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
-  2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
-  3/3: Continuous Deployment (OTA to ESP8266)
-
-
-
-
-Following on from the last blog post on using PlatformIO to compile and upload firmware locally, we’re now going to take things a step further and do the same but in The Cloud!
-
-Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!
-
-In this instance when we say ‘compile in the cloud’ I mean use GitHub, Travis IO and PlatfromIO to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.
-
-The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (EmonESP dev) inspired by this blog post by Daniel Eichhorn (@squix78).</summary></entry><entry><title>Part 1/3: PlatformIO open-source embedded development ecosystem</title><link href="https://blog.openenergymonitor.org/2016/06/platformio/" rel="alternate" type="text/html" title="Part 1/3: PlatformIO open-source embedded development ecosystem" /><published>2016-06-12T10:00:00+00:00</published><updated>2016-06-12T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/platformio</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/platformio/">&lt;p&gt;&lt;strong&gt;This post is part of a series:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/auto-build-continuous-test-firmware/&quot;&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Related post: &lt;a href=&quot;/2016/06/esp8266-emonesp-developments&quot;&gt;EmonESP ESP8266 WiFi developments&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/esp8266-ota-update/&quot;&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.&lt;/p&gt;
-
-&lt;p&gt;I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.&lt;/p&gt;
-
-&lt;p&gt;The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.&lt;/p&gt;
-
-&lt;p&gt;Recently I have been using &lt;a href=&quot;http://platformio.org&quot;&gt;PlatformIO&lt;/a&gt; and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent &lt;a href=&quot;http://platformio.org/lib&quot;&gt;library manager&lt;/a&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;PlatformIO is an open-source ecosystem for IoT development.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/pio-ide.png&quot; alt=&quot;PlatformIO IDE&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/platformio&quot;&gt;&lt;strong&gt;Fully open-source&lt;/strong&gt;&lt;/a&gt; with active and friendly dev community.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Easy to install&lt;/strong&gt; - Pure python based, installed using pip
-    &lt;ul&gt;
-      &lt;li&gt;Tool-chains are auto installed on first compile / upload e.g.
-        &lt;ul&gt;
-          &lt;li&gt;If trying to upload to Arduino avrdude will automatically be installed&lt;/li&gt;
-          &lt;li&gt;If trying to compile an ESP8266 project the ESP toolchain will be installed&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Cross-platform (Linux, Windows and mac all work the same), this will make support much easier&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Supports all the main embedded platforms&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;atmelavr (Arduino), espressif (ESP8266), ststm32 (ARM etc.)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Command line and IDE&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;At work I use pio via Atom IDE on Ubuntu&lt;/li&gt;
-      &lt;li&gt;At home, I use a Chromebook with Caret IDE and interact with pio via command-line&lt;/li&gt;
-      &lt;li&gt;When developing directly on an emonPi / RaspberryPi pio command-line works great - &lt;em&gt;Yes, that’s right pio works on a RaspberryPi to compile and upload code directly!&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://platformio.org/lib&quot;&gt;&lt;strong&gt;Excellent library manager&lt;/strong&gt;&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Libraries can be searched and reviewed using command-line or web 2.0 manager&lt;/li&gt;
-      &lt;li&gt;Required libraries can be specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; file and if not present install is prompted upon compilation&lt;/li&gt;
-      &lt;li&gt;Specific library version (as defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;library.json&lt;/code&gt; &lt;a href=&quot;https://github.com/openenergymonitor/EmonLib/blob/master/library.json&quot;&gt;(emonLib example)&lt;/a&gt;) or git commit SHA&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Fast compilation &amp;amp; pain-free uploading&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;PlatformIO’s compiler is the &lt;a href=&quot;https://twitter.com/krzychb2/status/729294573760065536&quot;&gt;fastest in the business&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;USB / Serial ports auto detected&lt;/li&gt;
-      &lt;li&gt;Since the emonPi has been added as a custom board PlatformIO can even upload direct to emonPi via RaspberryPi GPIO and trigger GPIO AVR reset, not more &lt;a href=&quot;https://github.com/openenergymonitor/avrdude-rpi&quot;&gt;hacked avrdude&lt;/a&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Easy integration with continuous testing &amp;amp; deployment&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://github.com/openenergymonitor/emonpi/&quot;&gt;emonPi&lt;/a&gt; and &lt;a href=&quot;github.com/openenergymonitor/emonTxFirmware&quot;&gt;emonTx&lt;/a&gt; git repos are now enabled for continous-testing and auto binary generation on release tag…this is a step change in embedded development.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;example-compiling-emontx--emonpi-firmware&quot;&gt;Example: Compiling emonTx / emonPi firmware&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://docs.platformio.org/en/latest/quickstart.html&quot;&gt;PlatformIO has some excellent quick start docs&lt;/a&gt; to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.&lt;/p&gt;
-
-&lt;p&gt;This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see &lt;a href=&quot;http://platformio.org/get-started&quot;&gt;PlatformIO Getting Started Page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.&lt;/p&gt;
-
-&lt;h3 id=&quot;install-platformio&quot;&gt;1. Install PlatformIO&lt;/h3&gt;
-
-&lt;p&gt;The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See &lt;a href=&quot;http://docs.platformio.org/en/latest/installation.html#installer-script&quot;&gt;PlatformIO installation docs&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo python -c &quot;$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;clone-emontx--emonpi-repo&quot;&gt;2. Clone emonTx / emonPi repo&lt;/h3&gt;
-
-&lt;p&gt;We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;emonTx V3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/openenergymonitor/emonTxFirmware`
-$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;emonPi&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/openenergymonitor/emonpi`
-cd emonpi/firmware
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;compile-with-platformio&quot;&gt;3. Compile with PlatformIO&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ platformio run&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;or shorthand for the lazy&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio run&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;That’s it!&lt;/strong&gt; That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D&lt;/p&gt;
-
-&lt;p&gt;The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in &lt;a href=&quot;https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; in the emonTx discrete sampling firmware folder&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;e.g.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lib_deps_external =
-  DHT sensor library @1.2.3
-  DallasTemperature @3.7.7
-  EmonLib
-  JeeLib@c057b5f4c0
-  LiquidCrystal_I2C @4bb48bd648
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The latest version of the libraries are automatically cloned from their native git repos into the &lt;code class=&quot;highlighter-rouge&quot;&gt;~/platformio&lt;/code&gt; folder.&lt;/p&gt;
-
-&lt;p&gt;If required specific versions can be installed e.g.:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pio lib install 252 --version=&quot;e70c9d9f4e&quot;
-$ platformio lib install 54 --version=&quot;3.7.7&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;upload-using-platformio&quot;&gt;3. Upload using PlatformIO&lt;/h3&gt;
-
-&lt;h4 id=&quot;a-via-usb-to-uart-programmer-to-emontx&quot;&gt;3a. Via USB to UART programmer to emonTx&lt;/h4&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo platformio run --target upload&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;or lazy shorthand&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo pio run -t upload&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Pio will attempt to auto detect the USB programmer and upload :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: you will need &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; unless you have correctly &lt;a href=&quot;https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules&quot;&gt;configured udev rules&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To list available serial ports:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio serialports list&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;There is even a built in serial monitor&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ pio serialports monitor&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b-using-ttyama0-gpio-to-upload-direct-to-emonpi&quot;&gt;3b. Using ttyAMA0 GPIO to upload direct to emonPi&lt;/h3&gt;
-
-&lt;p&gt;This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (&lt;del&gt;due to be released in the next few weeks&lt;/del&gt;, &lt;a href=&quot;https://community.platformio.org/t/platformio-cli-2-10-0/381&quot;&gt;released 2.10.0&lt;/a&gt;) will have built in support for the emonPi auto-reset on upload using GPIO4. See &lt;a href=&quot;http://platformio.org/boards?count=1000&amp;amp;filter%5Bname%5D=emonpi&amp;amp;page=1&amp;amp;sorting%5Bvendor%5D=asc&quot;&gt;emonPi listed on PlatformIO boards page&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-platformio.png&quot; alt=&quot;emonpi-platformio.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The emonPi board is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;platformio.ini&lt;/code&gt; in the &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini&quot;&gt;emonpi/firmware folder&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;board = emonpi
-upload_port = /dev/ttyAMA0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;All that is needed to compile and upload directly on the emonPi is:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/emonpi/firmware
-$ sudo service emonhub stop
-$ sudo pio run -t upload
-$ sudo service emonhub start
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;Thanks a lot to &lt;a href=&quot;https://github.com/ivankravets&quot;&gt;Ivan Kravets&lt;/a&gt; for helping integrate emonPi into the PlatfomIO ecosystem. &lt;a href=&quot;https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a&quot;&gt;View commit changes&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp;amp; emonTx repos if you want a sneak preview. See &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml&quot;&gt;travis.yaml&lt;/a&gt; file and Travis build status icon on the main emonpi repo &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/blob/master/README.md&quot;&gt;Readme.md&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>This post is part of a series:
-
-
-  1/3: PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
-  2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
-    
-      Related post: EmonESP ESP8266 WiFi developments
-    
-  
-  3/3: Continuous Deployment (OTA to ESP8266)
-
-
-
-
-Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.
-
-I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.
-
-The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.
-
-Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent library manager.
-
-
-  PlatformIO is an open-source ecosystem for IoT development.
-
-
-
-  Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</summary></entry></feed>
+That’s it! Emoncms should now be runnning, browse to http://localhost:8080</summary></entry></feed>

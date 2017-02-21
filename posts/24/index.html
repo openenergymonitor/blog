@@ -462,6 +462,130 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/06/arduino-leonardo-atmega32u4-and-rfm12b/">Arduino Leonardo (ATmega32U4) and RFM12B</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-01T21:43:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-01 21:43:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/06/arduino-leonardo-atmega32u4-and-rfm12b/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />I've just managed to get an RFM12B hooked up to an Arduino Leonardo. It's been a bit of port mapping nightmare! <br /><br />The ATmega 32U4's &nbsp;'special function' ports such as PWM, IRQ, SPI etc are quite different to the ATmega328. The <a href="http://arduino.cc/en/Hacking/PinMapping32u4">Arduino port mapping table</a> proves very useful, if a little difficult to&nbsp;interpret. I made a re-arranged table with the ports re-arranged&nbsp;into function groups. I'll publish it once I've&nbsp;tidied&nbsp;it up.<br /><br />Once of the main&nbsp;differences&nbsp;is that the hardware ISP connections are no longer on digital pins 10,11,12 and 13. On the Leonardo they are<br /><br /><table border="0" cellspacing="0" cols="2"> <colgroup width="245"></colgroup> <colgroup width="229"></colgroup> <tbody><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>MISO - &nbsp;Digital 14</i></span></td><td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>SCK - &nbsp; Digital 15</i></span></td><td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>MOSI - Digital 16</i></span></td>  <td align="LEFT"><i><br /></i></td> </tr><tr>  <td align="LEFT" height="17"><span style="font-family: 'Times New Roman';"><i>SS - &nbsp; &nbsp; &nbsp;Digital 17&nbsp;</i></span></td>  <td align="LEFT"><br /></td></tr></tbody></table><br />Unlike on the Arduino Uno These SPI pins are not accessible&nbsp;through any of the digital I/O pins, on om the Leonardo, their only accessible through the ICSP header. The SPI SS pin on the Leonardo is not broken out anywhere on the board,&nbsp;strangely&nbsp;it's used for the Rx LED. Can anyone explain why this is the case? It's not a big problem, we can use another pin as SS, digital 10 in this case.<br /><br />The IRQ Interrupt connection is made to Digital 3 (INT0). This has moved from Digital 2 on the Arduino Uno.<br /><br />The SEL connection is the same as with the Arduino UNO/ATmega328 goes to digital 10.<br /><br />See the RFM12B documentation page for general info on RFM12B and details of how to interface with ATmega328: <a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless">http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless .&nbsp;</a><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-1wlXYOH5sRw/T8k1oL7NA_I/AAAAAAAAbqM/ADGDEPtMkFc/s1600/Ardiono+Leonardo+RFM12B.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="266" src="http://1.bp.blogspot.com/-1wlXYOH5sRw/T8k1oL7NA_I/AAAAAAAAbqM/ADGDEPtMkFc/s640/Ardiono+Leonardo+RFM12B.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Arduino Leonardo Connections to RFM12B via<a href="http://jeelabs.com/products/rfm12b-board"> JeeLabs RFM12B</a> breakout for level shifting to 3.3V</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-SL7RcnJfBxU/T8kWsOqWWTI/AAAAAAAAbqA/LYa2A00fwp0/s1600/SPI.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-SL7RcnJfBxU/T8kWsOqWWTI/AAAAAAAAbqA/LYa2A00fwp0/s1600/SPI.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">ICSP Header</td></tr></tbody></table>Now the hardware is&nbsp;complete&nbsp;it's time to tackle the software. We use the RFM12B driver as part of the JeeLib library from JeeLabs:&nbsp;<a href="https://github.com/jcw/jeelib">https://github.com/jcw/jeelib</a>. The library needs to be installed in the Arduino&nbsp;library's&nbsp;folder in the usual way. Arduino 1.0.1 is needed to be&nbsp;compatible&nbsp;with Leonardo.<br /><br /><strike>To make the JeeLib library work with the Leonardo and RFM12B (hooked up as above) the following needs to be inserted into the RF12.cpp file on line 62 <b>before</b> the <i>else&nbsp;// ATmega168, ATmega328, etc.</i></strike><br /><i><br /></i><br />No change to RFM12.cpp is needed, just download the latest version, see update below.<br /><br /><i>#elif defined(__AVR_ATmega32U4__)</i><br /><i><br /></i><br /><i>#define RFM_IRQ &nbsp; &nbsp; 0<span class="Apple-tab-span" style="white-space: pre;"> </span> &nbsp; //PD0, INT0, Digital3&nbsp;</i><br /><i>#define SS_DDR &nbsp; &nbsp; &nbsp;DDRB</i><br /><i>#define SS_PORT &nbsp; &nbsp; PORTB</i><br /><i>#define SS_BIT &nbsp; &nbsp; &nbsp;6<span class="Apple-tab-span" style="white-space: pre;"> </span> &nbsp; //Dig10, PB6</i><br /><i><br /></i><br /><i>#define SPI_SS &nbsp; &nbsp; &nbsp;17 &nbsp; &nbsp; // PB0, pin 8, Digital17</i><br /><i>#define SPI_MISO &nbsp; &nbsp;14 &nbsp; &nbsp; // PB3, pin 11, Digital14</i><br /><i>#define SPI_MOSI &nbsp; &nbsp;16 &nbsp; &nbsp; // PB2, pin 10, Digital16</i><br /><i>#define SPI_SCK &nbsp; &nbsp; 15 &nbsp; &nbsp; // PB1, pin 9, Digital15</i><br /><br /><br />I'm going to send JCW a git pull request to see if these changes can be integrated into the JeeLib library so it should work 'out of the box' in the future.<br /><br /><b>Update: Pull request has been merged, RF12 part of JeeLib Arduino library now has ATmega32U4 support :-) . Download it here:&nbsp;<a href="https://github.com/jcw/jeelib">https://github.com/jcw/jeelib</a></b><br /><br />For a simple RFM12B transmission demo/example see:&nbsp;<a href="https://github.com/openenergymonitor/RFM12B_Simple">https://github.com/openenergymonitor/RFM12B_Simple</a><br /><br />I'm planning on using the ATmega32U4 in the emonTx SMT that I'm currently working on. Spot the common thread in my last few blog posts!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/06/high-accuracy-current-measurement-over/">High Accuracy Current Measurement Over a Wide Range</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-01T08:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-01 08:59:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/06/high-accuracy-current-measurement-over/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><br /></a><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><br /></a></div><div style="text-align: left;">Measuring the current in a domestic property using a clip-on CT sensor can be quite&nbsp;challenging&nbsp;since the range in which it has to work over is very large, potentially several order of magnitude: up to 25000W and down to a few 10'sW. We would like to have good accuracy over this wide range.&nbsp;</div><div style="text-align: left;"><br /></div><div>We have been exploring how to improve on the current emonTx. Robert Wall has written a page&nbsp;<a href="http://openenergymonitor.org/emon/node/712">detailing the measurement implications of current emonTx ADC</a> resolution at low current values when using&nbsp;the standard 100A max CT sensor and 18R burden resistor.&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">A while back we came across an application note from ATmel detailing how to build a fully featured energy monitor using CT sensor, AC voltage measurement and the ATmega328 MCU. App-notes are a fantastic source for&nbsp;open-source hardware information. The ATmel energy monitor app-note is very&nbsp;comprehensive&nbsp;and well written. It's even got a Bill of Materials that specs down to individual resistors&nbsp;complete&nbsp;with their corresponding Farrnel order codes!&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">Download the app-note .pdf here:&nbsp;<a href="http://www.atmel.com/Images/doc2566.pdf" style="text-align: -webkit-auto;">www.atmel.com/Images/doc2566.pdf</a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-Z6-WTfCXnfY/T9S-l-RCp3I/AAAAAAAAbrk/eYv7rMySnNQ/s1600/Labeled+Atmel+Energy+Monitor+app+note.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="278" src="http://3.bp.blogspot.com/-Z6-WTfCXnfY/T9S-l-RCp3I/AAAAAAAAbrk/eYv7rMySnNQ/s640/Labeled+Atmel+Energy+Monitor+app+note.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Diagram from Atmel app-note - potential divider resistor values where changed to enabled the AC signal to be biased to Vcc/2</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><span style="text-align: -webkit-auto;">The app-note circuit&nbsp;achieves&nbsp;good resolution and accuracy over a wide range by having a adjustable op-amp gain stage. Using the resistor values in the inverting op-amp the gain can be switched from -1.25, -10.26 and -69.11. The gain is switched by digital switching the&nbsp;</span>Bilateral Switches (74HC4066). The gain of the op-amp is calculated as follows:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-1V3jCpeeRMY/T8hxqXH0PxI/AAAAAAAAbpo/xs9OuQ7T3uU/s1600/Labeled+Atmel+Energy+Monitor+app+note.png" imageanchor="1"><img border="0" height="122" src="http://1.bp.blogspot.com/-1V3jCpeeRMY/T8hxqXH0PxI/AAAAAAAAbpo/xs9OuQ7T3uU/s640/Labeled+Atmel+Energy+Monitor+app+note.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">A couple of days a ago we built up a prototype of the above circuit, more an an exercise to check we can make it work rather than a scientific test, this would be difficult on a breadboard due to the sub-optimal circuit layout. A spare emonTx PCB was used as an easy way to connect the circuit up to an ATmega328 and RFM12B.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: left;"><img border="0" height="240" src="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s320/DSCF5036.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Adjustable gain op-amp CT sensor circuit - prototype&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-wyzX5ePzs20/T8Pz6eMV-GI/AAAAAAAAbo4/a1kLW5rIbc0/s1600/sample02.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://2.bp.blogspot.com/-wyzX5ePzs20/T8Pz6eMV-GI/AAAAAAAAbo4/a1kLW5rIbc0/s640/sample02.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">ATmega 328 ADC sample using <a href="http://openenergymonitor.org/emon/node/110">VI sampler</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">The circuit worked first time with no&nbsp;hiccups. The above waveform is the RAW output from an ATmega 328's ADC, where one 100W light bulb and 30W laptop PSU was connected to the AC circuit being monitored. The high gain stage (x69.11) was active. To put this in perspective if the same sample was run on the current emonTx the signal would be so small as to be only just visible on the VI sampler. The spikes at the peak of the waveform is caused by the laptop's switch-mode PSU. The significantly increased amplitude of the signal will improve accuracy when monitoring low power levels. The app-note suggests accuracy of &lt;1% over a wide range, possibly even better with careful PCB design.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Although this multi-gain op-amp circuit adds significant complexity over the current emonTx current monitoring circuit it can be added for relatively low cost. One quad op-amp and two quad bilateral switches IC's cost about £1, this is enough for 4 x CT channels. We're planning to use this circuit design in the forthcoming emonTx SMT. As the name suggests this board will be designed for SMT components and will be assembled by pick-and-place. See <a href="http://openenergymonitor.org/emon/node/642">this forum thread</a> for a discussion regarding ideas for the emonTx SMT. Design is progressing well, more details on this soon.&nbsp;</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2012/05/installing-emoncms-on-raspberry-pi/">Installing emoncms on a raspberry pi</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-05-30T16:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-30 16:14:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/05/installing-emoncms-on-raspberry-pi/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Update: we now have a more&nbsp;complete&nbsp;guide for installing emoncms on the Pi here:&nbsp;<a href="http://openenergymonitor.org/emon/emoncms/installing-ubuntu-debian-pi">http://openenergymonitor.org/emon/emoncms/installing-ubuntu-debian-pi</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Just got emoncms installed and running on the raspberry pi here, here are my installation notes:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-RT98jV4_DP8/T8ZFc8GrHoI/AAAAAAAACdE/kSBCcfSSpgU/s1600/IMAG0781.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="http://3.bp.blogspot.com/-RT98jV4_DP8/T8ZFc8GrHoI/AAAAAAAACdE/kSBCcfSSpgU/s400/IMAG0781.jpg" width="400" /></a></div><b><br /></b><br /><b>1) Initial setup</b><br />Download the debian squeeze image from: <a href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a> and write to an SD card, following the guide here:<a href="http://www.blogger.com/%C2%A0http://elinux.org/RPi_Easy_SD_Card_Setup"> http://elinux.org/RPi_Easy_SD_Card_Setup</a>. <br /><br />Insert the sd card into the pi, power it up connect up a screen, a keyboard and ethernet.<br /><br /><b>2) Enable SSH (optional)</b><br /><br />You may at this point like to enable ssh in order to do the rest of the setup remotely from your 'normal' computer (running the pi in headless mode). I followed this guide, <a href="http://fusionstrike.com/2012/setting-ssh-ftp-raspberry-pi-debian">http://fusionstrike.com/2012/setting-ssh-ftp-raspberry-pi-debian</a>. The main steps are:<br /><br />$ sudo bash (Not sure if this is needed, apparently it is useful when performing a series of administrative tasks)<br /><br />Crease a public RSA key:<br /><br />$ ssh-keygen -t rsa<br /><br />It will ask where you would like it saved and a pass-phrase, skip these questions by pressing enter. Once finished and the pattern has appeared enter the followin to enables ssh at boot:<br /><br />$ sudo mv /boot/boot_enable_ssh.rc /boot/boot.rc<br /><br />Then to start ssh:<br />$ sudo /etc/init.d/ssh start<br /><br />Find the IP address of your pi ($ ifconfig -a) and then from your computer login to the raspberry pi via ssh, for example:<br /><br />$ ssh pi@192.168.1.17<br />(password: raspberry)<br /><br /><b>3) Update repositories</b><br />It may be worth making sure that all packages are up to date at this point:<br /><br />$ sudo apt-get update<br /><br /><b>4) Install mysql</b><br /><br />$ sudo apt-get install mysql-server mysql-client<br /><br />When the blue dialog&nbsp;appears&nbsp;enter a password for root user, note the password down as you will need it later.<br /><br /><b>5) Install apache2</b><br /><br />$ sudo apt-get install apache2<br /><div><br /></div><div>If apache fails to start (as it did for me) run the following:<br /><br />$ sudo groupadd www-data<br />$ sudo usermod -a -G www-data www-data<br /><br /><b>6) Install php</b><br /><br />$ sudo apt-get install php5 libapache2-mod-php5<br /><br />$ sudo apt-get install php5-mysql<br /><br /><b>7) Enable mod rewrite</b><br /><br />$ sudo a2enmod rewrite<br /><br />$ sudo nano /etc/apache2/sites-enabled/000-default<br /><br />Change (line 7 and line 11), "AllowOverride None" to "AllowOverride All".<br />Save and exit.<br /><br /><b>8)&nbsp;That completes the server installation, restart the server to make everything above operational:</b><br /><b><br /></b><br />$ sudo /etc/init.d/apache2 restart<br /><br /><b>Installing emoncms:</b><br /><br /><b>7) Install git (optional)</b><br /><br />$ sudo apt-get install git-core<br /><br />Follow this tutorial on creating keys etc: <br /><a href="http://help.github.com/linux-set-up-git/">http://help.github.com/linux-set-up-git/</a><br /><br />Finally to download, in the /var/www folder type:<br /><br />$ git clone git@github.com:openenergymonitor/emoncms3.git<br /><br /><b>Alternatively </b>download emoncms and unzip to your server:<br /><a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a> <br /><br /><b> 8) Create a MYSQL database </b><br /><br />$ mysql -u root - p<br /><br />Enter the mysql password that you set above.<br />Then enter the sql to create a database:<br /><br />mysql&gt; CREATE DATABASE emoncms;<br /><br /><b> 9) Set emoncms database settings.</b><br />In the folder emoncms3/Includes rename default.settings.php to settings.php. In settings.php&nbsp;enter your mysql username (root) and password, host (localhost) and database name (if as above - emoncms).<br /><b><br /></b><br /><b>10) In an internet browser, load emoncms:</b><br /><br />http://YOURIP/emoncms3<br /><br />That's should be it!<br /><br />Next step is to get a jeelink running to&nbsp;receive&nbsp;and forward data from the emontx to the emoncms installation. Will update shortly.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/05/emontx-single-ac-power-supply/">emonTx single AC power supply - Part 1 Simulation</a>
   </h1>
   
@@ -740,128 +864,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/05/embodied-energy-of-electronic-enclosure/">Embodied Energy of Electronic Enclosure Materials</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-05-09T22:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-09 22:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/05/embodied-energy-of-electronic-enclosure/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    For us the&nbsp;underlying&nbsp;aim of energy monitoring is energy reduction. It's therefore important that over its useful life an energy monitoring system contributes to the saving of more energy than it involved in the embodied energy of it's production.<br /><br />Recently we have been having the discussion as to which material is&nbsp;environmentally&nbsp;better to use for electronic enclosures.<br /><br />So I did some research:<br /><br />Caution: The figures below were obtained from&nbsp;reputable&nbsp;sources but should not be taken on face value.<br /><ul><li>&nbsp;Extruded Aluminium takes approximately 40-80% <i>more </i>energy (KWh/Kg) to produce than ABS plastic [1][2] *</li></ul><ul><li>Aluminium is widely and easily recycled (even if its been anodised&nbsp;[2]) and the recycled product is of just as high a quality as the&nbsp;original.&nbsp;ABS plastic can be recycled in some locations but the recycled product is of much lower quality than the&nbsp;original, 'downcycling' would be a better term!&nbsp;</li></ul><ul><li>Recycled aluminium takes about 30% <i>less </i>energy (KWh/Kg) &nbsp;to produce than ABS plastic [3].</li></ul><ul><li>Plastic is made from oil which is a non-renewable fossil fuel.</li></ul><ul><li>Aluminium is the most abundant metal in the Earth's crust, extracting it requires lots of electricity which could be generated from renewable sources.&nbsp;</li></ul>With current processing and recycling&nbsp;methods&nbsp;we think aluminium could be the best material to use, it does take more energy to produce in the first place but once produced it can be recycled again and again to make new things with little extra energy.<br /><br />What do you think?<br /><br />References:<br />[1]&nbsp;<a href="http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml">http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml</a><br />[2]&nbsp;<a href="http://www.victoria.ac.nz/cbpr/documents/pdfs/ee-coefficients.pdf">www.victoria.ac.nz/cbpr/documents/pdfs/ee-coefficients.pdf</a><br /><div><div>[3] <a href="http://www.worldchanging.com/archives/005656.html">http://www.worldchanging.com/archives/005656.html</a><br /><br />*Aluminium is about 2.6 times denser than plastic therefore a similar case made from plastic could be&nbsp;lighter. Further research is required before drawing a conclusion.&nbsp;</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/04/engineers-thermometer/">Engineers thermometer</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-04-22T16:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-22 16:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> JohnCantor</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/04/engineers-thermometer/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    I have just configured an emonGLCD and a battery-powered emonTx unit with 3 temperature sensors. This would make a useful heat-pump engineers tool, and probably has many other uses.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-6CJx6SlT4KE/T5QwzWYc0PI/AAAAAAAAAB0/gUZAhU0WevE/s1600/GLCD+radio+thermometer.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-6CJx6SlT4KE/T5QwzWYc0PI/AAAAAAAAAB0/gUZAhU0WevE/s320/GLCD+radio+thermometer.JPG" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>The emonTx has 2 probes (DS18B20's) on 2m cables, and one on-board the PCB. It's battery powered so can be put anywhere in range. The emonGLCD display shows the 3 emonTx temperatures and also a local temperature.&nbsp; Temperatures are transmitted via wireless from the emonTx to the emonGLCD every 2 seconds.<br /><br />Typical uses would be for balancing radiators. i.e T1 on the flow, T2 on the return. I have added T1 - T2 (delta T) because that is what you are often looking for.&nbsp;&nbsp; It could also be used for air-in, air-off off an air source heat pump, or and flow/return situation.&nbsp;&nbsp; It would make a good tell-tale device. i.e. to alert if any system goes out of its best operating ranges.<br /><br />I also have the temperatures data going to a Nanode emonBase to be logged to emoncms so that graphs can display temperatures over time. You really need this to balance up central heating radiators. i.e. fix it to a different radiator every day and compare results. The flows can be balanced accordingly.<br /><br />The DS18B20's are not ideal because they are a bit chunky (as opposed to thermocouples). On the other hand, the accuracy is excellent and it seems that the values can be relied upon. I have chosen to pot-up the probes myself.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-F4FmXiRSSEc/T5Q0s5e8FSI/AAAAAAAAACE/f2rJOeU2XnE/s1600/18B20+sensor+with+flex.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-F4FmXiRSSEc/T5Q0s5e8FSI/AAAAAAAAACE/f2rJOeU2XnE/s320/18B20+sensor+with+flex.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>They are fragile, and the <a href="http://shop.openenergymonitor.com/waterproof-ds18b20-temperature-sensing-kit/">ready-made sensors</a> from the OpenEnergyMonitor shop are much more rugged and can easily be tie-wrapped to a copper pipe and insulated etc.<br /><br />Next thing is to battery-power the emonGLCD so it becomes a portable tool. &nbsp; <br /><br />Another addition would be a LCD pulse input. This would give me a reading of kWh, and would save me using a stop-watch, as I have many over the years. <br /><br />Adapting these devices could get addictive!!<br /><br /><i>By John Cantor <a href="http://heatpumps.co.uk/">heatpumps.co.uk</a></i><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/04/short-video-of-openenergymonitor-labs/">A short video of OpenEnergyMonitor Labs</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-04-18T00:41:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-18 00:41:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/oem-labs/'>OEM Labs</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/04/short-video-of-openenergymonitor-labs/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Timelapse footage from inside and outside OpenEnergyMonitor Labs here in the mountains of Snowdonia, North Wales, UK.<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/e19ClmQmql8" width="560"></iframe><br /><br />We had lots of fun making this. If only each day was longer!
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -902,6 +904,24 @@ $(window).resize(function(){
     
       
         <li class="post">
+          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/new-home-page-and-learn/">Launching our new home page and Learn website!</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
         </li>
       
@@ -939,24 +959,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
     

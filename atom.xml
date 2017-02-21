@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-08T11:27:13+00:00</updated>
+  <updated>2017-02-21T13:58:11+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,141 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MyHomeEnergyPlanner - open source home energy assessment]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/"/>
+    <updated>2017-02-21T13:43:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id>
+    <content type="html"><![CDATA[<p><img src="https://blog.openenergymonitor.org/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
+
+<p>I would like to highlight a piece of work by Carlos Alonso Gabizón which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see people use.</p>
+
+<p>Carlos has been working for <a href="http://carbon.coop/">CarbonCoop</a> over the last year and a half on MyHomeEnergyPlanner – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.</p>
+
+<p>MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.</p>
+
+<p>MyHomeEnergyPlanner can be used to calculate the space and water heating requirements for a home from a detailed breakdown of the building fabric: floor, walls, roof, windows etc. It uses U-values and areas to calculate building fabric heat loss rates, combined with calculated heat loss from infiltration and ventilation and heat gains from solar radiation, lighting, household appliances, cooking and occupants.</p>
+
+<p>It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.</p>
+
+<p>MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your emoncms.org account)</p>
+
+<p><a href="http://myhome.emoncms.org">http://myhome.emoncms.org</a></p>
+
+<p>I have written an initial getting started guide here that goes over the main parts of creating an initial household assessment:</p>
+
+<p><a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner">https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner</a></p>
+
+<p>When I was last working on building energy modelling I also wrote a brief guide on how a simple household energy model works which can also be found here:</p>
+
+<p><a href="https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme">https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme</a></p>
+
+<p><strong>MyHomeEnergyPlanner Github</strong> 
+<a href="http://github.com/emoncms/MyHomeEnergyPlanner">http://github.com/emoncms/MyHomeEnergyPlanner</a></p>
+
+<hr />
+
+<p>For further context: MyHomeEnergyPlanner is used by CarbonCoop as part of their work on household retrofit, improving insulation and air-tightness of existing households in Manchester to achieve carbon emission reductions of 80% compared to the 1990 baseline. More information can be found about their work here:</p>
+
+<p>Whole House Retrofit - A Community Green Deal
+<a href="http://carbon.coop/content/whole-house-retrofit-community-green-deal">http://carbon.coop/content/whole-house-retrofit-community-green-deal</a></p>
+
+<p>Whole House Retrofit Assessment Method:
+<a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf</a></p>
+
+<p>Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project:
+<a href="https://twitter.com/CarbonCoop/status/802176377785028608/photo/1">https://twitter.com/CarbonCoop/status/802176377785028608/photo/1</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Launching Learn: Sustainable Energy]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy/"/>
+    <updated>2017-02-14T10:18:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy</id>
+    <content type="html"><![CDATA[<p>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The <a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy section of Learn</a> brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.</p>
+
+<p>It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario.</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">https://learn.openenergymonitor.org/sustainable-energy/energy/introduction</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101">https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101</a></li>
+</ul>
+
+<p>There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote <a href="http://www.inference.eng.cam.ac.uk/withouthotair/">Sustainable energy without the hot air</a>, to visualise the different uses of energy from traditional electricity demand to heating and transport.</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study">https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study</a></li>
+</ul>
+
+<p>Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model.</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain">https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain</a></li>
+</ul>
+
+<p>The latest version of the 10 year hourly energy modelling tool can be found here:</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a></li>
+</ul>
+
+<p>It can be used to explore supply &amp; demand matching for a large number of different supply and demand side technologies. Everything from wind, solar, heatpumps, biomass heat, electric vehicles, hydrogen, battery storage to long term biomass energy backup.</p>
+
+<p>Pages 6,7 &amp; 8 and the appendixes go into further detail looking briefly at costs, renewable heat and community (large village/small town) scale scenarios, discussing the results of running different options through the model.</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios">https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat">https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/costs">https://learn.openenergymonitor.org/sustainable-energy/energy/costs</a></li>
+</ul>
+
+<p><strong>Screenshot: Snowdonia household energy study:</strong></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy.png" alt="New Front Page" /></p>
+
+<p><strong>Screenshot: 10 year hourly energy model</strong></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy-zcem.png" alt="New Front Page" /></p>
+
+<p>If you have any question’s about this work please feel free to email me on trystan dot lea at openenergymonitor.org.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Launching our new home page and Learn website!]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn/"/>
+    <updated>2017-01-31T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn</id>
+    <content type="html"><![CDATA[<p>As you may well have noticed we have recently launched a new front page website for OpenEnergyMonitor and a common theme across our multiple sites, We have also launched a new website called Learn.</p>
+
+<p>A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.</p>
+
+<p>This website redesign completes the shift away from using drupal that was started with the OpenEnergyMonitor Guide website launched April 2016 and the use of <a href="http://discourse.org">discource</a> for our forums launched May 2016.</p>
+
+<p>Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.</p>
+
+<p>Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.</p>
+
+<p>The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes.</p>
+
+<p>New OpenEnergyMonitor front page:</p>
+
+<p><a href="http://openenergymonitor.org">http://openenergymonitor.org</a></p>
+
+<p>Learn:</p>
+
+<p><a href="http://learn.openenergymonitor.org">http://learn.openenergymonitor.org</a></p>
+
+<p>Screenshots:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/new-oem-site.png" alt="New Front Page" /></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy.png" alt="Learn: Sustainable Energy" /></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenEVSE EV Charge Controller Review]]></title>
@@ -1358,137 +1493,6 @@ Over the year the average available wind power for the household will work out t
 
 <h3 id="next-aggregation">Next: Aggregation</h3>
 <p>The degree of matching can be increased by aggregating supply and demand across several households. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s. We have been testing with a limited number of households so far, the effect of aggregation on the degree of supply/demand matching which I will come on to in the next post.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Part 1: Attempting to measure and understand the CO2 intensity of grid electricity]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity/"/>
-    <updated>2016-04-27T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/04/Understand-CO2-intensity-grid-electricity</id>
-    <content type="html"><![CDATA[<p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
-
-<p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>
-
-<p>The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</p>
-
-<!--more-->
-
-<div class="highlighter-rouge"><pre class="highlight"><code>As an example the CO2 intensity of combined cycle gas turbines (CCGT) which provide the majority of electricity generated from gas in the UK have a co2 intensity of 360gCO2/kWh.
-
-At this intensity a well installed heat pump that achieves an average COP of 3.0 delivers heat at a CO2 intensity of 129gCO2/kWh heat including 7% grid losses. This provides a significant 44% co2 emissions reduction compared to having an efficient gas boiler which delivers heat at a CO2 intensity of 230gCO2/kWh.
-
-An electric car achieving a real world mountainous north Wales terrain driving efficiency of 3.7 miles per kWh (5.9km/kWh) including charging losses powered by gas electricity has a co2 intensity of 61gCO2/kWh which again provides a significant 44% co2 emissions reduction compared to real world efficient small petrol car co2 emissions of110 gCO2/km based on: 10.6 kgCO2 per gallon [1] and 60mpg (typical of the most efficient small car real world mpg [2].
-</code></pre>
-</div>
-<p><a href="http://www.carbonindependent.org/sources_car.html">[1]</a>
-<a href="http://www.whatcar.com/car-news/real-world-mpg-efficient-small-cars/1214063">[2]</a></p>
-
-<p>The average CO2 intensity for the UK grid as a whole in 2015 was <a href="http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html">367gCO2/kWh</a> http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html#fullyear2015 - providing similar CO2 emission reduction potential to the gas only calculations above.</p>
-
-<p>It is interesting to note that this average, results from coal generation with a CO2 intensity of 910gCO2/kWh being offset somewhat by generation from renewable energy and nuclear at 0gCO2/kWh resulting in a CO2 intensity that is close to what it would be if gas CCGT was our only supply source – which really highlights how carbon intensive coal is.</p>
-
-<p>When we move energy demands from one form to another such as replacing a gas boiler with a heat pump the carbon reduction benefits depend heavily on what kind of generation provides for that additional demand. If the additional demand is provided for by CCGT gas turbines the switch makes sense, if it is provided by coal generation at 910gCO2/kWh it does not make so much sense. If it is provided by mix of renewable energy and CCGT is will make even more sense.</p>
-
-<p>There are several different approaches to calculating the co2 intensity of delivered electricity each with their benefits and drawbacks which I will try and explore below and in further posts.</p>
-
-<p>Whole grid averageHere we consider the grid as one big system with the CO2 intensity calculated as the total CO2 emitted by all forms of generation divided by the total demand over an extended period of time – one or more years. The co2 intensity of the UK electricity grid for 2015 was 367gCO2/kWh.</p>
-
-<p>Near real-time co2 intensity using grid wide data</p>
-
-<p>Here the CO2 intensity is calculated by the total CO2 emitted divided by total demand on typically a 10 minute basis. The CO2 intensity calculated this way will often show higher CO2 intensity in the day where gas and coal are a larger percentage of overall supply than at night time. CO2 intensity is also higher when its colder where demand is pushed up by higher heating requirements.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/ukgrid.png" alt="UK Grid Carbon" /></p>
-
-<p><a href="https://openenergymonitor.org/ukgrid">OpenEnergyMonitor UK Grid page</a> showing real-time CO2 Intensity.</p>
-
-<p>If we use this real-time CO2 intensity in order to choose when to use electricity it gets more complicated, we may decide to shift electric vehicle charging or heat pump hot water heating to the night time in order to make use of grid carbon intensities that can often be 50-100gCO2/kWh less than day-time rates, but is this really a valid approach? The lower CO2 intensities at night are as a result of demand being lower and nuclear + renewables making up a larger share of generation, if night time demand is increased through demand shifting, turning on more gas and coal power plants, the carbon intensity would increase as well.</p>
-
-<p>Given that most of the dis-patchable generation is gas and coal and assuming low levels of wind curtailment at night then it could be argued that the effective carbon intensity of moving demand to the night time should be calculated at the carbon intensity of this dis-patchable generation which depends on the proportion of gas to coal, a more in depth understanding as to how the proportion of gas and coal generation is decided would be needed to assess the carbon value of demand shifting. If the proportions are constant, shifting would make no difference, if gas is ramped up to meet the additional demand there may well be a benefit to shifting on the other hand if the difference is made up with more coal generation there would not be. There’s a bit more on this here using 2011 data from <a href="http://people.bath.ac.uk/en8sc/GridCarbonIntensity.pdf">Sam Cooper of Bath University</a> <a href="http://www.earth.org.uk/note-on-UK-grid-CO2-intensity-variations.html">linked from earth notes here</a>.</p>
-
-<p>Shifting demand away from peak times may well make sense from a transmission and distribution grid capacity perspective but this is largely a different argument and would require a different calculation to assess. It may also be the case that some wind curtailment does take place although the precise extent of this and where on the grid using more will reduce curtailment is difficult to quantify.</p>
-
-<p>In the next blog I will discuss the work I’ve been doing with Dominic McCann from the Carbon Coop on estimating CO2 intensity with onsite and green tariff renewable energy considered.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GitHub Submodules]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules/"/>
-    <updated>2016-04-18T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/04/Git-Sub-Modules</id>
-    <content type="html"><![CDATA[<p><strong>Update: PlatformIO does library management much better then git-submodules, we have switched to using PatformIO to manage library dependencies, <a href="http://blog.openenergymonitor.org/2016/06/platformio/">see blog posts</a></strong></p>
-
-<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
-
-<p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
-
-<p>However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</p>
-
-<!--more-->
-
-<h2 id="github-submodules">GitHub Submodules</h2>
-
-<blockquote>
-  <p>With git submodules a repository can contain a checkout of another repository as a subdirectory.
-The subfolder stores the submodule repository location and a commit ID. This means you can, for example, keep some common code in a separate repository and use a specific, known-working version of this code in other projects.
-If the submodule gets an update, the submodule will not get updated in the repo until you specifically pull the changes into them. Also, you can make changes to the submodule from within a project and push those changes to the submodule’s repository to make them available to other projects.</p>
-</blockquote>
-
-<h2 id="example">Example</h2>
-
-<p>Here is the firmware folder of the <a href="https://github.com/openenergymonitor/emonpi/tree/master/firmware/libraries">emonPi GitHub Repo</a>. The visible sub folders contain the required Arduino libs at a specific point in time.</p>
-
-<p>Using submodules becomes very useful when testing an update to one of the libraries in a development branch, in the development branch the submodule can be fast-forwarded to the latest version leaving the master branch untouched.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/submodules.png" alt="Git SubModules" /></p>
-
-<p>Submodules also make it easy for users to clone a project repo including all the sketch source code and the Arduino libs at exactly the correct version all from one place. Using the later version of Arduino IDE (1.6+) it’s possible to set the sketchbook location to the project repo to import all the required libs into the IDE.</p>
-
-<p>To obtain the submodules the repo must be Git cloned (not zip downloaded) then once the repo has been cloned a couple of extra steps are required to import the submodules. Here is an example for cloning the emonPi repo in pull in the sub modules:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi
-$ cd emonpi
-$ git submodule update
-$ git submodule init
-$ git submodule update
-</code></pre>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Home Assistant and emonPi]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/"/>
-    <updated>2016-04-01T17:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/04/Home-Assistant</id>
-    <content type="html"><![CDATA[<p><a href="http://home-assistant.io/">Home Assistant</a> (HA) is a fully <a href="https://github.com/balloob/home-assistant">open-source</a> home automation platform.</p>
-
-<p>In terms of functionality it’s quite similar to <a href="http://openenergymonitor.blogspot.co.uk/search/label/openHAB">openHAB</a> however it’s architecture is very different it runs on Python 3 as opposed to java.</p>
-
-<p>I found home assistant very easy to setup and configure. It’s got some nice auto detect features e.g. It auto-detected by Chromecast devices. Home Assistant has got <a href="https://home-assistant.io/components/">pre-built component integrations</a> with many home automation and monitoring devices and platforms. I was also impressed with the presence detection support, I tested using <a href="https://home-assistant.io/components/device_tracker.nmap_scanner/">nmap</a> to scan my home router for presence of my phone connected to my home WiFi (indication that I’m home…or I forget my phone!) and <a href="https://home-assistant.io/components/device_tracker.owntracks/">OwnTracks</a> MQTT based GPS tracking.</p>
-
-<!--more-->
-
-<p>Interfacing with our <a href="http://openenergymonitor.org/emon/modules/emonpi">emonPi Raspberry Pi energy monitor</a> was easy, using MQTT component to connect to emonPi’s MQTT server and subscribe to the power and sensor readings of interest.</p>
-
-<p>As yet I have not experimented with creating automations with HA .e.g turning off lights and heating when we’re not home. I think I will still prefer using nodeRED for these types of rule based automations. However what HA does well is present a nice clean, mobile friendly and easy to configure front-end interface:</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/ha1.jpg" alt="home assistant" />
-My HA Home Setup So Far</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/ha2.png" alt="home assistant" />
-Home Assistant has some nice mini graphing features to give you a quick overview.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/ha3.png" alt="home assistant" /> <img src="https://blog.openenergymonitor.org/images/ha4.png" alt="home assistant" /></p>
-
-<p>On a switch node a quite overview will tell you how long the switch has been on or off for. Very useful for checking long long the heating has been on for</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/ha5.png" alt="home assistant" /></p>
-
-<p>Generic emonPi Config Example</p>
-
-<p><a href="https://github.com/openenergymonitor/oem_home-assistant">I have published setup guide to setting up Home Assistant on an emonPi with example config</a>.</p>
 ]]></content>
   </entry>
   

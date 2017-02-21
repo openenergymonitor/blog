@@ -462,6 +462,132 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2013/07/more-direct-file-storage-research/">More direct file storage research</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-04T12:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-04 12:04:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/more-direct-file-storage-research/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I was surprised to find how easy it was to use flat file storage for feed data using PHP file access commands and how fast this approach could be.<br /><br />While reading up on indexes I realised that the timestamp column in a feed data table is its own index as it is naturally sorted in ascending order and each row (datapoint) should be unique. A data-point can then be searched for efficiently using binary search which I remember covering in A-level computing. The feed data in mysql had a binary tree index which If I understand correctly is similar but it is implemented using a separate index layer which uses quite a bit of extra disk space. <br /><br />I had a go at implementing the get_feed_data function used in emoncms to select a given number of datapoint's over a timewindow used for drawing graphs. An example of the standalone function can be found here: <br /><br /><a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php">https://github.com/emoncms/experimental/blob/master/storage/directfiles/get_feed_data.php</a> <br /><br />A development branch of emoncms that uses this flat file approach and includes this function can be found here (inserting data, input processing such as power to kwhd and visualisation all work, but its still quite conceptual) <br /><br /><a href="https://github.com/emoncms/emoncms/tree/flatfilestore">https://github.com/emoncms/emoncms/tree/flatfilestore</a> <br /><br />The get_feed_data function as implemented above takes roughly 120-230ms on a RaspberryPI to select 1000 datapoints over 1 to 300 days with a feed table with over 9 million rows. <br /><br />Thats much better than the 900-2700ms achieved at similar ranges with the <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">current mysql implementation</a>. <br /><br />The feed table in mysql used 178Mb of disk space. The same feed with no loss of data stored without an index and accessed as above takes up 67Mb so that's a considerable saving. Interestingly a 67Mb feed can be compressed to 18.5Mb with tar.gz compression. <br /><br />One of the issues with the above get_feed_data query is that it needs to know the data interval to do the get a datapoint every x number of datapoints approach. We could use binary search to find every datapoint but this would be slower although maybe worth trying to get a benchmark so that it can be compared. <br /><br />The other issue is that the datapoints selected may not be representative of the window they represent as they are just one random datapoint at a particular point in time. Which is the problem that the averaging approach used by <a href="http://mikestirling.co.uk/redmine/projects/timestore">Mike Stirling in Timestore </a>and by <a href="https://github.com/dovadi/emonWeb">Frank Oakner in EmonWeb</a> solves. <br /><br />Timestore is also a fair bit faster than the above get_feed_data function returning 1000 datapoints in 45ms. <br /><br />The advantage of the above approach is that it can fit into emoncms without having to change the current implementation too much, the feed data retains its timestamps, input processing is used in the same way. <br /><br />Not storing timestamps as timestore does could also be an advantage as it helps keep data quality high: fixed interval datapoints should be easier to use for comparison's,&nbsp;mathematical&nbsp;operations between feeds, it gives you higher certainty when querying the data, fetching data is faster and disk use is potentially half the size of the above approach if the values are stored as <a href="http://openenergymonitor.blogspot.com/2013/06/timestore-timeseries-database.html">4 byte floats as above rather than the default 8 byte double</a>. This coupled with averaged layers provides data that is representative at all time scales and datapoint number requests. <br /><br />My next step will therefore be to explore timestore further, first creating a script to export data from emoncms into timestore. The script needs to analyse the emoncms feed to work out the most common data interval. It needs to check for missing data, If a monitor went offline for an extended length of time it needs to give you the option to take this into account. It then needs to export and import into timestore as efficiently as possible.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/07/in-memory-storage-php-shared-memory-vs/">In memory storage: PHP shared memory vs Redis vs MYSQL</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-04T09:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-04 09:25:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/in-memory-storage-php-shared-memory-vs/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Continuing on the theme of rethinking the data core of emoncms, as <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">previously mentioned</a> for short term storage, storage to disk may not be necessary, instead we can store data in memory using an in-memory database. Here are some tests and benchmarks for in memory storage:<br /><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To start with I created baseline test using MYSQL updating a feed's last time and value in the feeds table row for that feed. This took around: 4800 – 5100 ms to update a row 10000 times.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We would imagine Redis doing a lot better as its in-memory, it&nbsp;isn't&nbsp;writing to disk each time which is much slower than memory access. Redis did indeed perform faster completing the same number of updates to a key-value pair in 1900 – 2350ms.&nbsp;I'm&nbsp;a little surprised thought that it was only 2.3x as fast and not much faster, but then there is a lot going on Redis has its own server which needs to be accessed from the PHP client this is going to slow things down a bit, I tested both the phpredis client and Predis. Phpredis was between 500-1000 ms faster than the Predis client and is written in c.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How fast can in-memory storage be? A general program variable is also a form of in-memory storage, a quick test suggests that it takes 21ms to write to a program variable 10000 times, much better than 2.3x faster&nbsp;that's&nbsp;230x faster! The problem with in program variables is that if they are written to in one script say an instance of input/post they cannot be accessed by another instance serving feed/list, we need some form of storage that can be accessed across different instances of scripts.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The difference between 21ms and 1900-2350ms for redis is intriguingly large and so I thought I would search for other ways of storing data in-memory that would allow access between different application scripts and instances.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I came across the PHP shared memory functions which are similar to the flat file access but for memory, the results of a simple test are encouraging showing a write time of 48ms for 10000 updates. So from a performance perspective using php shared memory looks like a better way of doing things.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The issue though is implementation, mysql made it really easy to search for the feed rows that you wanted (either by selecting by feed id or by feeds that belong to a user or feeds that are public), I'm a little unsure about how best to implement the similar functionality in redis but it looks like it may be possible by just storing each feed meta data roughly like this: feed_1: {"time":1300,"value":20}.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Shared memory though looks like it could be quite a bit more complicated to implement, but then it does appear to be much faster. Maybe the 2.3x speed improvement over mysql offered by redis is fast enough? and its probably much faster in high-concurrency&nbsp;situations. I think more testing and attempts at writing full implementations using each approach is needed before a definitive answer can be reached.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/2013/06/load-stats-for-myisam-vs-innodb-for/">Load stat's for MYISAM vs INNODB for feed storage on the RaspberryPI</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-28T08:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-28 08:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/load-stats-for-myisam-vs-innodb-for/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Here are some historic load stats for a raspberrypi running here, with 36 feeds being written to.<br /><div><br /></div><div>First using the INNODB storage engine:<br /><div class="separator" style="clear: both; text-align: center;"><span style="text-align: left;"><br /></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-TDFZZ7cyfbE/Uc1E7dSLCeI/AAAAAAAACtI/vbG7etiFS2g/s925/innodb_raspi_load.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="280" src="http://3.bp.blogspot.com/-TDFZZ7cyfbE/Uc1E7dSLCeI/AAAAAAAACtI/vbG7etiFS2g/s640/innodb_raspi_load.png" width="640" /></a></div>A load of 3.5 causes an issue where the time that is recorded for data packets coming in gets messed up creating bunched up datapoints:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Jhg1mpnwIMQ/Uc1HL91zhjI/AAAAAAAACtg/h-vzID3xHro/s948/timingissue.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="http://4.bp.blogspot.com/-Jhg1mpnwIMQ/Uc1HL91zhjI/AAAAAAAACtg/h-vzID3xHro/s640/timingissue.png" width="640" /></a></div><br />Switching the storage engine over the MYISAM, reduced the load to around 0.2 and the timing issue is no longer present:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-vPe12-x2Gtc/Uc1FAYirGeI/AAAAAAAACtQ/Q5bp_VsvwmQ/s944/piloadmyisam.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="274" src="http://4.bp.blogspot.com/-vPe12-x2Gtc/Uc1FAYirGeI/AAAAAAAACtQ/Q5bp_VsvwmQ/s640/piloadmyisam.png" width="640" /></a></div><br />To convert your raspberry pi emoncms Innodb tables to MYISAM you can run the following script on your raspberrypi which will go through each table converting them in turn:<br /><br /><br /><br />&nbsp; $mysqli = new mysqli("localhost","root","raspberry","emoncms");<br /><br />&nbsp; $result = $mysqli-&gt;query("SHOW tables");<br />&nbsp; while ($row = $result-&gt;fetch_array())<br />&nbsp; {<br />&nbsp; &nbsp; echo "ALTER TABLE `".$row[0]."` ENGINE=MYISAM\n";<br />&nbsp; &nbsp; $mysqli-&gt;query("ALTER TABLE `".$row[0]."` ENGINE=MYISAM");<br />&nbsp; }<br /><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/rethinking-data-input-and-storage-core/">Rethinking the data input and storage core of emoncms: benchmarks</a>
   </h1>
   
@@ -748,128 +874,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/fridge-defrosting/">Fridge Defrosting</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-18T08:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-18 08:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/fridge-defrosting/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <i>Update 27/06/13:</i><br /><br /><i>As kindly pointed out by Jörg Becker in the comments below I mad an error with the timebase. I had assumed If I zoomed in the same amount that the time base would be the same, I had not realised that this was not actually the case. Below is an updated screen grab with the correct time period. As we can see the power in the window is pretty much the same 0.28/0.29Kwh. <b>Defrosting the fridge does not seem to have had much of a reduction effect in the power consumption, just an increased duty cycle. </b>Apologies for my original misleading post below.&nbsp;</i><br /><i><br /></i><i>Thanks again to Jörg Becker for pointing this out.&nbsp;</i><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s878/Selection_001.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="290" src="http://1.bp.blogspot.com/-Vik0egttfrE/Ucyk1GcjMEI/AAAAAAAAe5M/raIhQn9IDt4/s640/Selection_001.png" width="640" /></a></div><br /><br />Yesterday I defrosted my fridge, I was amazed at the effect it had on it's energy consumption and pattern.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s1600/fridge+defrost.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4F_yH3w2vFc/UcAZE8BjQ5I/AAAAAAAAe2c/w0hauc9OyMk/s640/fridge+defrost.jpg" width="640" /></a></div><br /><strike>Energy consumption due to fridge dropped from 2.29 Kwh/d to 1.09Kwh/d, about a 50% readuction. The pattern of energy consumption changed a fair bit, now defrosted the fridge switches on for a much shorter period of time, &nbsp;obviously getting up to&nbsp;down to temperature much quicker.</strike><br /><strike><br /></strike><strike>If I keep the fridge defrosted regularly all year it should save me around £60 a year.</strike><br /><br />I am aware that my fridge is quite an old model and a new model would use less energy overall and not require defrosting. Something to thing about for the future..
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/building-energy-modelling-part-2-first/">Building Energy Modelling part 2 - First attempts and research</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-17T20:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-17 20:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/building-energy-modelling-part-2-first/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />It was not long after reading the<a href="http://openenergymonitor.blogspot.co.uk/2013/06/building-energy-modelling-part-1-whole.html"> Whole House Book</a> that Glyn and I went to a green hackathon in London (January 2012) and I spent my time creating a small web app that implemented a really basic model that produced estimates of 20 year savings of implementing various building fabric improvement measures, its still up here:<br /><div style="margin-bottom: 0cm;"><span style="color: black;"><span style="font-family: Times New Roman;"><span style="font-size: medium;"><br /></span></span></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VzL7G6cycIg/Ub9kqV2oNKI/AAAAAAAACrk/aloGK36hQMQ/s1600/retrofit.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="337" src="http://4.bp.blogspot.com/-VzL7G6cycIg/Ub9kqV2oNKI/AAAAAAAACrk/aloGK36hQMQ/s400/retrofit.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><span style="color: black;"><span style="font-family: Times New Roman;"><span style="font-size: medium;"><br /></span></span></span></div><div style="margin-bottom: 0cm;">Try it out: <a href="http://vis.openenergymonitor.org/retrofit">http://vis.openenergymonitor.org/retrofit</a>&nbsp;</div><br />Source code:<a href="https://github.com/openenergymonitor/retrofit.git"> https://github.com/openenergymonitor/retrofit.git</a> <br /><br />I had not quite realised the importance of solar and internal gains at that point or indeed utilisation factors and heating patterns so the green hackathon retrofit calculator will only be remotely close to actual heating demand in very leaky buildings, with few windows and consistently heated to an even set temperature all year. Paul Tanner pointed out the heating pattern flaw at the time in a tweet but it wasnt until more recently that I got how significant the difference is.<br /><br />After the green hackathon retrofit calculator I tried to develop the idea of a calculator that would output a list of proposed measures, their energy savings and financial payback but had low confidence in the accuracy of its output so decided to shelve it for a while.<br /><br />At around the same time I did a little work on dynamic simulation of heat conduction through a wall that can be found here: <a href="http://vis.openenergymonitor.org/dev/heatflow01/">http://vis.openenergymonitor.org/dev/heatflow01/</a> but was also unsure of its accuracy, needing to brush up on my calculus to check precisely by computing an exact solution via the fourier method.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-VYIqFFY31h8/Ub9qUS2ebfI/AAAAAAAACr0/gP1d5D8YRZg/s1600/heatflowsim.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-VYIqFFY31h8/Ub9qUS2ebfI/AAAAAAAACr0/gP1d5D8YRZg/s400/heatflowsim.png" width="381" /></a></div><div style="margin-bottom: 0cm;"><span style="font-size: medium;"><br /></span></div>I had by now read through the<a href="http://www.bre.co.uk/sap2012/page.jsp?id=2759"> SAP worksheet</a> (The UK's standard assessment procedure for assessing the energy performance of domestic buildings) many times but thought it a little too long to embark on implementing it, although basing an energy model on a standard approach supported widely seemed like the best approach.<br /><br />Searching for open source SAP implementations I found a useful open source version of the 2009 SAP worksheet implemented as a open office spreadsheet by Wookey here:&nbsp;<a href="http://wookware.org/files/SAPWorksheet9.80.ods">http://wookware.org/files/SAPWorksheet9.80.ods</a> which if you prefer spreadsheets to code is certainly worth looking at. There was also a thread on the greenbuildingforums calling for good open source building energy modelling software with a lively debate: <a href="http://www.greenbuildingforum.co.uk/newforum/comments.php?DiscussionID=6574&amp;page=1#Item_0">http://www.greenbuildingforum.co.uk/newforum/comments.php?DiscussionID=6574&amp;page=1#Item_0</a> <br /><br />In my searching I also came across a fully dynamic open source building energy model called esp-r developed by the University of Strathclyde <a href="http://www.esru.strath.ac.uk/Programs/ESP-r.htm">http://www.esru.strath.ac.uk/Programs/ESP-r.htm</a> and created a page on how to install it on ubuntu on the openenergymonitor site which I never linked in here: <a href="http://openenergymonitor.org/emon/node/1715">http://openenergymonitor.org/emon/node/1715</a>.<br /><div><br /></div><div>I'm also more recently aware that there is another open source dynamic building energy modelling project called OpenStudio which looks like it has a nice front end, OpenStudio is a National Renewable Energy Laboratories project&nbsp;<a href="https://openstudio.nrel.gov/">https://openstudio.nrel.gov/</a>&nbsp;and has sketchup integrations, looks nice!<br /><br /><b>Next blog post:</b> <a href="http://openenergymonitor.blogspot.com/2013/06/building-energy-modelling-carbon-coop.html">Carbon Coop and the open source SAP 2012</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/building-energy-modelling-part-1-whole/">Building Energy Modelling part 1 - The Whole House Book</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-17T16:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-17 16:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/building-energy-modelling-part-1-whole/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    In the blog post&nbsp;<a href="http://openenergymonitor.blogspot.com/2013/06/what-kind-of-information-can-we-extract.html">what kind of information can we extract from power measurements</a>&nbsp;I concluded that I needed a simple model of my electricity use in addition to the monitored data in order to ultimately get to a list of actions that I need to do to optimise my electricity use.<br /><br />The other conclusion was that to significantly reduce electricity consumption further I would need to change the heating system and to take a whole house view: improve the building fabric performance by increasing insulation levels, reducing draughts and improving solar gain in order to reduce heating demand in the first place. <br /><br />For a while now I have had a growing interest in looking at heating energy consumption and how to reduce heating energy demand through building fabric improvements in addition to electricity consumption. <br /><br />In the <a href="http://openenergymonitor.blogspot.co.uk/2012/01/community-energy-plan-maker.html">energy study of local households that we did in 2011-2012</a> heating energy came out as the largest energy user, we recorded details about house construction, levels of insulation, perceived comfort, temperature, draught levels, amount of glazing etc but didn't have the tools or knowledge to be able to give any sort of tailored advice, relate general statements that we're all familiar with like insulation can reduce energy demand by x% to a particular households situation, it wasn't in the remit of the project but we could see that that was what was needed next.<br /><br />At home it was also clear that heating was the largest user of energy and the area with the most potential to achieve significant energy savings and carbon reduction especially as electricity use is already optimised as far as possible. <br /><br />I started to read up on low energy building design to get a better understanding of the subject. I had an Aha moment when I read chapter 7 of <a href="http://www.amazon.co.uk/The-Whole-House-Book-Ecological/dp/1902175220">The Whole House Book by Pat Borer &amp; Cindy Harris</a> which outlines a really simple building energy model:<br /><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-0aw8iDJ55p4/Ub8_SIi3jQI/AAAAAAAACrU/iasN12OknXA/s1600/wholehouse.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="363" src="http://4.bp.blogspot.com/-0aw8iDJ55p4/Ub8_SIi3jQI/AAAAAAAACrU/iasN12OknXA/s640/wholehouse.jpg" width="640" /></a></div><div><br />The model starts by calculating how many Watts are lost through the building fabric per degree Kelvin (same for Celsius) temperature difference between the inside and outside temperature. This is calculated by multiplying the area of the various building elements such as walls, windows, roof and floor by their U-values. The model also takes into account the amount of heat lost via draughts (infiltration). The model then uses the concept of degree-days to calculate the annual heating demand.<br /><br />Before reading this I had thought that to get any sort of useful estimated output on effect of adding insulation to a building a full dynamic simulation would be needed. But this simple model showed that you can get some surprisingly informative estimates from some quite straightforward calculations. <br /><br />For the rest of the book Pat Borer &amp; Cindy Harris use a more detailed calculation that also takes into account solar gains, internal (casual) gains and water heating requirements. If your looking for a good book on low energy building design, self-build and energy calculations Id really recommend this book.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -910,6 +914,24 @@ $(window).resize(function(){
     
       
         <li class="post">
+          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/new-home-page-and-learn/">Launching our new home page and Learn website!</a>
+        </li>
+      
+    
+      
+        <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
         </li>
       
@@ -947,24 +969,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
         </li>
       
     
