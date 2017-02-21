@@ -13,7 +13,7 @@ As you may well have noticed we have recently launched a new [front page](https:
 
 ![devices]({{site.image_path}}/home-page-devices.png)
 
-A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system.
+A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system - We hope this update better reflects this interest. 
 
 This website redesign completes the shift away from using Drupal 6 cms that was started with the [User Guide website](https://guide.openenergymonitor.org) launched April 2016 and a new [Community Form](https://Community.openenergymonitor.org) using [Discource](http://discourse.org) launched May 2016. The [old forums](https://openenergymonitor.org/emon/forum) are still accessible as a read-only archive.
 
