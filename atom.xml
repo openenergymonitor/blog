@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-21T15:33:58+00:00</updated>
+  <updated>2017-02-21T15:45:39+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -18,11 +18,11 @@
     <link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/"/>
     <updated>2017-02-21T13:43:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id>
-    <content type="html"><![CDATA[<p><img src="https://blog.openenergymonitor.org/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
-
-<p>I would like to highlight a piece of work by <a href="https://community.openenergymonitor.org/users/cagabi">Carlos Alonso Gabizón</a> which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.</p>
+    <content type="html"><![CDATA[<p>I would like to highlight a piece of work by <a href="https://community.openenergymonitor.org/users/cagabi">Carlos Alonso Gabizón</a> which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.</p>
 
 <p>Carlos has been working for <a href="http://carbon.coop/">CarbonCoop</a> over the last year and a half on <a href="(http://myhome.emoncms.org)">MyHomeEnergyPlanner</a> – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
 
 <p>MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.</p>
 
