@@ -9,11 +9,12 @@ comments: true
 categories:
 ---
 
-![MyHomeEnergyPlanner]({{site.image_path}}/myhomeenergyplanner2.png)
 
 I would like to highlight a piece of work by [Carlos Alonso Gabizón](https://community.openenergymonitor.org/users/cagabi) which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.
 
 Carlos has been working for [CarbonCoop](http://carbon.coop/) over the last year and a half on [MyHomeEnergyPlanner]((http://myhome.emoncms.org)) – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.
+
+![MyHomeEnergyPlanner]({{site.image_path}}/myhomeenergyplanner2.png)
 
 MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.
 
