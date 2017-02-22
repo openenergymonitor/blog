@@ -21,9 +21,7 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 
 
-<div class='videoWrapper'>
-<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen></iframe>
-</div>
+
 
 ![openevse build9]({{site.image_path}}/openevse-build9.jpg)
 
@@ -45,6 +43,10 @@ Nissan LEAF charging from solar PV on a frosty morning:
 ![nissan-leaf-solar-pv]({{site.image_path}}/nissan-leaf-solar-pv.jpg)
 
 <!--more-->
+
+<div class='videoWrapper'>
+<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Safety
 
