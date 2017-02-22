@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-21T20:06:22+00:00</updated>
+  <updated>2017-02-22T01:03:44+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -164,10 +164,6 @@
 
 <p><img src="https://blog.openenergymonitor.org/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
-<div class="videoWrapper">
-<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen=""></iframe>
-</div>
-
 <p><img src="https://blog.openenergymonitor.org/images/openevse-build9.jpg" alt="openevse build9" /></p>
 
 <p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
@@ -190,6 +186,10 @@
 <p><img src="https://blog.openenergymonitor.org/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
 
 <!--more-->
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/A9D48V1D1G4" frameborder="0" allowfullscreen=""></iframe>
+</div>
 
 <h2 id="safety">Safety</h2>
 
