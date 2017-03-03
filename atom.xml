@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-02-22T01:03:44+00:00</updated>
+  <updated>2017-03-03T09:46:28+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -317,6 +317,7 @@
   <li><a href="https://github.com/OpenEVSE/Default_Firmware_Loads">OpenEVSE Plus Controller Pre Compiled Firmware</a></li>
   <li><a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE ESP8266 Wifi firmware</a></li>
   <li><a href="https://github.com/OpenEVSE/Enclosures">OpenEVSE Enclosure</a></li>
+  <li><a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE ESP8266 Wifi 2.0 firmware</a></li>
 </ul>
 
 <h3 id="related-forum-threads">Related Forum Threads</h3>
