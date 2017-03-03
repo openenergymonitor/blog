@@ -176,6 +176,7 @@ The source code and CAD hardware designs for the OpenEVSE unit can be found on g
 - [OpenEVSE Plus Controller Pre Compiled Firmware](https://github.com/OpenEVSE/Default_Firmware_Loads)
 - [OpenEVSE ESP8266 Wifi firmware](https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266)
 - [OpenEVSE Enclosure](https://github.com/OpenEVSE/Enclosures)
+- [OpenEVSE ESP8266 Wifi 2.0 firmware](https://github.com/OpenEVSE/ESP8266_WiFi_v2.x)
 
 ### Related Forum Threads
 
