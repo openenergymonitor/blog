@@ -15,7 +15,9 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 > An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.
 
+**Update March 17: OpenEnergyMonitor and proud to announce that we are now the UK / Europe reseller for OpenEVSE charging stations, see [OpenEnergyMonitor Online Shop](http://shop.openenergymonitor.com/ev-charge-controllers/).**
 
+***
 
 ![openevse leaf]({{site.image_path}}/leaf-openevse.jpg)
 
