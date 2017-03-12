@@ -19,11 +19,9 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 ![openevse leaf]({{site.image_path}}/leaf-openevse.jpg)
 
-
-
-
-
 ![openevse build9]({{site.image_path}}/openevse-build9.jpg)
+
+![openevse-front]({{site.image_path}}/openevse-front.jpg)
 
 *Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides*
 
