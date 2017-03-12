@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-03-09T23:35:21+00:00</updated>
+  <updated>2017-03-12T18:23:34+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -169,6 +169,8 @@
 <p><img src="https://blog.openenergymonitor.org/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
 <p><img src="https://blog.openenergymonitor.org/images/openevse-build9.jpg" alt="openevse build9" /></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/openevse-front.jpg" alt="openevse-front" /></p>
 
 <p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
 
