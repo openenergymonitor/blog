@@ -23,8 +23,6 @@ OpenEVSE (recently renamed to [OpenEV](https://www.openevse.com/)) design and bu
 
 ![openevse build9]({{site.image_path}}/openevse-build9.jpg)
 
-![openevse-front]({{site.image_path}}/openevse-front.jpg)
-
 *Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides*
 
 ## Features
@@ -109,7 +107,7 @@ The basic operation is very straightforward: just plug the car in and charging b
 
 Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate my 6.6Kw charge (24Kwh battery) Nissan LEAF will charge from flat in about 4hrs:
 
-![openevse build4]({{site.image_path}}/openevse-build4.jpg)
+![openevse-front]({{site.image_path}}/openevse-front.jpg)
 
 Here's a nice demo of the basic features of the unit. Credit: YouTube user civicturbo2009:
 
