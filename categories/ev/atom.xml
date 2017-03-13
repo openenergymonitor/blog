@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ev | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/ev/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-03-12T18:23:34+00:00</updated>
+  <updated>2017-03-13T23:38:25+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -31,8 +31,6 @@
 <p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
 <p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
-
-<p><img src="/images/openevse-front.jpg" alt="openevse-front" /></p>
 
 <p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
 
@@ -120,7 +118,7 @@
 
 <p>Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate my 6.6Kw charge (24Kwh battery) Nissan LEAF will charge from flat in about 4hrs:</p>
 
-<p><img src="/images/openevse-build4.jpg" alt="openevse build4" /></p>
+<p><img src="/images/openevse-front.jpg" alt="openevse-front" /></p>
 
 <p>Here’s a nice demo of the basic features of the unit. Credit: YouTube user civicturbo2009:</p>
 
