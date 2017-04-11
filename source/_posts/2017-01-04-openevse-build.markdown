@@ -78,7 +78,7 @@ Assembly of the unit was straight forward following the [openEVSE build guide](h
 
 The hardware components are all top quality, I was impressed by the attention to detail such as rubber seals around the LCD to waterproof the unit.
  
-The hardware inside the unit is split into two main components which are physically separated: a high voltage and high current relay and a low voltage control electronics which is the microcontroller (ATmega328p) 'brains' of the unit. My unit contained an OpenEVSE Plus V4 control unit [see Datasheet](http://files.openevse.com/OpenEVSE_Plus_v4.pdf.):
+The hardware inside the unit is split into two main components which are physically separated: a high voltage and high current relay and a low voltage control electronics which is the microcontroller (ATmega328p) 'brains' of the unit. My unit contained an OpenEVSE Plus V4 control unit [see Datasheet](https://www.openevse.com/files/OpenEVSE_Plus_v4.pdf):
 
 ![openevse build5]({{site.image_path}}/openevse-build5.jpg)
 
