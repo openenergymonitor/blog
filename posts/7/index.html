@@ -462,6 +462,46 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/hourly-energy-model-example-2-variable/">Hourly energy model example 2: Variable supply and flat demand (python code included)</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-12T07:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-12 07:52:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/06/hourly-energy-model-example-2-variable/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The second example in the hourly energy modelling tool models the degree of supply/demand matching  between a variable renewable supply consisting of a single renewable  energy generation type and a flat electricity demand profile. <br /><br />A flat demand may not of course be particularly realistic and the more complex examples later on address this, but I've used it here just to illustrate this particular simple example case.<br /><br /><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="584" src="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s640/varsupplyflatdemand.png" width="640" /></a> <br /><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>2. variable supply and flat demand</i><br /><i>&nbsp;</i> <br />The demand is subtracted from the supply for every  hour in the 10 year period and the total amount of unmet demand and  excess generation is measured as well as the amount of time the supply  was more than or equal to the demand.<br /><br />The demand level is set to an annual average electricity  demand of 3300 kWh which is the average UK household annual electricity  consumption. The amount of installed capacity is set to match this  demand on the 10 year basis of the dataset.<br /><br />Running the model for each of each generation type, matching total 10  year supply to total 10 year demand of 3300 kWh x 10 we get the  following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>65.9%</td><td>76.4%</td><td>73.9%</td><td>57.7%</td><td>40.6%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.1%</td><td>46.2%</td><td>45.3%</td><td>38.6%</td><td>32.1%</td>     </tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-PH8nT0hgeik/VXqJQYWnUMI/AAAAAAAASb0/F6eWLaQQMFE/s1600/varsupplyflatdemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div>We can see again here that offshore wind is the clear winner with the lowest installed capacity requirement and highest level of supply/demand matching. Perhaps an interesting result is how less predictable technologies such as wind and wave provide greater levels of matching than power from tidal which is very predictable.<br /><br /><b>Python example source code</b><br />Alongside the online javascript modelling tool there are a series of  python versions of the examples which are simpler to follow as they dont  include all the code to create the visual output, they just print out  the main results at the end.<br /><br />I've highlighted the main parts in bold below:<br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># dataset index:<br /># 0:onshore wind, 1:offshore wind, 2:wave, 3:tidal, 4:solar, 5:traditional electricity<br />gen_type = 1<br /><br />installed_capacity = 0.785 # kW<br /><br />annual_house_demand = 3300 # kWh<br />house_power = (annual_house_demand * 10.0) / 87648&nbsp;&nbsp; <br /><br /><b># Load dataset</b><br />with open("../dataset/tenyearsdata.csv") as f:<br />&nbsp;&nbsp;&nbsp; content = f.readlines()<br />hours = len(content)<br /><br />print "Total hours in dataset: "+str(hours)+" hours"<br />print<br /><br />total_supply = 0<br />total_demand = 0<br /><br />exess_generation = 0<br />unmet_demand = 0<br /><br />hours_met = 0</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><b># for every hour in the dataset</b><br />for hour in range(0, hours):<br />&nbsp;&nbsp;&nbsp; values = content[hour].split(",")<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate the supply</b><br />&nbsp;&nbsp;&nbsp; supply = float(values[gen_type]) * installed_capacity<br />&nbsp;&nbsp;&nbsp; total_supply += supply<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># calculate demand</b><br />&nbsp;&nbsp;&nbsp; demand = house_power<br />&nbsp;&nbsp;&nbsp; total_demand += demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># subtract demand from supply to find the balance</b><br />&nbsp;&nbsp;&nbsp; balance = supply - demand<br />&nbsp;&nbsp;&nbsp;&nbsp;</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; <b># record the total amount of exess and unmet demand</b><br />&nbsp;&nbsp;&nbsp; if balance&gt;=0:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exess_generation += balance<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hours_met += 1<br />&nbsp;&nbsp;&nbsp; else:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unmet_demand += -balance<br /><br />capacity_factor = total_supply / (installed_capacity*hours) * 100<br /><br />prc_demand_supplied = ((total_demand - unmet_demand) / total_demand) * 100<br /><br />prc_time_met = (1.0 * hours_met / hours) * 100</span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /><b># print out the results</b> </span></span><br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">print "Installed capacity: %s kW" % installed_capacity<br />print "Capacity factor: %d%%" % capacity_factor<br />print<br />print "Total supply: %d kWh" % total_supply<br />print "Total demand: %d kWh" % total_demand<br />print<br />print "Exess generation %d kWh" % exess_generation<br />print "Unmet demand %d kWh" % unmet_demand<br />print <br />print "Percentage of demand supplied directly %d%%" % prc_demand_supplied<br />print "Percentage of time supply was more or the same as the demand %d%%" % prc_time_met</span></span>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/06/hourly-energy-model-example-1-variable/">Hourly energy model example 1: Variable Supply</a>
   </h1>
   
@@ -820,48 +860,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/02/rfm69cw-power-consumption/">RFM69CW Power Consumption </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-02-23T13:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-23 13:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/rfm69/'>RFM69</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/02/rfm69cw-power-consumption/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Following on from my <a href="http://openenergymonitor.blogspot.co.uk/2013/07/new-oscilloscope.html">post on RFM12B power consumption</a>&nbsp;here's the same measurements for the RFM69CW&nbsp;(<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see RFM69CW intro blog post</a>).<br /><br />Current consumption was measured in the same way as explained in the RFM12B post back in July 2013. Voltage drop was measured across 10R current shunt resistor.<br /><br />A fully populated emonTx V3.4 with a 433Mhz RFM69CW running <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM69CW/emonTxV3_RFM69CW_DiscreteSampling/emonTxV3_RFM69CW_DiscreteSampling.ino">discrete sampling code </a>with a single CT connected was used in the test. The V3.4 was powered directly with 3.3V DC from bench PSU.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 with RFM69CW Test Setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test setup illustration</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test Bench</td></tr></tbody></table><i>Please excuse my photos of the scope traces rather than screen captures, for some reason the USB socket on the scope did not seem to be working today :-(</i><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Full sample and RFM69CW transmit trace capture</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">When an AC-AC adapter is not connected the emonTx goes to sleep in between readings. The above current trace shows the ATmega328 waking up for 295ms to sample from one CT channel the spike at the end is the RFM69CW transmitting. The trace below is a zoomed in capture of the RFM69CW transmission and LED.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM69CW transmission current consumption&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><b>The current trace above shows the RFM69CW transmission: 33mA @ 3.3V&nbsp;(109mW) for 4ms. The current spike at the end (up to 39mA) is the emonTx LED. </b>In this test the emonTx was running the standard discrete sampling firmware transmitting a JeeLib packet structure with six integers. Since we were only sampling from one CT four out of the five integers will be zero.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This equates to a 15 bytes payload plus 9 byte overhead&nbsp;@ 48kb/s. See J<a href="http://jeelabs.org/2011/06/09/rf12-packet-format-and-design/">eeLib packet structure</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In comparison I measured the RFM12B to consume 25.5mA @ 3.3V (84.2mW)&nbsp;for 3ms.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My measurements pretty much agree with the datasheets, here's a comparison table compiled by Low Power Labs:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="142" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Even though the RFM69CW does consume more power while it's transmitting it does have a lower sleep consumption than the RFM12B. This increased transmission power should result in an increased transmission range.</div><br />I've started a forum thread for discussion:&nbsp;<a href="http://openenergymonitor.org/emon/node/10210">http://openenergymonitor.org/emon/node/10210</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -899,6 +897,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
+        </li>
+      
     
       
         <li class="post">
@@ -951,12 +955,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
     

@@ -462,6 +462,46 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/timestore-timeseries-database/">Timestore timeseries database</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-03T14:03:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-03 14:03:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/timestore-timeseries-database/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The first and most developed solution to both the query speed problem and disk space problem is timestore.<br /><br /><a href="http://www.mike-stirling.com/redmine/projects/timestore" style="color: #3465a4;">http://www.mike-stirling.com/redmine/projects/timestore</a><br /><br />Timestore is a lightweight time-series database developed by Mike Stirling. It uses a NoSQL approach to store an arbitrary number of time points without an index.<br /><br /><b>Query speeds</b><br />Timestore is fast, here's the figures given by Mike Stirling on the documentation page:<br /><br />From the resulting data set containing 1M points spanning about 1 year on 30 second intervals:<br /><br />Retrieve 100 points from the first hour: 2.6 ms<br />Retrieve 1000 points from the first hour (duplicates inserted automatically): 6.2 ms<br />Retrieve 100 points over the entire dataset (about a year worth): 2.5 ms<br />Retrieve 1000 points over the entire dataset: 7.0 ms<br /><br /><b>Disk use</b><br /><br />Timestore uses a double as a default data type which is 8 bytes. The current emoncms mysql database stores data values as floats which take up 4 bytes, its easy to change the data type in timestore so for a fair comparison we can change the default datatype to a 4-byte float:<br /><br />Layer 1: 10s layer = 3153600 datapoints x 4 bytes = 12614400 bytes<br />Layer 2: 60 layer1 datapoints averaged = 52560 datapoints x 4 bytes = 210240 Bytes<br />Layer 3: 10 layer2 datapoints averaged = 5256 datapoints x 4 bytes = 21024 bytes<br />Layer 4: 6 layer3 datapoints averaged = 876 datapoints x 4 bytes = 7008 bytes<br />Layer 5: 6 layer4 datapoints averaged = 146 datapoints x 4 bytes = 1168 bytes<br />Layer 6: 4 layer5 datapoints averaged = 36 datapoints x 4 bytes = 288 bytes<br />Layer 7: 7 layer6 datapoints averaged = 5 datapoints x 4 bytes = 40 bytes<br /><br /><b>total size = 12854168 Bytes or 12.26Mb</b><br /><br />The current emoncms data storage implementation uses 60Mb to hold the same data as it saves both the timestamp and an associated index. Timestore therefore has the potential to reduce diskuse by 80% for realtime data feeds.<br /><br />Interestingly all the downsampled layers created by timestore only come too <b>0.23 Mb</b>. Before doing the calculation above I used to think that adding all the downsampled layers would add to the problem of disk space significantly but evidently it a very small contribution compared with the full resolution data layer.<br /><br /><b>Emoncms timestore development branch</b><br /><br />I made a start on integrating timestore in emoncms, there's still a lot to do to make it fully functional but it works as a demo for now, here's how to get it setup:<br /><br /><b>1) Download, make and start timestore</b><br /><br />$ git clone <a href="http://mikestirling.co.uk/git/timestore.git" style="color: #3465a4;">http://mikestirling.co.uk/git/timestore.git</a><br />$ cd timestore<br />$ make<br />$ cd src<br />$ sudo ./timestore -d<br /><br />Fetch the admin key<br /><br />$ cd <a href="http://www.blogger.com/var/lib/timestore" style="color: #3465a4;">/var/lib/timestore</a><br />$ nano adminkey.txt<br /><br />copy the admin key which looks something like this: POpP)@H=1[#MJYX&lt;(i{YZ.0/Ni.5,g~&lt;<br />the admin key is generated anew every time timestore is restarted.<br /><br /><b>2) Download and setup the emoncms timestore branch</b><br /><br />Download copy of the timestore development branch<br /><br />$ git clone -b timestore <a href="https://github.com/emoncms/emoncms.git" style="color: #3465a4;">https://github.com/emoncms/emoncms.git</a> timestore<br /><br />Create a mysql database for emoncms and enter database settings into settings.php.<br /><br />Add a line to settings.php with the timestore adminkey:<br />$timestore_adminkey = "POpP)@H=1[#MJYX&lt;(i{YZ.0/Ni.5,g~&lt;";<br /><br />Create a user and login<br /><br />The development branch currently only implements timestore for realtime data and the feed/data api is restricted to timestore data only which means that daily data does not work. The use of timestore for daily data needs to be implemented.<br /><br />The feed model methods implemented to use timestore so far are create, insert_data and get_data.<br /><br /><b>Try it out</b><br /><br />Navigate to the feeds tab, click on feed API helper, create a new feed by typing:<br /><a href="http://localhost/timestore/feed/create.json?name=power&amp;type=1" style="color: #3465a4;">http://localhost/timestore/feed/create.json?name=power&amp;type=1</a><br /><br />It should return {"success":true,"feedid":1}<br /><br />Navigate back to feeds, you should now see your power feed in the list.<br />Navigate again to the api helper to fetch the insert data api url<br /><br />Call the insert data api a few times over say a minute (so that we have at least 6 datapoints - one every 10 seconds).&nbsp;Vary the value to make it more interesting:<br /><a href="http://localhost/timestore/feed/insert.json?id=1&amp;value=100.0" style="color: #3465a4;">http://localhost/timestore/feed/insert.json?id=1&amp;value=100.0</a><br /><br />Select the rawdata visualisation from the vis menu<br /><a href="http://localhost/timestore/vis/rawdata&amp;feedid=1" style="color: #3465a4;">http://localhost/timestore/vis/rawdata&amp;feedid=1</a><br /><br />zoom to the last couple of minutes to see the data.<br /><br /><br />I met Mike Stirling a little over a month ago in Chester for a beer and a chat after Mike originally got in contact to let me know about timestore. We discussed data storage, secure authentication, low cost temperature sensing and <a href="http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html">openTRV</a> the project Mike is working on. I think there could be great benefit to work on making what we're developing here with openenergymonitor interoperable with what Mike and others are developing with openTRV, especially as we develop more building heating and building fabric performance monitoring tools. This could all develop into a super nice open source whole building energy (both electric and heat) monitoring and control ecosystem of hardware and software tools.<br /><br />Check out Mike's blog here:<br /><br /><a href="http://www.mike-stirling.com/">http://www.mike-stirling.com/</a><br />and&nbsp;<a href="http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html">http://www.earth.org.uk/open-source-programmable-thermostatic-radiator-valve.html</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/the-current-emoncms-feed-storage/">The current emoncms feed storage implementation</a>
   </h1>
   
@@ -808,48 +848,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/carbon-coop/">Carbon Coop</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-03T15:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-03 15:27:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-        <li><a class='category' href='/categories/workshop/'>workshop</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/carbon-coop/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The weekend before last I went to Manchester to help Matt Fawcett and Jonathan Atkinson of Carbon coop with the&nbsp;<a href="http://carbon.coop/news/2013-04-03/ecohome-lab-launch-workshop-build-day-first-meet">EcoHome_Lab</a> openenergymonitor energy monitor building workshop. I haven’t blogged about Carbon Co-op before so Id like to give a bit of an intro to who they are and why I think what they are doing is particularly exiting.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s1600/2013-04-26+12.56.04.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="188" src="http://1.bp.blogspot.com/-bAdkFqme1Bk/UYPA0JtMAkI/AAAAAAAACks/fuLZUpwBCdc/s640/2013-04-26+12.56.04.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://carbon.coop/">http://carbon.coop</a></td></tr></tbody></table>I first met <a href="http://openenergymonitor.org/emon/user/1510">Matt</a> who is&nbsp;responsible for the monitoring&nbsp;at Carbon Coop at a <a href="http://www.cleanweb.org.uk/">Cleanwebuk</a> event in London after initially exchanging a few emails. Matt explained that they are working on a retrofit programme to try to prove that it is possible to cut between 60-80% of energy demand from homes because this is what we need to save.<br /><div><div><br />They want monitoring to be at the centre of everything they do, so that their members can see how minor changes impact energy usage as well as more major retrofit changes. They also want to monitor internal air quality as well as temperature for early identification of any problems with the insulation and airtightness measures. By monitoring humidity, CO2 as well as temperature Matt explained that its possible to isolate issues around damp/cooking etc from issues around ventilation.<br /><br />They are really keen to use open source technology because that then gives them the freedom to configure the system as they need and then get at the data. They are keen advocates for open data and open source software and hardware in general and carry out their own work in an open way.<br /><br />Since then Carbon Coop have installed 18 openenergymonitor energy monitors in houses across Manchester, held two energy monitor workshops including last weekends and are going forward with retrofitting 15 houses to between 60 and 80% carbon reduction.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s1600/2013-04-20+14.25.30.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: center;"><img border="0" height="180" src="http://4.bp.blogspot.com/-CoqTigz4lPg/UYPCMIHSV2I/AAAAAAAACk4/lJrln547-Uc/s640/2013-04-20+14.25.30.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Building monitors at the Carbon Coop EcoHomeLab workshop 19th-20th April&nbsp;</td></tr></tbody></table>What I really like about Carbon Coop is the way they are working on every part of the process: They start with the larger picture of what we need to do in terms of sustainable energy in housing and then go from there to work on an individual household basis, first carrying out a detailed whole house assessment based on the governments SAP (standard assessment procedure) to identify where most energy is being lost, which improvements would have the biggest effect and what to do first. They’re using the energy monitoring to provide feedback to households as described above. From there they go on to help households carry out work on their houses, from finding the best way to finance retrofit measures to working with architects and local tradespeople. Once the retrofit building works are complete they continue to monitor to ensure that the changes reach the predicted energy targets. They do all this using an open source approach, they are also a co-operative that is open for people to join. They are a really switched on group of people, carrying out their work in a thorough, thoughtful, evidence based way.<br /><br />Every-time I go to visit them I come back inspired to develop things further. One of the highlights of the last visit was listening to Eleni Kalkantzi who works for URBED (Carbon Coop's technical partner) talk about the whole house assessment methodology and reports she, Charlie Baker and Marianne Heaslip have developed. A huge amount of work has clearly gone into these reports and the assessment method, they have an example report and report on the assessment method here:<br /><br />See their example assessment here: <a href="http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf">http://carbon.coop/assessments/CC_EXAMPLE_ASSESSMENT2.pdf</a><br /><br />Report on the assessment method: <a href="http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf">http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf</a><br /><br />They see the next step being to integrate monitoring data directly in to the SAP model on which their reporting is based to reduce the number of assumptions made. This is where the <a href="http://github.com/emoncms/sap">open source emoncms SAP model</a>&nbsp;that we have been developing comes in but I will come back to that in another post.</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -887,6 +885,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
+        </li>
+      
     
       
         <li class="post">
@@ -939,12 +943,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
     

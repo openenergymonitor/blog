@@ -1,0 +1,747 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>emonPi as a Home Automation Hub - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="emonPi as a Home Automation Hub">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="emonPi as a Home Automation Hub">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:light,bold&amp;subset=Latin" rel="stylesheet"> <!-- Ubuntu font -->
+  <script src="https://use.fontawesome.com/e433d4b407.js"></script>
+
+  </head>
+
+<style>
+
+html, body {
+  word-wrap: break-word;
+  font-family: "ubuntu", sans-serif;
+}
+
+a:visited, .a:hover, a:focus, a {
+  color: #44b3e2;
+}
+
+.meta.clearfix {
+  overflow-x: hidden;
+}
+
+.searchtool {
+  width: 100%;
+}
+
+input[type=text] {
+  border: 3px solid #44b3e2;
+  border-radius: 6px;
+  width: 100%;
+  color: #000000;
+  padding: 14px 20px;
+  margin: 0;
+  outline: none;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: #44b3e2;
+    color: white;
+    padding: 14px 20px;
+    margin: 4px 0 0 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.communityWrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  height: 42px;
+}
+
+@media (min-width: 1080px) {
+  .communityWrapper {
+  width: 1080px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .oemWrap {
+  display: none;
+  }
+}
+
+.fa-navicon {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 42px;
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  padding-left: 12px;
+  z-index: 9997;
+}
+
+@media screen and (max-width: 1079px) {
+  .fa-navicon {
+  display: inline-block;
+  }
+}
+
+.titleHolder {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #44b3e2;
+  overflow: hidden;
+}
+
+.thisTitle {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  left: 0;
+  line-height: 42px;
+  padding-right: 12px;
+  padding-left: 0;
+  font-size: 20px;
+  text-align: right;
+}
+
+.thisTitle a {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 1080px) {
+  .thisTitle {
+  font-size: 16px;
+  text-align: left;
+  padding-right: 0;
+  padding-left: 7px;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .thisTitle {
+  width: 100%;
+}
+.thisTitle a {
+  padding-right: 12px;
+  }
+}
+
+.navigation {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  margin-right: 6px;
+  height: 42px;
+  min-width: 700px;
+  overflow: visible;
+  padding-right: 7px;
+  z-index: 20;
+  box-sizing: content-box;
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation {
+  position: relative;
+  float: right;
+  display: inline-block;
+  margin: 0;
+  }
+}
+
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: block;
+}
+
+.navigation ul li {
+  float: left;
+  background-color: #44b3e2;
+}
+
+.navigation ul li a {
+  display: block;
+  line-height: 42px;
+  font-family:"ubuntu";
+  font-size: 16px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+}
+
+.menuFreeze {
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1079px) {
+.navigation {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin: 0;
+  width: 0;
+  font-size: 20px;
+  background-color: #44b3e2;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  min-width: 0;
+  padding-right: 0;
+  z-index:9999;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 0;
+  display: block;
+}
+
+.navigation ul li a {
+  box-sizing: border-box;
+  font-family: "ubuntu";
+  font-size: 20px;
+  display: block;
+  color: #ffffff;
+  padding: 20px 20px 20px 40px;
+  min-width: 220px;
+  text-align: left;
+}
+
+.navigation ul li .fa {
+  min-width: 25px;
+  }
+}
+
+.blackOut {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  z-index:9998;
+}
+
+.actoemLink {
+  background-color: #368fb4 !important;
+}
+
+.actoemLink a {
+  color: #ffffff !important;
+}
+
+</style>
+
+<body >
+
+
+
+
+<div class="titleHolder">
+  <div class="communityWrapper">
+    <i class="fa fa-navicon"></i>
+    <div class="thisTitle">
+      <a href="/">
+        <strong>Blog</strong>
+        <span class="oemWrap">
+        | Open<strong>EnergyMonitor</strong>
+        </span>
+      </a>
+    </div>
+    <div id="siteLinks" class="navigation">
+      <ul>
+        <li title="the homepage of OpenEnergyMonitor">
+          <a href="https://openenergymonitor.org">
+            <i class="fa fa-home" aria-hidden="true"></i><span class="navname">&nbsp;Home</span>
+          </a>
+        </li>
+        <li title="a user guide for the OpenEnergyMonitor system">
+          <a href="https://guide.openenergymonitor.org">
+            <i class="fa fa-book" aria-hidden="true"></i><span class="navname">&nbsp;Guide</span>
+          </a>
+        </li>
+        <li title="general information about energy monitoring, diversion and sustainability">
+          <a href="https://learn.openenergymonitor.org">
+            <i class="fa fa-mortar-board" aria-hidden="true"></i><span class="navname">&nbsp;Learn</span>
+          </a>
+        </li>
+        <li title="a definitive list of resources for OpenEnergyMonitor hardware">
+          <a href="https://guide.openenergymonitor.org/technical/resources/">
+            <i class="fa fa-list-alt" aria-hidden="true"></i><span class="navname">&nbsp;Resources</span>
+          </a>
+        </li>
+        <li title="the openenergymonitor forum">
+          <a href="https://community.openenergymonitor.org">
+            <i class="fa fa-comments" aria-hidden="true"></i><span class="navname">&nbsp;Community</span>
+          </a>
+        </li>
+        <li title="you are here: keep up with new developments at OpenEnergyMonitor" class="actoemLink">
+          <a href="https://blog.openenergymonitor.org">
+            <i class="fa fa-bullhorn" aria-hidden="true"></i><span class="navname">&nbsp;Blog</span>
+          </a>
+        </li>
+        <li title="the official OpenEnergyMonitor online store">
+          <a href="https://shop.openenergymonitor.com">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="navname">&nbsp;Shop</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="blackOut"></div>
+<div style="position:relative;width:100%;top:0;height:20px"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+<script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/';
+    var disqus_url = 'https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+<script>
+
+var closeStatus = false;
+
+function openButton() {
+  $("html, body").addClass("menuFreeze");
+  $(".blackOut").show();
+  $(".navigation").show();
+  $(".navigation").animate({ width:'220' },"0.5s");
+}
+
+$(".fa-navicon").click(function() {
+  openButton();
+  closeStatus = true;
+});
+
+function closeButton() {
+  $("html, body").removeClass("menuFreeze");
+  $(".blackOut").hide();
+  $(".navigation").animate({ width:'0' },"0.5s");
+}
+
+$(".blackOut").click(function() {
+  closeButton();
+  closeStatus = false;
+});
+
+$(document).ready(function(){
+  $("table").wrap("<div style='max-width:100%;overflow-x:auto'></div>");
+});
+
+$(window).resize(function(){
+  if ($(window).width() > 1079 && closeStatus == true) {
+    if (!$("html").hasClass("mobile-device")) {
+      closeButton();
+      closeStatus = false;
+    }
+  }
+});
+</script>
+
+<div class="grid-wrapper">
+  <div class="grid grid-center">
+    
+    <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+    
+
+      <article class="post">
+  
+  <header>
+  
+  <h1 class="title indent">emonPi as a Home Automation Hub</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-05-05T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 6th 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/mqtt/'>MQTT</a></li>
+      
+        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2017/05/emonpi-mqtt-googlehome/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>I beleive automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.</p>
+
+<p>As <a href="2016/08/ecohomelab-control/"> previously mentioned in a blog post</a>, the emonPi (<a href="github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">running emonSD pre-built SD card</a>) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:</p>
+
+<ul>
+  <li>It’s already running 24/7 for energy monitoring</li>
+  <li>It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan</li>
+  <li>It’s already connected to your local network</li>
+  <li>It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available</li>
+  <li>Raspberry Pi 3 has plenty of space capacity</li>
+  <li>Extra radios / accessories can be connected via USB</li>
+  <li>It’s already running an MQTT server</li>
+  <li>emonSD pre-built SD card comes pre loaded with the following <a href="guide.openenergymonitor.org/integrations">integrations</a> nodeRED, OpenHAB and LightWaveRF</li>
+</ul>
+
+<blockquote>
+  <p>In this post I want to share with you how I use the emonPi in my own home.</p>
+</blockquote>
+
+<p>Here is a video demo using Google Home to control my central heating and devices via MQTT:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/r_v4GXVp0OI" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>Read on to learn how this is achevied using an emonPi and open-source software…</p>
+
+<a name="read-more"></a>
+
+<p>There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and appart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.</p>
+
+<h2 id="mqtt">MQTT</h2>
+
+<p>MQTT lightweight communication protocol is used as the ‘glue’ communication layer between all the following services. See <a href="https://guide.openenergymonitor.org/technical/mqtt/">technical/MQTT section of the User Guide</a> for more info about how MQTT works on the emonPi.</p>
+
+<h2 id="energy-monitoring">Energy Monitoring</h2>
+
+<p>Emoncms…obviously!</p>
+
+<p>Recently I have been loving using the V2 Emoncms Android app (currently in beta) which supports multiple pages (see <a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-1-open-beta-testing/3373">forum thread</a>).</p>
+
+<p>Video demo Emoncms Android app V2 beta:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/LaTi-l9tVQM" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on <a href="https://emoncms.org">Emoncms.org</a>. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see <a href="https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3">forum thread</a>):</p>
+
+<p><img src="/images/myelectric-e7.png" alt="myelectric-e7.png" /></p>
+
+<h2 id="control">Control</h2>
+
+<h3 id="central-heating">Central Heating</h3>
+
+<p>To control my gas central heating boiler I use an <a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">MQTT WiFi relay</a> which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.</p>
+
+<p><img src="/images/mqtt-relay-overview.png" alt="mqtt-relay-overview.png" /></p>
+
+<h3 id="plug-sockets-lights">Plug sockets (lights)</h3>
+
+<p>I use LightWave RF plugs to which I have lights and other entertainment devices connected e.g. stereo and chromecast. Being able to switch a whole plug bank on/off has the advantage of being able to turn devices fully off when not in use to minimise any <a href="https://en.wikipedia.org/wiki/Standby_power">vampire drain</a>.</p>
+
+<p>The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See <a href="https://guide.openenergymonitor.org/integrations/lightwaverf">LightWave RF emonPi User Guide</a>.</p>
+
+<p><img src="/images/lightwave-rf-diagram.png" alt="lightwave-rf-diagram.png" /></p>
+
+<p>LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to <a href="https://www.itead.cc/smart-socket.html">ESp8266 based Sonoff plug</a> with third party <a href="https://github.com/arendst/Sonoff-Tasmota">MQTT firmware</a> or <a href="https://github.com/openenergymonitor/emonesp">EmonESP</a> firmware.</p>
+
+<h2 id="interface">Interface</h2>
+
+<p>For the past few years I have been using OpenHAB as the contol interface. <a href="https://guide.openenergymonitor.org/integrations/openhab">OpenHAB is pre-loaded onto the emonPi emonSD pre-built image</a>. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:</p>
+
+<p><img src="/images/open-hab-home.png" alt="open-hab-home.png" /><img src="/images/open-hab-all.png" alt="open-hab-all.png" /></p>
+
+<p>OpenHAB also <a href="https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps">integrates with my Pebble smartwatch</a> which makes it super easy to turn on/off the heating while out and about:</p>
+
+<p><img src="/images/openhab-pebble.jpg" alt="openhab-pebble" /></p>
+
+<p>A while back (early 2016) I dabbled with <a href="http://home-assistant.io/">HomeAssistant</a>, (<a href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/">see blog post</a>). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.</p>
+
+<p>Another option for an interface is <a href="https://github.com/node-red/node-red-dashboard">NodeRED Dashboard</a> which is now officially part of the NodeRED project.</p>
+
+<p><em>The beauty of MQTT is that it’s platform agnostic, it’s possible to have many different interfaces controlling the same control nodes.</em></p>
+
+<h3 id="voice-interface">Voice interface</h3>
+
+<p>I’ve recently aquired a Google Home voice activated speaker, with a little help from <a href="https://github.com/bwssytems/ha-bridge">ha-bridge</a> to emulate a Philips Hue bridge it’s quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See <a href="https://github.com/openenergymonitor/emonpi-ha-bridge">ha-bridge setup guide for emonPi</a></p>
+
+<p>See video demo at the top of this post.</p>
+
+<p>Device config using ha-bridge webpage GUI:</p>
+
+<p><img src="/images/ha-bridge-device-config.png" alt="ha-bridge-device-config.png" /></p>
+
+<p>Google Home app setup:</p>
+
+<p><img src="/images/google-home-app.png" alt="google-home-app.png" /></p>
+
+<h2 id="integration--automation">Integration &amp; Automation</h2>
+
+<p>I use <a href="https://guide.openenergymonitor.org/integrations/nodered">NodeRED which is pre-loaded on emonPi / emonSD</a> to integrate with other services such a getting the latest outdoor temperature from <a href="https://www.wunderground.com/">Weather Underground</a>, send push notifications (heating on / off temperature alert) to my phone using <a href="https://pushover.net/">Pushover</a>. Both these services have pre-made nodeRED flows making integration very easy. NodeRED is pre-installed and configured on emonPi / emonSD. The <a href="https://github.com/openenergymonitor/oem_node-red/blob/master/flows_emonpi.json">example flow included on emonPi</a> demonstrates reading emonTH data from MQTT and external temperature data from Weather Underground.</p>
+
+<p>I also have a nodeRED flow that handles turning off the heating when the temperature in the livingroom (as measured by emonTH) reaches a set point. I could have used the thermostat controller on the WiFi relay to do this, however it would be difficult in my house to run the wired temperature sensor from the Wifi relay to the living room, therefore I use a wireless emonTH temperature instead.</p>
+
+<h1 id="security-and-remote-access">Security and remote access</h1>
+
+<p>Remote control (from outside the local network) can be achieved using a dynamic DNS service such as <a href="https://www.duckdns.org/">DuckDNS</a> to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection. Alternatively, and possibly a better solution could be to use <a href="http://www.myopenhab.org/">MyOpenhab.org</a> service to allow remote control without having to open up a port externally.</p>
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+
+    </div>
+
+    
+    <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+      <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <div class="searchtool">
+
+  
+  <form action="https://encrypted.google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+      <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+      <button type="submit">
+         <i class="fa fa-search"></i> Search
+      </button>
+    </fieldset>
+  </form>
+  
+
+  </div>
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/09/summer-placement/">Summer Placement</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+    </aside>
+    
+  </div>
+</div>
+
+<footer>
+  <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
+  <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit" style="text-align:center;">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+<!--
+<div class="searchtool">
+
+
+<form action="https://encrypted.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+    <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+  </fieldset>
+</form>
+
+
+</div> -->
+</div>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+</body>
+</html>

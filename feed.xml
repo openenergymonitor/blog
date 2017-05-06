@@ -1,4 +1,136 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-05-06T01:52:03+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>MyHomeEnergyPlanner - open source home energy assessment</title><link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/" rel="alternate" type="text/html" title="MyHomeEnergyPlanner - open source home energy assessment" /><published>2017-02-21T13:43:00+00:00</published><updated>2017-02-21T13:43:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/">&lt;p&gt;I would like to highlight a piece of work by &lt;a href=&quot;https://community.openenergymonitor.org/users/cagabi&quot;&gt;Carlos Alonso Gabizón&lt;/a&gt; which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-05-06T12:26:35+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>emonPi as a Home Automation Hub</title><link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/" rel="alternate" type="text/html" title="emonPi as a Home Automation Hub" /><published>2017-05-05T00:00:00+00:00</published><updated>2017-05-05T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">&lt;p&gt;I beleive automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href=&quot;2016/08/ecohomelab-control/&quot;&gt; previously mentioned in a blog post&lt;/a&gt;, the emonPi (&lt;a href=&quot;github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;amp;-Change-Log&quot;&gt;running emonSD pre-built SD card&lt;/a&gt;) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s already running 24/7 for energy monitoring&lt;/li&gt;
+  &lt;li&gt;It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan&lt;/li&gt;
+  &lt;li&gt;It’s already connected to your local network&lt;/li&gt;
+  &lt;li&gt;It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available&lt;/li&gt;
+  &lt;li&gt;Raspberry Pi 3 has plenty of space capacity&lt;/li&gt;
+  &lt;li&gt;Extra radios / accessories can be connected via USB&lt;/li&gt;
+  &lt;li&gt;It’s already running an MQTT server&lt;/li&gt;
+  &lt;li&gt;emonSD pre-built SD card comes pre loaded with the following &lt;a href=&quot;guide.openenergymonitor.org/integrations&quot;&gt;integrations&lt;/a&gt; nodeRED, OpenHAB and LightWaveRF&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In this post I want to share with you how I use the emonPi in my own home.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is a video demo using Google Home to control my central heating and devices via MQTT:&lt;/p&gt;
+
+&lt;div class=&quot;videoWrapper&quot;&gt;
+&lt;iframe width=&quot;280&quot; height=&quot;157&quot; src=&quot;https://www.youtube.com/embed/r_v4GXVp0OI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Read on to learn how this is achevied using an emonPi and open-source software…&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and appart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.&lt;/p&gt;
+
+&lt;h2 id=&quot;mqtt&quot;&gt;MQTT&lt;/h2&gt;
+
+&lt;p&gt;MQTT lightweight communication protocol is used as the ‘glue’ communication layer between all the following services. See &lt;a href=&quot;https://guide.openenergymonitor.org/technical/mqtt/&quot;&gt;technical/MQTT section of the User Guide&lt;/a&gt; for more info about how MQTT works on the emonPi.&lt;/p&gt;
+
+&lt;h2 id=&quot;energy-monitoring&quot;&gt;Energy Monitoring&lt;/h2&gt;
+
+&lt;p&gt;Emoncms…obviously!&lt;/p&gt;
+
+&lt;p&gt;Recently I have been loving using the V2 Emoncms Android app (currently in beta) which supports multiple pages (see &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-1-open-beta-testing/3373&quot;&gt;forum thread&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Video demo Emoncms Android app V2 beta:&lt;/p&gt;
+
+&lt;div class=&quot;videoWrapper&quot;&gt;
+&lt;iframe width=&quot;280&quot; height=&quot;157&quot; src=&quot;https://www.youtube.com/embed/LaTi-l9tVQM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on &lt;a href=&quot;https://emoncms.org&quot;&gt;Emoncms.org&lt;/a&gt;. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see &lt;a href=&quot;https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3&quot;&gt;forum thread&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/myelectric-e7.png&quot; alt=&quot;myelectric-e7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;control&quot;&gt;Control&lt;/h2&gt;
+
+&lt;h3 id=&quot;central-heating&quot;&gt;Central Heating&lt;/h3&gt;
+
+&lt;p&gt;To control my gas central heating boiler I use an &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/mqtt-relay/&quot;&gt;MQTT WiFi relay&lt;/a&gt; which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/mqtt-relay-overview.png&quot; alt=&quot;mqtt-relay-overview.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;plug-sockets-lights&quot;&gt;Plug sockets (lights)&lt;/h3&gt;
+
+&lt;p&gt;I use LightWave RF plugs to which I have lights and other entertainment devices connected e.g. stereo and chromecast. Being able to switch a whole plug bank on/off has the advantage of being able to turn devices fully off when not in use to minimise any &lt;a href=&quot;https://en.wikipedia.org/wiki/Standby_power&quot;&gt;vampire drain&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/lightwaverf&quot;&gt;LightWave RF emonPi User Guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/lightwave-rf-diagram.png&quot; alt=&quot;lightwave-rf-diagram.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to &lt;a href=&quot;https://www.itead.cc/smart-socket.html&quot;&gt;ESp8266 based Sonoff plug&lt;/a&gt; with third party &lt;a href=&quot;https://github.com/arendst/Sonoff-Tasmota&quot;&gt;MQTT firmware&lt;/a&gt; or &lt;a href=&quot;https://github.com/openenergymonitor/emonesp&quot;&gt;EmonESP&lt;/a&gt; firmware.&lt;/p&gt;
+
+&lt;h2 id=&quot;interface&quot;&gt;Interface&lt;/h2&gt;
+
+&lt;p&gt;For the past few years I have been using OpenHAB as the contol interface. &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/openhab&quot;&gt;OpenHAB is pre-loaded onto the emonPi emonSD pre-built image&lt;/a&gt;. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/open-hab-home.png&quot; alt=&quot;open-hab-home.png&quot; /&gt;&lt;img src=&quot;/images/open-hab-all.png&quot; alt=&quot;open-hab-all.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenHAB also &lt;a href=&quot;https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps&quot;&gt;integrates with my Pebble smartwatch&lt;/a&gt; which makes it super easy to turn on/off the heating while out and about:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/openhab-pebble.jpg&quot; alt=&quot;openhab-pebble&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A while back (early 2016) I dabbled with &lt;a href=&quot;http://home-assistant.io/&quot;&gt;HomeAssistant&lt;/a&gt;, (&lt;a href=&quot;https://blog.openenergymonitor.org/2016/04/Home-Assistant/&quot;&gt;see blog post&lt;/a&gt;). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.&lt;/p&gt;
+
+&lt;p&gt;Another option for an interface is &lt;a href=&quot;https://github.com/node-red/node-red-dashboard&quot;&gt;NodeRED Dashboard&lt;/a&gt; which is now officially part of the NodeRED project.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The beauty of MQTT is that it’s platform agnostic, it’s possible to have many different interfaces controlling the same control nodes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;voice-interface&quot;&gt;Voice interface&lt;/h3&gt;
+
+&lt;p&gt;I’ve recently aquired a Google Home voice activated speaker, with a little help from &lt;a href=&quot;https://github.com/bwssytems/ha-bridge&quot;&gt;ha-bridge&lt;/a&gt; to emulate a Philips Hue bridge it’s quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See &lt;a href=&quot;https://github.com/openenergymonitor/emonpi-ha-bridge&quot;&gt;ha-bridge setup guide for emonPi&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;See video demo at the top of this post.&lt;/p&gt;
+
+&lt;p&gt;Device config using ha-bridge webpage GUI:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ha-bridge-device-config.png&quot; alt=&quot;ha-bridge-device-config.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Home app setup:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/google-home-app.png&quot; alt=&quot;google-home-app.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;integration--automation&quot;&gt;Integration &amp;amp; Automation&lt;/h2&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/nodered&quot;&gt;NodeRED which is pre-loaded on emonPi / emonSD&lt;/a&gt; to integrate with other services such a getting the latest outdoor temperature from &lt;a href=&quot;https://www.wunderground.com/&quot;&gt;Weather Underground&lt;/a&gt;, send push notifications (heating on / off temperature alert) to my phone using &lt;a href=&quot;https://pushover.net/&quot;&gt;Pushover&lt;/a&gt;. Both these services have pre-made nodeRED flows making integration very easy. NodeRED is pre-installed and configured on emonPi / emonSD. The &lt;a href=&quot;https://github.com/openenergymonitor/oem_node-red/blob/master/flows_emonpi.json&quot;&gt;example flow included on emonPi&lt;/a&gt; demonstrates reading emonTH data from MQTT and external temperature data from Weather Underground.&lt;/p&gt;
+
+&lt;p&gt;I also have a nodeRED flow that handles turning off the heating when the temperature in the livingroom (as measured by emonTH) reaches a set point. I could have used the thermostat controller on the WiFi relay to do this, however it would be difficult in my house to run the wired temperature sensor from the Wifi relay to the living room, therefore I use a wireless emonTH temperature instead.&lt;/p&gt;
+
+&lt;h1 id=&quot;security-and-remote-access&quot;&gt;Security and remote access&lt;/h1&gt;
+
+&lt;p&gt;Remote control (from outside the local network) can be achieved using a dynamic DNS service such as &lt;a href=&quot;https://www.duckdns.org/&quot;&gt;DuckDNS&lt;/a&gt; to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection. Alternatively, and possibly a better solution could be to use &lt;a href=&quot;http://www.myopenhab.org/&quot;&gt;MyOpenhab.org&lt;/a&gt; service to allow remote control without having to open up a port externally.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I beleive automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.
+
+As  previously mentioned in a blog post, the emonPi (running emonSD pre-built SD card) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:
+
+
+  It’s already running 24/7 for energy monitoring
+  It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan
+  It’s already connected to your local network
+  It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available
+  Raspberry Pi 3 has plenty of space capacity
+  Extra radios / accessories can be connected via USB
+  It’s already running an MQTT server
+  emonSD pre-built SD card comes pre loaded with the following integrations nodeRED, OpenHAB and LightWaveRF
+
+
+
+  In this post I want to share with you how I use the emonPi in my own home.
+
+
+Here is a video demo using Google Home to control my central heating and devices via MQTT:
+
+
+
+
+
+Read on to learn how this is achevied using an emonPi and open-source software…</summary></entry><entry><title>MyHomeEnergyPlanner - open source home energy assessment</title><link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/" rel="alternate" type="text/html" title="MyHomeEnergyPlanner - open source home energy assessment" /><published>2017-02-21T13:43:00+00:00</published><updated>2017-02-21T13:43:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/">&lt;p&gt;I would like to highlight a piece of work by &lt;a href=&quot;https://community.openenergymonitor.org/users/cagabi&quot;&gt;Carlos Alonso Gabizón&lt;/a&gt; which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.&lt;/p&gt;
 
 &lt;p&gt;Carlos has been working for &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt; over the last year and a half on &lt;a href=&quot;(http://myhome.emoncms.org)&quot;&gt;MyHomeEnergyPlanner&lt;/a&gt; – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.&lt;/p&gt;
 
@@ -861,88 +993,4 @@ Following on from my last couple of posts in this series we now have a working c
   If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.
 
 
-The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</summary></entry><entry><title>Emoncms Docker</title><link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/" rel="alternate" type="text/html" title="Emoncms Docker" /><published>2016-06-25T10:00:00+00:00</published><updated>2016-06-25T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/emoncms-docker/">&lt;p&gt;We have made the first steps towards running Emoncms to run in a &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;
-
-&lt;p&gt;Dockerfiles and setup notes are in the emoncms-docker repository:&lt;/p&gt;
-
-&lt;h3 id=&quot;httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker&quot;&gt;&lt;a href=&quot;https://github.com/emoncms/emoncms-docker&quot;&gt;https://github.com/emoncms/emoncms-docker&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/docker-logo.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Docker is an exciting tool to help make development, testing and deployment of web-applications easier.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-docker-the-short-version&quot;&gt;What is docker? (the short version):&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;what-is-docker-the-long-version&quot;&gt;What is docker? (the long version):&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;quick-start&quot;&gt;Quick Start&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ docker pull openenergymonitor/emoncms
-$ git clone https://github.com/emoncms/emoncms-docker
-$ cd emoncms-docker
-$ docker-compose up
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;That’s it! Emoncms should now be runnning, browse to &lt;a href=&quot;http://localhost:8080&quot;&gt;http://localhost:8080&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;emoncms-docker&quot;&gt;Emoncms Docker&lt;/h2&gt;
-
-&lt;p&gt;Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp;amp; config taken care of.&lt;/p&gt;
-
-&lt;p&gt;This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.&lt;/p&gt;
-
-&lt;p&gt;In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.&lt;/p&gt;
-
-&lt;p&gt;We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using &lt;a href=&quot;https://docs.docker.com/compose/overview/&quot;&gt;docker-compose&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;See &lt;a href=&quot;https://github.com/emoncms/emoncms-docker&quot;&gt;emoncms-docker Readme&lt;/a&gt; for setup &amp;amp; build instructions.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;forum-discussion&quot;&gt;Forum discussion&lt;/h2&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-docker/823/4&quot;&gt;this forum topic&lt;/a&gt; for discussion.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>We have made the first steps towards running Emoncms to run in a Docker container.
-
-Dockerfiles and setup notes are in the emoncms-docker repository:
-
-https://github.com/emoncms/emoncms-docker
-
-
-
-Docker is an exciting tool to help make development, testing and deployment of web-applications easier.
-
-What is docker? (the short version):
-
-
-  Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
-
-
-What is docker? (the long version):
-
-
-  Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.
-
-
-Quick Start
-
-$ docker pull openenergymonitor/emoncms
-$ git clone https://github.com/emoncms/emoncms-docker
-$ cd emoncms-docker
-$ docker-compose up
-
-
-
-That’s it! Emoncms should now be runnning, browse to http://localhost:8080</summary></entry></feed>
+The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</summary></entry></feed>

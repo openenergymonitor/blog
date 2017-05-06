@@ -462,6 +462,46 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2013/11/documentation-highlight-solar-pv-power/">Documentation highlight: Solar PV power diversion PLL</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-11T21:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-11 21:34:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/solarpv/'>solarPV</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/11/documentation-highlight-solar-pv-power/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I would like to highlight the recent addition of some really great documentation written by Robert Wall and Martin Roberts detailing Martin's Solar PV power diversion implementation which uses an emonTx running PLL based firmware,an emonGLCD and temperature measurement. <br /><br />You can find it here <a href="http://openenergymonitor.org/emon/pvdiversion/pll">http://openenergymonitor.org/emon/pvdiversion/pll</a><br />and its linked through from the main <a href="http://openenergymonitor.org/emon/guide">Getting Started Guide</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-TdBaiyaDj5s/UoFKdwsQX7I/AAAAAAAACy8/O7aM8mCkVs4/s1600/Screenshot+from+2013-11-11+21:19:31.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="500" src="http://3.bp.blogspot.com/-TdBaiyaDj5s/UoFKdwsQX7I/AAAAAAAACy8/O7aM8mCkVs4/s640/Screenshot+from+2013-11-11+21:19:31.png" width="640" /></a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/11/improving-emoncms-performance-with_8/">Improving emoncms performance with Redis plus interesting consequences for SD cards.</a>
   </h1>
   
@@ -834,48 +874,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/09/backing-up-your-raspberrypi-emoncms-or/">Backing up your raspberrypi emoncms or emoncms.org account</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-09-30T20:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-09-30 20:00:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/backup/'>backup</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/09/backing-up-your-raspberrypi-emoncms-or/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">I've added a couple of scripts to the emoncms usefulscripts directory that makes backing up an emoncms account whether on a local raspberrypi or emoncms.org much easier than the sync module solution, although still not as easy as I would like it to be, I would like setting up a backup to be as easy as installing a dropbox client.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The scripts work with Linux at the moment, hopefully soon I'l get a solution running on Windows. I would highly recommend keeping your own backup of your data, a backup of your emoncms data on your main computer can also be useful for both quicker access to the data and doing additional analysis of the data.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s1600/backup.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://3.bp.blogspot.com/-MIl8j4hmkjA/UknQBGmTKMI/AAAAAAAACxE/QOk0JRh5EKQ/s640/backup.png" width="640" /></a></div><b>1) Install emoncms</b> <b>on your backup machine</b> following the guide here:&nbsp;<a href="http://emoncms.org/site/docs/installlinux">http://emoncms.org/site/docs/installlinux</a><br />Create an account and note down your mysql credentials.<br /><br /><b>2) Download the usefulscripts repository</b><br /><a href="https://github.com/emoncms/usefulscripts">https://github.com/emoncms/usefulscripts</a><br /><br />There are two scripts available under usefulscripts/replication<br /><br /><ul><li>import_full.php</li><li>import_inputs.php</li></ul><br />3) Try<b> importing your inputs</b> first to test that it works: Open to edit <i>import_inputs.php</i>.<br />Set your mysql database name, username and password, the same credentials as for the settings.php step of the emoncms installation. Set the $server variable to the location of the raspberrypi or emoncms.org account you want to backup and set the $apikey to the write apikey of that account.<br /><br />In terminal, goto the usefulscripts/replication directory. Run import_inputs.php:<br /><br />&nbsp; &nbsp; php import_inputs.php<br /><br />If successful you should now see your input list and all input processing information backed up in your local emoncms account.<br /><br /><b>4) Backup all your feed data:</b><br /><br />As for importing inputs open import_full.php and set the database credentials and remote emoncms account details.<br /><br />Run the backup script with <b>sudo</b><br /><b><br /></b>&nbsp; &nbsp; sudo php import_full.php<br /><br />That's it, it should now work through all your feeds whether mysql or timestore (no phptimeseries support yet) making a local backup. When you first run this script it can take a long time. When you run this script again it will only download the most recent data and so will complete much faster. I run this script once every few days to keep an up-to-date backup.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -913,6 +911,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
+        </li>
+      
     
       
         <li class="post">
@@ -965,12 +969,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
         </li>
       
     
