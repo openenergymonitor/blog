@@ -11,7 +11,7 @@ categories:
   - MQTT
 ---
 
-I beleive automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it's required and not have it running on a set schedule when the house is empty.
+I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it's required and not have it running on a set schedule when the house is empty.
 
 As [ previously mentioned in a blog post](2016/08/ecohomelab-control/), the emonPi ([running emonSD pre-built SD card](github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&-Change-Log)) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:
 
@@ -32,12 +32,12 @@ Here is a video demo using Google Home to control my central heating and devices
 <iframe width="280" height="157" src="https://www.youtube.com/embed/r_v4GXVp0OI" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Read on to learn how this is achevied using an emonPi and open-source software...
+Read on to learn how this is achieved using an emonPi and open-source software...
 
 <!--more-->
 
 
-There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and appart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.
+There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and apart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.
 
 ## MQTT
 
@@ -79,7 +79,7 @@ LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecur
 
 ## Interface
 
-For the past few years I have been using OpenHAB as the contol interface. [OpenHAB is pre-loaded onto the emonPi emonSD pre-built image](https://guide.openenergymonitor.org/integrations/openhab). I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:
+For the past few years I have been using OpenHAB as the control interface. [OpenHAB is pre-loaded onto the emonPi emonSD pre-built image](https://guide.openenergymonitor.org/integrations/openhab). I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:
 
 ![open-hab-home.png]({{site.image_path}}/open-hab-home.png)![open-hab-all.png]({{site.image_path}}/open-hab-all.png)
 
@@ -95,7 +95,7 @@ Another option for an interface is [NodeRED Dashboard](https://github.com/node-r
 
 ### Voice interface
 
-I've recently aquired a Google Home voice activated speaker, with a little help from [ha-bridge](https://github.com/bwssytems/ha-bridge) to emulate a Philips Hue bridge it's quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See [ha-bridge setup guide for emonPi](https://github.com/openenergymonitor/emonpi-ha-bridge)
+I've recently acquired a Google Home voice activated speaker, with a little help from [ha-bridge](https://github.com/bwssytems/ha-bridge) to emulate a Philips Hue bridge it's quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See [ha-bridge setup guide for emonPi](https://github.com/openenergymonitor/emonpi-ha-bridge)
 
 See video demo at the top of this post.
 
