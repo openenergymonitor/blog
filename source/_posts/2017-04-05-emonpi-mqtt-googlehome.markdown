@@ -116,4 +116,8 @@ I also have a nodeRED flow that handles turning off the heating when the tempera
 
 # Security and remote access
 
-Remote control (from outside the local network) can be achieved using a dynamic DNS service such as [DuckDNS](https://www.duckdns.org/) to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection. Alternatively, and possibly a better solution could be to use [MyOpenhab.org](http://www.myopenhab.org/) service to allow remote control without having to open up a port externally.
+Remote control (from outside the local network) can be achieved using a dynamic DNS service such as [DuckDNS](https://www.duckdns.org/) or secure VPN to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection.
+
+Alternatively, and possibly a better solution could be to use [MyOpenhab.org](http://www.myopenhab.org/) service to allow remote control without having to open up a port externally.
+
+Home Assistant has got an example of [using Tor Onion Services to access Home Assistant](https://home-assistant.io/docs/ecosystem/tor/) running locally.
