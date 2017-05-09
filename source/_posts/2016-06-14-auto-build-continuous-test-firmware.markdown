@@ -10,7 +10,7 @@ categories:
   - platformio
   - travisci
   - firmware
-  - emonpi
+  - emonPi
   - emontx
   - continuous testing
 ---
