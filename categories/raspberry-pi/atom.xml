@@ -4,7 +4,7 @@
   <title><![CDATA[Category: raspberry pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-09T15:22:39+00:00</updated>
+  <updated>2017-05-09T15:32:06+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -135,7 +135,6 @@
 <h2 id="getting-start-guide-httpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org/">Getting Start Guide </a></h2>
 
 <p><img src="/images/raspberrypi3.jpg" alt="Raspberry Pi 3" /></p>
-
 ]]></content>
   </entry>
   

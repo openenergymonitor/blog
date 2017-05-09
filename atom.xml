@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-09T15:22:39+00:00</updated>
+  <updated>2017-05-09T15:32:06+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -594,7 +594,6 @@ Thanks for reading!</p>
   <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;loop=false&amp;delayms=3000">View in HTML (hosted from Google Slides)</a></li>
   <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View in full Google Slides format (with clickable hyperlinks &amp; selectable text)</a></li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -1429,7 +1428,6 @@ The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of
 <h2 id="getting-start-guide-httpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org/">Getting Start Guide </a></h2>
 
 <p><img src="https://blog.openenergymonitor.org/images/raspberrypi3.jpg" alt="Raspberry Pi 3" /></p>
-
 ]]></content>
   </entry>
   
