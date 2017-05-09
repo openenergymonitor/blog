@@ -4,7 +4,6 @@ layout: default
 
 <article class="page">
   {% assign url_parts = page.url | split: '/' %}
-  {% include edit_github.html %}
 
   {% if page.title and page.show_title != false %}
   <header>
@@ -16,7 +15,5 @@ layout: default
   {% endif %}
 
   {{ content }}
-
-  {% include edit_github.html %}
 
 </article>
