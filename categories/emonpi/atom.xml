@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: emonpi | Blog | OpenEnergyMonitor]]></title>
+  <title><![CDATA[Category: emonPi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonpi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-08T23:21:15+00:00</updated>
+  <updated>2017-05-09T15:22:39+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,160 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[emonPi as a Home Automation Hub]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/"/>
+    <updated>2017-05-05T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id>
+    <content type="html"><![CDATA[<p>I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.</p>
+
+<p>As <a href="2016/08/ecohomelab-control/"> previously mentioned in a blog post</a>, the emonPi (<a href="github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">running emonSD pre-built SD card</a>) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:</p>
+
+<ul>
+  <li>It’s already running 24/7 for energy monitoring</li>
+  <li>It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan</li>
+  <li>It’s already connected to your local network</li>
+  <li>It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available</li>
+  <li>Raspberry Pi 3 has plenty of space capacity</li>
+  <li>Extra radios / accessories can be connected via USB</li>
+  <li>It’s already running an MQTT server</li>
+  <li>emonSD pre-built SD card comes pre loaded with the following <a href="guide.openenergymonitor.org/integrations">integrations</a> nodeRED, OpenHAB and LightWaveRF</li>
+</ul>
+
+<blockquote>
+  <p>In this post I want to share with you how I use the emonPi in my own home.</p>
+</blockquote>
+
+<p>Here is a video demo using Google Home to control my central heating and devices via MQTT:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/r_v4GXVp0OI" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>Read on to learn how this is achieved using an emonPi and open-source software…</p>
+
+<!--more-->
+
+<p>There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and apart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.</p>
+
+<h2 id="mqtt">MQTT</h2>
+
+<p>MQTT lightweight communication protocol is used as the ‘glue’ communication layer between all the following services. See <a href="https://guide.openenergymonitor.org/technical/mqtt/">technical/MQTT section of the User Guide</a> for more info about how MQTT works on the emonPi.</p>
+
+<h2 id="energy-monitoring">Energy Monitoring</h2>
+
+<p>Emoncms…obviously!</p>
+
+<p>Recently I have been loving using the V2 Emoncms Android app (currently in beta) which supports multiple pages (see <a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-1-open-beta-testing/3373">forum thread</a>).</p>
+
+<p>Video demo Emoncms Android app V2 beta:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/LaTi-l9tVQM" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on <a href="https://emoncms.org">Emoncms.org</a>. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see <a href="https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3">forum thread</a>):</p>
+
+<p><img src="/images/myelectric-e7.png" alt="myelectric-e7.png" /></p>
+
+<h2 id="control">Control</h2>
+
+<h3 id="central-heating">Central Heating</h3>
+
+<p>To control my gas central heating boiler I use an <a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">MQTT WiFi relay</a> which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.</p>
+
+<p><img src="/images/mqtt-relay-overview.png" alt="mqtt-relay-overview.png" /></p>
+
+<h3 id="plug-sockets-lights">Plug sockets (lights)</h3>
+
+<p>I use LightWave RF plugs to which I have lights and other entertainment devices connected e.g. stereo and chromecast. Being able to switch a whole plug bank on/off has the advantage of being able to turn devices fully off when not in use to minimise any <a href="https://en.wikipedia.org/wiki/Standby_power">vampire drain</a>.</p>
+
+<p>The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See <a href="https://guide.openenergymonitor.org/integrations/lightwaverf">LightWave RF emonPi User Guide</a>.</p>
+
+<p><img src="/images/lightwave-rf-diagram.png" alt="lightwave-rf-diagram.png" /></p>
+
+<p>LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to <a href="https://www.itead.cc/smart-socket.html">ESp8266 based Sonoff plug</a> with third party <a href="https://github.com/arendst/Sonoff-Tasmota">MQTT firmware</a> or <a href="https://github.com/openenergymonitor/emonesp">EmonESP</a> firmware.</p>
+
+<h2 id="interface">Interface</h2>
+
+<p>For the past few years I have been using OpenHAB as the control interface. <a href="https://guide.openenergymonitor.org/integrations/openhab">OpenHAB is pre-loaded onto the emonPi emonSD pre-built image</a>. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:</p>
+
+<p><img src="/images/open-hab-home.png" alt="open-hab-home.png" /><img src="/images/open-hab-all.png" alt="open-hab-all.png" /></p>
+
+<p>OpenHAB also <a href="https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps">integrates with my Pebble smartwatch</a> which makes it super easy to turn on/off the heating while out and about:</p>
+
+<p><img src="/images/openhab-pebble.jpg" alt="openhab-pebble" /></p>
+
+<p>A while back (early 2016) I dabbled with <a href="http://home-assistant.io/">HomeAssistant</a>, (<a href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/">see blog post</a>). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.</p>
+
+<p>Another option for an interface is <a href="https://github.com/node-red/node-red-dashboard">NodeRED Dashboard</a> which is now officially part of the NodeRED project.</p>
+
+<p><em>The beauty of MQTT is that it’s platform agnostic, it’s possible to have many different interfaces controlling the same control nodes.</em></p>
+
+<h3 id="voice-interface">Voice interface</h3>
+
+<p>I’ve recently acquired a Google Home voice activated speaker, with a little help from <a href="https://github.com/bwssytems/ha-bridge">ha-bridge</a> to emulate a Philips Hue bridge it’s quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See <a href="https://github.com/openenergymonitor/emonpi-ha-bridge">ha-bridge setup guide for emonPi</a></p>
+
+<p>See video demo at the top of this post.</p>
+
+<p>Device config using ha-bridge webpage GUI:</p>
+
+<p><img src="/images/ha-bridge-device-config.png" alt="ha-bridge-device-config.png" /></p>
+
+<p>Google Home app setup:</p>
+
+<p><img src="/images/google-home-app.png" alt="google-home-app.png" /></p>
+
+<h2 id="integration--automation">Integration &amp; Automation</h2>
+
+<p>I use <a href="https://guide.openenergymonitor.org/integrations/nodered">NodeRED which is pre-loaded on emonPi / emonSD</a> to integrate with other services such a getting the latest outdoor temperature from <a href="https://www.wunderground.com/">Weather Underground</a>, send push notifications (heating on / off temperature alert) to my phone using <a href="https://pushover.net/">Pushover</a>. Both these services have pre-made nodeRED flows making integration very easy. NodeRED is pre-installed and configured on emonPi / emonSD. The <a href="https://github.com/openenergymonitor/oem_node-red/blob/master/flows_emonpi.json">example flow included on emonPi</a> demonstrates reading emonTH data from MQTT and external temperature data from Weather Underground.</p>
+
+<p>I also have a nodeRED flow that handles turning off the heating when the temperature in the livingroom (as measured by emonTH) reaches a set point. I could have used the thermostat controller on the WiFi relay to do this, however it would be difficult in my house to run the wired temperature sensor from the Wifi relay to the living room, therefore I use a wireless emonTH temperature instead.</p>
+
+<h1 id="security-and-remote-access">Security and remote access</h1>
+
+<p>Remote control (from outside the local network) can be achieved using a dynamic DNS service such as <a href="https://www.duckdns.org/">DuckDNS</a> or secure VPN to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection.</p>
+
+<p>Alternatively, and possibly a better solution could be to use <a href="http://www.myopenhab.org/">MyOpenhab.org</a> service to allow remote control without having to open up a port externally.</p>
+
+<p>Home Assistant has got an example of <a href="https://home-assistant.io/docs/ecosystem/tor/">using Tor Onion Services to access Home Assistant</a> running locally.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EcoHome Lab: From Monitoring to Control]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/"/>
+    <updated>2016-08-12T18:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id>
+    <content type="html"><![CDATA[<p>Last night I attended <a href="https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/">EcoHomeLab meetup</a> in Manchester organised by the <a href="http://carbon.coop/">CarbonCoop</a>.</p>
+
+<blockquote>
+  <p>EcoHomeLab monthly meetups at <a href="https://madlab.org.uk/">MadLab</a> brings householders and green-technologists together to take control of home energy use and generation.</p>
+</blockquote>
+
+<p>It was great fun to catch up with regular faces as well as meet many new interesting people.</p>
+
+<p>I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.</p>
+
+<p>I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.</p>
+
+<p><strong>See the <a href="http://guide.openenergymonitor.org/integrations/">Integrations section of our user guide for more info</a></strong></p>
+
+<p>Here are copy of my slides from the event:</p>
+
+<iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;loop=false&amp;delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
+
+<ul>
+  <li>
+    <p><a class="attachment" href="https://community.openenergymonitor.org/uploads/default/original/2X/1/1a55b8c172086f743b1b0abe1d01d7c10963d88c.pdf">Download in PDF format</a> (6.8 MB)</p>
+  </li>
+  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;loop=false&amp;delayms=3000">View in HTML (hosted from Google Slides)</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View in full Google Slides format (with clickable hyperlinks &amp; selectable text)</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
@@ -311,11 +465,96 @@ $ sudo service emonhub start
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Remote Control of LightWave RF plugs via MQTT using emonPi with OOK Tx]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/"/>
-    <updated>2015-11-26T17:09:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs</id>
-    <content type="html"><![CDATA[<p>Using a Raspberry Pi as an emonPi / emonBase web-connected base station for energy monitoring has many advantages (maintainability, remote access, debugging, updated etc.) but it does seem rather wasteful to have a 900Mhz 1GB RAM machine being used to post a couple of integers to a web-server! The always-on nature of a web-connected base station and plenty of spare processing power makes it ideal to use the emonPi for more than just energy monitoring; home automation and heating control optimisation are obvious candidates. <br /><br /><br /><b>Hardware</b><br /><b><br /></b>Many home automation products such as RF plugs, relays and heating remotes use a simple OOK (On-Off-Keying) wireless protocol. UK company LightWaveRF produce a <a href="http://www.megamanuk.com/lightwaverf/products/power-control/">variety of RF plugs</a> and <a href="http://www.megamanuk.com/lightwaverf/products/inline-switching/jsjslw830/">relays</a> which can be controlled via OOK RF. The protocol is also compatible with some <a href="http://www.ebay.co.uk/itm/321887470042?_trksid=p2057872.m2749.l2649&amp;var=510834121070&amp;ssPageName=STRK%3AMEBIDX%3AIT">cheaper OOK learning receiver relays</a>.  While maybe not strictly open-source the protocol and been reverse engineered allowing plugs to be easily controlled from Arduino / Raspberry Pi. There is an active <a href="http://lightwaverfcommunity.org.uk/forum/">LightWaveRF</a> online community. Using off-the shelf hardware like this is a ‘safe’ way to control lights, heaters and appliances  around a home without getting our hands dirty dealing with with high voltages. These plugs and relays can be used to control anything from lights to immersion heaters, most LightWaveRF plugs/relays will switch up to 13A / 3kW.<br /><br />Note: OOK protocol by it’s simplistic nature is not particularly secure, I would not recommend controlling anything you don’t mind getting accidently switched.<br />&lt;div&gt;<br />&lt;/div&gt;An OOK transmitter can easily be added to the emonPi.  We have started stocking <a href="http://shop.openenergymonitor.com/ook-on-off-keying-transmitter-433mhz/">OOK transmitter modules in the OpenEnergyMonitor store</a> as well as adding an option to have OOK module factory installed on <a href="http://shop.openenergymonitor.com/emonpi/">new emonPi’s</a>. <br /><br />See <a href="http://wiki.openenergymonitor.org/index.php?title=EmonPi#OOK">emonPi Technical Hardware Wiki</a> for details how to retrofit OOK TX module to existing emonPi’s.<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://3.bp.blogspot.com/-ooKdNYl_8fA/Vlc-c0pyyJI/AAAAAAABj5o/M6wlA5rH_Ko/s1600/emonPi_lwrf.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://3.bp.blogspot.com/-ooKdNYl_8fA/Vlc-c0pyyJI/AAAAAAABj5o/M6wlA5rH_Ko/s640/emonPi_lwrf.png" width="600" /></a>&lt;/div&gt;<br /> <b>Software</b><br /><br />We have been working with <a href="https://github.com/lawrie">Lawrie Griffiths</a> from <a href="https://geekgrandad.wordpress.com/">Geek Grandad blog</a> to develop a <a href="https://github.com/lawrie/LightwaveRF">LightWaveRF MQTT service</a> to run on a Raspberry Pi to allow LightWaveRF plugs to be controlled via MQTT.<br /><br />&lt;table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://www.electricalsupplies.co.uk/media/catalog/product/0/0/0019040_megaman-lightwave-rf-handheld-remote-controller-white.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://www.electricalsupplies.co.uk/media/catalog/product/0/0/0019040_megaman-lightwave-rf-handheld-remote-controller-white.jpeg" width="213" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<br />&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;Once running a plug can be controlled by publishing to the ‘lwrf’ MQTT topic:<br /><br />E.g “1 1” switches on plug 1 while “1 0” switches off plug 1. Plugs can be paired in the usual LightWaveRF plug.<br /><br /><b>See <a href="http://wiki.openenergymonitor.org/index.php/EmonPi#LightWaveRF_OOK">emonPi technical Wiki</a> for how to install &amp; setup</b>.<br /><br />Existing LightWaveRF remotes can be emulated allowing plugs to be controlled from either emonPi MQTT or via the remote.<br /><br />Now our plugs can be controlled via MQTT there are a many of options open as to how to control either via interface openHAB (blog post coming soon..), nodeRED, android Tasker etc.<br /><br />I have been using nodeRED with input from android <a href="http://owntracks.org/">OwnTracks</a> running on my phone to detect when I’m home and turn on a couple of lights:<br /><br />&lt;div class="" style="clear: both; text-align: center;"&gt;<b>Demo:</b>&lt;/div&gt;&lt;div class="" style="clear: both; text-align: center;"&gt;<b><br /></b>&lt;/div&gt;&lt;div class="" style="clear: both; text-align: center;"&gt;Using NodeRED and OwnTracks to turn on LightWave RF sockets when I arrive home: &lt;/div&gt;&lt;div class="" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;<a href="http://3.bp.blogspot.com/-gt2MVmKylsk/VlOTJKgRb5I/AAAAAAABjrQ/hZUctXS_e_s/s1600/Screenshot%2B2015-11-23%2Bat%2B22.28.06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="280" src="http://3.bp.blogspot.com/-gt2MVmKylsk/VlOTJKgRb5I/AAAAAAABjrQ/hZUctXS_e_s/s640/Screenshot%2B2015-11-23%2Bat%2B22.28.06.png" width="640" /></a>&lt;/div&gt;<b><br /></b>&lt;iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/GVKXgS01Vqw/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/GVKXgS01Vqw?feature=player_embedded" width="320"&gt;&lt;/iframe&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Using android Tasker with  AutoVoice and MQTT plugins to control LightWaveRF sockets:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/QjIqo4QsywA/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/QjIqo4QsywA?feature=player_embedded" width="320"&gt;&lt;/iframe&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<b>Next Steps</b>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;Now we can control appliances remotely via MQTT the next logical step is to add a mobile user interface. In my next blog post I plan to explore setting up <a href="http://www.openhab.org/">openHab</a> to control appliances. Here’s a early preview: &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/6uF0qU30q-g/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/6uF0qU30q-g?feature=player_embedded" width="320"&gt;&lt;/iframe&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;We plan to include out-of-the-box support for OOK LightWave RF, nodeRED and openHab pre-configured on our next emonPi pre-built SD card. Due for release in December 2015.&lt;/div&gt;<br /></p>
+    <title type="html"><![CDATA[Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/"/>
+    <updated>2016-05-20T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id>
+    <content type="html"><![CDATA[<p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
+
+<blockquote>
+  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
+</blockquote>
+
+<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
+
+<hr />
+
+<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
+
+<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
+
+<ul>
+  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
+  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
+  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
+  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
+</ul>
+
+<!--more-->
+
+<ul>
+  <li><a href="https://www.raspberrypi.org/downloads/raspbian/">RASPBIAN JESSIE LITE</a> (2015-11-21)</li>
+  <li><a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 Suppport</a>
+    <ul>
+      <li>Including on-board Wifi, external USB Wifi adapter no longer required</li>
+    </ul>
+  </li>
+  <li>low-write optimisations for long SD card life-span</li>
+  <li>Root file-system read-only</li>
+</ul>
+
+<h3 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
+
+<p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3’s on-board WiFi (<a href="/2016/05/emonpi-raspberrypi3/">see blog post</a>):</p>
+
+<p><img src="/images/emonpi-raspi3.jpg" alt="emonPi Raspberry Pi 3 Acrylic Fascia" /></p>
+
+<p>Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the <a href="https://guide.openenergymonitor.org/setup/import/">Emoncms backup / import</a> tool to migrate local Emoncms data.</p>
+
+<p><strong>We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.</strong></p>
+
+<p>However if your emonPi is currently stable and is working as indented then don’t feel that upgrading is essential, <em>“If it ain’t broke, don’t f ix it!”</em>.</p>
+
+<h2 id="thank-you-feedback--support">Thank you, Feedback &amp; Support</h2>
+
+<p>Releasing this pre-built image update is a significant milestone for us. It’s been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">emonSD download repository wiki</a> for links to forum discussion thread.</p>
+
+<p>To give feedback or obtain support for the new image please post in the <a href="https://community.openenergymonitor.org/c/emonsd">emonSD forum</a>.</p>
+
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+
+<p>As <a href="2016/05/website-changes/">previously mentioned on the blog</a> a couple of weeks ago we have launched a new User Guide website, the launch of this Guide has coincide with the launch of the new emonSD. The User Guide is designed to be the goto location for everything a user needs to know to setup, use and configure an OpenEnergyMonitor system:</p>
+
+<h3 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
+
+<h2 id="related-blog-posts">Related Blog posts</h2>
+
+<h3 id="nodered">nodeRED</h3>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/categories/nodered/">Node-RED blog post tag</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2015/10/emonpi-nodered-and-mqtt/">emonPi, NodeRed and MQTT</a></li>
+  <li><a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png">Node-RED Emoncms Node</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms &amp; MQTT</a></li>
+  <li><a href="https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB</a></li>
+</ul>
+
+<h3 id="openhab">openHAB</h3>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB</a></li>
+</ul>
+
+<h3 id="lightwave-rf">LightWave RF</h3>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/">Controling LightWaveRF plugs using emonPi</a></li>
+</ul>
 ]]></content>
   </entry>
   
