@@ -6,11 +6,11 @@ date_formatted: May 13th 2016
 author: Glyn Hudson
 comments: true
 categories:
-  - emonPi
+  - emonpi
   - raspberry pi
 ---
 
-All emonPi's / emonBase's shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase. 
+All emonPi's / emonBase's shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.
 
 Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law).
 
@@ -26,11 +26,10 @@ The Raspberry Pi 3 equipped emonPi's and emonBase's will be running the latest [
 
 ***
 
-## [emonPi Online Store Item](https://shop.openenergymonitor.com/emonpi-3/) 
+## [emonPi Online Store Item](https://shop.openenergymonitor.com/emonpi-3/)
 
 ## [emonBase Online Store Item](https://shop.openenergymonitor.com/emonbase-web-connected-base-station/)
 
 ## [Getting Start Guide ](https://guide.openenergymonitor.org/)
 
 ![Raspberry Pi 3]({{site.image_path}}/raspberrypi3.jpg)
-

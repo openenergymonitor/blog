@@ -8,7 +8,7 @@ author: Glyn Hudson
 comments: true
 categories:
   - emonSD
-  - emonPi
+  - emonpi
   - raspberry pi
 ---
 
@@ -60,7 +60,7 @@ To give feedback or obtain support for the new image please post in the [emonSD 
 
 
 
- 
+
 
 ***
 
@@ -81,11 +81,11 @@ As [previously mentioned on the blog](2016/05/website-changes/) a couple of week
  - [Node-RED Emoncms Node](http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png)
  - [Outdoor Temperature Data from Weather Underground to Emoncms & MQTT](https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/)
  - [Ambient Wind Energy Indicator using Node-RED and Blink(1) USB](https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/)
-  
+
 ### openHAB
- 
+
  - [OpenEnergyMonitor, emonPi and openHAB](https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/)
- 
+
 ### LightWave RF
- 
+
  - [Controling LightWaveRF plugs using emonPi](https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/)

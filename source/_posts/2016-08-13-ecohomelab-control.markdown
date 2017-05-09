@@ -9,7 +9,7 @@ comments: true
 categories:
   - ecohomelab
   - presentation
-  - emonPi
+  - emonpi
   - NodeRed
   - MQTT
   - openHAB
@@ -36,4 +36,3 @@ Here are copy of my slides from the event:
 
 - [View in HTML (hosted from Google Slides)](https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&loop=false&delayms=3000)
 - [View in full Google Slides format (with clickable hyperlinks & selectable text)](https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing)
-
