@@ -7,7 +7,7 @@ date_formatted: May 6th 2017
 author: Glyn Hudson
 comments: true
 categories:
-  - emonPi
+  - emonpi
   - MQTT
 ---
 
