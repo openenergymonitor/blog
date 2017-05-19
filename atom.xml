@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-09T15:51:59+00:00</updated>
+  <updated>2017-05-19T14:27:19+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi blog]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/"/>
+    <updated>2017-05-18T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/05/raspberrypi-blog</id>
+    <content type="html"><![CDATA[<p>I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.</p>
+
+<p>The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:</p>
+
+<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
+
+<p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/raspi-blog.png" alt="raspi-blog" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[emonPi as a Home Automation Hub]]></title>
@@ -1522,41 +1539,6 @@ The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of
 <h3 id="technical-info">Technical info</h3>
 
 <p>The new Guide and Blog are built using <a href="http://jekyllrb.com/">Jekyll</a> static site generator with Octopress <a href="https://github.com/coogie/oscailte">Oscailte theme</a> to convert markdown files to html. The sites are <a href="https://github.com/openenergymonitor/guide">fully open-source on GitHub </a> and are hosted by GitHub pages. <a href="https://travis-ci.org/openenergymonitor/guide/">Travis CI</a> has been configured to re-build the static html pages each time a change commit is made. Hosting the site on github will make it easy for anyone to propose a change/fix. The site is served and secured via Cloud Flare using CF’s <a href="https://blog.cloudflare.com/cloudflare-ca-encryption-origin/">Universal SSL/TLS to origin</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Part 3: Aggregated supply and demand across multiple households]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand/"/>
-    <updated>2016-05-02T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/Part3-Aggregated-supply-and-demand</id>
-    <content type="html"><![CDATA[<p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
-
-<p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
-
-<p>Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.</p>
-
-<p>In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a <a href="https://openenergymonitor.org/dev/smartgrid"><strong>‘virtual microgrid’ concept</strong></a>, we have a provisional front page for this here - please note that its still in early development:</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/smart-grid.png" alt="image" /></p>
-
-<!--more-->
-
-<p>With only four households aggregating on-site solar, off-site wind, hydro and consumption and with total supply matching total demand over the whole period achieved by scaling the wind component, we can see matching increasing from 46% in the previous example to around 64% here. The resulting average carbon intensity is 132gCO2/kWh.</p>
-
-<p>At this carbon intensity a heatpump (@ COP 3.0) has a delivered heat carbon intensity of 44gCO2/kWh, 81% less than gas and an EV (@ 3.7 miles/kWh) has a carbon intensity of 22gCO2/km 80% less than a very efficient petrol car doing 60 real world mpg, this compares with a carbon saving of roughly 45% vs direct gas heating and a petrol car if the electricity supply was from a grid supply consisting of gas, coal and nuclear at present UK proportions. Its a bit more complicated than this as more of the co2 was emitted when the EV was charging than at other times, the overall carbon intensity is just an average, Il come back to a more in-depth analysis of this again.</p>
-
-<p>The result goes some way to illustrating why a mixture of renewable generation sources and aggregated demand ultimately increases the usefulness of the renewable supply and reflects the kind of results we see from running hourly zero carbon energy system models such as the one developed by the Center for Alternative Technology. These indicate that matching levels of between 62% and 78% are possible before storage and significant demand shifting with normal electric demand, heatpump heating demand and EV charging demand. See <a href="(https://openenergymonitor.org/energymodel/)">modelled supply/demand matching</a> based on ZeroCarbonBritain data:</p>
-
-<p><a href="https://openenergymonitor.org/dev/smartgrid">Smart grid test intro page</a></p>
-
-<p>Visible currently on the community smart grid test front page is the participating households renewable supply mix, real-time information on grid CO2 intensity and grid wind, solar and hydro. Household demand is not currently shown as there are not enough participants for the demand profile to be sufficiently anonymous.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/supply.png" alt="image" /></p>
-
-<p>At the top of the page is a UK grid status indicator that is based on Dominic McCann’s work explained in more detail in <a href="http://carbon.coop/blog/zapaman/community-smart-grid-prosumer-perspective-part-2">Dominic’s blog post</a>.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/smartgrid2.png" alt="image" /></p>
 ]]></content>
   </entry>
   

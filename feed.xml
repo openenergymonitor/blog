@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-05-09T15:51:59+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>emonPi as a Home Automation Hub</title><link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/" rel="alternate" type="text/html" title="emonPi as a Home Automation Hub" /><published>2017-05-05T00:00:00+00:00</published><updated>2017-05-05T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">&lt;p&gt;I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-05-19T14:27:19+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Raspberry Pi blog</title><link href="https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/" rel="alternate" type="text/html" title="Raspberry Pi blog" /><published>2017-05-18T00:00:00+00:00</published><updated>2017-05-18T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/05/raspberrypi-blog</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/">&lt;p&gt;I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.&lt;/p&gt;
+
+&lt;p&gt;The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:&lt;/p&gt;
+
+&lt;h4 id=&quot;raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi&quot;&gt;&lt;a href=&quot;https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/&quot;&gt;Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/raspi-blog.png&quot; alt=&quot;raspi-blog&quot; /&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.
+
+The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:
+
+Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi
+
+The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</summary></entry><entry><title>emonPi as a Home Automation Hub</title><link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/" rel="alternate" type="text/html" title="emonPi as a Home Automation Hub" /><published>2017-05-05T00:00:00+00:00</published><updated>2017-05-05T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">&lt;p&gt;I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.&lt;/p&gt;
 
 &lt;p&gt;As &lt;a href=&quot;2016/08/ecohomelab-control/&quot;&gt; previously mentioned in a blog post&lt;/a&gt;, the emonPi (&lt;a href=&quot;github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;amp;-Change-Log&quot;&gt;running emonSD pre-built SD card&lt;/a&gt;) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:&lt;/p&gt;
 
@@ -907,94 +921,4 @@ The metrics speak for themselves:
       2.36mW [1]
        
       2836mW [2]
-      1201 times less energy per day!</summary></entry><entry><title>Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</title><link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/" rel="alternate" type="text/html" title="Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)" /><published>2016-06-29T10:00:00+00:00</published><updated>2016-06-29T10:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">&lt;p&gt;&lt;strong&gt;This post is part of a series&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/platformio/&quot;&gt;1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/06/auto-build-continuous-test-firmware/&quot;&gt;2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Related post: &lt;a href=&quot;/2016/06/esp8266-emonesp-developments&quot;&gt;EmonESP ESP8266 WiFi developments&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;3/3: Continuous Deployment (OTA to ESP8266)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp;amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Code change is committed to the &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP repo on GitHub&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.&lt;/li&gt;
-  &lt;li&gt;If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.&lt;/li&gt;
-  &lt;li&gt;If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonesp-update.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;The OTA (over-the-air) firmware deployment process is based on Daniel Eichhorn’s (&lt;a href=&quot;https://twitter.com/squix78&quot;&gt;@squix78&lt;/a&gt;) &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;excellent blog post&lt;/a&gt;. In summary the process is as follows:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/esp-update-process.png&quot; alt=&quot;image&quot; /&gt;
-Diagram from &lt;a href=&quot;http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html&quot;&gt;Daniel Eichhorn’s blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The build is tagged with a version number using PlatformIO build-flag, see EmonESP &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP/blob/master/platformio.ini&quot;&gt;platformio.ini&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;An intermediate PHP script connects to the GitHub API to check the latest release version and returns this as a string.&lt;/li&gt;
-  &lt;li&gt;ESP sends it’s current running firmware version to the PHP script using tag argument &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;tag=1.0.2&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;If the running firmware version does not match the latest release version, the PHP script grabs the latest release .bin from github-releases API and serves it up as a download to the ESP.&lt;/li&gt;
-  &lt;li&gt;ESP then flashes the compiled .bin OTA update using the &lt;a href=&quot;https://github.com/esp8266/Arduino/tree/master/libraries&quot;&gt;ESP8266httpUpdate library&lt;/a&gt; which is built-in to the espressif Arduino tool-chain&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;intermediate-php-script&quot;&gt;Intermediate PHP script&lt;/h3&gt;
-
-&lt;p&gt;Ideally the production ESP8266 would be able to contact the GitHub-release API directly negating the need for the intermediate PHP script. However, there are a number of reasons why this is not practical at the moment. To quote Daniel’s blog post:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;The ESPhttpUpdate currently cannot follow redirects. This is important since github hosts the release artefacts on Amazon AWS. But in the API JSON &amp;gt; object the address points to github, so the http client has to follow a redirect to download the artefact.&lt;/li&gt;
-    &lt;li&gt;Github uses https for its API and will redirect you to it if you are trying plain HTTP. This means that you would have to know the SSL fingerprints &amp;gt; of the github API server and the AWS hosting instance since this is required by the ESPs secure client interface. After all the ESPs don’t have a chain &amp;gt; of trusted certificates stored somewhere. While the fingerprint of the github API might be stable, the redirection on Amazon AWS might not always use &amp;gt; the same certificate.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;There is currently working example of this process (ESP8266 firmware + intermediate PHP script) in the &lt;code class=&quot;highlighter-rouge&quot;&gt;ota&lt;/code&gt; branch of &lt;a href=&quot;https://github.com/openenergymonitor/EmonESP&quot;&gt;EmonESP GitHub Repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;In it’s current implementation the update process described above is not secure.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Obviously secure delivery and verification of the update binary is essential.&lt;/p&gt;
-
-&lt;p&gt;Ideally the binary download to the ESP would be done over secure https. This maybe be possible, however https support on the ESP is currently not super stable and limited by the available memory (as mentioned above).&lt;/p&gt;
-
-&lt;p&gt;A method to verify the compiled binary could be to sign the compiled binary with a private key which is verified by the ESP before firmware is updated.&lt;/p&gt;
-
-&lt;p&gt;I would be interested to hear from anyone with any thoughts / advice as to how secure ESP OTA firmware delivery can be achieved.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Glyn Hudson</name></author><summary>This post is part of a series
-
-
-  1/3 PlatfomIO overview &amp;amp; compiling + uploading locally and on a Raspberry Pi
-  2/3: Continuous testing and auto release binary generation using PlatformIO &amp;amp; TravisCI
-    
-      Related post: EmonESP ESP8266 WiFi developments
-    
-  
-  3/3: Continuous Deployment (OTA to ESP8266)
-
-
-
-
-Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp;amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:
-
-
-  Code change is committed to the EmonESP repo on GitHub
-  TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.
-  If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.
-  If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.
-
-
-The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</summary></entry></feed>
+      1201 times less energy per day!</summary></entry></feed>

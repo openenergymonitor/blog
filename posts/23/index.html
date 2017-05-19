@@ -462,6 +462,50 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/08/plug-and-play-sensor-nodes/">Plug and play sensor nodes</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-08-02T12:38:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-08-02 12:38:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/08/plug-and-play-sensor-nodes/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><br /><div class="separator" style="clear: both; text-align: left;">At the moment to get a system up and running you need to do quite a bit of manual firmware configuration, setting&nbsp;unique&nbsp;node-id's selecting different emontx sketches for different functionality, hard coding the emonglcd to get different screens.&nbsp;To add a second emontx you need to add several lines of code to the emonbase and the basestation needs to know the data structure of the sensor nodes.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s1600/OEM_system_emoncms2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="212" src="http://3.bp.blogspot.com/-M15_WatZsbA/UBpruoqSO2I/AAAAAAAACeQ/DWmAsG4iG6c/s400/OEM_system_emoncms2.png" width="400" /></a></div><br />What if you could upload a standard sketch to each of these nodes, plug your base station into your router, power up an emontx and see emontx 1 appear in a node list in emoncms. Then as you add more nodes they automatically appear in emoncms, no additional base station configuration needed. In time the software could develop to allow remote configuration of nodes such as&nbsp;emontx config and emonGLCD pages: beginning with page template functions as described in the last blog post:&nbsp;<a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-template-based-displays.html">emonglcd template based displays</a><br /><br />Continue reading the forum post <a href="http://openenergymonitor.org/emon/node/904">here</a>.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/08/low-level-adc-control-admux/">Low-level ADC control: ADMUX</a>
   </h1>
   
@@ -824,50 +868,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/06/it-works-single-ac-power-supply-voltage/">Single AC power supply + voltage sensing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-06-18T03:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-18 03:21:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/voltage-sensing/'>voltage sensing</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/06/it-works-single-ac-power-supply-voltage/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div dir="ltr" style="text-align: left;" trbidi="on">The idea of using the same AC-AC power adaptor for both sensing voltage and supplying power to emonTx has been discussed on the forums for months (see <a href="http://openenergymonitor.org/emon/node/309" target="_blank">this topic</a>), and about six weeks ago Glyn posted <a href="http://openenergymonitor.blogspot.de/2012/05/emontx-single-ac-power-supply.html" target="_blank">a simulation of a possible circuit</a>.<br /><br />I had the time this weekend to give it a try, bought the necessary components and put it all on a breadboard. After a sleepless night I can confirm: It works!<br /><br />Here is my messy setup:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="380" src="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s640/2012-06-18+04.55.43.jpg" width="640" /></a><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><br /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /><div style="text-align: left;"><br /></div></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><a href="http://www.blogger.com/goog_1837366350"><br /></a></div><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Small modifications had to be made to get it to work: I added a 1uF cap between 3.3v and GND to&nbsp;filter out some noise and redefined the voltage calibration coefficient in the code.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">But the main problem (took me all night to figure it out) is that the usual emonTx sketch wont work straight ahead. The line that lights up the LED (on pin 9) at the end of the setup loop has to be commented out, otherwise the setup won't work. It's no problem to flash it 2ms after each packet is sent, but apparently having it on in the beginning will prevent the program from starting. Maybe there isn't enough current to do it and move on (I must say that I use 10k ohm resistors for the voltage dividers). If it's not that then maybe full wave rectification could help.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">I used a humble Xprotolab to measure the Vin, Vout and at some other points in the circuit. It behaves almost exactly like the simulation. fft also shows very little noise.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Would be great if other members could repeat this experiment to see if the results will be the same.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Next step: Voltage sensing on the base ;)&nbsp;</span><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1"><br style="color: black;" /></a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -905,6 +905,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
+        </li>
+      
     
       
         <li class="post">
@@ -957,12 +963,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
     
@@ -1087,8 +1087,6 @@ $(window).resize(function(){
     
       <li><a href="/categories/emonglcd/">emonGLCD</a></li>
     
-      <li><a href="/categories/emonpi/">emonPi</a></li>
-    
       <li><a href="/categories/emonsd/">emonSD</a></li>
     
       <li><a href="/categories/emonth/">emonTH</a></li>
@@ -1200,6 +1198,8 @@ $(window).resize(function(){
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry-pi/">raspberry Pi</a></li>
     
       <li><a href="/categories/raspberry-pi/">raspberry pi</a></li>
     

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/</loc>
+<lastmod>2017-05-18T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/</loc>
 <lastmod>2017-05-05T00:00:00+00:00</lastmod>
 </url>
@@ -1758,9 +1762,6 @@
 <loc>https://blog.openenergymonitor.org/categories/dashboard/</loc>
 </url>
 <url>
-<loc>https://blog.openenergymonitor.org/categories/emonpi/</loc>
-</url>
-<url>
 <loc>https://blog.openenergymonitor.org/categories/esp8266/</loc>
 </url>
 <url>
@@ -1861,6 +1862,9 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/categories/ev/</loc>
+</url>
+<url>
+<loc>https://blog.openenergymonitor.org/categories/raspberry-pi/</loc>
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/posts/2/</loc>
@@ -1969,6 +1973,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2017-05-09T15:50:38+00:00</lastmod>
+<lastmod>2017-05-19T14:24:52+00:00</lastmod>
 </url>
 </urlset>

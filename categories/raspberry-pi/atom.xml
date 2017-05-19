@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: raspberry pi | Blog | OpenEnergyMonitor]]></title>
+  <title><![CDATA[Category: raspberry Pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-09T15:51:59+00:00</updated>
+  <updated>2017-05-19T14:27:19+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,170 +14,19 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/"/>
-    <updated>2016-05-20T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id>
-    <content type="html"><![CDATA[<p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
+    <title type="html"><![CDATA[Raspberry Pi blog]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/"/>
+    <updated>2017-05-18T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/05/raspberrypi-blog</id>
+    <content type="html"><![CDATA[<p>I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.</p>
 
-<blockquote>
-  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
-</blockquote>
+<p>The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:</p>
 
-<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
+<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
 
-<hr />
+<p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
 
-<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
-
-<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
-
-<ul>
-  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
-  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
-  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
-</ul>
-
-<!--more-->
-
-<ul>
-  <li><a href="https://www.raspberrypi.org/downloads/raspbian/">RASPBIAN JESSIE LITE</a> (2015-11-21)</li>
-  <li><a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 Suppport</a>
-    <ul>
-      <li>Including on-board Wifi, external USB Wifi adapter no longer required</li>
-    </ul>
-  </li>
-  <li>low-write optimisations for long SD card life-span</li>
-  <li>Root file-system read-only</li>
-</ul>
-
-<h3 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
-
-<p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3’s on-board WiFi (<a href="/2016/05/emonpi-raspberrypi3/">see blog post</a>):</p>
-
-<p><img src="/images/emonpi-raspi3.jpg" alt="emonPi Raspberry Pi 3 Acrylic Fascia" /></p>
-
-<p>Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the <a href="https://guide.openenergymonitor.org/setup/import/">Emoncms backup / import</a> tool to migrate local Emoncms data.</p>
-
-<p><strong>We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.</strong></p>
-
-<p>However if your emonPi is currently stable and is working as indented then don’t feel that upgrading is essential, <em>“If it ain’t broke, don’t f ix it!”</em>.</p>
-
-<h2 id="thank-you-feedback--support">Thank you, Feedback &amp; Support</h2>
-
-<p>Releasing this pre-built image update is a significant milestone for us. It’s been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">emonSD download repository wiki</a> for links to forum discussion thread.</p>
-
-<p>To give feedback or obtain support for the new image please post in the <a href="https://community.openenergymonitor.org/c/emonsd">emonSD forum</a>.</p>
-
-<hr />
-
-<h2 id="documentation">Documentation</h2>
-
-<p>As <a href="2016/05/website-changes/">previously mentioned on the blog</a> a couple of weeks ago we have launched a new User Guide website, the launch of this Guide has coincide with the launch of the new emonSD. The User Guide is designed to be the goto location for everything a user needs to know to setup, use and configure an OpenEnergyMonitor system:</p>
-
-<h3 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
-
-<h2 id="related-blog-posts">Related Blog posts</h2>
-
-<h3 id="nodered">nodeRED</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/categories/nodered/">Node-RED blog post tag</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2015/10/emonpi-nodered-and-mqtt/">emonPi, NodeRed and MQTT</a></li>
-  <li><a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png">Node-RED Emoncms Node</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms &amp; MQTT</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB</a></li>
-</ul>
-
-<h3 id="openhab">openHAB</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB</a></li>
-</ul>
-
-<h3 id="lightwave-rf">LightWave RF</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/">Controling LightWaveRF plugs using emonPi</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[emonPi / emonBase Raspberry Pi 3]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/"/>
-    <updated>2016-05-13T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3</id>
-    <content type="html"><![CDATA[<p>All emonPi’s / emonBase’s shipped to date have included a Raspberry Pi 2. In the next week or so we will be upgrading to include a RaspberryPi 3. This is a nice upgrade: approximately double the processor speed and on-board WiFi with zero cost increase.</p>
-
-<p>Since the RaspberryPi 3 has got on-board WiFi a USB WiFi dongle is not required; even more costing cost saving for our customers, thanks to hard work of the Raspberry Pi foundation and a bit of <a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moore’s law</a>.</p>
-
-<p><img src="/images/emonpi-raspi3.jpg" alt="emonPi Raspberry Pi 3 Acrylic Fascia" /></p>
-
-<!--more-->
-
-<p>If you receive an emonPi with a black acrylic fascia like in the photo above this means you have a RaspberryPi 3 inside. The reason for switching from punched-aluminium end-plates to black acrylic plastic is to allow the RaspberryPi 3’s on-board Wifi to propagate out of the enclosure.</p>
-
-<p>The Raspberry Pi 3 equipped emonPi’s and emonBase’s will be running the latest <a href="https://guide.openenergymonitor.org/technical/#software-overview">emonSD pre-built SD card image</a> which includes the latest version of Emoncms as well as <a href="https://guide.openenergymonitor.org/integrations/nodered">NodeRED</a> and <a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a> pre-installed. Checkout our <a href="https://guide.openenergymonitor.org/">new Setup &amp; User Guide</a>.</p>
-
-<p><em>Note: The Raspberry Pi 3 also includes integrated on-board Bluetooth, however this has been disabled on the emonPi due to a serial port conflict. See our <a href="/2016/03/raspberry-pi-3/">original post on the Raspberry Pi 3</a>.</em></p>
-
-<hr />
-
-<h2 id="emonpi-online-store-itemhttpsshopopenenergymonitorcomemonpi-3"><a href="https://shop.openenergymonitor.com/emonpi-3/">emonPi Online Store Item</a></h2>
-
-<h2 id="emonbase-online-store-itemhttpsshopopenenergymonitorcomemonbase-web-connected-base-station"><a href="https://shop.openenergymonitor.com/emonbase-web-connected-base-station/">emonBase Online Store Item</a></h2>
-
-<h2 id="getting-start-guide-httpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org/">Getting Start Guide </a></h2>
-
-<p><img src="/images/raspberrypi3.jpg" alt="Raspberry Pi 3" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Raspberry Pi 3 ]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/03/raspberry-pi-3/"/>
-    <updated>2016-03-17T00:51:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/03/raspberry-pi-3</id>
-    <content type="html"><![CDATA[<p>The latest and greatest from the awesome Raspberry Pi team! An iterative upgrade but very welcome addition of on-board WiFi and a faster processor. <br /><br />The <a href="https://openenergymonitor.org/emon/node/12212">latest emonSD</a> for emonPi / emonBase seemed to work out of the box with the RasPi3, however it became apparent that something rather important was missing…serial communication with the emonPi’s ATmega328!<br /><br />The emonPi communicates with the RasPi via GPIO 14/15 which on the Model B,B+ and Pi2 is mapped to UART0. However on the Pi3 these pins are mapped to UART1 since UART0 is now used for the Bluetooth module. However UART1 is software UART and baud rate is dependent to clock speed which can change with the CPU load, under voltage and temperature; therefore not stable enough. One hack is to force the CPU to a lower speed ( add core_freq=250 to /boot/cmdline.txt)which cripples the Pi3 performance.<br /><br />A better solution for the emonPi is to disable BT and map UART1 back to UART0 (ttyAMA0) so we can talk to the emonPi in the same way as before.<br /><br /></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;!--more--&gt;
-</code></pre>
-</div>
-
-<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-tu55USCyQO8/Vun9vCI01vI/AAAAAAABp0c/NPayDX64LusM8Uw1e0aX7QQri6Gqv--HA/s1600/IMG_20160301_164646193_HDR.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="https://2.bp.blogspot.com/-tu55USCyQO8/Vun9vCI01vI/AAAAAAABp0c/NPayDX64LusM8Uw1e0aX7QQri6Gqv--HA/s400/IMG_20160301_164646193_HDR.jpg" width="400" /></a></div>
-<p><br /></p>
-
-<p>First update:<br /><br />&lt;pre&gt;sudo apt-get update<br />sudo apt-get upgrade<br />sudo apt-get dist-upgrade<br />sudo rpi-update&lt;/pre&gt;&lt;pre&gt;&lt;/pre&gt;<strong>To disable onboard Pi3 Bluetooth and restore UART0/ttyAMA0 over GPIOs 14 &amp; 15 modify:</strong><br />&lt;pre&gt;&lt;/pre&gt;&lt;pre&gt;sudo nano /boot/config.txt&lt;/pre&gt;&lt;pre&gt;&lt;/pre&gt;Add to the end of the file<br /><br />&lt;pre&gt;dtoverlay=pi3-disable-bt&lt;/pre&gt;&lt;pre&gt;&lt;/pre&gt;We also need to run <br /><br />&lt;pre&gt;sudo systemctl disable hciuart<br /><br /> to stop the BT modem from trying to use the UART. See <a href="https://github.com/raspberrypi/firmware/commit/845eb064cb52af00f2ea33c0c9c54136f664a3e4">RasPi device tree commit for pi3-disable-bt</a> and raspi <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=107&amp;t=138223">forum thread discussion</a>.&lt;/pre&gt;<br />Reboot and test serial coms with:<br /><br />&lt;pre&gt;sudo minicom -D /dev/ttyAMA0 -b38400&lt;/pre&gt;&lt;div&gt;<br />&lt;/div&gt;<a href="https://openenergymonitor.org/emon/node/12311"></a></p>
-
-<p>&lt;/a&gt;<a href="https://openenergymonitor.org/emon/node/12311">Forum post discussion</a><br />&lt;div&gt;&lt;pre&gt;&lt;/pre&gt;There is an issue using the RasPi3 in the emonPi enclosure, for obvious reasons (laws of physics) the on-board Wifi does not like being enclosed in a metal box! We are working on getting some acrylic end-plates cut for testing. If this goes well, we will look at offering the RasPi3 with the emonPi + acrylic end plates on the enclosure to enable the WiFi to operate correctly.<br /><br />Update: here’s a photo of emonPi with prototype acrylic fascias. On-board WiFi works great :-)<br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://1.bp.blogspot.com/-m2AKbaYuYak/VvEY50spANI/AAAAAAABqGE/NCmZeMkRSEEbGg2EqGdhCPmAxT_J8wkwg/s1600/2016-03-19.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="266" src="https://1.bp.blogspot.com/-m2AKbaYuYak/VvEY50spANI/AAAAAAABqGE/NCmZeMkRSEEbGg2EqGdhCPmAxT_J8wkwg/s400/2016-03-19.jpg" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<span style="font-size: small; text-align: start;">emonPi with prototype acrylic fascias</span>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;/div&gt;
-<br />
-Update: Follow &lt;/a&gt;<a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">this thread</a> to retain bluetooth functionality &gt;
-<br />
-<br /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introducing RFM69Pi V3 Raspberry Pi Expansion Board]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/02/introducing-rfm69pi-v3-raspberry-pi/"/>
-    <updated>2015-02-10T10:37:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/02/introducing-rfm69pi-v3-raspberry-pi</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: center;"></div>
-<p><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-mUepVgC_TV8/VPa3dXYQ8oI/AAAAAAABEtk/nTsqrsfWtdM/s1600/IMG_5350__74182.1425392972.1280.1280__80483.1425393084.1280.1280.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-mUepVgC_TV8/VPa3dXYQ8oI/AAAAAAABEtk/nTsqrsfWtdM/s1600/IMG_5350__74182.1425392972.1280.1280__80483.1425393084.1280.1280.jpg" height="224" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<span style="font-size: 12.8000001907349px;">RFM69Pi on Raspberry Pi B+, also compatible with Raspberry Pi Model B and Pi2</span><br />&lt;div&gt;<br />&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-XXRdlU40_Ik/VPa3rIIiYqI/AAAAAAABEt0/ZlAN-gUZ3kI/s1600/IMG_5356__60667.1425392971.1280.1280__62684.1425393084.1280.1280.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-XXRdlU40_Ik/VPa3rIIiYqI/AAAAAAABEt0/ZlAN-gUZ3kI/s1600/IMG_5356__60667.1425392971.1280.1280__62684.1425393084.1280.1280.jpg" height="272" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;RFM69Pi - just like RFM12Pi but with upgraded radio and more I/O available&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-ahfRMMUbJQU/VPa3rJleO3I/AAAAAAABEt8/5cd7Qwhxj44/s1600/IMG_5358__53939.1425392970.1280.1280__70481.1425393084.1280.1280.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-ahfRMMUbJQU/VPa3rJleO3I/AAAAAAABEt8/5cd7Qwhxj44/s1600/IMG_5358__53939.1425392970.1280.1280__70481.1425393084.1280.1280.jpg" height="318" width="320" /></a>&lt;/div&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-WCWsNhLD8z4/VPa3qSTx3vI/AAAAAAABEts/Zo3T3Y7GkMQ/s1600/IMG_5359__59442.1425392972.1280.1280__21165.1425393084.1280.1280.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-WCWsNhLD8z4/VPa3qSTx3vI/AAAAAAABEts/Zo3T3Y7GkMQ/s1600/IMG_5359__59442.1425392972.1280.1280__21165.1425393084.1280.1280.jpg" height="183" width="320" /></a>&lt;/div&gt;<br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The RFM69Pi is a minor update to the popular RFM12Pi Raspberry Pi Expansion board. It adds support for the RFM69CW RF module as well as breaking out as much I/O as possible from the ATmega328 to open up the options for greater connectivity and compatibility. The RFM69Pi was developed with help and inspiration from Nanode RF designer <a href="http://sustburbia.blogspot.co.uk/">Ken Boak</a>, together we are working on a relay <a href="http://sustburbia.blogspot.co.uk/2014/11/at-last-long-awaited-relay-board.html">heating controller board</a> using the RFM69Pi. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The RFM69CW is backward compatible with RFM12B, <a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see blog post</a> introducing the module. From an end user’s perspective there should be no difference when using the RFM69Pi over the RF12Pi apart from a new input called RSSI (Received Signal Strength Indication) appearing in Emoncms. &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>You must be running the latest pre-build SD card image <a href="http://emonsd-26-02-15.img/">emonSD-26-02-15.img</a> (<a href="http://shop.openenergymonitor.com/pre-loaded-gateway-on-microsd-card-for-raspberry-pi-model-b-compatible/">now shipping</a>) or emonHub must be updated manually to the latest Development branch version to enabled auto detection of the faster baud rate used by the RFM69Pi (38400 as opposed to 9600 on the RFM12Pi), and RSSI value handling. </b>&lt;/div&gt;<br />If you’re running pre-built SD card image emonSD-13-08-14.img or earlier then emonHub can be updated by running:<br /><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">$ sudo service emonhub stop</span><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;"><br /></span><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">$ cd emonhub</span><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;"><br /></span><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">$ git pull </span><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;"><br /></span><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">$ sudo service emonhub start </span><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;"><br /></span><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">check log for errors </span><br /><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;"><br /></span><span style="font-family: Trebuchet MS, sans-serif; font-size: xx-small;">$ tail /var/log/emonhub/emonhub.log</span><br /><br /><br />The RFM69Pi is now shipping from our online shop<br /><a href="http://shop.openenergymonitor.com/base-stations/">http://shop.openenergymonitor.com/base-stations/</a><br /><br />RFM69Pi Technical Docs Wiki Page:<br /><a href="http://www.google.com/url?q=http%3A%2F%2Fwiki.openenergymonitor.org%2Findex.php%3Ftitle%3DRFM69Pi_V3&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG9uvKj0bPB_CYl3RhjLt_-j-Z-1A">http://wiki.openenergymonitor.org/index.php?title=RFM69Pi_V3</a> <br /><br />Open-Source Hardware Design:<br /><a href="https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fopenenergymonitor%2FHardware%2Ftree%2Fmaster%2FRFM2Pi%2Fboard%2FRFM69Pi_V3.1&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGZ18Pjxq_-d29y0hTFw0tPj9JSnQ">https://github.com/openenergymonitor/Hardware/tree/master/RFM2Pi/board/RFM69Pi_V3.1</a><br /><br />RFM69Pi Default Firmware:<br /><a href="https://github.com/openenergymonitor/RFM2Pi/tree/master/firmware/RFM69CW_RF_Demo_ATmega328">https://github.com/openenergymonitor/RFM2Pi/tree/master/firmware/RFM69CW_RF_Demo_ATmega328</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emonhub installation/update, replacing the PHP raspberrypi emoncms module]]></title>
-    <link href="https://blog.openenergymonitor.org/2014/10/emonhub-installationupdate-replacing/"/>
-    <updated>2014-10-24T10:58:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2014/10/emonhub-installationupdate-replacing</id>
-    <content type="html"><![CDATA[<p>From Paul Reed’s post on the forums here: <br /><a href="http://openenergymonitor.org/emon/node/5986">http://openenergymonitor.org/emon/node/5986</a><br /><br />Emonhub is now the recommended method of interfacing a rfm12pi to a local or remote emoncms install, and replaces the PHP and Python scripts which we have previously used.<br /><br /><i>Update: This blog post refers to installing emonHub on existing system, if setting up a new system <a href="https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/setup.md">downloading the ready-to-go pre-built RaspberryPi image</a> is the easiest way to get started.</i><br /><br />Thanks to Paul Burnell, the author of emonhub, installation of emonhub can be achieved via a command line, which clones an installation script to automate the installation process. <br /><br />To install emonhub:<br /><br />$ git clone <a href="https://github.com/emonhub/dev-emonhub.git">https://github.com/emonhub/dev-emonhub.git</a> ~/dev-emonhub &amp;&amp; ~/dev-emonhub/install<br /><br />If you have the raspberry pi module already installed, it’s important that it is removed prior to installing emonhub, as only one software can use the serial UART the RFM2Pi is connected to at any one time.<br /><br />To remove the existing module, and then install emonhub, enter the following command line;  <br /><br />$ git clone <a href="https://github.com/emonhub/dev-emonhub.git">https://github.com/emonhub/dev-emonhub.git</a> ~/dev-emonhub &amp;&amp; ~/dev-emonhub/upgrade<br /><br />You will notice that after running this command, that emoncms will stop updating, this is expected until the configuration file is updated as follows;  <br /><br />$ nano /etc/emonhub/emonhub.conf<br /><br />Enter your emoncms read/write api key in [[[runtimesettings]]] and also enter your rfm2pi frequency, group &amp; base id under [[[runtimesettings]]] <br />Save your settings, and; $ sudo service emonhub restart<br /><br />Problems?<br />View the error log; $ tail -f /var/log/emonhub/emonhub.log<br /><br />By default this is set to record ‘WARNING’, however this can be changed to either - DEBUG, INFO, WARNING, ERROR, and CRITICAL by editing the configuration file. <br /><br />Paul <br /><br /><b>NOTE - </b>This update will not orphan or alter your input processes, feeds, visualizations or feed data, as it only changes the way in which data is fed to emoncms.</p>
+<p><img src="/images/raspi-blog.png" alt="raspi-blog" /></p>
 ]]></content>
   </entry>
   

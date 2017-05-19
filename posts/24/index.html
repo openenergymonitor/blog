@@ -462,6 +462,50 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/06/it-works-single-ac-power-supply-voltage/">Single AC power supply + voltage sensing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-06-18T03:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-18 03:21:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Bouha</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/voltage-sensing/'>voltage sensing</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/06/it-works-single-ac-power-supply-voltage/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div dir="ltr" style="text-align: left;" trbidi="on">The idea of using the same AC-AC power adaptor for both sensing voltage and supplying power to emonTx has been discussed on the forums for months (see <a href="http://openenergymonitor.org/emon/node/309" target="_blank">this topic</a>), and about six weeks ago Glyn posted <a href="http://openenergymonitor.blogspot.de/2012/05/emontx-single-ac-power-supply.html" target="_blank">a simulation of a possible circuit</a>.<br /><br />I had the time this weekend to give it a try, bought the necessary components and put it all on a breadboard. After a sleepless night I can confirm: It works!<br /><br />Here is my messy setup:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="380" src="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s640/2012-06-18+04.55.43.jpg" width="640" /></a><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><br /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /><div style="text-align: left;"><br /></div></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><a href="http://www.blogger.com/goog_1837366350"><br /></a></div><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Small modifications had to be made to get it to work: I added a 1uF cap between 3.3v and GND to&nbsp;filter out some noise and redefined the voltage calibration coefficient in the code.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">But the main problem (took me all night to figure it out) is that the usual emonTx sketch wont work straight ahead. The line that lights up the LED (on pin 9) at the end of the setup loop has to be commented out, otherwise the setup won't work. It's no problem to flash it 2ms after each packet is sent, but apparently having it on in the beginning will prevent the program from starting. Maybe there isn't enough current to do it and move on (I must say that I use 10k ohm resistors for the voltage dividers). If it's not that then maybe full wave rectification could help.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">I used a humble Xprotolab to measure the Vin, Vout and at some other points in the circuit. It behaves almost exactly like the simulation. fft also shows very little noise.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Would be great if other members could repeat this experiment to see if the results will be the same.</span><span style="clear: left; color: black; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;">Next step: Voltage sensing on the base ;)&nbsp;</span><a href="http://1.bp.blogspot.com/-vFgjTQRFaMY/T96bNDBEo-I/AAAAAAAAARQ/BNybcVJIFfs/s1600/2012-06-18+04.55.43.jpg" imageanchor="1"><br style="color: black;" /></a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/06/getting-visual/">Getting visual</a>
   </h1>
   
@@ -830,46 +874,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/05/emoncms-multilingual-support/">Emoncms multilingual support</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-05-19T19:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-19 19:14:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/05/emoncms-multilingual-support/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The latest update to emoncms adds a basic implementation of multilingual support.<br /><a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a><br /><br /><b>Adding a language</b><br /><br /><b>1) Make a copy of the folder Views/en and call it the language your creating a translation for, i.e cy for welsh:</b><br /><b><br /></b><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s1600/lang_copy.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="100" src="http://3.bp.blogspot.com/-5cUcK4Ib6Cs/T7fwkPI422I/AAAAAAAACb4/eHnrSwCbGKQ/s320/lang_copy.png" width="320" /></a></div><b><br /></b><br /><br />.. or use a language that has already been translated from the emoncms_languages repo, i.e cy...<br /><a href="https://github.com/openenergymonitor/emoncms_languages">https://github.com/openenergymonitor/emoncms_languages</a>&nbsp;(feel free to send a pull request with your translations)<br /><br /><b>2) If your creating a new translation, translate each view script inside your language folder.</b><br /><br /><b>3) Add your language to the language options in index.php:</b><br /><br />Change the line:<br /><pre>$lang = &nbsp;$_GET['lang']; if ($lang=='en') $_SESSION['lang'] = $lang; else $lang = null;</pre><br />to (with your chosen language code)<br /><pre>$lang = &nbsp;$_GET['lang']; if ($lang=='en' || $lang=='cy') $_SESSION['lang'] = $lang; else $lang = null;</pre><br /><b>2) Add your language to the user_view language selector.</b><br />Until a better implementation is created, this needs to be done for each language.<br />In Views/en/user_view.php<br /><br />add (or your chosen language)<br /><br /><pre>&lt;option value="cy"&gt;Welsh&lt;/option&gt;</pre><br />below: <br /><pre>&lt;option selected value="en"&gt;English&lt;/option&gt;</pre><br /><br />Repeat this for the user_view that belongs to the language your adding and set the selected attribute to the added language.<br /><br />Any thoughts on a better way of implementing this is as always welcome.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -907,6 +911,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
+        </li>
+      
     
       
         <li class="post">
@@ -959,12 +969,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
     
@@ -1089,8 +1093,6 @@ $(window).resize(function(){
     
       <li><a href="/categories/emonglcd/">emonGLCD</a></li>
     
-      <li><a href="/categories/emonpi/">emonPi</a></li>
-    
       <li><a href="/categories/emonsd/">emonSD</a></li>
     
       <li><a href="/categories/emonth/">emonTH</a></li>
@@ -1202,6 +1204,8 @@ $(window).resize(function(){
       <li><a href="/categories/pluse/">pluse</a></li>
     
       <li><a href="/categories/presentation/">presentation</a></li>
+    
+      <li><a href="/categories/raspberry-pi/">raspberry Pi</a></li>
     
       <li><a href="/categories/raspberry-pi/">raspberry pi</a></li>
     

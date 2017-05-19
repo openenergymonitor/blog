@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: emonPi | Blog | OpenEnergyMonitor]]></title>
+  <title><![CDATA[Category: emonpi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonpi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-09T15:51:59+00:00</updated>
+  <updated>2017-05-19T14:27:19+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,11 +14,469 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Adding a RTC to the emonPi]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/07/adding-rtc-to-emonpi/"/>
-    <updated>2015-07-09T14:05:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/07/adding-rtc-to-emonpi</id>
-    <content type="html"><![CDATA[<p>The emonPi updates its internal linux time from NTP when connected to the internet. However if the emonPi is to be used on an offline network or for an application when accurate timestamp is essential then a hardware Real Time Clock (RTC) can easily be added to the Pi’s GPIO. We have tested using a<a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi"> DS3231 based RTC module</a>. This RTC module communicates with the emonPi via I2C, it can be easily connected as follows by soldering a four-pin header onto the emonPi aux GPIO pins:&lt;div&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s1600/EmonPi_RTC.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="380" src="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s640/EmonPi_RTC.JPG" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;emonPi with hardware RTC module added&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" height="294" width="320" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi" style="font-size: medium; text-align: start;">DS3231 based RTC module</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div&gt;<br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" height="153" width="400" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;I2C bus scan showing LCD &amp; RTC&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;<br />Full install guide can be found on the wiki:<br /><a href="http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29">http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29</a>&lt;/div&gt;</p>
+    <title type="html"><![CDATA[Raspberry Pi blog]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/05/raspberrypi-blog/"/>
+    <updated>2017-05-18T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/05/raspberrypi-blog</id>
+    <content type="html"><![CDATA[<p>I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.</p>
+
+<p>The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:</p>
+
+<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
+
+<p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
+
+<p><img src="/images/raspi-blog.png" alt="raspi-blog" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[emonPi as a Home Automation Hub]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/"/>
+    <updated>2017-05-05T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id>
+    <content type="html"><![CDATA[<p>I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.</p>
+
+<p>As <a href="2016/08/ecohomelab-control/"> previously mentioned in a blog post</a>, the emonPi (<a href="github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">running emonSD pre-built SD card</a>) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:</p>
+
+<ul>
+  <li>It’s already running 24/7 for energy monitoring</li>
+  <li>It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan</li>
+  <li>It’s already connected to your local network</li>
+  <li>It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available</li>
+  <li>Raspberry Pi 3 has plenty of space capacity</li>
+  <li>Extra radios / accessories can be connected via USB</li>
+  <li>It’s already running an MQTT server</li>
+  <li>emonSD pre-built SD card comes pre loaded with the following <a href="guide.openenergymonitor.org/integrations">integrations</a> nodeRED, OpenHAB and LightWaveRF</li>
+</ul>
+
+<blockquote>
+  <p>In this post I want to share with you how I use the emonPi in my own home.</p>
+</blockquote>
+
+<p>Here is a video demo using Google Home to control my central heating and devices via MQTT:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/r_v4GXVp0OI" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>Read on to learn how this is achieved using an emonPi and open-source software…</p>
+
+<!--more-->
+
+<p>There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and apart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.</p>
+
+<h2 id="mqtt">MQTT</h2>
+
+<p>MQTT lightweight communication protocol is used as the ‘glue’ communication layer between all the following services. See <a href="https://guide.openenergymonitor.org/technical/mqtt/">technical/MQTT section of the User Guide</a> for more info about how MQTT works on the emonPi.</p>
+
+<h2 id="energy-monitoring">Energy Monitoring</h2>
+
+<p>Emoncms…obviously!</p>
+
+<p>Recently I have been loving using the V2 Emoncms Android app (currently in beta) which supports multiple pages (see <a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-1-open-beta-testing/3373">forum thread</a>).</p>
+
+<p>Video demo Emoncms Android app V2 beta:</p>
+
+<div class="videoWrapper">
+<iframe width="280" height="157" src="https://www.youtube.com/embed/LaTi-l9tVQM" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on <a href="https://emoncms.org">Emoncms.org</a>. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see <a href="https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3">forum thread</a>):</p>
+
+<p><img src="/images/myelectric-e7.png" alt="myelectric-e7.png" /></p>
+
+<h2 id="control">Control</h2>
+
+<h3 id="central-heating">Central Heating</h3>
+
+<p>To control my gas central heating boiler I use an <a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">MQTT WiFi relay</a> which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.</p>
+
+<p><img src="/images/mqtt-relay-overview.png" alt="mqtt-relay-overview.png" /></p>
+
+<h3 id="plug-sockets-lights">Plug sockets (lights)</h3>
+
+<p>I use LightWave RF plugs to which I have lights and other entertainment devices connected e.g. stereo and chromecast. Being able to switch a whole plug bank on/off has the advantage of being able to turn devices fully off when not in use to minimise any <a href="https://en.wikipedia.org/wiki/Standby_power">vampire drain</a>.</p>
+
+<p>The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See <a href="https://guide.openenergymonitor.org/integrations/lightwaverf">LightWave RF emonPi User Guide</a>.</p>
+
+<p><img src="/images/lightwave-rf-diagram.png" alt="lightwave-rf-diagram.png" /></p>
+
+<p>LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to <a href="https://www.itead.cc/smart-socket.html">ESp8266 based Sonoff plug</a> with third party <a href="https://github.com/arendst/Sonoff-Tasmota">MQTT firmware</a> or <a href="https://github.com/openenergymonitor/emonesp">EmonESP</a> firmware.</p>
+
+<h2 id="interface">Interface</h2>
+
+<p>For the past few years I have been using OpenHAB as the control interface. <a href="https://guide.openenergymonitor.org/integrations/openhab">OpenHAB is pre-loaded onto the emonPi emonSD pre-built image</a>. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:</p>
+
+<p><img src="/images/open-hab-home.png" alt="open-hab-home.png" /><img src="/images/open-hab-all.png" alt="open-hab-all.png" /></p>
+
+<p>OpenHAB also <a href="https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps">integrates with my Pebble smartwatch</a> which makes it super easy to turn on/off the heating while out and about:</p>
+
+<p><img src="/images/openhab-pebble.jpg" alt="openhab-pebble" /></p>
+
+<p>A while back (early 2016) I dabbled with <a href="http://home-assistant.io/">HomeAssistant</a>, (<a href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/">see blog post</a>). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.</p>
+
+<p>Another option for an interface is <a href="https://github.com/node-red/node-red-dashboard">NodeRED Dashboard</a> which is now officially part of the NodeRED project.</p>
+
+<p><em>The beauty of MQTT is that it’s platform agnostic, it’s possible to have many different interfaces controlling the same control nodes.</em></p>
+
+<h3 id="voice-interface">Voice interface</h3>
+
+<p>I’ve recently acquired a Google Home voice activated speaker, with a little help from <a href="https://github.com/bwssytems/ha-bridge">ha-bridge</a> to emulate a Philips Hue bridge it’s quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See <a href="https://github.com/openenergymonitor/emonpi-ha-bridge">ha-bridge setup guide for emonPi</a></p>
+
+<p>See video demo at the top of this post.</p>
+
+<p>Device config using ha-bridge webpage GUI:</p>
+
+<p><img src="/images/ha-bridge-device-config.png" alt="ha-bridge-device-config.png" /></p>
+
+<p>Google Home app setup:</p>
+
+<p><img src="/images/google-home-app.png" alt="google-home-app.png" /></p>
+
+<h2 id="integration--automation">Integration &amp; Automation</h2>
+
+<p>I use <a href="https://guide.openenergymonitor.org/integrations/nodered">NodeRED which is pre-loaded on emonPi / emonSD</a> to integrate with other services such a getting the latest outdoor temperature from <a href="https://www.wunderground.com/">Weather Underground</a>, send push notifications (heating on / off temperature alert) to my phone using <a href="https://pushover.net/">Pushover</a>. Both these services have pre-made nodeRED flows making integration very easy. NodeRED is pre-installed and configured on emonPi / emonSD. The <a href="https://github.com/openenergymonitor/oem_node-red/blob/master/flows_emonpi.json">example flow included on emonPi</a> demonstrates reading emonTH data from MQTT and external temperature data from Weather Underground.</p>
+
+<p>I also have a nodeRED flow that handles turning off the heating when the temperature in the livingroom (as measured by emonTH) reaches a set point. I could have used the thermostat controller on the WiFi relay to do this, however it would be difficult in my house to run the wired temperature sensor from the Wifi relay to the living room, therefore I use a wireless emonTH temperature instead.</p>
+
+<h1 id="security-and-remote-access">Security and remote access</h1>
+
+<p>Remote control (from outside the local network) can be achieved using a dynamic DNS service such as <a href="https://www.duckdns.org/">DuckDNS</a> or secure VPN to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection.</p>
+
+<p>Alternatively, and possibly a better solution could be to use <a href="http://www.myopenhab.org/">MyOpenhab.org</a> service to allow remote control without having to open up a port externally.</p>
+
+<p>Home Assistant has got an example of <a href="https://home-assistant.io/docs/ecosystem/tor/">using Tor Onion Services to access Home Assistant</a> running locally.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EcoHome Lab: From Monitoring to Control]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/"/>
+    <updated>2016-08-12T18:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id>
+    <content type="html"><![CDATA[<p>Last night I attended <a href="https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/">EcoHomeLab meetup</a> in Manchester organised by the <a href="http://carbon.coop/">CarbonCoop</a>.</p>
+
+<blockquote>
+  <p>EcoHomeLab monthly meetups at <a href="https://madlab.org.uk/">MadLab</a> brings householders and green-technologists together to take control of home energy use and generation.</p>
+</blockquote>
+
+<p>It was great fun to catch up with regular faces as well as meet many new interesting people.</p>
+
+<p>I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.</p>
+
+<p>I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.</p>
+
+<p><strong>See the <a href="http://guide.openenergymonitor.org/integrations/">Integrations section of our user guide for more info</a></strong></p>
+
+<p>Here are copy of my slides from the event:</p>
+
+<iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;loop=false&amp;delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
+
+<ul>
+  <li>
+    <p><a class="attachment" href="https://community.openenergymonitor.org/uploads/default/original/2X/1/1a55b8c172086f743b1b0abe1d01d7c10963d88c.pdf">Download in PDF format</a> (6.8 MB)</p>
+  </li>
+  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;loop=false&amp;delayms=3000">View in HTML (hosted from Google Slides)</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View in full Google Slides format (with clickable hyperlinks &amp; selectable text)</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/"/>
+    <updated>2016-06-14T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
+</ul>
+
+<hr />
+
+<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
+
+<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
+
+<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
+
+<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
+
+<!--more-->
+
+<p>The advantages of <a href="https://en.wikipedia.org/wiki/Continuous_testing">continuous testing</a> have been long established in the software industry. The test we are performing is <em>‘does this firmware compile?’</em>; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ul>
+  <li>A commit or pull request is made to the firmware repository on GitHub
+    <ul>
+      <li><em>To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test</em></li>
+    </ul>
+  </li>
+  <li>
+    <p>This triggers Travis CI to start a ‘build’</p>
+  </li>
+  <li>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>. The <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code> file in the repo</a> configures the Travis CI build using platformIO:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>language: python
+python:
+- '2.7'
+sudo: false
+cache:
+  directories:
+  - "~/.platformio"
+install:
+- pip install -U platformio
+script:
+- platformio run -d firmware -e emonpi_deploy
+deploy:
+  on:
+    repo: openenergymonitor/emonpi
+    all_branches: true
+    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+  skip_cleanup: true
+  provider: releases
+  overwrite: true
+  api_key:
+    secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
+  file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
+</code></pre>
+</div>
+
+<ul>
+  <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
+</ul>
+
+<p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
+
+<ul>
+  <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
+</ul>
+
+<p><img src="/images/emonpi-draft-release.png" alt="image" /></p>
+
+<p><img src="/images/emonpi-travis-release.png" alt="image" /></p>
+
+<p>For a detailed explanation of how the release binary is generated and deployed see Daniel Eichhorn’s (<a href="https://twitter.com/squix78">@squix78</a>) <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">excellent blog post</a>.</p>
+
+<hr />
+
+<p>Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this excellent blog post</a> which was a source of inspiration and information.</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Part 1/3: PlatformIO open-source embedded development ecosystem]]></title>
+    <link href="https://blog.openenergymonitor.org/2016/06/platformio/"/>
+    <updated>2016-06-12T10:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2016/06/platformio</id>
+    <content type="html"><![CDATA[<p><strong>This post is part of a series:</strong></p>
+
+<ul>
+  <li><strong>1/3: PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</strong></li>
+  <li><a href="/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a>
+    <ul>
+      <li>Related post: <a href="/2016/06/esp8266-emonesp-developments">EmonESP ESP8266 WiFi developments</a></li>
+    </ul>
+  </li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
+</ul>
+
+<hr />
+
+<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.</p>
+
+<p>I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.</p>
+
+<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
+
+<p>Recently I have been using <a href="http://platformio.org">PlatformIO</a> and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+
+<blockquote>
+  <p>PlatformIO is an open-source ecosystem for IoT development.</p>
+</blockquote>
+
+<blockquote>
+  <p>Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</p>
+</blockquote>
+
+<p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
+
+<!--more-->
+
+<p>Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:</p>
+
+<ul>
+  <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
+  <li><strong>Easy to install</strong> - Pure python based, installed using pip
+    <ul>
+      <li>Tool-chains are auto installed on first compile / upload e.g.
+        <ul>
+          <li>If trying to upload to Arduino avrdude will automatically be installed</li>
+          <li>If trying to compile an ESP8266 project the ESP toolchain will be installed</li>
+        </ul>
+      </li>
+      <li>Cross-platform (Linux, Windows and mac all work the same), this will make support much easier</li>
+    </ul>
+  </li>
+  <li><strong>Supports all the main embedded platforms</strong>
+    <ul>
+      <li>atmelavr (Arduino), espressif (ESP8266), ststm32 (ARM etc.)</li>
+    </ul>
+  </li>
+  <li><strong>Command line and IDE</strong>
+    <ul>
+      <li>At work I use pio via Atom IDE on Ubuntu</li>
+      <li>At home, I use a Chromebook with Caret IDE and interact with pio via command-line</li>
+      <li>When developing directly on an emonPi / RaspberryPi pio command-line works great - <em>Yes, that’s right pio works on a RaspberryPi to compile and upload code directly!</em></li>
+    </ul>
+  </li>
+  <li><a href="http://platformio.org/lib"><strong>Excellent library manager</strong></a>
+    <ul>
+      <li>Libraries can be searched and reviewed using command-line or web 2.0 manager</li>
+      <li>Required libraries can be specified in the <code class="highlighter-rouge">platformio.ini</code> file and if not present install is prompted upon compilation</li>
+      <li>Specific library version (as defined in <code class="highlighter-rouge">library.json</code> <a href="https://github.com/openenergymonitor/EmonLib/blob/master/library.json">(emonLib example)</a>) or git commit SHA</li>
+    </ul>
+  </li>
+  <li><strong>Fast compilation &amp; pain-free uploading</strong>
+    <ul>
+      <li>PlatformIO’s compiler is the <a href="https://twitter.com/krzychb2/status/729294573760065536">fastest in the business</a></li>
+      <li>USB / Serial ports auto detected</li>
+      <li>Since the emonPi has been added as a custom board PlatformIO can even upload direct to emonPi via RaspberryPi GPIO and trigger GPIO AVR reset, not more <a href="https://github.com/openenergymonitor/avrdude-rpi">hacked avrdude</a>.</li>
+    </ul>
+  </li>
+  <li><strong>Easy integration with continuous testing &amp; deployment</strong>
+    <ul>
+      <li>Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.</li>
+      <li><a href="http://github.com/openenergymonitor/emonpi/">emonPi</a> and <a href="github.com/openenergymonitor/emonTxFirmware">emonTx</a> git repos are now enabled for continous-testing and auto binary generation on release tag…this is a step change in embedded development.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="example-compiling-emontx--emonpi-firmware">Example: Compiling emonTx / emonPi firmware</h2>
+
+<p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
+
+<p>This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+
+<p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
+
+<h3 id="install-platformio">1. Install PlatformIO</h3>
+
+<p>The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+
+<p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
+
+<h3 id="clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
+
+<p>We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.</p>
+
+<p><strong>emonTx V3</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonTxFirmware`
+$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+</code></pre>
+</div>
+
+<p><strong>emonPi</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
+cd emonpi/firmware
+</code></pre>
+</div>
+
+<h3 id="compile-with-platformio">3. Compile with PlatformIO</h3>
+
+<p><code class="highlighter-rouge">$ platformio run</code></p>
+
+<p>or shorthand for the lazy</p>
+
+<p><code class="highlighter-rouge">$ pio run</code></p>
+
+<p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
+
+<p>The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
+
+<p>e.g.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps_external =
+  DHT sensor library @1.2.3
+  DallasTemperature @3.7.7
+  EmonLib
+  JeeLib@c057b5f4c0
+  LiquidCrystal_I2C @4bb48bd648
+</code></pre>
+</div>
+
+<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">~/platformio</code> folder.</p>
+
+<p>If required specific versions can be installed e.g.:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pio lib install 252 --version="e70c9d9f4e"
+$ platformio lib install 54 --version="3.7.7"
+</code></pre>
+</div>
+
+<h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
+
+<h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
+
+<p><code class="highlighter-rouge">$ sudo platformio run --target upload</code></p>
+
+<p>or lazy shorthand</p>
+
+<p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
+
+<p>Pio will attempt to auto detect the USB programmer and upload :-)</p>
+
+<p><em>Note: you will need <code class="highlighter-rouge">sudo</code> unless you have correctly <a href="https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules">configured udev rules</a>.</em></p>
+
+<p>To list available serial ports:</p>
+
+<p><code class="highlighter-rouge">$ pio serialports list</code></p>
+
+<p>There is even a built in serial monitor</p>
+
+<p><code class="highlighter-rouge">$ pio serialports monitor</code></p>
+
+<h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
+
+<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (<del>due to be released in the next few weeks</del>, <a href="https://community.platformio.org/t/platformio-cli-2-10-0/381">released 2.10.0</a>) will have built in support for the emonPi auto-reset on upload using GPIO4. See <a href="http://platformio.org/boards?count=1000&amp;filter%5Bname%5D=emonpi&amp;page=1&amp;sorting%5Bvendor%5D=asc">emonPi listed on PlatformIO boards page</a>:</p>
+
+<p><img src="/images/emonpi-platformio.png" alt="emonpi-platformio.png" /></p>
+
+<p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>board = emonpi
+upload_port = /dev/ttyAMA0
+</code></pre>
+</div>
+
+<p>All that is needed to compile and upload directly on the emonPi is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
+$ sudo service emonhub stop
+$ sudo pio run -t upload
+$ sudo service emonhub start
+</code></pre>
+</div>
+
+<p><em>Thanks a lot to <a href="https://github.com/ivankravets">Ivan Kravets</a> for helping integrate emonPi into the PlatfomIO ecosystem. <a href="https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a">View commit changes</a></em></p>
+
+<hr />
+<p>Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp; emonTx repos if you want a sneak preview. See <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml">travis.yaml</a> file and Travis build status icon on the main emonpi repo <a href="https://github.com/openenergymonitor/emonpi/blob/master/README.md">Readme.md</a>.</p>
+
+<hr />
 ]]></content>
   </entry>
   

@@ -475,7 +475,7 @@ $(window).resize(function(){
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonpi/'>emonPi</a></li>
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
       
     
     </ul>
@@ -491,6 +491,7 @@ $(window).resize(function(){
 
 
   The emonPi updates its internal linux time from NTP when connected to the internet. However if the emonPi is to be used on an offline network or for an application when accurate timestamp is essential then a hardware Real Time Clock (RTC) can easily be added to the Pi's GPIO. We have tested using a<a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi"> DS3231 based RTC module</a>. This RTC module communicates with the emonPi via I2C, it can be easily connected as follows by soldering a four-pin header onto the emonPi aux GPIO pins:<div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s1600/EmonPi_RTC.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="380" src="http://4.bp.blogspot.com/-NhuNmTOJlvQ/VZ59RssXeMI/AAAAAAABXOw/EuMNn_MsO-k/s640/EmonPi_RTC.JPG" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonPi with hardware RTC module added</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://www.bashpi.org/wp-content/uploads/2015/03/DS3231rtc.jpg" height="294" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://thepihut.com/products/mini-rtc-module-for-raspberry-pi" style="font-size: medium; text-align: start;">DS3231 based RTC module</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://wiki.openenergymonitor.org/images/Emonpi_rtc_i2c.png" height="153" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">I2C bus scan showing LCD &amp; RTC</td></tr></tbody></table><br />Full install guide can be found on the wiki:<br /><a href="http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29">http://wiki.openenergymonitor.org/index.php/EmonPi#Adding_a_Real_Time_Clock_.28RTC.29</a></div>
+
       <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
     <br>
 </article>
@@ -523,6 +524,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
+        </li>
+      
     
       
         <li class="post">
@@ -575,12 +582,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
         </li>
       
     
