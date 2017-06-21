@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonpi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonpi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-06-21T17:10:43+00:00</updated>
+  <updated>2017-06-21T17:13:54+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -22,7 +22,7 @@
 
 <p><img src="/images/emonpi_wifi.png" alt="emonpi wifi" /></p>
 
-<p>We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) first boot then scan for local WiFi networks and user to connect. The emonPi will then turn off it’s AP and connect to the local networ. There is also an option to connect via Ethernet of stand-alone WiFi AP mode when no local network is available.</p>
+<p>We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) on first boot then scan for local WiFi networks and allow the user to connect. The emonPi will then turn off it’s AP and connect to the local network. There is also an option to connect via Ethernet or stand-alone WiFi AP mode when no local network is available.</p>
 
 <p><img src="/images/emonpi-network-wizard1.png" alt="emonpi-network-wizard1" /></p>
 
