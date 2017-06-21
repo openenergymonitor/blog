@@ -462,6 +462,48 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/11/queuing-packets-on-basestation-and-bulk/">Queuing packets on the basestation and bulk sending to emoncms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-11-14T18:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-11-14 18:18:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/nanoderf/'>NanodeRF</a></li>
+      
+        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/11/queuing-packets-on-basestation-and-bulk/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    As we connect more and more wireless nodes to a basestation, with each wireless node transmitting every 10s or so we quickly start to have a situation where the basestation is trying to make several connections to the server every second. <br /> <br />The question is, does the rate of connections matter? Is it bad news for the emoncms server and what is the effect on the local internet connection, router? <br /> <br />Although I have not investigated this in detail, Im pretty sure Im seeing an adverse effect on my internet connection if the post rate gets too high, I noticed this especially the other day when I changed my router to a bt homehub after a lighting strike took out the old router. It would be great to get some good data on this. <br /> <br />Then there is the question of server load which needs more investigation. <br /><br />Jumping to a solution before the problem is properly characterized, the solution that comes to mind is to queue packets received from wireless nodes in the basestation and then do a bulk post at a slower rate, such as once every 20s or longer. <br /> <br />I have put together an initial working example of this, including code for both the NanodeRF basestation end and the emoncms server end. <br /><br />Starting with the NanodeRF code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />The NanodeRF code queues packets received, including a time offset between packets so that they can be stored in emoncms at the right time when they get there (although the implementation for this is a little rough at the moment). <br /> <br />The packets are queued in a string that can be sent via the ethernet and then decoded simply in emoncms using json_decode(); <br /> <br />A string for 3 packets from the different nodes looks like this: <br />[[0,16,1137],[2,17,1437,3164],[4,19,1412,3077]] <br /> <br />The first node: [0,16,1137] <br /> <br />The first number of each node is the time offset, so for the first node it is 0 which means the packet for the first node arrived at 0 seconds. The second node arrived at 2 seconds and 3rd 4 seconds. <br /> <br />The second number is the node id, this is the unqiue identifer for the wireless node. <br /> <br />All the numbers after the first two are data values. The first node here (node 16) has only once data value: 1137. <br /><br />This string is sent to emoncms every 20s in the example and there is enough room in the string buffer to store up to 400 characters or about 22 low power temperature node packets, this may be extendible by another 200 characters for more storage, and maybe a lot further with an SD card or other larger storage medium. <br /> <br />The emoncms api for sending bulk data is emoncms.org/input/bulk?data= <br /> <br />Emoncms then decodes the string, registers and processes the inputs and returns an ok. <br /> <br />If your interested in testing this out, here's the NanodeRF bluksend example again, if your using the NanodeRF_multinode code already this is just a straight switch to the bulk send code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />If your running your own server you will need the latest emoncms version: <br /><a href="https://github.com/emoncms/emoncms">https://github.com/emoncms/emoncms</a> or if you are using emoncms.org its all ready to go there. <br /> <br />There's a couple of question marks at the moment as to the stability of this initial working example, I had a few problems with the queue string getting malformed but only once every 20-30 successful string builds and at the moment the nanodeRF does not reset itself using the watchdog if there are more than 10 unsucessful attempts. A few extra eye's on the code would definetly help to improve it and I will keep testing here.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/11/raspberry-pi-emonbase/">Raspberry Pi emonBase</a>
   </h1>
   
@@ -822,46 +864,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/09/data-portability-importing-feed-data/">Data portability: Importing feed data into emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-09-21T10:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-21 10:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> eight minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/09/data-portability-importing-feed-data/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The<a href="http://openenergymonitor.blogspot.co.uk/2012/09/data-portability-exporting-feed-data.html"> last post</a> detailed an implementation for exporting feed data from emoncms, this post explores an implementation for importing feed data, which can be used in conjunction with the export implementation to sync or download feed data from one emoncms instance to another enabling full feed data portability.<br /><br />I started by trying to create an import script that was build into a normal page action, you would go to a page ie:<br /><br /><i>sync/feed?id=10...</i><br /><br />The problem with this is that downloading and importing a feed takes a long time and so the page will appear unresponsive for that time, the loading animation just turns and turns. <br /><br />If you mistakenly click on the refresh button, the initial process will not close and so you will start to get duplicate processes which will mess up the data and increase the server load.<br /><br />Ideally while downloading and importing the data there would be a progress bar so that you can see what's happening and any other useful feedback if things go wrong.<br /><br />To get this kind of feedback you need to be able to update the browser as the process is running.<br /><br />You also want the syncing to happen directly between servers rather than server to local computer to server as this would be faster in instances where both servers are remote and the internet access to the local computer is relatively slow, - i.e you want the import process handled in php which is server side (you could use another server side language if you wanted).<br /><br />The way to get feedback about what's happening while having the import process being handled in php is to have two separate scripts one that handles the importing and another that can be refreshed regularly serves the gui webpage.<br /><br />We can extend the idea of a separate import script to sort the problem of duplicate processes too by implementing a download and import queue.<br /><br />When a user clicks to download/sync a feed in the sync page, the action behind this enters the details of the feed to be downloaded in the queue, it can also check at this point that it does not already exist in the queue.<br /><br />We can then run the import script independently of the gui page, such as via a scheduled cron job that runs the script one a minute. We can put a check in there to ensure that only one instance of the script is running at any given time too.<br /><br />The import script then checks if there are feeds to be downloaded in the import queue, working through each queue item sequentially.<br /><br />The added advantage of the queue implementation is that we can keep the load that importing places on the server low allowing only one feed to be downloaded and imported at any given time.<br /><br />So all in all this implementation:<br /><ul><li>Enables feedback on import progress.</li><li>Ensures we don’t get duplicate feed syncing processes.</li><li>Ensures that the server load is kept under control.</li></ul><div>On to the code, here's the import script that works through the import queue and downloads and imports each item sequentially, I would be interested to hear if there are any ways the efficiency of the export and import process can be improved.</div><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #bc7a00;">&lt;?php</span><br /><br />  <span style="color: #408080; font-style: italic;">// Ensure only one instance of the script can run at any one time.</span><br />  <span style="color: #19177c;">$fp</span> <span style="color: #666666;">=</span> <span style="color: green;">fopen</span>(<span style="color: #ba2121;">"importlock"</span>, <span style="color: #ba2121;">"w"</span>);<br />  <span style="color: green; font-weight: bold;">if</span> (<span style="color: #666666;">!</span> <span style="color: green;">flock</span>(<span style="color: #19177c;">$fp</span>, LOCK_EX <span style="color: #666666;">|</span> LOCK_NB)) { <span style="color: green; font-weight: bold;">echo</span> <span style="color: #ba2121;">"Already running</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>; <span style="color: green; font-weight: bold;">die</span>; }<br /><br />  <span style="color: #408080; font-style: italic;">// Connect to the database</span><br />  <span style="color: green;">define</span>(<span style="color: #ba2121;">'EMONCMS_EXEC'</span>, <span style="color: #666666;">1</span>);<br />  <span style="color: green; font-weight: bold;">require</span> <span style="color: #ba2121;">"Includes/process_settings.php"</span>;<br />  <span style="color: green; font-weight: bold;">require</span> <span style="color: #ba2121;">"Includes/db.php"</span>;<br />  <span style="color: green; font-weight: bold;">switch</span>(db_connect()) {<br />    <span style="color: green; font-weight: bold;">case</span> <span style="color: #666666;">0:</span> <span style="color: green; font-weight: bold;">break</span>;<br />    <span style="color: green; font-weight: bold;">case</span> <span style="color: #666666;">1:</span> <span style="color: green; font-weight: bold;">break</span>;  <br />    <span style="color: green; font-weight: bold;">case</span> <span style="color: #666666;">3:</span> show_dbsettingserror_message(); <span style="color: green; font-weight: bold;">die</span> ;<br />  }<br /><br />  <span style="color: #408080; font-style: italic;">// Fetch the import queue</span><br />  <span style="color: #19177c;">$result</span> <span style="color: #666666;">=</span> db_query(<span style="color: #ba2121;">"SELECT * FROM importqueue ORDER BY `queid` Asc"</span>);<br /><br />  <span style="color: #408080; font-style: italic;">// For each item in the queue</span><br />  <span style="color: green; font-weight: bold;">while</span>(<span style="color: #19177c;">$row</span> <span style="color: #666666;">=</span> db_fetch_array(<span style="color: #19177c;">$result</span>))<br />  {<br />    <span style="color: #19177c;">$queid</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'queid'</span>];<br />    <span style="color: #19177c;">$feedname</span> <span style="color: #666666;">=</span> <span style="color: #ba2121;">"feed_"</span><span style="color: #666666;">.</span>trim(<span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'localfeedid'</span>])<span style="color: #666666;">.</span><span style="color: #ba2121;">""</span>;<br /><br />    <span style="color: #408080; font-style: italic;">// Check if we have already downloaded part of the feed and get the last </span><br />    <span style="color: #408080; font-style: italic;">// value entered so that we dont download and insert data that has already </span><br />    <span style="color: #408080; font-style: italic;">// been inserted this makes this utility useful for syncing in general </span><br />    <span style="color: #408080; font-style: italic;">// and in particlar backup that only downloads the latest changes. </span><br />    <span style="color: #19177c;">$feed_result</span> <span style="color: #666666;">=</span> db_query(<span style="color: #ba2121;">"SELECT * FROM </span><span style="color: #bb6688; font-weight: bold;">$feedname</span><span style="color: #ba2121;"> ORDER BY time Desc LIMIT 1"</span>);<br />    <span style="color: #19177c;">$feed_row</span> <span style="color: #666666;">=</span> db_fetch_array(<span style="color: #19177c;">$feed_result</span>);<br />    <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>; <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$feed_row</span>[<span style="color: #666666;">0</span>]) <span style="color: #19177c;">$start</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$feed_row</span>[<span style="color: #666666;">0</span>];<br /><br />    <span style="color: #408080; font-style: italic;">// Open the file served from the export page on the remote server</span><br />    <span style="color: #19177c;">$url</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'baseurl'</span>]<span style="color: #666666;">.</span><span style="color: #ba2121;">'/feed/export?apikey='</span><span style="color: #666666;">.</span><span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'apikey'</span>]<span style="color: #666666;">.</span><span style="color: #ba2121;">'&amp;id='</span><br />    <span style="color: #666666;">.</span><span style="color: #19177c;">$row</span>[<span style="color: #ba2121;">'feedid'</span>]<span style="color: #666666;">.</span><span style="color: #ba2121;">'&amp;start='</span><span style="color: #666666;">.</span><span style="color: #19177c;">$start</span>;<br /><br />    <span style="color: green; font-weight: bold;">echo</span> <span style="color: #ba2121;">"Opening file </span><span style="color: #bb6688; font-weight: bold;">$url</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br />    <span style="color: #19177c;">$fh</span> <span style="color: #666666;">=</span> <span style="color: #666666;">@</span><span style="color: green;">fopen</span>( <span style="color: #19177c;">$url</span>, <span style="color: #ba2121;">'r'</span> );<br /> <br />    <span style="color: #408080; font-style: italic;">// Read through the file</span><br />    <span style="color: #19177c;">$i</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>;<br />    <span style="color: green; font-weight: bold;">while</span> ((<span style="color: #19177c;">$data</span> <span style="color: #666666;">=</span> <span style="color: green;">fgetcsv</span>(<span style="color: #19177c;">$fh</span>, <span style="color: #666666;">0</span>, <span style="color: #ba2121;">","</span>)) <span style="color: #666666;">!==</span> <span style="color: green; font-weight: bold;">FALSE</span>) <br />    {<br />      <span style="color: #19177c;">$feedtime</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$data</span>[<span style="color: #666666;">0</span>]; <span style="color: #19177c;">$value</span> <span style="color: #666666;">=</span> <span style="color: #19177c;">$data</span>[<span style="color: #666666;">1</span>];<br /><br />      <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$feedtime</span><span style="color: #666666;">!=</span><span style="color: #ba2121;">''</span> <span style="color: #666666;">&amp;&amp;</span> <span style="color: #19177c;">$value</span><span style="color: #666666;">!=</span><span style="color: #ba2121;">''</span>)<br />      {<br />        <span style="color: #19177c;">$i</span><span style="color: #666666;">++</span>;<br />        <span style="color: #408080; font-style: italic;">//Contruct values part of the query</span><br />        <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$i</span><span style="color: #666666;">!=1</span>) <span style="color: #19177c;">$vals</span> <span style="color: #666666;">.=</span> <span style="color: #ba2121;">','</span>;<br />        <span style="color: #19177c;">$vals</span> <span style="color: #666666;">.=</span> <span style="color: #ba2121;">"('</span><span style="color: #bb6688; font-weight: bold;">$feedtime</span><span style="color: #ba2121;">','</span><span style="color: #bb6688; font-weight: bold;">$value</span><span style="color: #ba2121;">')"</span>;<br /><br />        <span style="color: #408080; font-style: italic;">// Execute query every 400 rows (same block size as export script)</span><br />        <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$i</span><span style="color: #666666;">&gt;400</span>)<br />        {<br />          <span style="color: #19177c;">$i</span> <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>;<br />          <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$vals</span>) db_query(<span style="color: #ba2121;">"INSERT INTO </span><span style="color: #bb6688; font-weight: bold;">$feedname</span><span style="color: #ba2121;"> (`time`,`data`) VALUES "</span><span style="color: #666666;">.</span><span style="color: #19177c;">$vals</span>);<br />          <span style="color: #19177c;">$vals</span> <span style="color: #666666;">=</span> <span style="color: #ba2121;">""</span>;<br />        }<br />      }<br />    }<br />    <span style="color: #408080; font-style: italic;">// If there are lines to be inserted left over insert them here at the end</span><br />    <span style="color: green; font-weight: bold;">if</span> (<span style="color: #19177c;">$vals</span>) db_query(<span style="color: #ba2121;">"INSERT INTO </span><span style="color: #bb6688; font-weight: bold;">$feedname</span><span style="color: #ba2121;"> (`time`,`data`) VALUES "</span><span style="color: #666666;">.</span><span style="color: #19177c;">$vals</span>);    <br /><br />    <span style="color: green;">fclose</span>(<span style="color: #19177c;">$fh</span>);<br /><br />    <span style="color: green; font-weight: bold;">echo</span> <span style="color: #ba2121;">"Transfer complete</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br />    <span style="color: green; font-weight: bold;">echo</span> <span style="color: #ba2121;">"Deleting item </span><span style="color: #bb6688; font-weight: bold;">$queid</span><span style="color: #ba2121;"> from queue</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br />    db_query(<span style="color: #ba2121;">"DELETE FROM importqueue WHERE queid = </span><span style="color: #bb6688; font-weight: bold;">$queid</span><span style="color: #ba2121;">"</span>);<br />  }<br /><br /><span style="color: #bc7a00;">?&gt;</span><br /></pre></div><br />In the next post I will explain the interface for generating the feed import queue.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -899,6 +901,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
+        </li>
+      
     
       
         <li class="post">
@@ -951,12 +959,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
     

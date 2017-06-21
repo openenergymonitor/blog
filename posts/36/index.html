@@ -462,6 +462,50 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2009/09/experiments-with-hall-effect-current/">Experiments with a hall effect current sensor</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2009-09-02T21:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2009-09-02 21:58:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/dc/'>DC</a></li>
+      
+        <li><a class='category' href='/categories/energy-monitor/'>energy monitor</a></li>
+      
+        <li><a class='category' href='/categories/hall-effect/'>hall effect</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2009/09/experiments-with-hall-effect-current/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Thought Id have a go at using a hall effect sensor to measure current. A hall effect sensor can measure DC and AC current, Ive had a go at the DC and it seems to work quite nicely, its also quite a bit cheaper than the other DC current measuring method I detail <a href="http://openenergymonitor.org/emon/node/31">here</a>, which is always good!<br /><br />Here's a pic of the setup:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s1600-h/hall.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_Yqa3j9ZhET8/Sp7rzwtaMVI/AAAAAAAAAZY/4j-iT2YeQ8Q/s400/hall.JPG" alt="" id="BLOGGER_PHOTO_ID_5376994279608168786" border="0" /></a><br />I bought the hall sensor from farnell <a href="http://uk.farnell.com/jsp/search/productdetail.jsp?CMP=i-ddd7-00001003&amp;sku=1082269">here</a>.<br /><br />It requires a supply voltage of between 6 and 12. Its output is centred around Vcc/2. The output voltage increases about 50mV per Amp when the supply voltage is 12V. When measuring DC current the output looks like this:<br />0.0A - 6.0V<br />1.0A - 6.05V<br />2.0A - 6.10V<br />...<br /><br />I've used an inverting amplifier to invert the signal about a set voltage so that the voltage going to the Arduino's analog in is between 0 and 5V. I will upload the circuit diagram and further details soon when I get a chance.<br /><br />So far it looks like a promising method.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2009/08/openco2monitor-collaboration/">OpenCO2Monitor collaboration</a>
   </h1>
   
@@ -806,39 +850,10 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2009/06/welcome/">Welcome!</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2009-06-01T21:43:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2009-06-01 21:43:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2009/06/welcome/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Hello and welcome to the <span class="blsp-spelling-error" id="SPELLING_ERROR_0">OpenEnergyMonitor</span> project blog. The <span class="blsp-spelling-error" id="SPELLING_ERROR_1">OpenEnergyMonitor</span> project is a project to develop and build a <a href="http://www.fsf.org/">free</a> and open source energy monitor. Have a look at the main project site <a href="http://openenergymonitor.org">here.</a><br /><br />This blog will be used to document progress, share and discuss ideas.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
+    
+      <a class="btn pull-left" href="/posts/37">&larr; Older</a>
     
 
     
@@ -872,6 +887,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
+        </li>
+      
     
       
         <li class="post">
@@ -924,12 +945,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
     

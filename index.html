@@ -462,6 +462,66 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-06-21T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Junt 21st 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry Pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2017/06/emonpi-network-setup-wizard/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.</p>
+
+<p><img src="/images/emonpi_wifi.png" alt="emonpi wifi" /></p>
+
+<p>We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) first boot then scan for local WiFi networks and user to connect. The emonPi will then turn off it’s AP and connect to the local networ. There is also an option to connect via Ethernet of stand-alone WiFi AP mode when no local network is available.</p>
+
+<p><img src="/images/emonpi-network-wizard1.png" alt="emonpi-network-wizard1" /></p>
+
+<p>This has now been made possible using the Raspberry Pi 3 which supports WiFi access-point AP mode, <a href="https://github.com/openenergymonitor/emonpi/tree/master/wifiAP">some bash scrips</a> and a new <a href="https://github.com/openenergymonitor/emonpi/tree/master/emoncms-setup">emoncms-setup module</a>.</p>
+
+<p><em>The new Network Setup Wizard will be included on all new purchased in July 2017 onwards. Existing emonPi’s with a Raspberry Pi 3 can be updated by running Admin &gt; emonPi update in Emoncms. The emonPi will only broadcast a WiFi AP if Ethernet is not connected and no WiFi setup is currently present.</em></p>
+
+<p>Trystan is also working on making the input-processing setup for new devices easier by adding device template support to the Emoncms Device module. More on this the come…<a href="https://community.openenergymonitor.org/t/development-devices-inputs-and-feeds-in-emoncms/4281">see development forum thread</a>.</p>
+
+<p>Read on more screenshots of the emonPi network setup wizard….</p>
+
+
+    
+      <a class="btn pull-right" href="/2017/06/emonpi-network-setup-wizard/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
   </h1>
   
@@ -1017,170 +1077,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-07-26T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 26th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/htu21d/'>HTU21D</a></li>
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/07/HTU21D-Temperature-Humidity-sensor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The <a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si72021</a> is also a posiblity with an identical pin-out and specs.</p>
-
-<p><img src="/images/htu21d_1.png" alt="image" /></p>
-
-<ul>
-  <li><a href="https://octopart.com/htu21d-measurement+specialties-30374934">OctoPart list</a></li>
-  <li><a href="http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf">Datasheet</a></li>
-  <li><a href="http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART">Farnell item</a></li>
-  <li>DFM footprint</li>
-  <li>Digital, pre-clibrated</li>
-  <li>I2C</li>
-</ul>
-
-<p>The metrics speak for themselves:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>HTU21D</th>
-      <th>Si72021</th>
-      <th>DHT22</th>
-      <th>DHT22 vs HTU21D Difference</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cost in 1k off</td>
-      <td>£1.42 (July16)</td>
-      <td>£2.15</td>
-      <td>£4.57 (July16)</td>
-      <td>3.2 times cheaper (£3.15 less!)</td>
-    </tr>
-    <tr>
-      <td>Vcc</td>
-      <td>2.1v - 3.6V</td>
-      <td>1.9V - 3.6V</td>
-      <td>3.3-6V</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Humidity accuracy</td>
-      <td>±2% RH</td>
-      <td>±2% RH</td>
-      <td>±2%RH</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>Humidity Range</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>Temperature accuracy</td>
-      <td>±0.3°C</td>
-      <td>±0.4°C</td>
-      <td>±0.5°C</td>
-      <td>40% more accurate</td>
-    </tr>
-    <tr>
-      <td>Temperature Range</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +80°C</td>
-      <td>56% more accurate</td>
-    </tr>
-    <tr>
-      <td>Sleep Current</td>
-      <td>0.02uA</td>
-      <td>0.06uA</td>
-      <td>15uA</td>
-      <td>750 times less power</td>
-    </tr>
-    <tr>
-      <td>Measurement Current</td>
-      <td>0.045mA</td>
-      <td>0.09 mA</td>
-      <td>0.5mA</td>
-      <td>11 times less power</td>
-    </tr>
-    <tr>
-      <td>Measurement time</td>
-      <td>0.01s - 0.0026s</td>
-      <td>0.01s - 0.0026s</td>
-      <td>2s</td>
-      <td>200 times faster</td>
-    </tr>
-    <tr>
-      <td>Energy consumed per sample</td>
-      <td>1.5uJ</td>
-      <td>2.97uJ</td>
-      <td>3300uJ</td>
-      <td>2000 times less power</td>
-    </tr>
-    <tr>
-      <td>Time sampling per day*</td>
-      <td>14.4s</td>
-      <td> </td>
-      <td>2800s</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sleeping per day*</td>
-      <td>86386s</td>
-      <td> </td>
-      <td>83600s</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Energy consumed per day*</td>
-      <td>2.36mW [1]</td>
-      <td> </td>
-      <td>2836mW [2]</td>
-      <td>1201 times less energy per day!</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-      <a class="btn pull-right" href="/2016/07/HTU21D-Temperature-Humidity-sensor/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1216,6 +1112,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1268,12 +1170,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/07/HTU21D-Temperature-Humidity-sensor/">HTU21D / Si72021 Temperature and Humidity Sensor</a>
         </li>
       
     

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: raspberry Pi | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/raspberry-pi/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-05-19T14:27:19+00:00</updated>
+  <updated>2017-06-21T17:10:43+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[emonPi Network Setup Wizard]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/"/>
+    <updated>2017-06-21T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard</id>
+    <content type="html"><![CDATA[<p>Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.</p>
+
+<p><img src="/images/emonpi_wifi.png" alt="emonpi wifi" /></p>
+
+<p>We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) first boot then scan for local WiFi networks and user to connect. The emonPi will then turn off it’s AP and connect to the local networ. There is also an option to connect via Ethernet of stand-alone WiFi AP mode when no local network is available.</p>
+
+<p><img src="/images/emonpi-network-wizard1.png" alt="emonpi-network-wizard1" /></p>
+
+<p>This has now been made possible using the Raspberry Pi 3 which supports WiFi access-point AP mode, <a href="https://github.com/openenergymonitor/emonpi/tree/master/wifiAP">some bash scrips</a> and a new <a href="https://github.com/openenergymonitor/emonpi/tree/master/emoncms-setup">emoncms-setup module</a>.</p>
+
+<p><em>The new Network Setup Wizard will be included on all new purchased in July 2017 onwards. Existing emonPi’s with a Raspberry Pi 3 can be updated by running Admin &gt; emonPi update in Emoncms. The emonPi will only broadcast a WiFi AP if Ethernet is not connected and no WiFi setup is currently present.</em></p>
+
+<p>Trystan is also working on making the input-processing setup for new devices easier by adding device template support to the Emoncms Device module. More on this the come…<a href="https://community.openenergymonitor.org/t/development-devices-inputs-and-feeds-in-emoncms/4281">see development forum thread</a>.</p>
+
+<p>Read on more screenshots of the emonPi network setup wizard….</p>
+
+<!--more-->
+
+<p><img src="/images/emonpi-network-wizard2.png" alt="emonpi-network-wizard2" /></p>
+
+<p><img src="/images/emonpi-network-wizard3.png" alt="emonpi-network-wizard3" /></p>
+
+<p><img src="/images/emonpi-network-wizard4.png" alt="emonpi-network-wizard4" /></p>
+
+<p>The <a href="https://guide.openenergymonitor.org/setup/connect/#1a-connect-to-wifi">emonPi Setup Guide</a> has been updated for use with the new Netork Setup Wizard.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raspberry Pi blog]]></title>
