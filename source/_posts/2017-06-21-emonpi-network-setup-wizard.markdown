@@ -15,7 +15,7 @@ Ever since we launched the emonPi we have always wanted to make the first time s
 
 ![emonpi wifi]({{site.image_path}}/emonpi_wifi.png)
 
-We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) first boot then scan for local WiFi networks and user to connect. The emonPi will then turn off it's AP and connect to the local networ. There is also an option to connect via Ethernet of stand-alone WiFi AP mode when no local network is available.
+We have just made significant progress in streamlining the setup process by enabling the emonPi to broadcast a WiFi access-point (AP) on first boot then scan for local WiFi networks and allow the user to connect. The emonPi will then turn off it's AP and connect to the local network. There is also an option to connect via Ethernet or stand-alone WiFi AP mode when no local network is available.
 
 ![emonpi-network-wizard1]({{site.image_path}}/emonpi-network-wizard1.png)
 
