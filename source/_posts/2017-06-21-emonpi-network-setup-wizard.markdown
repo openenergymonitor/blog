@@ -3,7 +3,7 @@ published: true
 layout: post
 title: "emonPi Network Setup Wizard"
 date: "2017-06-21 00:00"
-date_formatted: Junt 21st 2017
+date_formatted: June 21st 2017
 author: Glyn Hudson
 comments: true
 categories:
