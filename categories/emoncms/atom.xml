@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-06-21T17:15:37+00:00</updated>
+  <updated>2017-06-22T16:45:52+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Android App V2]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/"/>
+    <updated>2017-06-22T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id>
+    <content type="html"><![CDATA[<p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
+
+<p><img src="/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
+
+<h2 id="new-features">New features</h2>
+
+<h4 id="multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
+
+<p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
+It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
+
+<p><img src="/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
+
+<h4 id="multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
+
+<p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
+
+<p><img src="/images/app1.png" alt="app1" /><img src="/images/app2.png" alt="app2" /></p>
+
+<h4 id="multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
+
+<p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
+
+<p><img src="/images/app-cost.png" alt="app-cost" /></p>
+
+<h4 id="language-translations">4. Language Translations:</h4>
+
+<p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
+
+<p><img src="/images/app-lang.png" alt="app-lang" /></p>
+
+<h4 id="chromebook-support">5. Chromebook support:</h4>
+
+<p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
+
+<p><img src="/images/androidv2-4.png" alt="androidv2-4" /></p>
+
+<!--more-->
+
+<p><strong>The current latest version at time of writing is V2.0.8</strong></p>
+
+<p><a href="https://github.com/emoncms/AndroidApp/releases">See Emoncms Android app GitHub repo ‘Releases’ for change log.</a></p>
+
+<hr />
+
+<h4 id="community">Community</h4>
+
+<p>The main features of the V2 update were contributed open-source by <a href="https://community.openenergymonitor.org/u/tamsin">Tamsin Slinn</a>. We very much appreciate all her hard work.</p>
+
+<p>Also thanks to:</p>
+
+<ul>
+  <li><a href="https://community.openenergymonitor.org/u/jumpmaster">@JumpMaster</a>  (Original app author: various fixes and guidence)</li>
+  <li><a href="https://community.openenergymonitor.org/u/bidouilleur">@bidouilleur</a> French translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/revil.o">@revil.o</a> (German translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/joyrider3774">@joyrider3774</a> (Dutch translation bug fixing)</li>
+  <li><a href="https://community.openenergymonitor.org/u/pb66">@pb66</a> (testing and feedback)</li>
+</ul>
+
+<p><a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-8-open-beta-testing/3373/65">See Android app V2 development forum thread</a></p>
+
+<p>As always the Android app is <a href="https://github.com/emoncms/AndroidApp">fully open-source on GithHub</a>, contributions are most welcome :-)</p>
+
+<p>The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emoncms Docker]]></title>
@@ -143,22 +215,6 @@ $ docker-compose up
 <div class="separator" style="clear: both; text-align: left;"></div>
 <ul><li>Emoncms MyElectric dashboard &nbsp;</li><li>Supports <a href="http://emoncms.org/">http://emoncms.org</a> and any other Emoncms server&nbsp;</li><li>Power or currency view toggle</li><li>Multiple currency support&nbsp;</li><li>Unit cost config (e.g £/Kwh)</li><li>Pinch &amp; zoom on real-time power graph</li><li>Number of KWh days displayed is based on screen resolution, rotation to horizontal or viewing on a large tabet results in more KWh day values displayed (see below for Nexus 10 screenshot)&nbsp;</li><li>MySolar support in development&nbsp;</li><li>Fully open-source (<a href="https://github.com/emoncms/androidApp">GitHub Repo</a>)</li><li>Developed by the community with input from the community (<a href="http://openenergymonitor.org/emon/node/11260#comment-37116">development forum thread</a>)</li></ul>
 <p><br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s1600/unnamed.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s640/unnamed.png" width="640" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s1600/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="568" src="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s640/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" width="640" /></a>&lt;/div&gt;<br /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[UK Grid Carbon Intensity API]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity/"/>
-    <updated>2015-11-21T11:04:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/11/uk-grid-carbon-intensity</id>
-    <content type="html"><![CDATA[<p><br />Following on from my blog post creating an <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">ambient indicator to indicate wind turbine renewable electricity generation</a> we have extended the <a href="http://emoncms.org/">Emoncms</a> UK electric grid statistic aggregation to calculate and record the UK electric grid carbon intensity i.e. the amount of carbon emitted per kWh (CO2/kWh). As before we have created a dashboard open API for easy access to this data.<br /><br /></p>
-
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
-
-<tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="420" src="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" width="640" /></a></td></tr>
-
-<tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukgrid</a></td></tr></tbody></table>
-<p><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="426" src="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;<a href="http://emoncms.org/ukelectricitygrid/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukwind</a>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>Dashboards:</b>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b></b>&lt;/div&gt;&lt;div class="separator" style="clear: both;"&gt;<a href="http://emoncms.org/ukelectricitygrid/ukgrid">http://emoncms.org/ukelectricitygrid/ukgrid</a>&lt;/div&gt;&lt;div&gt;<a href="http://emoncms.org/ukelectricitygrid/ukwind">http://emoncms.org/ukelectricitygrid/ukwind</a>&lt;/div&gt;&lt;div&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<b>Open-API:</b>&lt;/div&gt;UK grid carbon intensity: <a href="http://emoncms.org/feed/value.json?id=97715">http://emoncms.org/feed/value.json?id=97715</a><br />&lt;div&gt;UK wind: <a href="http://emoncms.org/feed/value.json?id=67088">http://emoncms.org/feed/value.json?id=67088</a><br /><br />Other feeds are also available including grid fuel mix and current energy demand, just place ‘id’ in the API with the feed ID’s below: &lt;/div&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;table class="table table-bordered table-hover table-condensed"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;<b>Feed</b>&lt;/td&gt;&lt;td&gt;<b>Name</b>&lt;/td&gt;&lt;td&gt;<b>Current Value (22/11/15 22hrs)</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97689&lt;/td&gt;&lt;td&gt;CCGT_val&lt;/td&gt;&lt;td&gt;11592&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97690&lt;/td&gt;&lt;td&gt;CCGT_prc&lt;/td&gt;&lt;td&gt;0.31&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97691&lt;/td&gt;&lt;td&gt;OCGT_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97692&lt;/td&gt;&lt;td&gt;OCGT_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97693&lt;/td&gt;&lt;td&gt;OIL_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97694&lt;/td&gt;&lt;td&gt;OIL_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97695&lt;/td&gt;&lt;td&gt;COAL_val&lt;/td&gt;&lt;td&gt;10785&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97696&lt;/td&gt;&lt;td&gt;COAL_prc&lt;/td&gt;&lt;td&gt;0.29&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97697&lt;/td&gt;&lt;td&gt;NUCLEAR_val&lt;/td&gt;&lt;td&gt;7798&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97698&lt;/td&gt;&lt;td&gt;NUCLEAR_prc&lt;/td&gt;&lt;td&gt;0.21&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97699&lt;/td&gt;&lt;td&gt;WIND_val&lt;/td&gt;&lt;td&gt;1308&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97700&lt;/td&gt;&lt;td&gt;WIND_prc&lt;/td&gt;&lt;td&gt;0.03&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97701&lt;/td&gt;&lt;td&gt;PS_val&lt;/td&gt;&lt;td&gt;397&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97702&lt;/td&gt;&lt;td&gt;PS_prc&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97703&lt;/td&gt;&lt;td&gt;NPSHYD_val&lt;/td&gt;&lt;td&gt;533&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97704&lt;/td&gt;&lt;td&gt;NPSHYD_prc&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97705&lt;/td&gt;&lt;td&gt;OTHER_val&lt;/td&gt;&lt;td&gt;1976&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97706&lt;/td&gt;&lt;td&gt;OTHER_prc&lt;/td&gt;&lt;td&gt;0.05&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97707&lt;/td&gt;&lt;td&gt;INTFR_val&lt;/td&gt;&lt;td&gt;1495&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97708&lt;/td&gt;&lt;td&gt;INTFR_prc&lt;/td&gt;&lt;td&gt;0.04&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97709&lt;/td&gt;&lt;td&gt;INTIRL_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97710&lt;/td&gt;&lt;td&gt;INTIRL_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97711&lt;/td&gt;&lt;td&gt;INTNED_val&lt;/td&gt;&lt;td&gt;975&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97712&lt;/td&gt;&lt;td&gt;INTNED_prc&lt;/td&gt;&lt;td&gt;0.02&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97713&lt;/td&gt;&lt;td&gt;INTEW_val&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97714&lt;/td&gt;&lt;td&gt;INTEW_prc&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97715&lt;/td&gt;&lt;td&gt;gridintensity&lt;/td&gt;&lt;td&gt;435.6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;97736&lt;/td&gt;&lt;td&gt;totalsupply&lt;/td&gt;&lt;td&gt;36859&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div&gt;If you use the API in your project please drop us a line and give Emoncms some credit :-)<br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;<span style="color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="background-color: #edf7fc; font-size: 14px; line-height: 20px;"><br /></span></span>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The data is captured from the <a href="http://www.bmreports.com/bsp/additional/soapfunctions.php?element=generationbyfueltypetable">UK Balancing BM Reports XML</a>. Our figure for grid intensity matched the figure generated by <a href="http://www.gridcarbon.uk/">http://www.gridcarbon.uk/</a>. &lt;/div&gt;&lt;/div&gt;</p>
 ]]></content>
   </entry>
   

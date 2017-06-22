@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-06-21T17:15:37+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>emonPi Network Setup Wizard</title><link href="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/" rel="alternate" type="text/html" title="emonPi Network Setup Wizard" /><published>2017-06-21T00:00:00+00:00</published><updated>2017-06-21T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/">&lt;p&gt;Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-06-22T16:45:52+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Android App V2</title><link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/" rel="alternate" type="text/html" title="Emoncms Android App V2" /><published>2017-06-22T00:00:00+00:00</published><updated>2017-06-22T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/">&lt;p&gt;Yesterday we have launched a significant update to the Emoncms Android app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/androidv2-1.jpg&quot; alt=&quot;androidv2-1&quot; /&gt; &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.emoncms.myapps&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://emoncms.org/Modules/site/en-play-badge.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New features&lt;/h2&gt;
+
+&lt;h4 id=&quot;multiple-emoncms-accounts&quot;&gt;1. Multiple emoncms accounts:&lt;/h4&gt;
+
+&lt;p&gt;Monitor multiple Emoncms accounts, very useful for installers, power users etc.
+It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/androidv2-4.jpg&quot; alt=&quot;androidv2-multiple&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;multiple-myelectric-graphs-per-account&quot;&gt;2. Multiple MyElectric graphs per account:&lt;/h4&gt;
+
+&lt;p&gt;Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/app1.png&quot; alt=&quot;app1&quot; /&gt;&lt;img src=&quot;/images/app2.png&quot; alt=&quot;app2&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;multiple-currency-rates-for-each-myelectric-graph&quot;&gt;3. Multiple currency rates for each MyElectric graph:&lt;/h4&gt;
+
+&lt;p&gt;e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/app-cost.png&quot; alt=&quot;app-cost&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;language-translations&quot;&gt;4. Language Translations:&lt;/h4&gt;
+
+&lt;p&gt;French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/app-lang.png&quot; alt=&quot;app-lang&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;chromebook-support&quot;&gt;5. Chromebook support:&lt;/h4&gt;
+
+&lt;p&gt;Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/androidv2-4.png&quot; alt=&quot;androidv2-4&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;The current latest version at time of writing is V2.0.8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/emoncms/AndroidApp/releases&quot;&gt;See Emoncms Android app GitHub repo ‘Releases’ for change log.&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;community&quot;&gt;Community&lt;/h4&gt;
+
+&lt;p&gt;The main features of the V2 update were contributed open-source by &lt;a href=&quot;https://community.openenergymonitor.org/u/tamsin&quot;&gt;Tamsin Slinn&lt;/a&gt;. We very much appreciate all her hard work.&lt;/p&gt;
+
+&lt;p&gt;Also thanks to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.openenergymonitor.org/u/jumpmaster&quot;&gt;@JumpMaster&lt;/a&gt;  (Original app author: various fixes and guidence)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.openenergymonitor.org/u/bidouilleur&quot;&gt;@bidouilleur&lt;/a&gt; French translation proofreading &amp;amp; corrections)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.openenergymonitor.org/u/revil.o&quot;&gt;@revil.o&lt;/a&gt; (German translation proofreading &amp;amp; corrections)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.openenergymonitor.org/u/joyrider3774&quot;&gt;@joyrider3774&lt;/a&gt; (Dutch translation bug fixing)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.openenergymonitor.org/u/pb66&quot;&gt;@pb66&lt;/a&gt; (testing and feedback)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-8-open-beta-testing/3373/65&quot;&gt;See Android app V2 development forum thread&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As always the Android app is &lt;a href=&quot;https://github.com/emoncms/AndroidApp&quot;&gt;fully open-source on GithHub&lt;/a&gt;, contributions are most welcome :-)&lt;/p&gt;
+
+&lt;p&gt;The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Yesterday we have launched a significant update to the Emoncms Android app.
+
+ 
+
+New features
+
+1. Multiple emoncms accounts:
+
+Monitor multiple Emoncms accounts, very useful for installers, power users etc.
+It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.
+
+
+
+2. Multiple MyElectric graphs per account:
+
+Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.
+
+
+
+3. Multiple currency rates for each MyElectric graph:
+
+e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.
+
+
+
+4. Language Translations:
+
+French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.
+
+
+
+5. Chromebook support:
+
+Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</summary></entry><entry><title>emonPi Network Setup Wizard</title><link href="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/" rel="alternate" type="text/html" title="emonPi Network Setup Wizard" /><published>2017-06-21T00:00:00+00:00</published><updated>2017-06-21T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/">&lt;p&gt;Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/emonpi_wifi.png&quot; alt=&quot;emonpi wifi&quot; /&gt;&lt;/p&gt;
 
@@ -653,51 +749,4 @@ The scheme organised placements for four students in four seperate tech companie
 
 
 
-  Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.</summary></entry><entry><title>EcoHome Lab: From Monitoring to Control</title><link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/" rel="alternate" type="text/html" title="EcoHome Lab: From Monitoring to Control" /><published>2016-08-12T18:00:00+00:00</published><updated>2016-08-12T18:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id><content type="html" xml:base="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/">&lt;p&gt;Last night I attended &lt;a href=&quot;https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/&quot;&gt;EcoHomeLab meetup&lt;/a&gt; in Manchester organised by the &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;EcoHomeLab monthly meetups at &lt;a href=&quot;https://madlab.org.uk/&quot;&gt;MadLab&lt;/a&gt; brings householders and green-technologists together to take control of home energy use and generation.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;It was great fun to catch up with regular faces as well as meet many new interesting people.&lt;/p&gt;
-
-&lt;p&gt;I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.&lt;/p&gt;
-
-&lt;p&gt;I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://guide.openenergymonitor.org/integrations/&quot;&gt;Integrations section of our user guide for more info&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Here are copy of my slides from the event:&lt;/p&gt;
-
-&lt;iframe src=&quot;https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;amp;loop=false&amp;amp;delayms=10000&quot; frameborder=&quot;0&quot; width=&quot;529&quot; height=&quot;426&quot; allowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a class=&quot;attachment&quot; href=&quot;https://community.openenergymonitor.org/uploads/default/original/2X/1/1a55b8c172086f743b1b0abe1d01d7c10963d88c.pdf&quot;&gt;Download in PDF format&lt;/a&gt; (6.8 MB)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&quot;&gt;View in HTML (hosted from Google Slides)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing&quot;&gt;View in full Google Slides format (with clickable hyperlinks &amp;amp; selectable text)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Glyn Hudson</name></author><summary>Last night I attended EcoHomeLab meetup in Manchester organised by the CarbonCoop.
-
-
-  EcoHomeLab monthly meetups at MadLab brings householders and green-technologists together to take control of home energy use and generation.
-
-
-It was great fun to catch up with regular faces as well as meet many new interesting people.
-
-I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.
-
-I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.
-
-See the Integrations section of our user guide for more info
-
-Here are copy of my slides from the event:
-
-
-
-
-  
-    Download in PDF format (6.8 MB)
-  
-  View in HTML (hosted from Google Slides)
-  View in full Google Slides format (with clickable hyperlinks &amp;amp; selectable text)</summary></entry></feed>
+  Working in a small company in a rural area, that has such a large online community has really opened my eyes to the possibilities that the internet and the digital age can offer, in that people are no longer bound to cities. Increasing infrastructure development in terms of roads and internet speeds has increased this mobility further, and I look forward to the growth that this will no doubt provide in Gwynedd. OpenEnergyMonitor is for me the perfect example of a growing business that has been made possible by opensource development, global connections and communities, and new technology.</summary></entry></feed>

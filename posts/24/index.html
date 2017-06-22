@@ -462,6 +462,46 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/07/emonglcd-v14/">emonGLCD V1.4</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-17T10:05:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-17 10:05:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/07/emonglcd-v14/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Introducing the current version of the emonGLCD. This post is a bit later than planned, we have actually been selling the V1.4 through the shop for the past month or so. This version features some minor incremental&nbsp;improvements rather than a new design.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The main changes to this revision are:</div><ul style="background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 17px; text-align: left;"><li>This LCD power is connected to the 3.3V rail instead of instead of 5V. This will fix the problem with the LCD going blank due to over voltage, <a href="http://openenergymonitor.org/emon/node/679">discussion thread here</a>. *</li></ul><ul style="background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 17px; text-align: left;"><li>The external power connection now routed through voltage regulator this means it can accept an input from 5-12V</li></ul><ul style="background-color: white; text-align: left;"><li><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-size: 12px; line-height: 17px;">The push switches are now active high, each with their own 10K pull down resistor, R7 and R8 are two additional 10K pull down resistors.&nbsp;</span></span></li></ul>The <a href="http://github.com/openenergymonitor/emonGLCD">emonGLCD sketch examples on GitHub</a> have been modified to work on the V1.4 as default.  <span style="background-color: white; text-align: left;">If you have V1.3 then you will need to uncomment the line that enables the internal pull up&nbsp;resistors&nbsp;(line 116 in emonGLCD_HEM) You will also need to comment line 199 and uncomment line 200 to change the action to active high rather than active low.</span><br /><div><div style="text-align: left;"><br /></div><div style="text-align: left;">All other functions work exactly the same as previous emonGLCD versions.&nbsp;</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">See the bottom of the<a href="http://openenergymonitor.org/emon/emonglcd"> main emonGLCD documentation</a> page for a full change-log detailing the different versions over time.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">*Running the LCD at 3.3V instead of 5V is now within spec for the LCD unit, however running the LCD at a lower voltage did flag up an error in the orientation of C13 and C14 see&nbsp;<a href="http://openenergymonitor.org/emon/node/754">forum&nbsp;discussion&nbsp;thread here</a>. A note has been added to the build guide to instruct the&nbsp;insertion&nbsp;of C13 and C14 the&nbsp;opposite&nbsp;way round to what is marked on the PCB.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-x_-BqWjyBJ4/T5AwrR5UExI/AAAAAAAAaFY/CPDezo-eew4/s1600/emonGLCD_V1.4.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="306" src="http://2.bp.blogspot.com/-x_-BqWjyBJ4/T5AwrR5UExI/AAAAAAAAaFY/CPDezo-eew4/s400/emonGLCD_V1.4.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 - Assembled (RFM12B missing)</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-S0WecuCSHUA/T5AwuRA-rUI/AAAAAAAAaFg/CXWY1n9ZrYY/s1600/emonGLCD_V1.4_front.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-S0WecuCSHUA/T5AwuRA-rUI/AAAAAAAAaFg/CXWY1n9ZrYY/s400/emonGLCD_V1.4_front.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 PCB - Front</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-beKXiEr-zCY/T5Az5AZvkNI/AAAAAAAAaFw/kwKQeoeTDoM/s1600/emonGLCD_V1.4_rear.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="313" src="http://2.bp.blogspot.com/-beKXiEr-zCY/T5Az5AZvkNI/AAAAAAAAaFw/kwKQeoeTDoM/s400/emonGLCD_V1.4_rear.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonGLCD V1.4 - Rear</td></tr></tbody></table>The emonGLCD SolderPad page has been updated with the V1.4 Schematic and Board files:&nbsp;<a href="http://solderpad.com/openenergymon/emonglcd/">http://solderpad.com/openenergymon/emonglcd/</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/07/triac-based-mk2-pv-controller-by/">Triac based MK2 PV Controller by Calypso Rye</a>
   </h1>
   
@@ -836,46 +876,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/05/measurement-of-heat-loss-in-hot-water/">Measurement of heat loss in a hot water cylinder</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-05-25T15:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-25 15:40:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/shw/'>SHW</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/05/measurement-of-heat-loss-in-hot-water/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Carrying on from the last blog post about <a href="http://openenergymonitor.blogspot.com/2012/05/measuring-heat-flux-in-and-out-of-hot.html">measuring heat flux in and out of a hot water cylinder</a>.<br /><br />Heat loss from a hot water cylinder should be proportional to the temperature differential between the inside and the outside of the cylinder by a constant: Watts of heat loss per kelvin. See <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatra.html#c2">heat conductivity</a>.<br /><br />Watts of heat loss can be calculated from the temperature reduction per unit time of the average cylinder temperature. If we plot heat loss against average cylinder temperature we should get a linear relationship where the slope of the line of best fit is the heat loss factor, see graph 2 below.<br /><br />This constant the heat loss factor for a particular cylinder is a useful measure in evaluating the&nbsp;performance&nbsp;of a cylinder.<br /><br /><b>My hot water is heated with a 3kW electric immersion heater. I wanted to know how much heat would be lost if I leave the&nbsp;immersion&nbsp;heater on all the time at a given temperature and so how much energy I could save by only putting the immersion heater on specifically when its needed i.e for a bath in the evening.</b><br /><br /><b>The results</b><br /><br />I have selected a period of time here where both hot water and the immersion heater where not used. Leaving only solar hot water heat input and heat loss from the cylinder as the only drivers of the system. The solar hot water coil is in the bottom of the cylinder which heat's the cylinder relatively evenly compared with the immersion heater making it ideal for this test.&nbsp;I have filtered out all positive heat gain so that we can see the heat loss clearly:<br /><br /><div><iframe frameborder="0" height="1100px" marginheight="0" marginwidth="0" scrolling="no" src="http://vis.openenergymonitor.org/emoncms3/Vis/test/heatloss.php?apikey=622568853818f6a340569ec059e340f8&amp;feedA=22&amp;feedB=23" width="700px"></iframe><br /><br /><b>Conclusion</b><br /><br />The conclusion is that we are saving about 1.6 kWh/d from reduced heat loss (30C temperature difference over 23 hours), which is a good saving from something relatively easy to do. It may be that we are saving more than this from reduced hot water demand in the first place by not having hot water on tap all day but this is another thing to test.<br /><br />If your monitoring hot water cylinder temperature It would be great to see how these figures compare.<br /><br /><b>Download the source code:</b>&nbsp;<a href="http://openenergymonitor.org/emon/sites/default/files/heatloss.zip">heatloss.zip</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -913,6 +913,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
+        </li>
+      
     
       
         <li class="post">
@@ -965,12 +971,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
     

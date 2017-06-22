@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/android/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-06-21T17:15:37+00:00</updated>
+  <updated>2017-06-22T16:45:52+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Android App V2]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/"/>
+    <updated>2017-06-22T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id>
+    <content type="html"><![CDATA[<p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
+
+<p><img src="/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
+
+<h2 id="new-features">New features</h2>
+
+<h4 id="multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
+
+<p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
+It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
+
+<p><img src="/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
+
+<h4 id="multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
+
+<p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
+
+<p><img src="/images/app1.png" alt="app1" /><img src="/images/app2.png" alt="app2" /></p>
+
+<h4 id="multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
+
+<p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
+
+<p><img src="/images/app-cost.png" alt="app-cost" /></p>
+
+<h4 id="language-translations">4. Language Translations:</h4>
+
+<p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
+
+<p><img src="/images/app-lang.png" alt="app-lang" /></p>
+
+<h4 id="chromebook-support">5. Chromebook support:</h4>
+
+<p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
+
+<p><img src="/images/androidv2-4.png" alt="androidv2-4" /></p>
+
+<!--more-->
+
+<p><strong>The current latest version at time of writing is V2.0.8</strong></p>
+
+<p><a href="https://github.com/emoncms/AndroidApp/releases">See Emoncms Android app GitHub repo ‘Releases’ for change log.</a></p>
+
+<hr />
+
+<h4 id="community">Community</h4>
+
+<p>The main features of the V2 update were contributed open-source by <a href="https://community.openenergymonitor.org/u/tamsin">Tamsin Slinn</a>. We very much appreciate all her hard work.</p>
+
+<p>Also thanks to:</p>
+
+<ul>
+  <li><a href="https://community.openenergymonitor.org/u/jumpmaster">@JumpMaster</a>  (Original app author: various fixes and guidence)</li>
+  <li><a href="https://community.openenergymonitor.org/u/bidouilleur">@bidouilleur</a> French translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/revil.o">@revil.o</a> (German translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/joyrider3774">@joyrider3774</a> (Dutch translation bug fixing)</li>
+  <li><a href="https://community.openenergymonitor.org/u/pb66">@pb66</a> (testing and feedback)</li>
+</ul>
+
+<p><a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-8-open-beta-testing/3373/65">See Android app V2 development forum thread</a></p>
+
+<p>As always the Android app is <a href="https://github.com/emoncms/AndroidApp">fully open-source on GithHub</a>, contributions are most welcome :-)</p>
+
+<p>The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emoncms android App QR Code Scanner Setup]]></title>
@@ -91,16 +163,6 @@
 <div class="separator" style="clear: both; text-align: center;"></div>
 <div class="separator" style="clear: both; text-align: center;"></div>
 <p><i>Part of the android app tutorial series:<a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/androidApp/androidAppPart1.md"> How to build an Energy Monitoring android App P1</a></i><br />Both the myelectric emoncms module and the soon to be myelectric  android app have a bar chart that is written using the 2d graphics  canvas. This short guide details how the bar chart is built and the  first part is written to be applicable for different programming  languages with examples in each particular language to come at the end, there’s one for android java canvas at the moment.<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://1.bp.blogspot.com/-aLFCnPqMhj8/U48z2LRs-rI/AAAAAAAA0Zg/chDVbnk-w90/s1600/2014-06-04+15.16.22.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-aLFCnPqMhj8/U48z2LRs-rI/AAAAAAAA0Zg/chDVbnk-w90/s1600/2014-06-04+15.16.22.jpg" height="480" width="640" /></a>&lt;/div&gt;<br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="http://4.bp.blogspot.com/-jy9bXERYcZM/U438oRxbnTI/AAAAAAAAC-o/fNWpX40cb4w/s1600/myelectricandroidgraph.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-jy9bXERYcZM/U438oRxbnTI/AAAAAAAAC-o/fNWpX40cb4w/s1600/myelectricandroidgraph.png" height="400" width="343" /></a>&lt;/div&gt;<br /><br />Writing custom graphs is not as complicated as I initially  imagined it to be. Once you have a grasp of 2d graphics canvas  sometimes its easier to write your own graph to get the style that you  want. The myelectric graph was written from scratch in order to achieve a  precise look: simple color scheme, bar height values overlayed on the  bar, kWh label in the <a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HomeEnergyMonitor/HomeEnergyMonitor.md">top-left corner</a>.<br /><br /><a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/DrawingABarChart/DrawingABarChart.md"><b>Tutorial: </b>How to draw a myelectric style bar chart </a><br /><br />&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<img border="0" src="http://2.bp.blogspot.com/-KuHRHTvzGi0/U436vhlWXSI/AAAAAAAAC-U/2REaDg4lNGQ/s1600/bargraphic.png" height="564" width="640" />&lt;/div&gt;<br /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to build an Energy Monitoring android App part 1]]></title>
-    <link href="https://blog.openenergymonitor.org/2014/06/how-to-build-energy-monitoring-android/"/>
-    <updated>2014-06-01T11:53:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2014/06/how-to-build-energy-monitoring-android</id>
-    <content type="html"><![CDATA[<style type="text/css">P { margin-bottom: 0.21cm; }A:link {  }</style>
-<p><br />&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://github.com/openenergymonitor/documentation/raw/master/BuildingBlocks/androidApp/files/OnPhone.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="480" src="https://github.com/openenergymonitor/documentation/raw/master/BuildingBlocks/androidApp/files/OnPhone.JPG" width="640" /></a>&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;Glyn and I have wanted to have an android app to make it easier to access energy monitoring data from phone’s and tablets for sometime.  &lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;Last year we took part in a student project to develop an Emoncms android App with Mathew Keegan who was studying at the time at Aberystwyth University. Mathew made good progess on the foundations of the app which I’ve uploaded to github here: <a href="https://github.com/emoncms/androidAppDev/tree/master/MathewKeeganAberUni">https://github.com/emoncms/androidAppDev/tree/master/MathewKeeganAberUni</a>&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;I’ve been trying to learn a bit of android app programming to understand what Mathew has developed. I followed a couple of Hello World tutorials and then explored networking and how to update the display. I’ve written up my notes as a tutorial: How to build an Energy Monitoring android App part 1 here:&lt;/div&gt;&lt;h3 style="margin-bottom: 0cm;"&gt;<a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/androidApp/androidAppPart1.md">How to build an Energy Monitoring android App part 1</a>&lt;/h3&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;Im going to try and continue development in this style by writing tutorials of how to do each step.&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;I think we should all be able to build our own software (if we want to)  and given the rising use of tablets and mobiles as our personal  computing devices having at least a basic understanding of how to build  an app is enlightening and satisfying to see the results on your phone.  Even if you’ve only dabbled in software before I would like to encourage  you to try the tutorial, please ask me if I can clarify anything and  feel free to send me a github pull request with edits to the tutorial.&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;My next tutorial will focus on how to use android graphics canvas to draw a graph that looks like the myelectric graph in the myelectric emoncms module.&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;I’ve posted this blog post on the forum’s here which is a better place to discuss:&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<a href="http://openenergymonitor.org/emon/node/5250">http://openenergymonitor.org/emon/node/5250 </a>&lt;/div&gt;&lt;div style="margin-bottom: 0cm;"&gt;<br />&lt;/div&gt;</p>
 ]]></content>
   </entry>
   

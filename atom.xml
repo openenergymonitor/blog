@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-06-21T17:15:37+00:00</updated>
+  <updated>2017-06-22T16:45:52+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Android App V2]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/"/>
+    <updated>2017-06-22T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id>
+    <content type="html"><![CDATA[<p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
+
+<h2 id="new-features">New features</h2>
+
+<h4 id="multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
+
+<p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
+It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
+
+<h4 id="multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
+
+<p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/app1.png" alt="app1" /><img src="https://blog.openenergymonitor.org/images/app2.png" alt="app2" /></p>
+
+<h4 id="multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
+
+<p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/app-cost.png" alt="app-cost" /></p>
+
+<h4 id="language-translations">4. Language Translations:</h4>
+
+<p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/app-lang.png" alt="app-lang" /></p>
+
+<h4 id="chromebook-support">5. Chromebook support:</h4>
+
+<p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/androidv2-4.png" alt="androidv2-4" /></p>
+
+<!--more-->
+
+<p><strong>The current latest version at time of writing is V2.0.8</strong></p>
+
+<p><a href="https://github.com/emoncms/AndroidApp/releases">See Emoncms Android app GitHub repo ‘Releases’ for change log.</a></p>
+
+<hr />
+
+<h4 id="community">Community</h4>
+
+<p>The main features of the V2 update were contributed open-source by <a href="https://community.openenergymonitor.org/u/tamsin">Tamsin Slinn</a>. We very much appreciate all her hard work.</p>
+
+<p>Also thanks to:</p>
+
+<ul>
+  <li><a href="https://community.openenergymonitor.org/u/jumpmaster">@JumpMaster</a>  (Original app author: various fixes and guidence)</li>
+  <li><a href="https://community.openenergymonitor.org/u/bidouilleur">@bidouilleur</a> French translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/revil.o">@revil.o</a> (German translation proofreading &amp; corrections)</li>
+  <li><a href="https://community.openenergymonitor.org/u/joyrider3774">@joyrider3774</a> (Dutch translation bug fixing)</li>
+  <li><a href="https://community.openenergymonitor.org/u/pb66">@pb66</a> (testing and feedback)</li>
+</ul>
+
+<p><a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-8-open-beta-testing/3373/65">See Android app V2 development forum thread</a></p>
+
+<p>As always the Android app is <a href="https://github.com/emoncms/AndroidApp">fully open-source on GithHub</a>, contributions are most welcome :-)</p>
+
+<p>The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[emonPi Network Setup Wizard]]></title>
@@ -1478,33 +1550,6 @@ The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of
 <h2 id="getting-start-guide-httpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org/">Getting Start Guide </a></h2>
 
 <p><img src="https://blog.openenergymonitor.org/images/raspberrypi3.jpg" alt="Raspberry Pi 3" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms android App QR Code Scanner Setup]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/emoncms-qr/"/>
-    <updated>2016-05-11T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/emoncms-qr</id>
-    <content type="html"><![CDATA[<p>I would like to highlight a nice improvement to Emoncms and the Emoncms android app that has been contributed by community memebers <a href="https://community.openenergymonitor.org/users/jumpmaster/activity">@jumpmaster</a> and <a href="https://community.openenergymonitor.org/users/andy_taylor/activity">@andy_taylor</a>. See <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a> on our <a href="https://blog.openenergymonitor.org/2016/05/website-changes/">shiny new forums</a>.</p>
-
-<p>Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/emoncms-qr.png" alt="Emoncms QR code generator" /></p>
-
-<!--more-->
-
-<p><em>This updated has been merged into the stable Emoncms branch V9.6. If your running an emonPi/emonBase jsut hit update to pull in the changes. The update will appear on Emoncms.org in the next few days.</em></p>
-
-<p>This QR code contains the Emoncms URL and read-API key to automate setting up the <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;hl=en_GB">Emoncms android app</a>. The update for the app to support the QR code scanner has been pushed to Googe Play. After the update just can the QR code to setup the app.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/android-qr.png" width="300" /></p>
-
-<p>If your feeds are named <strong>use</strong> and <strong>use_kwh</strong> the app will automatically select use these feeds as the Power and kWh feeds.</p>
-
-<p>Any issues, please post on the <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a>.</p>
-
-<p>Thanks again to everyone involved in the development and testing. It’s been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)</p>
 ]]></content>
   </entry>
   

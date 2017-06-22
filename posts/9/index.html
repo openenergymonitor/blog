@@ -462,6 +462,37 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2014/11/research-project-call-for-participants/">Research Project Call for Participants </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-11-22T13:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-11-22 13:20:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2014/11/research-project-call-for-participants/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />In collaboration with <a href="http://openenergymonitor.org/emon/user/7232">Corina Sas</a> from Lancaster University we would like to to evaluate members' experience of building, setting up and using our monitors and how these impact on people's understanding of energy consumption and household practices. The larger aim is to  to explore how energy monitoring technologies could be better designed to support sustainable practices. <br /><br />A team of researchers for Lancaster will run this study consisting of interviews lasting around 1 hrs. For this, a researcher will visit you in your home at your convenience, or if you live further away from Lancaster/Manchester, then Skype interviews can be arranged. <b>As a thank you will be offer you an organic veg box.</b><br /><br />The plan is to c<b>omplete the study by end of the year</b>.  If you are interested and able to help, please contact the researcher with your available dates:  Dr Corina Sas at <a href="mailto:corina@comp.lancs.ac.uk">corina@comp.lancs.ac.uk </a><br /><br />Thanks a lot for your support. <div><br /></div><div>Please post any questions to forum thread:&nbsp;<a href="http://openenergymonitor.org/emon/node/6156">http://openenergymonitor.org/emon/node/6156</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/11/snowdonia-household-energy-study/">Snowdonia household energy study, exploring zero carbon solutions</a>
   </h1>
   
@@ -850,46 +881,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/07/reducing-emoncms-write-load-and-minimal/">Reducing emoncms write load and a minimal python version of emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-07-07T12:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-07-07 12:36:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/07/reducing-emoncms-write-load-and-minimal/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Over the last few weeks I have been investigating how to reduce the write load of emoncms to explore if it might be possible to achieve long term logging on SD cards.<br /><br /><b>A brief summary</b><br /><br />Through a mix of buffered writing of feed data to disk, reduction of the number of meta and average data files written to and use of the FAT filesystem, my home raspberrypi now has a write load of 0.4kb_wrtn/s down from 197kb_wrtn/s.. almost 500x less and the writes are all append only (there's no regular writing of the same part of a file again and again). The question is could this mean years of SD card logging rather than months?<br /><br /><b>Write buffering</b><br /><br />A single Emoncms PHPFina (PHP Fixed Interval No averaging) or PHPTimeSeries datapoint uses between 4 and 9 bytes. The write load on the disk however is a bit more complicated than that. Most filesystems and disk's have a minimum IO size that is much larger than 4-9 bytes, on a FAT filesystem the minimum IO size is 512 bytes this means that if you try and write 4 bytes the operation will actually cause 512 bytes of write load. But its not just the datafile that gets written to, every file has inode meta data which can also result in a further 512 bytes of write load. A single 4 byte write can therefore cause 1kb of write load.<br /><br />By buffering writes for as long as we can in memory and then writing in larger blocks its possible to reduce the write load significantly. The full investigation with a lot of benchmarking of different configurations including differences between FAT and Ext4 can be found here:<br /><br /><a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md">https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md</a><br /><br /><b>A minimal version of emoncms in python</b><br /><br />To make the investigation easier I simplified emoncms down to the core parts needed on a raspberrypi to get basic timeseries graphing: serial listener, node decoder, basic feed engine and a ui consisting of a nodelist and a single rawdata visualisation type and wrote the result in python making use of Jerome and Paul's (pb66) excellent work on the emonhub serial listener and node decoder.<br />Here's a diagram of the main components of the python app:<br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/emon-py-system-diagram.png" style="height: 387px; width: 600px;" /><br /><br />And some screenshots of what it looks like:<br /><br />Node list:<br /><br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/emon-py_0.png" style="height: 409px; width: 600px;" /><br /><br />Basic graphing:<br /><br /><br /><br /><img alt="" src="http://openenergymonitor.org/emon/sites/default/files/graph_1.png" style="height: 283px; width: 600px;" /><br /><br />The source code and an installation guide for this minimal python version of emoncms can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/experimental/emon-py">https://github.com/emoncms/development/tree/master/experimental/emon-py</a><br /><br /><b>Further development questions</b> (copied from the end of the write load investigation page)<br /><br />Is the reduced write load and longer SD card lifespan that might result from using the FAT filesystem worth the increased chance of data corruption from power failure that Ext4 might prevent?<br /><br />It would be interesting to compare the performance of the FAT filesystem + 5 min application based commit time with the EXT4 filesystem with Journaling turned off and filesystem delayed allocation set to 5 min instead of write buffering in the application.<br /><br /><br />I posted on the EmonHub issues list about this last friday and  I've been having a bit of a discussion there with Paul  <a href="https://github.com/emonhub/emonhub/issues/48">https://github.com/emonhub/emonhub/issues/48</a><br /><br />I've also posted this on the forum's here: <br /><a href="http://openenergymonitor.org/emon/node/5387">http://openenergymonitor.org/emon/node/5387 </a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -927,6 +918,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
+        </li>
+      
     
       
         <li class="post">
@@ -979,12 +976,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
     

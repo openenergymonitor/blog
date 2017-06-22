@@ -462,6 +462,46 @@ $(window).resize(function(){
     <header>
   
   <h1 class="beta">
+    <a href="/2012/05/measurement-of-heat-loss-in-hot-water/">Measurement of heat loss in a hot water cylinder</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-05-25T15:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-25 15:40:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/shw/'>SHW</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/05/measurement-of-heat-loss-in-hot-water/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Carrying on from the last blog post about <a href="http://openenergymonitor.blogspot.com/2012/05/measuring-heat-flux-in-and-out-of-hot.html">measuring heat flux in and out of a hot water cylinder</a>.<br /><br />Heat loss from a hot water cylinder should be proportional to the temperature differential between the inside and the outside of the cylinder by a constant: Watts of heat loss per kelvin. See <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatra.html#c2">heat conductivity</a>.<br /><br />Watts of heat loss can be calculated from the temperature reduction per unit time of the average cylinder temperature. If we plot heat loss against average cylinder temperature we should get a linear relationship where the slope of the line of best fit is the heat loss factor, see graph 2 below.<br /><br />This constant the heat loss factor for a particular cylinder is a useful measure in evaluating the&nbsp;performance&nbsp;of a cylinder.<br /><br /><b>My hot water is heated with a 3kW electric immersion heater. I wanted to know how much heat would be lost if I leave the&nbsp;immersion&nbsp;heater on all the time at a given temperature and so how much energy I could save by only putting the immersion heater on specifically when its needed i.e for a bath in the evening.</b><br /><br /><b>The results</b><br /><br />I have selected a period of time here where both hot water and the immersion heater where not used. Leaving only solar hot water heat input and heat loss from the cylinder as the only drivers of the system. The solar hot water coil is in the bottom of the cylinder which heat's the cylinder relatively evenly compared with the immersion heater making it ideal for this test.&nbsp;I have filtered out all positive heat gain so that we can see the heat loss clearly:<br /><br /><div><iframe frameborder="0" height="1100px" marginheight="0" marginwidth="0" scrolling="no" src="http://vis.openenergymonitor.org/emoncms3/Vis/test/heatloss.php?apikey=622568853818f6a340569ec059e340f8&amp;feedA=22&amp;feedB=23" width="700px"></iframe><br /><br /><b>Conclusion</b><br /><br />The conclusion is that we are saving about 1.6 kWh/d from reduced heat loss (30C temperature difference over 23 hours), which is a good saving from something relatively easy to do. It may be that we are saving more than this from reduced hot water demand in the first place by not having hot water on tap all day but this is another thing to test.<br /><br />If your monitoring hot water cylinder temperature It would be great to see how these figures compare.<br /><br /><b>Download the source code:</b>&nbsp;<a href="http://openenergymonitor.org/emon/sites/default/files/heatloss.zip">heatloss.zip</a></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/05/measuring-heat-flux-in-and-out-of-hot/">Measuring heat flux in and out of a hot water cylinder</a>
   </h1>
   
@@ -824,46 +864,6 @@ $(window).resize(function(){
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/04/emonglcd-v13-switches-fix/">emonGLCD V1.3 Switches - fix!</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-04-12T12:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-12 12:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/04/emonglcd-v13-switches-fix/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    It was mentioned in <a href="http://openenergymonitor.blogspot.co.uk/2012/02/emonglcd-v13-pcb.html">this blog post </a>regarding the current version of the emonGLCD (V1.3) that a hardware error rendered the push switches un-usable. This is not the case any more!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-RfCv8uKzpMw/T4bArjw0Z3I/AAAAAAAAZ_0/6Qk37khJ4aA/s1600/IMG1348.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://1.bp.blogspot.com/-RfCv8uKzpMw/T4bArjw0Z3I/AAAAAAAAZ_0/6Qk37khJ4aA/s320/IMG1348.jpg" width="320" /></a></div><br /><br />It turns out that this error can be fixed in software. The switches can be made to work with no hardware modifications. The <a href="https://github.com/openenergymonitor/emonGLCD/">emonGLCD tester sketch</a> has been updated with the required fix.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-JlrYaGzD0So/T4c_7eKq1uI/AAAAAAAAaAM/IZC87swXDPQ/s1600/glcd_sw2__19976_zoom.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-JlrYaGzD0So/T4c_7eKq1uI/AAAAAAAAaAM/IZC87swXDPQ/s320/glcd_sw2__19976_zoom.jpg" width="320" /></a></div><br /><br />Here are the details:<br /><br />The push switches are connected ADC 1,2 and 5 (digital 15,16 and 19). When pressed they are pulled low through resistor R5.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-El2msFAJQQ4/T4bAYwmMe0I/AAAAAAAAZ_s/O_C7Eq1g4yQ/s1600/Screenshot+at+2012-04-12+12:43:13.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-El2msFAJQQ4/T4bAYwmMe0I/AAAAAAAAZ_s/O_C7Eq1g4yQ/s320/Screenshot+at+2012-04-12+12:43:13.png" width="283" /></a></div><div class="separator" style="clear: both; text-align: left;">The Atmega328 has internal pull-up resistors (20K) which can be enabled by setting the port as output and doing a high digital write:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"></div><pre style="background-color: white; border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div class="line" id="LC62" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; color: #333333; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 1em; padding-right: 0px; padding-top: 0px;"><br /><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">pinMode</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">(</span><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">switchpin</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">,</span> <span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">INPUT</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">);</span> </div><br /><div class="line" id="LC63" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; color: #333333; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 1em; padding-right: 0px; padding-top: 0px;"><br /><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">digitalWrite</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">(</span><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">switchpin</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">,</span> <span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">HIGH</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">);</span></div><br /></pre>The switches are active low, meaning a logic 0 will be read on digital 15,16 and 19 when the relevant switch is pressed.&nbsp;<div><br />Thanks to forum member <a href="http://openenergymonitor.org/emon/user/859">Drsdre</a> for bringing this elegant fix to our attention. This is a real open-hardware success story!   If you've bought an emonGLCD from us we will send out on request the three switches to be added free of charge. <br /><br />We have created an item for the extra switches in the shop, just click buy (it's free) and quote your original order number: <a href="http://shop.openenergymonitor.com/displays/">http://shop.openenergymonitor.com/displays/</a><br /><br />All emonGLCD kits bought from the shop from now on will include the switches. <br /><br />Happy days. </div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -901,6 +901,12 @@ $(window).resize(function(){
   </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
+        </li>
+      
     
       
         <li class="post">
@@ -953,12 +959,6 @@ $(window).resize(function(){
       
         <li class="post">
           <a href="/2016/09/summer-placement/">Summer Placement</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/08/ecohomelab-control/">EcoHome Lab: From Monitoring to Control</a>
         </li>
       
     

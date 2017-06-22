@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/</loc>
+<lastmod>2017-06-22T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/</loc>
 <lastmod>2017-06-21T00:00:00+00:00</lastmod>
 </url>
@@ -1980,6 +1984,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2017-06-21T17:13:22+00:00</lastmod>
+<lastmod>2017-06-22T16:43:33+00:00</lastmod>
 </url>
 </urlset>
