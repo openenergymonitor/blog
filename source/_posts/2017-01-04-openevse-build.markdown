@@ -109,10 +109,10 @@ Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate m
 
 ![openevse-front]({{site.image_path}}/openevse-front.jpg)
 
-Here's a nice demo of the basic features of the unit. Credit: YouTube user civicturbo2009:
+Here's a demo of the basic features of the unit:
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BFseWN7JhNM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cIvmYP57eOo" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ### Remote Datalogging
