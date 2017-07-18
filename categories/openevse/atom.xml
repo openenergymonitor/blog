@@ -4,7 +4,7 @@
   <title><![CDATA[Category: openevse | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/openevse/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-06-22T16:45:52+00:00</updated>
+  <updated>2017-07-18T15:29:28+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -120,10 +120,10 @@
 
 <p><img src="/images/openevse-front.jpg" alt="openevse-front" /></p>
 
-<p>Here’s a nice demo of the basic features of the unit. Credit: YouTube user civicturbo2009:</p>
+<p>Here’s a demo of the basic features of the unit:</p>
 
 <div class="videoWrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BFseWN7JhNM" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cIvmYP57eOo" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
 <h3 id="remote-datalogging">Remote Datalogging</h3>
