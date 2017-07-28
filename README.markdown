@@ -15,8 +15,6 @@ Using all the shiny new toys: powered by Jekyll and the Oscalite theme. Hosted b
 | `rake deploy` | Deploys site to `gh-pages` branch
 | `rake deploy rsync` | Deploys site via rsync over SSH
 
-
-
 ## Setup
 
 #### Install Ruby
