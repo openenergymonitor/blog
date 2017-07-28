@@ -57,11 +57,19 @@
 	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
 	<meta name="msapplication-config" content="/images/browserconfig.xml">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:light,bold&amp;subset=Latin" rel="stylesheet"> <!-- Ubuntu font -->
-  <script src="https://use.fontawesome.com/e433d4b407.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
 
 <style>
+
+html, body {
+  margin: 0; height: 100vh;
+}
+
+html {
+  min-height: 100vh;
+}
 
 html, body {
   word-wrap: break-word;
@@ -74,36 +82,6 @@ a:visited, .a:hover, a:focus, a {
 
 .meta.clearfix {
   overflow-x: hidden;
-}
-
-.searchtool {
-  width: 100%;
-}
-
-input[type=text] {
-  border: 3px solid #44b3e2;
-  border-radius: 6px;
-  width: 100%;
-  color: #000000;
-  padding: 14px 20px;
-  margin: 0;
-  outline: none;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-}
-
-button[type=submit] {
-    width: 100%;
-    background-color: #44b3e2;
-    color: white;
-    padding: 14px 20px;
-    margin: 4px 0 0 0;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 .communityWrapper {
@@ -193,7 +171,7 @@ button[type=submit] {
   right: 0;
   margin-right: 6px;
   height: 42px;
-  min-width: 700px;
+  min-width: 750px;
   overflow: visible;
   padding-right: 7px;
   z-index: 20;
@@ -241,44 +219,73 @@ button[type=submit] {
 }
 
 @media screen and (max-width: 1079px) {
-.navigation {
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  margin: 0;
-  width: 0;
-  font-size: 20px;
-  background-color: #44b3e2;
-  color: #ffffff;
-  box-sizing: border-box;
-  overflow: auto;
-  min-width: 0;
-  padding-right: 0;
-  z-index:9999;
+  .navigation {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      margin: 0;
+      width: 0;
+      font-size: 20px;
+      background-color: #44b3e2;
+      color: #ffffff;
+      z-index: 9999;
+      box-sizing: border-box;
+      overflow: auto;
+      min-width: 0;
+      padding-right: 0;
+  }
+  
+  .navigation ul {
+      list-style-type: none;
+      margin: 0;
+      padding-top: 0;
+  }
+  
+  .navigation ul li a {
+      box-sizing: border-box;
+      font-family: "ubuntu";
+      font-size: 20px;
+      display: block;
+      color: #ffffff;
+      padding: 0 20px 0 40px;
+      min-width: 220px;
+      text-align: left;
+      height: 12.5vh;
+      line-height: 12.5vh;
+  }
+  
+  .navigation ul li .fa {
+      min-width: 25px;
+  }
 }
 
-.navigation ul {
-  list-style-type: none;
-  margin: 0;
-  padding-top: 0;
-  display: block;
-}
 
-.navigation ul li a {
-  box-sizing: border-box;
-  font-family: "ubuntu";
-  font-size: 20px;
-  display: block;
-  color: #ffffff;
-  padding: 20px 20px 20px 40px;
-  min-width: 220px;
-  text-align: left;
-}
-
-.navigation ul li .fa {
-  min-width: 25px;
+@media screen and (min-width: 1080px) {
+  .navigation ul li:nth-child(1) {
+    width: 82px;
+  }
+  .navigation ul li:nth-child(2) {
+    width: 81px;
+  }
+  .navigation ul li:nth-child(3) {
+    width: 85px;
+  }
+  .navigation ul li:nth-child(4) {
+    width: 113px;
+  }
+  .navigation ul li:nth-child(5) {
+    width: 123px;
+  }
+  .navigation ul li:nth-child(6) {
+    width: 73px;
+  }
+  .navigation ul li:nth-child(7) {
+    width: 75px;
+  }
+  .navigation ul li:nth-child(8) {
+    width: 87px;
   }
 }
 
@@ -287,7 +294,7 @@ button[type=submit] {
   display: none;
   top: 0;
   right: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: rgba(0,0,0,0.5);
   overflow: hidden;
@@ -301,6 +308,54 @@ button[type=submit] {
 
 .actoemLink a {
   color: #ffffff !important;
+}
+
+.searchBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  z-index: 9999999999999;
+}
+
+.searchBox form {
+  margin: auto;
+}
+
+.searchBox input[type=submit] {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #44b3e2;
+  color: #fff;
+  border: none;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.searchBox input[type=submit]:hover {
+  background-color: #77c8ea;
+}
+
+.searchBox input[type=text] {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+}
+
+.searchText {
+  width: 0;
+}
+
+.searchIcon {
+  cursor: pointer;
 }
 
 </style>
@@ -358,11 +413,25 @@ button[type=submit] {
             <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="navname">&nbsp;Shop</span>
           </a>
         </li>
+				<li title="search for something on OpenEnergyMonitor">
+					<a class="searchIcon">
+					    <i aria-hidden="true" class="fa fa-search"></i><span class="navname">&nbsp;Search</span>
+				  </a>
+				</li>
       </ul>
     </div>
   </div>
 </div>
-
+<div class="searchBox">
+  <form target="_blank" id="searchform" action="https://www.google.com/cse">
+    <div>
+      <input type="hidden" name="cx" value="006198118389747886812:_nmxikw563w" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="text" class="searchText" value="" name="q" id="q" autocomplete="off" />
+      <input type="submit" id="searchsubmit" name="sa" value="Search" />
+    </div>
+  </form>
+</div>
 <div class="blackOut"></div>
 <div style="position:relative;width:100%;top:0;height:20px"></div>
 
@@ -451,6 +520,23 @@ $(window).resize(function(){
     }
   }
 });
+
+$(".searchIcon").click(function() {
+   $(".searchBox").css("display","flex");
+   $(".searchText").animate({width: "200px"});
+   $(".searchText").focus();
+   $("html, body").addClass("menuFreeze");
+});
+$(".searchBox").click(function() {
+   $(".searchBox").css("display","none");
+   $(".searchText").blur();
+   $(".searchText").css("width","0");
+   closeButton();
+});
+$(".searchBox form").click( function(event) {
+   event.stopPropagation();
+});
+
 </script>
 
 <div class="grid-wrapper">
@@ -590,21 +676,6 @@ Diagram from <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-
 
  
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
-  <div class="searchtool">
-
-  
-  <form action="https://encrypted.google.com/search" method="get">
-    <fieldset role="search">
-      <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
-      <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
-      <button type="submit">
-         <i class="fa fa-search"></i> Search
-      </button>
-    </fieldset>
-  </form>
-  
-
-  </div>
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
     
