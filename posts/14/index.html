@@ -548,6 +548,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/10/emonth-update-hardware/">emonTH Update - Hardware </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:34:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-10-18 12:34:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/10/emonth-update-hardware/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Since my <a href="http://openenergymonitor.blogspot.co.uk/2013/06/emonth-prototype.html">last post on the emonTH</a>&nbsp;wireless Temperature and Humidity monitoring node good progress has been made.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s1600/P1030255.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-5eKxbMm5LSk/UmEqKO0BIVI/AAAAAAAAmSg/uxqLc4M_9a8/s320/P1030255.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH cased up</td></tr></tbody></table><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-sGlabWGUNEU/UmEpxrOzH7I/AAAAAAAAmSY/_I-jUjJnTmU/s1600/emon-th-300x262.png" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH - unboxed</td></tr></tbody></table><br />The most significant hardware change has been the addition of a DC-DC step-up boost converter to step-up the voltage from discharging AA batteries to a steady 3.3V. The boost converter circuit consists of a tiny (SC-70 package) LTC3525-3.3 chip a 10uH inductor and a couple of small 1uF capacitors. The step-up converter is essential for the DHT22 as this sensor does not perform well with varying supply voltage, &nbsp;specifically once below 3.3V. The addition of the converter will also significantly increase battery life. The LTC3525 was chosen because of its low quiescent power consumption of 7uA and high conversion efficiency of up to 95%. <br /><div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s1600/Boost.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://4.bp.blogspot.com/-ysgA4qNVS0A/UmEnXkU7f9I/AAAAAAAAmSA/ikt_4qtN0N4/s320/Boost.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH LTC3525 DC-DC boost converter circuit</td></tr></tbody></table><br /></div><div>The boost circuit is very impressive, given a minimum input voltage of 0.7V it boosts up to a steady 3.3V.</div><div><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s1600/Vin=2V.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="192" src="http://4.bp.blogspot.com/-2SRrpUMUU6I/UkqUrDiW7CI/AAAAAAAAliA/2_PayhX8Xa8/s320/Vin=2V.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: small; text-align: start;">Using scope with AC coupled probe to examine boost converter&nbsp;output&nbsp;when stepping 2V up to 3.3V with no load: output exhibited 9.3mV RMS ripple at 333Khz</span></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s1600/2013-09-28+16.26.59.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-PyhWbUCTmbQ/UkqVG9a1SaI/AAAAAAAAliI/DYr0mJMYaTw/s320/2013-09-28+16.26.59.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing &nbsp;emonTH external DS18B20 temperature sensor terminal block connection</td></tr></tbody></table><br /></div><div>We hope to have the emonTH in the shop by December.<br /><br /></div><div>Stay tuned after the break for update on<a href="http://openenergymonitor.blogspot.com/2013/10/emonth-update-software-power.html"> emonTH software, power consumption and batteries</a>...</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/10/aa-battery/">AA Battery Considerations</a>
   </h1>
   
@@ -920,48 +960,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/08/emonglcd-433-868-mhz-rf-scanner-signal/">emonGLCD 433 / 868 Mhz RF Scanner & Signal Strength Meter </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-08-26T14:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-26 14:27:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/08/emonglcd-433-868-mhz-rf-scanner-signal/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <a href="http://openenergymonitor.org/emon/user/1824">Martin Roberts</a> has developed a fantastic bit of firmware for the emonGLCD to enable it to be used as an RF scanner and signal strength meter on the 433 / 868 Mhz RF band.<br /><br />&nbsp;This makes the emonGLCD running this firmware a useful tool for debugging RF transmission and checking out signal strength.  To run the firmware a small hardware modification is required to the emonGLCD to access the analogue signal strength output signal from the RFM12B.<br /><br />Martin's sketch has been added to the <a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/GLCD_SSM">emonGLCD github repo</a>.<br /><br />Full details including build-guide and discussion can be found on the original&nbsp;<a href="http://openenergymonitor.org/emon/node/2395">forum thread</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S0m9P9FKx18/UhtmSquXvUI/AAAAAAAAjn8/d7rcJjPtYM0/s1600/glcdssm_intf.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-S0m9P9FKx18/UhtmSquXvUI/AAAAAAAAjn8/d7rcJjPtYM0/s400/glcdssm_intf.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_interface.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="579" src="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_interface.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_inside.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="302" src="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_inside.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -984,6 +982,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/advances-article/">Wales Advances Magazine Article</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1036,12 +1040,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
     

@@ -548,6 +548,48 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/05/continuation-of-emontx-testing-feed/">Continuation of emontx testing - feed comparison tool</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-05-25T21:52:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-25 21:52:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/05/continuation-of-emontx-testing-feed/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;">Glyn has been running a parallel test of the new emontx v3 vs the old emontx v2 for over a month now. See Glyn's original post introducing emontx v3 here: <a href="http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html">http://openenergymonitor.blogspot.co.uk/2013/02/emontx-smt-update-introducing-emontx-v3.html</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In testing a new emontx version here are a few questions that we would like to answer:</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How does emonTx v3 accuracy compare at lower power's?</div><div style="margin-bottom: 0cm;">Is there any difference in low power readings with or without the powered from AC-AC adapter feature?</div><div style="margin-bottom: 0cm;">Can differences be explained by calibration error?</div><div style="margin-bottom: 0cm;">Are there any other measurement variations that need investigating?</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To make it easier to compare the parallel test power feeds I though Id create a visualisation tool in emoncms that made it easier to see the difference between the feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s1600/compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-WShxslFOUhg/UaEv6MvnRpI/AAAAAAAACm8/Rfu-krwMmEY/s400/compare.png" width="272" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">If difference is caused by calibration error then applying a calibration to the measured data should bring the difference down close to zero.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Any deviations in measurements that remain should be non-calibration errors, and they will appear off to one side of the linear PowerX vs PowerY plot.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">The above visualisation can be viewed here:</div><div style="margin-bottom: 0cm;"><a href="http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809">http://emoncms.org/vis/compare&amp;powerx=13811&amp;powery=13809</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">This visualisation tool is available in the emoncms visualisations list if youd like to try this on your own monitor, even comparing say two different CT channels on a single emontx.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">There are some issues I need to fix with the visualisation tool implementation that gives rise to some incorrect comparisons at some scales to do with the way it selects datapoint id's to compare.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">In the next post I will explore differences between the two parallel test power feeds.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;"><b>On another topic:</b></div><div style="margin-bottom: 0cm;">One of the interesting things I did yesterday was use the raspberrypi emoncms module on my ubuntu laptop. I used a jeelink connected to the usb port of the laptop and then configured raspberrypi_run.php to connect on port /dev/ttyUSB4 instead of the default raspberrypi port, this could be a useful configuration for anyone who just wants to log data from the nodes locally to their laptop and as Jerome pointed out <a href="https://github.com/emoncms/raspberrypi/issues/30">here</a>,&nbsp;maybe the emoncms raspberrypi module should just be called the emoncms linux board module or just serial interface module.</div><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/05/testing-ds18b20-temperature-sensing-on/">Testing DS18B20 temperature sensing on emonTx v3</a>
   </h1>
   
@@ -916,46 +958,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/02/air-quality-egg-sensor-shield/">Air Quality Egg Sensor Shield</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-02-09T13:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-02-09 13:36:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/air-quality-egg/'>Air Quality Egg</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/02/air-quality-egg-sensor-shield/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The Air Quality Egg Arduino Shield provides a lower cost way for those of you with a spare Arduino / Nanode(RF) to get started with monitoring air quality and joining in the global air quality crowd sourced data and discussion.<br /><br />The Egg Shield is an Arduino shield with Temperature, Humidity, CO and NO2.<div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ESjKQXjD43U/URZPeVoEOaI/AAAAAAAAdKM/VoIJnlI0yvs/s1600/AQESensorShield.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://4.bp.blogspot.com/-ESjKQXjD43U/URZPeVoEOaI/AAAAAAAAdKM/VoIJnlI0yvs/s400/AQESensorShield.jpg" width="375" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Air Quality Egg Arduino Sensor Shield<br /></td></tr></tbody></table>The sensor shield uses an ATtiny88 microprocessor to poll data from the sensors.&nbsp;<div><br /></div><div>To get started with the Sensor Shield follow <a href="http://aqe.wickeddevice.com/?page_id=12">these instructions</a>.&nbsp;</div><div><br /></div><div>As always the hardware and software is totally open-source, the hardware PCB CAD design &amp; schematic, ATtiny88 firmware and example Arduino sketches can be found on github:&nbsp;<a href="https://github.com/jmsaavedra/Air-Quality-Egg/">https://github.com/jmsaavedra/Air-Quality-Egg/</a></div><div><br /></div><div>The Air Quality Egg Sensor Shield is now available in the <a href="http://shop.openenergymonitor.com/air-quality-egg-arduino-sensor-shield/">OpenEnergyMonitor shop</a>.&nbsp;</div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -978,6 +980,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/advances-article/">Wales Advances Magazine Article</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1030,12 +1038,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
     

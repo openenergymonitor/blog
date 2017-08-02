@@ -548,6 +548,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2014/05/development-update-emonhub-emoncms/">Development update: EmonHub, Emoncms&MQTT, Application guides</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-05-24T15:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-05-24 15:53:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/05/development-update-emonhub-emoncms/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    There's been a lot of development happening recently but not being blogged about so here's a short overview with links to where to find out more:<br /><b><br /></b><b>EmonHub (The next version of the oem_gateway)</b><br /><a href="http://openenergymonitor.org/emon/node/5203">http://openenergymonitor.org/emon/node/5203</a><br />Paul (pb66), Jerome, Dave McCraw and I have been discussing the best way to integrate the ability to listen and dispatch data with different datatypes and how best to integrate threading so that dispatchers cant block the other dispatchers and listeners.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/emonhub.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://openenergymonitor.org/emon/sites/default/files/emonhub.png" height="258" width="400" /></a></div><br /><br /><b>Using MQTT with Emoncms to make a more extensible flexible system.</b><br />We've discussed the idea of using MQTT within emoncms several times before but the idea came up again during discussion about the best way to implement node decoding in emonhub. Emoncms could provide some of the same features of emonhub ie multiple listeners and multiple dispatchers in an elegant way if it incorporated mqtt message queues. It would also provide benefits for control as initially explored here last December <a href="https://github.com/emoncms/development/tree/master/experimental/control/nodejs_websocket_thermostat">https://github.com/emoncms/development/tree/master/experimental/control/nodejs_websocket_thermostat</a><br /><br />Here's a system diagram of how it could look like:<br /><b><br /></b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://cloud.githubusercontent.com/assets/503186/3026547/c6c29cc6-e016-11e3-8082-dfc15745f4f0.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="452" src="https://cloud.githubusercontent.com/assets/503186/3026547/c6c29cc6-e016-11e3-8082-dfc15745f4f0.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">and here's an initial working concept, with step by step setup guide: <a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md">https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This approach needs a fair bit of work to make it a really nice solution, If you think this is the way to go it would be great to get some help with making it happen, in particular:</div><ul><li>Integrating the event module by running it as its own process subscribed to the applicable mqtt topics.</li><li>Writing a process for the emonhub style dispatcher for sending data to other services such as a remote emoncms or another service entirely such as PVOutput or ThingSpeak</li><li>Creating raspberrypi module style emoncms gui for the new python based listener setting the rfm12pi radio settings. </li><li>Managing all these processes, a process status interface in emoncms?</li></ul>Richard Hatfield and I have also been doing work on setting up Emoncms + MQTT + scheduler for heating control, the raspberrypi software setup guide for the configuration so far is here:<br /><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md">https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md </a><br /><b><br /></b>There are also some new related MQTT mini examples in the emoncms/development repository: <a href="https://github.com/emoncms/development">https://github.com/emoncms/development</a><br /><br />I've created a forum thread for discussing emoncms + mqtt here:<br /><a href="http://openenergymonitor.org/emon/node/5207">http://openenergymonitor.org/emon/node/5207 </a><br /><b><br /></b><b>New Application Guides</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://github.com/openenergymonitor/documentation/raw/master/Applications/HeatpumpMonitorHDD/files/system.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="190" src="https://github.com/openenergymonitor/documentation/raw/master/Applications/HeatpumpMonitorHDD/files/system.jpg" width="640" /></a></div><br />An ongoing project for some time now is the writing of new application guides that go through step by step system building for home energy monitoring, heatpump monitoring, solar pv and thermal performance monitoring, integrating some of the new features for counting watt-hours on the emontx and using some of the new emoncms features such as myelectric. There's a new github repository in which to develop these guides. The table of content so far is:<br /><br /><br /><br /><article class="markdown-body entry-content" itemprop="mainContentOfPage"><h2><a class="anchor" href="https://github.com/openenergymonitor/documentation#applications" name="user-content-applications"><span class="octicon octicon-link"></span></a>Applications</h2>Open, downloadable, editable documentation (via git).<br />  <b>Home Energy Monitor</b><br />  <ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HomeEnergyMonitor/HomeEnergyMonitor.md">Home Energy Monitor (posting to emoncms.org)</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HomeEnergyMonitorHDD/HomeEnergyMonitorHDD.md">Home Energy Monitor (with emoncms running locally on a harddrive)</a></li></ul><b>Heatpump Monitor</b> <br />  <ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HeatpumpMonitorHDD/HeatpumpMonitorHDD.md">Heatpump Monitor (with emoncms running locally on a harddrive)</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Applications/HeatpumpMonitorSerialGSM/HeatpumpMonitorSerialGSM.md">Heatpump Monitor (direct serial emontx -&gt; RPi + GSM</a></li></ul><h2><a class="anchor" href="https://github.com/openenergymonitor/documentation#modules" name="user-content-modules"></a>Modules</h2><h3><a class="anchor" href="https://github.com/openenergymonitor/documentation#raspberrypi" name="user-content-raspberrypi"></a>RaspberryPI</h3><ul class="task-list"><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/Gateway/gateway.md">Gateway</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDD/FullStackHDD.md">Full Stack HDD</a></li><li><a href="https://github.com/openenergymonitor/documentation/blob/master/Modules/RaspberryPI/FullStackHDDScheduler/FullStackHDDScheduler.md">Full Stack HDD + scheduler</a></li></ul></article><br />Help with testing and github pull requests with changes to these guides would be most appreciated and if youd like to submit a guide for an application or configuration that you dont think has been covered well that would also be welcome. Please get in touch on the forums if you've got any question's about development and how to get involved. 
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/05/zerocarbonbritain-report-in-short/">ZeroCarbonBritain: Report in short</a>
   </h1>
   
@@ -909,54 +949,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/01/we-won-daily-post-business-award-2013/">We Won! Daily Post Business Award 2013 - Green Award Category </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-01-07T22:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-01-07 22:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/award/'>award</a></li>
-      
-        <li><a class='category' href='/categories/media/'>media</a></li>
-      
-        <li><a class='category' href='/categories/open-source/'>open source</a></li>
-      
-        <li><a class='category' href='/categories/openenergymonitor/'>openenergymonitor</a></li>
-      
-        <li><a class='category' href='/categories/shop/'>shop</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/01/we-won-daily-post-business-award-2013/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-9YIm0l2TE78/Usra6Ww1kJI/AAAAAAAAsiY/geWpddZIM1c/s1600/DailyPostBusiness+Award+winner.jpg" height="320" width="252" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>We have been lucky enough to be awarded winner of the Green Award category in the Daily Post Business Awards 2013. The Daily Post is a regional (North West Wales) newspaper, the Green Award was sponsored this year by Windpower Wales. The award was announced at the end of last year, I resisted posting about it until we got our hands on the video that was made about us.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-CzJ1Zr-KHsI/Uvu4dbctpaI/AAAAAAAAt14/N-0kXuwlIZg/s1600/IMG_20140206_103538.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-CzJ1Zr-KHsI/Uvu4dbctpaI/AAAAAAAAt14/N-0kXuwlIZg/s1600/IMG_20140206_103538.jpg" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Trystan being interviewed by Daily Post newspaper, <a href="http://openenergymonitor.blogspot.com/2014/02/weve-made-local-newspaper.html">read the article here</a></td></tr></tbody></table><br />Winning the award was very unexpected for us, we feel very humbled. It goes without saying that it would not be possible for us to be doing what we do if it was not for the work of many others. As always with open-source it feels like we are standing on the shoulders of lots of other projects. A big thank you to everyone who has contributed to the project in some way and or bought items from the shop.<br /><br />Given the nature of an online collaborative project such as OpenEnergyMonitor much of our day-to-day communications and business is conducted online; it's great that what we are doing is being recognised locally. Trystan and I are very proud to be able to live and work in Snowdonia, North Wales. We're both welsh speakers and were brought up locally. Our website <a href="http://megni.co.uk/">http://megni.co.uk</a>&nbsp;has a couple of photos I've taken while out climbing and walking in the Snowdonia mountains as well as an overview of the OpenEnergyMonitor system.<br /><br />Megni (which means 'monitoring energy' in Welsh) is the name of our business which runs the OpenEnergyMonitor shop. We're keen to make the distinction between Megni and OpenEnergyMonitor since we don't take claim for all OpenEnergyMonitor developments: the .org website, open-source hardware, software and documentation is all separate from the business. Megni is a partnership between Trystan Lea and myself (Glyn Hudson); we now have a couple of friends Ynyr Edwards and Gwil Noble working with us helping with shop fulfillment, support requests and ongoing development.<br /><br />This award ended 2013 on a high for us, it's been a very exciting few months launching new<a href="http://openenergymonitor.blogspot.com/2013/11/new-hardware-is-in-shop-and-starting-to.html"> pre-assembled hardware units</a> and moving into a<a href="http://openenergymonitor.blogspot.com/2013/10/new-office-space-and-new-units.html"> new office / lab space</a>. Let's hope 2014 is just as awesome! We have lots of exciting plans for this year, high on the list is starting to&nbsp;<a href="http://openenergymonitor.blogspot.com/2013/12/emoncms-early-heating-control-demo.html">move into the control of appliances</a>&nbsp;and general polishing of the energy monitoring system. <br /><br />Here's a short video which was made for the event, it's got some nice shots of the hardware and our new lab:<br /><br /><object height="360" width="640"><param name="movie" value="//www.youtube.com/v/GRmqA2bv22A?hl=en_GB&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/GRmqA2bv22A?hl=en_GB&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object> <br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -979,6 +971,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/advances-article/">Wales Advances Magazine Article</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1031,12 +1029,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/summer-placement/">Summer Placement</a>
         </li>
       
     
