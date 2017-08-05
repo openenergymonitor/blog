@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Wales Advances Magazine Article"
+title: "Advances Wales Magazine Article"
 date: "2017-08-01 00:00"
 date_formatted: Aug 2nd 2017
 author: Glyn Hudson
