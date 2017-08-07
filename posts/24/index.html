@@ -548,6 +548,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/07/almost-at-next-emoncms-release-point/">Almost at the next emoncms release point</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-26T15:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-26 15:18:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/07/almost-at-next-emoncms-release-point/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>Over the last couple of months I have been working closely with Ildefonso Martínez Marchena from Spain on developing <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a> to the next level and we have been making really good progress.<br /><br />We are almost at the next release point with a lot of big additions including:<br /><br /><span class="Apple-style-span" style="font-size: large;">Dashboards</span><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s1600/dashscreen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="http://3.bp.blogspot.com/-jFaSG00Y6vU/UBFbLr7sRrI/AAAAAAAACdk/Rf-cr9OY-MA/s640/dashscreen.png" width="640" /></a></div><div><ul><li>Support for multiple dashboards</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#creating_a_dashboard">A fully visual dashboard editor</a></li><li>Public dashboards via username i.e <a href="http://emoncms.org/trystan">emoncms.org/trystan</a></li><li>Support for ckeditor and simeo file manager</li><li>8 different dial types and a hot water cylinder</li><li>LED’s widgets thanks to Lloyd</li><li>Published and unpublished dashboards for dashboards that are being worked on.</li><li>A reworked dashboard renderer implementation</li></ul><span class="Apple-style-span" style="font-size: large;">Visualisations</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s1600/threshold_order.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="294" src="http://3.bp.blogspot.com/-c4OirQaVHpM/UBFbi0zgSRI/AAAAAAAACds/j2iHnAF2Fjg/s640/threshold_order.png" width="640" /></a></div><div><ul><li>A simple <a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_dp_edit">data-point editor.</a></li><li>Many histogram based visualisations based on <a href="http://openenergymonitor.blogspot.co.uk/2012/05/view-your-power-data-as-histogram-in.html">Paul Allen's histogram input process</a>.</li><li>kWh Comparison Visualisation thanks to <a href="https://twitter.com/galouf/status/217938127430492160">Baptise Gaultier</a></li><li>A new API screen, detailing all the available visualisations and other key features available.</li><li><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms#vis_multigrapg">Editable multigraph.</a></li></ul><span class="Apple-style-span" style="font-size: large;">Data and core</span><br /><ul><li>CSV data input and identification by sensor node inputs.</li><li>Feed Autoconfig</li><li>New averaging process for creating daily temperature averages.</li><li>Setup script improvements</li><li>Thanks to Juan Sidrach for help with general code formatting and multilingual implementation.&nbsp;</li><li><a href="http://twitter.github.com/bootstrap/">Twitter bootstrap</a> based theme.</li></ul><span class="Apple-style-span" style="font-size: large;">Multilingual</span><br /><ul><li><a href="http://openenergymonitor.org/emon/emoncms/using-gettext-on-ubuntu">Multilingual implementation based on gettext</a></li><li>Thanks to Alco for the Dutch translation.</li></ul>All this is available now on github and has been of course throughout development. At this stage we are just polishing the release and updating and writing documentation.<br /><br /><span class="Apple-style-span" style="font-size: large;"><a href="http://emoncms.org/">emoncms.org</a></span><br />We've got the domain and have the latest version running there off the same server and database as vis.openenergymonitor.org so you can still access your<a href="http://vis.openenergymonitor.org/"> vis.openenergymonitor.org</a> data through <a href="http://emoncms.org/">emoncms.org</a>.<br /><br />The idea here is to create a really nice launch page for emoncms and have the live instance hosted there which can be used as a main logging site or for testing before running it on your own server or both. Emoncms.org will still be a beta service for now as its stability and reliability is established.<br /><br /><span class="Apple-style-span" style="font-size: large;">Bug testing</span><br />It would be great if you can try out the new version and let us know of any bugs you find so that we can try to get it as rock solid as possible before this release is complete.<br /><br />Due to a couple of core implementation changes to visualisations and dashboards many of the visualisation URL’s and dashboard scripting have changed so it best to build any old dashboards from scratch using the new visual editor.</div><div><br /></div><div>Have a look at the using emoncms documentation here if you need help with any of the steps:<br /><a href="http://openenergymonitor.org/emon/emoncms/using-emoncms">openenergymonitor.org/emon/emoncms/using-emoncms</a></div><div><br /></div><div>Please submit any bug details either to the issue tracker on github here:</div><div><a href="https://github.com/openenergymonitor/emoncms3/issues">https://github.com/openenergymonitor/emoncms3/issues</a></div><div>or on the forums here:</div><div><a href="http://openenergymonitor.org/emon/forum/5">http://openenergymonitor.org/emon/forum/5</a><br /></div><div>There is also a beginning on code documentation <a href="http://openenergymonitor.org/emon/node/312">here</a>&nbsp;that may come in useful.</div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Github</span></div><div><span class="Apple-style-span" style="font-size: large;"><a href="http://github.com/openenergymonitor/emoncms3">github.com/openenergymonitor/emoncms3</a></span></div><div><br /></div><div><span class="Apple-style-span" style="font-size: large;">Installation guides</span></div><div>To install emoncms on your own server have a look at these guides:</div><div><a href="http://openenergymonitor.org/emon/emoncms/installation">General Installation details</a>,&nbsp;<a href="http://openenergymonitor.org/emon/emoncms/installing-ubuntu-debian-pi">PI, Debian, Ubuntu installation</a></div><div><br /></div><div>Let us know how you get on with it.</div></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/07/open-source-sailing-technology-to-clean/">Open source sailing technology to clean up oil spills</a>
   </h1>
   
@@ -922,46 +962,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/05/view-your-power-data-as-histogram-in/">View your power data as a histogram in emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-05-26T15:53:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-05-26 15:53:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/05/view-your-power-data-as-histogram-in/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div style="text-align: left;">This blog post details how to view your power data as a histogram in emoncms. This is a really useful feature implemented in emoncms by Paul Allen <a href="http://wattdata.blogspot.fr/">http://wattdata.blogspot.com</a>&nbsp;&nbsp;(MarsFlyer on Gitub:&nbsp;<a href="https://github.com/MarsFlyer">https://github.com/MarsFlyer</a>). So a really big thank you to Paul for this!</div><div style="text-align: left;"><br /></div><div style="text-align: left;">The histogram shows the energy (KWh) used at a particular power (watts) which allows analysis of what types of devices (low / medium / high) are using the most energy.&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">Here is the histogram visualisation for my house, embedded directly from emoncms.</div><div style="text-align: left;"><b>Click on a particular day to see a histogram of that day:</b></div><div><div style="text-align: left;"><br /></div></div><div><div style="text-align: left;"><iframe frameborder="0" height="500px" marginheight="0" marginwidth="0" scrolling="no" src="http://vis.openenergymonitor.org/emoncms3/Vis/kwhd_histogram/kwhdzoomer.php?apikey=622568853818f6a340569ec059e340f8&amp;power=106&amp;kwhd=107&amp;whw=691" width="700px"></iframe> </div><div><div style="text-align: left;"><b>Viewing your power data as a histogram</b></div><div style="text-align: left;"><b><br /></b></div><div style="text-align: left;">1) Send power data to <a href="http://openenergymonitor.org/emon/emoncms">emoncms</a> see here for details of doing this with an emontx and emonbase: see&nbsp;<a href="http://openenergymonitor.org/emon/applications/homeenergy">Build a home electricity energy monitor</a></div><div style="text-align: left;"><b><br /></b></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-_OR6Y9jg9R8/T79STfaWeFI/AAAAAAAACcI/k1SqqR4BISA/s1600/histogram01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="186" src="http://4.bp.blogspot.com/-_OR6Y9jg9R8/T79STfaWeFI/AAAAAAAACcI/k1SqqR4BISA/s400/histogram01.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">2) Click on the power input to bring up the input configuration page. Set up processes as in the screenshot, one power process, one kwhd process and one histogram process:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-9xBWLtmVeTg/T79SUEOj1cI/AAAAAAAACcM/anS1IlrCtE0/s1600/histogram02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="312" src="http://2.bp.blogspot.com/-9xBWLtmVeTg/T79SUEOj1cI/AAAAAAAACcM/anS1IlrCtE0/s400/histogram02.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">3) Click on Feeds to bring up the feed/list page, click on the histogram feed:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-qHZN_zHV4K8/T79SUkesV7I/AAAAAAAACcU/RPyVXTV6guQ/s1600/histogram03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="176" src="http://2.bp.blogspot.com/-qHZN_zHV4K8/T79SUkesV7I/AAAAAAAACcU/RPyVXTV6guQ/s400/histogram03.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">4) In the histograms feed/view page click on the graph type histogram:</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-oDQ8JIiZNxs/T79SVCg5T8I/AAAAAAAACcc/rPoVnFDd610/s1600/histogram04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="220" src="http://4.bp.blogspot.com/-oDQ8JIiZNxs/T79SVCg5T8I/AAAAAAAACcc/rPoVnFDd610/s400/histogram04.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">5) Once you have been logging histogram data for a few hours you will start to see histogram bars form at the different levels of power that you use. This histogram graph shows energy used at a particular power for all time. So is a really useful tool for measuring what is the total energy used by the electric immersion water heater for example, we've used 62 kWh @ 3500W since April 13th.</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://2.bp.blogspot.com/-43z1A8f2BDk/T79SV1jIwCI/AAAAAAAACco/yJWOfUzR3Cc/s1600/histogram05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="324" src="http://2.bp.blogspot.com/-43z1A8f2BDk/T79SV1jIwCI/AAAAAAAACco/yJWOfUzR3Cc/s640/histogram05.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">6) To view your histogram data at a daily basis as in the first embedded visualisation above enter your feed id's and apikey in the following emoncms visualisation url:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>http://vis.openenergymonitor.org/emoncms3/Vis/kwhd_histogram/kwhdzoomer.php?apikey=YOURAPIKEY&amp;power=1&amp;kwhd=2&amp;whw=3</b></div><div class="separator" style="clear: both; text-align: left;"><b><br /></b></div><div class="separator" style="clear: both; text-align: left;">All the source code for the histogram functionality is available in the main emoncms3 repository on github <a href="http://github.com/openenergymonitor/emoncms3">http://github.com/openenergymonitor/emoncms3</a></div><div style="text-align: left;"><br /></div><div style="text-align: left;">Paul Allen has achieved some remarkable reductions in energy use over the last 4 years and uses a version of the histogram&nbsp;beautifully&nbsp;to visualise the changes, see his blog post here:&nbsp;<a href="http://wattdata.blogspot.fr/2011/11/personal-experiences-of-saving-42-on-my.html">Personal experiences of saving 42% on my electricity use</a></div></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -984,6 +984,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro and virtual smart grid</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1036,12 +1042,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
     

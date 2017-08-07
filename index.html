@@ -548,6 +548,97 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro and virtual smart grid</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-08-07T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7nd 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2017/08/cydynni-energylocal/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.</p>
+
+<p><strong>The Bethesda pilot project, How it works</strong></p>
+
+<p>The first part of the CydYnni project started with about 80 households (with 20 more joining soon) and a single 100 kW hydro generator. Using smart meters suitable for half hourly billing in participating households and at the hydro generator, the amount of hydro power used by the community is calculated for every half hour. The hydro tariff is 7p / kWh for the power used each half hour by the community providing a significant saving for households. Any additional power required is bought from the supplier Co-operative Energy on a time-of-use tariff.</p>
+
+<p>The project provides cost savings to participating households, increased income for local renewable energy schemes and a more direct sense of having electricity provided from - in the case of the pilot project a hydro turbine just down the road!</p>
+
+<p>There is a nice video here on the project which gives a good overview:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3z8GrTBLw8M" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="https://www.youtube.com/watch?v=3z8GrTBLw8M">https://www.youtube.com/watch?v=3z8GrTBLw8M</a></p>
+
+<p>There are a number of organisations working on the project of which we are one small part:</p>
+
+<ul>
+  <li>EnergyLocal: The organisation founded by Mary Gillie with the initial idea and in depth understanding of the energy market behind the project.</li>
+  <li>CydYnni: A local consortium of community energy projects and organisations including Ynni Ogwen and Partneriaeth Ogwen, Ynni Padarn Peris, Moelyci, Coetir Mynydd, Antur Waunfawr, Ynni Anafon and the National Trust.</li>
+  <li>Co-operative Energy: The Energy Supplier through which households participate in the project.</li>
+  <li>Epower also known as NFPAS: The non fossil fuel purchasing agency – handling aggregation, power sharing and the nuts and bolts of billing.</li>
+  <li>1010: Graphic design</li>
+  <li>OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2.</li>
+</ul>
+
+<p>It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from the Bethesda).</p>
+
+<p>Our role so far has been to develop a web app / energy dashboard so that participants can see when the local hydro generator is running and how likely they are to be on the cheaper hydro tariff. Participants can see their own consumption as well as the aggregated consumption of all participants.</p>
+
+<p>The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:</p>
+
+<p><a href="https://cydynni.org.uk">https://cydynni.org.uk</a></p>
+
+<p><img src="/images/cydynni-app.png" alt="cydynni-app.png" /></p>
+
+<p>The source code for the app is open source and available on github here:</p>
+
+<p><a href="http://github.com/trystanlea/cydynni">http://github.com/trystanlea/cydynni</a></p>
+
+<p>We have also developed a dashboard that is more focused on exploring the full data history of the hydro generation and community consumption, this dashboard can be viewed online here:</p>
+
+<p><a href="https://dev.cydynni.org.uk">https://dev.cydynni.org.uk</a></p>
+
+<p><img src="/images/cydynni-history.png" alt="cydynni-history.png" /></p>
+
+<p>From the start of January the hydro supplied 57% of the electricity consumption of the participating households. You can really see how the available hydro generation decays usually over about a week after a significant rain event and the extent of the oversupply when it is raining.</p>
+
+<p>It would be interesting to model the addition of solar to see how periods of lower rainfall might be supplanted by solar generation and explore other options for supplying the unmatched demand - e.g. anaerobic digestion.</p>
+
+<p><strong>Part 1: Energy Dashboard / Web App development</strong></p>
+
+<p>This first stage of the project relies on the app or looking at how rainy it is to signal to the households when it’s a good time to use energy. Any demand shifting is done manually by the householder. The data update rate from the smart meters is also relatively slow, with 48 half hourly readings updated daily but usually available in the app with a lag time of anywhere from 15 hours up to 63 hours over the weekend.</p>
+
+<p><strong>Part 2: Hub</strong></p>
+
+<p>The next stage of the project for us is to improve on this with an in home hub (based currently on the OpenEnergyMonitor emonbase), which will interface with a WIFI/radio meter gateway developed by Energy Assets, providing much faster 5-10s meter readings as well as enabling control of smart appliances, plugs and EV charging.</p>
+
+<p>This development has driven some of our most recent improvements to the EmonPi/EmonBase, such as the recently launched WIFI Hotspot setup and ongoing development on the emoncms device module, which alongside auto-configuration of inputs and feeds provides the option to define control devices starting with the Sonoff S20 WIFI Socket, Martin’s WIFI Relay unit and the OpenEVSE charging station.</p>
+
+<p>Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.</p>
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
   </h1>
   
@@ -1095,62 +1186,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-09-29T09:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Nov 29th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/09/emonth2/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>The emonTH V2 is an open-source, wireless, battery-powered temperature and humidity monitoring node.</p>
-
-<p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years. The Si7021 is also <em>much</em> smaller than the DHT22.</p>
-
-<p><img src="/images/emonth2.jpg" alt="emonTH V2" /></p>
-
-<p><em>The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.</em></p>
-
-<p><img src="/images/emonth_green.png" alt="emonTH image" /></p>
-
-<p><strong><a href="https://shop.openenergymonitor.com/emonth-temperature-humidity-node/">The emonTH V2 is now shipping via our online shop</a></strong></p>
-
-<p>As with all our hardware units the emonTH V2 is <a href="https://github.com/openenergymonitor/emonth2">fully open-source</a> and manufactured locally in North Wales, UK using non-conflict materials lead-free processes.</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/09/emonth2/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1171,6 +1206,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro and virtual smart grid</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1223,12 +1264,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
     

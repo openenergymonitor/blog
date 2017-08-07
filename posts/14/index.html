@@ -548,6 +548,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/10/emonth-update-software-power/">emonTH Update - Software and Power Consumption</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T12:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-10-18 12:47:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/10/emonth-update-software-power/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Today I have spent some time writing the software for the emonTH. The goal for the emonTH is for it to last as long as possible from batteries (2 x AA's). The boost converter circuit as highlighted in my previous post will go someway to increasing battery life, however most gains in battery life will come from the software (ATmega328 Arduino sketch) .<br /><br />The emonTH supports both the DHT22 (humidity and temperature) and DS18B20 either onboard or remote temperature sensor. The default software will search for the presence of either sensor at startup. If both sensors are found it will return humidity from the DHT22 and temperature from the DS128B20. If only the DHT22 is found it will return both humidity and temperature readings from this sensor, finally if only the DS18B20 is found only temperature readings will be returned. In the future I would like to expand the code to support multiple DS18B20 sensors on the one-wire bus.<br /><br />I have implemented many of the power saving tricks as <a href="http://harizanov.com/2013/08/every-%CE%BCa-counts/">Martin Harizanov</a> has used in his <a href="https://github.com/mharizanov/new_Funky/blob/master/examples/Funky_DS18B20_plus_powersave/Funky_DS18B20_plus_powersave.ino">Funky Sensor code</a>, in particular the his&nbsp;<a href="http://harizanov.com/2013/07/optimizing-ds18b20-code-for-low-power-applications/">DS18B20 power saving tweaks</a>. Martin has done some great work optimising power and designing some very small low power nodes, his blog is well worth a read.<br /><br />The emonTH code (in beta) is now up on Github:&nbsp;<a href="https://github.com/openenergymonitor/emonth">https://github.com/openenergymonitor/emonth</a><br /><br />The power consumption results are as follows, assuming one reading is taken per min and using this <a href="http://oregonembedded.com/batterycalc.htm">battery estimation tool</a>&nbsp;assuming AA capacity of 2200mAh and not taking into account AA self-discharge*<br /><br /><h3>emonTH with DS18b20 temperature only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s1600/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://4.bp.blogspot.com/-QFt-6GpofiA/UmEUeKZLmaI/AAAAAAAAmRY/ceFV--053-4/s640/DS2_QuickPrint19_DS28B20_incorrect+power_correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DS18B20 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><i>Sleep Current:</i> 0.12mA<br /><i>On current: </i>9.7mA for 70ms then peaking to 26mA for 2.8ms for RFM12B transmission, giving average of 10.2mA for 9.8ms<br /><br /><i><u>Approximate battery life of 3.5 years*</u></i><br /><br /><h3>emonTH with DHT22 (temperature &amp; humidity) only (Vin = 2.6V)</h3><b><br /></b><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s1600/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://2.bp.blogspot.com/-gUAkOiTNypQ/UmEUeDW0uVI/AAAAAAAAmRk/rmnypTJ-DQI/s640/DS2_QuickPrint20_DHT22_incorrect+power+reading+correct+time.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue - DHT22 power digital power pin, Yellow - voltage drop across series resistor. Due to switching noise from the DC converter the scope was not very useful for measuring current (voltage drop across a resistor), the scope was used to measure timings and power was measured with accurate multimeter&nbsp;</td></tr></tbody></table><b><br /></b><i>Sleep Current: </i>0.12mA<br /><i>On current:&nbsp;</i>9.5mA for 1700ms then peaking to 26mA for 2.8 ms for RFM12B transmission giving average of 9.525mA for 1703ms<br /><br /><i><u>Approximate battery life of 1.1 years*</u></i><br /><b><br /></b> <br />*Stay tuned for the next post on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">AA battery considerations including how to deal with self-discharge issues</a>...
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/10/emonth-update-hardware/">emonTH Update - Hardware </a>
   </h1>
   
@@ -920,46 +960,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/08/emontx-v3-progress-update/">emonTx V3 Progress Update</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-08-31T10:50:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-31 10:50:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/08/emontx-v3-progress-update/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Since my last post<a href="http://openenergymonitor.blogspot.com/2013/02/emontx-smt-update-introducing-emontx-v3.html"> introducing the emonTx V3&nbsp;</a>&nbsp;prototype design progress has been steady. The design has undergone several iterations and has now reached a stage of maturity.<br /><br />The main features of the emonTx V3 have stayed the same:<br /><ul><li>ATmega328 Arduino IDE compatible microcontroller</li><li>RFM12B or Ciseco SRF 433/868/915Mhz RF wireless compatiable with <a href="http://openenergymonitor.org/emon/emonbase/raspberrypi">RFM12Pi </a>Raspberry Pi emoncms basestation</li><li>3 x Standard (23kW max) CT channels</li><li>1 x High sensitivity (4.5kW max) CT channel&nbsp;</li><li>Integrated <a href="http://openenergymonitor.blogspot.co.uk/2012/05/emontx-single-ac-power-supply.html">AC-DC power supply</a> to enable powering the unit from a single 9V AC adapter while also sampling the AC voltage to calculate Real Power and AC Vrms readings&nbsp;</li><li>Low power design with option to power from 3 x AA batteries for Apparent Power (current ony) measurement</li><li>Enclosed in wall mountable extruded aluminium enclosure</li><li>Terminal block connection for optical pulse sensor and DS18B20 temperature sensors</li><li>Pre-assembled SMT electronics</li></ul><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-rELQvkIfVK4/Uh5qYxm6q_I/AAAAAAAAj0k/Ol6i00TKDRo/s1600/emonTxV3.0.1+prototype.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-rELQvkIfVK4/Uh5qYxm6q_I/AAAAAAAAj0k/Ol6i00TKDRo/s400/emonTxV3.0.1+prototype.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 with 3 x AA battery's and 1 x CT (Apparent Power setup)</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-6xcrqx5UmJA/Ul-kNEaYNPI/AAAAAAAAmMo/q9Itg5zfVvc/s1600/PhotoGrid_1380621877488.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://4.bp.blogspot.com/-6xcrqx5UmJA/Ul-kNEaYNPI/AAAAAAAAmMo/q9Itg5zfVvc/s400/PhotoGrid_1380621877488.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Fully assembled with antenna in wall-mount enclosure</td></tr></tbody></table><br />I am currently in the process of obtaining assembly quotes from manufactures as well as performing lots of testing. <br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-r1ge_LRe9Y8/UiHIW6texlI/AAAAAAAAj3U/ScYsMV3DyG0/s1600/emonTxV3.1_brd.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="585" src="http://2.bp.blogspot.com/-r1ge_LRe9Y8/UiHIW6texlI/AAAAAAAAj3U/ScYsMV3DyG0/s640/emonTxV3.1_brd.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.1 PCB Design&nbsp;</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-xYTpFrE1Uaw/UiHIWr_7mNI/AAAAAAAAj3Q/nbUg2CzpA4E/s1600/emonTxV3.1_sch_BW.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="473" src="http://4.bp.blogspot.com/-xYTpFrE1Uaw/UiHIWr_7mNI/AAAAAAAAj3Q/nbUg2CzpA4E/s640/emonTxV3.1_sch_BW.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.1 Schematic</td></tr></tbody></table><br />The AC-DC circuit that was initially <a href="http://openenergymonitor.blogspot.com/2012/05/emontx-single-ac-power-supply.html">designed with the aid of simulation</a> then<a href="http://openenergymonitor.blogspot.com/2013/01/power-emontx-from-single-ac-power.html"> </a><a href="http://openenergymonitor.blogspot.co.uk/2013/01/power-emontx-from-single-ac-power.html">bench tested</a>&nbsp;is performing as expected.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-zv0FHUj1QWo/Uh5pwJk6RGI/AAAAAAAAj0c/TZX51OKfjpQ/s1600/DS2_QuickPrint7.bmp" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="384" src="http://1.bp.blogspot.com/-zv0FHUj1QWo/Uh5pwJk6RGI/AAAAAAAAj0c/TZX51OKfjpQ/s640/DS2_QuickPrint7.bmp" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Blue = output from 9V AC adapter Yellow = input to voltage regulator when unit is drawing 7.7mA &nbsp;@ 3.3V, sudden dip is caused by RFM12B firing up to transmit four integer data packets <a href="http://openenergymonitor.blogspot.co.uk/2013/07/ciseco-srf-vs-rfm12b-power-consumption.html">(approx 24mA for 2.7ms)</a></td></tr></tbody></table>If all goes well we're expecting to get the emonTx V3 into production in the next few of months.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -982,6 +982,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro and virtual smart grid</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1034,12 +1040,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
     

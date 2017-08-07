@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-08-05T11:39:42+00:00</updated>
+  <updated>2017-08-07T15:56:49+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CydYnni – Energy Local, community hydro and virtual smart grid]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/"/>
+    <updated>2017-08-07T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id>
+    <content type="html"><![CDATA[<p>Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.</p>
+
+<p><strong>The Bethesda pilot project, How it works</strong></p>
+
+<p>The first part of the CydYnni project started with about 80 households (with 20 more joining soon) and a single 100 kW hydro generator. Using smart meters suitable for half hourly billing in participating households and at the hydro generator, the amount of hydro power used by the community is calculated for every half hour. The hydro tariff is 7p / kWh for the power used each half hour by the community providing a significant saving for households. Any additional power required is bought from the supplier Co-operative Energy on a time-of-use tariff.</p>
+
+<p>The project provides cost savings to participating households, increased income for local renewable energy schemes and a more direct sense of having electricity provided from - in the case of the pilot project a hydro turbine just down the road!</p>
+
+<p>There is a nice video here on the project which gives a good overview:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3z8GrTBLw8M" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="https://www.youtube.com/watch?v=3z8GrTBLw8M">https://www.youtube.com/watch?v=3z8GrTBLw8M</a></p>
+
+<p>There are a number of organisations working on the project of which we are one small part:</p>
+
+<ul>
+  <li>EnergyLocal: The organisation founded by Mary Gillie with the initial idea and in depth understanding of the energy market behind the project.</li>
+  <li>CydYnni: A local consortium of community energy projects and organisations including Ynni Ogwen and Partneriaeth Ogwen, Ynni Padarn Peris, Moelyci, Coetir Mynydd, Antur Waunfawr, Ynni Anafon and the National Trust.</li>
+  <li>Co-operative Energy: The Energy Supplier through which households participate in the project.</li>
+  <li>Epower also known as NFPAS: The non fossil fuel purchasing agency – handling aggregation, power sharing and the nuts and bolts of billing.</li>
+  <li>1010: Graphic design</li>
+  <li>OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2.</li>
+</ul>
+
+<p>It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from the Bethesda).</p>
+
+<p>Our role so far has been to develop a web app / energy dashboard so that participants can see when the local hydro generator is running and how likely they are to be on the cheaper hydro tariff. Participants can see their own consumption as well as the aggregated consumption of all participants.</p>
+
+<p>The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:</p>
+
+<p><a href="https://cydynni.org.uk">https://cydynni.org.uk</a></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/cydynni-app.png" alt="cydynni-app.png" /></p>
+
+<p>The source code for the app is open source and available on github here:</p>
+
+<p><a href="http://github.com/trystanlea/cydynni">http://github.com/trystanlea/cydynni</a></p>
+
+<p>We have also developed a dashboard that is more focused on exploring the full data history of the hydro generation and community consumption, this dashboard can be viewed online here:</p>
+
+<p><a href="https://dev.cydynni.org.uk">https://dev.cydynni.org.uk</a></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/cydynni-history.png" alt="cydynni-history.png" /></p>
+
+<p>From the start of January the hydro supplied 57% of the electricity consumption of the participating households. You can really see how the available hydro generation decays usually over about a week after a significant rain event and the extent of the oversupply when it is raining.</p>
+
+<p>It would be interesting to model the addition of solar to see how periods of lower rainfall might be supplanted by solar generation and explore other options for supplying the unmatched demand - e.g. anaerobic digestion.</p>
+
+<p><strong>Part 1: Energy Dashboard / Web App development</strong></p>
+
+<p>This first stage of the project relies on the app or looking at how rainy it is to signal to the households when it’s a good time to use energy. Any demand shifting is done manually by the householder. The data update rate from the smart meters is also relatively slow, with 48 half hourly readings updated daily but usually available in the app with a lag time of anywhere from 15 hours up to 63 hours over the weekend.</p>
+
+<p><strong>Part 2: Hub</strong></p>
+
+<p>The next stage of the project for us is to improve on this with an in home hub (based currently on the OpenEnergyMonitor emonbase), which will interface with a WIFI/radio meter gateway developed by Energy Assets, providing much faster 5-10s meter readings as well as enabling control of smart appliances, plugs and EV charging.</p>
+
+<p>This development has driven some of our most recent improvements to the EmonPi/EmonBase, such as the recently launched WIFI Hotspot setup and ongoing development on the emoncms device module, which alongside auto-configuration of inputs and feeds provides the option to define control devices starting with the Sonoff S20 WIFI Socket, Martin’s WIFI Relay unit and the OpenEVSE charging station.</p>
+
+<p>Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Advances Wales Magazine Article]]></title>
@@ -1440,100 +1508,6 @@ The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of
 
 <p><a href="https://en.wikipedia.org/wiki/Mains_electricity_by_country">Mains Electricity by Country (Wikipedia)</a></p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Substantial update to emonPi / emonBase: emonSD-03-May16 pre-built image release]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16/"/>
-    <updated>2016-05-20T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/emonsd-update-03may16</id>
-    <content type="html"><![CDATA[<p>This latest update to emonSD the pre-built SD card image for the emonPi/emonBase significantly enhances the out-the-box functionality of the emonPi by integrating applications such as nodeRED, openHAB and improved MQTT support.</p>
-
-<blockquote>
-  <p>The emonPi in its default configuration works great using Emoncms for data logging and visualisation. However there may be times when more flexibility and the ability to interface with other hardware or services is desirable.</p>
-</blockquote>
-
-<p>The emonPi with this latest software update is perfectly positioned to become the heart of a smart home automation system. The ‘always-on’ requirement of energy monitoring and the processing power of the Raspberry Pi makes it a fantastic customisable home-hub. See <em>Related Blog Posts</em> at the bottom of this post for inspiration as to what can be achieved.</p>
-
-<hr />
-
-<p>For the past few years we have made available a pre-built SD card image for the RaspberryPi. Since launching the emonPi last year the pre-built image has been developed extensively. We have now given it a name: <strong>emonSD</strong>.</p>
-
-<p>The latest update to emonSD (<strong><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">emonSD-03May16</a></strong>) now incudes the following all setup and pre-configured:</p>
-
-<ul>
-  <li><a href="https://github.com/emoncms/emoncms">Emoncms V9</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/nodered">nodeRED</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/openhab">openHAB</a></li>
-  <li><a href="https://guide.openenergymonitor.org/technical/mqtt">MQTT</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/lightwaverf/">Support for MQTT LightWaveRF OOK Control</a></li>
-  <li><a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">Support for MQTT WiFi control Relay</a></li>
-  <li><a href="https://guide.openenergymonitor.org/setup/connect/#5-connect-via-3g-gsm-optional">GSM 3G USB modem support</a></li>
-</ul>
-
-<!--more-->
-
-<ul>
-  <li><a href="https://www.raspberrypi.org/downloads/raspbian/">RASPBIAN JESSIE LITE</a> (2015-11-21)</li>
-  <li><a href="https://blog.openenergymonitor.org/2016/03/raspberry-pi-3/">Raspberry Pi 3 Suppport</a>
-    <ul>
-      <li>Including on-board Wifi, external USB Wifi adapter no longer required</li>
-    </ul>
-  </li>
-  <li>low-write optimisations for long SD card life-span</li>
-  <li>Root file-system read-only</li>
-</ul>
-
-<h3 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
-
-<p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3’s on-board WiFi (<a href="https://blog.openenergymonitor.org/2016/05/emonpi-raspberrypi3/">see blog post</a>):</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-raspi3.jpg" alt="emonPi Raspberry Pi 3 Acrylic Fascia" /></p>
-
-<p>Existing users can download the new emonSD from the link above and flash to a spare SD card and then use the <a href="https://guide.openenergymonitor.org/setup/import/">Emoncms backup / import</a> tool to migrate local Emoncms data.</p>
-
-<p><strong>We would highly recommend all users that are interested in having the latest features and future update to update to this new emonSD image. The June15 image will not receive any Emoncms updates.</strong></p>
-
-<p>However if your emonPi is currently stable and is working as indented then don’t feel that upgrading is essential, <em>“If it ain’t broke, don’t f ix it!”</em>.</p>
-
-<h2 id="thank-you-feedback--support">Thank you, Feedback &amp; Support</h2>
-
-<p>Releasing this pre-built image update is a significant milestone for us. It’s been the main focus of my work since November lasat year. Thanks a lot to all the community members who helped with testing the dev and release candidates version of the image and provided excellent feedback and contributions. See the <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">emonSD download repository wiki</a> for links to forum discussion thread.</p>
-
-<p>To give feedback or obtain support for the new image please post in the <a href="https://community.openenergymonitor.org/c/emonsd">emonSD forum</a>.</p>
-
-<hr />
-
-<h2 id="documentation">Documentation</h2>
-
-<p>As <a href="2016/05/website-changes/">previously mentioned on the blog</a> a couple of weeks ago we have launched a new User Guide website, the launch of this Guide has coincide with the launch of the new emonSD. The User Guide is designed to be the goto location for everything a user needs to know to setup, use and configure an OpenEnergyMonitor system:</p>
-
-<h3 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
-
-<h2 id="related-blog-posts">Related Blog posts</h2>
-
-<h3 id="nodered">nodeRED</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/categories/nodered/">Node-RED blog post tag</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2015/10/emonpi-nodered-and-mqtt/">emonPi, NodeRed and MQTT</a></li>
-  <li><a href="http://2.bp.blogspot.com/-wVqIG0KV_8k/VkPM0XAJCYI/AAAAAAABi1c/EoNQ2OvDVvs/s1600/emoncms_nodered_node.png">Node-RED Emoncms Node</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms &amp; MQTT</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB</a></li>
-</ul>
-
-<h3 id="openhab">openHAB</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2015/12/openenergymonitor-emonpi-and-openhab/">OpenEnergyMonitor, emonPi and openHAB</a></li>
-</ul>
-
-<h3 id="lightwave-rf">LightWave RF</h3>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2015/11/remote-control-of-lightwave-rf-plugs/">Controling LightWaveRF plugs using emonPi</a></li>
-</ul>
 ]]></content>
   </entry>
   

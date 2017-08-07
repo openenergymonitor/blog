@@ -548,6 +548,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2014/01/emonth-multiple-ds18b20-sensors/">emonTH Multiple DS18B20 Sensors</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-01-18T13:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-01-18 13:24:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/01/emonth-multiple-ds18b20-sensors/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Thanks to&nbsp;<a href="https://github.com/Dave-McCraw">Dave McCraw</a> it's now possible to connect multiple DS18B20 digital temperature sensors to the emonTH on the one-wire bus.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-ux4DUlS0uWw/Utp7RQ83b_I/AAAAAAAAss0/DRiLl_F13D8/s1600/2014-01-18+12.59.20.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-ux4DUlS0uWw/Utp7RQ83b_I/AAAAAAAAss0/DRiLl_F13D8/s1600/2014-01-18+12.59.20.jpg" height="240" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Two External DS18B20 temperature sensor +&nbsp;internal DHT22 temp&nbsp;+ humidity on emonTH</td></tr></tbody></table><br />Multiple DS18B20 sensors can be (optionally) used alongside an internal DHT22 temperature and humidity sensor. Dave's sketch which is now up in the <a href="https://github.com/openenergymonitor/emonTH">emonTH GitHub repo</a> supports two DS18B20 sensors but can easily be extended to include more.<br /><br />Dave's multiple sensor sketch requires the unique hardware addresses of the DS18B20 sensors hard-coded in the sketch, the '<a href="https://github.com/openenergymonitor/emonTH/tree/master/Simple%20emonTH%20Sensor%20Test/emonTH_temperature_search">emonTH temperature search</a>' utility sketch can be used to discover the addresses. &nbsp;Hardcoding the hardware addresses guarantees Emoncms inputs won't flip around if you replace or add sensors.<br /><br />The multiple DS18B20 sketch includes all the low power saving tricks, the sensors are only switch on when required and the ATMega328 goes to sleep in-between readings switching off all unnecessary functions. Obviously running more than one sensor will consume more power but I would still expect <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">battery life</a> to be in the region of 12 months.<br /><br />Using multiple DS18B20 external temperature sensors on the emonTH as lots of exciting possibilities, a few ideas include:<br /><br /><ul><li><a href="http://openenergymonitor.org/emon/applications/heatpump">Heatpump monitoring</a>: inlet, outlet flow temperatures etc.</li><li><a href="http://openenergymonitor.org/emon/applications/shw">Solar hotwater &amp; hot water cylinder monitoring</a>: top, middle and bottom of hot water tank</li><li><a href="http://openenergymonitor.org/emon/openbem">Building temperature investigation</a>: internal, cavity wall and external temperatures to inform openBEM (Building Energy Model)</li></ul><div><br /></div><div>emonTH Shop page:&nbsp;<a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">http://shop.openenergymonitor.com/emonth-temperature-humidity-node/</a></div><div>emonTH main getting started page:&nbsp;<a href="http://openenergymonitor.org/emon/modules/emonTH">http://openenergymonitor.org/emon/modules/emonTH</a></div><div>emonTH GitHub:&nbsp;<a href="https://github.com/openenergymonitor/emonTH">https://github.com/openenergymonitor/emonTH</a></div><div>emonTH technical wiki:&nbsp;<a href="http://wiki.openenergymonitor.org/index.php?title=EmonTH">http://wiki.openenergymonitor.org/index.php?title=EmonTH</a></div><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/01/we-won-daily-post-business-award-2013/">We Won! Daily Post Business Award 2013 - Green Award Category </a>
   </h1>
   
@@ -932,46 +972,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/11/2013-christmas-ordering-info-royal-mail/">2013 Christmas Ordering Info - Royal Mail Last Posting Dates for Delivery before Christmas</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-11-27T23:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-27 23:39:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/shop/'>shop</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/11/2013-christmas-ordering-info-royal-mail/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: center;"></div>It's that time of year again! We're busier than ever with the <a href="http://openenergymonitor.blogspot.com/2013/11/new-hardware-is-in-shop-and-starting-to.html">launch of our new hardware modules</a>&nbsp;this week.Thanks to everyone who's helped support the project by ordering through the shop or contributed to the project in some way shape or form. <b>All pre-orders for the new hardware will have been shipped by beginning of next week.&nbsp;</b><br /><div dir="ltr"><br /></div><div dir="ltr">Since I last posted a <a href="http://openenergymonitor.blogspot.com/2012/11/openenergymonitor-shop-christmas.html">similar post </a>this time last year we have shipped over 2500 orders and have<a href="http://openenergymonitor.blogspot.com/2013/10/new-office-space-and-new-units.html"> moved into a new office</a>.&nbsp;</div><div dir="ltr"><br /></div><div dir="ltr">Here are the last posting dates for delivery in time for Christmas according to Royal Mail. We will continue to ship right up until Christmas but to avoid disappointment if you would like your items before Christmas please get your order in soon!&nbsp;</div><div dir="ltr"><b><br /></b></div><div dir="ltr"><b>International Airmail including<br />Airsure® and International Signed For™</b><br />Wednesday 4 December  Asia, Far East (including Japan), New Zealand<br />Thursday 5 December  Australia<br />Friday 6 December  Africa, Caribbean, Central &amp; South America, Middle East<br />Monday 9 December  Cyprus, Eastern Europe<br />Tuesday 10 December  Canada, France, Greece, Poland<br />Friday 13 December  USA<br />Saturday 14 December  Western Europe (excluding France, Greece, Poland)<br /><br /><b>UK Services &nbsp;</b><br />Friday 20 December  1st Class<br />Monday 23 December  Royal Mail Special Delivery Guaranteed™</div><div dir="ltr"><br /></div><div dir="ltr">We will also be shipping between Christmas and new year and as soon as the postal system opens again beginning of Jan.&nbsp;</div><div dir="ltr"><br /></div><div dir="ltr">We will hopefully get another post up when I have a bit more time over the festive period taking stock of the year; what we've achieved and our aims and hopes for next year. Until then, here's a quick couple of photos from the office today:</div><div dir="ltr"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-8vlGp7thuaI/UpZ8ynhfw2I/AAAAAAAArIM/rKbDmO7iAiQ/s1600/IMG_20131126_190031.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-8vlGp7thuaI/UpZ8ynhfw2I/AAAAAAAArIM/rKbDmO7iAiQ/s320/IMG_20131126_190031.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH assembled PCB's tested, firmware uploaded and ready to go</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/--IUTVkGx2hk/UpZ882dFtxI/AAAAAAAArIU/Ucly_kwUENo/s1600/20131126_150442_Ffordd+Y+Parc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/--IUTVkGx2hk/UpZ882dFtxI/AAAAAAAArIU/Ucly_kwUENo/s320/20131126_150442_Ffordd+Y+Parc.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Trystan's been testing a setup with Raspberry Pi with RFM12Pi running emoncms on an external hard drive, potentially a great low cost solution for home emoncms microserver with robust logging and local storage...expect blog post and HDD image soon</td></tr></tbody></table><div dir="ltr"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-xozlacwKGPA/UpZ7Nb4ZQwI/AAAAAAAArIA/Vta8Qsrniss/s1600/20131127_141141_Ffordd+Y+Parc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-xozlacwKGPA/UpZ7Nb4ZQwI/AAAAAAAArIA/Vta8Qsrniss/s320/20131127_141141_Ffordd+Y+Parc.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 cases getting ready to ship..in case you're wondering, yes we did give that poor suffering plant in the background some water later today!<br /><br /></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-if-MHay73FU/UpZ-IE70cUI/AAAAAAAArIk/DfUr0mdRGzA/s1600/IMG_4972.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://1.bp.blogspot.com/-if-MHay73FU/UpZ-IE70cUI/AAAAAAAArIk/DfUr0mdRGzA/s320/IMG_4972.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Trystan and the the dev bench</td></tr></tbody></table><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-Qlhh_Z9YZ0U/UpaAWjoqZFI/AAAAAAAArI8/ubhWBRsxXLQ/s1600/IMG_5163.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://1.bp.blogspot.com/-Qlhh_Z9YZ0U/UpaAWjoqZFI/AAAAAAAArI8/ubhWBRsxXLQ/s320/IMG_5163.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Myself and Trystan 'working', I should add that I'm doing<a href="http://uk.movember.com/mospace/9391625"> 'Movember' , only a few more days to go, please donate, it's for a good cause</a></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-9xzt1UKOdy4/UpaAZRQRzAI/AAAAAAAArJE/pkni5xGRJk4/s1600/IMG_5158.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://4.bp.blogspot.com/-9xzt1UKOdy4/UpaAZRQRzAI/AAAAAAAArJE/pkni5xGRJk4/s320/IMG_5158.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Printing postage for order parcels</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-tuN-Pl9I4VA/UpZ-fGO7tJI/AAAAAAAArI0/AnSlXEGb8AU/s1600/IMG_5062.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://3.bp.blogspot.com/-tuN-Pl9I4VA/UpZ-fGO7tJI/AAAAAAAArI0/AnSlXEGb8AU/s320/IMG_5062.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Order fulfillment&nbsp;</td></tr></tbody></table><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -994,6 +994,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro and virtual smart grid</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1046,12 +1052,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller Review</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
         </li>
       
     
