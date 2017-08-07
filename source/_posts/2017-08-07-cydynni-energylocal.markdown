@@ -33,7 +33,7 @@ There are a number of organisations working on the project of which we are one s
 - 1010: Graphic design
 - OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2. 
 
-It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from the Bethesda).
+It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from Bethesda).
 
 Our role so far has been to develop a web app / energy dashboard so that participants can see when the local hydro generator is running and how likely they are to be on the cheaper hydro tariff. Participants can see their own consumption as well as the aggregated consumption of all participants.
 
