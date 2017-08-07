@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "CydYnni – Energy Local, community hydro and virtual smart grid"
+title: "CydYnni – Energy Local, community hydro smart grid"
 date: "2017-08-07 00:00"
 date_formatted: Aug 7nd 2017
 author: Trystan Lea
