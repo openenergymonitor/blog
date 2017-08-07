@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-08-07T16:06:01+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-08-07T16:23:49+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The Bethesda pilot project, How it works&lt;/strong&gt;&lt;/p&gt;
 
@@ -23,7 +23,7 @@
   &lt;li&gt;OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from the Bethesda).&lt;/p&gt;
+&lt;p&gt;It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from Bethesda).&lt;/p&gt;
 
 &lt;p&gt;Our role so far has been to develop a web app / energy dashboard so that participants can see when the local hydro generator is running and how likely they are to be on the cheaper hydro tariff. Participants can see their own consumption as well as the aggregated consumption of all participants.&lt;/p&gt;
 
@@ -82,7 +82,7 @@ There are a number of organisations working on the project of which we are one s
   OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2.
 
 
-It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from the Bethesda).
+It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from Bethesda).
 
 Our role so far has been to develop a web app / energy dashboard so that participants can see when the local hydro generator is running and how likely they are to be on the cheaper hydro tariff. Participants can see their own consumption as well as the aggregated consumption of all participants.
 
