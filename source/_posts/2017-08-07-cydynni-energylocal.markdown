@@ -22,8 +22,6 @@ There is a nice video here on the project which gives a good overview:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3z8GrTBLw8M" frameborder="0" allowfullscreen></iframe>
 
-[https://www.youtube.com/watch?v=3z8GrTBLw8M](https://www.youtube.com/watch?v=3z8GrTBLw8M)
-
 There are a number of organisations working on the project of which we are one small part:
 
 - EnergyLocal: The organisation founded by Mary Gillie with the initial idea and in depth understanding of the energy market behind the project.
