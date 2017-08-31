@@ -20,7 +20,7 @@ The project provides cost savings to participating households, increased income 
 
 There is a nice video here on the project which gives a good overview:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3z8GrTBLw8M" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="315px" src="https://www.youtube.com/embed/3z8GrTBLw8M" frameborder="0" allowfullscreen></iframe>
 
 There are a number of organisations working on the project of which we are one small part:
 
@@ -29,7 +29,7 @@ There are a number of organisations working on the project of which we are one s
 - Co-operative Energy: The Energy Supplier through which households participate in the project.
 - Epower also known as NFPAS: The non fossil fuel purchasing agency – handling aggregation, power sharing and the nuts and bolts of billing.
 - 1010: Graphic design
-- OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2. 
+- OpenEnergyMonitor: web app development in part 1 and home hub (base-station) development in part 2.
 
 It’s been great being involved in such a pioneering project run in the local community in which we live (the OpenEnergyMonitor office is about 5 miles from Bethesda).
 
@@ -41,7 +41,7 @@ The main energy dashboard app designed by 1010 and implemented by ourselves can 
 
 ![cydynni-app.png]({{site.image_path}}/cydynni-app.png)
 
-The source code for the app is open source and available on github here: 
+The source code for the app is open source and available on github here:
 
 [http://github.com/trystanlea/cydynni](http://github.com/trystanlea/cydynni)
 
@@ -51,7 +51,7 @@ We have also developed a dashboard that is more focused on exploring the full da
 
 ![cydynni-history.png]({{site.image_path}}/cydynni-history.png)
 
-From the start of January the hydro supplied 57% of the electricity consumption of the participating households. You can really see how the available hydro generation decays usually over about a week after a significant rain event and the extent of the oversupply when it is raining. 
+From the start of January the hydro supplied 57% of the electricity consumption of the participating households. You can really see how the available hydro generation decays usually over about a week after a significant rain event and the extent of the oversupply when it is raining.
 
 It would be interesting to model the addition of solar to see how periods of lower rainfall might be supplanted by solar generation and explore other options for supplying the unmatched demand - e.g. anaerobic digestion.
 
