@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OpenEVSE EV Charge Controller Review - Blog | OpenEnergyMonitor</title>
+    <title>OpenEVSE EV Charge Controller - Blog | OpenEnergyMonitor</title>
     <meta name="author" content="Glyn Hudson">
     <meta name="description" content="OpenEnergyMonitor Blog">
     
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://blog.openenergymonitor.org/2017/01/openevse-build/">
 
     <meta property="fb:app_id" content="">
-    <meta property="og:title" content="OpenEVSE EV Charge Controller Review">
+    <meta property="og:title" content="OpenEVSE EV Charge Controller">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
     <meta property="og:url" content="https://blog.openenergymonitor.org/2017/01/openevse-build/">
     <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@openenergymon">
     
-    <meta name="twitter:title" content="OpenEVSE EV Charge Controller Review">
+    <meta name="twitter:title" content="OpenEVSE EV Charge Controller">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
@@ -554,7 +554,7 @@ $(".searchBox form").click( function(event) {
   
   <header>
   
-  <h1 class="title indent">OpenEVSE EV Charge Controller Review</h1>
+  <h1 class="title indent">OpenEVSE EV Charge Controller</h1>
   
 
   
@@ -728,15 +728,13 @@ $(".searchBox form").click( function(event) {
 
 <p>There is also an <a href="https://github.com/tiramiseb/python-openevse">OpenEVSE RAPI command python library</a>.</p>
 
-<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE plus source code</a>.</p>
+<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h">OpenEVSE plus source code</a>.</p>
 
 <h4 id="future-developments">Future developments</h4>
 
-<p>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</p>
+<p><del>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</del></p>
 
-<p><strong>Update:</strong> I have recently added RAPI commands over MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266/tree/Devolopment">OpenEVSE ESP8266 code currently in the dev branch</a>.</p>
-
-<p>See <a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">this forum thread</a> for related discussion.</p>
+<p><strong>UPDATE Oct 17:</strong> WiFi V2 is now stable release with web-UI interface, RAPI over MQTT and solar PV divert feature. See <a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE WiFi V2 Documentation</a></p>
 
 <h3 id="open-source">Open Source</h3>
 
@@ -747,14 +745,13 @@ $(".searchBox form").click( function(event) {
   <li><a href="https://github.com/OpenEVSE/OpenEVSE_PLUS">OpenEVSE Plus Controller Hardware</a></li>
   <li><a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE Plus Controller Firmware</a></li>
   <li><a href="https://github.com/OpenEVSE/Default_Firmware_Loads">OpenEVSE Plus Controller Pre Compiled Firmware</a></li>
-  <li><a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE ESP8266 Wifi firmware</a></li>
+  <li><a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE ESP8266 Wifi V2 firmware</a></li>
   <li><a href="https://github.com/OpenEVSE/Enclosures">OpenEVSE Enclosure</a></li>
-  <li><a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE ESP8266 Wifi 2.0 firmware</a></li>
 </ul>
 
 <h3 id="related-forum-threads">Related Forum Threads</h3>
 
-<p><a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">OpenEnergyMonitor community forum thread documenting OpenEVSE build</a></p>
+<p>See <a href="https://community.openenergymonitor.org/c/integrations/openev">OpenEV forum section</a> for related discussion.</p>
 
       <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
     <br>

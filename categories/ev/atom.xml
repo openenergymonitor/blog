@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ev | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/ev/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-08-31T17:35:40+00:00</updated>
+  <updated>2017-10-19T01:05:43+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[OpenEVSE EV Charge Controller Review]]></title>
+    <title type="html"><![CDATA[OpenEVSE EV Charge Controller]]></title>
     <link href="https://blog.openenergymonitor.org/2017/01/openevse-build/"/>
     <updated>2017-01-04T09:00:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2017/01/openevse-build</id>
@@ -162,15 +162,13 @@
 
 <p>There is also an <a href="https://github.com/tiramiseb/python-openevse">OpenEVSE RAPI command python library</a>.</p>
 
-<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE plus source code</a>.</p>
+<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h">OpenEVSE plus source code</a>.</p>
 
 <h4 id="future-developments">Future developments</h4>
 
-<p>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</p>
+<p><del>I would like to add MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE WiFi ESP8266 firmware</a>, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.</del></p>
 
-<p><strong>Update:</strong> I have recently added RAPI commands over MQTT support to the <a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266/tree/Devolopment">OpenEVSE ESP8266 code currently in the dev branch</a>.</p>
-
-<p>See <a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">this forum thread</a> for related discussion.</p>
+<p><strong>UPDATE Oct 17:</strong> WiFi V2 is now stable release with web-UI interface, RAPI over MQTT and solar PV divert feature. See <a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE WiFi V2 Documentation</a></p>
 
 <h3 id="open-source">Open Source</h3>
 
@@ -181,14 +179,13 @@
   <li><a href="https://github.com/OpenEVSE/OpenEVSE_PLUS">OpenEVSE Plus Controller Hardware</a></li>
   <li><a href="https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h">OpenEVSE Plus Controller Firmware</a></li>
   <li><a href="https://github.com/OpenEVSE/Default_Firmware_Loads">OpenEVSE Plus Controller Pre Compiled Firmware</a></li>
-  <li><a href="https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266">OpenEVSE ESP8266 Wifi firmware</a></li>
+  <li><a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE ESP8266 Wifi V2 firmware</a></li>
   <li><a href="https://github.com/OpenEVSE/Enclosures">OpenEVSE Enclosure</a></li>
-  <li><a href="https://github.com/OpenEVSE/ESP8266_WiFi_v2.x">OpenEVSE ESP8266 Wifi 2.0 firmware</a></li>
 </ul>
 
 <h3 id="related-forum-threads">Related Forum Threads</h3>
 
-<p><a href="https://community.openenergymonitor.org/t/openevse-ev-charging-station-with-emoncms-wifi-integration/2439/21">OpenEnergyMonitor community forum thread documenting OpenEVSE build</a></p>
+<p>See <a href="https://community.openenergymonitor.org/c/integrations/openev">OpenEV forum section</a> for related discussion.</p>
 ]]></content>
   </entry>
   
