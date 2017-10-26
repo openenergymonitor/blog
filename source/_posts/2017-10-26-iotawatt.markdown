@@ -1,0 +1,20 @@
+---
+published: false
+layout: post
+title: "Intorducing IoTaWatt"
+date: "2017-10-25 00:00"
+date_formatted: Oct 26th 2017
+author: Glyn Hudson
+comments: true
+categories: iotawatt
+---
+
+
+IotaWatt<sup>tm</sup> is an open-hardware 14 channel WiFi connected electric power monitor. It's based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample voltage and current.
+
+![IoTaWatt]({{site.image_path}}/iotawatt-1.jpg)
+
+![IoTaWatt]({{site.image_path}}/iota-config.png)
+)
+
+<!--more-->
