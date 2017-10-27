@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: "Intorducing IoTaWatt"
 date: "2017-10-25 00:00"
@@ -12,12 +12,15 @@ categories: iotawatt
 
 IotaWatt<sup>tm</sup> is an open-hardware 14 channel WiFi connected electric power monitor. It's based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.
 
+IoTaWatt can log data locally to on-board SD card and post directly to [Emoncms.org](https://emoncms.org) via WiFi. 
+
 **There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.**
 
 IoTaWatt is fully open-source and has been developed by Bob Lemaire [@overeasy](https://community.openenergymonitor.org/u/overeasy/) in partnership with OpenEnergyMonitor.
 
 ![IoTaWatt]({{site.image_path}}/iotawatt-1.jpg)
 
+<a class="btn pull-right" href="http://shop.openenergymonitor.com/iotawatt-wifi-connected-14-channel-electricity-monitor/">View in Shop &rarr; </a><a class="btn pull-left" href="https://guide.openenergymonitor.org/setup/iotawatt/">Setup IoTaWatt</a><br>
 
 ## Hardware
 
@@ -27,7 +30,7 @@ The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266
 
 The onboard SD card allows data to be saved locally with high resolution and network resilience. If the IoTaWatt is posting to an Emoncms server and loses network connectivity data logged to the SD card will be bulk uploaded to Emoncms when a network connection is restored.
 
-An on-board real-time clock (RTC) ensure the timestamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.
+An on-board real-time clock (RTC) ensure the time-stamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.
 
 
 ## Firmware
@@ -45,7 +48,7 @@ The IoTaWatt supports automatic over the air (OTA) firmware updates.
 
 IoTaWatt supports end-to-end encrypted connection to Emoncms using new [Emoncms API transport layer encryption](http://emoncms.org/site/api#input). Due to the limited resources of the ESP8266 microcontroller HTTPS connection is not possible. However, Emoncms offers an in-built transport layer encryption solution where the emoncms apikey is used as the pre-shared key for encrypting the data with AES-128-CBC.
 
-Automatic OTA firmware updates ensure the IoTaWatt is always running the latest most secure version e.g a firmware update was released and automatically deployed to fix the [KRACK WPA vunrability](https://www.krackattacks.com/). Firmware updates are digitally signed.
+Automatic OTA firmware updates ensure the IoTaWatt is always running the latest most secure version e.g a firmware update was released and automatically deployed to fix the [KRACK WPA vulnerability](https://www.krackattacks.com/). Firmware updates are digitally signed.
 
 ***
 
@@ -63,7 +66,7 @@ As I mentioned at the beginning of this post, there are no plans to discontinue 
 - Multiple emonTx's can communicate with a single emonPi / emonBase
 - WiFi connection not required
 
-### IoTaWatt Advatages
+### IoTaWatt Advantages
 
 - Large number of CT sensor inputs
 - Flexible configuration (many different types of CT's supported)
@@ -74,7 +77,3 @@ As I mentioned at the beginning of this post, there are no plans to discontinue 
 The obvious advantage of the IoTaWatt over the emonTx is the number of CT sensor inputs. Another key advantage is the flexibility of the IoTaWatt, each input channel (AC voltage & current) can be individually configured and calibrated. The IoTaWatt supports a number of different sizes of CT sensors with calibration presets for CT sensors e.g [20A](http://shop.openenergymonitor.com/20a-max-clip-on-current-sensor-ct/), [100A (standard)](http://shop.openenergymonitor.com/100a-max-clip-on-current-sensor-ct/) and [200A](http://shop.openenergymonitor.com/200a-max-clip-on-current-sensor-ct/).
 
 It is possible to use an IoTaWatt together with an emonPi / emonBase, the IoTaWAtt can post to any Emoncms server including emonPi over a local network.
-
-
-
-
