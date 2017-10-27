@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-10-27T02:20:51+00:00</updated>
+  <updated>2017-10-27T17:02:55+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,83 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Intorducing IoTaWatt]]></title>
+    <link href="https://blog.openenergymonitor.org/2017/10/iotawatt/"/>
+    <updated>2017-10-25T00:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2017/10/iotawatt</id>
+    <content type="html"><![CDATA[<p>IotaWatt<sup>tm</sup> is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.</p>
+
+<p>IoTaWatt can log data locally to on-board SD card and post directly to <a href="https://emoncms.org">Emoncms.org</a> via WiFi.</p>
+
+<p><strong>There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.</strong></p>
+
+<p>IoTaWatt is fully open-source and has been developed by Bob Lemaire <a href="https://community.openenergymonitor.org/u/overeasy/">@overeasy</a> in partnership with OpenEnergyMonitor.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/iotawatt-1.jpg" alt="IoTaWatt" /></p>
+
+<p><a class="btn pull-right" href="http://shop.openenergymonitor.com/iotawatt-wifi-connected-14-channel-electricity-monitor/">View in Shop → </a><a class="btn pull-left" href="https://guide.openenergymonitor.org/setup/iotawatt/">Setup IoTaWatt</a><br /></p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p><img src="https://blog.openenergymonitor.org/images/iotawatt-2.jpg" alt="IoTaWatt" /></p>
+
+<p>The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266 is mounted using NodeMCU adaptor, the decision was made to use the NodeMCU form-factor to allow flexibility for customisation and future upgrades e.g ESP32.</p>
+
+<p>The onboard SD card allows data to be saved locally with high resolution and network resilience. If the IoTaWatt is posting to an Emoncms server and loses network connectivity data logged to the SD card will be bulk uploaded to Emoncms when a network connection is restored.</p>
+
+<p>An on-board real-time clock (RTC) ensure the time-stamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.</p>
+
+<h2 id="firmware">Firmware</h2>
+
+<p><img src="https://blog.openenergymonitor.org/images/iota-config.png" alt="IoTaWatt" /></p>
+
+<p>The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See <a href="http://iotawatt.com">IoTaWatt.com</a> for a live demo of the interface.</p>
+
+<p>The IoTaWatt supports automatic over the air (OTA) firmware updates.</p>
+
+<!--more-->
+
+<h2 id="security">Security</h2>
+
+<p>IoTaWatt supports end-to-end encrypted connection to Emoncms using new <a href="http://emoncms.org/site/api#input">Emoncms API transport layer encryption</a>. Due to the limited resources of the ESP8266 microcontroller HTTPS connection is not possible. However, Emoncms offers an in-built transport layer encryption solution where the emoncms apikey is used as the pre-shared key for encrypting the data with AES-128-CBC.</p>
+
+<p>Automatic OTA firmware updates ensure the IoTaWatt is always running the latest most secure version e.g a firmware update was released and automatically deployed to fix the <a href="https://www.krackattacks.com/">KRACK WPA vulnerability</a>. Firmware updates are digitally signed.</p>
+
+<hr />
+
+<h2 id="emontx-vs-iotawatt">emonTx Vs. IoTaWatt</h2>
+
+<p>As I mentioned at the beginning of this post, there are no plans to discontinue the emonTx. The IoTaWatt is not designed to replace the emonTx, rather to complement it. Each unit has advantages in key areas:</p>
+
+<h3 id="emontx-advantages">emonTx Advantages</h3>
+
+<ul>
+  <li>Low power: battery power / single AC-AC adaptor</li>
+  <li>No setup required</li>
+  <li>Supports multiple DS18B20 temperature sensors</li>
+  <li>Supports Optical Pulse sensor (interrupt input) to interface directly with utility meters</li>
+  <li>Approximate 3-phase with firmware update</li>
+  <li>Multiple emonTx’s can communicate with a single emonPi / emonBase</li>
+  <li>WiFi connection not required</li>
+</ul>
+
+<h3 id="iotawatt-advantages">IoTaWatt Advantages</h3>
+
+<ul>
+  <li>Large number of CT sensor inputs</li>
+  <li>Flexible configuration (many different types of CT’s supported)</li>
+  <li>On-board SD card logging</li>
+  <li>OTA firmware updates</li>
+  <li>Direct posting via WiFi to Emoncms.org</li>
+</ul>
+
+<p>The obvious advantage of the IoTaWatt over the emonTx is the number of CT sensor inputs. Another key advantage is the flexibility of the IoTaWatt, each input channel (AC voltage &amp; current) can be individually configured and calibrated. The IoTaWatt supports a number of different sizes of CT sensors with calibration presets for CT sensors e.g <a href="http://shop.openenergymonitor.com/20a-max-clip-on-current-sensor-ct/">20A</a>, <a href="http://shop.openenergymonitor.com/100a-max-clip-on-current-sensor-ct/">100A (standard)</a> and <a href="http://shop.openenergymonitor.com/200a-max-clip-on-current-sensor-ct/">200A</a>.</p>
+
+<p>It is possible to use an IoTaWatt together with an emonPi / emonBase, the IoTaWAtt can post to any Emoncms server including emonPi over a local network.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CydYnni – Energy Local, community hydro smart grid]]></title>
@@ -1472,37 +1549,6 @@ $ sudo service emonhub start
 <p>Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp; emonTx repos if you want a sneak preview. See <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml">travis.yaml</a> file and Travis build status icon on the main emonpi repo <a href="https://github.com/openenergymonitor/emonpi/blob/master/README.md">Readme.md</a>.</p>
 
 <hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Electrical Supply Line Fault]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault/"/>
-    <updated>2016-06-03T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/06/emonpi-vrms-line-fault</id>
-    <content type="html"><![CDATA[<p>Last week my home emonPi energy monitor came in handy to help diagnose an electrical supply fault.</p>
-
-<p>A neighbour alerted me that her lights were flickering and internet router was dropping offline. At the time I was doing some DIY and had noticed the power drill I was using change speed erratically. I had presumed it was my drill about the give up the ghost.</p>
-
-<p>I checked the Emoncms graph on my emonPi energy monitor and noticed that VRMS was well out of spec at about 150V (we usually get 230V*) and occasionally jumping up to almost 300V! The electrical company was alerted and the fault was traced back to a frayed conductor on our street. I helped the electrical contractors view the real-time VRMS value to confirm the fault was fixed.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/vrms.png" alt="VRMS Fault" /></p>
-
-<!--more-->
-
-<h2 id="notes-on-mains-voltage-limits">* Notes on Mains Voltage Limits</h2>
-
-<p>The standard domestic mains supply for Europe is 230 V ± 10%, giving a lower limit of 207 V and an upper limit of 253 V. It is permissible under BS 7671 to have a voltage drop within the installation of 5%, which would give a lower limit of 195.5 V.
-The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of 254.4 V.</p>
-
-<p>Although the UK nominal standard is now 230 V, the supply system has not generally been adjusted, and the voltage centers around 240 V.</p>
-
-<p>Thanks to Robert Wall for summarizing the rather convoluted standards surrounding UK grid voltages.</p>
-
-<p>All of Europe, Africa, Asia, Australia, New Zealand and most of South America, use a supply that is within 6% of 230 V</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Mains_electricity_by_country">Mains Electricity by Country (Wikipedia)</a></p>
-
 ]]></content>
   </entry>
   

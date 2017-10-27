@@ -551,6 +551,48 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/rethinking-data-input-and-storage-core/">Rethinking the data input and storage core of emoncms: benchmarks</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-27T21:55:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-27 21:55:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/benchmarking/'>benchmarking</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/rethinking-data-input-and-storage-core/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Over the last few days I've been looking again at the core data input, storage and access part of emoncms. There is&nbsp;definitely&nbsp;a lot of&nbsp;opportunity&nbsp;to improve performance and there are a lot of options so I thought I would start to do some more systematic benchmarking.<br /><br />So here are some initial benchmarks of feed data storage in&nbsp;different storage engines: mysql (myisam vs innodb), timestore and direct file access. I also thought Id have a go at&nbsp;writing&nbsp;the current implementation of input processing in both python and nodejs in addition to php to learn a bit more about these languages as they are being used and favoured by others in the community such as Jerome (python), Houseahedron (python) and&nbsp;Jean Claude Wippler of&nbsp;Jeelabs (nodejs). Id like to see if there is any measurable difference in performance between these different languages for the kind of application that we are developing and if there are any other benefits: easier to do certain things etc.<br /><br /><a href="http://jeelabs.org/tag/housemon/">Housemon</a> by Jean Claude Wippler is a good example of how a timeseries data storage and visualisation application can be implemented in a different way by using a mixture of direct file storage and a redis in-memory database with the server side part of the application written in nodejs.<br /><br />Intrigued by the idea of using direct file storage as&nbsp;Jean Claude Wippler does in Housemon&nbsp;and following the approach used by Mike Stirling in timestore of using a fixed time interval to simplify and speed up searching I had a go at&nbsp;writing&nbsp;a basic implementation using php file access and the results are good.<br /><br /><div><span style="font-size: x-large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#storage-engine-test"></a>Storage engine test</span><br /><br />All tested on a raspberrypi, running off the standard SanDisk SDHC 4Gb SD Card.&nbsp;</div><div><br /><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#mysql"></a>MYSQL</span><br /><br /><a href="https://github.com/emoncms/experimental/blob/master/storage/MYSQL/mysql.php">https://github.com/emoncms/experimental/blob/master/storage/MYSQL/mysql.php</a><br /><ul><li>InnoDB INSERT 1000 points 21s,25s,20s (Normalised to 100,000 ~ 2200s)</li><li>InnoDB INSERT 10000 points 167s,183s (Normalised to 100,000 ~ 1750s)</li><li>MYISAM INSERT 10000 points 15-17s (Normalised to 100,000 ~ 160s)</li><li>MYISAM INSERT 100000 points 165s</li></ul><b>MYISAM | INNODB READ</b><br /><br />Benchmark of current emoncms mysql read function that selects given number of datapoints over a time window.<br /><br />MYISAM results on the left | INNODB results on the right<br /><br /><a href="https://github.com/emoncms/experimental/blob/master/storage/MYSQL/mysql_read.php">https://github.com/emoncms/experimental/blob/master/storage/MYSQL/mysql_read.php</a><br /><br />10000 datapoint table:<br /><ul><li>1000dp over 5 hours (average method) 232ms | 391ms</li><li>1000dp over 24 hours (average method) 424ms | 675ms</li></ul>1000000 datapoint table: (115 days @ 10s)<br /><ul><li>all 0.2 hours (all method) 40ms | 38ms</li><li>all 0.5 hours (all method) 58ms | 55ms</li><li>all over 1 hours (all method) 90ms | 82ms</li><li>all over 1.3 hours (all method) 108ms | 100ms</li><li>1000dp over 3 hours (average method) 237ms | 272ms</li><li>1000dp over 5 hours (average method) 280ms | 327ms</li><li>1000dp over 24 hours (average method) 726 ms | 949ms</li><li>1000dp over 48 hours (average method) 1303 ms | 1767ms</li><li>1000dp over 52 hours (php loop method) 2875 ms | 2650ms</li><li>1000dp over 100 hours (php loop method) 3124 ms | 2882ms</li><li>1000dp over 200 hours (php loop method) 2934 ms | 2689ms</li><li>1000dp over 400 hours (php loop method) 2973 ms | 2749ms</li><li>1000dp over 2000 hours (php loop method) 2956 ms | 2762ms</li><li>1000dp over 2600 hours (php loop method) 2969 ms | 2767ms</li></ul>PHP loop method timing may be quite a bit longer if the server is under heavy load as it involves making many&nbsp;separate&nbsp;mysql queries, each query needs to wait for other queries in the mysql process list to complete.<br /><ul><li>Initial benchmarking results on netbook: <a href="http://emoncms.org/site/docs/developdatastorage">http://emoncms.org/site/docs/developdatastorage</a></li><li>Recent blog post on current emoncms implementation: <a href="http://openenergymonitor.blogspot.co.uk/2013/05/the-current-emoncms-feed-storage.html">The current feed storage implementation</a></li></ul><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#timestore"></a>Timestore</span><br /><br />Timestore is a promising solution, developed specifically for timeseries data, written by Mike Stirling.<br />Blog post on timestore: <a href="http://openenergymonitor.blogspot.com/2013/06/timestore-timeseries-database.html">Timestore timeseries database</a><br /><br /><a href="https://github.com/emoncms/experimental/blob/master/storage/timestore/timestore.php">https://github.com/emoncms/experimental/blob/master/storage/timestore/timestore.php</a><br /><ul><li>10000 inserts 52s</li><li>100,000 inserts 524s</li></ul><a href="https://github.com/emoncms/experimental/blob/master/storage/timestore/timestore_read.php">https://github.com/emoncms/experimental/blob/master/storage/timestore/timestore_read.php</a><br /><ul><li>Read 1000 datapoints over 5 hours: 45ms</li><li>Read 10 datapoints over 5 hours 20ms</li></ul>Includes layer averaging and&nbsp;multiple&nbsp;layers so there is quite a bit more going on (that would still need to be added to other implementations like direct file and mysql above), so benchmarks are not directly comparable.<br /><br /><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#direct-file"></a>Direct file</span><br />For some reason I did not think this method would work as well as the benchmarks show but its great that it does because from an implementation point of view its really simple and very flexible as its easy to modify the code to do what you want, see the examples linked:<br /><ul><li><a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/write.php">Direct file write 100,000</a>: 6-7s</li><li><a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/write_openclose.php">Direct file write 100,000</a> open and close each time: 27,24,26s</li><li><a href="https://github.com/emoncms/experimental/blob/master/storage/directfiles/read.php">Direct file read 1000</a> datapoints over 5 hours of 10 second data in 85-88ms</li><li>Reads 1000 datapoints over 200 hours of 10 second data in 93ms</li><li>Reads 1000 datapoints over 2000 hours of 10 second data in 130ms</li><li>Reads 1000 datapoints over 2600 hours of 10 second data in 124ms</li></ul><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#redis"></a>Redis</span><br />For a short term storage, storage to disk may not be necessary, instead we can store data in memory using an in-memory database like redis. Benchmarks to add.<br /><br />Blog post: <a href="http://openenergymonitor.blogspot.com/2013/06/idea-for-using-redis-in-memory-database.html">Redis idea</a><br /><br /><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#other-ideas-for-storage-format"></a>Other ideas for storage format</span><br /><ul><li><a href="http://openenergymonitor.blogspot.com/2013/06/removing-redundant-datapoints-part-1.html">Removing redundant datapoints - part 1</a></li><li><a href="http://openenergymonitor.blogspot.com/2013/06/removing-redundant-datapoints-algorithm.html">Removing redundant datapoints – algorithm 1</a></li></ul><span style="font-size: large;">Languages</span><br />What about the programming language? No benchmarks yet but interesting to look at the difference in how the code looks. I found each language pretty straightforward to use and online resources to get me passed the bits I&nbsp;didn't&nbsp;know where readily available. The language links below show the core parts of the input processing stage of emoncms written in php, nodejs and python. I've also linked to emonweb a port of emoncms (or more a build in its own right be now) by Frank Oxener in ruby on rails.<br /><ul><li><a href="https://github.com/emoncms/experimental/tree/master/php">PHP</a></li><li><a href="https://github.com/emoncms/experimental/tree/master/nodejs">nodejs</a></li><li><a href="https://github.com/emoncms/experimental/tree/master/python">python</a></li><li>ruby&nbsp;<a href="https://github.com/dovadi/emonWeb">https://github.com/dovadi/emonWeb</a>&nbsp;(Frank Oxener)</li><li>go&nbsp;</li></ul><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#servers"></a>Servers</span><br /><ul><li>Apache</li><li>nginx&nbsp;<a href="http://www.ismsolar.com/sistema-de-monitorizacion-de-alto-rendimiento">http://www.ismsolar.com/sistema-de-monitorizacion-de-alto-rendimiento</a></li></ul><span style="font-size: large;"><a href="https://github.com/emoncms/experimental/blob/master/readme.md#emoncmsorg-stats"></a>Emoncms.org stats</span><br /><ul><li><a href="http://openenergymonitor.blogspot.com/2013/05/emoncmsorg-load-stats.html">Emoncms.org load stats</a></li></ul><span style="font-size: x-large;">HouseMon</span><br /><br />HouseMon by Jean Claude Wippler stores data in 3 forms:&nbsp;</div><div><ul><li>Raw log of the serial data received to file (compressed daily)&nbsp;</li><li>Redis in-memory storage for last 48 hours which makes for quick access of most recent data.&nbsp;</li><li>Archival storage via direct file access for data older than 48 hours, the archive is hourly aggregated data (hourly - unless a use case demands finer resolution at which point the archive can be rebuilt from the raw logs).&nbsp;</li></ul><a href="http://jeelabs.org/2013/02/17/data-data-data/">http://jeelabs.org/2013/02/17/data-data-data/ </a><br /><a href="http://jeelabs.org/2013/02/18/who-needs-a-database/">http://jeelabs.org/2013/02/18/who-needs-a-database/ </a><br /><br />Its quite clear from some of the above tests that the housemon implementation is going to be fast in terms of data access speeds (with redis storing everything in memory for the last 48 hours) and efficient in terms of data storage (binary files – hourly data), the big difference is that full resolution data is not available after 48 hours but Jean Claude Wippler argues that it would be better to wait for a use case rather than implement higher resolution for higher resolution sake and that logs can be used to rebuild&nbsp;archives&nbsp;at higher resolution if needed anyway.</div><div><br /></div><span style="font-size: large;">Next steps</span><br /><br />If you have a standard emoncms raspberrypi install, changing the mysql storage engine to myisam should bring immediate performance improvements, especially if you have a lot of feeds being recorded, I will try and put together a script to make this easier and also update the ready to go image.<br /><br />The next development step I think is to integrate redis into emoncms by rebuilding the input processing implementation to use redis rather than go to disk to get the last feed and input values. Then&nbsp;it would be good to test both timestore and the integrated direct file storage in action on several parallel raspberrypi's, keep benchmarking the differences and then see where that gets us.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/idea-for-using-redis-in-memory-database/">Idea for using redis in-memory database to improve emoncms performance</a>
   </h1>
   
@@ -917,46 +959,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/carbon-coop-and-houseahedron-meetup/">Carbon Coop and Houseahedron meetup</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-14T23:24:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-14 23:24:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/carbon-coop-and-houseahedron-meetup/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;">Just got back from a couple of days visiting the <a href="http://openenergymonitor.blogspot.co.uk/2013/05/carbon-coop.html">Carbon Coop</a> team in Manchester and <a href="https://twitter.com/Housahedron">Houseahedron</a> in Liverpool.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">On tuesday/wednesday Matt and I spent some time working on the open source SAP calculator, improving the domestic hot water section, fixing a bug where if the solar hot water section was not complete the calculations would break and another bug that kept causing us to loose data after having completed one of the most tedious data entry parts: putting in all the heat loss elements. A check was added to the server side code to ensure that the json string containing the sap data was not corrupted by a broken transmission or whatever that was causing the string to get corrupted.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>github:</b>&nbsp;<a href="http://github.com/emoncms/emoncms">github.com/emoncms/emoncms</a></div><div style="margin-bottom: 0cm;"><b>try it out:</b>&nbsp;<a href="http://emoncms.org/sap">emoncms.org/sap</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We spent time entering several SAP calculations that had already been done in a Mac Numbers spreadsheet implementation of SAP developed by Charlie Baker of URBED to check that results agree, the results don't quite agree yet as there are a couple sections in this new open source SAP implementation that are not fully complete but we're almost there.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The <a href="https://twitter.com/EcoHome_Lab">EcoHome_Lab</a> event was on the Wednesday evening and James Pul, Julian Todd and John Donovan of Houseahedron came over from Liverpool and gave a demo of their work.</div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zKhr6gTvDIM/UbuhEb3rLbI/AAAAAAAACrE/OU4swOLU5GQ/s1600/2013-06-12+19.12.00.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="http://3.bp.blogspot.com/-zKhr6gTvDIM/UbuhEb3rLbI/AAAAAAAACrE/OU4swOLU5GQ/s400/2013-06-12+19.12.00.jpg" width="400" /></a></div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">What they are working on is really impressive and it ties in really well with recent openenergymonitor developments such as the open source SAP model and the idea that quite a few people have been talking about of integrating temperature and energy sensing into a building energy model in order to cross check and reduce the number of assumptions needed.</div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">What the houseahedron guys are working on would really take this idea to another level, going beyond the 1D steady state modelling that is the SAP model, implementing a fully 3D dynamic model of heat flow in a building and then visualising it with rich 3D webgl graphics.  </div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">They want it to be possible to walk through a house and explore wall temperatures on a tablet in realtime with data coming from multiple temperature sensors placed all over the house and then be able to explore what it would look like if you added say 100mm of insulation to the walls.</div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">One of the best bits is the way they are creating the 3d model of the house using a laser scanner! which generates a point cloud from which they generate the model. The point cloud is used as a sketch on which to draw the model manually at the moment as its too difficulty a problem to generate the 3d model completely automatically but its a pretty incredible way of getting all the dimensions you need to build a 3d model of a house and it only takes 6-7 minutes. Here's a screenshot of an example point cloud of an office building they scanned:</div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-sMLYpL5pnhU/Ubug7j6Vu5I/AAAAAAAACq8/f-JD2-p1Vaw/s1600/houseahedron.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="196" src="http://1.bp.blogspot.com/-sMLYpL5pnhU/Ubug7j6Vu5I/AAAAAAAACq8/f-JD2-p1Vaw/s320/houseahedron.png" width="320" /></a></div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">The best bit is that they are planning on releasing all the software for this as open source under GPL, its all written in python + flask, javascript and webGL and they are keen to use openenergymonitor hardware for the sensing.</div><div align="LEFT" style="margin-bottom: 0cm;"><br /></div><div align="LEFT" style="margin-bottom: 0cm;">Here's their twitter and website:</div><div align="LEFT" style="margin-bottom: 0cm;"><a href="https://twitter.com/Housahedron">https://twitter.com/Housahedron</a></div><div align="LEFT" style="margin-bottom: 0cm;"><a href="http://housahedron.co.uk/">http://housahedron.co.uk/</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -979,6 +981,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1031,12 +1039,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1222,6 +1224,8 @@ $(".searchBox form").click( function(event) {
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

@@ -551,6 +551,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/new-emoncms-features-part-1-blue/">New emoncms features part 1: blue message bar</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-18T22:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-18 22:14:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/new-emoncms-features-part-1-blue/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Spent a bit of time implementing new features for emoncms today, the first one was a much needed but quite small addition: a themed location to output messages such as "user already exists" and so on, see the blue bar in the screen below:<br /><br /><a href="http://2.bp.blogspot.com/-XwN8DaZEyjE/T0AeWhkvpMI/AAAAAAAACXo/WpPIvGWjbus/s1600/bluebar.png"><img border="0" src="http://2.bp.blogspot.com/-XwN8DaZEyjE/T0AeWhkvpMI/AAAAAAAACXo/WpPIvGWjbus/s400/bluebar.png" /></a><br /><br />Try it out here: <a href="http://vis.openenergymonitor.org/emoncms3/">http://vis.openenergymonitor.org/emoncms3/</a><br /><br /><b>How it works</b><br /><br />If you have a look at the user_controller here<a href="https://github.com/openenergymonitor/emoncms3/blob/master/Controllers/user_controller.php"> github user_controller.php</a><br />On line 28 and 29 you will see the following:<br /><br />$output['content'] = "";<br />$output['message'] = "";<br />(ie line 65) $output['message'] = "Your new account has been created";<br /><br />The returned output from the controllers used to be just the one variable $output now we have two, one for main body content output and the other for message bar output. These variables are passed through <a href="https://github.com/openenergymonitor/emoncms3/blob/master/index.php">index.php</a> to the theme The <a href="https://github.com/openenergymonitor/emoncms3/blob/master/Views/theme/dark/theme.php">theme</a> then places the message and content in separately themed locations.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/01/community-energy-plan-maker/">Community Energy Plan maker</a>
   </h1>
   
@@ -902,37 +942,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/open-source-internet-of-things-award/">Nomination: Open source internet of things award</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-10T22:20:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-10 22:20:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2011/12/open-source-internet-of-things-award/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-_MElTHZaG6Y/TuPbXC9xXII/AAAAAAAACVQ/W3HeK0tcQQs/s1600/award-header4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="106" src="http://3.bp.blogspot.com/-_MElTHZaG6Y/TuPbXC9xXII/AAAAAAAACVQ/W3HeK0tcQQs/s320/award-header4.png" width="320" /></a></div><br />Some exciting news, we have been nominated for the postscapes internet of things award:<br /><a href="http://postscapes.com/best-iot-open-source-project-2011">http://postscapes.com/best-iot-open-source-project-2011</a><br /><br />Its really great to see such a cross section of internet of things projects in the different categories, its well worth a look.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -955,6 +964,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1007,12 +1022,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1198,6 +1207,8 @@ $(".searchBox form").click( function(event) {
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

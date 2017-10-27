@@ -551,6 +551,78 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-10-25T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Oct 26th 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/iotawatt/'>iotawatt</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2017/10/iotawatt/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>IotaWatt<sup>tm</sup> is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.</p>
+
+<p>IoTaWatt can log data locally to on-board SD card and post directly to <a href="https://emoncms.org">Emoncms.org</a> via WiFi.</p>
+
+<p><strong>There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.</strong></p>
+
+<p>IoTaWatt is fully open-source and has been developed by Bob Lemaire <a href="https://community.openenergymonitor.org/u/overeasy/">@overeasy</a> in partnership with OpenEnergyMonitor.</p>
+
+<p><img src="/images/iotawatt-1.jpg" alt="IoTaWatt" /></p>
+
+<p><a class="btn pull-right" href="http://shop.openenergymonitor.com/iotawatt-wifi-connected-14-channel-electricity-monitor/">View in Shop → </a><a class="btn pull-left" href="https://guide.openenergymonitor.org/setup/iotawatt/">Setup IoTaWatt</a><br /></p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p><img src="/images/iotawatt-2.jpg" alt="IoTaWatt" /></p>
+
+<p>The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266 is mounted using NodeMCU adaptor, the decision was made to use the NodeMCU form-factor to allow flexibility for customisation and future upgrades e.g ESP32.</p>
+
+<p>The onboard SD card allows data to be saved locally with high resolution and network resilience. If the IoTaWatt is posting to an Emoncms server and loses network connectivity data logged to the SD card will be bulk uploaded to Emoncms when a network connection is restored.</p>
+
+<p>An on-board real-time clock (RTC) ensure the time-stamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.</p>
+
+<h2 id="firmware">Firmware</h2>
+
+<p><img src="/images/iota-config.png" alt="IoTaWatt" /></p>
+
+<p>The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See <a href="http://iotawatt.com">IoTaWatt.com</a> for a live demo of the interface.</p>
+
+<p>The IoTaWatt supports automatic over the air (OTA) firmware updates.</p>
+
+
+    
+      <a class="btn pull-right" href="/2017/10/iotawatt/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro smart grid</a>
   </h1>
   
@@ -1110,83 +1182,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2017-01-04T09:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jan 4th 2017
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> eight minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/ev/'>ev</a></li>
-      
-        <li><a class='category' href='/categories/openevse/'>openevse</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2017/01/openevse-build/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>OpenEVSE (recently renamed to <a href="https://www.openevse.com/">OpenEV</a>) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.</p>
-
-<blockquote>
-  <p>An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.</p>
-</blockquote>
-
-<p><strong>Update March 17: OpenEnergyMonitor and proud to announce that we are now the UK / Europe reseller for OpenEVSE charging stations, see <a href="http://shop.openenergymonitor.com/ev-charge-controllers/">OpenEnergyMonitor Online Shop</a>.</strong></p>
-
-<hr />
-
-<p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
-
-<p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
-
-<p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
-
-<h2 id="features">Features</h2>
-
-<p>The features that make the OpenEVSE charge controller interesting to us are:</p>
-
-<ul>
-  <li><a href="http://openevse.dozuki.com/Guide/OpenEVSE+WiFi+%28Beta%29/14">WiFi connectivity and remote control (via ESP8266)</a></li>
-  <li>Variable rate of charge: e.g. charge current can be varied to match available power</li>
-  <li>Integrated energy monitoring via custom hosted Emoncms <a href="http://data.openevse.com/emoncms">data.openevse.com</a></li>
-  <li>Fully open-source :-)</li>
-</ul>
-
-<p><em>I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!</em></p>
-
-<p>Nissan LEAF charging from solar PV on a frosty morning:</p>
-
-<p><img src="/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
-
-
-    
-      <a class="btn pull-right" href="/2017/01/openevse-build/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1207,6 +1202,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1259,12 +1260,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1450,6 +1445,8 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

@@ -551,6 +551,50 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/11/adding-control-to-emoncms-rfm12b-packet/">Adding control to emoncms: RFM12b Packet Generator</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-11-27T23:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-27 23:39:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/11/adding-control-to-emoncms-rfm12b-packet/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've had many conversations with people recently about controlling things like radiator set points, boiler thermostat's, heatpump's and so on.<br /><br />I visited John cantor of <a href="http://heatpumps.co.uk/">http://heatpumps.co.uk/</a> today who is  implementing an impressive control and monitoring system for a heatpump  central heating system which involves EmonGLCD's with relay's connected  to radiator valve actuators in each room. The buttons on the EmonGLCD  are used to set the target temperature for the room and information is  displayed on the EmonGLCD about heatpump power input and outside  temperature.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s1600/BX6HlyfCUAAe0iX.jpg:large.jpeg" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="238" src="http://2.bp.blogspot.com/-sXirn-VfedY/UpZuXYyFGiI/AAAAAAAACzs/VUtdHagxsu0/s320/BX6HlyfCUAAe0iX.jpg:large.jpeg" width="320" /></a></div><br />On the way back I stopped at the Centre for Alternative Technology where <span style="font-family: Calibri;">Marnoch who is <a href="http://openenergymonitor.blogspot.co.uk/2013/07/probably-best-student-placement.html">on their student placement</a> there is </span>working on doing something similar but for a radiator system connected to a wood chip boiler.<br /><br />Both Glyn and Ynyr are keen to get boiler thermostat controllers working in their houses and Ken Boak who designed the NanodeRF phoned up the other day suggesting we start an openenergymonitor sub project and discussion on this topic, Ken's been working on central heating control for quite some time.<br /><br />Its something I have a growing interest in too as we will be soon installing a heatpump system at home which has a lot of opportunity for control and monitoring to make sure its running efficiently.<br /><br />So I've been giving some thought to how control features could be added to emoncms in a more integrated way than initial efforts I've made before.<br /><br />I like the simplicity of the way Jean Claude Wippler designed the jeelib library to use c structures as the method in which data is packaged and sent via the RFM12b radio's and so I thought that maybe a good basis for adding control functionality to emoncms would be to first make it possible for emoncms to easily generate RFM12b data packets in the format that can be easily decoded with a struct definition on the listening control nodes. Emoncms would then broadcast this control packet containing all the state information about the system at a regular interval in the same way as an emontx broadcasts it's readings. Listening nodes can then be programmed to selectively use variables in that control packet depending on what they need to do.<br /><br />I've put together an initial working concept of a module that can be used to do this and its up on github here: <a href="https://github.com/emoncms/packetgen">https://github.com/emoncms/packetgen</a><br /><br />Here's a screenshot of the main interface:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s1600/rfm12packetgen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://2.bp.blogspot.com/-F3rSIsKX6tg/UpZ8pS--V7I/AAAAAAAAC0E/Rcb3GN6ecPg/s640/rfm12packetgen.png" width="395" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">One of the nice things about it is that as you generate your control packet the module generates example Arduino code to make it easier to start coding a control node, you can just copy the code any drop it into the Arduino IDE and upload to a atmega+rfm12b based node and it should start receiving the control packet right away. </div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I see this module and control in general being run on a local installation of emoncms running on a raspberrypi + harddrive combination rather than emoncms.org. The next step is an image with all this installed and working out of the box.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s1600/pihdsetup.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://4.bp.blogspot.com/-qDS17bTvL2o/UpaDZ1mCuiI/AAAAAAAAC0U/j7r6oJQoKes/s400/pihdsetup.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/11/2013-christmas-ordering-info-royal-mail/">2013 Christmas Ordering Info - Royal Mail Last Posting Dates for Delivery before Christmas</a>
   </h1>
   
@@ -935,48 +979,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/10/raspberry-pi-new-type-of-ram/">Raspberry Pi - A new type of RAM</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-10-22T15:45:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-10-22 15:45:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/10/raspberry-pi-new-type-of-ram/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    If you've had trouble booting up your Raspberry Pi then read on...<br /><br />The latest batch of <a href="http://shop.openenergymonitor.com/raspberry-pi/">Raspberry Pi's we have been selling through the shop</a> (manufactured in South Wales, UK) have use a new type of RAM chip.<br /><br />Previously the Pi used a Samsung chip, they have now switched to using a chip manufactured by Micron marked with 3KA18 D9QHN and an 'M' logo. This chip is visible in the middle of the photo below mounted on top of the processor using their cleaver package-on-package technology. This RAM chip is still 512Mb in size<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-hi1o4excuDg/UmaYiLZRV3I/AAAAAAAAmYM/eXeI6tSf-o4/s1600/20131022_104438.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://1.bp.blogspot.com/-hi1o4excuDg/UmaYiLZRV3I/AAAAAAAAmYM/eXeI6tSf-o4/s400/20131022_104438.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Raspberry Pi with new type of RAM chip</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-6oxbmc7qi08/UmacKTOlt1I/AAAAAAAAmYc/lVnng72YWEg/s1600/RPI_SOC_03.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="173" src="http://3.bp.blogspot.com/-6oxbmc7qi08/UmacKTOlt1I/AAAAAAAAmYc/lVnng72YWEg/s320/RPI_SOC_03.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Older Samsung RAM chip</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">To my knowledge there has been no evidence that the new chip give any performance benefit, the change is probably due to cost or logistic reasons.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><b>This new chip requires a firmware update to work. Our current SD card images (e.g oemgateway_24sep2013.img) won't boot with the new RAM; static red PWR LED and nothing else.&nbsp;</b><br /><b><br /></b><b>To make the Raspberry Pi boot you will need to download the following files and put them in the SD cards FAT (boot) partition overwriting the older files:&nbsp;</b><br /><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin">https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup_cd.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup_cd.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/fixup_x.dat">https://github.com/raspberrypi/firmware/raw/master/boot/fixup_x.dat</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/kernel_emergency.img">https://github.com/raspberrypi/firmware/raw/master/boot/kernel_emergency.img</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/kernel.img">https://github.com/raspberrypi/firmware/raw/master/boot/kernel.img</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start_cd.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start_cd.elf</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start.elf</a><br /><a href="https://github.com/raspberrypi/firmware/raw/master/boot/start_x.elf">https://github.com/raspberrypi/firmware/raw/master/boot/start_x.elf</a><br /><br />Alternative you could download the whole Raspberry Pi firmware repository (95.6Mb) and copy out the files from the boot directory <a href="https://github.com/raspberrypi/firmware/archive/master.zip">https://github.com/raspberrypi/firmware/archive/master.zip</a><br /><br />I'm currently working on getting a new ready-to-go SD card image download uploaded with the changes above included. This should be available to download soon from:&nbsp;<a href="http://emoncms.org/site/docs/raspberrypigateway">http://emoncms.org/site/docs/raspberrypigateway</a>. Look for the 22nd Oct 2013 image.<br /><br />All SD cards purchased in the shop after today will have the new image which works on the Raspberry Pi's with the new RAM.<br /><div><br /></div><div>Onwards!&nbsp;</div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -999,6 +1001,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1051,12 +1059,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1242,6 +1244,8 @@ $(".searchBox form").click( function(event) {
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

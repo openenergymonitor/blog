@@ -551,6 +551,83 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-01-04T09:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jan 4th 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> eight minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/ev/'>ev</a></li>
+      
+        <li><a class='category' href='/categories/openevse/'>openevse</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2017/01/openevse-build/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>OpenEVSE (recently renamed to <a href="https://www.openevse.com/">OpenEV</a>) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.</p>
+
+<blockquote>
+  <p>An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.</p>
+</blockquote>
+
+<p><strong>Update March 17: OpenEnergyMonitor and proud to announce that we are now the UK / Europe reseller for OpenEVSE charging stations, see <a href="http://shop.openenergymonitor.com/ev-charge-controllers/">OpenEnergyMonitor Online Shop</a>.</strong></p>
+
+<hr />
+
+<p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
+
+<p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
+
+<p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
+
+<h2 id="features">Features</h2>
+
+<p>The features that make the OpenEVSE charge controller interesting to us are:</p>
+
+<ul>
+  <li><a href="http://openevse.dozuki.com/Guide/OpenEVSE+WiFi+%28Beta%29/14">WiFi connectivity and remote control (via ESP8266)</a></li>
+  <li>Variable rate of charge: e.g. charge current can be varied to match available power</li>
+  <li>Integrated energy monitoring via custom hosted Emoncms <a href="http://data.openevse.com/emoncms">data.openevse.com</a></li>
+  <li>Fully open-source :-)</li>
+</ul>
+
+<p><em>I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!</em></p>
+
+<p>Nissan LEAF charging from solar PV on a frosty morning:</p>
+
+<p><img src="/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
+
+
+    
+      <a class="btn pull-right" href="/2017/01/openevse-build/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/09/emonth2/">Introducing emonTH V2</a>
   </h1>
   
@@ -1268,58 +1345,6 @@ $ docker-compose up
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/06/emonpi-vrms-line-fault/">Electrical Supply Line Fault</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-06-03T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 3rd 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/application/'>application</a></li>
-      
-        <li><a class='category' href='/categories/vrms/'>vrms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/06/emonpi-vrms-line-fault/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>Last week my home emonPi energy monitor came in handy to help diagnose an electrical supply fault.</p>
-
-<p>A neighbour alerted me that her lights were flickering and internet router was dropping offline. At the time I was doing some DIY and had noticed the power drill I was using change speed erratically. I had presumed it was my drill about the give up the ghost.</p>
-
-<p>I checked the Emoncms graph on my emonPi energy monitor and noticed that VRMS was well out of spec at about 150V (we usually get 230V*) and occasionally jumping up to almost 300V! The electrical company was alerted and the fault was traced back to a frayed conductor on our street. I helped the electrical contractors view the real-time VRMS value to confirm the fault was fixed.</p>
-
-<p><img src="/images/vrms.png" alt="VRMS Fault" /></p>
-
-
-    
-      <a class="btn pull-right" href="/2016/06/emonpi-vrms-line-fault/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1342,6 +1367,12 @@ $ docker-compose up
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1394,12 +1425,6 @@ $ docker-compose up
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1585,6 +1610,8 @@ $ docker-compose up
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

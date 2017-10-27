@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-10-27T02:20:51+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2017-10-27T17:02:55+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Intorducing IoTaWatt</title><link href="https://blog.openenergymonitor.org/2017/10/iotawatt/" rel="alternate" type="text/html" title="Intorducing IoTaWatt" /><published>2017-10-25T00:00:00+00:00</published><updated>2017-10-25T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/10/iotawatt</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/10/iotawatt/">&lt;p&gt;IotaWatt&lt;sup&gt;tm&lt;/sup&gt; is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.&lt;/p&gt;
+
+&lt;p&gt;IoTaWatt can log data locally to on-board SD card and post directly to &lt;a href=&quot;https://emoncms.org&quot;&gt;Emoncms.org&lt;/a&gt; via WiFi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;IoTaWatt is fully open-source and has been developed by Bob Lemaire &lt;a href=&quot;https://community.openenergymonitor.org/u/overeasy/&quot;&gt;@overeasy&lt;/a&gt; in partnership with OpenEnergyMonitor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/iotawatt-1.jpg&quot; alt=&quot;IoTaWatt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn pull-right&quot; href=&quot;http://shop.openenergymonitor.com/iotawatt-wifi-connected-14-channel-electricity-monitor/&quot;&gt;View in Shop → &lt;/a&gt;&lt;a class=&quot;btn pull-left&quot; href=&quot;https://guide.openenergymonitor.org/setup/iotawatt/&quot;&gt;Setup IoTaWatt&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;hardware&quot;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/iotawatt-2.jpg&quot; alt=&quot;IoTaWatt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266 is mounted using NodeMCU adaptor, the decision was made to use the NodeMCU form-factor to allow flexibility for customisation and future upgrades e.g ESP32.&lt;/p&gt;
+
+&lt;p&gt;The onboard SD card allows data to be saved locally with high resolution and network resilience. If the IoTaWatt is posting to an Emoncms server and loses network connectivity data logged to the SD card will be bulk uploaded to Emoncms when a network connection is restored.&lt;/p&gt;
+
+&lt;p&gt;An on-board real-time clock (RTC) ensure the time-stamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.&lt;/p&gt;
+
+&lt;h2 id=&quot;firmware&quot;&gt;Firmware&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/iota-config.png&quot; alt=&quot;IoTaWatt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See &lt;a href=&quot;http://iotawatt.com&quot;&gt;IoTaWatt.com&lt;/a&gt; for a live demo of the interface.&lt;/p&gt;
+
+&lt;p&gt;The IoTaWatt supports automatic over the air (OTA) firmware updates.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;security&quot;&gt;Security&lt;/h2&gt;
+
+&lt;p&gt;IoTaWatt supports end-to-end encrypted connection to Emoncms using new &lt;a href=&quot;http://emoncms.org/site/api#input&quot;&gt;Emoncms API transport layer encryption&lt;/a&gt;. Due to the limited resources of the ESP8266 microcontroller HTTPS connection is not possible. However, Emoncms offers an in-built transport layer encryption solution where the emoncms apikey is used as the pre-shared key for encrypting the data with AES-128-CBC.&lt;/p&gt;
+
+&lt;p&gt;Automatic OTA firmware updates ensure the IoTaWatt is always running the latest most secure version e.g a firmware update was released and automatically deployed to fix the &lt;a href=&quot;https://www.krackattacks.com/&quot;&gt;KRACK WPA vulnerability&lt;/a&gt;. Firmware updates are digitally signed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;emontx-vs-iotawatt&quot;&gt;emonTx Vs. IoTaWatt&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned at the beginning of this post, there are no plans to discontinue the emonTx. The IoTaWatt is not designed to replace the emonTx, rather to complement it. Each unit has advantages in key areas:&lt;/p&gt;
+
+&lt;h3 id=&quot;emontx-advantages&quot;&gt;emonTx Advantages&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Low power: battery power / single AC-AC adaptor&lt;/li&gt;
+  &lt;li&gt;No setup required&lt;/li&gt;
+  &lt;li&gt;Supports multiple DS18B20 temperature sensors&lt;/li&gt;
+  &lt;li&gt;Supports Optical Pulse sensor (interrupt input) to interface directly with utility meters&lt;/li&gt;
+  &lt;li&gt;Approximate 3-phase with firmware update&lt;/li&gt;
+  &lt;li&gt;Multiple emonTx’s can communicate with a single emonPi / emonBase&lt;/li&gt;
+  &lt;li&gt;WiFi connection not required&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;iotawatt-advantages&quot;&gt;IoTaWatt Advantages&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Large number of CT sensor inputs&lt;/li&gt;
+  &lt;li&gt;Flexible configuration (many different types of CT’s supported)&lt;/li&gt;
+  &lt;li&gt;On-board SD card logging&lt;/li&gt;
+  &lt;li&gt;OTA firmware updates&lt;/li&gt;
+  &lt;li&gt;Direct posting via WiFi to Emoncms.org&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The obvious advantage of the IoTaWatt over the emonTx is the number of CT sensor inputs. Another key advantage is the flexibility of the IoTaWatt, each input channel (AC voltage &amp;amp; current) can be individually configured and calibrated. The IoTaWatt supports a number of different sizes of CT sensors with calibration presets for CT sensors e.g &lt;a href=&quot;http://shop.openenergymonitor.com/20a-max-clip-on-current-sensor-ct/&quot;&gt;20A&lt;/a&gt;, &lt;a href=&quot;http://shop.openenergymonitor.com/100a-max-clip-on-current-sensor-ct/&quot;&gt;100A (standard)&lt;/a&gt; and &lt;a href=&quot;http://shop.openenergymonitor.com/200a-max-clip-on-current-sensor-ct/&quot;&gt;200A&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is possible to use an IoTaWatt together with an emonPi / emonBase, the IoTaWAtt can post to any Emoncms server including emonPi over a local network.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>IotaWatttm is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.
+
+IoTaWatt can log data locally to on-board SD card and post directly to Emoncms.org via WiFi.
+
+There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.
+
+IoTaWatt is fully open-source and has been developed by Bob Lemaire @overeasy in partnership with OpenEnergyMonitor.
+
+
+
+View in Shop → Setup IoTaWatt
+
+Hardware
+
+
+
+The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266 is mounted using NodeMCU adaptor, the decision was made to use the NodeMCU form-factor to allow flexibility for customisation and future upgrades e.g ESP32.
+
+The onboard SD card allows data to be saved locally with high resolution and network resilience. If the IoTaWatt is posting to an Emoncms server and loses network connectivity data logged to the SD card will be bulk uploaded to Emoncms when a network connection is restored.
+
+An on-board real-time clock (RTC) ensure the time-stamp is always correct. The RTC is set using NTP. Using the IoTaWatt on a WiFi network with a reliable internet connection is highly recommended, however, the IoTaWatt can operate without an internet connection once the RTC has been initially set via NTP.
+
+Firmware
+
+
+
+The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See IoTaWatt.com for a live demo of the interface.
+
+The IoTaWatt supports automatic over the air (OTA) firmware updates.</summary></entry><entry><title>CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The Bethesda pilot project, How it works&lt;/strong&gt;&lt;/p&gt;
 
@@ -557,200 +653,4 @@ Alongside the new front page we have also launched a new website called Learn wh
 
 Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.
 
-The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes:</summary></entry><entry><title>OpenEVSE EV Charge Controller</title><link href="https://blog.openenergymonitor.org/2017/01/openevse-build/" rel="alternate" type="text/html" title="OpenEVSE EV Charge Controller" /><published>2017-01-04T09:00:00+00:00</published><updated>2017-01-04T09:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/01/openevse-build</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/01/openevse-build/">&lt;p&gt;OpenEVSE (recently renamed to &lt;a href=&quot;https://www.openevse.com/&quot;&gt;OpenEV&lt;/a&gt;) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Update March 17: OpenEnergyMonitor and proud to announce that we are now the UK / Europe reseller for OpenEVSE charging stations, see &lt;a href=&quot;http://shop.openenergymonitor.com/ev-charge-controllers/&quot;&gt;OpenEnergyMonitor Online Shop&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/leaf-openevse.jpg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build9.jpg&quot; alt=&quot;openevse build9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-
-&lt;p&gt;The features that make the OpenEVSE charge controller interesting to us are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://openevse.dozuki.com/Guide/OpenEVSE+WiFi+%28Beta%29/14&quot;&gt;WiFi connectivity and remote control (via ESP8266)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Variable rate of charge: e.g. charge current can be varied to match available power&lt;/li&gt;
-  &lt;li&gt;Integrated energy monitoring via custom hosted Emoncms &lt;a href=&quot;http://data.openevse.com/emoncms&quot;&gt;data.openevse.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Fully open-source :-)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Nissan LEAF charging from solar PV on a frosty morning:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/nissan-leaf-solar-pv.jpg&quot; alt=&quot;nissan-leaf-solar-pv&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;div class=&quot;videoWrapper&quot;&gt;
-&lt;iframe width=&quot;280&quot; height=&quot;157&quot; src=&quot;https://www.youtube.com/embed/A9D48V1D1G4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;safety&quot;&gt;Safety&lt;/h2&gt;
-
-&lt;p&gt;Even though it is possible to charge an EV via a standard electrical outlet, it is not recommended for a number of reasons:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Charging is very slow since the current is limited by the electrical outlet.&lt;/li&gt;
-  &lt;li&gt;Drawing a significant current (approx 10/12A) for an extended period (up to 10hrs for a 24KWh Nissan LEAF and 30hrs for a 90KWh Tesla Model S!) puts stress on the domestic wiring resulting in heating of the wire &lt;a href=&quot;https://speakev.com/threads/house-fire-using-120v-trickle-charger.1708/&quot;&gt;or worse&lt;/a&gt; if the wiring is in a poor state.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Charging via a properly installed EVSE is the fastest and safest way to charge an EV at home.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;OpenEVSE units have been designed to exceed the safety requirements for EV Charging Stations from SAE J1772, NEC and UL. Before supplying power to the car (and continuously while charging) the EVSE unit conducts a number of checks, no power is supplied until all the checks have passed. See &lt;a href=&quot;https://openev.freshdesk.com/support/solutions/articles/6000113537-openevse-safety-features&quot;&gt;OpenEVSE Safety Features&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;purchase&quot;&gt;Purchase&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Update: we are in communication with OpenEVSE to put together a UK/Europe specific OpeneEVSE package to resell via the &lt;a href=&quot;https://shop.openenergymonitor.com&quot;&gt;OpenEnergyMonitor Online Shop&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;OpenEVSE units can be purchased (kit or fully assembled) from the &lt;a href=&quot;https://store.openevse.com&quot;&gt;OpenEVSE online store&lt;/a&gt;, the units are shipped from California USA. I went for a &lt;a href=&quot;https://store.openevse.com/collections/frontpage/products/openevse-50a-charge-station-combo-with-enclosure&quot;&gt;P50D Level 2 Deluxe OpenEVSE kit&lt;/a&gt; with the &lt;a href=&quot;https://store.openevse.com/collections/frontpage/products/openevse-wifi-kit&quot;&gt;WiFi connection kit&lt;/a&gt; and &lt;a href=&quot;https://store.openevse.com/collections/frontpage/products/j1772-cable-40a-ultra-flexible-us-only&quot;&gt;J1772 Cable&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The OpenEVSE 50A L2 unit will charge any J1772 compliant car at up to 40A continous from a single phase 208-240V AC supply. However, you can dial back the current by setting the ‘max charge current’ to match your supply.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Full disclosure: Chris Howell from OpenEVSE made the unit available free of charge for me to evaluate and improve the Emoncms / OpenEnergyMonitor integration.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;assembly&quot;&gt;Assembly&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Warning:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Assembly of an EVSE requires wiring Alternating Current (AC) components that will be exposed to voltages from 100 to 250v. If you do not have the experience and knowledge required to safely work with AC voltages please consult with an experienced electrician for assistance and inspection of your work.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Assembly of the unit was straight forward following the &lt;a href=&quot;http://openevse.dozuki.com/Guide/OpenEVSE+50A+Charging+Station/8&quot;&gt;openEVSE build guide&lt;/a&gt;. No soldering was required, only basic tools e.g. screwdriver, wire strippers etc. Assembly probably took me a couple of hours. I took my time to do a high-quality job of assembling, this is particularly important given the high currents involved.&lt;/p&gt;
-
-&lt;p&gt;The hardware components are all top quality, I was impressed by the attention to detail such as rubber seals around the LCD to waterproof the unit.&lt;/p&gt;
-
-&lt;p&gt;The hardware inside the unit is split into two main components which are physically separated: a high voltage and high current relay and a low voltage control electronics which is the microcontroller (ATmega328p) ‘brains’ of the unit. My unit contained an OpenEVSE Plus V4 control unit &lt;a href=&quot;https://www.openevse.com/files/OpenEVSE_Plus_v4.pdf&quot;&gt;see Datasheet&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build5.jpg&quot; alt=&quot;openevse build5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Rear PCB showing ATmega328p on the OpenEVSE Plus V4 controller:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build7.jpg&quot; alt=&quot;openevse build7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Build progress: charge controller, ground busbar, relay, LCD and mode button fixed into enclosure&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build2.jpg&quot; alt=&quot;openevse build2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The finished build: WiFi ESP8266 module is visible on the top left.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build3.jpg&quot; alt=&quot;openevse build3&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;Installation should be undertaken by a qualified electrician. The unit should be wired in using suitably rated cable ideally with a dedicated RCD circuit breaker. The max charge current of the unit should be set to match the supply circuit wiring.&lt;/p&gt;
-
-&lt;h2 id=&quot;operation&quot;&gt;Operation&lt;/h2&gt;
-
-&lt;p&gt;On first powerup some basic settings are set via the LCD menu using a combination of short/long presses of the front button. The menu system is impressively responsive considering it’s running from an ATmega328! The basic settings include max charge rate (set to match wiring), charging service level and date-time. Settings are saved to EEPROM and date-time is kept up-to-date via a RTC battery backup.&lt;/p&gt;
-
-&lt;p&gt;The basic operation is very straightforward: just plug the car in and charging begins! Charging can be stopped/resumed by pressing the button on the front of the unit. Charging state is indicated by the backlight colour of the LCD and basic info such as current charging current and total kWh is displayed on the LCD.&lt;/p&gt;
-
-&lt;p&gt;Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate my 6.6Kw charge (24Kwh battery) Nissan LEAF will charge from flat in about 4hrs:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-front.jpg&quot; alt=&quot;openevse-front&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here’s a demo of the basic features of the unit:&lt;/p&gt;
-
-&lt;div class=&quot;videoWrapper&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cIvmYP57eOo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;remote-datalogging&quot;&gt;Remote Datalogging&lt;/h3&gt;
-
-&lt;p&gt;The Wifi kit (ESP8266) enables data logging from the OpenEVSE unit to a custom Emoncms server &lt;a href=&quot;http://data.openevse.com&quot;&gt;data.openevse.com&lt;/a&gt; via a local Wifi connection. The Wifi kit also allows remote control (see RAPI commands below).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build-emoncms.png&quot; alt=&quot;openevse build4&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;remote-control-via-rapi-commands&quot;&gt;Remote Control (via RAPI commands)&lt;/h3&gt;
-
-&lt;p&gt;The OpenEVSE unit can be controlled and monitored remotely via serial RAPI (Remote API) commands. These commands can be &lt;a href=&quot;http://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13&quot;&gt;issued directly via serial&lt;/a&gt; or the OpenEVSE WiFi kit (ESP8266) can be added to allow RAPI commands to be issued remotely via an HTTP web interface.&lt;/p&gt;
-
-&lt;h4 id=&quot;variable-charge-rate&quot;&gt;Variable Charge Rate&lt;/h4&gt;
-
-&lt;p&gt;OpenEVSE charge controller can vary the charge rate, or more specifically the OpenEVSE can ‘request’ a particular charge rate from the car. It is actually the cars charging control electronics that varies the charge rate. OpenEVSE requests a particular charge rate by varying the pilot signal square wave duty cycle &lt;a href=&quot;https://openev.freshdesk.com/support/solutions/articles/6000052070-theory-of-operation&quot;&gt;see OpenEVSE technical theory of opperation&lt;/a&gt;. Charge rate can be varied from 6A (SAE/IEC standard min charge current) up to max charge rate (28A for my Nissan LEAF) in 1A increments. The car responds almost instantly to a charge rate adjustment request from the OpenEVSE controller. Charging can also be paused and resumed remotely if required.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$SC13&lt;/code&gt; will set the current charge current to 13A. The screen shot on the right below illustrates issuing the &lt;code class=&quot;highlighter-rouge&quot;&gt;$SC 13&lt;/code&gt; RAPI command into the OpenEVSE local web page interface (served from ESP8266). The screenshot on the left shows the effect of reduction in charge rate as monitored by emonPi displayed using Emoncms:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openevse-build6.png&quot; alt=&quot;openevse build6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Rapi commands can also be issued directly via a single HTTP request. Eg. the same rapi command to set charging rate to 13A:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://192.168.0.108/r?rapi=%24SC+13&quot;&gt;http://192.168.0.108/r?rapi=%24SC+13&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To sleep (pause a charge) issue RAPI command &lt;code class=&quot;highlighter-rouge&quot;&gt;$FS&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://192.168.0.108/r?rapi=%24FS&quot;&gt;http://192.168.0.108/r?rapi=%24FS&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To enable (start a charge) issue RAPI command &lt;code class=&quot;highlighter-rouge&quot;&gt;$FE&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://192.168.0.108/r?rapi=%24FE&quot;&gt;http://192.168.0.108/r?rapi=%24FE&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Assuming &lt;code class=&quot;highlighter-rouge&quot;&gt;192.168.0.108&lt;/code&gt; is the local IP address of the OpenEVSE ESP.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;There is also an &lt;a href=&quot;https://github.com/tiramiseb/python-openevse&quot;&gt;OpenEVSE RAPI command python library&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the &lt;a href=&quot;https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h&quot;&gt;OpenEVSE plus source code&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;future-developments&quot;&gt;Future developments&lt;/h4&gt;
-
-&lt;p&gt;&lt;del&gt;I would like to add MQTT support to the &lt;a href=&quot;https://github.com/chris1howell/OpenEVSE_RAPI_WiFi_ESP8266&quot;&gt;OpenEVSE WiFi ESP8266 firmware&lt;/a&gt;, this will allow RAPI commands to be issued via MQTT over an authenticated local MQTT server e.g. emonPi / RaspberryPi or remote MQTT server e.g. Hive MQTT / Cloud MQTT. Using MQTT will make it easier and more secure to control the OpenEVSE. MQTT allow easy integration with all home automation and control platforms e.g nodeRED / OpenHAB / Emoncms.&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE Oct 17:&lt;/strong&gt; WiFi V2 is now stable release with web-UI interface, RAPI over MQTT and solar PV divert feature. See &lt;a href=&quot;https://github.com/OpenEVSE/ESP8266_WiFi_v2.x&quot;&gt;OpenEVSE WiFi V2 Documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;open-source&quot;&gt;Open Source&lt;/h3&gt;
-
-&lt;p&gt;The source code and CAD hardware designs for the OpenEVSE unit can be found on github:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/OpenEVSE/OpenEVSE_LCD&quot;&gt;OpenEVSE I2C LCD + RTC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/OpenEVSE/OpenEVSE_PLUS&quot;&gt;OpenEVSE Plus Controller Hardware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/lincomatic/open_evse/blob/stable/rapi_proc.h&quot;&gt;OpenEVSE Plus Controller Firmware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/OpenEVSE/Default_Firmware_Loads&quot;&gt;OpenEVSE Plus Controller Pre Compiled Firmware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/OpenEVSE/ESP8266_WiFi_v2.x&quot;&gt;OpenEVSE ESP8266 Wifi V2 firmware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/OpenEVSE/Enclosures&quot;&gt;OpenEVSE Enclosure&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;related-forum-threads&quot;&gt;Related Forum Threads&lt;/h3&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://community.openenergymonitor.org/c/integrations/openev&quot;&gt;OpenEV forum section&lt;/a&gt; for related discussion.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>OpenEVSE (recently renamed to OpenEV) design and build fully open-source EVSE (Electric Vehicle Supply Equipment) charge controllers for electric vehicles.
-
-
-  An EVSE charging station, is a device an electric car (EV) is plugged into to charge. It communicates to the car to agree on a charging rate that is the fastest and safest rate both the car and the power supply can support.
-
-
-Update March 17: OpenEnergyMonitor and proud to announce that we are now the UK / Europe reseller for OpenEVSE charging stations, see OpenEnergyMonitor Online Shop.
-
-
-
-
-
-
-
-Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides
-
-Features
-
-The features that make the OpenEVSE charge controller interesting to us are:
-
-
-  WiFi connectivity and remote control (via ESP8266)
-  Variable rate of charge: e.g. charge current can be varied to match available power
-  Integrated energy monitoring via custom hosted Emoncms data.openevse.com
-  Fully open-source :-)
-
-
-I recently swapped my ageing diesel car for an all-electric Nissan LEAF (it’s fantastic), so it felt like the perfect time to build and test an OpenEVSE charge controller unit!
-
-Nissan LEAF charging from solar PV on a frosty morning:</summary></entry></feed>
+The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes:</summary></entry></feed>

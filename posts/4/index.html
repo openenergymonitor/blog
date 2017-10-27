@@ -551,6 +551,52 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2016/03/raspberry-pi-3/">Raspberry Pi 3 </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-03-17T00:51:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2016-03-17 00:51:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/03/raspberry-pi-3/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The latest and greatest from the awesome Raspberry Pi team! An iterative upgrade but very welcome addition of on-board WiFi and a faster processor. <br /><br />The <a href="https://openenergymonitor.org/emon/node/12212">latest emonSD</a>&nbsp;for emonPi / emonBase&nbsp;seemed to work out of the box with the RasPi3, however it became apparent that something rather&nbsp;important was missing...serial communication with the emonPi's ATmega328!<br /><br />The emonPi communicates with the RasPi via GPIO 14/15 which on the Model B,B+ and Pi2 is mapped to UART0. However on the Pi3 these pins are mapped to UART1 since UART0 is now used for the Bluetooth module. However UART1 is software UART and baud rate is dependent to clock speed which can change with the CPU load, under voltage and temperature; therefore not stable enough. One hack is to force the CPU to a lower speed ( add core_freq=250 to /boot/cmdline.txt)which cripples the Pi3 performance.<br /><br />A better solution for the emonPi is to disable BT and map UART1 back to UART0 (ttyAMA0) so we can talk to the emonPi in the same way as before.<br /><br />
+
+    
+
+
+    
+      <a class="btn pull-right" href="/2016/03/raspberry-pi-3/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/02/outdoor-temperature-data-from-weather/">Outdoor Temperature Data from Weather Underground to Emoncms & MQTT</a>
   </h1>
   
@@ -978,54 +1024,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/11/uk-grid-carbon-intensity/">UK Grid Carbon Intensity API</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-11-21T11:04:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-11-21 11:04:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/11/uk-grid-carbon-intensity/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />Following on from my blog post creating an <a href="http://openenergymonitor.blogspot.co.uk/2015/11/ambient-wind-energy-indicator-using.html">ambient indicator to indicate wind turbine renewable electricity generation</a> we have extended the <a href="http://emoncms.org/">Emoncms</a>&nbsp;UK electric grid statistic aggregation to calculate and record the UK electric grid carbon intensity i.e. the amount of carbon emitted per kWh (CO2/kWh). As before we have created a dashboard open API for easy access to this data.<br /><br />
-
-
-
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
-
-<tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="420" src="http://3.bp.blogspot.com/-mBxP_HmLuvc/VlBLvjnTK_I/AAAAAAABjQo/k2OrsPjRi8Q/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukgrid.png" width="640" /></a></td></tr>
-
-<tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukgrid</a></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s1600/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="426" src="http://2.bp.blogspot.com/-XZCip6vIdp8/VlBLyWkOshI/AAAAAAABjQw/Et-OqPhOmRg/s640/Emoncms%2B%2B%2Bdashboard%2Bview%2Bukwind.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://emoncms.org/ukelectricitygrid/ukwind" style="font-size: medium; text-align: start;">http://emoncms.org/ukelectricitygrid/ukwind</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Dashboards:</b></div><div class="separator" style="clear: both; text-align: left;"><b></b></div><div class="separator" style="clear: both;"><a href="http://emoncms.org/ukelectricitygrid/ukgrid">http://emoncms.org/ukelectricitygrid/ukgrid</a></div><div><a href="http://emoncms.org/ukelectricitygrid/ukwind">http://emoncms.org/ukelectricitygrid/ukwind</a></div><div><br /></div><div class="separator" style="clear: both; text-align: left;"><b>Open-API:</b></div>UK grid carbon intensity: <a href="http://emoncms.org/feed/value.json?id=97715">http://emoncms.org/feed/value.json?id=97715</a><br /><div>UK wind:&nbsp;<a href="http://emoncms.org/feed/value.json?id=67088">http://emoncms.org/feed/value.json?id=67088</a><br /><br />Other feeds are also available including grid fuel mix and current energy demand, just place 'id' in the API with the feed ID's below:&nbsp;</div><div><div class="separator" style="clear: both; text-align: left;"><br /></div><table class="table table-bordered table-hover table-condensed"><tbody><tr><td><b>Feed</b></td><td><b>Name</b></td><td><b>Current Value (22/11/15 22hrs)</b></td></tr><tr><td>97689</td><td>CCGT_val</td><td>11592</td></tr><tr><td>97690</td><td>CCGT_prc</td><td>0.31</td></tr><tr><td>97691</td><td>OCGT_val</td><td>0</td></tr><tr><td>97692</td><td>OCGT_prc</td><td>0</td></tr><tr><td>97693</td><td>OIL_val</td><td>0</td></tr><tr><td>97694</td><td>OIL_prc</td><td>0</td></tr><tr><td>97695</td><td>COAL_val</td><td>10785</td></tr><tr><td>97696</td><td>COAL_prc</td><td>0.29</td></tr><tr><td>97697</td><td>NUCLEAR_val</td><td>7798</td></tr><tr><td>97698</td><td>NUCLEAR_prc</td><td>0.21</td></tr><tr><td>97699</td><td>WIND_val</td><td>1308</td></tr><tr><td>97700</td><td>WIND_prc</td><td>0.03</td></tr><tr><td>97701</td><td>PS_val</td><td>397</td></tr><tr><td>97702</td><td>PS_prc</td><td>0.01</td></tr><tr><td>97703</td><td>NPSHYD_val</td><td>533</td></tr><tr><td>97704</td><td>NPSHYD_prc</td><td>0.01</td></tr><tr><td>97705</td><td>OTHER_val</td><td>1976</td></tr><tr><td>97706</td><td>OTHER_prc</td><td>0.05</td></tr><tr><td>97707</td><td>INTFR_val</td><td>1495</td></tr><tr><td>97708</td><td>INTFR_prc</td><td>0.04</td></tr><tr><td>97709</td><td>INTIRL_val</td><td>0</td></tr><tr><td>97710</td><td>INTIRL_prc</td><td>0</td></tr><tr><td>97711</td><td>INTNED_val</td><td>975</td></tr><tr><td>97712</td><td>INTNED_prc</td><td>0.02</td></tr><tr><td>97713</td><td>INTEW_val</td><td>0</td></tr><tr><td>97714</td><td>INTEW_prc</td><td>0</td></tr><tr><td>97715</td><td>gridintensity</td><td>435.6</td></tr><tr><td>97736</td><td>totalsupply</td><td>36859</td></tr></tbody></table></div><div>If you use the API in your project please drop us a line and give Emoncms some credit :-)<br /><div class="separator" style="clear: both; text-align: left;"><span style="color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="background-color: #edf7fc; font-size: 14px; line-height: 20px;"><br /></span></span></div><div class="separator" style="clear: both; text-align: left;">The data is captured from the&nbsp;<a href="http://www.bmreports.com/bsp/additional/soapfunctions.php?element=generationbyfueltypetable">UK Balancing BM Reports XML</a>. Our figure for grid intensity matched the figure generated by&nbsp;<a href="http://www.gridcarbon.uk/">http://www.gridcarbon.uk/</a>.&nbsp;</div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1048,6 +1046,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1100,12 +1104,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1291,6 +1289,8 @@ $(".searchBox form").click( function(event) {
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     

@@ -551,6 +551,51 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/investigating-embodied-energy-of-emonpi/">Investigating the embodied energy of the EmonPi & OSCEDays London 12-14th June.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-01T17:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-01 17:58:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/embodied-energy/'>embodied energy</a></li>
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/06/investigating-embodied-energy-of-emonpi/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    On the 12th – 14th of June there is an event happening called Open Source Circular Economy Days in many cities around the world, including in London <a href="https://oscedays.org/london/">https://oscedays.org/london/ </a>which we will be attending. I first found out about the event from Lars Zimmerman who is on the core organising team and I met last year at OuiShare, Lars runs <a href="http://openitagency.eu/">http://openitagency.eu</a> encouraging and helping people incorporate open source in their businesses, organisations and projects. The aim of Open Source Circular Economy Days is to bring open source thinking to the circular economy. The energy associated with manufacturing is a large part of our overall energy consumption and the question of embodied energy especially in the zero carbon energy sector is particularly important to understand better. There is quite a bit of discussion at the moment about the level of energy return on energy invested EROI required from the zero carbon energy sector as a whole in order to sustain a certain level of technological society.<br /><br />My impression of trying to look into embodied energy and life cycle analysis is that it seems that the measurement of embodied energy and other impacts associated with manufacturing our stuff and then the understanding of what solutions are available to reduce this embodied energy, especially in electronics is still in its infancy compared with other energy demands that we are more familiar with like the solutions available for space heating and transport, both of which have solutions that can achieve 70-90% energy reductions without reducing the level of comfort or distance travelled <a href="http://openenergymonitor.org/emon/sustainable-energy.">http://openenergymonitor.org/emon/sustainable-energy.</a><br /><br />We're particular conscious of this question at OpenEnergyMonitor as we get our hardware manufactured and see the quantity of stuff involved in the production of our equipment. It has always been interesting to read about developments from other projects and companies who have been looking at this for sometime but in different fields predominantly outdoor clothing: <a href="http://www.patagonia.com/us/footprint">http://www.patagonia.com/us/footprint</a> and <a href="http://www.howies.co.uk/">http://www.howies.co.uk</a>. They have often achieved quite substantial improvements by looking at their materials, and supply chains in detail.<br /><br />With Open Source Circular Economy Days coming up and after talking to Erica Purvis of <a href="http://technicalnature.org.uk/">http://technicalnature.org.uk/</a> who is one of the organisers of the London even we decided to try and sketch out a draft initial analysis of the embodied energy associated with the emonpi to take along with us. I emphasised its initial status there because I don’t have a high confidence in the reliability&nbsp; of the data at the moment but I think it does provide a useful start on which further detailed research can be done.<br /><br /><b>Embodied Energy Audit Process</b><br /><br />With a little research I found an example of an embodied energy analysis for an LED light with an accompanying dataset for the embodied energy of different components here: <a href="http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf">http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf</a> this example referenced data from the European commission project&nbsp; Eco-design of energy-using products: <a href="http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.">http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.</a><br /><br />I then calculated an estimate for embodied energy by using the embodied energy dataset from these two sources and a detailed list of components for the emonpi including the weight of each component. The spreadsheet with the calculation can be downloaded here on the EmonPI open hardware github repository:<br /><br /><a href="https://github.com/openenergymonitor/Hardware/raw/master/emonPi/emonPi_V1_5/emonpi_embodiedenergy.ods">https://github.com/openenergymonitor/Hardware/raw/master/emonPi/emonPi_V1_5/emonpi_embodiedenergy.ods </a><br /><br />here's a screenshot of what it looks like:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-lABYn1a7cMM/VWyZvr5dIKI/AAAAAAAAR8k/d_QjLgYKRXk/s1600/emodiedenergycalc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="284" src="http://2.bp.blogspot.com/-lABYn1a7cMM/VWyZvr5dIKI/AAAAAAAAR8k/d_QjLgYKRXk/s640/emodiedenergycalc.png" width="640" /></a></div><br /><br />I have summarised the main results in these two graphics:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-WhIT__7XvzI/VWyZordmN9I/AAAAAAAAR8c/8-9FteeWTz8/s1600/emonpiembodiedenergy01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="289" src="http://3.bp.blogspot.com/-WhIT__7XvzI/VWyZordmN9I/AAAAAAAAR8c/8-9FteeWTz8/s640/emonpiembodiedenergy01.png" width="640" /></a></div>Interestingly the application of the embodied energy values in the dataset suggest that at least for the parts that we are most involved in the custom design of (The EmonPi Shield and the aluminium enclosure) the embodied energy is dominated first by the enclosure at 10.1 kWh and then by the manufacturing of the printed circuit board (2.2 kWh) and the assembly of the unit (1.6 kWh). The integrated circuits only account for a relatively small percentage at 0.2 kWh.<br /><br /><b>Aluminium enclosures</b><br />The estimate for the embodied energy of the aluminium enclosure is based on the 40 kWh/kg figure in Sustainable Energy without the hot air. This equates to 144 MJ/kg which is lower than a couple of other figures I could find for standard aluminium embodied energy. The Wikipedia figure is 155MJ/kg and is based on a 33% recycling rate. The figures I could find for the embodied energy for aluminium from bauxite where between 191MJ/kg and 342MJ/kg. The enclosure made from aluminium from bauxite could at the higher end use 24 kWh and at the lower end require 16 kWh. 100% Recycled aluminium however only requires between 11.35MJ/kg and 17MJ/kg. The EmonPi manufactured from 100% recycled aluminium would therefore only need between 0.9 - 1.3 kWh to manufacture. The EmonTH ABS plastic case is about a third of the size of the EmonPI case and weighs 32g it had an embodied energy of around 1.0 kWh (111MJ/kg). A plastic EmonPi case might weight about 3x this (~90 grams) and so may use around 3.0 kWh. The aluminium would need have been recycled around 7-8 times to achieve the same level of embodied energy as an ABS plastic enclosure. There are also lower embodied energy plastics available such as Polypropylene (64-94MJ/kg) and recycled PET&nbsp; may use around 42-55MJ/kg and then perhaps there are even more options in the design of enclosures to minimise the amount of material used.<br /><b><br />Manufacture of printed circuit boards and assembly</b><br />Beyond learning more about enclosure options it would be useful to focus on getting a better idea for the reliability of the data for printed circuit board manufacturing and assembly and what options exist to lower their embodied energy requirements.<br /><br /><b>OSCEDays</b><br />If your interested in learning more about the Open Source Circular Economy days event or joining us at the event in London have a look at the event pages here:<br /><a href="https://oscedays.org/">https://oscedays.org</a><br /><a href="https://oscedays.org/london">https://oscedays.org/london</a><br /><b><br />Useful links and references:</b><br /><ul><li><a href="http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf">http://users.humboldt.edu/arne/Alstone_etal_Lumina-TR9-Embodied-Energy_Jan11.pdf</a></li><li><a href="http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.">http://ec.europa.eu/enterprise/policies/sustainable-business/ecodesign/methodology/files/eup_ecoreport_v5_en.xls.</a></li><li><a href="http://energy-solution.com/wp-content/uploads/2015/01/What-We-Know-and-Don---t-Know-about-Embodied-Energy-and-Greenhouse_Energy-Solutions_ACEEE-2012.pdf">http://energy-solution.com/wp-content/uploads/2015/01/What-We-Know-and-Don---t-Know-about-Embodied-Energy-and-Greenhouse_Energy-Solutions_ACEEE-2012.pdf</a></li><li><a href="http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml">http://www.inference.phy.cam.ac.uk/withouthotair/c15/page_88.shtml</a></li><li><a href="http://www.appropedia.org/Life_cycle_analysis_of_polymer_recycling_literature_review">http://www.appropedia.org/Life_cycle_analysis_of_polymer_recycling_literature_review</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2013/08/ethical-and-sustainable-electronics.html">http://openenergymonitor.blogspot.co.uk/2013/08/ethical-and-sustainable-electronics.html</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2013/09/faire-maus.html">http://openenergymonitor.blogspot.co.uk/2013/09/faire-maus.html</a></li><li><a href="http://openenergymonitor.blogspot.co.uk/2012/05/embodied-energy-of-electronic-enclosure.html">http://openenergymonitor.blogspot.co.uk/2012/05/embodied-energy-of-electronic-enclosure.html</a></li></ul>
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/05/introducing-emonth-v15/">Introducing emonTH V1.5</a>
   </h1>
   
@@ -919,46 +964,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/12/introducing-emontx-v34/">Introducing emonTx V3.4</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-12-17T12:03:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-12-17 12:03:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/12/introducing-emontx-v34/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Now shipping later this week in the shop is an updated version to the emonTx V3. This is a relatively minor update feature and form factor wise, most users probably won't notice the difference. However when hardware is involved, no update is a minor update!<br /><div><br /></div><div><a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3.4 is now available from the OpenEnergyMonitor Shop</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/--FoIIAZu6DA/VJMa4fb1F-I/AAAAAAABB5k/1ho4Bo3Fbnw/s1600/top_front_34.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/--FoIIAZu6DA/VJMa4fb1F-I/AAAAAAABB5k/1ho4Bo3Fbnw/s1600/top_front_34.png" height="400" width="313" /></a></div><br /><div><br /></div><div>The main changes &nbsp;are under the hood; the ATmega328 Arduino compatible microprocessor is now is now laid down directly on the PCB. This will help with manufacture and give us a few extra I/O to pay with that were inaccessible on RFu328 module that we used on the original emonTx V3.2. The changes also bring us back in line with JeenNode hardware (IRQ and INT connections) which allow us to use the latest RF12 <a href="https://github.com/jcw/jeelib">JeeLib</a> library to support the RFM69CW (<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see separate post</a>).</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-bPUlSXtzkAA/VJFi8Uj9bRI/AAAAAAABByY/fq4XpOnft0I/s1600/IMG_20141128_103932.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-bPUlSXtzkAA/VJFi8Uj9bRI/AAAAAAABByY/fq4XpOnft0I/s1600/IMG_20141128_103932.jpg" height="285" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 Installed</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-Tl7fbNoLntY/VJFjHgLHyMI/AAAAAAABBy4/CBWoMcoYq14/s1600/DSCF6076.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-Tl7fbNoLntY/VJFjHgLHyMI/AAAAAAABBy4/CBWoMcoYq14/s1600/DSCF6076.JPG" height="300" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 - production units will have battery holder fitted - omitted for photo to show components</td></tr></tbody></table><div><h3>Features&nbsp;</h3>New features on emonTx V3.4 over V3 shown in bold:</div><div><ul><li>Measure AC Apparent Power, AC Real power* and AC RMS voltage*</li></ul><ul><li>3 x single-phase CT current sensor inputs (100A / 24KW @ 240V max)</li></ul><ul><li>1 x high sensitivity single-phase CT current sensor input channel (18.8A / 4.5KW @ 240V max)</li></ul><ul><li><b>1 x RJ45 input for connecting DS18B20 temperature sensors</b></li></ul><ul><li>Single AC-AC adapter can power the unit and provide AC voltage measurement</li></ul><ul><li>An on-board 3x AA battery option <b>with</b> <b>remote monitoring of battery voltage</b></li></ul><ul><li>Terminal block access to power rails, digital and analogue I/O and IRQ port for connecting pulse counting sensor / DS18B20 temperature / Aux sensors</li></ul><ul><li><b>DIP switch selection of RF node ID and 240V/110V AC adapter selection, see <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#DIP_Switch_Config">#DIP Switch Config</a></b></li></ul><ul><li><b>SMA antenna included as standard&nbsp;</b></li></ul>*when AC-AC voltage adapter is connected<br /><blockquote class="tr_bq"><blockquote class="tr_bq"></blockquote></blockquote><h3></h3><div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-x4rreUa3hJ4/VJFi94HiUVI/AAAAAAABByg/h5B5VkjxObs/s1600/Screenshot%2B2014-12-09%2Bat%2B09.45.00.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-x4rreUa3hJ4/VJFi94HiUVI/AAAAAAABByg/h5B5VkjxObs/s1600/Screenshot%2B2014-12-09%2Bat%2B09.45.00.png" height="355" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx as part of the OpenEnergyMonitor system</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">The emonTx V3.4 uses an edge SMA connector with an SMA antenna included as standard. We have standardised on 433Mhz (<a href="http://openenergymonitor.org/emon/node/6211">see forum post</a>). The emonTx V3.4 supports and will eventually ship with the new RFM69CW module, this module is backwards compatible with RFM12B. However due to sourcing and lead time issues we have had to use RFM12B on the first batch of 500 units of emonTx V3.4 (now in the shop). When the RFM69CW is used a RSSI (Received Signal Strength Indicator) will appear in emoncms giving indication of signal strength.&nbsp;</div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-q3rdic6ri3U/VJFjCo0P7HI/AAAAAAABByw/bTgsgrNMs4M/s1600/DSCF6074%2B(1).JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-q3rdic6ri3U/VJFjCo0P7HI/AAAAAAABByw/bTgsgrNMs4M/s1600/DSCF6074%2B(1).JPG" height="320" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 with RFM69CW and edge SMA connector&nbsp;</td></tr></tbody></table>The emonTx V3.4 has the addition of an RJ45 socket to allow ease of connecting multiple DS18B20 temperature sensors. Screened RJ45 cabling (Ethernet) is commonly available as well as RJ45 splitters and extenders. This makes a quick and easy way to wire up a house / heat-pump etc for temperature monitoring. Power, GND, IRQ, ADC and PWM I/O's are also available through the RJ45 connector, <a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#RJ45_Connection">s</a><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4#RJ45_Connection">ee wiki for pinout and technical details</a>.<br /><br /><b>Note: the RJ45 connection is not&nbsp;Ethernet, TCP network switches and routers should not be used&nbsp;</b><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-ff460Za5Zbs/VJFjAvNDAvI/AAAAAAABByo/Dn6kTJRrPyY/s1600/emonTx_RJ45_DS18B20.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-ff460Za5Zbs/VJFjAvNDAvI/AAAAAAABByo/Dn6kTJRrPyY/s1600/emonTx_RJ45_DS18B20.jpg" height="360" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RJ45 connector used with <a href="http://shop.openenergymonitor.com/rj45-to-terminal-block-breakout-for-ds18b20-temperature-sensors/">RJ45 terminal breakout</a> for connection of multiple <a href="http://shop.openenergymonitor.com/encapsulated-ds18b20-temperature-sensor/">encapsulated DS18B20 temperature sensors</a>, DS18B20 temperature sensors are also available <a href="http://shop.openenergymonitor.com/rj45-encapsulated-ds18b20-temperature-sensor/">wired directly on RJ45 connector</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-JdmeZBx7Qv0/VJMckGk_KzI/AAAAAAABB5w/bHdylaYuaW8/s1600/V34%2Btemp%2Band%2Bant.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-JdmeZBx7Qv0/VJMckGk_KzI/AAAAAAABB5w/bHdylaYuaW8/s1600/V34%2Btemp%2Band%2Bant.JPG" height="256" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><a href="http://shop.openenergymonitor.com/rj45-encapsulated-ds18b20-temperature-sensor/">DS18B20 Temperature Sensor on RJ45</a></td></tr></tbody></table><h3><br /></h3><h3>Certification &amp; Environmental</h3><div>The emonTx V3.4 is EMC compliant, CE certified.&nbsp;</div><div><br /></div><div>The unit is manufactured and assembled in the UK using lead free processes, with RoHS and conflict material free components. The enclosure is made in the UK using recyclable aluminium and recycled acrylic plastic is used for the front and rear fascia.&nbsp;</div></div></div></div><div><br /></div><div><a href="http://shop.openenergymonitor.com/emontx-v3-electricity-monitoring-transmitter-unit/">emonTx V3.4 is now available from the OpenEnergyMonitor Shop</a></div></div><div><br /></div><h3>Links&nbsp;</h3><div><a href="http://openenergymonitor.org/emon/guide">Getting Started Guide</a></div><div><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3.4">emonTx V3.4 Technical Documentation Wiki&nbsp;</a></div><div><a href="https://github.com/openenergymonitor/Hardware/tree/master/emonTxV3/emonTx_V3.4">emonTx V3.4 open-source hardware design available on GitHub</a></div><div><a href="https://github.com/openenergymonitor/emonTxFirmware">emonTx Arduino compatible firmware GitHub</a></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -981,6 +986,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Intorducing IoTaWatt</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1033,12 +1044,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/openevse-build/">OpenEVSE EV Charge Controller</a>
         </li>
       
     
@@ -1224,6 +1229,8 @@ $(".searchBox form").click( function(event) {
       <li><a href="/categories/interface/">interface</a></li>
     
       <li><a href="/categories/interview/">interview</a></li>
+    
+      <li><a href="/categories/iotawatt/">iotawatt</a></li>
     
       <li><a href="/categories/java/">java</a></li>
     
