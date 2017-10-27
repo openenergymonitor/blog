@@ -43,7 +43,7 @@ The IoTaWatt supports automatic over the air (OTA) firmware updates.
 
 ## Security
 
-IoTaWatt supports end-to-end encrypted connection to Emoncms using new Emoncms transport layer encryption. Due to the limited resources of the ESP8266 microcontroller HTTPS connection is not possible. However, Emoncms offers an in-built transport layer encryption solution where the emoncms apikey is used as the pre-shared key for encrypting the data with AES-128-CBC.
+IoTaWatt supports end-to-end encrypted connection to Emoncms using new [Emoncms API transport layer encryption](http://emoncms.org/site/api#input). Due to the limited resources of the ESP8266 microcontroller HTTPS connection is not possible. However, Emoncms offers an in-built transport layer encryption solution where the emoncms apikey is used as the pre-shared key for encrypting the data with AES-128-CBC.
 
 Automatic OTA firmware updates ensure the IoTaWatt is always running the latest most secure version e.g a firmware update was released and automatically deployed to fix the [KRACK WPA vunrability](https://www.krackattacks.com/). Firmware updates are digitally signed.
 
