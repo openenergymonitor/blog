@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Intorducing IoTaWatt"
+title: "Introducing IoTaWatt"
 date: "2017-10-25 00:00"
 date_formatted: Oct 26th 2017
 author: Glyn Hudson
@@ -12,7 +12,7 @@ categories: iotawatt
 
 IotaWatt<sup>tm</sup> is an open-hardware 14 channel WiFi connected electric power monitor. It's based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.
 
-IoTaWatt can log data locally to on-board SD card and post directly to [Emoncms.org](https://emoncms.org) via WiFi. 
+IoTaWatt can log data locally to on-board SD card and post directly to [Emoncms.org](https://emoncms.org) via WiFi.
 
 **There are no plans to discontinue the emonTx. Both the IoTaWatt and emonTx have advantages in key areas which complement each other.**
 
