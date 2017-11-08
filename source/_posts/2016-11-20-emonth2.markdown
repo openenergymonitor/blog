@@ -14,7 +14,7 @@ categories:
 The emonTH V2 is an open-source, wireless, battery-powered temperature and humidity monitoring node.
 
 
-The emonTH V2 features a Silicon Labs **[Si7021](https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf)** temperature and humidity sensor instead of the [DHT22 sensor](http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/). The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years. The Si7021 is also *much* smaller than the DHT22.
+The emonTH V2 features a Silicon Labs **[Si7021](https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf)** temperature and humidity sensor instead of the [DHT22 sensor](http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/). The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years (at least two years). The Si7021 is also *much* smaller than the DHT22.
 
 ![emonTH V2]({{site.image_path}}/emonth2.jpg)
 
