@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonTH | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonth/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-10-27T17:13:58+00:00</updated>
+  <updated>2017-11-08T23:53:11+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -20,7 +20,7 @@
     <id>https://blog.openenergymonitor.org/2016/09/emonth2</id>
     <content type="html"><![CDATA[<p>The emonTH V2 is an open-source, wireless, battery-powered temperature and humidity monitoring node.</p>
 
-<p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years. The Si7021 is also <em>much</em> smaller than the DHT22.</p>
+<p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years (at least two years). The Si7021 is also <em>much</em> smaller than the DHT22.</p>
 
 <p><img src="/images/emonth2.jpg" alt="emonTH V2" /></p>
 
