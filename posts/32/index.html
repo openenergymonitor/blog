@@ -551,6 +551,37 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2010/12/pcb-designs-in-development/">PCB Designs in development</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-12-31T19:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-12-31 19:46:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/12/pcb-designs-in-development/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><span class="Apple-style-span"  style="font-family:arial;"><span class="Apple-style-span"  style="font-size:medium;"><br /></span></span><a href="http://openenergymonitor.org/emon/node/114"><span class="Apple-style-span"  style="font-family:arial;"><span class="Apple-style-span"  style="font-size:medium;">PCB Designs</span></span></a></div><div><span class="Apple-style-span"  style="font-family:arial;"><br /></span></div><div><span class="Apple-style-span"  style="font-family:arial;"><span class="Apple-style-span"  style="font-size:medium;"><div><b>The plan</b></div><div><br /></div><div>Create a PCB's for each module that interconnect via standard 3-wire and 4-wire connectors. A PCB specifically for: </div><div><br /></div><div><ul><li>Mains AC v3 module</li><li>RTD Temperature sensing module</li><li>Relay module (may be able to use modules available for this)</li><li>multiple input pulse counter</li><li>Compatibility with the nuelectronics datalogging board.</li></ul></div><div><b>Baseboards</b></div><div><br /></div><div>Develop a baseboard that is an Arduino with normal shield headers but also with 3-wire and 4-wire connectors on the same PCB.</div><div><br /></div><div>Develop a baseboard that is an Arduino with normal shield headers, 3-wire and 4-wire connectors and also tri-state buffer for master/slave network operation. </div><div><br /></div><div>An barebones arduino with a CT or pulse input module and RF transmitter socket all in one.</div><div><br /></div></span></span></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://openenergymonitor.org/emon/sites/default/files/baseboard.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px;" src="http://openenergymonitor.org/emon/sites/default/files/baseboard.png" border="0" alt="" /></a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2010/12/sampler-20/">Sampler 2.0</a>
   </h1>
   
@@ -850,37 +881,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2010/10/energy-monitoring-at-cat-part-4/">Energy monitoring at the CAT - part 4</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2010-10-10T18:11:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-10-10 18:11:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2010/10/energy-monitoring-at-cat-part-4/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <b><div><span class="Apple-style-span" style="font-weight: normal;">continues from part 3</span></div><div><b><br /></b></div>Next Steps and the PV Lab project</b><div><div><br /></div><div>With the pulse output kwh meters on all the renewable generators and un-interruptible loads connected up to the display server. The next step on the monitoring data acquisition side is to get detailed data from the 20kW PV roof array.</div><div><br /></div><div><b>The PV Lab project</b></div><div><br /></div><div>This is quite a big project with a lot of different measurements being made including energy measurements on the DC outputs of the panels and AC energy measurements on the outputs of 6 inverters and to research the effect of panel temperature on performance the temperature at multiple points under the array and the wind speed over the array. </div><div><br /></div><div>Thankfully Glyn Hudson a good friend of mine, who has just graduated from doing electronic engineering at Warwick university is working with me on this and Suneil is also just about to join us this coming week, so we will have a good team on it!</div><div><br /></div><div>Last week we spent quite a bit of time doing some further development on arduino based pulse counting, using low level port manipulation to read from multiple digital inputs at the same time and also much faster. We are just writing up about that at the moment.</div><div><br /></div><div><b>Microgrid display next steps</b></div><div>We are also hoping to develop the public display software further. We want to make it easy to use, simple to setup and flexible enough to be used for home scale energy visualization to CAT scale energy visualisation. A downloadable energy monitoring content management system, like wordpress or drupal say but for energy... more to come on this soon<br /></div><div><br /></div><div>Thanks for reading the update!</div><div><div></div></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -903,6 +903,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -955,12 +961,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
         </li>
       
     

@@ -551,6 +551,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/building-energy-modelling-part-1-whole/">Building Energy Modelling part 1 - The Whole House Book</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-17T16:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-17 16:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/building-energy-modelling-part-1-whole/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    In the blog post&nbsp;<a href="http://openenergymonitor.blogspot.com/2013/06/what-kind-of-information-can-we-extract.html">what kind of information can we extract from power measurements</a>&nbsp;I concluded that I needed a simple model of my electricity use in addition to the monitored data in order to ultimately get to a list of actions that I need to do to optimise my electricity use.<br /><br />The other conclusion was that to significantly reduce electricity consumption further I would need to change the heating system and to take a whole house view: improve the building fabric performance by increasing insulation levels, reducing draughts and improving solar gain in order to reduce heating demand in the first place. <br /><br />For a while now I have had a growing interest in looking at heating energy consumption and how to reduce heating energy demand through building fabric improvements in addition to electricity consumption. <br /><br />In the <a href="http://openenergymonitor.blogspot.co.uk/2012/01/community-energy-plan-maker.html">energy study of local households that we did in 2011-2012</a> heating energy came out as the largest energy user, we recorded details about house construction, levels of insulation, perceived comfort, temperature, draught levels, amount of glazing etc but didn't have the tools or knowledge to be able to give any sort of tailored advice, relate general statements that we're all familiar with like insulation can reduce energy demand by x% to a particular households situation, it wasn't in the remit of the project but we could see that that was what was needed next.<br /><br />At home it was also clear that heating was the largest user of energy and the area with the most potential to achieve significant energy savings and carbon reduction especially as electricity use is already optimised as far as possible. <br /><br />I started to read up on low energy building design to get a better understanding of the subject. I had an Aha moment when I read chapter 7 of <a href="http://www.amazon.co.uk/The-Whole-House-Book-Ecological/dp/1902175220">The Whole House Book by Pat Borer &amp; Cindy Harris</a> which outlines a really simple building energy model:<br /><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-0aw8iDJ55p4/Ub8_SIi3jQI/AAAAAAAACrU/iasN12OknXA/s1600/wholehouse.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="363" src="http://4.bp.blogspot.com/-0aw8iDJ55p4/Ub8_SIi3jQI/AAAAAAAACrU/iasN12OknXA/s640/wholehouse.jpg" width="640" /></a></div><div><br />The model starts by calculating how many Watts are lost through the building fabric per degree Kelvin (same for Celsius) temperature difference between the inside and outside temperature. This is calculated by multiplying the area of the various building elements such as walls, windows, roof and floor by their U-values. The model also takes into account the amount of heat lost via draughts (infiltration). The model then uses the concept of degree-days to calculate the annual heating demand.<br /><br />Before reading this I had thought that to get any sort of useful estimated output on effect of adding insulation to a building a full dynamic simulation would be needed. But this simple model showed that you can get some surprisingly informative estimates from some quite straightforward calculations. <br /><br />For the rest of the book Pat Borer &amp; Cindy Harris use a more detailed calculation that also takes into account solar gains, internal (casual) gains and water heating requirements. If your looking for a good book on low energy building design, self-build and energy calculations Id really recommend this book.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/carbon-coop-and-houseahedron-meetup/">Carbon Coop and Houseahedron meetup</a>
   </h1>
   
@@ -898,46 +938,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/05/recent-commits-to-emoncms/">Recent commits to emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-05-29T11:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-05-29 11:33:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/05/recent-commits-to-emoncms/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br />There have been many great recent commits to emoncms thanks to PlaneteDomo, Baptiste Gaultier, Simon Stamm, Erik Karlsson (IntoMethod), Bryan Mayland (CapnBry), Ildefonso Martínez, Paul Reed and Jerome. Including improved translations, ability to translate javascript, query speed-ups, a working remember me implementation and work on the raspberry pi module. I thought Id write this blog post to draw attention to the great contributions that are being made and so that credit goes where its due:<br /><br /><b>Summary of additions:</b><br /><br /><a href="https://github.com/PlaneteDomo"><b>PlaneteDomo</b></a> - Implementation of a clean way of adding ability to translate text previously defined in javascript <a href="https://github.com/emoncms/emoncms/pull/72">https://github.com/emoncms/emoncms/pull/72</a><br /><br /><a href="https://github.com/bgaultier"><b>Baptiste Gaultier</b></a> (bgaultier) - A lot of French translation work<br /><br /><a href="https://github.com/simonstamm"><b>Simon Stamm</b></a> - Added ability to display yen and euro in zoom visualisation, including an option to place the currency after the value ( 1 = after value, 0 = before value)<br /><a href="https://github.com/simonstamm/emoncms/commit/39af426ecd9eabffefbc12712bfea9ed2503a5f5">https://github.com/simonstamm/emoncms/commit/39af426ecd9eabffefbc12712bfea9ed2503a5f5</a><br />and fixed issue with floatval and json_decode: <a href="https://github.com/emoncms/emoncms/pull/78">https://github.com/emoncms/emoncms/pull/78</a><br /><br /><a href="https://github.com/IntoMethod"><b>Erik Karlsson</b></a> (IntoMethod) -&nbsp;Fixed dashboard height issue, thanks to Paul Reed for reporting this bug on the forums: <a href="http://openenergymonitor.org/emon/node/2013">http://openenergymonitor.org/emon/node/2013</a><br /><br />Addition of async ajax calls for some visualisations <a href="https://github.com/emoncms/emoncms/pull/71">https://github.com/emoncms/emoncms/pull/71</a> this makes the dashboard feel alot snappier and page load is about 4-5 times faster.<br /><br />Also a really significant fix that I've been really enjoying, Erik&nbsp;Karlsson&nbsp;fixed the remember me implementation that I failed to get to work properly: <a href="https://github.com/emoncms/emoncms/pull/69">https://github.com/emoncms/emoncms/pull/69</a><br /><br /><a href="https://github.com/CapnBry"><b>Bryan Mayland</b> </a>(CapnBry) -&nbsp;Improved feed/data request query times: <a href="https://github.com/emoncms/emoncms/pull/63">https://github.com/emoncms/emoncms/pull/63</a> adds a 3rd query type using the mysql average method for times less than 50 hours (180,000 seconds).<br /><br /><b><a href="https://github.com/ildemartinez">Ildefonso Martínez</a> </b>(ildemartinez) - javascript code&nbsp;re-factoring<br /><br /><a href="https://github.com/Paul-Reed"><b>Paul Reed</b></a> - tab between fields when logging in, average field in visualisations moved to the right.<br /><br /><a href="https://github.com/Jerome-github"><b>Jerome</b></a> (Jerome-github)&nbsp;A lot of work on the RaspberryPI emoncms module including continued work on the python gateway script. For ongoing discussion on raspberrypi module development see the github issues page here: <a href="https://github.com/emoncms/raspberrypi/issues/30">https://github.com/emoncms/raspberrypi/issues/30</a><br /><br />Id really like to thank these guys and everyone who continues to help out with development, there's a lot of hard work going in that's really pushing things forward.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -960,6 +960,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1012,12 +1018,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
         </li>
       
     

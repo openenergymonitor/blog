@@ -551,6 +551,64 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2018-01-26T12:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jan 26th 2018
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/iotawatt/'>iotawatt</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2018/01/emonpi-remote-access/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.</p>
+
+<p>The conventional way for obtaining access remotely is to open a port in the firewall and ‘port-forward’ requests to this port to the local emonPi. This method works but is cumbersome and insecure. It’s cumbersome because most users connect to the internet via their ISP using a non-static IP. Therefore the WAN IP address often changes, a dynamic DNS service such as <a href="https://www.duckdns.org/">Duck DNS</a>, or <a href="https://www.noip.com">noIP</a> to link a dynamic IP to a static domain name, however this is cumbersome to setup and often requires purchasing a domain name, dynamic DNS Subscription and handling the dynamic DNS IP address updates.</p>
+
+<p>The port forwarding method of remote access is also insecure since by default the emonPi uses an un-secured http connections, this is not a problem on a secure local network but not recommend for use over the internet.</p>
+
+<h2 id="dataplicity">Dataplicity</h2>
+
+<p><a href="https://www.dataplicity.com">Dataplicity</a> offers a easy to setup web-service service to enable secure remote access (SSH/HTTPS) to RaspberryPi devices. The free tier allows free access to a single RaspberryPi device.</p>
+
+<p><img src="/images/1-dataplicity.png" alt="1-dataplicity" /></p>
+
+<p><img src="/images/5-dataplicity.png" alt="5-dataplicity" /></p>
+
+<p><img src="/images/6-dataplicity.png" alt="6-dataplicity" /></p>
+
+<p>Follow the steps on the <a href="https://guide.openenergymonitor.org/setup/remote-access/">Remote Access page of our User Guide</a> to setup Dataplicity on an emonPi.</p>
+
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2017/10/iotawatt/">Introducing IoTaWatt</a>
   </h1>
   
@@ -1126,62 +1184,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2017-01-31T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jan 31st 2017
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/website/'>website</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2017/01/new-home-page-and-learn/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>As you may well have noticed we have recently launched a new <a href="https://openenergymonitor.org">front page</a> for OpenEnergyMonitor and a common navigation bar theme across all our sites. We have also launched a new website called <a href="https://learn.openenergymonitor.org">Learn</a> to replace the <a href="https://openenergymonitor.org/emon/buildingblocks">Building Blocks section</a> of the old site. All URL’s directed to building blocks should re-direct automatically to the relevant Learn page.</p>
-
-<p><img src="/images/home-page-devices.png" alt="devices" /></p>
-
-<p>A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system - We hope this update better reflects this interest.</p>
-
-<p>This website redesign completes the shift away from using Drupal 6 cms that was started with the <a href="https://guide.openenergymonitor.org">User Guide website</a> launched April 2016 and a new <a href="https://Community.openenergymonitor.org">Community Form</a> using <a href="http://discourse.org">Discource</a> launched May 2016. The <a href="https://openenergymonitor.org/emon/forum">old forums</a> are still accessible as a read-only archive.</p>
-
-<p>Alongside the new front page we have also launched a new website called Learn which includes what used to be called Building Blocks, resources for learning about AC Power Theory, CT Sensors, Measurement circuit design through to Timeseries data storage design.</p>
-
-<p>Learn also includes a large updated section on Sustainable Energy which brings together and expands on our work on understanding the wider context, including a web-based 10 year hourly 100% renewable energy model based on ZeroCarbonBritain and resources on building energy modelling.</p>
-
-<p>The new sites are all designed to be responsive for viewing on mobile as well as desktop screen sizes:</p>
-
-
-    
-      <a class="btn pull-right" href="/2017/01/new-home-page-and-learn/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1202,6 +1204,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1254,12 +1262,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
         </li>
       
     

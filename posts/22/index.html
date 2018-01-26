@@ -551,6 +551,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/10/emoncms-development-update-modules/">Emoncms development update: Modules</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-10-30T13:47:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-10-30 13:47:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/10/emoncms-development-update-modules/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>I've been a little quiet over the last few weeks, emoncms blogposts and progress updates have been far and few between but that does not mean there has been no development progress happening, to the contrary there has been a lot of significant development work been going on.<br /><br />I outlined at the start of the month in the <a href="http://openenergymonitor.org/emon/node/1107">october emoncms bug and dev list</a> the idea of re-factoring/reorganising emoncms along more modular lines, pointing to some earlier thoughts on it. Since then I made the leap and started the re-factoring process, Ilde gave me a lot of help with splitting up the language files for translations, and good ideas for menu system implementation, Baptiste Gaultier &nbsp;gave me some impetus to look at modularising the dashboard widget code and now we are almost there.<br /><br />The old structure had a folder for Controllers, Models and Views, with all the different controllers, model and view scripts for a feature mixed in together in these folders and also some files such as setup.php which had code in it for all the different features. As the application was growing this&nbsp;was getting a bit unwieldy, harder to understand/read the code, add new features and keep track of development.<br /><br />This is how the old structure looked like:<br /><br /><b>Controllers</b><br />&nbsp; feed_controller.php (part of feed module * )<br />&nbsp; input_controller.php (part of input module * )<br />&nbsp; ...<br /><b>Models</b><br />&nbsp; feed_model.php (part of feed module *)<br />&nbsp; input_model.php (part of input module *)<br />&nbsp; ...<br /><b>Views</b><br />&nbsp; feed_list_view.php (part of feed module *)<br />&nbsp; input_list_view.php (part of input module *)<br />&nbsp;<br /><div><i>setup.php</i> (mixed code for input, feeds, etc) - if you add a new module you had to add db schema code in here.<br /><i>notify.php </i>(part of notify module but in the root emoncms directory)</div><div>* Module or feature specific files are all in different locations&nbsp;</div><div><br /><b>By changing the structure:</b><br /><br /><b>Modules</b><br /><b>&nbsp; feed</b><br />&nbsp; &nbsp; feed_controller.php<br />&nbsp; &nbsp; feed_model.php<br />&nbsp; &nbsp; feed_list_view.php (includes no feed message)<br />&nbsp; &nbsp; feed_schema.php<br /><b>&nbsp; input</b><br />&nbsp; &nbsp; input_controller.php (merged with enum.php)<br />&nbsp; &nbsp; input_model.php<br />&nbsp; &nbsp; input_list_view.php (includes no input message)<br />&nbsp; &nbsp; input_schema.php<br /><br />and following the following design principles:<br /><br /><ul><li>A module add's functionality in a self-contained way - not requiring (or minimizing as much as possible) modification of any other modules or the core framework.</li><li>A module can depend on another module. ie dashboards depend on feeds but feeds does not need to depend on dashboards.</li></ul><br />I think this change gives us the following benefits:<br /><br /><ul><li>Clearer application structure - easy to find module specific code</li><li>Adding a new module is really easy, you dont have to put the controller in the controller folder, the view in the views folder, model in the models folder, database setup in setup.php, all you have to do is download the module folder and place in the modules folder.</li><li>We can then use git to develop particular modules independently of the rest. A developer looking at commit logs therefore only needs to concern themselves with that particular module rather than the application as a whole.</li><li>Its easier to test modules and the framework independently of each other.</li><li>More developer autonomy, project self organisation. You can add a module to the optional modules list without having to coordinate closely with the main emoncms bundle.</li></ul><div>The new modular emoncms version can be found here:</div><div><br /></div><span class="Apple-style-span" style="font-size: large;"><a href="https://github.com/emoncms/emoncms">https://github.com/emoncms/emoncms</a></span><br /><br />Given the potential escalating number of repositories as new modules are added I though it would be best to create a dedicated github organisation for emoncms hence the new location. If you go to:&nbsp;<a href="http://github.com/emoncms">http://github.com/emoncms</a>&nbsp;you will see quite a few repositories:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-VK2qKcUdlYY/UI_SkcU0iyI/AAAAAAAACfk/0XwqST69Ook/s1600/emoncmsgithuborg.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="609" src="http://4.bp.blogspot.com/-VK2qKcUdlYY/UI_SkcU0iyI/AAAAAAAACfk/0XwqST69Ook/s640/emoncmsgithuborg.png" width="640" /></a></div><br />The emoncms repository is the main emoncms bundle which is build up from the emoncms_framework and the other core modules such as input, feed, dashboard and so on. Then there are repositories for the framework and modules independently of the main bundle including modules that are not in the main bundle such as the raspberry pi module which I will come back to in the next post.<br /><br />The idea being that the main bundle could be built automatically from the module repositories and the framework and that the commit history could be on a module basis.<br /><br /><b>Adding a module</b><br />To add a particular non core feature such as the raspberrypi interface module to your emoncms installation its now just a matter of downloading the raspberrypi repository and placing it in the modules folder of your emoncms installation, much the same way as you add libraries to an arduino project.<br /><b><br /></b><b>Things to complete</b><br />As I mentioned at the start most of the refactoring work has been done but there are still some parts that are not complete such as the notify, admin and statistics module and there are some missing message boxes such as when no inputs, feeds or dashboards exist that need to be re-added.<br /><br />The feed module implementation is also a little different in that the there is no longer a feed_relation table that used to link a user to their feeds, this is now handled in the feeds table which simplifies things but means a simple database migration process needs to take place if your upgrading from an old emoncms version, I will write a short script to do this soon and document the migration process.<br /><br />Another important change is the API used to post data from basestations to emoncms what used to be api/post is now input/post as this action is handled by the input module. You can if you want sidestep input processing completely and just use the feed module which now has a full api. The api calls for both the feed and input module are documented in helper pages linked to from the top of the input and feed pages.<br /><br />That's it for now, in the next few post I will discuss the raspberrypi module and also how to migrate from the old emoncms version.<br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/10/introducing-emontx-shield/">Introducing the emonTx Shield </a>
   </h1>
   
@@ -907,48 +947,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/09/emontx-and-nanoderf-code-guides/">EmonTx and NanodeRF Code guides</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-09-04T15:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-09-04 15:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/09/emontx-and-nanoderf-code-guides/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <span class="Apple-style-span" style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;"></span><br />These EmonTx and NanodeRF code guides go through the main components required to put a full EmonTx and NanodeRF (or ENC28J60 based OpenKontrolGateway) firmware together.<br /><div><br /></div><div>If your just starting out, you might find going through these guide examples first better than starting straight in with the fully fledged firmware examples.</div><div><br /></div><div>The examples are contained in the normal&nbsp;emonTxFirmware and&nbsp;NanodeRF&nbsp;repositories on github.<br /><div><h3>EmonTx Code guide</h3><div><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/a_SingleCT/a_SingleCT.ino">01 - Single CT</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/b_SecondCT/b_SecondCT.ino">02 - Second CT</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/c_ACVoltage/c_ACVoltage.ino">03 - AC Voltage</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/d_Temperature/d_Temperature.ino">04 - Temperature</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/e_PulseCounting/e_PulseCounting.ino">05 - Pulse Counting</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/f_ElsterMeter/f_ElsterMeter.ino">06 - Elster Meter Reader</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/g_TransmittingData/g_TransmittingData.ino">07 - Transmitting Data</a><br /><a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/Guide/h_watchdog/h_watchdog.ino">08 - Watchdog</a></div><div><br /></div><div><a href="https://github.com/openenergymonitor/emonTxFirmware">https://github.com/openenergymonitor/emonTxFirmware</a><br /><h3>NanodeRF Code guide</h3></div><div><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/a_FixedPackets/a_FixedPackets.ino">01 - Fixed Packets</a><br /><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/b_MultiNode/b_MultiNode.ino">02 - MultiNode</a><br /><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/c_BasicWebClient/c_BasicWebClient.ino">03 - Basic Web Client</a><br /><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/d_PacketBuffer/d_PacketBuffer.ino">04 - PacketBuffer</a><br /><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/e_BasicMultiNodeWebClient/e_BasicMultiNodeWebClient.ino">05 - Basic MultiNode Web Client</a><br /><a href="https://github.com/openenergymonitor/NanodeRF/blob/master/Guide/f_ReceivingReply/f_ReceivingReply.ino">06 - Receiving a Reply</a></div><div><br /></div><div><a href="https://github.com/openenergymonitor/NanodeRF">https://github.com/openenergymonitor/NanodeRF</a></div></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -971,6 +969,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1023,12 +1027,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
         </li>
       
     

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iotawatt | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/iotawatt/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2017-11-29T12:42:28+00:00</updated>
+  <updated>2018-01-26T19:15:18+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[emonPi Remote Access with Dataplicity]]></title>
+    <link href="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/"/>
+    <updated>2018-01-26T12:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2018/01/emonpi-remote-access</id>
+    <content type="html"><![CDATA[<p>Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.</p>
+
+<p>The conventional way for obtaining access remotely is to open a port in the firewall and ‘port-forward’ requests to this port to the local emonPi. This method works but is cumbersome and insecure. It’s cumbersome because most users connect to the internet via their ISP using a non-static IP. Therefore the WAN IP address often changes, a dynamic DNS service such as <a href="https://www.duckdns.org/">Duck DNS</a>, or <a href="https://www.noip.com">noIP</a> to link a dynamic IP to a static domain name, however this is cumbersome to setup and often requires purchasing a domain name, dynamic DNS Subscription and handling the dynamic DNS IP address updates.</p>
+
+<p>The port forwarding method of remote access is also insecure since by default the emonPi uses an un-secured http connections, this is not a problem on a secure local network but not recommend for use over the internet.</p>
+
+<h2 id="dataplicity">Dataplicity</h2>
+
+<p><a href="https://www.dataplicity.com">Dataplicity</a> offers a easy to setup web-service service to enable secure remote access (SSH/HTTPS) to RaspberryPi devices. The free tier allows free access to a single RaspberryPi device.</p>
+
+<p><img src="/images/1-dataplicity.png" alt="1-dataplicity" /></p>
+
+<p><img src="/images/5-dataplicity.png" alt="5-dataplicity" /></p>
+
+<p><img src="/images/6-dataplicity.png" alt="6-dataplicity" /></p>
+
+<p>Follow the steps on the <a href="https://guide.openenergymonitor.org/setup/remote-access/">Remote Access page of our User Guide</a> to setup Dataplicity on an emonPi.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introducing IoTaWatt]]></title>

@@ -551,6 +551,52 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/emoncms-features-part-2-email-notifier/">New emoncms features part 2 - Email notifier</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-18T23:31:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-18 23:31:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/email-notifications/'>email notifications</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
+      
+        <li><a class='category' href='/categories/openenergymonitor/'>openenergymonitor</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/emoncms-features-part-2-email-notifier/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Its good to know as soon as possible if there is an issue with an installed energy monitor, such as the base station dropping offline or a problem with RF connection. This is a rough and ready first implementation of an email notifier for emoncms, that sends you an email to say that a feed has become inactive or a feed is&nbsp;equal&nbsp;to a certain value. No longer are the days when you log in to emoncms just to find that there are two days of missing data as&nbsp;happened&nbsp;to me on feb 6-7 <a href="http://openenergymonitor.org/emon/emoncms/showcase">here</a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><b>A walkthrough</b></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">1) Click on a feed in the feed list to bring up the feed view page, scroll down to the bottom and click on set notifications:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-oUq0bwGDyiQ/T0AoJkpEZNI/AAAAAAAACX0/cI3odOAz6P8/s1600/notift_feedview.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="230" src="http://1.bp.blogspot.com/-oUq0bwGDyiQ/T0AoJkpEZNI/AAAAAAAACX0/cI3odOAz6P8/s320/notift_feedview.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">2) Select the events that you want notifications for. Notification on value and on inactive both work. Periodic notification is yet to be implemented.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Q8in3h0PPZ0/T0AoeSLmCFI/AAAAAAAACX8/GXJCyeeQjZU/s1600/notify_feedsettings.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Q8in3h0PPZ0/T0AoeSLmCFI/AAAAAAAACX8/GXJCyeeQjZU/s320/notify_feedsettings.png" width="216" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />3) Click on edit mail settings and enter in the recipient email address. This only has to be done once as it is the same for all notifications.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4U29I5trf2c/T0ApRWFl_5I/AAAAAAAACYE/0z7LJZ02xMQ/s1600/notify_recipients.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="222" src="http://1.bp.blogspot.com/-4U29I5trf2c/T0ApRWFl_5I/AAAAAAAACYE/0z7LJZ02xMQ/s320/notify_recipients.png" width="320" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />If you want to send the notifications to multiple&nbsp;addresses, just put in a comma between each address.<br /><br />4) Unplug your emonbase!! and check your email:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-_woWFUXfPMo/T0ApmAkoAlI/AAAAAAAACYM/GlkiXxJQ-uM/s1600/notify_emailsubject.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="19" src="http://3.bp.blogspot.com/-_woWFUXfPMo/T0ApmAkoAlI/AAAAAAAACYM/GlkiXxJQ-uM/s320/notify_emailsubject.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-r3iUkNr2rbs/T0AppLU7ICI/AAAAAAAACYU/CHQufBFe38s/s1600/notift_emailbody.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="95" src="http://1.bp.blogspot.com/-r3iUkNr2rbs/T0AppLU7ICI/AAAAAAAACYU/CHQufBFe38s/s320/notift_emailbody.png" width="320" /></a></div><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><b><br /></b><br /><div style="text-align: left;"><b><br /></b></div><div style="text-align: left;">It can be tried out here:&nbsp;<a href="http://vis.openenergymonitor.org/emoncms3">http://vis.openenergymonitor.org/emoncms3</a></div><b><br /></b><br /><b>Behind the scenes</b><br /><b><br /></b><br /><b>Main scripts:</b><br /><b><span class="Apple-style-span" style="font-weight: normal;"></span></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Models/notify_model.php">notify_model.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Models/mail_model.php">mail_model.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Controllers/notify_controller.php">notify_controller.php</a></b><br /><b><a href="https://github.com/openenergymonitor/emoncms3/blob/master/Views/notify_view.php">notify_view.php</a></b><br /><br /><b><br /></b><br /><b>Installation/Setup</b><br />1) To use the notifier on your own server you will need php mail installed, to do this on ubuntu enter the following into terminal<br /><br /><span class="Apple-style-span" style="background-color: white; color: #222222; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px; line-height: 18px;">sudo apt-get install php-pear<br />sudo pear install mail<br />sudo pear install Net_SMTP<br />sudo pear install Auth_SASL<br />sudo pear install mail_mime</span><br /><b><br /></b><br />2) In emoncms3/Includes copy the default.mail_settings.php file and rename too<a href="https://github.com/openenergymonitor/emoncms3/blob/master/Includes/default.mail_settings.php"> mail_settings.php</a> and enter in your mail server settings.<br /><br />3) Open the file <a href="https://github.com/openenergymonitor/emoncms3/blob/master/cron.php">cron.php</a>&nbsp;and change the key password to something unique, this is used to ensure that only you can run the cron.php script.<br /><br />4) Create a cronjob, in ubuntu start by opening crontab:&nbsp;$ crontab -e<br />Then add a cronjob that calls the cron.php script including the key that you created. To call the cron.php script once a&nbsp;minute&nbsp;try the following:<br /><br /><br /># m h &nbsp;dom mon dow &nbsp; command<br />* * * * * wget -q -O /dev/null "http://localhost/emoncms3/cron.php?key=YOURKEY<br /><br /><br />5) If your using the same database as a previous emoncms version, you will need to create the new notify database tables. This can be done in index.php by pasting <b>require "Includes/setup.php"; </b>in the top. Its probably worth removing it afterwards.<br /><br />6) Configure your feeds as in the screens above!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/02/new-emoncms-features-part-1-blue/">New emoncms features part 1: blue message bar</a>
   </h1>
   
@@ -902,46 +948,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/open-source-and-software-as-service/">Open source and software as a service</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-16T00:14:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-16 00:14:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/open-source-and-software-as-service/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    In addition to developing emoncms as an application that can be downloaded and installed on any server, interest willing, I would like to work towards offering emoncms as a service. So if you just want to build up your hardware and connect to a ready to go, maintained service with support, the option will be available to you.<br /><br />One of the reasons I wanted to develop emoncms in the first place was that I was frustrated with fact that all available services where proprietary, I wanted to be able to download, install, modify, take part in development because I very much enjoy doing so and wanted to take part in collaborative innovation on important problems as&nbsp;Irving Wladawsky-Berger&nbsp;described so well in his post on the essence of open source which I <a href="http://openenergymonitor.blogspot.com/2011/12/essence-of-open-source.html">blogged about</a> last week.<br /><br />As this article by <a href="http://mygnulinux.com/">mygnulinux.com</a> and another article here by <a href="http://williamjudd.com/2011/01/28/the-threat-of-saas-to-open-source/">William Judd</a> describe, there is a concern that as more an more of our applications move into the cloud and are run by organisations who adopt the proprietary software as a service business model we will loose the ground that we have gained in the open source software movement, there is also a complication to do with licensing.<br /><br />There are however a great deal of advantages in having applications in the cloud many of which are also very beneficial for energy monitoring, such as: access to your data from any location and any device and possibilities that open up by using shared platforms.<br /><br />The answer: cloud based software as a service does not have to be proprietary software, it can be open source and this opens up some really exciting opportunities.<br /><br />So the idea is that the installed web application's code is placed on github or other code sharing location and is a mirror of the installation on the main server/servers. The service can be used as one would normally use a software service. However if you want to improve the code, modify, add something you can. You just need to fork the repository, do something cool, share it with the community and if its adoption is agreed it can be added to the service install. So this allows for taking part in development, for modification and improvement. It is a little more complicated than editing your own instance of a particular piece of software as changes need to be agreed on by those using the service as any changes will effect everyone, but this is not a prohibitive problem as there are systems that have already been worked out for determining what makes it into the final release in many large open source projects.<br /><br />As mygnulinux.com and William Judd's articles explain, the other important problems in software as a service is: lock in, data ownership and licensing.<br /><br />The first can be addressed by creating a comprehensive API that makes it possible to move data from one service to another or to a local installation if one desires to do so.<br /><br />The second can be addressed through good policy by the service providers.<br /><br />Licensing is important. The GPL up to and including v3 does not ensure openness for software as a service provided over a network as the requirement to release the source code and any modifications to that source code is only triggered when the software is distributed not when that program is run. This essentially as I understand turns the GPL into BSD like licence as there is no requirement for open sourcing when providing the software as a service across a network.<br /><br />In response to this loophole the Free Software Foundation bought out another licence called the <a href="http://www.gnu.org/licenses/agpl.html">GPL Affero licence (AGPL)</a> which essentially requires anyone providing a service using the software across a network to release the source code, the one additional provision over GPL v3 being:<br /><blockquote class="tr_bq">“if you modify the Program, your modified version must prominently offer all users interacting with it remotely through a computer network (if your version supports such interaction) an opportunity to receive the Corresponding Source of your version by providing access to the Corresponding Source from a network server at no charge, through some standard or customary means of facilitating copying of software.”</blockquote><b>In conclusion</b><br />It's possible to get the benefits of open source and the benefits of the cloud and software as a service platforms.&nbsp;I think its going to be exciting to explore this with emoncms.<br /><ul><li>The code for the latest version of emoncms is available on github:&nbsp;<a href="https://github.com/openenergymonitor/emoncms3">https://github.com/openenergymonitor/emoncms3</a></li><li>Its the exact same version as is deployed here:&nbsp;<a href="http://vis.openenergymonitor.org/emoncms3/">http://vis.openenergymonitor.org/emoncms3/</a></li><li>It is&nbsp;licensed under AGPL</li><li>A comprehensive API and tools for easy porting of data between instances is a core aim and will be an important part of continued feature development.</li><li>A template terms of service needs to be worked out and written.</li></ul><b>Examples of open source software as a service</b><br /><a href="http://www.sugarcrm.com/crm/">SugarCRM</a> - a customer relationship management package&nbsp;<b>(</b>From the articles linked above)<br /><a href="http://identi.ca/">Identi.ca</a>&nbsp;-&nbsp;a micro-blogging service&nbsp;<b>(</b>From the articles linked above)<br /><a href="https://thingspeak.com/">Thingspeak</a>&nbsp;- internet of things application<br /><br />Drop a comment below if you know of others that can be added to the list.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -964,6 +970,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1016,12 +1028,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
         </li>
       
     
