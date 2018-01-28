@@ -6,7 +6,7 @@ date: "2018-01-26 12:00"
 date_formatted: Jan 26th 2018
 author: Glyn Hudson
 comments: true
-categories: iotawatt
+categories: emonpi
 ---
 
 
@@ -16,7 +16,7 @@ The conventional way for obtaining access remotely is to open a port in the fire
 
 The port forwarding method of remote access is also insecure since by default the emonPi uses an insecure http connections, this is not a problem on a secure local network but not recommend for use over the internet.
 
-## Dataplicity 
+## Dataplicity
 
 [Dataplicity](https://www.dataplicity.com) offers a easy to setup web-service service to enable secure remote access (SSH/HTTPS) to RaspberryPi devices. The free tier allows free access to a single RaspberryPi device.
 
@@ -26,6 +26,6 @@ The port forwarding method of remote access is also insecure since by default th
 
 ![6-dataplicity]({{site.image_path}}/6-dataplicity.png)
 
-Follow the steps on the [Remote Access page of our User Guide](https://guide.openenergymonitor.org/setup/remote-access/) to setup Dataplicity on an emonPi. 
+Follow the steps on the [Remote Access page of our User Guide](https://guide.openenergymonitor.org/setup/remote-access/) to setup Dataplicity on an emonPi.
 
 
