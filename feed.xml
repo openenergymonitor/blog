@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-01-30T02:08:58+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>emonPi Remote Access with Dataplicity</title><link href="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/" rel="alternate" type="text/html" title="emonPi Remote Access with Dataplicity" /><published>2018-01-26T12:00:00+00:00</published><updated>2018-01-26T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emonpi-remote-access</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/">&lt;p&gt;Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-01-30T11:22:30+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Blue Theme</title><link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/" rel="alternate" type="text/html" title="Emoncms Blue Theme" /><published>2018-01-30T09:01:00+00:00</published><updated>2018-01-30T09:01:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emoncms-theme/">&lt;p&gt;For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)&lt;/p&gt;
+
+&lt;p&gt;The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.&lt;/p&gt;
+
+&lt;p&gt;We like the clean look of the blue theme, we hope you do also :-)&lt;/p&gt;
+
+&lt;p&gt;If you don’t it’s easy to revert to back to the old black theme by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;$theme = standard&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;settings.php&lt;/code&gt;. There is also a user contributed yellow theme called &lt;code class=&quot;highlighter-rouge&quot;&gt;sun&lt;/code&gt; which is available.&lt;/p&gt;
+
+&lt;p&gt;emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.&lt;/p&gt;
+
+&lt;p&gt;Feed view in Standard, Blue and Sun theme:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/feed-emoncms-theme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Login box in Blue, Standard and Sun theme:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/login-emoncms-theme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MyElectric dashboard app in box in Standard, Blue, and Sun theme:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/he-emoncms-theme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For questions and discussion see &lt;a href=&quot;https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388&quot;&gt;Emoncms Blue Theme Forum Topic&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)
+
+The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.
+
+We like the clean look of the blue theme, we hope you do also :-)
+
+If you don’t it’s easy to revert to back to the old black theme by setting $theme = standard in settings.php. There is also a user contributed yellow theme called sun which is available.
+
+emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.
+
+Feed view in Standard, Blue and Sun theme:</summary></entry><entry><title>emonPi Remote Access with Dataplicity</title><link href="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/" rel="alternate" type="text/html" title="emonPi Remote Access with Dataplicity" /><published>2018-01-26T12:00:00+00:00</published><updated>2018-01-26T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emonpi-remote-access</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/">&lt;p&gt;Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.&lt;/p&gt;
 
 &lt;p&gt;The conventional way for obtaining access remotely is to open a port in the firewall and ‘port-forward’ requests to this port to the local emonPi. This method works but is cumbersome and insecure. It’s cumbersome because most users connect to the internet via their ISP using a non-static IP. Therefore the WAN IP address often changes, a dynamic DNS service such as &lt;a href=&quot;https://www.duckdns.org/&quot;&gt;Duck DNS&lt;/a&gt;, or &lt;a href=&quot;https://www.noip.com&quot;&gt;noIP&lt;/a&gt; can be used to link a dynamic IP to a static domain name, however this is cumbersome to set up and often requires purchasing a domain name, dynamic DNS Subscription and handling the dynamic DNS IP address updates.&lt;/p&gt;
 
@@ -582,67 +616,4 @@ It can be used to model a building in its current form and then create scenarios
 
 MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your Emoncms.org account)
 
-http://myhome.emoncms.org</summary></entry><entry><title>Launching Learn: Sustainable Energy</title><link href="https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy/" rel="alternate" type="text/html" title="Launching Learn: Sustainable Energy" /><published>2017-02-14T10:18:00+00:00</published><updated>2017-02-14T10:18:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy/">&lt;p&gt;Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The &lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/introduction&quot;&gt;Sustainable Energy section of Learn&lt;/a&gt; brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/learn-laptop.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the &lt;a href=&quot;http://zerocarbonbritain.org/&quot;&gt;ZeroCarbonBritain&lt;/a&gt; scenario:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/introduction&quot;&gt;Sustainable Energy Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101&quot;&gt;Energy 101&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote &lt;a href=&quot;http://www.inference.eng.cam.ac.uk/withouthotair/&quot;&gt;Sustainable energy without the hot air&lt;/a&gt;, to visualise the different uses of energy from traditional electricity demand to heating and transport:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study&quot;&gt;Snowdonia Energy Study&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Page 5: Building on the ZeroCarbonBritain Energy Model goes into more detail on the ZeroCarbonBritain 10 year hourly energy model developed by the Centre for Alternative Technology. Including links to their open spreadsheet model and methodology papers and then work that I did with Philip James a researcher on the ZeroCarbonBritain project on creating an open source web based version of the model:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/zerocarbonbritain&quot;&gt;Zero Carbon Britain&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The latest version of the 10 year hourly energy modelling tool can be found here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold&quot;&gt;Zero Carbon Britain Modelling Tool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It can be used to explore supply &amp;amp; demand matching for a large number of different supply and demand side technologies. Everything from wind, solar, heatpumps, biomass heat, electric vehicles, hydrogen, battery storage to long term biomass energy backup.&lt;/p&gt;
-
-&lt;p&gt;Pages 6,7 &amp;amp; 8 and the appendixes go into further detail looking briefly at costs, renewable heat and community (large village/small town) scale scenarios, discussing the results of running different options through the model.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/scenarios&quot;&gt;Energy Scenarios&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/renewableheat&quot;&gt;Renewable Heat&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/energy/costs&quot;&gt;Sustainable Cnergy Costs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Screenshot: Snowdonia household energy study:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/learn-sustainable-energy.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Screenshot: 10 year hourly energy model&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/learn-sustainable-energy-zcem.png&quot; alt=&quot;New Front Page&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you have any question’s about this work please feel free to email me on trystan dot lea at openenergymonitor.org.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The Sustainable Energy section of Learn brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.
-
-
-
-It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the ZeroCarbonBritain scenario:
-
-
-  Sustainable Energy Introduction
-  Energy 101
-
-
-There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote Sustainable energy without the hot air, to visualise the different uses of energy from traditional electricity demand to heating and transport:
-
-
-  Snowdonia Energy Study</summary></entry></feed>
+http://myhome.emoncms.org</summary></entry></feed>

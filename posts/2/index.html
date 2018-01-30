@@ -551,6 +551,65 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2017-02-14T10:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Feb 14th 2017
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2017/02/learn-sustainable-energy/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The <a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy section of Learn</a> brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.</p>
+
+<p><img src="/images/learn-laptop.png" alt="New Front Page" /></p>
+
+<p>It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario:</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy Introduction</a></li>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/energy-101">Energy 101</a></li>
+</ul>
+
+<p>There is then a brief write up of an energy study into 17 households in Snowdonia, North Wales that Glyn and I helped run in 2010 that illustrates how different energy consumption can be across a number of household. It uses the energy stack graphics style used by the sadly late David MacKay FRS who wrote <a href="http://www.inference.eng.cam.ac.uk/withouthotair/">Sustainable energy without the hot air</a>, to visualise the different uses of energy from traditional electricity demand to heating and transport:</p>
+
+<ul>
+  <li><a href="https://learn.openenergymonitor.org/sustainable-energy/energy/snowdonia-energy-study">Snowdonia Energy Study</a></li>
+</ul>
+
+
+    
+      <a class="btn pull-right" href="/2017/02/learn-sustainable-energy/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2017/01/new-home-page-and-learn/">New home page and Learn website!</a>
   </h1>
   
@@ -1249,76 +1308,6 @@ $ docker-compose up
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-06-14T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 14th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/continuous-testing/'>continuous testing</a></li>
-      
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
-      
-        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
-      
-        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
-      
-        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/06/auto-build-continuous-test-firmware/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p><strong>This post is part of a series</strong></p>
-
-<ul>
-  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
-  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
-  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
-</ul>
-
-<hr />
-
-<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
-
-<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
-
-<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
-
-<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/06/auto-build-continuous-test-firmware/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1341,6 +1330,12 @@ $ docker-compose up
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1393,12 +1388,6 @@ $ docker-compose up
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     

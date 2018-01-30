@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-01-30T02:08:58+00:00</updated>
+  <updated>2018-01-30T11:22:30+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Blue Theme]]></title>
+    <link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/"/>
+    <updated>2018-01-30T09:01:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id>
+    <content type="html"><![CDATA[<p>For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)</p>
+
+<p>The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.</p>
+
+<p>We like the clean look of the blue theme, we hope you do also :-)</p>
+
+<p>If you don’t it’s easy to revert to back to the old black theme by setting <code class="highlighter-rouge">$theme = standard</code> in <code class="highlighter-rouge">settings.php</code>. There is also a user contributed yellow theme called <code class="highlighter-rouge">sun</code> which is available.</p>
+
+<p>emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.</p>
+
+<p>Feed view in Standard, Blue and Sun theme:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/feed-emoncms-theme.png" alt="" /></p>
+
+<!--more-->
+
+<p>Login box in Blue, Standard and Sun theme:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/login-emoncms-theme.png" alt="" /></p>
+
+<p>MyElectric dashboard app in box in Standard, Blue, and Sun theme:</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/he-emoncms-theme.png" alt="" /></p>
+
+<p>For questions and discussion see <a href="https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388">Emoncms Blue Theme Forum Topic</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[emonPi Remote Access with Dataplicity]]></title>
@@ -1276,96 +1310,6 @@ $ docker-compose up
 <h2 id="forum-discussion">Forum discussion</h2>
 
 <p>See <a href="https://community.openenergymonitor.org/t/esp8266-wifi-developments/784">this forum topic</a> for discussion.</p>
-
-<hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Part 2/3: Firmware Continuous Test & Build]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/"/>
-    <updated>2016-06-14T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware</id>
-    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
-  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
-</ul>
-
-<hr />
-
-<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
-
-<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
-
-<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
-
-<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
-
-<!--more-->
-
-<p>The advantages of <a href="https://en.wikipedia.org/wiki/Continuous_testing">continuous testing</a> have been long established in the software industry. The test we are performing is <em>‘does this firmware compile?’</em>; obviously this is not a comprehensive test but it will at least give us confidence that there are no syntax errors etc. To actually test operation of embedded firmware, physical hardware (or simulation) would be required.</p>
-
-<h2 id="how-it-works">How it works</h2>
-
-<ul>
-  <li>A commit or pull request is made to the firmware repository on GitHub
-    <ul>
-      <li><em>To date emonPi, emonTx and EmonESP repositories have been enabled for continuous build &amp; test</em></li>
-    </ul>
-  </li>
-  <li>
-    <p>This triggers Travis CI to start a ‘build’</p>
-  </li>
-  <li>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>. The <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code> file in the repo</a> configures the Travis CI build using platformIO:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>language: python
-python:
-- '2.7'
-sudo: false
-cache:
-  directories:
-  - "~/.platformio"
-install:
-- pip install -U platformio
-script:
-- platformio run -d firmware -e emonpi_deploy
-deploy:
-  on:
-    repo: openenergymonitor/emonpi
-    all_branches: true
-    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
-  skip_cleanup: true
-  provider: releases
-  overwrite: true
-  api_key:
-    secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
-  file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
-</code></pre>
-</div>
-
-<ul>
-  <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
-</ul>
-
-<p><a href="https://travis-ci.org/openenergymonitor/emonpi"><img src="https://travis-ci.org/openenergymonitor/emonpi.svg?branch=master" alt="Build Status" /></a></p>
-
-<ul>
-  <li>If the GitHub branch is tagged with a ‘release tag’ and compilation is successful then the generated <code class="highlighter-rouge">.hex</code> or <code class="highlighter-rouge">.bin</code> is uploaded to the GitHub release page:</li>
-</ul>
-
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-draft-release.png" alt="image" /></p>
-
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-travis-release.png" alt="image" /></p>
-
-<p>For a detailed explanation of how the release binary is generated and deployed see Daniel Eichhorn’s (<a href="https://twitter.com/squix78">@squix78</a>) <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">excellent blog post</a>.</p>
-
-<hr />
-
-<p>Stay tuned for part 3/3 of the PlatformIO firmware work-flow post series, which will cover auto deploying (OTA) the compiled firmware release onto an ESP8266. For a sneak peak checkout <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this excellent blog post</a> which was a source of inspiration and information.</p>
 
 <hr />
 ]]></content>

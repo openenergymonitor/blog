@@ -551,6 +551,48 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2013/07/oem-gateway-by-jerome/">OEM Gateway by Jerome Lafréchoux</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-07-29T22:28:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-29 22:28:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/07/oem-gateway-by-jerome/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I would like to highlight the good and interesting work that <a href="https://github.com/Jerome-github">Jerome Lafréchoux</a>&nbsp;has been doing on developing a gateway that is intended to go beyond the current RFM2Pi interface towards something that can be used on any linux system whether a pi or any computer to take say input from a serial RFM12Pi and forward it either to local instances of emoncms or remote instances of any service (without necessarily needing a local install of emoncms).<br /><br />Here's an exerpt from Jerome's last post on the<a href="https://github.com/emoncms/raspberrypi/issues/30">&nbsp;github topic on gateway development</a>:<br /><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">"The standalone gateway seems complete enough for me to be published, although I'd rather have a little feedback before recommending it.</div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;"><a href="https://github.com/Jerome-github/oem_gateway" style="color: #4183c4; text-decoration: initial;">https://github.com/Jerome-github/oem_gateway</a></div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">It works basically the same way. Here are the main features:</div><ul style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin: 15px 0px; padding: 0px 0px 0px 30px;"><li><div style="margin-bottom: 15px; margin-top: 15px;">Can be parameterized either via emoncms GUI (with current limitations of the interface) or through a configuration file. Useful for those who don't want to install a local emoncms just for the configuration of their gateway. This also allows to add features without the need for complex GUI edition.</div></li><li><div style="margin-bottom: 15px; margin-top: 15px;">Can read inputs from the RFM2Pi, but also inputs from the serial port of the form "NodeID val1 val2 ...", or even from a socket. This socket possibility means any application on the same machine or on the network can send data to the gateway. This even solves the inter-applications issue. It is better than writing to a file, in my opinion.</div></li><li><div style="margin-bottom: 15px; margin-top: 15px;">Extensibility. By design, it should be easy to create new inputs (data sources) or outputs (another server's API). It uses classes, so a new input (listener) or output (buffer) can be created through inheritance/overriding.</div></li></ul><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">See readme file for more explanations.</div><div style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px; margin-bottom: 15px; margin-top: 15px;">I should add a socket use sample, but it's pretty basic and require very few code. Here's a python example:</div><pre style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); color: #333333; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; line-height: 19px; margin-bottom: 15px; margin-top: 15px; overflow: auto; padding: 6px 10px;"><code style="background-color: transparent; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: none; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; margin: 0px; padding: 0px;">import socket<br />HOST = 'raspberrypi'    # The remote host, can be 'localhost' just the same<br />PORT = 50011            # The port chosen in the gateway config<br />s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br />s.connect((HOST, PORT))<br />s.send('14 15 26\r\n')<br />s.close()&nbsp;</code></pre><span style="background-color: #fbfbfb; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; line-height: 22px;">Currently, each buffer instantiated in the gateway buffers a given amount of data when network is down. This is limited (we don't want to eat up all memory). Next step could be to add the possibility to buffer samples in a file (with care for SD card wearout)."</span><br /><br />To try it out see the github repository here: <a href="https://github.com/Jerome-github/oem_gateway">https://github.com/Jerome-github/oem_gateway</a>. Jerome is looking for testers and would appreciate feedback on it.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/07/emontx-shield-smt-progress/">EmonTx Shield SMT progress</a>
   </h1>
   
@@ -922,48 +964,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/in-memory-storage-php-shared-memory-vs/">In memory storage: PHP shared memory vs Redis vs MYSQL</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-04T09:25:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-04 09:25:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/feed-storage/'>feed storage</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/in-memory-storage-php-shared-memory-vs/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Continuing on the theme of rethinking the data core of emoncms, as <a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">previously mentioned</a> for short term storage, storage to disk may not be necessary, instead we can store data in memory using an in-memory database. Here are some tests and benchmarks for in memory storage:<br /><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To start with I created baseline test using MYSQL updating a feed's last time and value in the feeds table row for that feed. This took around: 4800 – 5100 ms to update a row 10000 times.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/baselinemysql.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We would imagine Redis doing a lot better as its in-memory, it&nbsp;isn't&nbsp;writing to disk each time which is much slower than memory access. Redis did indeed perform faster completing the same number of updates to a key-value pair in 1900 – 2350ms.&nbsp;I'm&nbsp;a little surprised thought that it was only 2.3x as fast and not much faster, but then there is a lot going on Redis has its own server which needs to be accessed from the PHP client this is going to slow things down a bit, I tested both the phpredis client and Predis. Phpredis was between 500-1000 ms faster than the Predis client and is written in c.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/redis.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">How fast can in-memory storage be? A general program variable is also a form of in-memory storage, a quick test suggests that it takes 21ms to write to a program variable 10000 times, much better than 2.3x faster&nbsp;that's&nbsp;230x faster! The problem with in program variables is that if they are written to in one script say an instance of input/post they cannot be accessed by another instance serving feed/list, we need some form of storage that can be accessed across different instances of scripts.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/programvariable.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The difference between 21ms and 1900-2350ms for redis is intriguingly large and so I thought I would search for other ways of storing data in-memory that would allow access between different application scripts and instances.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">I came across the PHP shared memory functions which are similar to the flat file access but for memory, the results of a simple test are encouraging showing a write time of 48ms for 10000 updates. So from a performance perspective using php shared memory looks like a better way of doing things.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php">https://github.com/emoncms/experimental/blob/master/storage/inmemory/sharedmemory.php</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The issue though is implementation, mysql made it really easy to search for the feed rows that you wanted (either by selecting by feed id or by feeds that belong to a user or feeds that are public), I'm a little unsure about how best to implement the similar functionality in redis but it looks like it may be possible by just storing each feed meta data roughly like this: feed_1: {"time":1300,"value":20}.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Shared memory though looks like it could be quite a bit more complicated to implement, but then it does appear to be much faster. Maybe the 2.3x speed improvement over mysql offered by redis is fast enough? and its probably much faster in high-concurrency&nbsp;situations. I think more testing and attempts at writing full implementations using each approach is needed before a definitive answer can be reached.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -986,6 +986,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1038,12 +1044,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     

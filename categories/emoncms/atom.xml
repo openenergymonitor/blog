@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-01-30T02:08:58+00:00</updated>
+  <updated>2018-01-30T11:22:30+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emoncms Blue Theme]]></title>
+    <link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/"/>
+    <updated>2018-01-30T09:01:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id>
+    <content type="html"><![CDATA[<p>For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)</p>
+
+<p>The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.</p>
+
+<p>We like the clean look of the blue theme, we hope you do also :-)</p>
+
+<p>If you don’t it’s easy to revert to back to the old black theme by setting <code class="highlighter-rouge">$theme = standard</code> in <code class="highlighter-rouge">settings.php</code>. There is also a user contributed yellow theme called <code class="highlighter-rouge">sun</code> which is available.</p>
+
+<p>emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.</p>
+
+<p>Feed view in Standard, Blue and Sun theme:</p>
+
+<p><img src="/images/feed-emoncms-theme.png" alt="" /></p>
+
+<!--more-->
+
+<p>Login box in Blue, Standard and Sun theme:</p>
+
+<p><img src="/images/login-emoncms-theme.png" alt="" /></p>
+
+<p>MyElectric dashboard app in box in Standard, Blue, and Sun theme:</p>
+
+<p><img src="/images/he-emoncms-theme.png" alt="" /></p>
+
+<p>For questions and discussion see <a href="https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388">Emoncms Blue Theme Forum Topic</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emoncms Android App V2]]></title>
@@ -184,37 +218,6 @@ $ docker-compose up
 <!--more-->
 
 <p> See bottom of the post for nodeRED flow export which you can import into your nodeRED by pasting into the import box.<br /><br />NodRED included pre-installed on <a href="https://openenergymonitor.org/emon/node/12212">the latest emonPi image (currently in release-candidate)</a>. The Emoncms flow is pre-installed, you will need to add the <a href="http://flows.nodered.org/node/node-red-node-weather-underground">nodeRED Weather Underground</a> flow by connecting via SSH and running :<br /><br />$ rpi-rw<br />$ cd ~/data/node-red<br />$ sudo npm install node-red-node-weather-underground<br />$ rpi-rw<br />$ exit<br /><br />Once installed you will need to paste in your API key and latitude and longitude (or city) into the Weather Underground node.<br /><br /><br />&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://2.bp.blogspot.com/-mZJm0O0-xZM/VtSO8FO7O-I/AAAAAAABpIA/9wzoEv7Pz54/s1600/capture%2Bimage.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="290" src="https://2.bp.blogspot.com/-mZJm0O0-xZM/VtSO8FO7O-I/AAAAAAABpIA/9wzoEv7Pz54/s640/capture%2Bimage.png" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Example NodeRED flow pulling temperature data from Weather Underground to Emoncms and MQTT&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://4.bp.blogspot.com/-Q4L4K6rrVkY/VtSSuTC03sI/AAAAAAABpIQ/hXwY9yTgj-A/s1600/capture%2Bimage2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="224" src="https://4.bp.blogspot.com/-Q4L4K6rrVkY/VtSSuTC03sI/AAAAAAABpIQ/hXwY9yTgj-A/s640/capture%2Bimage2.png" width="640" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;Emoncms Internal &amp; External Temperature Multigraph&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;<a href="https://3.bp.blogspot.com/-WQkcdh5STpY/VtSVU6WGhAI/AAAAAAABpIc/eWEaw8v0jj8/s1600/capture%2Bimage3.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://3.bp.blogspot.com/-WQkcdh5STpY/VtSVU6WGhAI/AAAAAAABpIc/eWEaw8v0jj8/s640/capture%2Bimage3.png" width="304" /></a>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;My openHAB dashboard displaying outdoor temperature and emonPi data from MQTT&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Example nodeRED flow: &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<span style="font-size: x-small;"><br /></span>&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;<span style="font-size: x-small;">[{“id”:”14e3d598.a7352a”,”type”:”emoncms-server”,”z”:”4cd40f47.6c38f”,”server”:”http://192.168.0.35/emoncms”,”name”:”emonpi”},{“id”:”286b0130.d794fe”,”type”:”mqtt-broker”,”z”:””,”broker”:”192.168.0.35”,”port”:”1883”,”clientid”:””,”usetls”:false,”verifyservercert”:true,”compatmode”:true,”keepalive”:”15”,”cleansession”:true,”willTopic”:””,”willQos”:”0”,”willRetain”:null,”willPayload”:””,”birthTopic”:””,”birthQos”:”0”,”birthRetain”:null,”birthPayload”:””},{“id”:”8e40f136.25c8c”,”type”:”inject”,”z”:”4cd40f47.6c38f”,”name”:”Poke every 30min”,”topic”:””,”payload”:””,”payloadType”:”str”,”repeat”:”1800”,”crontab”:””,”once”:true,”x”:293.33331298828125,”y”:616.3333740234375,”wires”:[[“801e0088.7a2eb”]]},{“id”:”1d8fc53b.c7453b”,”type”:”mqtt out”,”z”:”4cd40f47.6c38f”,”name”:”MQTT: weather/temp”,”topic”:”weather/temp”,”qos”:””,”retain”:””,”broker”:”286b0130.d794fe”,”x”:840,”y”:479,”wires”:[]},{“id”:”9dfe39d9.afac48”,”type”:”debug”,”z”:”4cd40f47.6c38f”,”name”:””,”active”:true,”console”:”false”,”complete”:”payload”,”x”:772,”y”:395,”wires”:[]},{“id”:”c647a520.c30618”,”type”:”debug”,”z”:”4cd40f47.6c38f”,”name”:”View full output”,”active”:true,”console”:”false”,”complete”:”payload”,”x”:581.3333129882812,”y”:589.3333740234375,”wires”:[]},{“id”:”17551590.ce038a”,”type”:”function”,”z”:”4cd40f47.6c38f”,”name”:”Return temp deg C”,”func”:”context.global.outdoor_temp = msg.payload.tempc;  \nreturn {payload:context.global.outdoor_temp};”,”outputs”:1,”noerr”:0,”x”:533.3333129882812,”y”:454.3333435058594,”wires”:[[“1d8fc53b.c7453b”,”9dfe39d9.afac48”,”50f404a6.f89bac”]]},{“id”:”801e0088.7a2eb”,”type”:”wunderground”,”z”:”4cd40f47.6c38f”,”name”:””,”lon”:”-4.1716485”,”lat”:”53.1429426”,”city”:””,”country”:””,”x”:321,”y”:529,”wires”:[[“17551590.ce038a”,”c647a520.c30618”]]},{“id”:”50f404a6.f89bac”,”type”:”emoncms”,”z”:”4cd40f47.6c38f”,”name”:”Emoncms”,”emonServer”:”14e3d598.a7352a”,”nodegroup”:”weather”,”x”:800,”y”:539,”wires”:[]}]</span>&lt;/div&gt;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms android App]]></title>
-    <link href="https://blog.openenergymonitor.org/2015/12/emoncms-android-app/"/>
-    <updated>2015-12-17T10:47:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2015/12/emoncms-android-app</id>
-    <content type="html"><![CDATA[<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
-<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;">Today marks an exciting milestone for Emoncms and the OpenEnergyMonitor project. We are proud to launch an Emoncms android mobile app.
-
-
-
-
-
-    
-    <!--more-->
-    
-    &nbsp;</span></div>
-<div class="separator" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span></div>
-<div class="separator" style="clear: both; text-align: left;"><a href="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s1600/unnamed1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="640" src="http://4.bp.blogspot.com/-W-y9IWSDkDo/VnIDxcBf00I/AAAAAAABk1s/fIcgC6spYUw/s640/unnamed1.png" width="355" /></a><span style="text-align: left;"><br /></span></div>
-<div class="" style="clear: both; text-align: left;"><span style="text-align: left;"><br /></span><span style="text-align: left;">The app is now available on Google Play</span><sup style="background-color: white; color: #444444; font-family: Roboto, sans-serif; font-size: 8px; line-height: 0;">TM</sup>.&nbsp;</div>
-<div class="separator" style="clear: both; text-align: left;"><a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" height="65" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" width="200" /></a></div>
-<div class="separator" style="clear: both; text-align: left;"><br /></div>
-<div class="" style="clear: both; text-align: left;"><span style="text-align: left;">
-    
-    What's even more exciting is that this app has been developed almost solely by a member of the&nbsp;</span><span style="text-align: left;">community&nbsp;</span>with <a href="http://openenergymonitor.org/emon/node/11260">input from other community members</a>. A big thank you to Kevin Cooper (<a href="http://openenergymonitor.org/emon/user/8609">JumpMaster</a>). &nbsp; &nbsp;</div>
-<h3 style="clear: both; text-align: left;">Features:</h3>
-<div class="separator" style="clear: both; text-align: left;"></div>
-<ul><li>Emoncms MyElectric dashboard &nbsp;</li><li>Supports <a href="http://emoncms.org/">http://emoncms.org</a> and any other Emoncms server&nbsp;</li><li>Power or currency view toggle</li><li>Multiple currency support&nbsp;</li><li>Unit cost config (e.g £/Kwh)</li><li>Pinch &amp; zoom on real-time power graph</li><li>Number of KWh days displayed is based on screen resolution, rotation to horizontal or viewing on a large tabet results in more KWh day values displayed (see below for Nexus 10 screenshot)&nbsp;</li><li>MySolar support in development&nbsp;</li><li>Fully open-source (<a href="https://github.com/emoncms/androidApp">GitHub Repo</a>)</li><li>Developed by the community with input from the community (<a href="http://openenergymonitor.org/emon/node/11260#comment-37116">development forum thread</a>)</li></ul>
-<p><br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s1600/unnamed.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/-ZhI6Fay4hvk/VnIDxaJBPYI/AAAAAAABk1w/cslf6X-S-ec/s640/unnamed.png" width="640" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<br />&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;<a href="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s1600/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="568" src="http://4.bp.blogspot.com/-QuYZMi5WXNw/VnIDPvSBC4I/AAAAAAABk1k/TNIzSO1gHx8/s640/Screenshot%2B2015-12-17%2Bat%2B00.33.50.png" width="640" /></a>&lt;/div&gt;<br /></p>
 ]]></content>
   </entry>
   

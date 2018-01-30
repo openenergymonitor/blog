@@ -551,6 +551,76 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-14T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 14th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/continuous-testing/'>continuous testing</a></li>
+      
+        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+      
+        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+      
+        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+      
+        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/auto-build-continuous-test-firmware/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><strong>2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</strong></li>
+  <li><a href="/2016/06/esp8266-ota-update/">3/3: Continuous Deployment (OTA to ESP8266)</a></li>
+</ul>
+
+<hr />
+
+<p>Following on from the <a href="https://blog.openenergymonitor.org/2016/06/platformio/">last blog post</a> on using <a href="https://blog.openenergymonitor.org/2016/06/platformio/">PlatformIO</a> to compile and upload firmware locally, we’re now going to take things a step further and do the same but in <em>The Cloud</em>!</p>
+
+<p><em>Groan…I know I just used the clichéd ‘C’ word, however there are many advantages to compiling and testing the code in the cloud. At least I didn’t mention ‘IoT’…whoops, just doing my bit for SEO!</em></p>
+
+<p>In this instance when we say <em>‘compile in the cloud’</em> I mean use GitHub, <a href="https://travis-ci.org">Travis IO</a> and <a href="https://platformio.org">PlatfromIO</a> to compile the firmware and if the branch is tagged with a ‘Git Release’ auto-generate a compiled binary and upload it back to GitHub release page.</p>
+
+<p>The motivation behind this automated-build and testing is working towards creating a robust infrastructure to push OTA updates to ESP8266 connected nodes (<a href="https://github.com/openenergymonitor/EmonESP">EmonESP dev</a>) inspired by <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">this blog post</a> by Daniel Eichhorn (<a href="https://twitter.com/squix78">@squix78</a>).</p>
+
+
+    
+      <a class="btn pull-right" href="/2016/06/auto-build-continuous-test-firmware/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/platformio/">Part 1/3: PlatformIO open-source embedded development ecosystem</a>
   </h1>
   
@@ -1069,56 +1139,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/04/Git-Sub-Modules/">GitHub Submodules</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-04-18T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April  18th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/github/'>github</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/04/Git-Sub-Modules/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p><strong>Update: PlatformIO does library management much better then git-submodules, we have switched to using PatformIO to manage library dependencies, <a href="http://blog.openenergymonitor.org/2016/06/platformio/">see blog posts</a></strong></p>
-
-<p>Library management for Arduino has always been a bit of a pain; having to go and download and install all the required libraries for various locations on the internet and hope that they are the correct version.  Library management becomes even more important when debugging and supporting a project as libraries get changed and updated.</p>
-
-<p>Things have improved in recent years with the increased use of GitHub for Arduino libs allowing changes to be tracked easier and the later version of Arduino IDE including a library manager which can auto-update.</p>
-
-<p>However I have always wanted to have all required libs and files for a particular project all in once place. I feel that I have now found the best solution (for now!).</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/04/Git-Sub-Modules/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1141,6 +1161,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1193,12 +1219,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     

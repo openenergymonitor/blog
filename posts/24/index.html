@@ -551,6 +551,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/07/emonglcd-template-based-displays/">EmonGLCD Template based display's</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-07-29T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-07-29 10:00:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/07/emonglcd-template-based-displays/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div><div>I have been thinking about how it could be possible to program an EmonGLCD display remotely or at least specify which displays are shown i.e if you could construct a command to tell the display to:</div><div><br /></div><div><i>display solar pv page as page 1, use the solar power value from node 10.&nbsp;</i></div><div><i><br /></i></div><div>Skipping for now the how the commands are sent and interpreted, I think the first part of creating these specifiable displays is to convert the current display code into template functions which should be of benefit whether the displays are remotely programmed or not.</div><div><br /></div><div>Here's my first attempt at this:</div><div><br /></div><b>draw_power_page( "POWER" ,use, "USE", usekwh);</b><br /><div><b>draw_temperature_time_footer(temp, mintemp, maxtemp, hour,minute);</b></div><div>draws the following page:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-kdlCwY1w6Co/UBUIwPtRtNI/AAAAAAAACd4/3uUkU5CG3vA/s1600/IMAG0852.jpg" /></a></div><div><br /></div><div><br /></div><div><b>draw_solar_page(use, usekwh, gen, 2050, genkwh, temp, mintemp, maxtemp,&nbsp;hour,minute<span class="Apple-style-span">);</span></b></div><div><span class="Apple-style-span">draws:</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-oQkq7qv3I2I/UBUI5y7r0UI/AAAAAAAACeA/4MzulT2rkfc/s1600/IMAG0855.jpg" /></a></div><div><span class="Apple-style-span"><br /></span></div><div>(thanks to drsdre for <a href="http://openenergymonitor.blogspot.com/2012/07/emonglcd-icons-by-drsdre.html">the icons!</a>)</div><div><br /></div><div>This is what the full code looks like:</div><div><br /></div><pre>#include&nbsp;&lt;JeeLib.h&gt;<br />#include&nbsp;&lt;GLCD_ST7565.h&gt;<br />#include&nbsp;&lt;avr/pgmspace.h&gt;<br />GLCD_ST7565&nbsp;glcd;<br /><br /><span style="color: #cc6600;">unsigned</span> <span style="color: #cc6600;">long</span> fast_update;<br /><br /><span style="color: #7e7e7e;">//&nbsp;Fixed&nbsp;values&nbsp;for&nbsp;this&nbsp;example</span><br /><span style="color: #cc6600;">double</span> temp = 17.4 ,maxtemp = 19 ,mintemp = 16;<br /><span style="color: #cc6600;">int</span> hour = 23, minute = 43;<br /><span style="color: #cc6600;">double</span> use = 252, usekwh = 2.5;<br /><span style="color: #cc6600;">double</span> gen = 1760, genkwh = 4.8;<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>setup</b></span>()<br />{<br />&nbsp;&nbsp;glcd.<span style="color: #cc6600;">begin</span>(0x20);<br />&nbsp;&nbsp;glcd.backLight(200);<br />}<br /><br /><span style="color: #cc6600;">void</span> <span style="color: #cc6600;"><b>loop</b></span>()<br />{<br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">// Display update every 200ms</span><br />&nbsp;&nbsp;<span style="color: #7e7e7e;">//-----------------------------------------------------------------------------</span><br />&nbsp;&nbsp;<span style="color: #cc6600;">if</span> ((<span style="color: #cc6600;">millis</span>()-fast_update)&gt;200)<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;fast_update&nbsp;=&nbsp;<span style="color: #cc6600;">millis</span>();<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S1 = <span style="color: #cc6600;">digitalRead</span>(15);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S2 = <span style="color: #cc6600;">digitalRead</span>(16);<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">int</span> S3 = <span style="color: #cc6600;">digitalRead</span>(19);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">if</span> (S1==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"POWER"</span> ,use, <span style="color: #006699;">"USE"</span>, usekwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span> <span style="color: #cc6600;">if</span> (S2==1)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// powerstr, power, energystr, kwh</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_power_page(&nbsp;<span style="color: #006699;">"SOLAR"</span> ,gen, <span style="color: #006699;">"GEN"</span>, genkwh);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_temperature_time_footer(temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;hour,minute);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cc6600;">else</span><br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7e7e7e;">// use, usekwh, gen, maxgen, genkwh, temp, mintemp, maxtemp, hour, minute</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_solar_page(use,&nbsp;usekwh,&nbsp;gen,&nbsp;2050,&nbsp;genkwh,&nbsp;temp,&nbsp;mintemp,&nbsp;maxtemp,&nbsp;12,43);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glcd.refresh();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;}&nbsp;<br />}<br /><br /><span class="Apple-style-span" style="font-family: 'Times New Roman'; white-space: normal;">To run this you will need the accompanying icons and templates files, its all available in the EmonGLCD repo here:&nbsp;<a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_Template_Dev</a></span></pre><pre><br /></pre>Interested to hear any thoughts on how best to take this forward.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/07/reading-watt-hour-data-from-elster/">Reading Watt-hour data from an Elster A100C electricity meter using IrDA by Dave Berkeley</a>
   </h1>
   
@@ -925,46 +965,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/06/high-accuracy-current-measurement-over/">High Accuracy Current Measurement Over a Wide Range</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-06-01T08:59:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-06-01 08:59:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> four minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/06/high-accuracy-current-measurement-over/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><br /></a><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><br /></a></div><div style="text-align: left;">Measuring the current in a domestic property using a clip-on CT sensor can be quite&nbsp;challenging&nbsp;since the range in which it has to work over is very large, potentially several order of magnitude: up to 25000W and down to a few 10'sW. We would like to have good accuracy over this wide range.&nbsp;</div><div style="text-align: left;"><br /></div><div>We have been exploring how to improve on the current emonTx. Robert Wall has written a page&nbsp;<a href="http://openenergymonitor.org/emon/node/712">detailing the measurement implications of current emonTx ADC</a> resolution at low current values when using&nbsp;the standard 100A max CT sensor and 18R burden resistor.&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">A while back we came across an application note from ATmel detailing how to build a fully featured energy monitor using CT sensor, AC voltage measurement and the ATmega328 MCU. App-notes are a fantastic source for&nbsp;open-source hardware information. The ATmel energy monitor app-note is very&nbsp;comprehensive&nbsp;and well written. It's even got a Bill of Materials that specs down to individual resistors&nbsp;complete&nbsp;with their corresponding Farrnel order codes!&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">Download the app-note .pdf here:&nbsp;<a href="http://www.atmel.com/Images/doc2566.pdf" style="text-align: -webkit-auto;">www.atmel.com/Images/doc2566.pdf</a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-Z6-WTfCXnfY/T9S-l-RCp3I/AAAAAAAAbrk/eYv7rMySnNQ/s1600/Labeled+Atmel+Energy+Monitor+app+note.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="278" src="http://3.bp.blogspot.com/-Z6-WTfCXnfY/T9S-l-RCp3I/AAAAAAAAbrk/eYv7rMySnNQ/s640/Labeled+Atmel+Energy+Monitor+app+note.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Diagram from Atmel app-note - potential divider resistor values where changed to enabled the AC signal to be biased to Vcc/2</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><span style="text-align: -webkit-auto;">The app-note circuit&nbsp;achieves&nbsp;good resolution and accuracy over a wide range by having a adjustable op-amp gain stage. Using the resistor values in the inverting op-amp the gain can be switched from -1.25, -10.26 and -69.11. The gain is switched by digital switching the&nbsp;</span>Bilateral Switches (74HC4066). The gain of the op-amp is calculated as follows:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-1V3jCpeeRMY/T8hxqXH0PxI/AAAAAAAAbpo/xs9OuQ7T3uU/s1600/Labeled+Atmel+Energy+Monitor+app+note.png" imageanchor="1"><img border="0" height="122" src="http://1.bp.blogspot.com/-1V3jCpeeRMY/T8hxqXH0PxI/AAAAAAAAbpo/xs9OuQ7T3uU/s640/Labeled+Atmel+Energy+Monitor+app+note.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">A couple of days a ago we built up a prototype of the above circuit, more an an exercise to check we can make it work rather than a scientific test, this would be difficult on a breadboard due to the sub-optimal circuit layout. A spare emonTx PCB was used as an easy way to connect the circuit up to an ATmega328 and RFM12B.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s1600/DSCF5036.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto; text-align: left;"><img border="0" height="240" src="http://2.bp.blogspot.com/-GixykaE-ywU/T8PzXCzm_OI/AAAAAAAAbos/tf7V3XFQUVM/s320/DSCF5036.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Adjustable gain op-amp CT sensor circuit - prototype&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-wyzX5ePzs20/T8Pz6eMV-GI/AAAAAAAAbo4/a1kLW5rIbc0/s1600/sample02.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="http://2.bp.blogspot.com/-wyzX5ePzs20/T8Pz6eMV-GI/AAAAAAAAbo4/a1kLW5rIbc0/s640/sample02.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">ATmega 328 ADC sample using <a href="http://openenergymonitor.org/emon/node/110">VI sampler</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">The circuit worked first time with no&nbsp;hiccups. The above waveform is the RAW output from an ATmega 328's ADC, where one 100W light bulb and 30W laptop PSU was connected to the AC circuit being monitored. The high gain stage (x69.11) was active. To put this in perspective if the same sample was run on the current emonTx the signal would be so small as to be only just visible on the VI sampler. The spikes at the peak of the waveform is caused by the laptop's switch-mode PSU. The significantly increased amplitude of the signal will improve accuracy when monitoring low power levels. The app-note suggests accuracy of &lt;1% over a wide range, possibly even better with careful PCB design.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Although this multi-gain op-amp circuit adds significant complexity over the current emonTx current monitoring circuit it can be added for relatively low cost. One quad op-amp and two quad bilateral switches IC's cost about £1, this is enough for 4 x CT channels. We're planning to use this circuit design in the forthcoming emonTx SMT. As the name suggests this board will be designed for SMT components and will be assembled by pick-and-place. See <a href="http://openenergymonitor.org/emon/node/642">this forum thread</a> for a discussion regarding ideas for the emonTx SMT. Design is progressing well, more details on this soon.&nbsp;</div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -987,6 +987,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1039,12 +1045,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     

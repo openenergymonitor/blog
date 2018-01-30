@@ -551,6 +551,37 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2010/06/project-update/">Project Update</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2010-06-30T19:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-06-30 19:48:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Suneil Tagore</span> <br>
+    <span><i class='icon-time'></i> five minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2010/06/project-update/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    This is a joint blog post from Suneil Tagore and Trystan Lea. Last week we met up in North Wales and spent a good part of the week looking at the next step for the openenergymonitor project. We thought about: How it could be organised and described better. How it could be made more useful for other participants/users/developers, and how it could better reflect our ideas for the project and also our activities using the technology.<br /><br />One of the main aspects that we would like to expand on is the idea of modularity.<br /><br />Lets say you build a solar hot water controller, the solar hot water controller has the Arduino microcontroller platform at its heart, 1 of the 6 analog inputs and 2 of the 14 digital channels is used for the 3 multiplexed RTD temperature sensors. 1 other digital channel is used for the pump control. That leaves 5 analog channels spare and 11 digital channels. The cost so far has been £20 for the Arduino and between £5-8 for the temperature sensor electronics and pump control. For another £12: the price of a couple of resistors, capacitors a CT sensor and AC-AC adapter: mains AC energy monitoring can be added using only 2 more analog inputs. The mains AC energy monitor and the solar hot water controller share the same arduino and can also share for example an LCD and ethernet connection. This ability to share resources enabled by such a modular system can ultimately yield significant overall benefits in terms of energy efficiency, material efficiency, cost reduction, convenience and usability compared with having a separate device for each energy monitoring and control application.<br /><br />To make this possible one of the main tasks will be deciding on documentation standards so that each bit of documentation can fit together with the other bits, this will need a bit of thought and work.<br /><br />Another important element of making modularisation easy to work with will be developing Arduino libraries for the modules so that the software side is straightforward to program and also possibly investigating standardized connections between modules.<br /><br />To start with we thought it might be best to divide the modules into types:<br /><br /><span style="font-weight: bold;">Input modules</span><br /><br />Modules for measuring things, for example: Electricity, Heat, light, wind, fluid flow, etc<br /><br /><span style="font-weight: bold;">Actuator modules</span><br /><br />Modules for controlling things, for example electric pumps or dump loads.<br /><br /><span style="font-weight: bold;">Data Modules</span><br /><br />Displays, Computer and Internet based graphing<br /><br />Each module would have a description of what it is and how it works, a list of parts - including possible suppliers, circuit design (if applicable), and a section on how to connect it to an Arduino including details on software and calibration (if applicable).<br /><br />The next part to the documentation is the builds section: how to bring more than one module together to do something more useful and interesting like a solar hot water controller or a solar hot water controller / energy monitor combo.<br /><br />After that is case studies. Which brings us on to another important topic. As well as developing this technology we hope to use it in our own homes and also look into how we can use it as a part of a service that we could offer, at the moment one idea in its early stages is to explore offering an energy auditing ,renewable energy feasibility and renewable energy installation service in our local areas. Suneil is just in the middle of his first solar PV installation and is developing a solar monitoring unit for the installation. Both of us taught a wind turbine making course at Atlantic college in south wales this year, and as a part of that we will be installing wind turbine monitoring. The case studies section will document the use of the openenergymonitor project in projects like these. One of the aspects of this is that as we experiment with making a living we hope to help other do the same.<br /><br />Last but very much not least: the updated website has a section on local manufacturing. One of the main things we would like to explore as a part of this project is the idea of local manufacturing: Being able to make the things we want and need either in our own homes or in labs/workshops and small businesses in our local communities. This is a really exciting idea and emerging possibility that was a large part of the inspiration to do this project.<br /><br />To learn more about local manufacturing also often called decentralised manufacturing or desktop fabrication have a look at the following projects that are pionnering the idea: RepRap the project to build an open source 3D printer and MIT FabLab’s; 100kgarages; a book by Kevin Karson and more resources on p2pfoundation manufacturing page.<br /><br />So over the next few weeks there shall be changes a foot on the website as we attempt to organise it along the lines of what we have described above and the project starts to move more along this direction.<br /><br />We would like to thank Ken Boak who has helped us refine the ideas above, especially those on modularity. Ken Boak is very knowledgeable energy monitoring and sustainable technologies enthusiast, and documents many of his findings on his blog <a href="http://sustburbia.blogspot.com/">sustainable suburbia.</a><br /><br />Please feel free to join in and share your thoughts and ideas on this project. The scope for developing new applications and real world case studies/installations is limitless; posting your findings here is most welcome in this collaborative project. Hope to hear from you soon!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2010/06/solar-hot-water-controller/">Solar hot water controller</a>
   </h1>
   
@@ -826,37 +857,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2010/02/arduinopower-ade7753/">ArduinoPower - ADE7753</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2010-02-15T09:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2010-02-15 09:40:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-     <br>
-    
-      <a class='comments'
-         href="/2010/02/arduinopower-ade7753/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div>Last year I met James Devine at <a href="http://homecamp.org.uk/">homecamp</a> a home hacking, automation and green technology unconference in London. He has been developing an arduino energy monitor based on an Analogue Devices ADE 7753 IC which is a custom energy meter IC for use with CT sensors. The ADE7753 looks like a really good way of doing the measurement, it communicates with the arduino via SPI and does all the energy metering calculations itself, therefore freeing up the arduino for other tasks. </div><div><div><br /></div><div>Here's a mockup picture from his site of the energy metering arduino shield that he is developing:</div><div><br /></div></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://arduinopower.pbworks.com/f/DSC_00746.jpg"><img style="display:block; margin:0px auto 10px; text-align:left;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://arduinopower.pbworks.com/f/DSC_00746.jpg" border="0" alt="" /></a><br /><div><div>His project aim is to create an accurate desktop scale power meter, suitable for measuring individual power usage at a desk, the power meter then communicates with a PC I think via the arduino bluetooth shield and it's all open source, have a look: <a href="http://arduinopower.pbworks.com/">http://arduinopower.pbworks.com/</a></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -879,6 +879,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -931,12 +937,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     

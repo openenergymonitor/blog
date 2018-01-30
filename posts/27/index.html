@@ -551,6 +551,46 @@ $(".searchBox form").click( function(event) {
     <header>
   
   <h1 class="beta">
+    <a href="/2012/02/documentation-reorganisation/">Documentation reorganisation proposal</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-02-21T19:21:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-02-21 19:21:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/02/documentation-reorganisation/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s1600/oem_site_now.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="316" src="http://1.bp.blogspot.com/-3wPidRZqWYU/T0PsvpGpbLI/AAAAAAAACYk/Bg_gPi76x20/s400/oem_site_now.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span class="Apple-style-span" style="font-size: small;"><i>The current front page</i></span></td></tr></tbody></table><div style="text-align: center;"></div><div style="text-align: -webkit-auto;"><br /></div><br />It has been pointed out several times that the documentation on this site is hard to follow.&nbsp;We've&nbsp;been giving this some thought and have come up with a plan for hopefully what will be a clearer structure.<br /><br />Here are our initial thoughts:<br /><br />1) We start with the following headings, these form the main menu:<br /><br /><b>Community |&nbsp;Applications | Modules | Fundamentals | Tools | Archive</b><br /><br />These headings contain:<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Community</span></b><br /><ul><li>Forums</li><li>Development plans</li><li>Links to community builds and blogs</li></ul><b><span class="Apple-style-span" style="font-size: large;">Applications</span></b><br />Applications are step by step guides of how to assemble modules to create a particular system. They start with a short description then a step-by-step type structure. Detailed application discussion would be on a second page or blog post with link through.<br /><ul><li>Power monitoring</li><li>Solar PV</li><li>Solar hot water</li><li>Pulse counting</li><li>Heatpump monitoring</li></ul><div>Applications reference&nbsp;through&nbsp;to modules below.</div><br />Separate github folder for each application containing sketches for all the modules that make up the application.<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Modules</span></b><br /><ul><li>Hardware</li><ul><li>emontx</li><li>emonglcd</li><li>emonbase</li><li>See-a-watt</li></ul><li>Software</li><ul><li>emoncms</li><li>Pachube</li></ul></ul>Each module contains the pages:<br /><ul><li>page1: overview + features (maybe use it: application list is referenced here?)</li><li>page2: built it / install it /&nbsp;buy it</li><li>page3: detailed design documentation</li></ul>All emon system sections reference through to fundamentals section below<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Fundamentals</span></b><br /><br />Getting started with arduino, uploading sketches etc.<br /><br /><b>Electricity monitoring</b><br /><ul><li>AC Theory - Introduction</li><li>AC Theory - Advanced</li><li>AC Theory - 3 phase</li><li>Power in different countries</li></ul><ul><li>Non-invasive</li><ul><li>CT sensors - Introduction</li><li>CT sensors - Advanced</li><li>Current only - Single Phase</li><li>Current and voltage - Single Phase</li><li>3-phase Monitoring</li></ul><li>Invasive</li><ul><li>AC shunt</li><li>DC Shunt &amp; hall effect sensing</li></ul></ul><ul><li>Appliance inference - labs</li><li>Interfacing with inverters</li></ul><b>Pulse counting</b><br /><ul><li>Single pulse counting</li><li>12 input pulse counting</li></ul><b>Temperature</b><br /><ul><li>DS18B20 temperature sensing</li><li>PT1000 temperature sensing</li></ul><b>Networking</b><br /><ul><li>RF</li><li>RFM12B</li><li>xbee, zigbee, old rf</li><li>Master/slave simple serial networking</li><li>Ethernet</li></ul><b>Displays</b><br /><ul><li>GLCD</li><li>7segment, 3310</li></ul><b>Storage</b><br /><ul><li>USB Pen drive data-logging</li><li>SD Card logging</li></ul><b>Control</b><br /><ul><li>Relay</li></ul><b>Firmware</b><br /><ul><li>Watchdog timer</li><li>Structures for transmitting data.</li><li>Sleep mode</li><li>String constructor</li></ul>Github sketches for the fundamentals section could be contained in one github folder called fundamentals.<br /><br /><span class="Apple-style-span" style="font-size: large;"><b>Tools</b></span><br />Tools that can be useful in debugging / development of systems:<br /><ul><li>VI Sampler</li><li>KST based graphing and statistics</li><li>Programming nanode with arduino</li></ul><span class="Apple-style-span" style="font-size: large;"><b>Archive</b></span><br />Items for archive<br /><br /><b>Other changes</b><br />We've disabled comments on pages, the thinking here is that its getting quite hard to navigate the page comments as conversations at different dates and topics are all getting mixed together and that it would be better to have these discussions on the forum, where each forum thread has its own clear topic.<br /><br />Every page can be put in a&nbsp;hierarchical&nbsp;order such as modules/hardware/emontx making navigation clearer.<br /><br />A site map with all of the above.<br /><br /><span class="Apple-style-span" style="font-size: large;">Do you think this is a good idea?&nbsp;</span><br />Any suggestions on how the website content can be better arranged would be greatly welcomed!<br />Thankyou!
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/02/emoncms-features-part-2-email-notifier/">New emoncms features part 2 - Email notifier</a>
   </h1>
   
@@ -908,46 +948,6 @@ $(".searchBox form").click( function(event) {
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2011/12/how-to-move-feed-data-between-servers/">How to move feed data between servers</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2011-12-17T10:40:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2011-12-17 10:40:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2011/12/how-to-move-feed-data-between-servers/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    There is often a need to transfer large feed tables between different servers. Here is one way to do it via ssh that does not require downloading the data to a local machine. This makes it particularly fast especially if your local internet connection is relatively slow.<br /><br /><b>1) Login via ssh to the source server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (source server ip)<br /><br /><b>2) Export feed table from source instance database</b><br />mysqldump -u <i>username</i> -p <i>database</i> feed_1 &gt; feed_1.sql<br /><br /><b>3) Transfer feed table via ssh to destination instance server</b><br />tar -cjvf - feed_1.sql | ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> tar -xjf - -C <a href="http://www.blogger.com/home/user" style="color: #3465a4;">/home/user</a>            (destination server ip)<br /><br /><b>4) Login via ssh to the destination server</b><br />ssh <a href="http://www.blogger.com/user@00.00.00.00" style="color: #3465a4;">user@00.00.00.00</a> (destination server ip)<br /><br /><b>5) Import feed table into destination instance database</b><br />mysql -u root -p <i>database</i> &lt; feed_1.sql<br /><br />It would be great to have some kind of utility within emoncms that makes it possible to move large feed tables between emoncms instances efficiently and easily without having to use terminal and ssh. If you know of an efficient way of doing this,&nbsp;advice&nbsp;would be most welcome.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -970,6 +970,12 @@ $(".searchBox form").click( function(event) {
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1022,12 +1028,6 @@ $(".searchBox form").click( function(event) {
       
         <li class="post">
           <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/learn-sustainable-energy/">Launching Learn: Sustainable Energy</a>
         </li>
       
     
