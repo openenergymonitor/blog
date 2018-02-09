@@ -63,6 +63,11 @@
 
 <style>
 
+@font-face {
+  font-family: "oemFont";
+  src: url(font/Ubuntu-OEM-Light.ttf)
+}
+
 html, body {
   margin: 0; height: 100vh;
 }
@@ -73,7 +78,7 @@ html {
 
 html, body {
   word-wrap: break-word;
-  font-family: "ubuntu", sans-serif;
+  font-family: "oemFont", sans-serif;
 }
 
 a:visited, .a:hover, a:focus, a {
@@ -85,6 +90,7 @@ a:visited, .a:hover, a:focus, a {
 }
 
 .communityWrapper {
+  position: relative;
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
@@ -130,41 +136,72 @@ a:visited, .a:hover, a:focus, a {
   overflow: hidden;
   -webkit-box-shadow: 0 -2px 4px 2px #000;
   -moz-box-shadow: 0 -2px 4px 2px #000;
-  box-shadow: 0 -2px 4px 2px #000;	
+  box-shadow: 0 -2px 4px 2px #000;
 }
+
+.titleIcon {
+  position: absolute;
+  height: 42px;
+  padding: 0 0 0 7px;
+  text-align: center;
+  line-height: 42px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+  .titleIcon i {
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 42px;
+  }
 
 .thisTitle {
-  position: relative;
-  display: inline-block;
-  color: #ffffff;
-  left: 0;
-  line-height: 42px;
-  padding-right: 12px;
-  padding-left: 0;
-  font-size: 20px;
-  text-align: right;
-}
-
-.thisTitle a {
-  color: #ffffff;
-}
-
-@media screen and (min-width: 1080px) {
-  .thisTitle {
-  font-size: 16px;
+  position: absolute;
+  box-sizing: border-box;
+  left: 42px;
+  right: 0;
+  height: 42px;
+  padding: 5px 0 5px 0;
   text-align: left;
-  padding-right: 0;
-  padding-left: 7px;
-  }
+  color: #ffffff;
+  line-height: normal;
+  vertical-align: top;
 }
+
+  .thisTitle a {
+    position: absolute;
+    top: 0;
+    color: #ffffff;
+  }
 
 @media screen and (max-width: 1079px) {
-  .thisTitle {
-  width: 100%;
-}
-.thisTitle a {
-  padding-right: 12px;
+  .titleIcon {
+    left: auto;
+    right: 0;
+    padding: 0 7px 0 0;
   }
+
+  .thisTitle {
+    right: 42px;
+    left: 0;
+    text-align: right;
+  }
+
+    .thisTitle a {
+      padding-right: 0;
+    }
+}
+
+.thisTitle-top {
+  top: 0;
+  height: 60%;
+  font-size: 18px;
+}
+
+.thisTitle-bottom {
+  bottom: 0;
+  height: 40%;
+  font-size: 12px;
 }
 
 .navigation {
@@ -174,7 +211,7 @@ a:visited, .a:hover, a:focus, a {
   right: 0;
   margin-right: 6px;
   height: 42px;
-  min-width: 750px;
+  min-width: 774px;
   overflow: visible;
   padding-right: 7px;
   z-index: 20;
@@ -208,7 +245,7 @@ a:visited, .a:hover, a:focus, a {
 .navigation ul li a {
   display: block;
   line-height: 42px;
-  font-family:"ubuntu";
+  font-family:"oemFont";
   font-size: 16px;
   text-align: center;
   padding-left: 10px;
@@ -221,74 +258,89 @@ a:visited, .a:hover, a:focus, a {
   overflow: hidden;
 }
 
+/* Navigation on smaller screens... */
+
 @media screen and (max-width: 1079px) {
-  .navigation {
-      position: fixed;
-      display: none;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      margin: 0;
-      width: 0;
-      font-size: 20px;
-      background-color: #44b3e2;
-      color: #ffffff;
-      z-index: 9999;
-      box-sizing: border-box;
-      overflow: auto;
-      min-width: 0;
-      padding-right: 0;
-  }
-  
+.navigation {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin: 0;
+  width: 0;
+  font-size: 20px;
+  background-color: #44b3e2;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  min-width: 0;
+  padding-right: 0;
+  z-index: 99999999;
+}
+
   .navigation ul {
-      list-style-type: none;
-      margin: 0;
-      padding-top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
   }
-  
+
   .navigation ul li a {
-      box-sizing: border-box;
-      font-family: "ubuntu";
-      font-size: 20px;
-      display: block;
-      color: #ffffff;
-      padding: 0 20px 0 40px;
-      min-width: 220px;
-      text-align: left;
-      height: 12.5vh;
-      line-height: 12.5vh;
+    box-sizing: border-box;
+    font-family: "OEM", sans-serif;
+    font-size: 20px;
+    display: block;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+    height: 12.5vh;
+    line-height: 12.5vh;
+    min-width: 180px;
+    text-align: left;
   }
-  
+
   .navigation ul li .fa {
-      min-width: 25px;
+    min-width: 25px;
   }
 }
 
+@media (max-width: 1079px) and (min-height: 550px) {
+  .navigation ul li a {
+    height: 68.75px;
+    line-height: 68.75px;
+  }
+}
+
+@media (max-width: 1079px) and (max-height: 200px) {
+  .navigation ul li a {
+    height: 25px;
+    line-height: 25px;
+  }
+}
 
 @media screen and (min-width: 1080px) {
   .navigation ul li:nth-child(1) {
-    width: 82px;
+    width: 88px;
   }
   .navigation ul li:nth-child(2) {
-    width: 81px;
+    width: 86px;
   }
   .navigation ul li:nth-child(3) {
-    width: 85px;
+    width: 92px;
   }
   .navigation ul li:nth-child(4) {
-    width: 113px;
-  }
-  .navigation ul li:nth-child(5) {
     width: 123px;
   }
+  .navigation ul li:nth-child(5) {
+    width: 133px;
+  }
   .navigation ul li:nth-child(6) {
-    width: 73px;
+    width: 76px;
   }
   .navigation ul li:nth-child(7) {
-    width: 75px;
+    width: 80px;
   }
   .navigation ul li:nth-child(8) {
-    width: 87px;
+    width: 96px;
   }
 }
 
@@ -361,6 +413,10 @@ a:visited, .a:hover, a:focus, a {
   cursor: pointer;
 }
 
+.fa {
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
+}
+
 </style>
 
 <body >
@@ -371,14 +427,19 @@ a:visited, .a:hover, a:focus, a {
 <div class="titleHolder">
   <div class="communityWrapper">
     <i class="fa fa-navicon"></i>
-    <div class="thisTitle">
-      <a href="/">
-        <strong>Blog</strong>
-        <span class="oemWrap">
-        | Open<strong>EnergyMonitor</strong>
-        </span>
-      </a>
-    </div>
+    <a href="/">
+      <div class="titleIcon">
+				<i aria-hidden="true" class="fa fa-bullhorn"></i>
+			</div>
+			<div class="thisTitle">
+			  <div class="thisTitle-top">
+        		<b>Blog</b>
+				</div>
+				<div class="thisTitle-bottom">
+          Open<b>EnergyMonitor</b>
+				</div>
+			</div>
+		</a>
     <div id="siteLinks" class="navigation">
       <ul>
         <li title="the homepage of OpenEnergyMonitor">
@@ -492,7 +553,7 @@ function openButton() {
   $("html, body").addClass("menuFreeze");
   $(".blackOut").show();
   $(".navigation").show();
-  $(".navigation").animate({ width:'220' },"0.5s");
+  $(".navigation").animate({ width:'180' },"0.5s");
 }
 
 $(".fa-navicon").click(function() {
@@ -538,6 +599,27 @@ $(".searchBox").click(function() {
 });
 $(".searchBox form").click( function(event) {
    event.stopPropagation();
+});
+
+$(document).ready(function(){ //alphabetically order list
+  var ls, x, switchState, z, switchMe;
+  ls = document.getElementById("ub202");
+  switchState = true;
+  while (switchState) {
+    switchState = false;
+    z = ls.getElementsByTagName("LI");
+    for (x = 0; x < (z.length - 1); x++) {
+      switchMe = false;
+      if (z[x].innerHTML.toLowerCase() > z[x + 1].innerHTML.toLowerCase()) {
+        switchMe= true;
+        break;
+      }
+    }
+    if (switchMe) {
+      z[x].parentNode.insertBefore(z[x + 1], z[x]);
+      switchState = true;
+    }
+  }
 });
 
 </script>

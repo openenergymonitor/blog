@@ -63,6 +63,11 @@
 
 <style>
 
+@font-face {
+  font-family: "oemFont";
+  src: url(font/Ubuntu-OEM-Light.ttf)
+}
+
 html, body {
   margin: 0; height: 100vh;
 }
@@ -73,7 +78,7 @@ html {
 
 html, body {
   word-wrap: break-word;
-  font-family: "ubuntu", sans-serif;
+  font-family: "oemFont", sans-serif;
 }
 
 a:visited, .a:hover, a:focus, a {
@@ -85,6 +90,7 @@ a:visited, .a:hover, a:focus, a {
 }
 
 .communityWrapper {
+  position: relative;
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
@@ -130,41 +136,72 @@ a:visited, .a:hover, a:focus, a {
   overflow: hidden;
   -webkit-box-shadow: 0 -2px 4px 2px #000;
   -moz-box-shadow: 0 -2px 4px 2px #000;
-  box-shadow: 0 -2px 4px 2px #000;	
+  box-shadow: 0 -2px 4px 2px #000;
 }
+
+.titleIcon {
+  position: absolute;
+  height: 42px;
+  padding: 0 0 0 7px;
+  text-align: center;
+  line-height: 42px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+  .titleIcon i {
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 42px;
+  }
 
 .thisTitle {
-  position: relative;
-  display: inline-block;
-  color: #ffffff;
-  left: 0;
-  line-height: 42px;
-  padding-right: 12px;
-  padding-left: 0;
-  font-size: 20px;
-  text-align: right;
-}
-
-.thisTitle a {
-  color: #ffffff;
-}
-
-@media screen and (min-width: 1080px) {
-  .thisTitle {
-  font-size: 16px;
+  position: absolute;
+  box-sizing: border-box;
+  left: 42px;
+  right: 0;
+  height: 42px;
+  padding: 5px 0 5px 0;
   text-align: left;
-  padding-right: 0;
-  padding-left: 7px;
-  }
+  color: #ffffff;
+  line-height: normal;
+  vertical-align: top;
 }
+
+  .thisTitle a {
+    position: absolute;
+    top: 0;
+    color: #ffffff;
+  }
 
 @media screen and (max-width: 1079px) {
-  .thisTitle {
-  width: 100%;
-}
-.thisTitle a {
-  padding-right: 12px;
+  .titleIcon {
+    left: auto;
+    right: 0;
+    padding: 0 7px 0 0;
   }
+
+  .thisTitle {
+    right: 42px;
+    left: 0;
+    text-align: right;
+  }
+
+    .thisTitle a {
+      padding-right: 0;
+    }
+}
+
+.thisTitle-top {
+  top: 0;
+  height: 60%;
+  font-size: 18px;
+}
+
+.thisTitle-bottom {
+  bottom: 0;
+  height: 40%;
+  font-size: 12px;
 }
 
 .navigation {
@@ -174,7 +211,7 @@ a:visited, .a:hover, a:focus, a {
   right: 0;
   margin-right: 6px;
   height: 42px;
-  min-width: 750px;
+  min-width: 774px;
   overflow: visible;
   padding-right: 7px;
   z-index: 20;
@@ -208,7 +245,7 @@ a:visited, .a:hover, a:focus, a {
 .navigation ul li a {
   display: block;
   line-height: 42px;
-  font-family:"ubuntu";
+  font-family:"oemFont";
   font-size: 16px;
   text-align: center;
   padding-left: 10px;
@@ -221,74 +258,89 @@ a:visited, .a:hover, a:focus, a {
   overflow: hidden;
 }
 
+/* Navigation on smaller screens... */
+
 @media screen and (max-width: 1079px) {
-  .navigation {
-      position: fixed;
-      display: none;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      margin: 0;
-      width: 0;
-      font-size: 20px;
-      background-color: #44b3e2;
-      color: #ffffff;
-      z-index: 9999;
-      box-sizing: border-box;
-      overflow: auto;
-      min-width: 0;
-      padding-right: 0;
-  }
-  
+.navigation {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin: 0;
+  width: 0;
+  font-size: 20px;
+  background-color: #44b3e2;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  min-width: 0;
+  padding-right: 0;
+  z-index: 99999999;
+}
+
   .navigation ul {
-      list-style-type: none;
-      margin: 0;
-      padding-top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
   }
-  
+
   .navigation ul li a {
-      box-sizing: border-box;
-      font-family: "ubuntu";
-      font-size: 20px;
-      display: block;
-      color: #ffffff;
-      padding: 0 20px 0 40px;
-      min-width: 220px;
-      text-align: left;
-      height: 12.5vh;
-      line-height: 12.5vh;
+    box-sizing: border-box;
+    font-family: "OEM", sans-serif;
+    font-size: 20px;
+    display: block;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+    height: 12.5vh;
+    line-height: 12.5vh;
+    min-width: 180px;
+    text-align: left;
   }
-  
+
   .navigation ul li .fa {
-      min-width: 25px;
+    min-width: 25px;
   }
 }
 
+@media (max-width: 1079px) and (min-height: 550px) {
+  .navigation ul li a {
+    height: 68.75px;
+    line-height: 68.75px;
+  }
+}
+
+@media (max-width: 1079px) and (max-height: 200px) {
+  .navigation ul li a {
+    height: 25px;
+    line-height: 25px;
+  }
+}
 
 @media screen and (min-width: 1080px) {
   .navigation ul li:nth-child(1) {
-    width: 82px;
+    width: 88px;
   }
   .navigation ul li:nth-child(2) {
-    width: 81px;
+    width: 86px;
   }
   .navigation ul li:nth-child(3) {
-    width: 85px;
+    width: 92px;
   }
   .navigation ul li:nth-child(4) {
-    width: 113px;
-  }
-  .navigation ul li:nth-child(5) {
     width: 123px;
   }
+  .navigation ul li:nth-child(5) {
+    width: 133px;
+  }
   .navigation ul li:nth-child(6) {
-    width: 73px;
+    width: 76px;
   }
   .navigation ul li:nth-child(7) {
-    width: 75px;
+    width: 80px;
   }
   .navigation ul li:nth-child(8) {
-    width: 87px;
+    width: 96px;
   }
 }
 
@@ -361,6 +413,10 @@ a:visited, .a:hover, a:focus, a {
   cursor: pointer;
 }
 
+.fa {
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
+}
+
 </style>
 
 <body >
@@ -371,14 +427,19 @@ a:visited, .a:hover, a:focus, a {
 <div class="titleHolder">
   <div class="communityWrapper">
     <i class="fa fa-navicon"></i>
-    <div class="thisTitle">
-      <a href="/">
-        <strong>Blog</strong>
-        <span class="oemWrap">
-        | Open<strong>EnergyMonitor</strong>
-        </span>
-      </a>
-    </div>
+    <a href="/">
+      <div class="titleIcon">
+				<i aria-hidden="true" class="fa fa-bullhorn"></i>
+			</div>
+			<div class="thisTitle">
+			  <div class="thisTitle-top">
+        		<b>Blog</b>
+				</div>
+				<div class="thisTitle-bottom">
+          Open<b>EnergyMonitor</b>
+				</div>
+			</div>
+		</a>
     <div id="siteLinks" class="navigation">
       <ul>
         <li title="the homepage of OpenEnergyMonitor">
@@ -489,7 +550,7 @@ function openButton() {
   $("html, body").addClass("menuFreeze");
   $(".blackOut").show();
   $(".navigation").show();
-  $(".navigation").animate({ width:'220' },"0.5s");
+  $(".navigation").animate({ width:'180' },"0.5s");
 }
 
 $(".fa-navicon").click(function() {
@@ -535,6 +596,27 @@ $(".searchBox").click(function() {
 });
 $(".searchBox form").click( function(event) {
    event.stopPropagation();
+});
+
+$(document).ready(function(){ //alphabetically order list
+  var ls, x, switchState, z, switchMe;
+  ls = document.getElementById("ub202");
+  switchState = true;
+  while (switchState) {
+    switchState = false;
+    z = ls.getElementsByTagName("LI");
+    for (x = 0; x < (z.length - 1); x++) {
+      switchMe = false;
+      if (z[x].innerHTML.toLowerCase() > z[x + 1].innerHTML.toLowerCase()) {
+        switchMe= true;
+        break;
+      }
+    }
+    if (switchMe) {
+      z[x].parentNode.insertBefore(z[x + 1], z[x]);
+      switchState = true;
+    }
+  }
 });
 
 </script>
@@ -1053,288 +1135,708 @@ $(".searchBox form").click( function(event) {
   
      <section class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Categories</h1>
-  <ul class="divided">
-    
-    
-      <li><a href="/categories/air-quality-egg/">Air Quality Egg</a></li>
-    
-      <li><a href="/categories/antenna/">Antenna</a></li>
-    
-      <li><a href="/categories/building-energy-modelling/">Building Energy Modelling</a></li>
-    
-      <li><a href="/categories/china/">China</a></li>
-    
-      <li><a href="/categories/christmas/">Christmas</a></li>
-    
-      <li><a href="/categories/dc/">DC</a></li>
-    
-      <li><a href="/categories/dc-current-sensing/">DC current sensing</a></li>
-    
-      <li><a href="/categories/esp8266/">ESP8266</a></li>
-    
-      <li><a href="/categories/htu21d/">HTU21D</a></li>
-    
-      <li><a href="/categories/heat-pump/">Heat Pump</a></li>
-    
-      <li><a href="/categories/kaizen/">Kaizen</a></li>
-    
-      <li><a href="/categories/kicad/">KiCad</a></li>
-    
-      <li><a href="/categories/mqtt/">MQTT</a></li>
-    
-      <li><a href="/categories/nanoderf/">NanodeRF</a></li>
-    
-      <li><a href="/categories/nodered/">NodeRed</a></li>
-    
-      <li><a href="/categories/oem-labs/">OEM Labs</a></li>
-    
-      <li><a href="/categories/okg/">OKG</a></li>
-    
-      <li><a href="/categories/oscilloscope/">Oscilloscope</a></li>
-    
-      <li><a href="/categories/rfm12/">RFM12</a></li>
-    
-      <li><a href="/categories/rfm69/">RFM69</a></li>
-    
-      <li><a href="/categories/rs485/">RS485</a></li>
-    
-      <li><a href="/categories/sap-2012/">SAP 2012</a></li>
-    
-      <li><a href="/categories/shw/">SHW</a></li>
-    
-      <li><a href="/categories/srf/">SRF</a></li>
-    
-      <li><a href="/categories/tasker/">Tasker</a></li>
-    
-      <li><a href="/categories/android/">android</a></li>
-    
-      <li><a href="/categories/app/">app</a></li>
-    
-      <li><a href="/categories/application/">application</a></li>
-    
-      <li><a href="/categories/arduino/">arduino</a></li>
-    
-      <li><a href="/categories/award/">award</a></li>
-    
-      <li><a href="/categories/backup/">backup</a></li>
-    
-      <li><a href="/categories/batteries/">batteries</a></li>
-    
-      <li><a href="/categories/benchmarking/">benchmarking</a></li>
-    
-      <li><a href="/categories/build-sesh/">build sesh</a></li>
-    
-      <li><a href="/categories/business/">business</a></li>
-    
-      <li><a href="/categories/ciseco/">ciseco</a></li>
-    
-      <li><a href="/categories/community-energy/">community energy</a></li>
-    
-      <li><a href="/categories/community-smart-grid/">community smart grid</a></li>
-    
-      <li><a href="/categories/continuous-testing/">continuous testing</a></li>
-    
-      <li><a href="/categories/control/">control</a></li>
-    
-      <li><a href="/categories/current-sensor/">current sensor</a></li>
-    
-      <li><a href="/categories/current-transformer/">current transformer</a></li>
-    
-      <li><a href="/categories/dashboard/">dashboard</a></li>
-    
-      <li><a href="/categories/display/">display</a></li>
-    
-      <li><a href="/categories/diy-drones/">diy drones</a></li>
-    
-      <li><a href="/categories/docker/">docker</a></li>
-    
-      <li><a href="/categories/documentation/">documentation</a></li>
-    
-      <li><a href="/categories/ecohomelab/">ecohomelab</a></li>
-    
-      <li><a href="/categories/efergy/">efergy</a></li>
-    
-      <li><a href="/categories/electronics/">electronics</a></li>
-    
-      <li><a href="/categories/elektrocamp/">elektrocamp</a></li>
-    
-      <li><a href="/categories/email-notifications/">email notifications</a></li>
-    
-      <li><a href="/categories/embodied-energy/">embodied energy</a></li>
-    
-      <li><a href="/categories/emonbase/">emonBase</a></li>
-    
-      <li><a href="/categories/emonctrl/">emonCtrl</a></li>
-    
-      <li><a href="/categories/emonglcd/">emonGLCD</a></li>
-    
-      <li><a href="/categories/emonsd/">emonSD</a></li>
-    
-      <li><a href="/categories/emonth/">emonTH</a></li>
-    
-      <li><a href="/categories/emontx/">emonTx</a></li>
-    
-      <li><a href="/categories/emontx-v2/">emonTx V2</a></li>
-    
-      <li><a href="/categories/emontxsmt/">emonTxSMT</a></li>
-    
-      <li><a href="/categories/emontxshield/">emonTxShield</a></li>
-    
-      <li><a href="/categories/emoncms/">emoncms</a></li>
-    
-      <li><a href="/categories/emonesp/">emonesp</a></li>
-    
-      <li><a href="/categories/emonpi/">emonpi</a></li>
-    
-      <li><a href="/categories/emontx/">emontx</a></li>
-    
-      <li><a href="/categories/end-to-end/">end to end</a></li>
-    
-      <li><a href="/categories/energy-monitor/">energy monitor</a></li>
-    
-      <li><a href="/categories/energy-monitoring/">energy monitoring</a></li>
-    
-      <li><a href="/categories/esp8266/">esp8266</a></li>
-    
-      <li><a href="/categories/ev/">ev</a></li>
-    
-      <li><a href="/categories/feed-storage/">feed storage</a></li>
-    
-      <li><a href="/categories/firmware/">firmware</a></li>
-    
-      <li><a href="/categories/forum/">forum</a></li>
-    
-      <li><a href="/categories/github/">github</a></li>
-    
-      <li><a href="/categories/graphing/">graphing</a></li>
-    
-      <li><a href="/categories/hackathon/">hackathon</a></li>
-    
-      <li><a href="/categories/hall-effect/">hall effect</a></li>
-    
-      <li><a href="/categories/hardware/">hardware</a></li>
-    
-      <li><a href="/categories/heating/">heating</a></li>
-    
-      <li><a href="/categories/heatpumpmonitor/">heatpumpmonitor</a></li>
-    
-      <li><a href="/categories/home-assistant/">home Assistant</a></li>
-    
-      <li><a href="/categories/home-camp/">home camp</a></li>
-    
-      <li><a href="/categories/humidity/">humidity</a></li>
-    
-      <li><a href="/categories/integrations/">integrations</a></li>
-    
-      <li><a href="/categories/interface/">interface</a></li>
-    
-      <li><a href="/categories/interview/">interview</a></li>
-    
-      <li><a href="/categories/iotawatt/">iotawatt</a></li>
-    
-      <li><a href="/categories/java/">java</a></li>
-    
-      <li><a href="/categories/job/">job</a></li>
-    
-      <li><a href="/categories/kickstarter/">kickstarter</a></li>
-    
-      <li><a href="/categories/lightwaverf/">lightwaverf</a></li>
-    
-      <li><a href="/categories/linux/">linux</a></li>
-    
-      <li><a href="/categories/logo/">logo</a></li>
-    
-      <li><a href="/categories/manufacturing/">manufacturing</a></li>
-    
-      <li><a href="/categories/measurement/">measurement</a></li>
-    
-      <li><a href="/categories/media/">media</a></li>
-    
-      <li><a href="/categories/mobile/">mobile</a></li>
-    
-      <li><a href="/categories/mobile-app/">mobile app</a></li>
-    
-      <li><a href="/categories/modbus/">modbus</a></li>
-    
-      <li><a href="/categories/nanode/">nanode</a></li>
-    
-      <li><a href="/categories/ook/">ook</a></li>
-    
-      <li><a href="/categories/open-source/">open source</a></li>
-    
-      <li><a href="/categories/openhab/">openHAB</a></li>
-    
-      <li><a href="/categories/openenergymonitor/">openenergymonitor</a></li>
-    
-      <li><a href="/categories/openevse/">openevse</a></li>
-    
-      <li><a href="/categories/optical-pulse/">optical pulse</a></li>
-    
-      <li><a href="/categories/pcb/">pcb</a></li>
-    
-      <li><a href="/categories/pebble/">pebble</a></li>
-    
-      <li><a href="/categories/placement/">placement</a></li>
-    
-      <li><a href="/categories/platformio/">platformio</a></li>
-    
-      <li><a href="/categories/pluse/">pluse</a></li>
-    
-      <li><a href="/categories/presentation/">presentation</a></li>
-    
-      <li><a href="/categories/raspberry-pi/">raspberry Pi</a></li>
-    
-      <li><a href="/categories/raspberry-pi/">raspberry pi</a></li>
-    
-      <li><a href="/categories/renewable/">renewable</a></li>
-    
-      <li><a href="/categories/serial/">serial</a></li>
-    
-      <li><a href="/categories/shop/">shop</a></li>
-    
-      <li><a href="/categories/showcase/">showcase</a></li>
-    
-      <li><a href="/categories/smartwatch/">smartwatch</a></li>
-    
-      <li><a href="/categories/social-energy-monitoring/">social energy monitoring</a></li>
-    
-      <li><a href="/categories/solarpv/">solarPV</a></li>
-    
-      <li><a href="/categories/sparkfun/">sparkfun</a></li>
-    
-      <li><a href="/categories/sustainability/">sustainability</a></li>
-    
-      <li><a href="/categories/temperature/">temperature</a></li>
-    
-      <li><a href="/categories/three-phase/">three phase</a></li>
-    
-      <li><a href="/categories/travisci/">travisci</a></li>
-    
-      <li><a href="/categories/tutorials/">tutorials</a></li>
-    
-      <li><a href="/categories/upgrade/">upgrade</a></li>
-    
-      <li><a href="/categories/user-guide/">user guide</a></li>
-    
-      <li><a href="/categories/utility-meters/">utility meters</a></li>
-    
-      <li><a href="/categories/voltage-sensing/">voltage sensing</a></li>
-    
-      <li><a href="/categories/vrms/">vrms</a></li>
-    
-      <li><a href="/categories/website/">website</a></li>
-    
-      <li><a href="/categories/wifipixel/">wifipixel</a></li>
-    
-      <li><a href="/categories/wind/">wind</a></li>
-    
-      <li><a href="/categories/wind-turbine/">wind turbine</a></li>
-    
-      <li><a href="/categories/wireless/">wireless</a></li>
-    
-      <li><a href="/categories/workshop/">workshop</a></li>
-    
-      <li><a href="/categories/zerocarbonbritain/">zerocarbonbritain</a></li>
+  <ul class="divided" id="ub202">
+    
+    
+      <li>
+        <a href="/categories/air-quality-egg/">air quality egg
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/antenna/">antenna
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/building-energy-modelling/">building energy modelling
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/china/">china
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/christmas/">christmas
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/dc/">dc
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/dc-current-sensing/">dc current sensing
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/esp8266/">esp8266
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/htu21d/">htu21d
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/heat-pump/">heat pump
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/kaizen/">kaizen
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/kicad/">kicad
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/mqtt/">mqtt
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/nanoderf/">nanoderf
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/nodered/">nodered
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/oem-labs/">oem labs
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/okg/">okg
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/oscilloscope/">oscilloscope
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/rfm12/">rfm12
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/rfm69/">rfm69
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/rs485/">rs485
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/sap-2012/">sap 2012
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/shw/">shw
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/srf/">srf
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/tasker/">tasker
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/android/">android
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/app/">app
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/application/">application
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/arduino/">arduino
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/award/">award
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/backup/">backup
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/batteries/">batteries
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/benchmarking/">benchmarking
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/build-sesh/">build sesh
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/business/">business
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/ciseco/">ciseco
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/community-energy/">community energy
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/community-smart-grid/">community smart grid
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/continuous-testing/">continuous testing
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/control/">control
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/current-sensor/">current sensor
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/current-transformer/">current transformer
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/dashboard/">dashboard
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/display/">display
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/diy-drones/">diy drones
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/docker/">docker
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/documentation/">documentation
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/ecohomelab/">ecohomelab
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/efergy/">efergy
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/electronics/">electronics
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/elektrocamp/">elektrocamp
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/email-notifications/">email notifications
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/embodied-energy/">embodied energy
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonbase/">emonbase
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonglcd/">emonglcd
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonsd/">emonsd
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonth/">emonth
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emontx/">emontx
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emontx-v2/">emontx v2
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emontxsmt/">emontxsmt
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emontxshield/">emontxshield
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emoncms/">emoncms
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonesp/">emonesp
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emonpi/">emonpi
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emontx/">emontx
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/end-to-end/">end to end
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/energy-monitor/">energy monitor
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/energy-monitoring/">energy monitoring
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/esp8266/">esp8266
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/ev/">ev
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/feed-storage/">feed storage
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/firmware/">firmware
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/forum/">forum
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/github/">github
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/graphing/">graphing
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/hackathon/">hackathon
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/hall-effect/">hall effect
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/hardware/">hardware
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/heating/">heating
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/heatpumpmonitor/">heatpumpmonitor
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/home-assistant/">home assistant
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/home-camp/">home camp
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/humidity/">humidity
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/integrations/">integrations
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/interface/">interface
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/interview/">interview
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/iotawatt/">iotawatt
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/java/">java
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/job/">job
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/kickstarter/">kickstarter
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/lightwaverf/">lightwaverf
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/linux/">linux
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/logo/">logo
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/manufacturing/">manufacturing
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/measurement/">measurement
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/media/">media
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/mobile/">mobile
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/mobile-app/">mobile app
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/modbus/">modbus
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/nanode/">nanode
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/ook/">ook
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/open-source/">open source
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/openhab/">openhab
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/openenergymonitor/">openenergymonitor
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/openevse/">openevse
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/optical-pulse/">optical pulse
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/pcb/">pcb
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/pebble/">pebble
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/placement/">placement
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/platformio/">platformio
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/pluse/">pluse
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/presentation/">presentation
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/raspberry-pi/">raspberry pi
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/raspberry-pi/">raspberry pi
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/renewable/">renewable
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/serial/">serial
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/shop/">shop
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/showcase/">showcase
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/smartwatch/">smartwatch
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/social-energy-monitoring/">social energy monitoring
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/solarpv/">solarpv
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/sparkfun/">sparkfun
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/sustainability/">sustainability
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/temperature/">temperature
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/three-phase/">three phase
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/travisci/">travisci
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/tutorials/">tutorials
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/upgrade/">upgrade
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/user-guide/">user guide
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/utility-meters/">utility meters
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/voltage-sensing/">voltage sensing
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/vrms/">vrms
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/website/">website
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/wifipixel/">wifipixel
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/wind/">wind
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/wind-turbine/">wind turbine
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/wireless/">wireless
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/workshop/">workshop
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/zerocarbonbritain/">zerocarbonbritain
+        </a>
+      </li>
     
   </ul>
 </section>
