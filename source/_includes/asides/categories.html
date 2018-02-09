@@ -1,9 +1,12 @@
 <section class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Categories</h1>
-  <ul class="divided">
+  <ul class="divided" id="ub202">
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
-      <li><a href="/categories/{{ category | first | downcase | replace: ' ', '-'}}/">{{ category | first | replace: '-', ' '}}</a></li>
+      <li>
+        <a href="/categories/{{ category | first | downcase | replace: ' ', '-'}}/">{{ category | first | downcase | replace: '-', ' '}}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </section>
