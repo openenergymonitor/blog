@@ -4,7 +4,7 @@
   <title><![CDATA[Category: platformio | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/platformio/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-02-22T12:48:02+00:00</updated>
+  <updated>2018-03-23T22:54:10+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -198,13 +198,15 @@ deploy:
 
 <hr />
 
-<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.</p>
+<h1 id="part-13-platformio-open-source-embedded-development-ecosystem">Part 1/3: PlatformIO open-source embedded development ecosystem</h1>
+
+<p>Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.</p>
 
 <p>I’m sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.</p>
 
-<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS’s frequently.</p>
+<p>The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OSes frequently.</p>
 
-<p>Recently I have been using <a href="http://platformio.org">PlatformIO</a> and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
+<p>Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent <a href="http://platformio.org/lib">library manager</a>.</p>
 
 <blockquote>
   <p>PlatformIO is an open-source ecosystem for IoT development.</p>
@@ -214,15 +216,21 @@ deploy:
   <p>Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.</p>
 </blockquote>
 
-<p><img src="/images/pio-ide.png" alt="PlatformIO IDE" /></p>
+<p><img src="/uploads/default/original/1X/f6d5f19402b36b099b3d54bd44a46b2a1ce673d3.png" alt="PlatformIO IDE" /></p>
 
-<!--more-->
+<p>This post got quite long, therefore, It’s been split into three posts:</p>
+
+<ol>
+  <li>PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</li>
+  <li>Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</li>
+  <li>Continuous Deployment (OTA to ESP8266)</li>
+</ol>
 
 <p>Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:</p>
 
 <ul>
   <li><a href="https://github.com/platformio"><strong>Fully open-source</strong></a> with active and friendly dev community.</li>
-  <li><strong>Easy to install</strong> - Pure python based, installed using pip
+  <li><strong>Easy to install</strong> - Pure python based installed using pip
     <ul>
       <li>Tool-chains are auto installed on first compile / upload e.g.
         <ul>
@@ -273,13 +281,13 @@ deploy:
 
 <p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
 
-<p>This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
+<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
 
 <p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
 
 <h3 id="install-platformio">1. Install PlatformIO</h3>
 
-<p>The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
+<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
 
 <p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
 
@@ -289,8 +297,8 @@ deploy:
 
 <p><strong>emonTx V3</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonTxFirmware`
-$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emontx3`
+$ cd emontx3/firmware
 </code></pre>
 </div>
 
@@ -311,35 +319,23 @@ cd emonpi/firmware
 
 <p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
 
-<p>The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
+<p>The first time platformIO is run it will ask to install the required libraries (at the specific version) and avr toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emontx3"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
 
 <p>e.g.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps_external =
-  DHT sensor library @1.2.3
+<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps = 
   DallasTemperature @3.7.7
   EmonLib
   JeeLib@c057b5f4c0
-  LiquidCrystal_I2C @4bb48bd648
 </code></pre>
 </div>
+<p>Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.)</p>
 
-<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">~/platformio</code> folder.</p>
-
-<p>If required specific versions can be installed e.g.:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ pio lib install 252 --version="e70c9d9f4e"
-$ platformio lib install 54 --version="3.7.7"
-</code></pre>
-</div>
+<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">.piolibdeps</code> folder in the project dir.</p>
 
 <h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
 
 <h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
-
-<p><code class="highlighter-rouge">$ sudo platformio run --target upload</code></p>
-
-<p>or lazy shorthand</p>
 
 <p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
 
@@ -347,19 +343,13 @@ $ platformio lib install 54 --version="3.7.7"
 
 <p><em>Note: you will need <code class="highlighter-rouge">sudo</code> unless you have correctly <a href="https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules">configured udev rules</a>.</em></p>
 
-<p>To list available serial ports:</p>
-
-<p><code class="highlighter-rouge">$ pio serialports list</code></p>
-
 <p>There is even a built in serial monitor</p>
 
-<p><code class="highlighter-rouge">$ pio serialports monitor</code></p>
+<p><code class="highlighter-rouge">$ pio device monitor</code></p>
 
 <h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
 
-<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (<del>due to be released in the next few weeks</del>, <a href="https://community.platformio.org/t/platformio-cli-2-10-0/381">released 2.10.0</a>) will have built in support for the emonPi auto-reset on upload using GPIO4. See <a href="http://platformio.org/boards?count=1000&amp;filter%5Bname%5D=emonpi&amp;page=1&amp;sorting%5Bvendor%5D=asc">emonPi listed on PlatformIO boards page</a>:</p>
-
-<p><img src="/images/emonpi-platformio.png" alt="emonpi-platformio.png" /></p>
+<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
 
 <p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
 
@@ -371,9 +361,7 @@ upload_port = /dev/ttyAMA0
 <p>All that is needed to compile and upload directly on the emonPi is:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
-$ sudo service emonhub stop
 $ sudo pio run -t upload
-$ sudo service emonhub start
 </code></pre>
 </div>
 
