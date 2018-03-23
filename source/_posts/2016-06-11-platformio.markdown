@@ -24,29 +24,34 @@ categories:
 
 ***
 
-Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and are the correct versions can be tricky and time-consuming.
+# Part 1/3: PlatformIO open-source embedded development ecosystem
+
+
+Getting an Arduino based project (or other embedded platform) to compile and upload can be a pain. Making sure all the libraries are installed in the correct locations and of the correct versions can be tricky and time-consuming.
 
 I'm sure many developers will agree that the tools we use for embedded development are generally not as good as those used for web application development.
 
-The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OS's frequently.
+The Arduino team have done a good job with their IDE to try and make the embedded development tool-chain setup as easy as possible. However, I still find library management a cause of frustration. Especially since I move between computers and OSes frequently.
 
-Recently I have been using [PlatformIO](http://platformio.org) and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent [library manager](http://platformio.org/lib).
+Recently I have been using PlatformIO and am rather impressed with the ease of setup, speed of compilation, uploading (auto port detection), and most importantly an excellent [library manager](http://platformio.org/lib).
 
 > PlatformIO is an open-source ecosystem for IoT development.
 
 > Cross-platform build system, IDE integration and continuous testing. Arduino, Espressif, ARM and mbed compatible.
 
 
-![PlatformIO IDE]({{site.image_path}}/pio-ide.png)
+![PlatformIO IDE](/uploads/default/original/1X/f6d5f19402b36b099b3d54bd44a46b2a1ce673d3.png)
 
+This post got quite long, therefore, It's been split into three posts:
 
-
-<!--more-->
+ 1. PlatfomIO overview & compiling + uploading locally and on a Raspberry Pi
+ 2. Continuous testing and auto release binary generation using PlatformIO & TravisCI
+ 3. Continuous Deployment (OTA to ESP8266)
 
 Here are some things that have impressed me about PlatformIO (pio) after using it for a couple of weeks:
 
 - [**Fully open-source**](https://github.com/platformio) with active and friendly dev community.
-- **Easy to install** - Pure python based, installed using pip
+- **Easy to install** - Pure python based installed using pip
   - Tool-chains are auto installed on first compile / upload e.g.
     - If trying to upload to Arduino avrdude will automatically be installed
     - If trying to compile an ESP8266 project the ESP toolchain will be installed
@@ -76,13 +81,13 @@ Here are some things that have impressed me about PlatformIO (pio) after using i
 
 [PlatformIO has some excellent quick start docs](http://docs.platformio.org/en/latest/quickstart.html) to cover setting up your first 'blinky' project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.
 
-This guide used command-line steps on Linux, if using Windows or if you want to use the platformio IDE see [PlatformIO Getting Started Page](http://platformio.org/get-started).
+This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see [PlatformIO Getting Started Page](http://platformio.org/get-started).
 
 The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.
 
 ### 1. Install PlatformIO
 
-The easiest way if running Linux is to use the install script, this installs pio via python pip and installs pip if not present. See [PlatformIO installation docs](http://docs.platformio.org/en/latest/installation.html#installer-script):
+The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See [PlatformIO installation docs](http://docs.platformio.org/en/latest/installation.html#installer-script):
 
 `$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"`
 
@@ -93,8 +98,8 @@ We'll use the emonTx (V3 discrete sampling) as an example here but the steps are
 **emonTx V3**
 
 ```
-$ git clone https://github.com/openenergymonitor/emonTxFirmware`
-$ cd emonTxFirmware/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling
+$ git clone https://github.com/openenergymonitor/emontx3`
+$ cd emontx3/firmware
 ```
 
 **emonPi**
@@ -114,35 +119,23 @@ or shorthand for the lazy
 
 **That's it!** That's all that's needed to setup pio from scratch and compile emonTx firmware :-D
 
-The first time platformIO is run it will ask to install the required libraries (versions specified) and AVR toolchain. The required libraries are defined in [`platformio.ini` in the emonTx discrete sampling firmware folder](https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM/emonTxV3.4/emonTxV3_4_DiscreteSampling/platformio.ini):
+The first time platformIO is run it will ask to install the required libraries (at the specific version) and avr toolchain. The required libraries are defined in [`platformio.ini` in the emonTx discrete sampling firmware folder](https://github.com/openenergymonitor/emontx3):
 
 e.g.
 
 ```
-lib_deps_external =
-  DHT sensor library @1.2.3
+lib_deps = 
   DallasTemperature @3.7.7
   EmonLib
   JeeLib@c057b5f4c0
-  LiquidCrystal_I2C @4bb48bd648
 ```
+Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.) 
 
-The latest version of the libraries are automatically cloned from their native git repos into the `~/platformio` folder.
-
-If required specific versions can be installed e.g.:
-
-```
-$ pio lib install 252 --version="e70c9d9f4e"
-$ platformio lib install 54 --version="3.7.7"
-```
+The latest version of the libraries are automatically cloned from their native git repos into the `.piolibdeps` folder in the project dir. 
 
 ### 3. Upload using PlatformIO
 
 #### 3a. Via USB to UART programmer to emonTx
-
-`$ sudo platformio run --target upload`
-
-or lazy shorthand
 
 `$ sudo pio run -t upload`
 
@@ -150,19 +143,13 @@ Pio will attempt to auto detect the USB programmer and upload :-)
 
 *Note: you will need `sudo` unless you have correctly [configured udev rules](https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules).*
 
-To list available serial ports:
-
-`$ pio serialports list`
-
 There is even a built in serial monitor
 
-`$ pio serialports monitor`
+`$ pio device monitor`
 
 ### 3b. Using ttyAMA0 GPIO to upload direct to emonPi
 
-This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (~~due to be released in the next few weeks~~, [released 2.10.0](https://community.platformio.org/t/platformio-cli-2-10-0/381)) will have built in support for the emonPi auto-reset on upload using GPIO4. See [emonPi listed on PlatformIO boards page](http://platformio.org/boards?count=1000&filter%5Bname%5D=emonpi&page=1&sorting%5Bvendor%5D=asc):
-
-![emonpi-platformio.png]({{site.image_path}}/emonpi-platformio.png)
+This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4
 
 The emonPi board is defined in `platformio.ini` in the [emonpi/firmware folder](https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini):
 
@@ -175,9 +162,7 @@ All that is needed to compile and upload directly on the emonPi is:
 
 ```
 cd ~/emonpi/firmware
-$ sudo service emonhub stop
 $ sudo pio run -t upload
-$ sudo service emonhub start
 ```
 
 *Thanks a lot to [Ivan Kravets](https://github.com/ivankravets) for helping integrate emonPi into the PlatfomIO ecosystem. [View commit changes](https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a)*
