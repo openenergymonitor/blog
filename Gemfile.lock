@@ -67,7 +67,7 @@ GEM
     pygments.rb (1.1.2)
       multi_json (>= 1.0.0)
     rack (1.6.4)
-    rack-protection ~> 1.5.5
+    rack-protection (1.5.5)
       rack
     rake (10.5.0)
     rake-jekyll (1.1.0)
@@ -125,4 +125,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   1.13.5
+   1.16.2
