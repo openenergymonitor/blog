@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-11-08T20:40:18+00:00</updated>
+  <updated>2018-11-08T21:39:00+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -20,7 +20,7 @@
     <id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id>
     <content type="html"><![CDATA[<p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
-<p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/applications/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the EnergyLocal project.</p>
+<p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/applications/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the <a href="https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762">EnergyLocal project</a>.</p>
 
 <!--more-->
 
