@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2012/12/the-openenergymonitor-meetup-last/">OpenEnergyMonitor Meetup</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-12-11T23:06:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-12-11 23:06:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/oem-labs/'>OEM Labs</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/12/the-openenergymonitor-meetup-last/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div>We had a very enjoyable OpenEnergyMonitor meetup last weekend. <a href="http://sustburbia.blogspot.co.uk/">Ken Boak</a>&nbsp;and Paul Allen (<a href="http://wattdata.blogspot.co.uk/">MarsFlyer</a>) &nbsp;came up from London, <a href="http://www.meetup.com/Cleanweb-London/members/61999412/">Matt Fawcett</a>&nbsp;from Manchester and&nbsp;Carlos Alonso Gabizó from Machynlleth.</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-xhG9CVG7DA0/UMe3aCyMmwI/AAAAAAAACh8/dzSKv8rkovk/s1600/IMAG1020.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="225" src="http://4.bp.blogspot.com/-xhG9CVG7DA0/UMe3aCyMmwI/AAAAAAAACh8/dzSKv8rkovk/s400/IMAG1020.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">From left to right: Glyn, Matt, Ken</td></tr></tbody></table>We did a surprising amount of development in such as short time as well having some great discussions. Here's a summary of what we worked on:<br /><div><br /><b>Controlling wireless nodes from emoncms </b><br />Ken Boak and I worked on furthering a way for emoncms to be able to send commands back to the gateway and wireless nodes, which could be used as part of a system for turning on and off heating systems and setting set point temperatures. There's now a new optional emoncms module called command where you can add commands to a queue that can then be requested by the gateway. Download the module here:&nbsp;<a href="https://github.com/emoncms/command">https://github.com/emoncms/command</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jQInd15tukc/UMe5Kou25SI/AAAAAAAACiU/-88G1VI91k0/s1600/command+module.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="306" src="http://3.bp.blogspot.com/-jQInd15tukc/UMe5Kou25SI/AAAAAAAACiU/-88G1VI91k0/s640/command+module.png" width="640" /></a></div><div><br /></div><div><br /></div><div><b>Gas monitoring&nbsp;</b><br />There was a lot of discussion around gas monitoring. Paul brought with him a jeenode with a hall effect sensor connected for sensing the magnetic pulse given off by certain types of gas meter. The jeenode goes to sleep between pulses so that it can run on a single AA battery for a long time which is a big benefit for installations where there are no near electrical sockets. Glyn worked on adding this to the gas monitoring page on the website here:&nbsp;<a href="http://openenergymonitor.org/emon/buildingblocks/gas-meter-monitoring">http://openenergymonitor.org/emon/buildingblocks/gas-meter-monitoring</a></div><div><br /></div><div>Paul also<a href="https://github.com/emoncms/emoncms/commit/cbccc9922e2a563488f6997cc8333863db123a5a"> implemented a pulse to power input processor</a> for emoncms to allow conversion of pulse data coresponding to energy use increments to power values for use with the low power gas pulse counter.</div><div><br /></div><div><b>EmonTx accuracy experiment replication</b></div><div>Carlos replicated the EmonTx accuracy experiment, with the results comparing well with the previous investigation take a look at his results here&nbsp;<a href="http://openenergymonitor.org/emon/emontx/accuracy">http://openenergymonitor.org/emon/emontx/accuracy</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/cagabi-Accuracy%20test%20emonTX.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://openenergymonitor.org/emon/sites/default/files/cagabi-Accuracy%20test%20emonTX.jpg" width="640" /></a></div><div><br /></div><div><br /></div><div><b>An open source SAP calculator -</b> Matt and I made a start on an open source web based SAP worksheet - SAP is the UK Government’s Standard Assessment Procedure for Energy Rating of Dwellings produced by BRE the Building Research Establishment. We've put the progress we have made so far up on github here: <a href="https://github.com/emoncms/sap">https://github.com/emoncms/sap</a>&nbsp;</div><div>Please get in touch if your interested in helping to develop this, we could do with more help with completing the form and checking and implementing the remaining calculations.</div><div>Matt is working on a really exciting project in Manchester with Carbon Coop to do building retrofits of which monitoring and sap calculation is an important part, its well worth a look at their work here&nbsp;<a href="http://carbon.coop/">http://carbon.coop/</a></div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-cGDoBrMU3IE/UMe5E9wKwYI/AAAAAAAACiM/MDJlXUk4eeg/s1600/sapscreen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="392" src="http://3.bp.blogspot.com/-cGDoBrMU3IE/UMe5E9wKwYI/AAAAAAAACiM/MDJlXUk4eeg/s640/sapscreen.png" width="640" /></a></div><div><br /><b></b>  <br />We also looked at humidity sensing and built up a couple of low-power wireless humidity nodes using an emonTx's with a DHT22 humidity sensor.<br /><br />Throughout the weekend I think we had a good emphasis on how the tools that we are developing are applied with much discussion of how it all fits into the wider picture of sustainable energy.&nbsp;</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-zzSdle2hvdc/UMe3uj29ZKI/AAAAAAAACiE/LsPtHby8YQo/s1600/oemmeetup01.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://4.bp.blogspot.com/-zzSdle2hvdc/UMe3uj29ZKI/AAAAAAAACiE/LsPtHby8YQo/s400/oemmeetup01.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Finishing the first day with well earned homebrew ale thanks to Carlos<br />From left to right: Paul, Carlos, Matt, Ken, Trystan (Glyn taking the photo)</td></tr></tbody></table><div>It was a great weekend and I'm really looking forward to the next one already, we're thinking maybe next April on a bank holiday weekend.</div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/12/rfm12b-wireless-transmission-explained/">RFM12B Wireless Transmission Explained</a>
   </h1>
   
@@ -993,48 +1033,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/11/ciseco-visit/">Ciseco Visit </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-11-01T07:27:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-11-01 07:27:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/ciseco/'>ciseco</a></li>
-      
-        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/11/ciseco-visit/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    Earlier this week I visited Miles Hodkinson who runs <a href="http://shop.ciseco.co.uk/">Ciseco</a>.<br /><br />Ciseco supply us with the <a href="http://shop.openenergymonitor.com/base-stations/">Open Kontrol Gateway</a> web-connected base station, however Ciseco are best known for their range of wireless modules based on the Texas Instruments CC1110 chip. Most of Ciseco's products are manufactured by themselves in the UK. It was a fascinating visit to see the manufacturing process in action. I took a few photos which might be of interest to those of your who are interested in how things are made. <br /><br />The surface mount electronics assembly process has got three main stages: <br /><br />1. Apply solder paste on the PCB pads, this is done using a scraper and carefully aligned laser cut stencil.<br /><div><br />&nbsp; <br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-rfUvGMOCof4/UJIfta9rOBI/AAAAAAAAcwE/QfeAokeEwsc/s1600/20121030_145059.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-rfUvGMOCof4/UJIfta9rOBI/AAAAAAAAcwE/QfeAokeEwsc/s320/20121030_145059.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Solder pate application</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div>2. The pick and place machine places the SMT components in their correct locations and orientation on the board <br /><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-dhbav7AMBs8/UJIfq6r4OGI/AAAAAAAAcv0/uhv2Yg88Vkw/s1600/20121030_144855.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://2.bp.blogspot.com/-dhbav7AMBs8/UJIfq6r4OGI/AAAAAAAAcv0/uhv2Yg88Vkw/s320/20121030_144855.jpg" width="240" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Pick and place - the components are supplied on the white reels</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both;"><span style="text-align: start;">3.</span> After a quick visual check the board with the placed components is put in the reflow oven for a precise amount of time at a carefully monitored temperature profile. This melts the solderpaste and solders the components into place.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-4c_g_-BKx9g/UJIfsZwVYmI/AAAAAAAAcv8/-zcKpxjinxg/s1600/20121030_144900.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-4c_g_-BKx9g/UJIfsZwVYmI/AAAAAAAAcv8/-zcKpxjinxg/s320/20121030_144900.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Reflow Oven</td></tr></tbody></table>The finished boards are then taken away to be flashed, tested then finally the through-hole components such as the antenna socket are soldered on by hand.<br /><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-c0dM3nlczqs/UJIfupzQqWI/AAAAAAAAcwM/cHiDyLcNKWo/s1600/20121030_153622.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-c0dM3nlczqs/UJIfupzQqWI/AAAAAAAAcwM/cHiDyLcNKWo/s320/20121030_153622.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">The finished boards&nbsp;</td></tr></tbody></table>&nbsp;View the full galley of photos including some videos of the pick and place in action:<br /><br /><table style="width: 194px;"><tbody><tr><td align="center" style="background: url(https://picasaweb.google.com/s/c/transparent_album_background.gif) no-repeat left; height: 194px;"><a href="https://picasaweb.google.com/113226203437598291129/CisecoVisit?authuser=0&amp;feat=embedwebsite"><img height="160" src="https://lh3.googleusercontent.com/-nGw0BuZ_drI/UJCE-JczhyE/AAAAAAAAcvw/XquaBFevmfg/s160-c/CisecoVisit.jpg" style="margin: 1px 0 0 4px;" width="160" /></a></td></tr><tr><td style="font-family: arial,sans-serif; font-size: 11px; text-align: center;"><a href="https://picasaweb.google.com/113226203437598291129/CisecoVisit?authuser=0&amp;feat=embedwebsite" style="color: #4d4d4d; font-weight: bold; text-decoration: none;">Ciseco visit</a></td></tr></tbody></table><div><br /></div></div>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1057,6 +1055,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/11/demand-side-response/">OpenEnergyMonitor DSR Development</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1109,12 +1113,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
         </li>
       
     

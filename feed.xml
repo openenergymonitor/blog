@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-11-08T19:00:26+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Emoncms Blue Theme</title><link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/" rel="alternate" type="text/html" title="Emoncms Blue Theme" /><published>2018-01-30T09:01:00+00:00</published><updated>2018-01-30T09:01:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emoncms-theme/">&lt;p&gt;For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-11-08T20:40:18+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>OpenEnergyMonitor DSR Development</title><link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/" rel="alternate" type="text/html" title="OpenEnergyMonitor DSR Development" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/demand-side-response/">&lt;p&gt;&lt;img src=&quot;/images/leaf-openevse.jpg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the &lt;a href=&quot;https://guide.openenergymonitor.org/applications/ev-charging/&quot;&gt;OpenEVSE charging station&lt;/a&gt;. The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the EnergyLocal project.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;DSR: Demand Side Response is the idea of moving demand to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Better match supply, something that becomes more important as we supply more of our electricity from renewable energy.&lt;/li&gt;
+  &lt;li&gt;Reduce electricity system cost by reducing the maximum dispatchable generation, distribution and transmission grid capacity needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Household electricity demand such as lighting, computing, TV, cooking, fridge/freezer, washing have relatively low DSR potential, either due to the need for these demands to happen during times of occupancy (peak demand) or because these demands are relatively small.&lt;/p&gt;
+
+&lt;p&gt;However as we move towards a zero carbon future, most scenarios suggest large scale electrification of transport and heat is needed alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps &amp;amp; hot water storage have significant DSR potential.&lt;/p&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;width:35%&quot;&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/energymodel.png&quot; style=&quot;width:276px&quot; /&gt;
+
+&lt;/td&gt;&lt;td&gt;
+
+This screenshot from our work on modelling zero carbon energy systems &lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold&quot;&gt;https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold&lt;/a&gt; shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
+&lt;br /&gt;&lt;br /&gt;
+&lt;i&gt;Dark blue: traditional household electricity demand (minus any heating), Red: heatpump demand with DSR, Green: EV demand with DSR, Blue: Electrolysis demand for synthetic fuels soaking up large excess capacity, Total: Wind and solar output.&lt;/i&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/cydynni.png&quot; style=&quot;width:276px&quot; /&gt;
+&lt;/td&gt;&lt;td&gt;
+
+Energy local are pioneering community energy aggregation tariffs with both time of use pricing and pricing based on availability of a local renewable energy generator. A household with loads suitable for DSR can lower their electricity cost and use a greater amount of local power by shifting their demand to better times.
+&lt;br /&gt;&lt;br /&gt;
+EnergyLocal provide a day ahead forecast that can be used to schedule appliances, EV’s, hot water storage etc.
+
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/octopus.png&quot; style=&quot;width:276px&quot; /&gt;
+
+&lt;/td&gt;&lt;td&gt;
+
+For households not able to take part in community energy aggregation tariffs such as EnergyLocal, Octopus Energy have recently introduced a time of use tariff, that reflects wholesale electricity prices. &lt;a href=&quot;https://octopus.energy/agile&quot;&gt;https://octopus.energy/agile&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;
+Agile also provide a day ahead price profile that can be used for scheduling.
+&lt;br /&gt;&lt;br /&gt;
+Savings made by using these tariffs can help payback expenditure on smart energy technologies. Especially where battery or heat storage is considered during the build or retrofit stage. E.g using thermal mass to store heat from heatpumps during times of excess supply.
+
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/gridcarbon.png&quot; style=&quot;width:276px&quot; /&gt;
+
+&lt;/td&gt;&lt;td&gt;
+
+Another approach to forecasting could be to use grid carbon intensity, weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
+&lt;br /&gt;&lt;br /&gt;
+Users keen to stay with their existing electricity suppliers e.g Ecotricity for Electric Highway EV charging benefits could still make use of scheduling to ensure demand happens at the best time from a carbon and limiting grid strain perspective.
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;control-approach&quot;&gt;Control approach&lt;/h3&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+&lt;p&gt;1. &lt;b&gt;Realtime&lt;/b&gt;&lt;br /&gt;
+The emonEVSE is our first product that implements automated DSR, designed to charge a connected electric vehicle acording to the available output from a solar PV array, it is an example of automated real-time DSR. A similar application and control strategy is PV diversion to hot water.&lt;/p&gt;
+
+&lt;p&gt;2. &lt;b&gt;Combined real-time &amp;amp; later scheduled period&lt;/b&gt;&lt;br /&gt;
+A real-time only control strategy is limited in the case that solar output in a given day does not charge the car up sufficiently for use later in the afternoon/evening or next day, or the hot water tank is not heated sufficiently for an evening/morning shower. In both of these cases a further period of charging will be needed. This could be achieved with a basic second charging period e.g overnight.&lt;/p&gt;
+
+&lt;p&gt;To make both of these applications work well the control system needs to know when the user wishes to use the car or hot water and the state of charge or temperature target that needs to be reached.&lt;/p&gt;
+
+&lt;p&gt;3. &lt;b&gt;Forecast based scheduling&lt;/b&gt;&lt;br /&gt;
+A limitation of real-time DSR for hot water heating is that on a sunny day, the cylinder can heat up too quickly and so will then sit at a high temperature loosing heat for longer than it needs too. It may also result in larger ramp effects and strain on the grid if storage is filled during the morning leaving everyone’s solar systems to export through the afternoon. Leaving an EV at a high stage of charge for a long time is also meant to cause a higher rate of battery degredation and so control strategies that bring the charging period as close to the time of use as possible may be particularly important.&lt;/p&gt;
+
+&lt;p&gt;
+Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve reducing ramp strain on the grid and reducing heat store loss and battery degradation.
+&lt;/p&gt;
+
+&lt;/td&gt;&lt;td style=&quot;width:35%&quot;&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/solardivert.png&quot; style=&quot;width:276px&quot; /&gt;
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+&lt;img src=&quot;https://blog.openenergymonitor.org/images/scheduler.png&quot; style=&quot;width:276px&quot; /&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Follow the development of this project and learn about our next steps on the forums.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the OpenEVSE charging station. The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the EnergyLocal project.</summary></entry><entry><title>Emoncms Blue Theme</title><link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/" rel="alternate" type="text/html" title="Emoncms Blue Theme" /><published>2018-01-30T09:01:00+00:00</published><updated>2018-01-30T09:01:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emoncms-theme/">&lt;p&gt;For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)&lt;/p&gt;
 
 &lt;p&gt;The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.&lt;/p&gt;
 
@@ -568,52 +659,4 @@ Here is a video demo using Google Home to control my central heating and devices
 
 
 
-Read on to learn how this is achieved using an emonPi and open-source software…</summary></entry><entry><title>MyHomeEnergyPlanner - open source home energy assessment</title><link href="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/" rel="alternate" type="text/html" title="MyHomeEnergyPlanner - open source home energy assessment" /><published>2017-02-21T13:43:00+00:00</published><updated>2017-02-21T13:43:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/02/myhomeenergyplanner/">&lt;p&gt;I would like to highlight a piece of work by &lt;a href=&quot;https://community.openenergymonitor.org/users/cagabi&quot;&gt;Carlos Alonso Gabizón&lt;/a&gt; which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.&lt;/p&gt;
-
-&lt;p&gt;Carlos has been working for &lt;a href=&quot;http://carbon.coop/&quot;&gt;CarbonCoop&lt;/a&gt; over the last year and a half on &lt;a href=&quot;(http://myhome.emoncms.org)&quot;&gt;MyHomeEnergyPlanner&lt;/a&gt; – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/myhomeenergyplanner2.png&quot; alt=&quot;MyHomeEnergyPlanner&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.&lt;/p&gt;
-
-&lt;p&gt;MyHomeEnergyPlanner can be used to calculate the space and water heating requirements for a home from a detailed breakdown of the building fabric: floor, walls, roof, windows etc. It uses U-values and areas to calculate building fabric heat loss rates, combined with calculated heat loss from infiltration and ventilation and heat gains from solar radiation, lighting, household appliances, cooking and occupants.&lt;/p&gt;
-
-&lt;p&gt;It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.&lt;/p&gt;
-
-&lt;p&gt;MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your &lt;a href=&quot;https://emoncms.org&quot;&gt;Emoncms.org&lt;/a&gt; account)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://myhome.emoncms.org&quot;&gt;http://myhome.emoncms.org&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I have written an &lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/MyHomeEnergyPlanner&quot;&gt;initial getting started guide&lt;/a&gt; here that goes over the main parts of creating an initial household assessment:&lt;/p&gt;
-
-&lt;p&gt;When I was last working on building energy modelling I also wrote a &lt;a href=&quot;https://learn.openenergymonitor.org/sustainable-energy/building-energy-model/readme&quot;&gt;brief guide on how a simple household energy model&lt;/a&gt; works which can also be found here:&lt;/p&gt;
-
-&lt;h3 id=&quot;myhomeenergyplanner-github&quot;&gt;MyHomeEnergyPlanner Github&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://github.com/emoncms/MyHomeEnergyPlanner&quot;&gt;http://github.com/emoncms/MyHomeEnergyPlanner&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;For further context: MyHomeEnergyPlanner is used by CarbonCoop as part of their work on household retrofit, improving insulation and air-tightness of existing households in Manchester to achieve carbon emission reductions of 80% compared to the 1990 baseline. More information can be found about their work here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://carbon.coop/content/whole-house-retrofit-community-green-deal&quot;&gt;Whole House Retrofit - A Community Green Deal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://carbon.coop/assessments/URBED_ASSESSMENT_REPORT.pdf&quot;&gt;Whole House Retrofit Assessment Method&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/CarbonCoop/status/802176377785028608/photo/1&quot;&gt;Recent post-retrofit monitored results for Carbon Coop’s recent retrofit project (twitter)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Trystan Lea</name></author><summary>I would like to highlight a piece of work by Carlos Alonso Gabizón which I think is an important piece of the home energy monitoring and assessment toolkit and a really useful tool, which we would be keen to see more people use.
-
-Carlos has been working for CarbonCoop over the last year and a half on MyHomeEnergyPlanner – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.
-
-
-
-MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.
-
-MyHomeEnergyPlanner can be used to calculate the space and water heating requirements for a home from a detailed breakdown of the building fabric: floor, walls, roof, windows etc. It uses U-values and areas to calculate building fabric heat loss rates, combined with calculated heat loss from infiltration and ventilation and heat gains from solar radiation, lighting, household appliances, cooking and occupants.
-
-It can be used to model a building in its current form and then create scenarios to explore the effect of undertaking measures such as adding insulation, improving air-tightness and changing heating systems.
-
-MyHomeEnergyPlanner is free to use and open source and is now installed on emoncms.org (Login with your Emoncms.org account)
-
-http://myhome.emoncms.org</summary></entry></feed>
+Read on to learn how this is achieved using an emonPi and open-source software…</summary></entry></feed>

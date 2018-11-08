@@ -633,6 +633,70 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-20T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 20th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonesp/'>emonesp</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+      
+        <li><a class='category' href='/categories/esp8266/'>esp8266</a></li>
+      
+        <li><a class='category' href='/categories/heatpumpmonitor/'>heatpumpmonitor</a></li>
+      
+        <li><a class='category' href='/categories/wifipixel/'>wifipixel</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/esp8266-emonesp-developments/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>Glyn and I have been doing a bit of development recently on using the ESP8266 WiFi board with OpenEnergyMonitor hardware, we are quite excited about the potential of this little module to both reduce the cost of the system and simplify setup and installation especially for applications that primarily post to a remote emoncms server such as <a href="https://emoncms.org">emoncms.org</a>.</p>
+
+<p><strong>Note:</strong> we have no plans to discontinue developments and support for Raspberry Pi based systems e.g. emonPi / emonBase. Quite the opposite: the local storage and processing of a Raspberry Pi based system has many advantages particularly for systems requiring more flexibility and customisation e.g Local Emoncms storage. MQTT, openHAB &amp; nodeRED integration. The ESP developments will be ran in parallel, in fact ESP could be configured to post to an emonPi / emonBase via MQTT for local on-site storage and integration.</p>
+
+<p>We are at the moment working on three initial uses of the ESP8266:</p>
+
+<h2 id="emontx-v3--esp8266-module">1. <strong>EmonTx V3</strong> + ESP8266 module</h2>
+
+<p>We are initially using the Adafruit HUZZAH ESP8266 module as a development platform. For anyone keen to get going with the ESP8266 Huzzah module it is available from a number of places such as <a href="https://www.adafruit.com/product/2471">adafruit</a> (USA) and <a href="https://shop.pimoroni.com/products/adafruit-huzzah-esp8266-breakout">Pimoroni</a> (UK). Any ESP8266 with ESP-12 module should work the same. See lower in the post for EmonESP firmware dev.</p>
+
+<p><img src="/images/emontx-esp.png" alt="image" /></p>
+
+<p>There will be another post very soon detailing how to use this module with the EmonTx v3.</p>
+
+
+    
+      <a class="btn pull-right" href="/2016/06/esp8266-emonesp-developments/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/auto-build-continuous-test-firmware/">Part 2/3: Firmware Continuous Test & Build</a>
   </h1>
   
@@ -1324,56 +1388,6 @@ $ sudo pio run -t upload
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">Part 1: Attempting to measure and understand the CO2 intensity of grid electricity</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-04-27T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April  27th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> five minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/community-smart-grid/'>community smart grid</a></li>
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/04/Understand-CO2-intensity-grid-electricity/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>Zero carbon energy scenarios such as <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> feature significant electrification of energy demands previously provided by fossil fuels such as heating and transport. With electrification it becomes possible to supply these energy demands with renewably generated electricity from primarily wind, solar and backed up by storage technologies from short term stores such as batteries to long term stores such as power to gas.</p>
-
-<p>We do not of course yet have a zero carbon grid. However there has been significant growth of renewable energy and a decline in coal generation in recent years.</p>
-
-<p>The CO2 emissions of demand side solutions such as heat pumps and electric vehicles are significantly affected by the co2 intensity of the supply but in many cases installing and using these technologies make sense at the UK’s present supply mix and can make more or less sense depending on how you calculate co2 intensity and where you assume the additional electricity required comes from.</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/04/Understand-CO2-intensity-grid-electricity/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1396,6 +1410,12 @@ $ sudo pio run -t upload
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/11/demand-side-response/">OpenEnergyMonitor DSR Development</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1448,12 +1468,6 @@ $ sudo pio run -t upload
       
         <li class="post">
           <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/02/myhomeenergyplanner/">MyHomeEnergyPlanner - open source home energy assessment</a>
         </li>
       
     
