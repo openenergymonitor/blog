@@ -74,7 +74,7 @@ GEM
       rake (~> 10.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
-      ffi ~> 1.9.24
+      ffi (>= 0.5.0)
     rdiscount (2.1.8)
     redcarpet (3.3.4)
     ref (2.0.0)
