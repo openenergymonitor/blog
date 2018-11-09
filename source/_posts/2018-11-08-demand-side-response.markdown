@@ -86,7 +86,7 @@ A limitation with the last approach where solar was not enough to complete the c
   
 <p>Another limitation of real-time DSR for hot water heating is that on a sunny day, the cylinder can heat up too quickly and so will then sit at a high temperature loosing heat for longer than it needs too. It may also result in larger ramp effects and strain on the grid if storage is filled during the morning leaving everyone’s solar systems to export through the afternoon.</p>
 <p>Leaving an EV at a high state of charge for a long time is also meant to cause a higher rate of battery degradation and so control strategies that bring the charging period as close to the time of use as possible may be particularly important.</p>
-<p>Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve, reducing ramp strain on the grid and reducing heat store loss and battery degradation.</p><p>
+<p>Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve, reducing ramp strain on the grid and reducing heat store loss and battery degradation.</p>
 
 </td><td style="width:35%">
 
