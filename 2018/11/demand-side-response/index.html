@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OpenEnergyMonitor DSR Development - Blog | OpenEnergyMonitor</title>
+    <title>OpenEnergyMonitor Demand Side Response Development - Blog | OpenEnergyMonitor</title>
     <meta name="author" content="Glyn Hudson">
     <meta name="description" content="OpenEnergyMonitor Blog">
     
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">
 
     <meta property="fb:app_id" content="">
-    <meta property="og:title" content="OpenEnergyMonitor DSR Development">
+    <meta property="og:title" content="OpenEnergyMonitor Demand Side Response Development">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
     <meta property="og:url" content="https://blog.openenergymonitor.org/2018/11/demand-side-response/">
     <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@openenergymon">
     
-    <meta name="twitter:title" content="OpenEnergyMonitor DSR Development">
+    <meta name="twitter:title" content="OpenEnergyMonitor Demand Side Response Development">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
@@ -636,7 +636,7 @@ $(document).ready(function(){ //alphabetically order list
   
   <header>
   
-  <h1 class="title indent">OpenEnergyMonitor DSR Development</h1>
+  <h1 class="title indent">OpenEnergyMonitor Demand Side Response Development</h1>
   
 
   
@@ -666,7 +666,7 @@ $(document).ready(function(){ //alphabetically order list
 
   <p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
-<p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/applications/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the <a href="https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762">EnergyLocal project</a>.</p>
+<p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/applications/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the <a href="https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762">EnergyLocal project</a>.</p>
 
 <a name="read-more"></a>
 
@@ -681,7 +681,7 @@ $(document).ready(function(){ //alphabetically order list
 
 <p>Household electricity demand such as lighting, computing, TV, cooking, fridge/freezer, washing have relatively low DSR potential, either due to the need for these demands to happen during times of occupancy (peak demand) or because these demands are relatively small.</p>
 
-<p>However as we move towards a zero carbon future, most scenarios suggest large scale electrification of transport and heat is needed alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps &amp; hot water storage have significant DSR potential.</p>
+<p>However as we move towards a zero carbon future, most scenarios suggest that large scale electrification of transport and heat is needed, alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps &amp; hot water storage have significant DSR potential.</p>
 
 <table><tr><td style="width:35%">
 
@@ -689,7 +689,7 @@ $(document).ready(function(){ //alphabetically order list
 
 </td><td>
 
-This screenshot from our work on modelling zero carbon energy systems <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
+This screenshot from our work on modelling zero carbon energy systems based on The Centre for Alternative Technologies ZeroCarbonBritain model <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
 <br /><br />
 <i>Dark blue: traditional household electricity demand (minus any heating), Red: heatpump demand with DSR, Green: EV demand with DSR, Blue: Electrolysis demand for synthetic fuels soaking up large excess capacity, Total: Wind and solar output.</i>
 
@@ -720,7 +720,7 @@ Savings made by using these tariffs can help payback expenditure on smart energy
 
 </td><td>
 
-Another approach to forecasting could be to use grid carbon intensity, weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
+Another approach to forecasting could be to use [grid carbon intensity](http://carbonintensity.org.uk/), weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
 <br /><br />
 Users keen to stay with their existing electricity suppliers e.g Ecotricity for Electric Highway EV charging benefits could still make use of scheduling to ensure demand happens at the best time from a carbon and limiting grid strain perspective.
 
@@ -756,6 +756,12 @@ Using a forecast and information on charge required could allow the control syst
 </td></tr></table>
 
 <p>Follow the development of this project and learn about our next steps on the forums.</p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Forum post: CydYnni, EnergyLocal Community hydro smart grid
+  <li><a href="https://github.com/emoncms/demandshaper">Github: Emoncms demand shaper module
+
+</a></li></a></li></ul>
 
       <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
     <br>
