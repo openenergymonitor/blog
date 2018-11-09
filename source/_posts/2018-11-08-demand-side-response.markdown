@@ -9,7 +9,7 @@ comments: true
 categories: emoncms
 ---
 
-![openevse leaf]({{site.image_path}}/leaf-openevse.jpg)
+![openevse leaf]({{site.image_path}}/emonevse-solarpv.jpeg)
 
 Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the [OpenEVSE charging station](https://guide.openenergymonitor.org/applications/ev-charging/). The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the [EnergyLocal project](https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762).
 
