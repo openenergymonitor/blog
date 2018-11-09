@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "OpenEnergyMonitor Demand Side Response Development"
+title: "Demand Side Response Development"
 date: "2018-11-08 18:48"
 date_formatted: Nov 11th 2018
 author: Trystan Lea
