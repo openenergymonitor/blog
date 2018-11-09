@@ -77,16 +77,16 @@ Users keen to stay with their existing electricity suppliers e.g Ecotricity for 
 The emonEVSE is our first product that implements automated DSR, designed to charge a connected electric vehicle acording to the available output from a solar PV array, it is an example of automated real-time DSR. A similar application and control strategy is PV diversion to hot water.</p>
 
 <p>2. <b>Combined real-time & later scheduled period</b><br>
-A real-time only control strategy is limited in the case that solar output in a given day does not charge the car up sufficiently for use later in the afternoon/evening or next day, or the hot water tank is not heated sufficiently for an evening/morning shower. In both of these cases a further period of charging will be needed. This could be achieved with a basic second charging period e.g overnight.</p>
+A real-time only control strategy is limited in the case that solar output in a given day does not charge the car up sufficiently for use later in the afternoon/evening or next day, or the hot water tank is not heated sufficiently for an evening/morning shower. In both of these cases a further period of charging will be needed. This could be achieved with a basic second charging period e.g boost charge before use or an overnight charge.</p>
 
 <p>To make both of these applications work well the control system needs to know when the user wishes to use the car or hot water and the state of charge or temperature target that needs to be reached.</p>
 
 <p>3. <b>Forecast based scheduling</b><br>
-A limitation of real-time DSR for hot water heating is that on a sunny day, the cylinder can heat up too quickly and so will then sit at a high temperature loosing heat for longer than it needs too. It may also result in larger ramp effects and strain on the grid if storage is filled during the morning leaving everyone’s solar systems to export through the afternoon. Leaving an EV at a high stage of charge for a long time is also meant to cause a higher rate of battery degredation and so control strategies that bring the charging period as close to the time of use as possible may be particularly important.</p>
-
-<p>
-Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve reducing ramp strain on the grid and reducing heat store loss and battery degradation.
-</p>
+A limitation with the last approach where solar was not enough to complete the charge or heat the tank directly is that the boost charge may happen at a time that is more expensive, or higher carbon. It may be better to charge at a higher rate through the middle of the day, importing power from the grid at that time, than importing during the evening peak. Integrating a solar forecast for the day ahead could predict if the charge will complete directly from the solar and if not proportionally increase the charge rate.</p>
+  
+<p>Another limitation of real-time DSR for hot water heating is that on a sunny day, the cylinder can heat up too quickly and so will then sit at a high temperature loosing heat for longer than it needs too. It may also result in larger ramp effects and strain on the grid if storage is filled during the morning leaving everyone’s solar systems to export through the afternoon.</p>
+<p>Leaving an EV at a high stage of charge for a long time is also meant to cause a higher rate of battery degredation and so control strategies that bring the charging period as close to the time of use as possible may be particularly important.</p>
+<p>Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve, reducing ramp strain on the grid and reducing heat store loss and battery degradation.</p><p>
 
 </td><td style="width:35%">
 
