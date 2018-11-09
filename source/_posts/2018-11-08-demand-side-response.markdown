@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "OpenEnergyMonitor DSR Development"
+title: "OpenEnergyMonitor Demand Side Response Development"
 date: "2018-11-08 18:48"
 date_formatted: Nov 11th 2018
 author: Trystan Lea
@@ -11,7 +11,7 @@ categories: emoncms
 
 ![openevse leaf]({{site.image_path}}/leaf-openevse.jpg)
 
-Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the [OpenEVSE charging station](https://guide.openenergymonitor.org/applications/ev-charging/). The OpenEVSE implements real-time DSR but would benefit from integration with the forecasting and scheduling approaches being developed as part of our involvement in the [EnergyLocal project](https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762).
+Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the [OpenEVSE charging station](https://guide.openenergymonitor.org/applications/ev-charging/). The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the [EnergyLocal project](https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762).
 
 <!--more-->
 
@@ -24,7 +24,7 @@ DSR: Demand Side Response is the idea of moving demand to
 
 Household electricity demand such as lighting, computing, TV, cooking, fridge/freezer, washing have relatively low DSR potential, either due to the need for these demands to happen during times of occupancy (peak demand) or because these demands are relatively small.
 
-However as we move towards a zero carbon future, most scenarios suggest large scale electrification of transport and heat is needed alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps & hot water storage have significant DSR potential.
+However as we move towards a zero carbon future, most scenarios suggest that large scale electrification of transport and heat is needed, alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps & hot water storage have significant DSR potential.
 
 <table><tr><td style="width:35%">
 
@@ -32,7 +32,7 @@ However as we move towards a zero carbon future, most scenarios suggest large sc
 
 </td><td>
 
-This screenshot from our work on modelling zero carbon energy systems <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
+This screenshot from our work on modelling zero carbon energy systems based on The Centre for Alternative Technologies ZeroCarbonBritain model <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
 <br><br>
 <i>Dark blue: traditional household electricity demand (minus any heating), Red: heatpump demand with DSR, Green: EV demand with DSR, Blue: Electrolysis demand for synthetic fuels soaking up large excess capacity, Total: Wind and solar output.</i>
 
@@ -63,7 +63,7 @@ Savings made by using these tariffs can help payback expenditure on smart energy
 
 </td><td>
 
-Another approach to forecasting could be to use grid carbon intensity, weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
+Another approach to forecasting could be to use [grid carbon intensity](http://carbonintensity.org.uk/), weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
 <br><br>
 Users keen to stay with their existing electricity suppliers e.g Ecotricity for Electric Highway EV charging benefits could still make use of scheduling to ensure demand happens at the best time from a carbon and limiting grid strain perspective.
 
@@ -99,3 +99,8 @@ Using a forecast and information on charge required could allow the control syst
 </td></tr></table>
 
 <p>Follow the development of this project and learn about our next steps on the forums.</p>
+
+<ul>
+  <li><a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Forum post: CydYnni, EnergyLocal Community hydro smart grid</li>
+  <li><a href="https://github.com/emoncms/demandshaper">Github: Emoncms demand shaper module</li>
+</ul>
