@@ -28,17 +28,22 @@ However as we move towards a zero carbon future, most scenarios suggest that lar
 
 <table><tr><td style="width:35%">
 
-<img src="https://blog.openenergymonitor.org/images/energymodel.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/energymodel.png">
+  <img src="https://blog.openenergymonitor.org/images/energymodel.png" style="width:276px" />
+</a>
+
 
 </td><td>
 
-This screenshot from our work on modelling zero carbon energy systems based on The Centre for Alternative Technologies ZeroCarbonBritain model <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
+This screenshot from our work on modelling zero carbon energy systems based on The Centre for Alternative Technologies ZeroCarbonBritain model <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
 <br><br>
 <i>Dark blue: traditional household electricity demand (minus any heating), Red: heatpump demand with DSR, Green: EV demand with DSR, Blue: Electrolysis demand for synthetic fuels soaking up large excess capacity, Total: Wind and solar output.</i>
 
 </td></tr><tr><td>
 
-<img src="https://blog.openenergymonitor.org/images/cydynni.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/cydynni.png">
+   <img src="https://blog.openenergymonitor.org/images/cydynni.png" style="width:276px" />
+</a>
 </td><td>
 
 Energy local are pioneering community energy aggregation tariffs with both time of use pricing and pricing based on availability of a local renewable energy generator. A household with loads suitable for DSR can lower their electricity cost and use a greater amount of local power by shifting their demand to better times.
@@ -47,7 +52,9 @@ EnergyLocal provide a day ahead forecast that can be used to schedule appliances
 
 </td></tr><tr><td>
 
-<img src="https://blog.openenergymonitor.org/images/octopus.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/octopus.png">
+   <img src="https://blog.openenergymonitor.org/images/octopus.png" style="width:276px" />
+</a>
 
 </td><td>
 
@@ -59,7 +66,9 @@ Savings made by using these tariffs can help payback expenditure on smart energy
 
 </td></tr><tr><td>
 
-<img src="https://blog.openenergymonitor.org/images/gridcarbon.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/gridcarbon.png">
+   <img src="https://blog.openenergymonitor.org/images/gridcarbon.png" style="width:276px" />
+</a>
 
 </td><td>
 
@@ -90,11 +99,15 @@ A limitation with the last approach where solar was not enough to complete the c
 
 </td><td style="width:35%">
 
-<img src="https://blog.openenergymonitor.org/images/solardivert.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/solardivert.png">
+   <img src="https://blog.openenergymonitor.org/images/solardivert.png" style="width:276px" />
+</a>
 
 <br><br><br><br><br><br><br><br><br><br>
 
-<img src="https://blog.openenergymonitor.org/images/scheduler.png" style="width:276px" />
+<a href="https://blog.openenergymonitor.org/images/scheduler.png">
+   <img src="https://blog.openenergymonitor.org/images/scheduler.png" style="width:276px" />
+</a>
 
 </td></tr></table>
 
