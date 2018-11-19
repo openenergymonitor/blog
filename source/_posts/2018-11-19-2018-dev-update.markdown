@@ -1,0 +1,91 @@
+---
+published: true
+layout: post
+title: "2018 Development Review"
+date: "2018-11-08 18:48"
+date_formatted: Nov 19th 2018
+author: Trystan Lea
+comments: true
+categories: development
+---
+
+We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  [OpenEnergyMonitor goals 2018/2019](https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576). This post is an update on the progress made before outlining the new development plan in a separate post.
+
+Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.
+
+<!--more-->
+
+## Emoncms
+
+The last 10 months have seen a lot of emoncms development. Thank you to everyone who helped push things forward. @anna_carboncoop , @thib66, @cagabi, @borpin , @pb66, @paul. @CDuffy , @bruce_miranda , @Bill.Thomson
+
+Some of the highlights include:
+
+- JSON support in phpmqtt_input, by @borpin [#776](https://github.com/emoncms/emoncms/pull/776)
+- [Task module](https://github.com/emoncms/task) development & new input processors by @cagabi [#818](https://github.com/emoncms/emoncms/pull/818)
+- Ongoing localisation and translation work by @thib66
+- Improved support for SQL feed engine @isfh-ohrdes [#805](https://github.com/emoncms/emoncms/pull/805)
+- [Sync module](http://github.com/emoncms/sync) for easier data export from emoncms.org
+- Email verification and account deletion feature
+- Feature to trim or clear feed data, alongside deletion @emrys
+- A lot of bug fixing and interface improvements to inputs and feed list @emrys
+- Device module development @Adminde
+- Input process list refactor @emrys @TrystanLea
+- DB schema creation and update refactor @anna_carboncoop [#930](https://github.com/emoncms/emoncms/pull/930)
+- Python based service runner @Greebo [#1025](https://github.com/emoncms/emoncms/pull/1025)
+- Modular implementation of Apps module @Adminde [#53](https://github.com/emoncms/app/pull/53)
+- Dashboard module improvements: anti-xss filter, dashboard html access, [tag:name support](https://community.openenergymonitor.org/t/portable-emoncms-dashboards-looking-for-testers/6870).
+- Ongoing [groups module development](http://github.com/emoncms/group) @cagabi @anna_carboncoop
+
+A key goal outlined in the last planning update was to complete the integration of the device module developments into emoncms. The device-integration branches are now included in the latest version of emoncms and the device module. The new input and feed interfaces are accessible via a beta testing switch. Thanks to @Adminde for all of his work on the device module and @emrys for his help working through a long list of improvements to the input and feed list views.
+
+Forum post: [Using the new emoncms device module integration](https://community.openenergymonitor.org/t/using-the-new-emoncms-device-module-integration/8253)
+Forum post: [Emoncms v9.9.0+ release notes](https://community.openenergymonitor.org/t/emoncms-v9-9-0-release-notes/8934)
+Forum post: [V9.9.0: Migrating to the new systemd+python service-runner](https://community.openenergymonitor.org/t/v9-9-0-migrating-to-the-new-systemd-python-service-runner/8950)
+
+## Emoncms.org
+
+Thank you to everyone who has supported us and bought emoncms.org credit so far. Billing went live on the 1st of July, considerable work went into linking the shop to emoncms.org (thanks @gwil), the billing view and functionality for linking multiple accounts. We are currently working through the final steps of the billing implementation, primarily removing inactive accounts and disabling posting if the balance is negative for more than a month.
+
+In addition to billing, work has been done on bringing the emoncms.org and standard emoncms code base closer together. In particular the input processing code, a requirement for installing the device module and making the new input interface available on emoncms.org, which are both now live.
+
+The support we have had through credit purchases has enabled us to welcome a new member to our team @emrys, who has been a great help on emoncms development since joining us in April.
+
+Forum post: [Emoncms.org billing](https://community.openenergymonitor.org/t/emoncms-org-billing/7187)
+
+## EmonSD Image & Hub software stack
+
+We have recently released our latest emonSD image:
+
+- Latest Raspbian Stretch
+- RaspberryPi 3B+ compatible
+- Root file-system is now fully read-write (although low-write developments are maintained).
+- SSH disabled by default (push button or boot partition file enable)
+
+Full details, release notes and download link can be found here: [emonSD-30Oct18](https://community.openenergymonitor.org/t/new-emonsd-release-emonsd-30oct18-raspbian-stretch-pi3b-compatible/9005).
+
+## Hardware & Firmware
+
+- @Robert.Wall released a complete rewrite of the [emontx 3phase firmware](https://github.com/openenergymonitor/emontx-3phase) earlier in the year to use PLL.
+- Testing and development has been ongoing for EmonLibCM, thanks again to @Robert.Wall
+- EmonTx v3.4.3 release, see [change log](https://github.com/openenergymonitor/emontx3/blob/master/hardware/readme.md#v343).
+- Decision was made to postpone integration of heat pump monitor MBUS reader (which was listed on the February plan)  for inclusion in STM32 based future hardware development.
+
+Although not in the original plan we also made good initial progress on STM32 development this year following the [OpenEnergyMonitor March meetup](https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847). We plan on building on this in the coming year, more detail in the next post.
+
+ ## EmonEVSE & Demand side response
+
+The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at [Fully Charged Live Event](https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256) earlier in the year. The EmonEVSE is now available in our web store:
+
+https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/
+
+EmonEVSE currently integrates with EmonPi to provide solar PV divert functionality and Emoncms data logging. Work is underway to integrate EmonEVSE with smart energy tariffs and to make scheduling of charging sessions at times of low carbon intensity easier. See [Demand Side Response Development](https://blog.openenergymonitor.org/2018/11/demand-side-response/) blog post and forum posts on [demandshaper module](https://community.openenergymonitor.org/t/emoncms-demand-shaper-module/9097) and [EmonESP Sonoff S20 SmartPlug](https://community.openenergymonitor.org/t/running-emonesp-on-the-sonoff-s20-smart-plug/9096) firmware.
+
+---
+Looking forward to pushing things further in the remainder of 2018 and into the new year.
+
+Trystan & Glyn
+
+*[Development plan forum post.](https://community.openenergymonitor.org/t/oem-development-plan-outline/9210)*
+
+*[Development update form post.](https://community.openenergymonitor.org/t/2018-development-progress-update)*

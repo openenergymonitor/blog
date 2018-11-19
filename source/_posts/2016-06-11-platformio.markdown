@@ -74,6 +74,8 @@ Here are some things that have impressed me about PlatformIO (pio) after using i
   - Integration with TravisCI to enable compilation, code testing and binary (.hex / .bin) release generation in the cloud.
    - [emonPi](http://github.com/openenergymonitor/emonpi/) and [emonTx](github.com/openenergymonitor/emonTxFirmware) git repos are now enabled for continous-testing and auto binary generation on release tag...this is a step change in embedded development.
 
+<!--more-->
+
 ***
 
 
@@ -124,14 +126,14 @@ The first time platformIO is run it will ask to install the required libraries (
 e.g.
 
 ```
-lib_deps = 
+lib_deps =
   DallasTemperature @3.7.7
   EmonLib
   JeeLib@c057b5f4c0
 ```
-Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.) 
+Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.)
 
-The latest version of the libraries are automatically cloned from their native git repos into the `.piolibdeps` folder in the project dir. 
+The latest version of the libraries are automatically cloned from their native git repos into the `.piolibdeps` folder in the project dir.
 
 ### 3. Upload using PlatformIO
 
