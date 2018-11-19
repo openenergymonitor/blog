@@ -633,6 +633,48 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2015/02/rfm69cw-power-consumption/">RFM69CW Power Consumption </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-02-23T13:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-23 13:33:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/rfm69/'>RFM69</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/02/rfm69cw-power-consumption/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Following on from my <a href="http://openenergymonitor.blogspot.co.uk/2013/07/new-oscilloscope.html">post on RFM12B power consumption</a>&nbsp;here's the same measurements for the RFM69CW&nbsp;(<a href="http://openenergymonitor.blogspot.com/2014/12/introducing-rfm69cw.html">see RFM69CW intro blog post</a>).<br /><br />Current consumption was measured in the same way as explained in the RFM12B post back in July 2013. Voltage drop was measured across 10R current shunt resistor.<br /><br />A fully populated emonTx V3.4 with a 433Mhz RFM69CW running <a href="https://github.com/openenergymonitor/emonTxFirmware/blob/master/emonTxV3/RFM69CW/emonTxV3_RFM69CW_DiscreteSampling/emonTxV3_RFM69CW_DiscreteSampling.ino">discrete sampling code </a>with a single CT connected was used in the test. The V3.4 was powered directly with 3.3V DC from bench PSU.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-Fd6jJ1pPs_Q/VOslVFb2wcI/AAAAAAABERs/9c_dVWli9RY/s1600/IMG_5110.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3.4 with RFM69CW Test Setup</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test setup illustration</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-E_hA9Q7-fBQ/VOslVPS7eaI/AAAAAAABERw/xVOh1YMwvko/s1600/IMG_5111.JPG" height="266" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Test Bench</td></tr></tbody></table><i>Please excuse my photos of the scope traces rather than screen captures, for some reason the USB socket on the scope did not seem to be working today :-(</i><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-2Wu2PorjbP8/VOslZpRnB8I/AAAAAAABER8/Grnnv8rGeLM/s1600/IMG_5115.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Full sample and RFM69CW transmit trace capture</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">When an AC-AC adapter is not connected the emonTx goes to sleep in between readings. The above current trace shows the ATmega328 waking up for 295ms to sample from one CT channel the spike at the end is the RFM69CW transmitting. The trace below is a zoomed in capture of the RFM69CW transmission and LED.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-DAqTgCapHTI/VOslSJ_D4TI/AAAAAAABERc/BdFk7ecxuyw/s1600/IMG_5114.JPG" height="426" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFM69CW transmission current consumption&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><b>The current trace above shows the RFM69CW transmission: 33mA @ 3.3V&nbsp;(109mW) for 4ms. The current spike at the end (up to 39mA) is the emonTx LED. </b>In this test the emonTx was running the standard discrete sampling firmware transmitting a JeeLib packet structure with six integers. Since we were only sampling from one CT four out of the five integers will be zero.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This equates to a 15 bytes payload plus 9 byte overhead&nbsp;@ 48kb/s. See J<a href="http://jeelabs.org/2011/06/09/rf12-packet-format-and-design/">eeLib packet structure</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In comparison I measured the RFM12B to consume 25.5mA @ 3.3V (84.2mW)&nbsp;for 3ms.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My measurements pretty much agree with the datasheets, here's a comparison table compiled by Low Power Labs:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="142" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2Fopenenergymonitor.org%2Femon%2Fsites%2Fdefault%2Ffiles%2FSelection_081.jpg&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Even though the RFM69CW does consume more power while it's transmitting it does have a lower sleep consumption than the RFM12B. This increased transmission power should result in an increased transmission range.</div><br />I've started a forum thread for discussion:&nbsp;<a href="http://openenergymonitor.org/emon/node/10210">http://openenergymonitor.org/emon/node/10210</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/02/introducing-rfm69pi-v3-raspberry-pi/">Introducing RFM69Pi V3 Raspberry Pi Expansion Board</a>
   </h1>
   
@@ -990,48 +1032,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/10/emonhub-installationupdate-replacing/">Emonhub installation/update, replacing the PHP raspberrypi emoncms module</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-10-24T10:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-10-24 10:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/10/emonhub-installationupdate-replacing/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    From Paul Reed's post on the forums here: <br /><a href="http://openenergymonitor.org/emon/node/5986">http://openenergymonitor.org/emon/node/5986</a><br /><br />Emonhub is now the recommended method of interfacing a rfm12pi to a local or remote emoncms install, and replaces the PHP and Python scripts which we have previously used.<br /><br /><i>Update: This blog post refers to installing emonHub on existing system, if setting up a new system <a href="https://github.com/emoncms/emoncms/blob/bufferedwrite/docs/setup.md">downloading the ready-to-go pre-built RaspberryPi image</a> is the easiest way to get started.</i><br /><br />Thanks to Paul Burnell, the author of emonhub, installation of emonhub can be achieved via a command line, which clones an installation script to automate the installation process. <br /><br />To install emonhub:<br /><br />$ git clone <a href="https://github.com/emonhub/dev-emonhub.git">https://github.com/emonhub/dev-emonhub.git</a> ~/dev-emonhub &amp;&amp; ~/dev-emonhub/install<br /><br />If you have the raspberry pi module already installed, it's important that it is removed prior to installing emonhub, as only one software can use the serial UART the RFM2Pi is connected to at any one time.<br /><br />To remove the existing module, and then install emonhub, enter the following command line;  <br /><br />$ git clone <a href="https://github.com/emonhub/dev-emonhub.git">https://github.com/emonhub/dev-emonhub.git</a> ~/dev-emonhub &amp;&amp; ~/dev-emonhub/upgrade<br /><br />You will notice that after running this command, that emoncms will stop updating, this is expected until the configuration file is updated as follows;  <br /><br />$ nano /etc/emonhub/emonhub.conf<br /><br />Enter your emoncms read/write api key in [[[runtimesettings]]] and also enter your rfm2pi frequency, group &amp; base id under [[[runtimesettings]]] <br />Save your settings, and; $ sudo service emonhub restart<br /><br />Problems?<br />View the error log; $ tail -f /var/log/emonhub/emonhub.log<br /><br />By default this is set to record 'WARNING', however this can be changed to either - DEBUG, INFO, WARNING, ERROR, and CRITICAL by editing the configuration file. <br /><br />Paul <br /><br /><b>NOTE - </b>This update will not orphan or alter your input processes, feeds, visualizations or feed data, as it only changes the way in which data is fed to emoncms. 
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1054,6 +1054,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1106,12 +1112,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
         </li>
       
     
@@ -1336,6 +1336,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/dashboard/">dashboard
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/development/">development
         </a>
       </li>
     

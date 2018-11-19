@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firmware | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/firmware/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-11-09T15:52:38+00:00</updated>
+  <updated>2018-11-19T15:34:55+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -275,6 +275,8 @@ deploy:
   </li>
 </ul>
 
+<!--more-->
+
 <hr />
 
 <h2 id="example-compiling-emontx--emonpi-firmware">Example: Compiling emonTx / emonPi firmware</h2>
@@ -323,7 +325,7 @@ cd emonpi/firmware
 
 <p>e.g.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps = 
+<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps =
   DallasTemperature @3.7.7
   EmonLib
   JeeLib@c057b5f4c0

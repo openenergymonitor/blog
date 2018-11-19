@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-11-09T15:52:38+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Demand Side Response Development</title><link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/" rel="alternate" type="text/html" title="Demand Side Response Development" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/demand-side-response/">&lt;p&gt;&lt;img src=&quot;/images/emonevse-solarpv.jpeg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2018-11-19T15:34:55+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>2018 Development Review</title><link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/" rel="alternate" type="text/html" title="2018 Development Review" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">&lt;p&gt;We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576&quot;&gt;OpenEnergyMonitor goals 2018/2019&lt;/a&gt;. This post is an update on the progress made before outlining the new development plan in a separate post.&lt;/p&gt;
+
+&lt;p&gt;Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;emoncms&quot;&gt;Emoncms&lt;/h2&gt;
+
+&lt;p&gt;The last 10 months have seen a lot of emoncms development. Thank you to everyone who helped push things forward. @anna_carboncoop , @thib66, @cagabi, @borpin , @pb66, @paul. @CDuffy , @bruce_miranda , @Bill.Thomson&lt;/p&gt;
+
+&lt;p&gt;Some of the highlights include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON support in phpmqtt_input, by @borpin &lt;a href=&quot;https://github.com/emoncms/emoncms/pull/776&quot;&gt;#776&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/emoncms/task&quot;&gt;Task module&lt;/a&gt; development &amp;amp; new input processors by @cagabi &lt;a href=&quot;https://github.com/emoncms/emoncms/pull/818&quot;&gt;#818&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ongoing localisation and translation work by @thib66&lt;/li&gt;
+  &lt;li&gt;Improved support for SQL feed engine @isfh-ohrdes &lt;a href=&quot;https://github.com/emoncms/emoncms/pull/805&quot;&gt;#805&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://github.com/emoncms/sync&quot;&gt;Sync module&lt;/a&gt; for easier data export from emoncms.org&lt;/li&gt;
+  &lt;li&gt;Email verification and account deletion feature&lt;/li&gt;
+  &lt;li&gt;Feature to trim or clear feed data, alongside deletion @emrys&lt;/li&gt;
+  &lt;li&gt;A lot of bug fixing and interface improvements to inputs and feed list @emrys&lt;/li&gt;
+  &lt;li&gt;Device module development @Adminde&lt;/li&gt;
+  &lt;li&gt;Input process list refactor @emrys @TrystanLea&lt;/li&gt;
+  &lt;li&gt;DB schema creation and update refactor @anna_carboncoop &lt;a href=&quot;https://github.com/emoncms/emoncms/pull/930&quot;&gt;#930&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Python based service runner @Greebo &lt;a href=&quot;https://github.com/emoncms/emoncms/pull/1025&quot;&gt;#1025&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Modular implementation of Apps module @Adminde &lt;a href=&quot;https://github.com/emoncms/app/pull/53&quot;&gt;#53&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dashboard module improvements: anti-xss filter, dashboard html access, &lt;a href=&quot;https://community.openenergymonitor.org/t/portable-emoncms-dashboards-looking-for-testers/6870&quot;&gt;tag:name support&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Ongoing &lt;a href=&quot;http://github.com/emoncms/group&quot;&gt;groups module development&lt;/a&gt; @cagabi @anna_carboncoop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A key goal outlined in the last planning update was to complete the integration of the device module developments into emoncms. The device-integration branches are now included in the latest version of emoncms and the device module. The new input and feed interfaces are accessible via a beta testing switch. Thanks to @Adminde for all of his work on the device module and @emrys for his help working through a long list of improvements to the input and feed list views.&lt;/p&gt;
+
+&lt;p&gt;Forum post: &lt;a href=&quot;https://community.openenergymonitor.org/t/using-the-new-emoncms-device-module-integration/8253&quot;&gt;Using the new emoncms device module integration&lt;/a&gt;
+Forum post: &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-v9-9-0-release-notes/8934&quot;&gt;Emoncms v9.9.0+ release notes&lt;/a&gt;
+Forum post: &lt;a href=&quot;https://community.openenergymonitor.org/t/v9-9-0-migrating-to-the-new-systemd-python-service-runner/8950&quot;&gt;V9.9.0: Migrating to the new systemd+python service-runner&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;emoncmsorg&quot;&gt;Emoncms.org&lt;/h2&gt;
+
+&lt;p&gt;Thank you to everyone who has supported us and bought emoncms.org credit so far. Billing went live on the 1st of July, considerable work went into linking the shop to emoncms.org (thanks @gwil), the billing view and functionality for linking multiple accounts. We are currently working through the final steps of the billing implementation, primarily removing inactive accounts and disabling posting if the balance is negative for more than a month.&lt;/p&gt;
+
+&lt;p&gt;In addition to billing, work has been done on bringing the emoncms.org and standard emoncms code base closer together. In particular the input processing code, a requirement for installing the device module and making the new input interface available on emoncms.org, which are both now live.&lt;/p&gt;
+
+&lt;p&gt;The support we have had through credit purchases has enabled us to welcome a new member to our team @emrys, who has been a great help on emoncms development since joining us in April.&lt;/p&gt;
+
+&lt;p&gt;Forum post: &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-org-billing/7187&quot;&gt;Emoncms.org billing&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;emonsd-image--hub-software-stack&quot;&gt;EmonSD Image &amp;amp; Hub software stack&lt;/h2&gt;
+
+&lt;p&gt;We have recently released our latest emonSD image:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Latest Raspbian Stretch&lt;/li&gt;
+  &lt;li&gt;RaspberryPi 3B+ compatible&lt;/li&gt;
+  &lt;li&gt;Root file-system is now fully read-write (although low-write developments are maintained).&lt;/li&gt;
+  &lt;li&gt;SSH disabled by default (push button or boot partition file enable)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Full details, release notes and download link can be found here: &lt;a href=&quot;https://community.openenergymonitor.org/t/new-emonsd-release-emonsd-30oct18-raspbian-stretch-pi3b-compatible/9005&quot;&gt;emonSD-30Oct18&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;hardware--firmware&quot;&gt;Hardware &amp;amp; Firmware&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;@Robert.Wall released a complete rewrite of the &lt;a href=&quot;https://github.com/openenergymonitor/emontx-3phase&quot;&gt;emontx 3phase firmware&lt;/a&gt; earlier in the year to use PLL.&lt;/li&gt;
+  &lt;li&gt;Testing and development has been ongoing for EmonLibCM, thanks again to @Robert.Wall&lt;/li&gt;
+  &lt;li&gt;EmonTx v3.4.3 release, see &lt;a href=&quot;https://github.com/openenergymonitor/emontx3/blob/master/hardware/readme.md#v343&quot;&gt;change log&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Decision was made to postpone integration of heat pump monitor MBUS reader (which was listed on the February plan)  for inclusion in STM32 based future hardware development.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although not in the original plan we also made good initial progress on STM32 development this year following the &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847&quot;&gt;OpenEnergyMonitor March meetup&lt;/a&gt;. We plan on building on this in the coming year, more detail in the next post.&lt;/p&gt;
+
+&lt;p&gt;## EmonEVSE &amp;amp; Demand side response&lt;/p&gt;
+
+&lt;p&gt;The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at &lt;a href=&quot;https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256&quot;&gt;Fully Charged Live Event&lt;/a&gt; earlier in the year. The EmonEVSE is now available in our web store:&lt;/p&gt;
+
+&lt;p&gt;https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/&lt;/p&gt;
+
+&lt;p&gt;EmonEVSE currently integrates with EmonPi to provide solar PV divert functionality and Emoncms data logging. Work is underway to integrate EmonEVSE with smart energy tariffs and to make scheduling of charging sessions at times of low carbon intensity easier. See &lt;a href=&quot;https://blog.openenergymonitor.org/2018/11/demand-side-response/&quot;&gt;Demand Side Response Development&lt;/a&gt; blog post and forum posts on &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-demand-shaper-module/9097&quot;&gt;demandshaper module&lt;/a&gt; and &lt;a href=&quot;https://community.openenergymonitor.org/t/running-emonesp-on-the-sonoff-s20-smart-plug/9096&quot;&gt;EmonESP Sonoff S20 SmartPlug&lt;/a&gt; firmware.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Looking forward to pushing things further in the remainder of 2018 and into the new year.&lt;/p&gt;
+
+&lt;p&gt;Trystan &amp;amp; Glyn&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/oem-development-plan-outline/9210&quot;&gt;Development plan forum post.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/2018-development-progress-update&quot;&gt;Development update form post.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  OpenEnergyMonitor goals 2018/2019. This post is an update on the progress made before outlining the new development plan in a separate post.
+
+Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</summary></entry><entry><title>Demand Side Response Development</title><link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/" rel="alternate" type="text/html" title="Demand Side Response Development" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/demand-side-response/">&lt;p&gt;&lt;img src=&quot;/images/emonevse-solarpv.jpeg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the &lt;a href=&quot;https://guide.openenergymonitor.org/applications/ev-charging/&quot;&gt;OpenEVSE charging station&lt;/a&gt;. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the &lt;a href=&quot;https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762&quot;&gt;EnergyLocal project&lt;/a&gt;.&lt;/p&gt;
 
@@ -542,140 +629,4 @@ The lovely folks at the Raspberry Pi foundation have published a blog post about
 
 Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi
 
-The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</summary></entry><entry><title>emonPi as a Home Automation Hub</title><link href="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/" rel="alternate" type="text/html" title="emonPi as a Home Automation Hub" /><published>2017-05-05T00:00:00+00:00</published><updated>2017-05-05T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/05/emonpi-mqtt-googlehome/">&lt;p&gt;I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.&lt;/p&gt;
-
-&lt;p&gt;As &lt;a href=&quot;2016/08/ecohomelab-control/&quot;&gt; previously mentioned in a blog post&lt;/a&gt;, the emonPi (&lt;a href=&quot;github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;amp;-Change-Log&quot;&gt;running emonSD pre-built SD card&lt;/a&gt;) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It’s already running 24/7 for energy monitoring&lt;/li&gt;
-  &lt;li&gt;It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan&lt;/li&gt;
-  &lt;li&gt;It’s already connected to your local network&lt;/li&gt;
-  &lt;li&gt;It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available&lt;/li&gt;
-  &lt;li&gt;Raspberry Pi 3 has plenty of space capacity&lt;/li&gt;
-  &lt;li&gt;Extra radios / accessories can be connected via USB&lt;/li&gt;
-  &lt;li&gt;It’s already running an MQTT server&lt;/li&gt;
-  &lt;li&gt;emonSD pre-built SD card comes pre loaded with the following &lt;a href=&quot;guide.openenergymonitor.org/integrations&quot;&gt;integrations&lt;/a&gt; nodeRED, OpenHAB and LightWaveRF&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In this post I want to share with you how I use the emonPi in my own home.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Here is a video demo using Google Home to control my central heating and devices via MQTT:&lt;/p&gt;
-
-&lt;div class=&quot;videoWrapper&quot;&gt;
-&lt;iframe width=&quot;280&quot; height=&quot;157&quot; src=&quot;https://www.youtube.com/embed/r_v4GXVp0OI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Read on to learn how this is achieved using an emonPi and open-source software…&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;There are many many options when it comes to home automation and control. Where possible I prefer open-source solutions which do not depend on any third-party services. All the software services for my home system as I describe in this post runs locally on my emonPi and apart from Google Home voice integration does not require an internet connection to function. A self-hosted open-source solution has the added benefit of increased privacy and security which you are in fully in control of.&lt;/p&gt;
-
-&lt;h2 id=&quot;mqtt&quot;&gt;MQTT&lt;/h2&gt;
-
-&lt;p&gt;MQTT lightweight communication protocol is used as the ‘glue’ communication layer between all the following services. See &lt;a href=&quot;https://guide.openenergymonitor.org/technical/mqtt/&quot;&gt;technical/MQTT section of the User Guide&lt;/a&gt; for more info about how MQTT works on the emonPi.&lt;/p&gt;
-
-&lt;h2 id=&quot;energy-monitoring&quot;&gt;Energy Monitoring&lt;/h2&gt;
-
-&lt;p&gt;Emoncms…obviously!&lt;/p&gt;
-
-&lt;p&gt;Recently I have been loving using the V2 Emoncms Android app (currently in beta) which supports multiple pages (see &lt;a href=&quot;https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-1-open-beta-testing/3373&quot;&gt;forum thread&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Video demo Emoncms Android app V2 beta:&lt;/p&gt;
-
-&lt;div class=&quot;videoWrapper&quot;&gt;
-&lt;iframe width=&quot;280&quot; height=&quot;157&quot; src=&quot;https://www.youtube.com/embed/LaTi-l9tVQM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on &lt;a href=&quot;https://emoncms.org&quot;&gt;Emoncms.org&lt;/a&gt;. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see &lt;a href=&quot;https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3&quot;&gt;forum thread&lt;/a&gt;):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/myelectric-e7.png&quot; alt=&quot;myelectric-e7.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;control&quot;&gt;Control&lt;/h2&gt;
-
-&lt;h3 id=&quot;central-heating&quot;&gt;Central Heating&lt;/h3&gt;
-
-&lt;p&gt;To control my gas central heating boiler I use an &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/mqtt-relay/&quot;&gt;MQTT WiFi relay&lt;/a&gt; which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/mqtt-relay-overview.png&quot; alt=&quot;mqtt-relay-overview.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;plug-sockets-lights&quot;&gt;Plug sockets (lights)&lt;/h3&gt;
-
-&lt;p&gt;I use LightWave RF plugs to which I have lights and other entertainment devices connected e.g. stereo and chromecast. Being able to switch a whole plug bank on/off has the advantage of being able to turn devices fully off when not in use to minimise any &lt;a href=&quot;https://en.wikipedia.org/wiki/Standby_power&quot;&gt;vampire drain&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/lightwaverf&quot;&gt;LightWave RF emonPi User Guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/lightwave-rf-diagram.png&quot; alt=&quot;lightwave-rf-diagram.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to &lt;a href=&quot;https://www.itead.cc/smart-socket.html&quot;&gt;ESp8266 based Sonoff plug&lt;/a&gt; with third party &lt;a href=&quot;https://github.com/arendst/Sonoff-Tasmota&quot;&gt;MQTT firmware&lt;/a&gt; or &lt;a href=&quot;https://github.com/openenergymonitor/emonesp&quot;&gt;EmonESP&lt;/a&gt; firmware.&lt;/p&gt;
-
-&lt;h2 id=&quot;interface&quot;&gt;Interface&lt;/h2&gt;
-
-&lt;p&gt;For the past few years I have been using OpenHAB as the control interface. &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/openhab&quot;&gt;OpenHAB is pre-loaded onto the emonPi emonSD pre-built image&lt;/a&gt;. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/open-hab-home.png&quot; alt=&quot;open-hab-home.png&quot; /&gt;&lt;img src=&quot;/images/open-hab-all.png&quot; alt=&quot;open-hab-all.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;OpenHAB also &lt;a href=&quot;https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps&quot;&gt;integrates with my Pebble smartwatch&lt;/a&gt; which makes it super easy to turn on/off the heating while out and about:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openhab-pebble.jpg&quot; alt=&quot;openhab-pebble&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A while back (early 2016) I dabbled with &lt;a href=&quot;http://home-assistant.io/&quot;&gt;HomeAssistant&lt;/a&gt;, (&lt;a href=&quot;https://blog.openenergymonitor.org/2016/04/Home-Assistant/&quot;&gt;see blog post&lt;/a&gt;). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.&lt;/p&gt;
-
-&lt;p&gt;Another option for an interface is &lt;a href=&quot;https://github.com/node-red/node-red-dashboard&quot;&gt;NodeRED Dashboard&lt;/a&gt; which is now officially part of the NodeRED project.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;The beauty of MQTT is that it’s platform agnostic, it’s possible to have many different interfaces controlling the same control nodes.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;voice-interface&quot;&gt;Voice interface&lt;/h3&gt;
-
-&lt;p&gt;I’ve recently acquired a Google Home voice activated speaker, with a little help from &lt;a href=&quot;https://github.com/bwssytems/ha-bridge&quot;&gt;ha-bridge&lt;/a&gt; to emulate a Philips Hue bridge it’s quite easy to get Google Home to control local devices via MQTT. The same setup will also work with Amazon Echo. See &lt;a href=&quot;https://github.com/openenergymonitor/emonpi-ha-bridge&quot;&gt;ha-bridge setup guide for emonPi&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See video demo at the top of this post.&lt;/p&gt;
-
-&lt;p&gt;Device config using ha-bridge webpage GUI:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ha-bridge-device-config.png&quot; alt=&quot;ha-bridge-device-config.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Google Home app setup:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/google-home-app.png&quot; alt=&quot;google-home-app.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;integration--automation&quot;&gt;Integration &amp;amp; Automation&lt;/h2&gt;
-
-&lt;p&gt;I use &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/nodered&quot;&gt;NodeRED which is pre-loaded on emonPi / emonSD&lt;/a&gt; to integrate with other services such a getting the latest outdoor temperature from &lt;a href=&quot;https://www.wunderground.com/&quot;&gt;Weather Underground&lt;/a&gt;, send push notifications (heating on / off temperature alert) to my phone using &lt;a href=&quot;https://pushover.net/&quot;&gt;Pushover&lt;/a&gt;. Both these services have pre-made nodeRED flows making integration very easy. NodeRED is pre-installed and configured on emonPi / emonSD. The &lt;a href=&quot;https://github.com/openenergymonitor/oem_node-red/blob/master/flows_emonpi.json&quot;&gt;example flow included on emonPi&lt;/a&gt; demonstrates reading emonTH data from MQTT and external temperature data from Weather Underground.&lt;/p&gt;
-
-&lt;p&gt;I also have a nodeRED flow that handles turning off the heating when the temperature in the livingroom (as measured by emonTH) reaches a set point. I could have used the thermostat controller on the WiFi relay to do this, however it would be difficult in my house to run the wired temperature sensor from the Wifi relay to the living room, therefore I use a wireless emonTH temperature instead.&lt;/p&gt;
-
-&lt;h1 id=&quot;security-and-remote-access&quot;&gt;Security and remote access&lt;/h1&gt;
-
-&lt;p&gt;Remote control (from outside the local network) can be achieved using a dynamic DNS service such as &lt;a href=&quot;https://www.duckdns.org/&quot;&gt;DuckDNS&lt;/a&gt; or secure VPN to give access to services from the outside. E.g I open port 8080 to give access to OpenHAB running on my emonPi from the internet. OpenHAB has authentication turned on and HTTPS can be used to create a secure connection.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, and possibly a better solution could be to use &lt;a href=&quot;http://www.myopenhab.org/&quot;&gt;MyOpenhab.org&lt;/a&gt; service to allow remote control without having to open up a port externally.&lt;/p&gt;
-
-&lt;p&gt;Home Assistant has got an example of &lt;a href=&quot;https://home-assistant.io/docs/ecosystem/tor/&quot;&gt;using Tor Onion Services to access Home Assistant&lt;/a&gt; running locally.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.
-
-As  previously mentioned in a blog post, the emonPi (running emonSD pre-built SD card) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:
-
-
-  It’s already running 24/7 for energy monitoring
-  It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan
-  It’s already connected to your local network
-  It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available
-  Raspberry Pi 3 has plenty of space capacity
-  Extra radios / accessories can be connected via USB
-  It’s already running an MQTT server
-  emonSD pre-built SD card comes pre loaded with the following integrations nodeRED, OpenHAB and LightWaveRF
-
-
-
-  In this post I want to share with you how I use the emonPi in my own home.
-
-
-Here is a video demo using Google Home to control my central heating and devices via MQTT:
-
-
-
-
-
-Read on to learn how this is achieved using an emonPi and open-source software…</summary></entry></feed>
+The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</summary></entry></feed>

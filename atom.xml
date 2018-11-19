@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-11-09T15:52:38+00:00</updated>
+  <updated>2018-11-19T15:34:55+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2018 Development Review]]></title>
+    <link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/"/>
+    <updated>2018-11-08T18:48:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id>
+    <content type="html"><![CDATA[<p>We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  <a href="https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576">OpenEnergyMonitor goals 2018/2019</a>. This post is an update on the progress made before outlining the new development plan in a separate post.</p>
+
+<p>Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</p>
+
+<!--more-->
+
+<h2 id="emoncms">Emoncms</h2>
+
+<p>The last 10 months have seen a lot of emoncms development. Thank you to everyone who helped push things forward. @anna_carboncoop , @thib66, @cagabi, @borpin , @pb66, @paul. @CDuffy , @bruce_miranda , @Bill.Thomson</p>
+
+<p>Some of the highlights include:</p>
+
+<ul>
+  <li>JSON support in phpmqtt_input, by @borpin <a href="https://github.com/emoncms/emoncms/pull/776">#776</a></li>
+  <li><a href="https://github.com/emoncms/task">Task module</a> development &amp; new input processors by @cagabi <a href="https://github.com/emoncms/emoncms/pull/818">#818</a></li>
+  <li>Ongoing localisation and translation work by @thib66</li>
+  <li>Improved support for SQL feed engine @isfh-ohrdes <a href="https://github.com/emoncms/emoncms/pull/805">#805</a></li>
+  <li><a href="http://github.com/emoncms/sync">Sync module</a> for easier data export from emoncms.org</li>
+  <li>Email verification and account deletion feature</li>
+  <li>Feature to trim or clear feed data, alongside deletion @emrys</li>
+  <li>A lot of bug fixing and interface improvements to inputs and feed list @emrys</li>
+  <li>Device module development @Adminde</li>
+  <li>Input process list refactor @emrys @TrystanLea</li>
+  <li>DB schema creation and update refactor @anna_carboncoop <a href="https://github.com/emoncms/emoncms/pull/930">#930</a></li>
+  <li>Python based service runner @Greebo <a href="https://github.com/emoncms/emoncms/pull/1025">#1025</a></li>
+  <li>Modular implementation of Apps module @Adminde <a href="https://github.com/emoncms/app/pull/53">#53</a></li>
+  <li>Dashboard module improvements: anti-xss filter, dashboard html access, <a href="https://community.openenergymonitor.org/t/portable-emoncms-dashboards-looking-for-testers/6870">tag:name support</a>.</li>
+  <li>Ongoing <a href="http://github.com/emoncms/group">groups module development</a> @cagabi @anna_carboncoop</li>
+</ul>
+
+<p>A key goal outlined in the last planning update was to complete the integration of the device module developments into emoncms. The device-integration branches are now included in the latest version of emoncms and the device module. The new input and feed interfaces are accessible via a beta testing switch. Thanks to @Adminde for all of his work on the device module and @emrys for his help working through a long list of improvements to the input and feed list views.</p>
+
+<p>Forum post: <a href="https://community.openenergymonitor.org/t/using-the-new-emoncms-device-module-integration/8253">Using the new emoncms device module integration</a>
+Forum post: <a href="https://community.openenergymonitor.org/t/emoncms-v9-9-0-release-notes/8934">Emoncms v9.9.0+ release notes</a>
+Forum post: <a href="https://community.openenergymonitor.org/t/v9-9-0-migrating-to-the-new-systemd-python-service-runner/8950">V9.9.0: Migrating to the new systemd+python service-runner</a></p>
+
+<h2 id="emoncmsorg">Emoncms.org</h2>
+
+<p>Thank you to everyone who has supported us and bought emoncms.org credit so far. Billing went live on the 1st of July, considerable work went into linking the shop to emoncms.org (thanks @gwil), the billing view and functionality for linking multiple accounts. We are currently working through the final steps of the billing implementation, primarily removing inactive accounts and disabling posting if the balance is negative for more than a month.</p>
+
+<p>In addition to billing, work has been done on bringing the emoncms.org and standard emoncms code base closer together. In particular the input processing code, a requirement for installing the device module and making the new input interface available on emoncms.org, which are both now live.</p>
+
+<p>The support we have had through credit purchases has enabled us to welcome a new member to our team @emrys, who has been a great help on emoncms development since joining us in April.</p>
+
+<p>Forum post: <a href="https://community.openenergymonitor.org/t/emoncms-org-billing/7187">Emoncms.org billing</a></p>
+
+<h2 id="emonsd-image--hub-software-stack">EmonSD Image &amp; Hub software stack</h2>
+
+<p>We have recently released our latest emonSD image:</p>
+
+<ul>
+  <li>Latest Raspbian Stretch</li>
+  <li>RaspberryPi 3B+ compatible</li>
+  <li>Root file-system is now fully read-write (although low-write developments are maintained).</li>
+  <li>SSH disabled by default (push button or boot partition file enable)</li>
+</ul>
+
+<p>Full details, release notes and download link can be found here: <a href="https://community.openenergymonitor.org/t/new-emonsd-release-emonsd-30oct18-raspbian-stretch-pi3b-compatible/9005">emonSD-30Oct18</a>.</p>
+
+<h2 id="hardware--firmware">Hardware &amp; Firmware</h2>
+
+<ul>
+  <li>@Robert.Wall released a complete rewrite of the <a href="https://github.com/openenergymonitor/emontx-3phase">emontx 3phase firmware</a> earlier in the year to use PLL.</li>
+  <li>Testing and development has been ongoing for EmonLibCM, thanks again to @Robert.Wall</li>
+  <li>EmonTx v3.4.3 release, see <a href="https://github.com/openenergymonitor/emontx3/blob/master/hardware/readme.md#v343">change log</a>.</li>
+  <li>Decision was made to postpone integration of heat pump monitor MBUS reader (which was listed on the February plan)  for inclusion in STM32 based future hardware development.</li>
+</ul>
+
+<p>Although not in the original plan we also made good initial progress on STM32 development this year following the <a href="https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847">OpenEnergyMonitor March meetup</a>. We plan on building on this in the coming year, more detail in the next post.</p>
+
+<p>## EmonEVSE &amp; Demand side response</p>
+
+<p>The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at <a href="https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256">Fully Charged Live Event</a> earlier in the year. The EmonEVSE is now available in our web store:</p>
+
+<p>https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/</p>
+
+<p>EmonEVSE currently integrates with EmonPi to provide solar PV divert functionality and Emoncms data logging. Work is underway to integrate EmonEVSE with smart energy tariffs and to make scheduling of charging sessions at times of low carbon intensity easier. See <a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Demand Side Response Development</a> blog post and forum posts on <a href="https://community.openenergymonitor.org/t/emoncms-demand-shaper-module/9097">demandshaper module</a> and <a href="https://community.openenergymonitor.org/t/running-emonesp-on-the-sonoff-s20-smart-plug/9096">EmonESP Sonoff S20 SmartPlug</a> firmware.</p>
+
+<hr />
+<p>Looking forward to pushing things further in the remainder of 2018 and into the new year.</p>
+
+<p>Trystan &amp; Glyn</p>
+
+<p><em><a href="https://community.openenergymonitor.org/t/oem-development-plan-outline/9210">Development plan forum post.</a></em></p>
+
+<p><em><a href="https://community.openenergymonitor.org/t/2018-development-progress-update">Development update form post.</a></em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Demand Side Response Development]]></title>
@@ -1277,68 +1371,6 @@ Diagram from <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-
 <p>A method to verify the compiled binary could be to sign the compiled binary with a private key which is verified by the ESP before firmware is updated.</p>
 
 <p>I would be interested to hear from anyone with any thoughts / advice as to how secure ESP OTA firmware delivery can be achieved.</p>
-
-<hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms Docker]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/"/>
-    <updated>2016-06-25T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id>
-    <content type="html"><![CDATA[<p>We have made the first steps towards running Emoncms to run in a <a href="https://www.docker.com/">Docker</a> container.</p>
-
-<p>Dockerfiles and setup notes are in the emoncms-docker repository:</p>
-
-<h3 id="httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker"><a href="https://github.com/emoncms/emoncms-docker">https://github.com/emoncms/emoncms-docker</a></h3>
-
-<p><img src="https://blog.openenergymonitor.org/images/docker-logo.png" alt="image" /></p>
-
-<p>Docker is an exciting tool to help make development, testing and deployment of web-applications easier.</p>
-
-<h2 id="what-is-docker-the-short-version">What is docker? (the short version):</h2>
-
-<blockquote>
-  <p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.</p>
-</blockquote>
-
-<h3 id="what-is-docker-the-long-version">What is docker? (the long version):</h3>
-
-<blockquote>
-  <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
-</blockquote>
-
-<h2 id="quick-start">Quick Start</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ docker pull openenergymonitor/emoncms
-$ git clone https://github.com/emoncms/emoncms-docker
-$ cd emoncms-docker
-$ docker-compose up
-</code></pre>
-</div>
-
-<p><strong>That’s it! Emoncms should now be runnning, browse to <a href="http://localhost:8080">http://localhost:8080</a></strong></p>
-
-<!--more-->
-
-<h2 id="emoncms-docker">Emoncms Docker</h2>
-
-<p>Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp; config taken care of.</p>
-
-<p>This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.</p>
-
-<p>In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.</p>
-
-<p>We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using <a href="https://docs.docker.com/compose/overview/">docker-compose</a>.</p>
-
-<p><strong>See <a href="https://github.com/emoncms/emoncms-docker">emoncms-docker Readme</a> for setup &amp; build instructions.</strong></p>
-
-<p><em>Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.</em></p>
-
-<h2 id="forum-discussion">Forum discussion</h2>
-
-<p>See <a href="https://community.openenergymonitor.org/t/emoncms-docker/823/4">this forum topic</a> for discussion.</p>
 
 <hr />
 ]]></content>

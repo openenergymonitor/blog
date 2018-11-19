@@ -633,6 +633,83 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-25T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 25th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/docker/'>docker</a></li>
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/emoncms-docker/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>We have made the first steps towards running Emoncms to run in a <a href="https://www.docker.com/">Docker</a> container.</p>
+
+<p>Dockerfiles and setup notes are in the emoncms-docker repository:</p>
+
+<h3 id="httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker"><a href="https://github.com/emoncms/emoncms-docker">https://github.com/emoncms/emoncms-docker</a></h3>
+
+<p><img src="/images/docker-logo.png" alt="image" /></p>
+
+<p>Docker is an exciting tool to help make development, testing and deployment of web-applications easier.</p>
+
+<h2 id="what-is-docker-the-short-version">What is docker? (the short version):</h2>
+
+<blockquote>
+  <p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.</p>
+</blockquote>
+
+<h3 id="what-is-docker-the-long-version">What is docker? (the long version):</h3>
+
+<blockquote>
+  <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
+</blockquote>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ docker pull openenergymonitor/emoncms
+$ git clone https://github.com/emoncms/emoncms-docker
+$ cd emoncms-docker
+$ docker-compose up
+</code></pre>
+</div>
+
+<p><strong>That’s it! Emoncms should now be runnning, browse to <a href="http://localhost:8080">http://localhost:8080</a></strong></p>
+
+
+    
+      <a class="btn pull-right" href="/2016/06/emoncms-docker/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/esp8266-emonesp-developments/">ESP8266 WIFI developments</a>
   </h1>
   
@@ -896,103 +973,9 @@ $(document).ready(function(){ //alphabetically order list
   </li>
 </ul>
 
-<hr />
 
-<h2 id="example-compiling-emontx--emonpi-firmware">Example: Compiling emonTx / emonPi firmware</h2>
-
-<p><a href="http://docs.platformio.org/en/latest/quickstart.html">PlatformIO has some excellent quick start docs</a> to cover setting up your first ‘blinky’ project, therefore I will not duplicate here. In this example I focus on setting up pio and compiling emonTx / emonPi firmware. This example assumes a totally bare metal machine with nothing installed except python (2.7 recommended). Pio works great on a Raspberry Pi.</p>
-
-<p>This guide used command-line steps on Linux, if using windows or if you want to use the platformio IDE see <a href="http://platformio.org/get-started">PlatformIO Getting Started Page</a>.</p>
-
-<p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
-
-<h3 id="install-platformio">1. Install PlatformIO</h3>
-
-<p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
-
-<p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
-
-<h3 id="clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
-
-<p>We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.</p>
-
-<p><strong>emonTx V3</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emontx3`
-$ cd emontx3/firmware
-</code></pre>
-</div>
-
-<p><strong>emonPi</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
-cd emonpi/firmware
-</code></pre>
-</div>
-
-<h3 id="compile-with-platformio">3. Compile with PlatformIO</h3>
-
-<p><code class="highlighter-rouge">$ platformio run</code></p>
-
-<p>or shorthand for the lazy</p>
-
-<p><code class="highlighter-rouge">$ pio run</code></p>
-
-<p><strong>That’s it!</strong> That’s all that’s needed to setup pio from scratch and compile emonTx firmware :-D</p>
-
-<p>The first time platformIO is run it will ask to install the required libraries (at the specific version) and avr toolchain. The required libraries are defined in <a href="https://github.com/openenergymonitor/emontx3"><code class="highlighter-rouge">platformio.ini</code> in the emonTx discrete sampling firmware folder</a>:</p>
-
-<p>e.g.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps = 
-  DallasTemperature @3.7.7
-  EmonLib
-  JeeLib@c057b5f4c0
-</code></pre>
-</div>
-<p>Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.)</p>
-
-<p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">.piolibdeps</code> folder in the project dir.</p>
-
-<h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
-
-<h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
-
-<p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
-
-<p>Pio will attempt to auto detect the USB programmer and upload :-)</p>
-
-<p><em>Note: you will need <code class="highlighter-rouge">sudo</code> unless you have correctly <a href="https://github.com/platformio/platformio/blob/develop/scripts/99-platformio-udev.rules">configured udev rules</a>.</em></p>
-
-<p>There is even a built in serial monitor</p>
-
-<p><code class="highlighter-rouge">$ pio device monitor</code></p>
-
-<h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
-
-<p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
-
-<p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>board = emonpi
-upload_port = /dev/ttyAMA0
-</code></pre>
-</div>
-
-<p>All that is needed to compile and upload directly on the emonPi is:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
-$ sudo pio run -t upload
-</code></pre>
-</div>
-
-<p><em>Thanks a lot to <a href="https://github.com/ivankravets">Ivan Kravets</a> for helping integrate emonPi into the PlatfomIO ecosystem. <a href="https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a">View commit changes</a></em></p>
-
-<hr />
-<p>Stay tuned for part 2/3 of the PlatformIO post series which will cover setting up firmware continuous testing using Travis CI and auto compiled binary generation on release tag directly on github. This is currently live on the emonPi &amp; emonTx repos if you want a sneak preview. See <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml">travis.yaml</a> file and Travis build status icon on the main emonpi repo <a href="https://github.com/openenergymonitor/emonpi/blob/master/README.md">Readme.md</a>.</p>
-
-<hr />
-
+    
+      <a class="btn pull-right" href="/2016/06/platformio/#read-more">Read on &rarr;</a>
     
   </div>
   </article>
@@ -1334,60 +1317,6 @@ $ sudo pio run -t upload
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/04/Part2-Exploring-carbon-intensity/">Part 2: Exploring carbon intensity and renewable energy matching</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-04-28T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April  28th 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> six minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/community-smart-grid/'>community smart grid</a></li>
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/04/Part2-Exploring-carbon-intensity/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p><img src="/images/winderful.png" alt="image" /></p>
-
-<p>This post describes an approach we have been exploring that uses the MyEnergy emoncms app and work on virtual <a href="https://github.com/TrystanLea/VirtualSmartGrid">smart grids</a> with Dominic McCann from Carbon Coop. There’s a good blog and video on what we’ve been working on over on the <a href="http://carbon.coop/blog/jonathan/smart-grid-aggregation-dashboard-prototype">Carbon Coop blog</a>.</p>
-
-<p>The <a href="/2016/04/Understand-CO2-intensity-grid-electricity/">last post</a> described two approaches to grid carbon intensity that consider the UK grid as a whole. This approach explores what the overall household carbon intensity might be when on-site renewable energy is considered such as home solar but also when renewable energy is bought over the grid, this could be from a green electricity tariff.</p>
-
-<p>If imported electricity is supplied from a 100% renewable energy supplier in the UK: a large portion of the supply will likely be wind energy (54% of good energy’s ‘fuel’ mix comes from wind) and the UK has the best wind resource in Europe. Incorporating grid wind data and exploring matching with wind and solar, means we can really start to test scenarios such as ZeroCarbonBritain in the present.</p>
-
-<p>There is real-time data available on UK wind supply and its possible to scale the total UK wind output in order to estimate a household ‘share of UK wind’ in real-time.</p>
-
-
-    
-      <a class="btn pull-right" href="/2016/04/Part2-Exploring-carbon-intensity/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1410,6 +1339,12 @@ $ sudo pio run -t upload
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1462,12 +1397,6 @@ $ sudo pio run -t upload
       
         <li class="post">
           <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
         </li>
       
     
@@ -1692,6 +1621,11 @@ $ sudo pio run -t upload
     
       <li>
         <a href="/categories/dashboard/">dashboard
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/development/">development
         </a>
       </li>
     

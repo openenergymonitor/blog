@@ -1,0 +1,881 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>2018 Development Review - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="2018 Development Review">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="2018 Development Review">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:light,bold&amp;subset=Latin" rel="stylesheet"> <!-- Ubuntu font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+<style>
+
+@font-face {
+  font-family: "oemFont";
+  src: url(/font/Ubuntu-OEM-Light.ttf)
+}
+
+html, body {
+  margin: 0; height: 100vh;
+}
+
+html {
+  min-height: 100vh;
+}
+
+html, body {
+  word-wrap: break-word;
+  font-family: "oemFont", sans-serif;
+}
+
+a:visited, .a:hover, a:focus, a {
+  color: #44b3e2;
+}
+
+.meta.clearfix {
+  overflow-x: hidden;
+}
+
+.communityWrapper {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  height: 42px;
+}
+
+@media (min-width: 1080px) {
+  .communityWrapper {
+  width: 1080px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .oemWrap {
+  display: none;
+  }
+}
+
+.fa-navicon {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 42px;
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  padding-left: 12px;
+  z-index: 9997;
+}
+
+@media screen and (max-width: 1079px) {
+  .fa-navicon {
+  display: inline-block;
+  }
+}
+
+.titleHolder {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #44b3e2;
+  overflow: hidden;
+  -webkit-box-shadow: 0 -2px 4px 2px #000;
+  -moz-box-shadow: 0 -2px 4px 2px #000;
+  box-shadow: 0 -2px 4px 2px #000;
+}
+
+.titleIcon {
+  position: absolute;
+  height: 42px;
+  padding: 0 0 0 7px;
+  text-align: center;
+  line-height: 42px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+  .titleIcon i {
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+.thisTitle {
+  position: absolute;
+  box-sizing: border-box;
+  left: 42px;
+  right: 0;
+  height: 42px;
+  padding: 5px 0 5px 0;
+  text-align: left;
+  color: #ffffff;
+  line-height: normal;
+  vertical-align: top;
+}
+
+  .thisTitle a {
+    position: absolute;
+    top: 0;
+    color: #ffffff;
+  }
+
+@media screen and (max-width: 1079px) {
+  .titleIcon {
+    left: auto;
+    right: 0;
+    padding: 0 7px 0 0;
+  }
+
+  .thisTitle {
+    right: 42px;
+    left: 0;
+    text-align: right;
+  }
+
+    .thisTitle a {
+      padding-right: 0;
+    }
+}
+
+.thisTitle-top {
+  top: 0;
+  height: 60%;
+  font-size: 18px;
+}
+
+.thisTitle-bottom {
+  bottom: 0;
+  height: 40%;
+  font-size: 12px;
+}
+
+.navigation {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  margin-right: 6px;
+  height: 42px;
+  min-width: 774px;
+  overflow: visible;
+  padding-right: 7px;
+  z-index: 20;
+  box-sizing: content-box;
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation {
+  position: relative;
+  float: right;
+  display: inline-block;
+  margin: 0;
+  }
+}
+
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: block;
+}
+
+.navigation ul li {
+  float: left;
+  background-color: #44b3e2;
+}
+
+.navigation ul li a {
+  display: block;
+  line-height: 42px;
+  font-family: "oemFont", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+}
+
+.menuFreeze {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Navigation on smaller screens... */
+
+@media screen and (max-width: 1079px) {
+.navigation {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin: 0;
+  width: 0;
+  font-size: 20px;
+  background-color: #44b3e2;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  min-width: 0;
+  padding-right: 0;
+  z-index: 99999999;
+}
+
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .navigation ul li a {
+    box-sizing: border-box;
+    font-family: "oemFont", sans-serif;
+    font-size: 20px;
+    display: block;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+    height: 12.5vh;
+    line-height: 12.5vh;
+    min-width: 180px;
+    text-align: left;
+  }
+
+  .navigation ul li .fa {
+    min-width: 25px;
+  }
+}
+
+@media (max-width: 1079px) and (min-height: 550px) {
+  .navigation ul li a {
+    height: 68.75px;
+    line-height: 68.75px;
+  }
+}
+
+@media (max-width: 1079px) and (max-height: 200px) {
+  .navigation ul li a {
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation ul li:nth-child(1) {
+    width: 88px;
+  }
+  .navigation ul li:nth-child(2) {
+    width: 86px;
+  }
+  .navigation ul li:nth-child(3) {
+    width: 92px;
+  }
+  .navigation ul li:nth-child(4) {
+    width: 123px;
+  }
+  .navigation ul li:nth-child(5) {
+    width: 133px;
+  }
+  .navigation ul li:nth-child(6) {
+    width: 76px;
+  }
+  .navigation ul li:nth-child(7) {
+    width: 80px;
+  }
+  .navigation ul li:nth-child(8) {
+    width: 96px;
+  }
+}
+
+.blackOut {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  z-index:9998;
+}
+
+.actoemLink {
+  background-color: #368fb4 !important;
+}
+
+.actoemLink a {
+  color: #ffffff !important;
+}
+
+.searchBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  z-index: 9999999999999;
+}
+
+.searchBox form {
+  margin: auto;
+}
+
+.searchBox input[type=submit] {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #44b3e2;
+  color: #fff;
+  border: none;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.searchBox input[type=submit]:hover {
+  background-color: #77c8ea;
+}
+
+.searchBox input[type=text] {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+}
+
+.searchText {
+  width: 0;
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.fa {
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
+}
+
+</style>
+
+<body >
+
+
+
+
+<div class="titleHolder">
+  <div class="communityWrapper">
+    <i class="fa fa-navicon"></i>
+    <a href="/">
+      <div class="titleIcon">
+				<i aria-hidden="true" class="fa fa-bullhorn"></i>
+			</div>
+			<div class="thisTitle">
+			  <div class="thisTitle-top">
+        		<b>Blog</b>
+				</div>
+				<div class="thisTitle-bottom">
+          Open<b>EnergyMonitor</b>
+				</div>
+			</div>
+		</a>
+    <div id="siteLinks" class="navigation">
+      <ul>
+        <li title="the homepage of OpenEnergyMonitor">
+          <a href="https://openenergymonitor.org">
+            <i class="fa fa-home" aria-hidden="true"></i><span class="navname">&nbsp;Home</span>
+          </a>
+        </li>
+        <li title="a user guide for the OpenEnergyMonitor system">
+          <a href="https://guide.openenergymonitor.org">
+            <i class="fa fa-book" aria-hidden="true"></i><span class="navname">&nbsp;Guide</span>
+          </a>
+        </li>
+        <li title="general information about energy monitoring, diversion and sustainability">
+          <a href="https://learn.openenergymonitor.org">
+            <i class="fa fa-mortar-board" aria-hidden="true"></i><span class="navname">&nbsp;Learn</span>
+          </a>
+        </li>
+        <li title="a definitive list of resources for OpenEnergyMonitor hardware">
+          <a href="https://guide.openenergymonitor.org/technical/resources/">
+            <i class="fa fa-list-alt" aria-hidden="true"></i><span class="navname">&nbsp;Resources</span>
+          </a>
+        </li>
+        <li title="the openenergymonitor forum">
+          <a href="https://community.openenergymonitor.org">
+            <i class="fa fa-comments" aria-hidden="true"></i><span class="navname">&nbsp;Community</span>
+          </a>
+        </li>
+        <li title="you are here: keep up with new developments at OpenEnergyMonitor" class="actoemLink">
+          <a href="https://blog.openenergymonitor.org">
+            <i class="fa fa-bullhorn" aria-hidden="true"></i><span class="navname">&nbsp;Blog</span>
+          </a>
+        </li>
+        <li title="the official OpenEnergyMonitor online store">
+          <a href="https://shop.openenergymonitor.com">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="navname">&nbsp;Shop</span>
+          </a>
+        </li>
+				<li title="search for something on OpenEnergyMonitor">
+					<a class="searchIcon">
+					    <i aria-hidden="true" class="fa fa-search"></i><span class="navname">&nbsp;Search</span>
+				  </a>
+				</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="searchBox">
+  <form target="_blank" id="searchform" action="https://www.google.com/cse">
+    <div>
+      <input type="hidden" name="cx" value="006198118389747886812:_nmxikw563w" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="text" class="searchText" value="" name="q" id="q" autocomplete="off" />
+      <input type="submit" id="searchsubmit" name="sa" value="Search" />
+    </div>
+  </form>
+</div>
+<div class="blackOut"></div>
+<div style="position:relative;width:100%;top:0;height:20px"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+<script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'https://blog.openenergymonitor.org/2018/11/2018-dev-update/';
+    var disqus_url = 'https://blog.openenergymonitor.org/2018/11/2018-dev-update/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+<script>
+
+var closeStatus = false;
+
+function openButton() {
+  $("html, body").addClass("menuFreeze");
+  $(".blackOut").show();
+  $(".navigation").show();
+  $(".navigation").animate({ width:'180' },"0.5s");
+}
+
+$(".fa-navicon").click(function() {
+  openButton();
+  closeStatus = true;
+});
+
+function closeButton() {
+  $("html, body").removeClass("menuFreeze");
+  $(".blackOut").hide();
+  $(".navigation").animate({ width:'0' },"0.5s");
+}
+
+$(".blackOut").click(function() {
+  closeButton();
+  closeStatus = false;
+});
+
+$(document).ready(function(){
+  $("table").wrap("<div style='max-width:100%;overflow-x:auto'></div>");
+});
+
+$(window).resize(function(){
+  if ($(window).width() > 1079 && closeStatus == true) {
+    if (!$("html").hasClass("mobile-device")) {
+      closeButton();
+      closeStatus = false;
+    }
+  }
+});
+
+$(".searchIcon").click(function() {
+   $(".searchBox").css("display","flex");
+   $(".searchText").animate({width: "200px"});
+   $(".searchText").focus();
+   $("html, body").addClass("menuFreeze");
+});
+$(".searchBox").click(function() {
+   $(".searchBox").css("display","none");
+   $(".searchText").blur();
+   $(".searchText").css("width","0");
+   closeButton();
+});
+$(".searchBox form").click( function(event) {
+   event.stopPropagation();
+});
+
+$(document).ready(function(){ //alphabetically order list
+  var ls, x, switchState, z, switchMe;
+  ls = document.getElementById("ub202");
+  switchState = true;
+  while (switchState) {
+    switchState = false;
+    z = ls.getElementsByTagName("LI");
+    for (x = 0; x < (z.length - 1); x++) {
+      switchMe = false;
+      if (z[x].innerHTML.toLowerCase() > z[x + 1].innerHTML.toLowerCase()) {
+        switchMe= true;
+        break;
+      }
+    }
+    if (switchMe) {
+      z[x].parentNode.insertBefore(z[x + 1], z[x]);
+      switchState = true;
+    }
+  }
+});
+
+</script>
+
+<div class="grid-wrapper">
+  <div class="grid grid-center">
+    
+    <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+    
+
+      <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/blog/tree/master/source/_posts/2018-11-19-2018-dev-update.markdown'>Edit on GitHub</a></div>
+<div class='edit-github'><a href='http://prose.io/#openenergymonitor/blog/edit/master/source/_posts/2018-11-19-2018-dev-update.markdown'>Edit on GitHub Prose</a></div>
+  
+  <header>
+  
+  <h1 class="title indent">2018 Development Review</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2018-11-08T18:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Nov 19th 2018
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/development/'>development</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2018/11/2018-dev-update/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  <a href="https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576">OpenEnergyMonitor goals 2018/2019</a>. This post is an update on the progress made before outlining the new development plan in a separate post.</p>
+
+<p>Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</p>
+
+<a name="read-more"></a>
+
+<h2 id="emoncms">Emoncms</h2>
+
+<p>The last 10 months have seen a lot of emoncms development. Thank you to everyone who helped push things forward. @anna_carboncoop , @thib66, @cagabi, @borpin , @pb66, @paul. @CDuffy , @bruce_miranda , @Bill.Thomson</p>
+
+<p>Some of the highlights include:</p>
+
+<ul>
+  <li>JSON support in phpmqtt_input, by @borpin <a href="https://github.com/emoncms/emoncms/pull/776">#776</a></li>
+  <li><a href="https://github.com/emoncms/task">Task module</a> development &amp; new input processors by @cagabi <a href="https://github.com/emoncms/emoncms/pull/818">#818</a></li>
+  <li>Ongoing localisation and translation work by @thib66</li>
+  <li>Improved support for SQL feed engine @isfh-ohrdes <a href="https://github.com/emoncms/emoncms/pull/805">#805</a></li>
+  <li><a href="http://github.com/emoncms/sync">Sync module</a> for easier data export from emoncms.org</li>
+  <li>Email verification and account deletion feature</li>
+  <li>Feature to trim or clear feed data, alongside deletion @emrys</li>
+  <li>A lot of bug fixing and interface improvements to inputs and feed list @emrys</li>
+  <li>Device module development @Adminde</li>
+  <li>Input process list refactor @emrys @TrystanLea</li>
+  <li>DB schema creation and update refactor @anna_carboncoop <a href="https://github.com/emoncms/emoncms/pull/930">#930</a></li>
+  <li>Python based service runner @Greebo <a href="https://github.com/emoncms/emoncms/pull/1025">#1025</a></li>
+  <li>Modular implementation of Apps module @Adminde <a href="https://github.com/emoncms/app/pull/53">#53</a></li>
+  <li>Dashboard module improvements: anti-xss filter, dashboard html access, <a href="https://community.openenergymonitor.org/t/portable-emoncms-dashboards-looking-for-testers/6870">tag:name support</a>.</li>
+  <li>Ongoing <a href="http://github.com/emoncms/group">groups module development</a> @cagabi @anna_carboncoop</li>
+</ul>
+
+<p>A key goal outlined in the last planning update was to complete the integration of the device module developments into emoncms. The device-integration branches are now included in the latest version of emoncms and the device module. The new input and feed interfaces are accessible via a beta testing switch. Thanks to @Adminde for all of his work on the device module and @emrys for his help working through a long list of improvements to the input and feed list views.</p>
+
+<p>Forum post: <a href="https://community.openenergymonitor.org/t/using-the-new-emoncms-device-module-integration/8253">Using the new emoncms device module integration</a>
+Forum post: <a href="https://community.openenergymonitor.org/t/emoncms-v9-9-0-release-notes/8934">Emoncms v9.9.0+ release notes</a>
+Forum post: <a href="https://community.openenergymonitor.org/t/v9-9-0-migrating-to-the-new-systemd-python-service-runner/8950">V9.9.0: Migrating to the new systemd+python service-runner</a></p>
+
+<h2 id="emoncmsorg">Emoncms.org</h2>
+
+<p>Thank you to everyone who has supported us and bought emoncms.org credit so far. Billing went live on the 1st of July, considerable work went into linking the shop to emoncms.org (thanks @gwil), the billing view and functionality for linking multiple accounts. We are currently working through the final steps of the billing implementation, primarily removing inactive accounts and disabling posting if the balance is negative for more than a month.</p>
+
+<p>In addition to billing, work has been done on bringing the emoncms.org and standard emoncms code base closer together. In particular the input processing code, a requirement for installing the device module and making the new input interface available on emoncms.org, which are both now live.</p>
+
+<p>The support we have had through credit purchases has enabled us to welcome a new member to our team @emrys, who has been a great help on emoncms development since joining us in April.</p>
+
+<p>Forum post: <a href="https://community.openenergymonitor.org/t/emoncms-org-billing/7187">Emoncms.org billing</a></p>
+
+<h2 id="emonsd-image--hub-software-stack">EmonSD Image &amp; Hub software stack</h2>
+
+<p>We have recently released our latest emonSD image:</p>
+
+<ul>
+  <li>Latest Raspbian Stretch</li>
+  <li>RaspberryPi 3B+ compatible</li>
+  <li>Root file-system is now fully read-write (although low-write developments are maintained).</li>
+  <li>SSH disabled by default (push button or boot partition file enable)</li>
+</ul>
+
+<p>Full details, release notes and download link can be found here: <a href="https://community.openenergymonitor.org/t/new-emonsd-release-emonsd-30oct18-raspbian-stretch-pi3b-compatible/9005">emonSD-30Oct18</a>.</p>
+
+<h2 id="hardware--firmware">Hardware &amp; Firmware</h2>
+
+<ul>
+  <li>@Robert.Wall released a complete rewrite of the <a href="https://github.com/openenergymonitor/emontx-3phase">emontx 3phase firmware</a> earlier in the year to use PLL.</li>
+  <li>Testing and development has been ongoing for EmonLibCM, thanks again to @Robert.Wall</li>
+  <li>EmonTx v3.4.3 release, see <a href="https://github.com/openenergymonitor/emontx3/blob/master/hardware/readme.md#v343">change log</a>.</li>
+  <li>Decision was made to postpone integration of heat pump monitor MBUS reader (which was listed on the February plan)  for inclusion in STM32 based future hardware development.</li>
+</ul>
+
+<p>Although not in the original plan we also made good initial progress on STM32 development this year following the <a href="https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847">OpenEnergyMonitor March meetup</a>. We plan on building on this in the coming year, more detail in the next post.</p>
+
+<p>## EmonEVSE &amp; Demand side response</p>
+
+<p>The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at <a href="https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256">Fully Charged Live Event</a> earlier in the year. The EmonEVSE is now available in our web store:</p>
+
+<p>https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/</p>
+
+<p>EmonEVSE currently integrates with EmonPi to provide solar PV divert functionality and Emoncms data logging. Work is underway to integrate EmonEVSE with smart energy tariffs and to make scheduling of charging sessions at times of low carbon intensity easier. See <a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Demand Side Response Development</a> blog post and forum posts on <a href="https://community.openenergymonitor.org/t/emoncms-demand-shaper-module/9097">demandshaper module</a> and <a href="https://community.openenergymonitor.org/t/running-emonesp-on-the-sonoff-s20-smart-plug/9096">EmonESP Sonoff S20 SmartPlug</a> firmware.</p>
+
+<hr />
+<p>Looking forward to pushing things further in the remainder of 2018 and into the new year.</p>
+
+<p>Trystan &amp; Glyn</p>
+
+<p><em><a href="https://community.openenergymonitor.org/t/oem-development-plan-outline/9210">Development plan forum post.</a></em></p>
+
+<p><em><a href="https://community.openenergymonitor.org/t/2018-development-progress-update">Development update form post.</a></em></p>
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+
+    </div>
+
+    
+    <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+      <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2018/11/demand-side-response/">Demand Side Response Development</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Introducing IoTaWatt</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro smart grid</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+    </aside>
+    
+  </div>
+</div>
+
+<footer>
+  <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
+  <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit" style="text-align:center;">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+<!--
+<div class="searchtool">
+
+
+<form action="https://encrypted.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+    <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+  </fieldset>
+</form>
+
+
+</div> -->
+</div>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+</body>
+</html>

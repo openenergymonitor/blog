@@ -633,6 +633,52 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2018-11-08T18:48:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Nov 19th 2018
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/development/'>development</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2018/11/2018-dev-update/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  <a href="https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576">OpenEnergyMonitor goals 2018/2019</a>. This post is an update on the progress made before outlining the new development plan in a separate post.</p>
+
+<p>Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</p>
+
+
+    
+      <a class="btn pull-right" href="/2018/11/2018-dev-update/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2018/11/demand-side-response/">Demand Side Response Development</a>
   </h1>
   
@@ -1180,77 +1226,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2017-05-05T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 6th 2017
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> six minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/mqtt/'>MQTT</a></li>
-      
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2017/05/emonpi-mqtt-googlehome/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>I believe automation can play an useful role in helping to reduce energy consumption. For example being able to control my home central heating system remotely enables me to only turn on the heating when it’s required and not have it running on a set schedule when the house is empty.</p>
-
-<p>As <a href="2016/08/ecohomelab-control/"> previously mentioned in a blog post</a>, the emonPi (<a href="github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log">running emonSD pre-built SD card</a>) can function as a powerful home automation hub. Utilising the emonPi as a home automation hub is a good fit for a number of reasons:</p>
-
-<ul>
-  <li>It’s already running 24/7 for energy monitoring</li>
-  <li>It’s optimised for robust long term operation: the root Raspberry Pi file-system is read-only to increase SD card lifespan</li>
-  <li>It’s already connected to your local network</li>
-  <li>It’s running Debian Raspbian Jessie therefore installing extra packages is easy and lots of support is available</li>
-  <li>Raspberry Pi 3 has plenty of space capacity</li>
-  <li>Extra radios / accessories can be connected via USB</li>
-  <li>It’s already running an MQTT server</li>
-  <li>emonSD pre-built SD card comes pre loaded with the following <a href="guide.openenergymonitor.org/integrations">integrations</a> nodeRED, OpenHAB and LightWaveRF</li>
-</ul>
-
-<blockquote>
-  <p>In this post I want to share with you how I use the emonPi in my own home.</p>
-</blockquote>
-
-<p>Here is a video demo using Google Home to control my central heating and devices via MQTT:</p>
-
-<div class="videoWrapper">
-<iframe width="280" height="157" src="https://www.youtube.com/embed/r_v4GXVp0OI" frameborder="0" allowfullscreen=""></iframe>
-</div>
-
-<p>Read on to learn how this is achieved using an emonPi and open-source software…</p>
-
-
-    
-      <a class="btn pull-right" href="/2017/05/emonpi-mqtt-googlehome/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1271,6 +1246,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1323,12 +1304,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/emonpi-mqtt-googlehome/">emonPi as a Home Automation Hub</a>
         </li>
       
     
@@ -1553,6 +1528,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     
       <li>
         <a href="/categories/dashboard/">dashboard
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/development/">development
         </a>
       </li>
     
