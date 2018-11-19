@@ -73,7 +73,7 @@ Full details, release notes and download link can be found here: [emonSD-30Oct18
 
 Although not in the original plan we also made good initial progress on STM32 development this year following the [OpenEnergyMonitor March meetup](https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847). We plan on building on this in the coming year, more detail in the next post.
 
- ## EmonEVSE & Demand side response
+## EmonEVSE & Demand side response
 
 The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at [Fully Charged Live Event](https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256) earlier in the year. The [EmonEVSE is now available in our web store](https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/).
 
