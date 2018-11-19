@@ -4,7 +4,7 @@
   <title><![CDATA[Category: development | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/development/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2018-11-19T15:45:03+00:00</updated>
+  <updated>2018-11-19T16:21:34+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -88,7 +88,7 @@ Forum post: <a href="https://community.openenergymonitor.org/t/v9-9-0-migrating-
 
 <p>Although not in the original plan we also made good initial progress on STM32 development this year following the <a href="https://community.openenergymonitor.org/t/openenergymonitor-9th-of-march-2018-meeting-summary/6847">OpenEnergyMonitor March meetup</a>. We plan on building on this in the coming year, more detail in the next post.</p>
 
-<p>## EmonEVSE &amp; Demand side response</p>
+<h2 id="emonevse--demand-side-response">EmonEVSE &amp; Demand side response</h2>
 
 <p>The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at <a href="https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256">Fully Charged Live Event</a> earlier in the year. The <a href="https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/">EmonEVSE is now available in our web store</a>.</p>
 
