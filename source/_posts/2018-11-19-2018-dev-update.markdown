@@ -75,9 +75,7 @@ Although not in the original plan we also made good initial progress on STM32 de
 
  ## EmonEVSE & Demand side response
 
-The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at [Fully Charged Live Event](https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256) earlier in the year. The EmonEVSE is now available in our web store:
-
-https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/
+The EmonEVSE has now obtained OLEV approval for the EV charging station government grant in the UK, and we are working with several OLEV accredited installers who have completed successful installations around the county. We had a successful showcase of the EmonEVSE at [Fully Charged Live Event](https://community.openenergymonitor.org/t/fully-charged-live-9-10th-june/7256) earlier in the year. The [EmonEVSE is now available in our web store](https://openenergymonitor.com/emonevse-wifi-connected-ev-charging-station-iec-60947-5-type-2/).
 
 EmonEVSE currently integrates with EmonPi to provide solar PV divert functionality and Emoncms data logging. Work is underway to integrate EmonEVSE with smart energy tariffs and to make scheduling of charging sessions at times of low carbon intensity easier. See [Demand Side Response Development](https://blog.openenergymonitor.org/2018/11/demand-side-response/) blog post and forum posts on [demandshaper module](https://community.openenergymonitor.org/t/emoncms-demand-shaper-module/9097) and [EmonESP Sonoff S20 SmartPlug](https://community.openenergymonitor.org/t/running-emonesp-on-the-sonoff-s20-smart-plug/9096) firmware.
 
