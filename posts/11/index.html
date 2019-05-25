@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2014/06/emoncms-time-series-feed-engine/">Emoncms time-series feed engine documentation</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-06-19T11:46:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-06-19 11:46:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/06/emoncms-time-series-feed-engine/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I've been working over the last few days on writing documentation on  how the emoncms time-series feed engines work (phpfiwa, phpfina and  phptimeseries). The documentation is an early draft at this stage and I  would very much welcome comments.<br /><br /> <a href="https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries">https://github.com/openenergymonitor/documentation/tree/master/BuildingBlocks/TimeSeries</a><br /> <br />&nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/history.md">Emoncms time series database development history</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/variableinterval.md">Variable interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedinterval.md">Fixed interval time series</a><br /> &nbsp;&nbsp;&nbsp; <a href="https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/fixedintervalaveraging.md">Fixed interval with averaging time series</a><br /> <br />On a related note out of an interest in creating a version of emoncms  that will run and log to SD cards without wearing them out so fast I've  started to look at how the write load created by the emoncms feed  engines can be reduced through in memory buffering and writing in larger  blocks to disk, initial testing suggests that it could be reduced by  potentially more than a 1000x on systems with 30+ feeds, maybe several  100x on systems with only a few feeds.<br /><br />See forum post: <a href="http://openenergymonitor.org/emon/node/5319">http://openenergymonitor.org/emon/node/5319 </a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/06/emonpi-raspberry-pi-energy-monitoring/">emonPi Raspberry Pi Energy Monitoring Shield - Prototype Dev Update </a>
   </h1>
   
@@ -995,50 +1035,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2014/03/emontx-v3-antenna-testing/">emonTx V3 Antenna Testing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2014-03-12T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-12 12:57:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/antenna/'>Antenna</a></li>
-      
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2014/03/emontx-v3-antenna-testing/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Today we did some quick testing regarding using different antennas with the emonTx V3.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Four antenna options were tested (Farnell part numbers listed for SMA antennas) :</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" height="321" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" height="358" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">Note: the graph sub-title has a typo, it should read 'RFM69CW', 'CRW' module does not exist.. At least to my knowledge!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It was found that the wire-whip antenna as shipped by default with the emonTx V3 performed best.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">However using an SMA could be preferable in some environments; it's more robust and can &nbsp;be extended easier.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Now we have a way to measure RSSI (received signel strength indicator) using &nbsp;an rfm69cw module we plan &nbsp;to &nbsp;do some more antenna and range testing. I'm interested to test to see how many db we're loosing in the antenna pcb trace from the module to the RFu328 then the emonTx V3 pcb trace then finally into the 90 degree sma connector. In future version will probably but the rf module and MCU directly on the PCB keeping the antenna trace as short as possible and use an edge mounted sma connector (these are also cheaper and easier to solder in manufacture).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For more info on the test see the emonTx V3 wiki page: &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna">http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna</a></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1061,6 +1057,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1113,12 +1115,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
         </li>
       
     
@@ -1408,6 +1404,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emondc/">emondc
         </a>
       </li>
     

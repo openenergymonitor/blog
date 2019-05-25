@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.openenergymonitor.org/2019/05/emondc/</loc>
+<lastmod>2019-05-25T12:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/2018/11/2018-dev-update/</loc>
 <lastmod>2018-11-08T18:48:00+00:00</lastmod>
 </url>
@@ -1909,6 +1913,9 @@
 <loc>https://blog.openenergymonitor.org/categories/development/</loc>
 </url>
 <url>
+<loc>https://blog.openenergymonitor.org/categories/emondc/</loc>
+</url>
+<url>
 <loc>https://blog.openenergymonitor.org/posts/2/</loc>
 </url>
 <url>
@@ -2018,6 +2025,6 @@
 </url>
 <url>
 <loc>https://blog.openenergymonitor.org/static/mdi-demo.html</loc>
-<lastmod>2019-05-25T17:10:29+00:00</lastmod>
+<lastmod>2019-05-25T17:18:15+00:00</lastmod>
 </url>
 </urlset>

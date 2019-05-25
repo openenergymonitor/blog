@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2015/06/hourly-energy-model-example-3-variable/">Hourly energy model example 3: Variable supply and traditional electricity demand</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-06-14T06:33:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-14 06:33:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/06/hourly-energy-model-example-3-variable/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    The <a href="http://openenergymonitor.org/energymodel/#dataset">ZeroCarbonBritain dataset</a> includes 10 years of hourly traditional electricity demand data for the UK. The previous example compared <a href="http://openenergymonitor.blogspot.co.uk/2015/06/hourly-energy-model-example-2-variable.html">renewable supply data with a flat demand profile</a>, this example explores the effect of the variable traditional electricity demand profile with its day time peaks and night time low on supply/demand matching for the different renewable energy generators.<br /><br />The screenshot below gives a flavour for what the traditional electricity demand profile looks like in blue, the black line is the supply from onshore wind, using the tool you can compare traditional electricity demand to: onshore wind, offshore wind, tidal, wave and solar power. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s1600/traddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="588" src="http://1.bp.blogspot.com/-_uy2XAD5yzg/VXysX_6zNcI/AAAAAAAASdM/j6b1TYS85yA/s640/traddemand.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-oB-kae37Z5s/VXvoMLLp9FI/AAAAAAAAScI/YdkT8sArJyc/s1600/varsupplytraddemand.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>3. Variable supply, traditional electricity demand and oversupply</i><br /><br />These are the results for the amount of demand supplied directly for each generation type, matching annual supply totals with demand totals:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.17kW</td><td>0.79kW</td><td>1.33kW</td><td>1.58kW</td><td>3.98kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>66.5%</td><td>76.7%</td><td>75.2%</td><td>57.0%</td><td>42.1%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>40.7%</td><td>46.5%</td><td>44.7%</td><td>38.7%</td><td>31.1%</td>     </tr></tbody></table><br />Interestingly they only change marginally. Solar PV makes a gain 2% on the demand supplied directly which reflects higher demand in the day vs night time and we see a couple of other 1% changes but the differences are quite marginal and smaller than the difference between each renewable energy type so we don’t really see any change of order.<br /><h3>Increasing the degree of supply/demand matching between a variable renewable supply and traditional electricity demand by over supply</h3>The are multiple ways of increasing the level of supply/demand matching or reducing the unmet demand. Over-supply is one way we can do this and is one of the measures used in the ZeroCarbonBritain scenario. In the previous examples we sized the installed capacity of the renewable electricity generating technologies to produce over the 10 year model period the exact same amount of electricity as was used in the 10 year period.<br />We can re-run the same model but with installed capacity amounts set to 110%, 120% or 130% of demand<br /><br /><b>Oversupply: 110%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.86kW</td><td>1.46kW</td><td>1.74kW</td><td>4.39kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>68.9%</td><td>79.6%</td><td>77.9</td><td>58.9%</td><td>43.0%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>44.1%</td><td>51.8%</td><td>50.0%</td><td>41.7%</td><td>32.4%</td>     </tr></tbody></table><br /><b>Oversupply: 120%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.28kW</td><td>0.94kW</td><td>1.60kW</td><td>1.89kW</td><td>4.79kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>71.1%</td><td>81.9%</td><td>80.3%</td><td>60.4%</td><td>43.8%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>47.2%</td><td>56.5%</td><td>54.3%</td><td>44.3%</td><td>33.5%</td>     </tr></tbody></table><br /><b>Oversupply: 130%</b><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>1.51kW</td><td>1.02kW</td><td>1.73kW</td><td>2.05kW</td><td>5.19kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>72.9%</td><td>83.9%</td><td>82.2%</td><td>61.7%</td><td>44.5%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>50.1%</td><td>60.7%</td><td>58.1%</td><td>46.7%</td><td>34.4%</td>     </tr></tbody></table><br />For every 10% of demand increase in supply we see 1-3% improvements in the percentage of demand supplied directly and 1-5% improvements in the amount of time demand is more or the same as supply.<br /><br />The python code for the above examples is very similar to the previous example for the flat demand profile and can be downloaded here: <a href="http://openenergymonitor.org/energymodel/#python">http://openenergymonitor.org/energymodel/#python </a><br /><br />The next example looks at the question of complementarity between different renewable energy types and asks the question what might the optimum capacity mix point be between wind and solar for a given electricity price point.
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/06/hourly-energy-model-example-2-variable/">Hourly energy model example 2: Variable supply and flat demand (python code included)</a>
   </h1>
   
@@ -993,46 +1033,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/02/real-world-emonth-battery-life/">Real World emonTH Battery Life </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-02-27T10:07:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-02-27 10:07:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/02/real-world-emonth-battery-life/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-PlShSEtKtdA/VPCM49gM8tI/AAAAAAABEW8/mT25YljnsGU/s1600/IMG_5000.JPG" height="266" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The battery on my home <a href="http://shop.openenergymonitor.com/emonth-temperature-humidity-node/">emonTH Temperature &amp; Humidity Node</a> has just died for the second time in 14 months. Each set of batteries lasted exactly 221 days (7 months and 9 days)! The 2 x AA alkaline battery voltage started at 3.1V and the emonTH stopped working just after the voltage dropped below 1.2V (final dying breath was at a battery voltage of 0.8V!). &nbsp;The two AA batteries installed were low cost alkaline batteries <a href="http://www.espares.co.uk/product/es1660092/espares-ultra-alkaline-aa-batteries---pack-of?ApplianceTypeId=1090&amp;ManufacturerId=596">unbranded from e-spares</a>. Battery life would not doubt be longer from some quality cells.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I recommend using rechargeable alkaline batteries if possible in the emonTH, for least environmental impact. See my previous posts on <a href="http://openenergymonitor.blogspot.com/2013/10/aa-battery-considerations.html">emonTH battery selection</a> and <a href="http://openenergymonitor.blogspot.co.uk/2013/10/emonth-update-software-power.html">power consumption optimisation</a>.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">My emonTH had a DHT22 temperature and humidity sensor connected and was set to the default post rate of one minute in-between samples. The unit was running V1.0 firmware (the firmware is now at V1.2, there have been a couple of minor battery life improvements).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It's very impressive how the DC-DC boost converter onboard the emonTH continues to boost the depleting battery voltage to 3.3V, using this method allows the battery to be drained much further than powering the unit directly.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-S9bKmJnwmHU/VPBNtUPusrI/AAAAAAABEWU/Fv1ldwOgbZQ/s1600/Selection_112.jpg" height="356" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-djR60iNPheQ/U8OrFWDpFcI/AAAAAAAA27g/KfL2SLZc4Tg/s1600/emonTH_batterylife.png" height="300" width="640" /></a></div><br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1055,6 +1055,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1107,12 +1113,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
         </li>
       
     
@@ -1402,6 +1402,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emondc/">emondc
         </a>
       </li>
     

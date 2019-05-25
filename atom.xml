@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-05-25T17:12:32+00:00</updated>
+  <updated>2019-05-25T17:19:37+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing emonDC]]></title>
+    <link href="https://blog.openenergymonitor.org/2019/05/emondc/"/>
+    <updated>2019-05-25T12:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2019/05/emondc</id>
+    <content type="html"><![CDATA[<p>emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.</p>
+
+<p>emonDC development kits are now available in the <a href="https://shop.openenergymonitor.com/emondc/">OpenEnergyMonitor Store</a>.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/emonDC_system.jpg" alt="Example System Schematic" /></p>
+
+<h2 id="target-uses">Target Uses</h2>
+
+<ul>
+  <li>12V, 24V and 48V Solar PV systems, up to 64.4V max</li>
+  <li>Battery monitoring.</li>
+  <li>Remote DC data-logging.</li>
+</ul>
+
+<p>Documentation on the unit, and on DC monitoring theory, is contained at the <a href="https://github.com/danbates2/emonDC">Github repo</a>.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Two-channel high side <strong>only</strong> DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.</li>
+  <li>50Amps onboard shunt rating or 1000A external shunt rating.</li>
+  <li>Hall-effect current sensor footprint alternative for isolated current only measurement.</li>
+  <li>Waterproof, clear-top plastic case.</li>
+  <li>128 x 32 OLED display.</li>
+  <li>WiFi Connectivity.</li>
+  <li>Low-power mode (10mA draw).</li>
+  <li>Accurate 12-bit ADC.</li>
+  <li>Over-voltage and reverse voltage protected (fuses).</li>
+</ul>
+
+<p>Also:
+- It can function as an independent unit, self-powered using an onboard buck regulator module powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell.
+- Radio transmission possible through RFM69Pi module.
+- Voltage divisions for reference voltages easily modified by soldering for maximum resolution for given system.
+- The I2C port can connect control boards for power management, in development.
+- Skipping wireless transmission, a physical cable UART connection is possible, compatible with RS485, pending testing.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/shoot1clear_insideDisplay.jpg" alt="inside" /></p>
+
+<h2 id="hardware-options">Hardware Options</h2>
+
+<p>emonDCduo as designed here has shunt, termination, power-supply and other module options.
+<a href="https://vimeo.com/319164161">See this demo video of the options</a>.</p>
+
+<h2 id="selection-process">Selection process</h2>
+
+<p>To help users with their purchase, a few options are available at the shop page. A specification process is required to purchase a unit, based on the installation context.</p>
+
+<p>A recommended process would be something like:</p>
+
+<ul>
+  <li>Find the required Amperage of the target channels.</li>
+  <li>Select shunt on shop page exceeding the maximum expected current.</li>
+  <li>Select cable mounting, ring terminals require crimping, screw terminals are convenient.</li>
+  <li>Select power supply option. If the unit is powered from a measurement channel, then a DC-DC buck regulator is required. I the unit is powered from an external 5V PSU, then wires need connecting to a 5.08mm terminal block on board.</li>
+  <li>Check the remaining options on the store page.</li>
+</ul>
+
+<h2 id="firmware">Firmware</h2>
+
+<p>The firmware is based on emonESP, and detailed instructions on compiling and uploading the firmware can be found in the <a href="https://github.com/openenergymonitor/EmonESP">emonESP documentation</a>.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/emonesp_dcmod.png" alt="inside" /></p>
+
+<h2 id="other-customisation">Other Customisation</h2>
+
+<p>Below are a set of images outlining some other customisations.
+<br /></p>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_gnd.jpg">GND connections, for the power-supply earth with a 4mm ring terminal on a mount. The terminal block for a gnd connection or shunt-lead shielding, if used.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_5v.jpg">5V input location.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_pwr.jpg">Power Select header, for bringing power into an on-board buck regulator, if used.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_resistors.jpg">Reference voltage and line voltage divider resistors.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_refsel.jpg">Shunt amplifier ‘reference select’ headers, for uni or bi-directional measurement.. Typically generator (uni-directional and battery (bi-directional).</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_rfm.jpg">RFM69Pi headers.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/3dprinted_case_1.jpg">3D Printed Case.</a></li>
+  <li><a href="https://uk.farnell.com/1843306">Lightning protection using Gas Discharge Tube (GDT) (external link).</a></li>
+</ul>
+
+<h2 id="online-support">Online Support</h2>
+
+<p>Find answers, post questions, or message Dan directly via the <a href="https://community.openenergymonitor.org/c/hardware/emondc">Community Forum</a>.  Username <a href="https://community.openenergymonitor.org/u/danbates/summary">@danbates</a></p>
+
+<p><a href="https://github.com/danbates2/emonDC"><strong>EmonDC Github Repo: Hardware &amp; Fimrware</strong></a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2018 Development Review]]></title>
@@ -1295,82 +1389,6 @@ energy consumed (joule, J)  = potential difference (volt, V) × current (ampere,
 <p>I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.</p>
 
 <p>For disucssion see <a href="https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106">HTU21D forum thread.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/06/esp8266-ota-update/"/>
-    <updated>2016-06-29T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/06/esp8266-ota-update</id>
-    <content type="html"><![CDATA[<p><strong>This post is part of a series</strong></p>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
-  <li><a href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a>
-    <ul>
-      <li>Related post: <a href="https://blog.openenergymonitor.org/2016/06/esp8266-emonesp-developments/">EmonESP ESP8266 WiFi developments</a></li>
-    </ul>
-  </li>
-  <li><strong>3/3: Continuous Deployment (OTA to ESP8266)</strong></li>
-</ul>
-
-<hr />
-
-<p>Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:</p>
-
-<ol>
-  <li>Code change is committed to the <a href="https://github.com/openenergymonitor/EmonESP">EmonESP repo on GitHub</a></li>
-  <li>TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.</li>
-  <li>If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.</li>
-  <li>If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.</li>
-</ol>
-
-<p>The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/emonesp-update.png" alt="image" /></p>
-
-<!--more-->
-
-<p>The OTA (over-the-air) firmware deployment process is based on Daniel Eichhorn’s (<a href="https://twitter.com/squix78">@squix78</a>) <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">excellent blog post</a>. In summary the process is as follows:</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/esp-update-process.png" alt="image" />
-Diagram from <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-pipeline-push-to-production.html">Daniel Eichhorn’s blog</a></p>
-
-<ul>
-  <li>The build is tagged with a version number using PlatformIO build-flag, see EmonESP <a href="https://github.com/openenergymonitor/EmonESP/blob/master/platformio.ini">platformio.ini</a>.</li>
-  <li>An intermediate PHP script connects to the GitHub API to check the latest release version and returns this as a string.</li>
-  <li>ESP sends it’s current running firmware version to the PHP script using tag argument <code class="highlighter-rouge">&amp;tag=1.0.2</code>.</li>
-  <li>If the running firmware version does not match the latest release version, the PHP script grabs the latest release .bin from github-releases API and serves it up as a download to the ESP.</li>
-  <li>ESP then flashes the compiled .bin OTA update using the <a href="https://github.com/esp8266/Arduino/tree/master/libraries">ESP8266httpUpdate library</a> which is built-in to the espressif Arduino tool-chain</li>
-</ul>
-
-<h3 id="intermediate-php-script">Intermediate PHP script</h3>
-
-<p>Ideally the production ESP8266 would be able to contact the GitHub-release API directly negating the need for the intermediate PHP script. However, there are a number of reasons why this is not practical at the moment. To quote Daniel’s blog post:</p>
-
-<blockquote>
-  <ul>
-    <li>The ESPhttpUpdate currently cannot follow redirects. This is important since github hosts the release artefacts on Amazon AWS. But in the API JSON &gt; object the address points to github, so the http client has to follow a redirect to download the artefact.</li>
-    <li>Github uses https for its API and will redirect you to it if you are trying plain HTTP. This means that you would have to know the SSL fingerprints &gt; of the github API server and the AWS hosting instance since this is required by the ESPs secure client interface. After all the ESPs don’t have a chain &gt; of trusted certificates stored somewhere. While the fingerprint of the github API might be stable, the redirection on Amazon AWS might not always use &gt; the same certificate.</li>
-  </ul>
-</blockquote>
-
-<p><strong>There is currently working example of this process (ESP8266 firmware + intermediate PHP script) in the <code class="highlighter-rouge">ota</code> branch of <a href="https://github.com/openenergymonitor/EmonESP">EmonESP GitHub Repo</a>.</strong></p>
-
-<h3 id="security">Security</h3>
-
-<p><strong>In it’s current implementation the update process described above is not secure.</strong></p>
-
-<p>Obviously secure delivery and verification of the update binary is essential.</p>
-
-<p>Ideally the binary download to the ESP would be done over secure https. This maybe be possible, however https support on the ESP is currently not super stable and limited by the available memory (as mentioned above).</p>
-
-<p>A method to verify the compiled binary could be to sign the compiled binary with a private key which is verified by the ESP before firmware is updated.</p>
-
-<p>I would be interested to hear from anyone with any thoughts / advice as to how secure ESP OTA firmware delivery can be achieved.</p>
-
-<hr />
 ]]></content>
   </entry>
   

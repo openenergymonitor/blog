@@ -633,6 +633,83 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2016/06/esp8266-ota-update/">Part 3/3: Continuous Deployment (Over-The-Air Update to ESP8266)</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2016-06-29T10:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 30th 2016
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emonesp/'>emonesp</a></li>
+      
+        <li><a class='category' href='/categories/esp8266/'>esp8266</a></li>
+      
+        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+      
+        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+      
+        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2016/06/esp8266-ota-update/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p><strong>This post is part of a series</strong></p>
+
+<ul>
+  <li><a href="/2016/06/platformio/">1/3 PlatfomIO overview &amp; compiling + uploading locally and on a Raspberry Pi</a></li>
+  <li><a href="/2016/06/auto-build-continuous-test-firmware/">2/3: Continuous testing and auto release binary generation using PlatformIO &amp; TravisCI</a>
+    <ul>
+      <li>Related post: <a href="/2016/06/esp8266-emonesp-developments">EmonESP ESP8266 WiFi developments</a></li>
+    </ul>
+  </li>
+  <li><strong>3/3: Continuous Deployment (OTA to ESP8266)</strong></li>
+</ul>
+
+<hr />
+
+<p>Following on from my last couple of posts in this series we now have a working continuous cloud-based build &amp; test (firmware compiling) flow using PlatformIO and TravisCI, to quickly recap:</p>
+
+<ol>
+  <li>Code change is committed to the <a href="https://github.com/openenergymonitor/EmonESP">EmonESP repo on GitHub</a></li>
+  <li>TravisCI triggers a build (compile) using PlatformIO running in a TravisCI container in the cloud.</li>
+  <li>If build/compilation process fails we get an email alert, if pull-request we get a warning before merging if proposed changes break the build.</li>
+  <li>If a Git commit is tagged as a release the build process uploads the generated compiled binary (.bin) to the repo GitHub release page.</li>
+</ol>
+
+<p>The next step is to get the compiled binary from GitHub-releases (EmonESP in this example) deployed to a WiFi connected production ESP8266. Here’s the user facing EmonESP web-interface for this firmware update process:</p>
+
+<p><img src="/images/emonesp-update.png" alt="image" /></p>
+
+
+    
+      <a class="btn pull-right" href="/2016/06/esp8266-ota-update/#read-more">Read on &rarr;</a>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2016/06/emoncms-docker/">Emoncms Docker</a>
   </h1>
   
@@ -1263,60 +1340,6 @@ $ docker-compose up
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2016/05/Part3-Aggregated-supply-and-demand/">Part 3: Aggregated supply and demand across multiple households</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2016-05-02T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May  3rd 2016
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/community-smart-grid/'>community smart grid</a></li>
-      
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2016/05/Part3-Aggregated-supply-and-demand/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>One of the main problems with looking at demand at the single household level is that demand at this level is very spiky, there are often long periods of low use around 100W and then suddenly a kettle or electric car charger turns on and demand increases by 20-30x in an instant. Solar generation can be very spiky too and so there is room for matching but it can be difficult to get the timing right.</p>
-
-<p>One solution to increasing supply &amp; demand matching at the household level is to have in home battery storage and diversion to hot water stores – but it may not be the best solution for all cases.</p>
-
-<p>Aggregating supply and demand across households provides an example of how the degree of matching can be increased significantly by what could be described as sequential demand. Not everyone boils a kettle at the same time or a cloud passing over one households solar pv system may not be passing over another’s.</p>
-
-<p>In order to explore the extent of increased matching possible through aggregation of supply and demand I have been working with Dominic McCann from Carbon Coop on what could be called a <a href="https://openenergymonitor.org/dev/smartgrid"><strong>‘virtual microgrid’ concept</strong></a>, we have a provisional front page for this here - please note that its still in early development:</p>
-
-<p><img src="/images/smart-grid.png" alt="image" /></p>
-
-
-    
-      <a class="btn pull-right" href="/2016/05/Part3-Aggregated-supply-and-demand/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1339,6 +1362,12 @@ $ docker-compose up
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1391,12 +1420,6 @@ $ docker-compose up
       
         <li class="post">
           <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
         </li>
       
     
@@ -1686,6 +1709,11 @@ $ docker-compose up
     
       <li>
         <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emondc/">emondc
         </a>
       </li>
     

@@ -633,6 +633,132 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2019/05/emondc/">Introducing emonDC</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2019-05-25T12:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 25th 2019
+    <span class="byline author vcard"><i class='icon-user'></i> Daniel Bates</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/emondc/'>emonDC</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2019/05/emondc/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.</p>
+
+<p>emonDC development kits are now available in the <a href="https://shop.openenergymonitor.com/emondc/">OpenEnergyMonitor Store</a>.</p>
+
+<p><img src="/images/emonDC_system.jpg" alt="Example System Schematic" /></p>
+
+<h2 id="target-uses">Target Uses</h2>
+
+<ul>
+  <li>12V, 24V and 48V Solar PV systems, up to 64.4V max</li>
+  <li>Battery monitoring.</li>
+  <li>Remote DC data-logging.</li>
+</ul>
+
+<p>Documentation on the unit, and on DC monitoring theory, is contained at the <a href="https://github.com/danbates2/emonDC">Github repo</a>.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Two-channel high side <strong>only</strong> DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.</li>
+  <li>50Amps onboard shunt rating or 1000A external shunt rating.</li>
+  <li>Hall-effect current sensor footprint alternative for isolated current only measurement.</li>
+  <li>Waterproof, clear-top plastic case.</li>
+  <li>128 x 32 OLED display.</li>
+  <li>WiFi Connectivity.</li>
+  <li>Low-power mode (10mA draw).</li>
+  <li>Accurate 12-bit ADC.</li>
+  <li>Over-voltage and reverse voltage protected (fuses).</li>
+</ul>
+
+<p>Also:
+- It can function as an independent unit, self-powered using an onboard buck regulator module powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell.
+- Radio transmission possible through RFM69Pi module.
+- Voltage divisions for reference voltages easily modified by soldering for maximum resolution for given system.
+- The I2C port can connect control boards for power management, in development.
+- Skipping wireless transmission, a physical cable UART connection is possible, compatible with RS485, pending testing.</p>
+
+<p><img src="/images/shoot1clear_insideDisplay.jpg" alt="inside" /></p>
+
+<h2 id="hardware-options">Hardware Options</h2>
+
+<p>emonDCduo as designed here has shunt, termination, power-supply and other module options.
+<a href="https://vimeo.com/319164161">See this demo video of the options</a>.</p>
+
+<h2 id="selection-process">Selection process</h2>
+
+<p>To help users with their purchase, a few options are available at the shop page. A specification process is required to purchase a unit, based on the installation context.</p>
+
+<p>A recommended process would be something like:</p>
+
+<ul>
+  <li>Find the required Amperage of the target channels.</li>
+  <li>Select shunt on shop page exceeding the maximum expected current.</li>
+  <li>Select cable mounting, ring terminals require crimping, screw terminals are convenient.</li>
+  <li>Select power supply option. If the unit is powered from a measurement channel, then a DC-DC buck regulator is required. I the unit is powered from an external 5V PSU, then wires need connecting to a 5.08mm terminal block on board.</li>
+  <li>Check the remaining options on the store page.</li>
+</ul>
+
+<h2 id="firmware">Firmware</h2>
+
+<p>The firmware is based on emonESP, and detailed instructions on compiling and uploading the firmware can be found in the <a href="https://github.com/openenergymonitor/EmonESP">emonESP documentation</a>.</p>
+
+<p><img src="/images/emonesp_dcmod.png" alt="inside" /></p>
+
+<h2 id="other-customisation">Other Customisation</h2>
+
+<p>Below are a set of images outlining some other customisations.
+<br /></p>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_gnd.jpg">GND connections, for the power-supply earth with a 4mm ring terminal on a mount. The terminal block for a gnd connection or shunt-lead shielding, if used.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_5v.jpg">5V input location.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_pwr.jpg">Power Select header, for bringing power into an on-board buck regulator, if used.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_resistors.jpg">Reference voltage and line voltage divider resistors.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_refsel.jpg">Shunt amplifier ‘reference select’ headers, for uni or bi-directional measurement.. Typically generator (uni-directional and battery (bi-directional).</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_rfm.jpg">RFM69Pi headers.</a></li>
+  <li><a href="https://raw.githubusercontent.com/danbates2/emonDC/master/images/3dprinted_case_1.jpg">3D Printed Case.</a></li>
+  <li><a href="https://uk.farnell.com/1843306">Lightning protection using Gas Discharge Tube (GDT) (external link).</a></li>
+</ul>
+
+<h2 id="online-support">Online Support</h2>
+
+<p>Find answers, post questions, or message Dan directly via the <a href="https://community.openenergymonitor.org/c/hardware/emondc">Community Forum</a>.  Username <a href="https://community.openenergymonitor.org/u/danbates/summary">@danbates</a></p>
+
+<p><a href="https://github.com/danbates2/emonDC"><strong>EmonDC Github Repo: Hardware &amp; Fimrware</strong></a></p>
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
   </h1>
   
@@ -1175,57 +1301,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2017-05-18T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 19th 2017
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> Less than one minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
-      
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry Pi</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2017/05/raspberrypi-blog/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>I don’t usually write a blog post about a blog post! However this particular blog post does merit a mention.</p>
-
-<p>The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:</p>
-
-<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
-
-<p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
-
-<p><img src="/images/raspi-blog.png" alt="raspi-blog" /></p>
-
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1246,6 +1321,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1298,12 +1379,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
         </li>
       
     
@@ -1593,6 +1668,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     
       <li>
         <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emondc/">emondc
         </a>
       </li>
     

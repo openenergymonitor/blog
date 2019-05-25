@@ -633,6 +633,50 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2014/03/emontx-v3-antenna-testing/">emonTx V3 Antenna Testing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2014-03-12T12:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2014-03-12 12:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/antenna/'>Antenna</a></li>
+      
+        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2014/03/emontx-v3-antenna-testing/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Today we did some quick testing regarding using different antennas with the emonTx V3.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Four antenna options were tested (Farnell part numbers listed for SMA antennas) :</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-d3qcEqG01rk/UyBY6Su1FgI/AAAAAAAAvcw/hJEyZckomxU/s1600/emonTx_ant_test_photo.jpg" height="321" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-7t0KenIjHzk/UyBY6Wxv8jI/AAAAAAAAvcs/riy9H2wVCSA/s1600/emonTxV3_ant_test.png" height="358" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">Note: the graph sub-title has a typo, it should read 'RFM69CW', 'CRW' module does not exist.. At least to my knowledge!&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">It was found that the wire-whip antenna as shipped by default with the emonTx V3 performed best.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">However using an SMA could be preferable in some environments; it's more robust and can &nbsp;be extended easier.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Now we have a way to measure RSSI (received signel strength indicator) using &nbsp;an rfm69cw module we plan &nbsp;to &nbsp;do some more antenna and range testing. I'm interested to test to see how many db we're loosing in the antenna pcb trace from the module to the RFu328 then the emonTx V3 pcb trace then finally into the 90 degree sma connector. In future version will probably but the rf module and MCU directly on the PCB keeping the antenna trace as short as possible and use an edge mounted sma connector (these are also cheaper and easier to solder in manufacture).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">For more info on the test see the emonTx V3 wiki page: &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><a href="http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna">http://wiki.openenergymonitor.org/index.php?title=EmonTx_V3#Antenna</a></div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2014/03/direct-connection-emontx-v3-raspberry/">Direct connection emonTx V3 > Raspberry Pi GPIO</a>
   </h1>
   
@@ -1009,48 +1053,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/12/emoncms-control-developments-and-demos/">Emoncms control developments and demo's</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-12-26T16:23:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-12-26 16:23:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/control/'>control</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/12/emoncms-control-developments-and-demos/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div id="example1heatingonoff">First Happy Christmas everyone for yesterday!<br /><br />One of the things I enjoy about the Christmas period is that you get some nice time to relax and with relaxation comes ideas and energy to try out some new things.<br /><br />Glyn and I had been talking about control interfaces that could work well on a mobile or tablet and Id been working on a touch enabled dial earlier this month so I thought Id package it up as a emoncms module that sets the control variables in the packetgen module, I've also created a couple of simpler control interface examples using buttons and edit boxes. To try out the following demo's for yourself see the steps at the bottom of the post.</div><h2 id="example1heatingonoff">Example 1: Heating On/Off</h2>A simple example using a bootstrap styled html button as our heating on/off button. Clicking the button toggles the state and updates the “packetgen” control packet with the new state.<br /><br /><img alt="button off" height="144" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button.png" title="" width="640" /><br /><br /><img alt="button on" height="145" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/button_on.png" title="" width="640" /><br /><h2 id="example2heatingonoffplussetpoint">Example 2: Heating On/Off plus set point</h2>Very similar to the first example but now with a text input for setting the set point temperature for the room/building. The microcontroller on the control node checks the room temperature and turns on and off the heater depending on the setpoint setting it recieves from emoncms.<br /><br /><img alt="setpoint" height="178" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/setpoint.png" title="" width="640" /><br /><h2 id="example3nestinspireddial">Example 3: Nest inspired dial</h2>A nest inspired dial interface for setting the setpoint temperature. The set point can be adjusted by spinning the dial wheel with your finger:<br /><br /><img alt="heating dial" height="391" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial_expanded.png" title="" width="640" /><br /><br />The dial and page resizes to fit different screen types from widescreen laptop's to mobile phones and tablets and touch can be used to spin the dial.<br /><br /><img alt="heating dial mobile" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/heatingdial.png" title="" /><br /><h2 id="solarpvgeneration">Solar PV Generation</h2>Not really control but developing the idea of custom html/javascript canvas based graphics further.<br /><br />I've always liked the standard “news &amp; weather” app that came with my android phone. It's a good example of how clean an intuitive graphs can be and how touch can be used to browse temperature/humidity at different times of the day.<br />This example is a start on creating a graph that looks and behaves in much the same way implemented in canvas.<br /><br /><img alt="solarpv" height="263" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/solarpv.png" title="" width="640" /><br /><h2 id="whatyouwillneedtoruntheseexamples">What you will need to run these examples</h2>You will need your own installation of emoncms to try these out, such as an emoncms + raspberrypi + harddrive setup.<br /><br /><a href="http://emoncms.org/site/docs/raspberrypihdd">RaspberryPI with harddrive</a><br /><br />You will also need the packetgen module (installed as default with the harddrive image):<br /><br />http://github.com/emoncms/packetgen<br /><br />and the 'development' repository <br /><br />http://github.com/emoncms/development<br /><br />Copy the folder titled myheating from the development repository to your emoncms/Modules folder. (from development/Modules/control)<br /><br />You should now be able to load the examples by clicking on the My Heating menu item.<br /><br />The example does not yet allow for any gui based configuration and so assumes that the control packet structure looks like this:<br /><br /><img alt="packet structure" height="288" src="https://github.com/emoncms/development/raw/master/Modules/control/readme_images/packetgen.png" title="" width="640" /><br /><br />This packet will work with the Arduino electricradiator control node example that can be found here:<br /><br /><a href="https://github.com/emoncms/development/tree/master/Modules/control/Arduino%20Examples/electricradiator">Arduino Examples / electricradiator</a><br /><br />This sketch could be run on an emontx with jeeplug relay's attached or other rfm12b + arduino + relay type hardware builds.<br /><br /><b>Coding your own control interface</b><br /><br />The code for the simple button example above which may be useful as a foundation for building something else can be found here:<br /><br /><a href="https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php">https://github.com/emoncms/development/blob/master/Modules/control/myheating/button.php</a><br /><br />The interface is all in html and javascript jquery and uses bootstrap style buttons it just sends the updated heating state to the packetgen module via ajax.<br /><br /><b>More posts on controlling things </b><br /><br />Glyn's post on controlling his boiler: <a href="http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html">http://openenergymonitor.blogspot.co.uk/2013/12/emoncms-early-heating-control-demo.html</a><br /><br />The packet generator: <a href="http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html">http://openenergymonitor.blogspot.co.uk/2013/11/adding-control-to-emoncms-rfm12b-packet.html</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1073,6 +1075,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1125,12 +1133,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/05/raspberrypi-blog/">Raspberry Pi blog</a>
         </li>
       
     
@@ -1420,6 +1422,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/emonctrl/">emonctrl
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emondc/">emondc
         </a>
       </li>
     
