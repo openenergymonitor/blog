@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: "Introducing emonDC"
 date: "2019-05-25 12:00"
