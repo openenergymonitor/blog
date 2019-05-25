@@ -1,0 +1,95 @@
+---
+published: false
+layout: post
+title: "Introducing emonDC"
+date: "2019-05-25 12:00"
+date_formatted: May 25th 2019
+author: Daniel Bates
+comments: true
+categories: emonDC
+---
+
+emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.
+
+emonDC development kits are now available in the [OpenEnergyMonitor Store](https://shop.openenergymonitor.com/emondc/).
+
+![Example System Schematic]({{site.image_path}}/emonDC_system.jpg)
+
+
+## Target Uses
+
+- 12V, 24V and 48V Solar PV systems, up to 64.4V max
+- Battery monitoring.
+- Remote DC data-logging.
+
+Documentation on the unit, and on DC monitoring theory, is contained at the [Github repo](https://github.com/danbates2/emonDC).
+
+## Features
+
+- Two-channel high side **only** DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.
+- 50Amps onboard shunt rating or 1000A external shunt rating.
+- Hall-effect current sensor footprint alternative for isolated current only measurement.
+- Waterproof, clear-top plastic case.
+- 128 x 32 OLED display.
+- WiFi Connectivity.
+- Low-power mode (10mA draw).
+- Accurate 12-bit ADC.
+- Over-voltage and reverse voltage protected (fuses).
+
+Also:
+- It can function as an independent unit, self-powered using an onboard buck regulator module powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell.
+- Radio transmission possible through RFM69Pi module.
+- Voltage divisions for reference voltages easily modified by soldering for maximum resolution for given system.
+- The I2C port can connect control boards for power management, in development.
+- Skipping wireless transmission, a physical cable UART connection is possible, compatible with RS485, pending testing.
+
+
+![inside]({{site.image_path}}/shoot1clear_insideDisplay.jpg)
+
+## Hardware Options
+
+emonDCduo as designed here has shunt, termination, power-supply and other module options.
+[See this demo video of the options](https://vimeo.com/319164161).
+
+
+## Selection process
+
+To help users with their purchase, a few options are available at the shop page. A specification process is required to purchase a unit, based on the installation context.
+
+A recommended process would be something like:
+
+- Find the required Amperage of the target channels.
+- Select shunt on shop page exceeding the maximum expected current.
+- Select cable mounting, ring terminals require crimping, screw terminals are convenient.
+- Select power supply option. If the unit is powered from a measurement channel, then a DC-DC buck regulator is required. I the unit is powered from an external 5V PSU, then wires need connecting to a 5.08mm terminal block on board.
+- Check the remaining options on the store page.
+
+
+## Firmware
+
+The firmware is based on emonESP, and detailed instructions on compiling and uploading the firmware can be found in the [emonESP documentation](https://github.com/openenergymonitor/EmonESP).
+
+![inside]({{site.image_path}}/emonesp_dcmod.png)
+
+
+## Other Customisation
+
+Below are a set of images outlining some other customisations.
+<br>
+
+- [GND connections, for the power-supply earth with a 4mm ring terminal on a mount. The terminal block for a gnd connection or shunt-lead shielding, if used.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_gnd.jpg)
+- [5V input location.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_5v.jpg)
+- [Power Select header, for bringing power into an on-board buck regulator, if used.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_pwr.jpg)
+- [Reference voltage and line voltage divider resistors.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_resistors.jpg)
+- [Shunt amplifier 'reference select' headers, for uni or bi-directional measurement.. Typically generator (uni-directional and battery (bi-directional).](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_refsel.jpg)
+- [RFM69Pi headers.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/v3.6_overlay_rfm.jpg)
+- [3D Printed Case.](https://raw.githubusercontent.com/danbates2/emonDC/master/images/3dprinted_case_1.jpg)
+- [Lightning protection using Gas Discharge Tube (GDT) (external link).](https://uk.farnell.com/1843306)
+
+
+## Online Support
+
+Find answers, post questions, or message Dan directly via the [Community Forum](https://community.openenergymonitor.org/c/hardware/emondc).  Username [@danbates](https://community.openenergymonitor.org/u/danbates/summary)
+
+[**EmonDC Github Repo: Hardware & Fimrware**](https://github.com/danbates2/emonDC)
