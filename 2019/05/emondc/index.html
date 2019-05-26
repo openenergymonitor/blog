@@ -695,12 +695,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
   <li>Over-voltage and reverse voltage protected (fuses).</li>
 </ul>
 
-<p>Also:
-- It can function as an independent unit, self-powered using an onboard buck regulator module powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell.
-- Radio transmission possible through RFM69Pi module.
-- Voltage divisions for reference voltages easily modified by soldering for maximum resolution for given system.
-- The I2C port can connect control boards for power management, in development.
-- Skipping wireless transmission, a physical cable UART connection is possible, compatible with RS485, pending testing.</p>
+<p>Also, it can function as an independent unit, self-powered using an onboard buck voltage converter powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell. RFM69 based radio transmission is possible through a RFM69Pi module. For accuracy, the voltage sensing resistors and other reference voltage resistors are through hole, for easier modification, ensuring the option of very high resolution at low voltages. The I2C ports can connect control boards for power management, GPIO expander modules, or can forward data to a charge controller module. Skipping wireless transmission altogether, a standard 6-pin UART header is available.</p>
 
 <p><img src="/images/shoot1clear_insideDisplay.jpg" alt="inside" /></p>
 
