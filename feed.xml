@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2019-05-26T11:44:09+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2019-06-11T13:21:46+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
 The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.&lt;/p&gt;
 
 &lt;p&gt;emonDC development kits are now available in the &lt;a href=&quot;https://shop.openenergymonitor.com/emondc/&quot;&gt;OpenEnergyMonitor Store&lt;/a&gt;.&lt;/p&gt;
@@ -18,7 +18,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
 &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Two-channel high side &lt;strong&gt;only&lt;/strong&gt; DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.&lt;/li&gt;
+  &lt;li&gt;Two-channel high or low-side DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.&lt;/li&gt;
   &lt;li&gt;50Amps onboard shunt rating or 1000A external shunt rating.&lt;/li&gt;
   &lt;li&gt;Hall-effect current sensor footprint alternative for isolated current only measurement.&lt;/li&gt;
   &lt;li&gt;Waterproof, clear-top plastic case.&lt;/li&gt;
@@ -98,7 +98,7 @@ Documentation on the unit, and on DC monitoring theory, is contained at the Gith
 Features
 
 
-  Two-channel high side only DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.
+  Two-channel high or low-side DC current and voltage sensing, up to 64.4V or 75V, suitable for a wide range of extra low voltage generator/battery systems.
   50Amps onboard shunt rating or 1000A external shunt rating.
   Hall-effect current sensor footprint alternative for isolated current only measurement.
   Waterproof, clear-top plastic case.
