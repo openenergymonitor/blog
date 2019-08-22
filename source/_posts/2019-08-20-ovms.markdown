@@ -1,0 +1,26 @@
+---
+published: false
+layout: post
+title: "Open Vehicle Monitoring System(OVMS)"
+date: "2019-08-20 12:00"
+date_formatted: Aug 20th 2019
+author: Glyn Hudson
+comments: true
+categories: emonDC
+---
+
+[Open Vehicle Monitoring System](https://www.openvehicles.com/) (OVMS) is a fully open-source independent monitoring telematics system for vehicles, primarily developed by electric vehicles.
+
+OpenEnergyMonitor is the ofical UK/EU reseller for OVMS
+
+OVMS consists of a hardware unit (ESP32) which connects to the vehicle ODB2 port and GPS and GSM antennas. Data is read from the vehicle CAN bus and connectivity to OVMS servers over a secure connection is via 3G GSM or WiFi.
+
+
+
+![OVMS]({{site.image_path}}/ovms.png)
+
+
+## Target Uses
+
+
+<!--more-->
