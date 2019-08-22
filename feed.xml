@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2019-08-21T13:47:14+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2019-08-22T13:28:37+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
 The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.&lt;/p&gt;
 
 &lt;p&gt;emonDC development kits are now available in the &lt;a href=&quot;https://shop.openenergymonitor.com/emondc/&quot;&gt;OpenEnergyMonitor Store&lt;/a&gt;.&lt;/p&gt;
@@ -28,6 +28,8 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
   &lt;li&gt;Accurate 12-bit ADC.&lt;/li&gt;
   &lt;li&gt;Over-voltage and reverse voltage protected (fuses).&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Also, it can function as an independent unit, self-powered using an onboard buck voltage converter powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell. RFM69 based radio transmission is possible through a RFM69Pi module. For accuracy, the voltage sensing resistors and other reference voltage resistors are through hole, for easier modification, ensuring the option of very high resolution at low voltages. The I2C ports can connect control boards for power management, GPIO expander modules, or can forward data to a charge controller module. Skipping wireless transmission altogether, a standard 6-pin UART header is available.&lt;/p&gt;
 
@@ -106,59 +108,7 @@ Features
   WiFi Connectivity.
   Low-power mode (10mA draw).
   Accurate 12-bit ADC.
-  Over-voltage and reverse voltage protected (fuses).
-
-
-Also, it can function as an independent unit, self-powered using an onboard buck voltage converter powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell. RFM69 based radio transmission is possible through a RFM69Pi module. For accuracy, the voltage sensing resistors and other reference voltage resistors are through hole, for easier modification, ensuring the option of very high resolution at low voltages. The I2C ports can connect control boards for power management, GPIO expander modules, or can forward data to a charge controller module. Skipping wireless transmission altogether, a standard 6-pin UART header is available.
-
-
-
-Hardware Options
-
-emonDCduo as designed here has shunt, termination, power-supply and other module options.
-See this demo video of the options.
-
-Selection process
-
-To help users with their purchase, a few options are available at the shop page. A specification process is required to purchase a unit, based on the installation context.
-
-A recommended process would be something like:
-
-
-  Find the required Amperage of the target channels.
-  Select shunt on shop page exceeding the maximum expected current.
-  Select cable mounting, ring terminals require crimping, screw terminals are convenient.
-  Select power supply option. If the unit is powered from a measurement channel, then a DC-DC buck regulator is required. I the unit is powered from an external 5V PSU, then wires need connecting to a 5.08mm terminal block on board.
-  Check the remaining options on the store page.
-
-
-Firmware
-
-The firmware is based on emonESP, and detailed instructions on compiling and uploading the firmware can be found in the emonESP documentation.
-
-
-
-Other Customisation
-
-Below are a set of images outlining some other customisations.
-
-
-
-  GND connections, for the power-supply earth with a 4mm ring terminal on a mount. The terminal block for a gnd connection or shunt-lead shielding, if used.
-  5V input location.
-  Power Select header, for bringing power into an on-board buck regulator, if used.
-  Reference voltage and line voltage divider resistors.
-  Shunt amplifier ‘reference select’ headers, for uni or bi-directional measurement.. Typically generator (uni-directional and battery (bi-directional).
-  RFM69Pi headers.
-  3D Printed Case.
-  Lightning protection using Gas Discharge Tube (GDT) (external link).
-
-
-Online Support
-
-Find answers, post questions, or message Dan directly via the Community Forum.  Username @danbates
-
-EmonDC Github Repo: Hardware &amp;amp; Fimrware</summary></entry><entry><title>2018 Development Review</title><link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/" rel="alternate" type="text/html" title="2018 Development Review" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">&lt;p&gt;We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576&quot;&gt;OpenEnergyMonitor goals 2018/2019&lt;/a&gt;. This post is an update on the progress made before outlining the new development plan in a separate post.&lt;/p&gt;
+  Over-voltage and reverse voltage protected (fuses).</summary></entry><entry><title>2018 Development Review</title><link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/" rel="alternate" type="text/html" title="2018 Development Review" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">&lt;p&gt;We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576&quot;&gt;OpenEnergyMonitor goals 2018/2019&lt;/a&gt;. This post is an update on the progress made before outlining the new development plan in a separate post.&lt;/p&gt;
 
 &lt;p&gt;Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.&lt;/p&gt;
 
