@@ -15,7 +15,7 @@ The shop is based in Bethesda, North Wales, and serves as an information point o
 
 ![Cydynni-1]({{site.image_path}}/cydynni-display-3-shopfront.jpg)
 
-Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the ply laser cut with the help of John at the Bangor University FabLab.
+Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.
 
 ![Cydynni-1]({{site.image_path}}/cydynni-display-1.jpg)
 
