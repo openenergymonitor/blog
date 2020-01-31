@@ -153,7 +153,7 @@ To enable (start a charge) issue RAPI command `$FE`
 
 There is also an [OpenEVSE RAPI command python library](https://github.com/tiramiseb/python-openevse).
 
-RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the [OpenEVSE plus source code](https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h).
+RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the [OpenEVSE plus source code](https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/rapi_proc.h).
 
 #### Future developments
 
