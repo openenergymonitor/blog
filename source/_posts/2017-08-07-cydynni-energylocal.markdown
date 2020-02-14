@@ -37,7 +37,7 @@ Our role so far has been to develop a web app / energy dashboard so that partici
 
 The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:
 
-[https://cydynni.org.uk](https://cydynni.org.uk)
+[https://dashfwrdd.energylocal.org.uk](https://dashfwrdd.energylocal.org.uk/)
 
 ![cydynni-app.png]({{site.image_path}}/cydynni-app.png)
 
