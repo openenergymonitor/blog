@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cydynni emonCMS dashboard on display]]></title>
+    <link href="https://blog.openenergymonitor.org/2019/10/cydynni-display/"/>
+    <updated>2019-10-01T12:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2019/10/cydynni-display</id>
+    <content type="html"><![CDATA[<p>Following on from work <a href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">started over two years ago with Cydynni</a> Trystan was tasked with a one off shop-front display project. This was intended as a high quality display screen showing an emonCMS dashboard with the real-time output of the local hydro-energy project.</p>
+
+<p>The shop is based in Bethesda, North Wales, and serves as an information point on the community energy project, to celebrate it’s recent success.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-3-shopfront.jpg" alt="Cydynni-1" /></p>
+
+<p>Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.</p>
+
+<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-1.jpg" alt="Cydynni-1" /></p>
+
+<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-2.jpg" alt="Cydynni-1" /></p>
+
+<video width="600" controls="">
+  <source src="https://blog.openenergymonitor.org/images/cydynni-display-vid.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introducing emonDC]]></title>
@@ -308,9 +332,9 @@ A limitation with the last approach where solar was not enough to complete the c
 <p>Follow the development of this project and learn about our next steps on the forums.</p>
 
 <ul>
-  <li><a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Forum post: CydYnni, EnergyLocal Community hydro smart grid
-  <li><a href="https://github.com/emoncms/demandshaper">Github: Emoncms demand shaper module
-
+  <li><a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Forum post: CydYnni, EnergyLocal Community hydro smart grid&lt;/li&gt;
+  <li><a href="https://github.com/emoncms/demandshaper">Github: Emoncms demand shaper module&lt;/li&gt;
+&lt;/ul&gt;
 </a></li></a></li></ul>
 ]]></content>
   </entry>
@@ -486,7 +510,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p>The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:</p>
 
-<p><a href="https://cydynni.org.uk">https://cydynni.org.uk</a></p>
+<p><a href="https://dashfwrdd.energylocal.org.uk/">https://dashfwrdd.energylocal.org.uk</a></p>
 
 <p><img src="https://blog.openenergymonitor.org/images/cydynni-app.png" alt="cydynni-app.png" /></p>
 
@@ -544,32 +568,32 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <h2 id="new-features">New features</h2>
 
-<h4 id="multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
+<h4 id="1-multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
 
 <p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
 It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
 
 <p><img src="https://blog.openenergymonitor.org/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
 
-<h4 id="multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
+<h4 id="2-multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
 
 <p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
 
 <p><img src="https://blog.openenergymonitor.org/images/app1.png" alt="app1" /><img src="https://blog.openenergymonitor.org/images/app2.png" alt="app2" /></p>
 
-<h4 id="multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
+<h4 id="3-multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
 
 <p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
 
 <p><img src="https://blog.openenergymonitor.org/images/app-cost.png" alt="app-cost" /></p>
 
-<h4 id="language-translations">4. Language Translations:</h4>
+<h4 id="4-language-translations">4. Language Translations:</h4>
 
 <p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
 
 <p><img src="https://blog.openenergymonitor.org/images/app-lang.png" alt="app-lang" /></p>
 
-<h4 id="chromebook-support">5. Chromebook support:</h4>
+<h4 id="5-chromebook-support">5. Chromebook support:</h4>
 
 <p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
 
@@ -647,7 +671,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The lovely folks at the Raspberry Pi foundation have published a blog post about OpenEnergyMonitor:</p>
 
-<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pihttpswwwraspberrypiorgblogopen-source-energy-monitoring-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
+<h4 id="raspberry-pi-blog-open-source-energy-monitoring-using-raspberry-pi"><a href="https://www.raspberrypi.org/blog/open-source-energy-monitoring-raspberry-pi/">Raspberry Pi Blog: Open-source Energy Monitoring Using Raspberry Pi</a></h4>
 
 <p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
 
@@ -1062,7 +1086,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>There is also an <a href="https://github.com/tiramiseb/python-openevse">OpenEVSE RAPI command python library</a>.</p>
 
-<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h">OpenEVSE plus source code</a>.</p>
+<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/rapi_proc.h">OpenEVSE plus source code</a>.</p>
 
 <h4 id="future-developments">Future developments</h4>
 
@@ -1233,159 +1257,6 @@ Thanks for reading!</p>
   <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;loop=false&amp;delayms=3000">View in HTML (hosted from Google Slides)</a></li>
   <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View in full Google Slides format (with clickable hyperlinks &amp; selectable text)</a></li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[HTU21D / Si72021 Temperature and Humidity Sensor]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor/"/>
-    <updated>2016-07-26T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/07/HTU21D-Temperature-Humidity-sensor</id>
-    <content type="html"><![CDATA[<p>I have been been evaluating the <a href="https://octopart.com/htu21d-measurement+specialties-30374934">HTU21D</a> temperature and humidity sensor made by Measurement Specialties as a possible DHT22 replacement for the emonTH. This is quite a new sensor, released in 2013. The <a href="https://octopart.com/si7021-a10-gm-silicon+labs-31448011">Si72021</a> is also a posiblity with an identical pin-out and specs.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/htu21d_1.png" alt="image" /></p>
-
-<ul>
-  <li><a href="https://octopart.com/htu21d-measurement+specialties-30374934">OctoPart list</a></li>
-  <li><a href="http://datasheet.octopart.com/HTU21D-Measurement-Specialites-datasheet-22149496.pdf">Datasheet</a></li>
-  <li><a href="http://uk.farnell.com/measurement-specialties/htu21d/humidity-digital-3-rh-dfn-6/dp/2393536?CMP=GRHB-OCTOPART">Farnell item</a></li>
-  <li>DFM footprint</li>
-  <li>Digital, pre-clibrated</li>
-  <li>I2C</li>
-</ul>
-
-<p>The metrics speak for themselves:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>HTU21D</th>
-      <th>Si72021</th>
-      <th>DHT22</th>
-      <th>DHT22 vs HTU21D Difference</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cost in 1k off</td>
-      <td>£1.42 (July16)</td>
-      <td>£2.15</td>
-      <td>£4.57 (July16)</td>
-      <td>3.2 times cheaper (£3.15 less!)</td>
-    </tr>
-    <tr>
-      <td>Vcc</td>
-      <td>2.1v - 3.6V</td>
-      <td>1.9V - 3.6V</td>
-      <td>3.3-6V</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Humidity accuracy</td>
-      <td>±2% RH</td>
-      <td>±2% RH</td>
-      <td>±2%RH</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>Humidity Range</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>0-100% RH</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>Temperature accuracy</td>
-      <td>±0.3°C</td>
-      <td>±0.4°C</td>
-      <td>±0.5°C</td>
-      <td>40% more accurate</td>
-    </tr>
-    <tr>
-      <td>Temperature Range</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +125°C</td>
-      <td>-40°C +80°C</td>
-      <td>56% more accurate</td>
-    </tr>
-    <tr>
-      <td>Sleep Current</td>
-      <td>0.02uA</td>
-      <td>0.06uA</td>
-      <td>15uA</td>
-      <td>750 times less power</td>
-    </tr>
-    <tr>
-      <td>Measurement Current</td>
-      <td>0.045mA</td>
-      <td>0.09 mA</td>
-      <td>0.5mA</td>
-      <td>11 times less power</td>
-    </tr>
-    <tr>
-      <td>Measurement time</td>
-      <td>0.01s - 0.0026s</td>
-      <td>0.01s - 0.0026s</td>
-      <td>2s</td>
-      <td>200 times faster</td>
-    </tr>
-    <tr>
-      <td>Energy consumed per sample</td>
-      <td>1.5uJ</td>
-      <td>2.97uJ</td>
-      <td>3300uJ</td>
-      <td>2000 times less power</td>
-    </tr>
-    <tr>
-      <td>Time sampling per day*</td>
-      <td>14.4s</td>
-      <td> </td>
-      <td>2800s</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Time sleeping per day*</td>
-      <td>86386s</td>
-      <td> </td>
-      <td>83600s</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Energy consumed per day*</td>
-      <td>2.36mW [1]</td>
-      <td> </td>
-      <td>2836mW [2]</td>
-      <td>1201 times less energy per day!</td>
-    </tr>
-  </tbody>
-</table>
-
-<!--more-->
-
-<div class="highlighter-rouge"><pre class="highlight"><code>energy consumed (joule, J) = potential difference (volt, V) × charge (coulomb, C)  
-charge (coulomb, C) = current (ampere, A) × time (second, s) 
-energy consumed (joule, J)  = potential difference (volt, V) × current (ampere, A) × time (second, s) 
-</code></pre>
-</div>
-
-<p>*Assuming 1 sample per min and sleeping in between samples, 1440 min per day = 86400s per day. See HTU21D testing repo a <a href="https://github.com/openenergymonitor/emonTH/blob/master/sensor_test/htu21d">sub-repository of the emonTH</a> for full calculations.</p>
-
-<p><strong>An upgraded emonTH with a HTU21D sensor instead of DHT22 should benefit from substantially increased battery life, increased accuracy and lower cost.</strong></p>
-
-<p>I’ve obtained <a href="https://www.sparkfun.com/products/retired/12064">HTU21D Sparkfun breakout to test</a> and easily got it working with an Arduino using the <a href="https://github.com/adafruit/Adafruit_HTU21DF_Library">Adafruit library</a>.</p>
-
-<p><img src="https://blog.openenergymonitor.org/images/htu21d_2.jpg" alt="image" /></p>
-
-<hr />
-
-<p>There is some confusion with regard to the variants of this sensor <em>I believe</em> from my research that the HTU21D <strong>replaces</strong> the <a href="https://octopart.com/sht21-sensirion-19013846">SHT21</a> made by Sensirion. Both sensors have identical pin-outs.</p>
-
-<hr />
-
-<p>I hope to get a prototype emonTH with HTU21D up and running soon. I would be interested to hear if anyone has experience working with this sensor.</p>
-
-<p>For disucssion see <a href="https://community.openenergymonitor.org/t/htu21d-temperature-and-humidity-sensor-possible-dht22-replacement/1106">HTU21D forum thread.</a></p>
 ]]></content>
   </entry>
   

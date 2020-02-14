@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonSD | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emonsd/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -55,7 +55,7 @@
   <li>Root file-system read-only</li>
 </ul>
 
-<h3 id="download-latest-emonsd--view-full-change-loghttpsgithubcomopenenergymonitoremonpiwikiemonsd-pre-built-sd-card-download--change-logemonsd-03may16--release"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
+<h3 id="download-latest-emonsd--view-full-change-log"><a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-03may16--release">Download latest emonSD &amp; view full change-log</a></h3>
 
 <p>All emonPi / emonBase’s that have been purchased from our online store from June 2015 - May 2016 have been shipped with the old <a href="https://github.com/openenergymonitor/emonpi/wiki/emonSD-pre-built-SD-card-Download-&amp;-Change-Log#emonsd-17jun15">17June15</a> emonSD. The new emonSD 03May16 will now be included by default (<a href="/2016/05/emonpi-raspberrypi3/">together with a Raspberry Pi 3</a>) with all emonPi / emonBase purchases. If you have recently puchased an emonPi and it like the photo (black acrylic fascia) then you have the new emonSD and Raspberry Pi 3inside. The acrylic fascia is required to use the Raspberry Pi 3’s on-board WiFi (<a href="/2016/05/emonpi-raspberrypi3/">see blog post</a>):</p>
 
@@ -79,7 +79,7 @@
 
 <p>As <a href="2016/05/website-changes/">previously mentioned on the blog</a> a couple of weeks ago we have launched a new User Guide website, the launch of this Guide has coincide with the launch of the new emonSD. The User Guide is designed to be the goto location for everything a user needs to know to setup, use and configure an OpenEnergyMonitor system:</p>
 
-<h3 id="httpsguideopenenergymonitororghttpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
+<h3 id="httpsguideopenenergymonitororg"><a href="https://guide.openenergymonitor.org">https://guide.openenergymonitor.org</a></h3>
 
 <h2 id="related-blog-posts">Related Blog posts</h2>
 

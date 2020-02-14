@@ -633,6 +633,48 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2013/01/power-emontx-from-single-ac-power/">Power emonTx from single AC power supply - Part 2 bench testing </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-01-31T23:49:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-01-31 23:49:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> seven minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/electronics/'>electronics</a></li>
+      
+        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/01/power-emontx-from-single-ac-power/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Back in May last year we did some work (with the help of Robert Wall and others) into the design of an AC-DC circuit to allow the emonTx to run off a single AC power adapter while at the same time taking accurate AC voltage samples to be used for Vrms, real power, frequency and power factor calculations. <a href="http://openenergymonitor.blogspot.co.uk/2012/05/emontx-single-ac-power-supply.html">Read the original blog post detailing how the circuit works</a>. Basicly, it's a half wave rectifier circuit with a carefully chosen value current limiting resistor.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Just to recap, the challenge is powering the emonTx with 3.3V DC while not loading the AC adapter as to not effect the quality of the AC sine wave sample. An as close to perfect AC sample is desirable for best accuracy of real power readings,&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">We have finally got round to testing the circuit we simulated using LT SPICE. In summary, results are positive, the circuit works as expected!</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Here's what I did: the following circuit was built on a bread board, using an emonTx with the voltage regulator. The <a href="http://shop.openenergymonitor.com/ac-ac-adapter-uk-plug/">standard Ideal Power 9V AC-AC adapter</a> from the shop was used for the test.<br /><br /></div><div style="margin-bottom: 0cm;"><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-efRwc-_9iZo/UQsBx0N6oJI/AAAAAAAAdH0/ueIjVqug5Eg/s1600/2013-01-31+20.50.48.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-efRwc-_9iZo/UQsBx0N6oJI/AAAAAAAAdH0/ueIjVqug5Eg/s320/2013-01-31+20.50.48.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Scope trace showing input to voltage regulator</td></tr></tbody></table></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-3El_MoBPMCI/T8H-QwqxftI/AAAAAAAAbn4/Zl-kBlwbQRI/s1600/Half+wave+rectifier+power+supply+labeled+diagram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="188" src="http://1.bp.blogspot.com/-3El_MoBPMCI/T8H-QwqxftI/AAAAAAAAbn4/Zl-kBlwbQRI/s640/Half+wave+rectifier+power+supply+labeled+diagram.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Half-wave rectifier circuit</td></tr></tbody></table><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">A sketch was uploaded to the ATmega328 on the emonTx to cycle through a number of different power levels while using a scope to measure the sawtooth voltage waveform going into the MCP1702 voltage regulator. The following was recorded  </div><div style="margin-bottom: 0cm;"><br /></div><table cellpadding="4" cellspacing="0" style="width: 100%px;"> <colgroup><col width="51*"></col> <col width="51*"></col> <col width="51*"></col> <col width="51*"></col> <col width="51*"></col> </colgroup><tbody><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Power State</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Current draw</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Vrms into MCP1702</b></td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: 1px solid #000000; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0.1cm;" width="20%"><b>Delta V into MCP1702</b></td>  <td style="border: 1px solid #000000; padding: 0.1cm;" width="20%"><b>AC Voltage sample ripple     </b></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">Sleep</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">25uA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">16.4V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">0V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 only</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">7.7mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">12.7V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.72V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + RFM12B     </td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">8.1mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">12.5V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">2.8V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + LED</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">16.9mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">10.1V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">5.5V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%"><br /><br /></td> </tr><tr valign="TOP">  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">ATmega328 + LED + RFM12B</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">17.3mA</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">10V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm; padding-top: 0cm;" width="20%">5.53V</td>  <td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: none; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm; padding-top: 0cm;" width="20%">Approx 80mV (limit of the scope)</td> </tr></tbody></table><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The voltage limited zener diode was omitted from the test setup but will be present in the main circuit to avoid over volting the MCP1702 when supply is un-loaded.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The AC voltage sample will be taken when the emonTx is consuming 7.7mA (ATmega328 only running), the test has assured me that the circuit will be able to provide 3.3V DC without hardly any distortion to the AC waveform. There was only a 80mV ripple when drawing 17mA we can expect the ripple to be under half this when the emonTx is drawing 7.7mA.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It's interesting to note that the RMF12B (when idle, not sleeping) draws 0.4mA and the LED draws 9.2mA. The circuit is speed up to 20mA max so it would be possible to add one DS28B20 that will at maxim consume 2.3mA for short periods.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">AC-DC circuit will be incorporated into the next version of the emonTx. Further testing will be done on this prototype to double check everything.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Roll on single power supply Real Power accurate energy monitoring. As well as being a neater setup it will also significantly reduce the carbon footprint and amount of electrical waste which will eventually go into landfill if we can enable the emonTx to only need the one plug-in power adapter.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/12/a-big-thank-you-to-everyone/">A big thank you to everyone</a>
   </h1>
   
@@ -991,48 +1033,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/11/queuing-packets-on-basestation-and-bulk/">Queuing packets on the basestation and bulk sending to emoncms</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-11-14T18:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-11-14 18:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/nanoderf/'>NanodeRF</a></li>
-      
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/11/queuing-packets-on-basestation-and-bulk/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    As we connect more and more wireless nodes to a basestation, with each wireless node transmitting every 10s or so we quickly start to have a situation where the basestation is trying to make several connections to the server every second. <br /> <br />The question is, does the rate of connections matter? Is it bad news for the emoncms server and what is the effect on the local internet connection, router? <br /> <br />Although I have not investigated this in detail, Im pretty sure Im seeing an adverse effect on my internet connection if the post rate gets too high, I noticed this especially the other day when I changed my router to a bt homehub after a lighting strike took out the old router. It would be great to get some good data on this. <br /> <br />Then there is the question of server load which needs more investigation. <br /><br />Jumping to a solution before the problem is properly characterized, the solution that comes to mind is to queue packets received from wireless nodes in the basestation and then do a bulk post at a slower rate, such as once every 20s or longer. <br /> <br />I have put together an initial working example of this, including code for both the NanodeRF basestation end and the emoncms server end. <br /><br />Starting with the NanodeRF code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />The NanodeRF code queues packets received, including a time offset between packets so that they can be stored in emoncms at the right time when they get there (although the implementation for this is a little rough at the moment). <br /> <br />The packets are queued in a string that can be sent via the ethernet and then decoded simply in emoncms using json_decode(); <br /> <br />A string for 3 packets from the different nodes looks like this: <br />[[0,16,1137],[2,17,1437,3164],[4,19,1412,3077]] <br /> <br />The first node: [0,16,1137] <br /> <br />The first number of each node is the time offset, so for the first node it is 0 which means the packet for the first node arrived at 0 seconds. The second node arrived at 2 seconds and 3rd 4 seconds. <br /> <br />The second number is the node id, this is the unqiue identifer for the wireless node. <br /> <br />All the numbers after the first two are data values. The first node here (node 16) has only once data value: 1137. <br /><br />This string is sent to emoncms every 20s in the example and there is enough room in the string buffer to store up to 400 characters or about 22 low power temperature node packets, this may be extendible by another 200 characters for more storage, and maybe a lot further with an SD card or other larger storage medium. <br /> <br />The emoncms api for sending bulk data is emoncms.org/input/bulk?data= <br /> <br />Emoncms then decodes the string, registers and processes the inputs and returns an ok. <br /> <br />If your interested in testing this out, here's the NanodeRF bluksend example again, if your using the NanodeRF_multinode code already this is just a straight switch to the bulk send code: <br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_multinode_bulksend</a> <br /> <br />If your running your own server you will need the latest emoncms version: <br /><a href="https://github.com/emoncms/emoncms">https://github.com/emoncms/emoncms</a> or if you are using emoncms.org its all ready to go there. <br /> <br />There's a couple of question marks at the moment as to the stability of this initial working example, I had a few problems with the queue string getting malformed but only once every 20-30 successful string builds and at the moment the nanodeRF does not reset itself using the watchdog if there are more than 10 unsucessful attempts. A few extra eye's on the code would definetly help to improve it and I will keep testing here.
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1055,6 +1055,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/10/cydynni-display/">Cydynni emonCMS dashboard on display</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1107,12 +1113,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
         </li>
       
     
@@ -1397,6 +1397,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/emonbase/">emonbase
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emoncms/">emoncms
         </a>
       </li>
     

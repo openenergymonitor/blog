@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vrms | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/vrms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -28,7 +28,7 @@
 
 <!--more-->
 
-<h2 id="notes-on-mains-voltage-limits">* Notes on Mains Voltage Limits</h2>
+<h2 id="-notes-on-mains-voltage-limits">* Notes on Mains Voltage Limits</h2>
 
 <p>The standard domestic mains supply for Europe is 230 V ± 10%, giving a lower limit of 207 V and an upper limit of 253 V. It is permissible under BS 7671 to have a voltage drop within the installation of 5%, which would give a lower limit of 195.5 V.
 The UK standard prior to harmonization was 240 V ± 6%, giving an upper limit of 254.4 V.</p>

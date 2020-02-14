@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: emoncms | Blog | OpenEnergyMonitor]]></title>
+  <title><![CDATA[Category: emonCMS | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -14,316 +14,26 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Demand Side Response Development]]></title>
-    <link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/"/>
-    <updated>2018-11-08T18:48:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id>
-    <content type="html"><![CDATA[<p><img src="/images/emonevse-solarpv.jpeg" alt="openevse leaf" /></p>
+    <title type="html"><![CDATA[Cydynni emonCMS dashboard on display]]></title>
+    <link href="https://blog.openenergymonitor.org/2019/10/cydynni-display/"/>
+    <updated>2019-10-01T12:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2019/10/cydynni-display</id>
+    <content type="html"><![CDATA[<p>Following on from work <a href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">started over two years ago with Cydynni</a> Trystan was tasked with a one off shop-front display project. This was intended as a high quality display screen showing an emonCMS dashboard with the real-time output of the local hydro-energy project.</p>
 
-<p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/integrations/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the <a href="https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762">EnergyLocal project</a>.</p>
+<p>The shop is based in Bethesda, North Wales, and serves as an information point on the community energy project, to celebrate it’s recent success.</p>
 
-<!--more-->
+<p><img src="/images/cydynni-display-3-shopfront.jpg" alt="Cydynni-1" /></p>
 
-<hr />
+<p>Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.</p>
 
-<p>DSR: Demand Side Response is the idea of moving demand to</p>
+<p><img src="/images/cydynni-display-1.jpg" alt="Cydynni-1" /></p>
 
-<ul>
-  <li>Better match supply, something that becomes more important as we supply more of our electricity from renewable energy.</li>
-  <li>Reduce electricity system cost by reducing the maximum dispatchable generation, distribution and transmission grid capacity needed.</li>
-</ul>
+<p><img src="/images/cydynni-display-2.jpg" alt="Cydynni-1" /></p>
 
-<p>Household electricity demand such as lighting, computing, TV, cooking, fridge/freezer, washing have relatively low DSR potential, either due to the need for these demands to happen during times of occupancy (peak demand) or because these demands are relatively small.</p>
-
-<p>However as we move towards a zero carbon future, most scenarios suggest that large scale electrification of transport and heat is needed, alongside powering up of renewable energy. Both electric vehicles and electric heating e.g heatpumps &amp; hot water storage have significant DSR potential.</p>
-
-<table><tr><td style="width:35%">
-
-<a href="https://blog.openenergymonitor.org/images/energymodel.png">
-  <img src="https://blog.openenergymonitor.org/images/energymodel.png" style="width:276px" />
-</a>
-
-
-</td><td>
-
-This screenshot from our work on modelling zero carbon energy systems based on The Centre for Alternative Technologies ZeroCarbonBritain model <a href="https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated.html#fullhousehold">https://learn.openenergymonitor.org/sustainable-energy/zcem/integrated</a> shows an example of the extent to which renewable energy supply could vary in the future and so the potential for DSR to move demand to better match supply.
-<br /><br />
-<i>Dark blue: traditional household electricity demand (minus any heating), Red: heatpump demand with DSR, Green: EV demand with DSR, Blue: Electrolysis demand for synthetic fuels soaking up large excess capacity, Total: Wind and solar output.</i>
-
-</td></tr><tr><td>
-
-<a href="https://blog.openenergymonitor.org/images/cydynni.png">
-   <img src="https://blog.openenergymonitor.org/images/cydynni.png" style="width:276px" />
-</a>
-</td><td>
-
-Energy local are pioneering community energy aggregation tariffs with both time of use pricing and pricing based on availability of a local renewable energy generator. A household with loads suitable for DSR can lower their electricity cost and use a greater amount of local power by shifting their demand to better times.
-<br /><br />
-EnergyLocal provide a day ahead forecast that can be used to schedule appliances, EV’s, hot water storage etc.
-
-</td></tr><tr><td>
-
-<a href="https://blog.openenergymonitor.org/images/octopus.png">
-   <img src="https://blog.openenergymonitor.org/images/octopus.png" style="width:276px" />
-</a>
-
-</td><td>
-
-For households not able to take part in community energy aggregation tariffs such as EnergyLocal, Octopus Energy have recently introduced a time of use tariff, that reflects wholesale electricity prices. <a href="https://octopus.energy/agile">https://octopus.energy/agile</a>
-<br /><br />
-Agile also provide a day ahead price profile that can be used for scheduling.
-<br /><br />
-Savings made by using these tariffs can help payback expenditure on smart energy technologies. Especially where battery or heat storage is considered during the build or retrofit stage. E.g using thermal mass to store heat from heatpumps during times of excess supply.
-
-</td></tr><tr><td>
-
-<a href="https://blog.openenergymonitor.org/images/gridcarbon.png">
-   <img src="https://blog.openenergymonitor.org/images/gridcarbon.png" style="width:276px" />
-</a>
-
-</td><td>
-
-Another approach to forecasting could be to use [grid carbon intensity](http://carbonintensity.org.uk/), weather forecasts e.g darksky API and grid demand forecasts (to avoid peak times).
-<br /><br />
-Users keen to stay with their existing electricity suppliers e.g Ecotricity for Electric Highway EV charging benefits could still make use of scheduling to ensure demand happens at the best time from a carbon and limiting grid strain perspective.
-
-</td></tr></table>
-
-<h3 id="control-approach">Control approach</h3>
-
-<table><tr><td>
-
-<p>1. <b>Realtime</b><br />
-The emonEVSE is our first product that implements automated DSR, designed to charge a connected electric vehicle according to the available output from a solar PV array, it is an example of automated real-time DSR. A similar application and control strategy is PV diversion to hot water.</p>
-
-<p>2. <b>Combined real-time &amp; later scheduled period</b><br />
-A real-time only control strategy is limited in the case that solar output in a given day does not charge the car up sufficiently for use later in the afternoon/evening or next day, or the hot water tank is not heated sufficiently for an evening/morning shower. In both cases a further period of charging will be needed. This could be achieved with a basic second charging period e.g boost charge before use or an overnight charge.</p>
-
-<p>To make both of these applications work well the control system needs to know when the user wishes to use the car or hot water and the state of charge or temperature target that needs to be reached.</p>
-
-<p>3. <b>Forecast based scheduling</b><br />
-A limitation with the last approach where solar was not enough to complete the charge or heat the tank directly is that the boost charge may happen at a time that is more expensive, or higher carbon. It may be better to charge at a higher rate through the middle of the day, importing power from the grid at that time, than importing during the evening peak. Integrating a solar forecast for the day ahead could predict if the charge will complete directly from the solar and if not proportionally increase the charge rate for the day.</p>
-  
-<p>Another limitation of real-time DSR for hot water heating is that on a sunny day, the cylinder can heat up too quickly and so will then sit at a high temperature loosing heat for longer than it needs too. It may also result in larger ramp effects and strain on the grid if storage is filled during the morning leaving everyone’s solar systems to export through the afternoon.</p>
-<p>Leaving an EV at a high state of charge for a long time is also meant to cause a higher rate of battery degradation and so control strategies that bring the charging period as close to the time of use as possible may be particularly important.</p>
-<p>Using a forecast and information on charge required could allow the control system to absorb power throughout the period of excess supply to better follow the supply curve, reducing ramp strain on the grid and reducing heat store loss and battery degradation.</p>
-
-</td><td style="width:35%">
-
-<a href="https://blog.openenergymonitor.org/images/solardivert.png">
-   <img src="https://blog.openenergymonitor.org/images/solardivert.png" style="width:276px" />
-</a>
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-<a href="https://blog.openenergymonitor.org/images/scheduler.png">
-   <img src="https://blog.openenergymonitor.org/images/scheduler.png" style="width:276px" />
-</a>
-
-</td></tr></table>
-
-<p>Follow the development of this project and learn about our next steps on the forums.</p>
-
-<ul>
-  <li><a href="https://blog.openenergymonitor.org/2018/11/demand-side-response/">Forum post: CydYnni, EnergyLocal Community hydro smart grid
-  <li><a href="https://github.com/emoncms/demandshaper">Github: Emoncms demand shaper module
-
-</a></li></a></li></ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms Blue Theme]]></title>
-    <link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/"/>
-    <updated>2018-01-30T09:01:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id>
-    <content type="html"><![CDATA[<p>For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)</p>
-
-<p>The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.</p>
-
-<p>We like the clean look of the blue theme, we hope you do also :-)</p>
-
-<p>If you don’t it’s easy to revert to back to the old black theme by setting <code class="highlighter-rouge">$theme = standard</code> in <code class="highlighter-rouge">settings.php</code>. There is also a user contributed yellow theme called <code class="highlighter-rouge">sun</code> which is available.</p>
-
-<p>emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.</p>
-
-<p>Feed view in Standard, Blue and Sun theme:</p>
-
-<p><img src="/images/feed-emoncms-theme.png" alt="" /></p>
-
-<!--more-->
-
-<p>Login box in Blue, Standard and Sun theme:</p>
-
-<p><img src="/images/login-emoncms-theme.png" alt="" /></p>
-
-<p>MyElectric dashboard app in box in Standard, Blue, and Sun theme:</p>
-
-<p><img src="/images/he-emoncms-theme.png" alt="" /></p>
-
-<p>For questions and discussion see <a href="https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388">Emoncms Blue Theme Forum Topic</a></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms Android App V2]]></title>
-    <link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/"/>
-    <updated>2017-06-22T00:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id>
-    <content type="html"><![CDATA[<p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
-
-<p><img src="/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
-
-<h2 id="new-features">New features</h2>
-
-<h4 id="multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
-
-<p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
-It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
-
-<p><img src="/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
-
-<h4 id="multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
-
-<p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
-
-<p><img src="/images/app1.png" alt="app1" /><img src="/images/app2.png" alt="app2" /></p>
-
-<h4 id="multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
-
-<p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
-
-<p><img src="/images/app-cost.png" alt="app-cost" /></p>
-
-<h4 id="language-translations">4. Language Translations:</h4>
-
-<p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
-
-<p><img src="/images/app-lang.png" alt="app-lang" /></p>
-
-<h4 id="chromebook-support">5. Chromebook support:</h4>
-
-<p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
-
-<p><img src="/images/androidv2-4.png" alt="androidv2-4" /></p>
-
-<!--more-->
-
-<p><strong>The current latest version at time of writing is V2.0.8</strong></p>
-
-<p><a href="https://github.com/emoncms/AndroidApp/releases">See Emoncms Android app GitHub repo ‘Releases’ for change log.</a></p>
-
-<hr />
-
-<h4 id="community">Community</h4>
-
-<p>The main features of the V2 update were contributed open-source by <a href="https://community.openenergymonitor.org/u/tamsin">Tamsin Slinn</a>. We very much appreciate all her hard work.</p>
-
-<p>Also thanks to:</p>
-
-<ul>
-  <li><a href="https://community.openenergymonitor.org/u/jumpmaster">@JumpMaster</a>  (Original app author: various fixes and guidence)</li>
-  <li><a href="https://community.openenergymonitor.org/u/bidouilleur">@bidouilleur</a> French translation proofreading &amp; corrections)</li>
-  <li><a href="https://community.openenergymonitor.org/u/revil.o">@revil.o</a> (German translation proofreading &amp; corrections)</li>
-  <li><a href="https://community.openenergymonitor.org/u/joyrider3774">@joyrider3774</a> (Dutch translation bug fixing)</li>
-  <li><a href="https://community.openenergymonitor.org/u/pb66">@pb66</a> (testing and feedback)</li>
-</ul>
-
-<p><a href="https://community.openenergymonitor.org/t/emoncms-android-app-v2-0-8-open-beta-testing/3373/65">See Android app V2 development forum thread</a></p>
-
-<p>As always the Android app is <a href="https://github.com/emoncms/AndroidApp">fully open-source on GithHub</a>, contributions are most welcome :-)</p>
-
-<p>The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms Docker]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/06/emoncms-docker/"/>
-    <updated>2016-06-25T10:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/06/emoncms-docker</id>
-    <content type="html"><![CDATA[<p>We have made the first steps towards running Emoncms to run in a <a href="https://www.docker.com/">Docker</a> container.</p>
-
-<p>Dockerfiles and setup notes are in the emoncms-docker repository:</p>
-
-<h3 id="httpsgithubcomemoncmsemoncms-dockerhttpsgithubcomemoncmsemoncms-docker"><a href="https://github.com/emoncms/emoncms-docker">https://github.com/emoncms/emoncms-docker</a></h3>
-
-<p><img src="/images/docker-logo.png" alt="image" /></p>
-
-<p>Docker is an exciting tool to help make development, testing and deployment of web-applications easier.</p>
-
-<h2 id="what-is-docker-the-short-version">What is docker? (the short version):</h2>
-
-<blockquote>
-  <p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.</p>
-</blockquote>
-
-<h3 id="what-is-docker-the-long-version">What is docker? (the long version):</h3>
-
-<blockquote>
-  <p>Docker is an open-source platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
-</blockquote>
-
-<h2 id="quick-start">Quick Start</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ docker pull openenergymonitor/emoncms
-$ git clone https://github.com/emoncms/emoncms-docker
-$ cd emoncms-docker
-$ docker-compose up
-</code></pre>
-</div>
-
-<p><strong>That’s it! Emoncms should now be runnning, browse to <a href="http://localhost:8080">http://localhost:8080</a></strong></p>
-
-<!--more-->
-
-<h2 id="emoncms-docker">Emoncms Docker</h2>
-
-<p>Using Docker it’s possible to fire up Emoncms on a bare system (assuming Docker is installed) in a couple of minutes with all the LAMP install &amp; config taken care of.</p>
-
-<p>This is great for development since it’s possible to play about with Emoncms running in a Docker container without fear of messing up your system or production Emoncms install.</p>
-
-<p>In the future, Docker can even be used as a deployment tool for Emoncms. In theory, it should possible to deploy the Emoncms Docker container on any server within minutes.</p>
-
-<p>We have taken a multi-container approach with php-apache running in one container and the MYSQL database running in another. The containers are linked using <a href="https://docs.docker.com/compose/overview/">docker-compose</a>.</p>
-
-<p><strong>See <a href="https://github.com/emoncms/emoncms-docker">emoncms-docker Readme</a> for setup &amp; build instructions.</strong></p>
-
-<p><em>Note: The Emoncms docker setup is currently in development and not recomended for production Emoncms deployment just yet.</em></p>
-
-<h2 id="forum-discussion">Forum discussion</h2>
-
-<p>See <a href="https://community.openenergymonitor.org/t/emoncms-docker/823/4">this forum topic</a> for discussion.</p>
-
-<hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emoncms android App QR Code Scanner Setup]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/05/emoncms-qr/"/>
-    <updated>2016-05-11T15:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/05/emoncms-qr</id>
-    <content type="html"><![CDATA[<p>I would like to highlight a nice improvement to Emoncms and the Emoncms android app that has been contributed by community memebers <a href="https://community.openenergymonitor.org/users/jumpmaster/activity">@jumpmaster</a> and <a href="https://community.openenergymonitor.org/users/andy_taylor/activity">@andy_taylor</a>. See <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a> on our <a href="/2016/05/website-changes/">shiny new forums</a>.</p>
-
-<p>Emoncms MyAccount page now displays a QR code and a couple of handy ‘Copy to Clipboard’ buttons for the API keys:</p>
-
-<p><img src="/images/emoncms-qr.png" alt="Emoncms QR code generator" /></p>
-
-<!--more-->
-
-<p><em>This updated has been merged into the stable Emoncms branch V9.6. If your running an emonPi/emonBase jsut hit update to pull in the changes. The update will appear on Emoncms.org in the next few days.</em></p>
-
-<p>This QR code contains the Emoncms URL and read-API key to automate setting up the <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps&amp;hl=en_GB">Emoncms android app</a>. The update for the app to support the QR code scanner has been pushed to Googe Play. After the update just can the QR code to setup the app.</p>
-
-<p><img src="/images/android-qr.png" width="300"></p>
-
-<p>If your feeds are named <strong>use</strong> and <strong>use_kwh</strong> the app will automatically select use these feeds as the Power and kWh feeds.</p>
-
-<p>Any issues, please post on the <a href="https://community.openenergymonitor.org/t/mobile-app-qr-code/149">development forum thread</a>.</p>
-
-<p>Thanks again to everyone involved in the development and testing. It’s been great working with an enthusiastic development community over on the new forums. Onwards and upwards :-)</p>
+<video width="600" controls="">
+  <source src="https://blog.openenergymonitor.org/images/cydynni-display-vid.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 ]]></content>
   </entry>
   

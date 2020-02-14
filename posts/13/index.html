@@ -633,6 +633,48 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2013/12/developing-for-arduino-remotely-on/">Developing for Arduino remotely on a Raspberry Pi</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-12-27T22:55:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-12-27 22:55:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/arduino/'>arduino</a></li>
+      
+        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/12/developing-for-arduino-remotely-on/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I found myself tonight requiring the ability to develop for Arduino remotely on a Raspberry Pi. The use case is connecting an Arduino Uno to a Raspberry Pi to receive data from my <a href="http://openenergymonitor.org/emon/beehive/v2">Bee Hive Temperature Monitor</a> setup. The Arduino posts data received from the Bee Monitor as a serial string onto ttyUSB0, <a href="https://github.com/openenergymonitor/EmoncmsPythonLink">EmoncmsPythonLink</a> script is used to post the data to the emoncms server running locally on the <a href="http://emoncms.org/site/docs/raspberrypihdd">Raspberry Pi with the file system on an external hard drive</a>. The Pi also has an RFM12Pi fitted receiving data from an emonTx and a couple of emonTH's<br /><br />I wanted to be able to access the Arduino, and upload a new sketch to fix bugs etc remotely since I will not always have local access to the system.<br /><br />I came across a great Arduino command line build environment called inotool<br /><br /><a href="http://inotool.org/">http://inotool.org/</a><br /><br /><br /><i>$ sudo apt-get update&nbsp;</i><br /><i>$ sudo apt-get install arduino</i><br /><i>$ sudo apt-get install python-dev&amp;&amp;python-setuptools</i><br /><i>$ git clone git://github.com/amperka/ino.git</i><br /><i>$ cd ino</i><br /><i>$ sudo python setup.py install</i><br /><div><br /></div>if you want to use ino's built in serial terminal<br /><br /><i>$ sudo apt-get install picocom</i><br /><br /><div>to exit picocom serial [CTRL&nbsp;+ A] followed by [CTRL&nbsp;+ X]</div><div><br /></div><div><i>$ ino init -t blink &nbsp; &nbsp; &nbsp;# initiates a project using "blink" as a template, copy libraries into&nbsp;</i></div><div><i>$ ino build &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # compiles the sketch, creating .hex file (default Arduino uno -m atmega328 for duemilanove)</i></div><div><i>$ ino upload &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # uploads the .hex file</i></div><div><i><br /></i></div><div>The setup works well, opening the port on the router I can now ssh into the Pi and upload new sketches to the Arduino from anywhere on the web,</div><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/12/emoncms-control-developments-and-demos/">Emoncms control developments and demo's</a>
   </h1>
   
@@ -1021,56 +1063,6 @@ $(document).ready(function(){ //alphabetically order list
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/11/hardware-manufacture-begins-part-1/">Hardware Manufacture Begins! Part 1: emonTH Temperature and Humidity Node</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-11-17T23:39:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-11-17 23:39:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> five minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/ciseco/'>ciseco</a></li>
-      
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
-      
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
-      
-        <li><a class='category' href='/categories/emontxsmt/'>emonTxSMT</a></li>
-      
-        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
-      
-        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/11/hardware-manufacture-begins-part-1/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">It's a busy for weeks for us at the moment. If you've been following <a href="http://twitter.com/openenergymon">us on twitter</a>&nbsp;you will have see in the last week we have had the production PCB's designs for the emonTx V3, emonTx Shield SMT and emonTH (temperature and humidity) back from our manufactures. This coincided with manufacture of all three units starting this week.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Even though the designs have undergone several iterations and have been extensively tested over the past 12 months or so it was still a nail biting moment assembling, powering up and testing the final designs. Luckily it all went smoothly and all functions on all three designs seem to be working exactly as planned..just as well since we have 500 PCS of each!</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-yVhLjN8bGEw/UovtmIRxLXI/AAAAAAAAqnM/OzhrtvnPauA/s1600/20131108_170656.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-yVhLjN8bGEw/UovtmIRxLXI/AAAAAAAAqnM/OzhrtvnPauA/s320/20131108_170656.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Building up the final productions designs..scary! Thankfully it all went smoothly</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-TKIP2hdTT0M/UolMLbp82kI/AAAAAAAAqf8/k48bE1mjBz8/s1600/IMG_20131111_113332.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="300" src="http://2.bp.blogspot.com/-TKIP2hdTT0M/UolMLbp82kI/AAAAAAAAqf8/k48bE1mjBz8/s400/IMG_20131111_113332.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Final designs for emonTx V3, emonTx Arduino Shield SMT and emonTH all working!</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: left;">Last week I traveled over to Ciseco &nbsp;in Nottingham to oversee starting manufacture of the emonTH Temperature and Humidity monitoring node. Ciseco have come a long way <a href="http://openenergymonitor.blogspot.com/2012/11/ciseco-visit.html">since I first visited them over a year ago</a>. They've moved new offices, upgraded their pick-and-place machine and picked up a few more pairs of hands along the way.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Here's a few photos of the manufacture of the emonTH:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-skul_Fmtkvw/Uoal4Ngl7NI/AAAAAAAAqFc/BMGv2Gb18Kk/s1600/2013-11-15+12.10.25.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://1.bp.blogspot.com/-skul_Fmtkvw/Uoal4Ngl7NI/AAAAAAAAqFc/BMGv2Gb18Kk/s320/2013-11-15+12.10.25.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 1: solder paste being applied</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-gOxqLJFEdAo/UoaluQRSfnI/AAAAAAAAqFI/e9iCedM6VkQ/s1600/2013-11-14+15.33.02.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://1.bp.blogspot.com/-gOxqLJFEdAo/UoaluQRSfnI/AAAAAAAAqFI/e9iCedM6VkQ/s320/2013-11-14+15.33.02.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 2: Setup the pick-and-place to identify the 'fiducials' on the emonTH...Google it! If you look hard you will see these little shiny round marks on all SMT boards.</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-iQ1-f5WPTn0/Uoal748hZSI/AAAAAAAAqF0/sjcr-rGkJro/s1600/2013-11-15+12.11.20.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://2.bp.blogspot.com/-iQ1-f5WPTn0/Uoal748hZSI/AAAAAAAAqF0/sjcr-rGkJro/s320/2013-11-15+12.11.20.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 3: practice placements</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/uhV3mlbGDGs" width="560"></iframe><br /></div><div class="separator" style="clear: both; text-align: center;">Step 4: let the pick-and-place do it's stuff! I love watching machines at work</div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-TC0qtENxOYo/Uoal4qXHisI/AAAAAAAAqFo/CbIifyJkyY4/s1600/2013-11-15+10.44.04.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-TC0qtENxOYo/Uoal4qXHisI/AAAAAAAAqFo/CbIifyJkyY4/s320/2013-11-15+10.44.04.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 5 &amp; 6: Reflow the board in the oven then add the thru-hole bits</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-a0E7hcuzfNY/UoalutsSfOI/AAAAAAAAqFM/G5rjf9yuICM/s1600/2013-11-14+15.19.13.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://1.bp.blogspot.com/-a0E7hcuzfNY/UoalutsSfOI/AAAAAAAAqFM/G5rjf9yuICM/s320/2013-11-14+15.19.13.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 7: Test, test and test! Here's show's testing of the <a href="http://shop.openenergymonitor.com/microcontrollers/">RFu328</a> (ATmega328 MCU&nbsp;+ Radio) modules&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-zx6kBpWfeoE/UoapSk8z1YI/AAAAAAAAqRo/AuBAtnxVnc4/s1600/2013-11-06+19.28.53.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-zx6kBpWfeoE/UoapSk8z1YI/AAAAAAAAqRo/AuBAtnxVnc4/s320/2013-11-06+19.28.53.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Step 8: Done!<br /><br /></td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">Unfortunately we had a few issues during step 7; a some of the RF12B's which were reflowed onto the RFu328's were not working as they should. We think this was down to the large MCU package on the RFM12B absorbing more heat during the reflow process than expected. For the next batch we will look at tweaking the reflow oven's temperature profile. For now we will be hand soldering the RF modules. These sorts of niggles are not uncommon in manufacture, this is why testing is so important. We will be testing the units at several stages before they're shipped to ensure all functions are working.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-cFvxXfKMcas/UolPpd1WXhI/AAAAAAAAqgQ/Y1nUFuzS0BM/s1600/20131117_151908_Ffordd+Y+Parc.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://1.bp.blogspot.com/-cFvxXfKMcas/UolPpd1WXhI/AAAAAAAAqgQ/Y1nUFuzS0BM/s320/20131117_151908_Ffordd+Y+Parc.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTx V3 final production design ready to go!&nbsp;</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The<span id="goog_1877970448"></span> emonTx V3<span id="goog_1877970449"></span> and emonTx Arduino Shield are now <a href="http://shop.openenergymonitor.com/sensor-nodes/">in our shop on pre-order</a>. The emonTH should be in the shop in the next few days (just waiting to tie down pricing). We hope to start shipping at the end of this month (November), so hopefully everyone who want's one should get them in time for Christmas. Documentation for all the units is slowly coming together, please bare with us during the next week or so; we hope to have all the documentation and open-source designs ready for we start shipping. Likewise it would be most helpful if you spot any typos (or screaming errors!) in the shop description or wiki documentation please let us know. If you want to take a look the Arduino compatible firmware code for all three units has been pushed to <a href="http://github.com/openenergymonitor">GitHub</a>.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I'm currently on on the train down to London ready to travel to Cambridge tomorrow to meet with another manufacturer and begin manufacture of the emonTx V3 and emonTx Arduino&nbsp;Shield. Stay tuned for another post in the next couple of days! I will also try and tweet some sneak-peak photos of the manufacturing process as it happens tomorrow.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1093,6 +1085,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2019/10/cydynni-display/">Cydynni emonCMS dashboard on display</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1145,12 +1143,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emonpi-network-setup-wizard/">emonPi Network Setup Wizard</a>
         </li>
       
     
@@ -1435,6 +1427,11 @@ $(document).ready(function(){ //alphabetically order list
     
       <li>
         <a href="/categories/emonbase/">emonbase
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories/emoncms/">emoncms
         </a>
       </li>
     

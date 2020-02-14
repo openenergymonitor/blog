@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ev | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/ev/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -162,7 +162,7 @@
 
 <p>There is also an <a href="https://github.com/tiramiseb/python-openevse">OpenEVSE RAPI command python library</a>.</p>
 
-<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/src/rapi_proc.h">OpenEVSE plus source code</a>.</p>
+<p>RAPI commands can be used to control and check the status of all OpenEVSE functions. A full list of RAPI commands can be found in the <a href="https://github.com/OpenEVSE/open_evse/blob/stable/firmware/open_evse/rapi_proc.h">OpenEVSE plus source code</a>.</p>
 
 <h4 id="future-developments">Future developments</h4>
 

@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2019-08-22T13:28:37+00:00</updated><id>https://blog.openenergymonitor.org/</id><title>Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title>Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://blog.openenergymonitor.org/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="https://blog.openenergymonitor.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.openenergymonitor.org/" rel="alternate" type="text/html" /><updated>2020-02-14T18:33:22+00:00</updated><id>https://blog.openenergymonitor.org/</id><title type="html">Blog | OpenEnergyMonitor</title><subtitle>OpenEnergyMonitor Blog</subtitle><author><name>Glyn Hudson</name></author><entry><title type="html">Cydynni emonCMS dashboard on display</title><link href="https://blog.openenergymonitor.org/2019/10/cydynni-display/" rel="alternate" type="text/html" title="Cydynni emonCMS dashboard on display" /><published>2019-10-01T12:00:00+00:00</published><updated>2019-10-01T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/10/cydynni-display</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/10/cydynni-display/">&lt;p&gt;Following on from work &lt;a href=&quot;https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/&quot;&gt;started over two years ago with Cydynni&lt;/a&gt; Trystan was tasked with a one off shop-front display project. This was intended as a high quality display screen showing an emonCMS dashboard with the real-time output of the local hydro-energy project.&lt;/p&gt;
+
+&lt;p&gt;The shop is based in Bethesda, North Wales, and serves as an information point on the community energy project, to celebrate it’s recent success.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/cydynni-display-3-shopfront.jpg&quot; alt=&quot;Cydynni-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/cydynni-display-1.jpg&quot; alt=&quot;Cydynni-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/cydynni-display-2.jpg&quot; alt=&quot;Cydynni-1&quot; /&gt;&lt;/p&gt;
+
+&lt;video width=&quot;600&quot; controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/images/cydynni-display-vid.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</content><author><name>Daniel Bates</name></author><summary type="html">Following on from work started over two years ago with Cydynni Trystan was tasked with a one off shop-front display project. This was intended as a high quality display screen showing an emonCMS dashboard with the real-time output of the local hydro-energy project.
+
+The shop is based in Bethesda, North Wales, and serves as an information point on the community energy project, to celebrate it’s recent success.
+
+
+
+Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.
+
+
+
+
+
+
+  
+  Your browser does not support the video tag.</summary></entry><entry><title type="html">Introducing emonDC</title><link href="https://blog.openenergymonitor.org/2019/05/emondc/" rel="alternate" type="text/html" title="Introducing emonDC" /><published>2019-05-25T12:00:00+00:00</published><updated>2019-05-25T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2019/05/emondc</id><content type="html" xml:base="https://blog.openenergymonitor.org/2019/05/emondc/">&lt;p&gt;emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
 The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.&lt;/p&gt;
 
 &lt;p&gt;emonDC development kits are now available in the &lt;a href=&quot;https://shop.openenergymonitor.com/emondc/&quot;&gt;OpenEnergyMonitor Store&lt;/a&gt;.&lt;/p&gt;
@@ -80,7 +109,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
 
 &lt;p&gt;Find answers, post questions, or message Dan directly via the &lt;a href=&quot;https://community.openenergymonitor.org/c/hardware/emondc&quot;&gt;Community Forum&lt;/a&gt;.  Username &lt;a href=&quot;https://community.openenergymonitor.org/u/danbates/summary&quot;&gt;@danbates&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/danbates2/emonDC&quot;&gt;&lt;strong&gt;EmonDC Github Repo: Hardware &amp;amp; Fimrware&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Daniel Bates</name></author><summary>emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
+&lt;p&gt;&lt;a href=&quot;https://github.com/danbates2/emonDC&quot;&gt;&lt;strong&gt;EmonDC Github Repo: Hardware &amp;amp; Fimrware&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Daniel Bates</name></author><summary type="html">emonDC is a project aiming to develop DC current and voltage measuring tools compatible with OpenEnergyMonitor.org project.
 The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enabled, aimed at solar/battery systems. emonDC has been developed by Daniel Bates.
 
 emonDC development kits are now available in the OpenEnergyMonitor Store.
@@ -108,7 +137,7 @@ Features
   WiFi Connectivity.
   Low-power mode (10mA draw).
   Accurate 12-bit ADC.
-  Over-voltage and reverse voltage protected (fuses).</summary></entry><entry><title>2018 Development Review</title><link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/" rel="alternate" type="text/html" title="2018 Development Review" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">&lt;p&gt;We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576&quot;&gt;OpenEnergyMonitor goals 2018/2019&lt;/a&gt;. This post is an update on the progress made before outlining the new development plan in a separate post.&lt;/p&gt;
+  Over-voltage and reverse voltage protected (fuses).</summary></entry><entry><title type="html">2018 Development Review</title><link href="https://blog.openenergymonitor.org/2018/11/2018-dev-update/" rel="alternate" type="text/html" title="2018 Development Review" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/2018-dev-update</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/2018-dev-update/">&lt;p&gt;We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  &lt;a href=&quot;https://community.openenergymonitor.org/t/openenergymonitor-goals-2018-2019/6576&quot;&gt;OpenEnergyMonitor goals 2018/2019&lt;/a&gt;. This post is an update on the progress made before outlining the new development plan in a separate post.&lt;/p&gt;
 
 &lt;p&gt;Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.&lt;/p&gt;
 
@@ -191,9 +220,9 @@ Forum post: &lt;a href=&quot;https://community.openenergymonitor.org/t/v9-9-0-mi
 
 &lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/oem-development-plan-outline/9210&quot;&gt;Development plan forum post.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/2018-development-progress-update&quot;&gt;Development update form post.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  OpenEnergyMonitor goals 2018/2019. This post is an update on the progress made before outlining the new development plan in a separate post.
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://community.openenergymonitor.org/t/2018-development-progress-update&quot;&gt;Development update form post.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary type="html">We have been refreshing the project development plan and as part of this looking at the goals we set ourselves in the last plan, posted last February:  OpenEnergyMonitor goals 2018/2019. This post is an update on the progress made before outlining the new development plan in a separate post.
 
-Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</summary></entry><entry><title>Demand Side Response Development</title><link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/" rel="alternate" type="text/html" title="Demand Side Response Development" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/demand-side-response/">&lt;p&gt;&lt;img src=&quot;/images/emonevse-solarpv.jpeg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
+Its been a busy year, with significant progress made on most of the goals outlined, looking through all of the github pull requests and commits its evident how much of a team effort it has all been. Thank you to everyone who has helped throughout the year.</summary></entry><entry><title type="html">Demand Side Response Development</title><link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/" rel="alternate" type="text/html" title="Demand Side Response Development" /><published>2018-11-08T18:48:00+00:00</published><updated>2018-11-08T18:48:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/11/demand-side-response/">&lt;p&gt;&lt;img src=&quot;/images/emonevse-solarpv.jpeg&quot; alt=&quot;openevse leaf&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the &lt;a href=&quot;https://guide.openenergymonitor.org/integrations/ev-charging/&quot;&gt;OpenEVSE charging station&lt;/a&gt;. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the &lt;a href=&quot;https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762&quot;&gt;EnergyLocal project&lt;/a&gt;.&lt;/p&gt;
 
@@ -300,10 +329,10 @@ A limitation with the last approach where solar was not enough to complete the c
 &lt;p&gt;Follow the development of this project and learn about our next steps on the forums.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2018/11/demand-side-response/&quot;&gt;Forum post: CydYnni, EnergyLocal Community hydro smart grid
-  &lt;li&gt;&lt;a href=&quot;https://github.com/emoncms/demandshaper&quot;&gt;Github: Emoncms demand shaper module
-
-&lt;/a&gt;&lt;/li&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</content><author><name>Trystan Lea</name></author><summary>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the OpenEVSE charging station. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the EnergyLocal project.</summary></entry><entry><title>Emoncms Blue Theme</title><link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/" rel="alternate" type="text/html" title="Emoncms Blue Theme" /><published>2018-01-30T09:01:00+00:00</published><updated>2018-01-30T09:01:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emoncms-theme/">&lt;p&gt;For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)&lt;/p&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.openenergymonitor.org/2018/11/demand-side-response/&quot;&gt;Forum post: CydYnni, EnergyLocal Community hydro smart grid&amp;lt;/li&amp;gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/emoncms/demandshaper&quot;&gt;Github: Emoncms demand shaper module&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/a&gt;&lt;/li&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</content><author><name>Trystan Lea</name></author><summary type="html">Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the OpenEVSE charging station. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the EnergyLocal project.</summary></entry><entry><title type="html">Emoncms Blue Theme</title><link href="https://blog.openenergymonitor.org/2018/01/emoncms-theme/" rel="alternate" type="text/html" title="Emoncms Blue Theme" /><published>2018-01-30T09:01:00+00:00</published><updated>2018-01-30T09:01:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emoncms-theme</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emoncms-theme/">&lt;p&gt;For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)&lt;/p&gt;
 
 &lt;p&gt;The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.&lt;/p&gt;
 
@@ -327,7 +356,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 &lt;p&gt;&lt;img src=&quot;/images/he-emoncms-theme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;For questions and discussion see &lt;a href=&quot;https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388&quot;&gt;Emoncms Blue Theme Forum Topic&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)
+&lt;p&gt;For questions and discussion see &lt;a href=&quot;https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388&quot;&gt;Emoncms Blue Theme Forum Topic&lt;/a&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary type="html">For a fresh clean start to 2018 the default Emoncms theme has now been set to “blue” :-)
 
 The blue theme was chosen to give a consistent user experience between the other OpenEnergyMonitor websites e.g. Forum, Guide, Learn, Homepage etc.
 
@@ -337,7 +366,7 @@ If you don’t it’s easy to revert to back to the old black theme by setting $
 
 emonPi Emoncms will update automatically during emonPi update to use the new theme as long as settings.php has not been user modified.
 
-Feed view in Standard, Blue and Sun theme:</summary></entry><entry><title>emonPi Remote Access with Dataplicity</title><link href="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/" rel="alternate" type="text/html" title="emonPi Remote Access with Dataplicity" /><published>2018-01-26T12:00:00+00:00</published><updated>2018-01-26T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emonpi-remote-access</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/">&lt;p&gt;Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.&lt;/p&gt;
+Feed view in Standard, Blue and Sun theme:</summary></entry><entry><title type="html">emonPi Remote Access with Dataplicity</title><link href="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/" rel="alternate" type="text/html" title="emonPi Remote Access with Dataplicity" /><published>2018-01-26T12:00:00+00:00</published><updated>2018-01-26T12:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2018/01/emonpi-remote-access</id><content type="html" xml:base="https://blog.openenergymonitor.org/2018/01/emonpi-remote-access/">&lt;p&gt;Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.&lt;/p&gt;
 
 &lt;p&gt;The conventional way for obtaining access remotely is to open a port in the firewall and ‘port-forward’ requests to this port to the local emonPi. This method works but is cumbersome and insecure. It’s cumbersome because most users connect to the internet via their ISP using a non-static IP. Therefore the WAN IP address often changes, a dynamic DNS service such as &lt;a href=&quot;https://www.duckdns.org/&quot;&gt;Duck DNS&lt;/a&gt;, or &lt;a href=&quot;https://www.noip.com&quot;&gt;noIP&lt;/a&gt; can be used to link a dynamic IP to a static domain name, however this is cumbersome to set up and often requires purchasing a domain name, dynamic DNS Subscription and handling the dynamic DNS IP address updates.&lt;/p&gt;
 
@@ -353,7 +382,7 @@ Feed view in Standard, Blue and Sun theme:</summary></entry><entry><title>emonPi
 
 &lt;p&gt;&lt;img src=&quot;/images/6-dataplicity.png&quot; alt=&quot;6-dataplicity&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Follow the steps on the &lt;a href=&quot;https://guide.openenergymonitor.org/setup/remote-access/&quot;&gt;Remote Access page of our User Guide&lt;/a&gt; to setup Dataplicity on an emonPi.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.
+&lt;p&gt;Follow the steps on the &lt;a href=&quot;https://guide.openenergymonitor.org/setup/remote-access/&quot;&gt;Remote Access page of our User Guide&lt;/a&gt; to setup Dataplicity on an emonPi.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary type="html">Network devices such as an emonPi connected to a local network are secured behind a firewall, often integrated into a router.
 
 The conventional way for obtaining access remotely is to open a port in the firewall and ‘port-forward’ requests to this port to the local emonPi. This method works but is cumbersome and insecure. It’s cumbersome because most users connect to the internet via their ISP using a non-static IP. Therefore the WAN IP address often changes, a dynamic DNS service such as Duck DNS, or noIP can be used to link a dynamic IP to a static domain name, however this is cumbersome to set up and often requires purchasing a domain name, dynamic DNS Subscription and handling the dynamic DNS IP address updates.
 
@@ -369,7 +398,7 @@ Dataplicity offers a easy to setup web-service service to enable secure remote a
 
 
 
-Follow the steps on the Remote Access page of our User Guide to setup Dataplicity on an emonPi.</summary></entry><entry><title>Introducing IoTaWatt</title><link href="https://blog.openenergymonitor.org/2017/10/iotawatt/" rel="alternate" type="text/html" title="Introducing IoTaWatt" /><published>2017-10-25T00:00:00+00:00</published><updated>2017-10-25T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/10/iotawatt</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/10/iotawatt/">&lt;p&gt;IotaWatt&lt;sup&gt;tm&lt;/sup&gt; is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.&lt;/p&gt;
+Follow the steps on the Remote Access page of our User Guide to setup Dataplicity on an emonPi.</summary></entry><entry><title type="html">Introducing IoTaWatt</title><link href="https://blog.openenergymonitor.org/2017/10/iotawatt/" rel="alternate" type="text/html" title="Introducing IoTaWatt" /><published>2017-10-25T00:00:00+00:00</published><updated>2017-10-25T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/10/iotawatt</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/10/iotawatt/">&lt;p&gt;IotaWatt&lt;sup&gt;tm&lt;/sup&gt; is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.&lt;/p&gt;
 
 &lt;p&gt;IoTaWatt can log data locally to on-board SD card and post directly to &lt;a href=&quot;https://emoncms.org&quot;&gt;Emoncms.org&lt;/a&gt; via WiFi.&lt;/p&gt;
 
@@ -437,7 +466,7 @@ Follow the steps on the Remote Access page of our User Guide to setup Dataplicit
 
 &lt;p&gt;The obvious advantage of the IoTaWatt over the emonTx is the number of CT sensor inputs. Another key advantage is the flexibility of the IoTaWatt, each input channel (AC voltage &amp;amp; current) can be individually configured and calibrated. The IoTaWatt supports a number of different sizes of CT sensors with calibration presets for CT sensors e.g &lt;a href=&quot;http://shop.openenergymonitor.com/20a-max-clip-on-current-sensor-ct/&quot;&gt;20A&lt;/a&gt;, &lt;a href=&quot;http://shop.openenergymonitor.com/100a-max-clip-on-current-sensor-ct/&quot;&gt;100A (standard)&lt;/a&gt; and &lt;a href=&quot;http://shop.openenergymonitor.com/200a-max-clip-on-current-sensor-ct/&quot;&gt;200A&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;It is possible to use an IoTaWatt together with an emonPi / emonBase, the IoTaWAtt can post to any Emoncms server including emonPi over a local network.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>IotaWatttm is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.
+&lt;p&gt;It is possible to use an IoTaWatt together with an emonPi / emonBase, the IoTaWAtt can post to any Emoncms server including emonPi over a local network.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary type="html">IotaWatttm is an open-hardware 14 channel WiFi connected electric power monitor. It’s based on the ESP8266 IoT platform using MCP3208 12 bit ADCs to sample AC voltage and current.
 
 IoTaWatt can log data locally to on-board SD card and post directly to Emoncms.org via WiFi.
 
@@ -465,7 +494,7 @@ Firmware
 
 The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See IoTaWatt.com for a live demo of the interface.
 
-The IoTaWatt supports automatic over the air (OTA) firmware updates.</summary></entry><entry><title>CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
+The IoTaWatt supports automatic over the air (OTA) firmware updates.</summary></entry><entry><title type="html">CydYnni – Energy Local, community hydro smart grid</title><link href="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/" rel="alternate" type="text/html" title="CydYnni – Energy Local, community hydro smart grid" /><published>2017-08-07T00:00:00+00:00</published><updated>2017-08-07T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/cydynni-energylocal</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/cydynni-energylocal/">&lt;p&gt;Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The Bethesda pilot project, How it works&lt;/strong&gt;&lt;/p&gt;
 
@@ -494,7 +523,7 @@ The IoTaWatt supports automatic over the air (OTA) firmware updates.</summary></
 
 &lt;p&gt;The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://cydynni.org.uk&quot;&gt;https://cydynni.org.uk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dashfwrdd.energylocal.org.uk/&quot;&gt;https://dashfwrdd.energylocal.org.uk&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/cydynni-app.png&quot; alt=&quot;cydynni-app.png&quot; /&gt;&lt;/p&gt;
 
@@ -522,7 +551,7 @@ The IoTaWatt supports automatic over the air (OTA) firmware updates.</summary></
 
 &lt;p&gt;This development has driven some of our most recent improvements to the EmonPi/EmonBase, such as the recently launched WIFI Hotspot setup and ongoing development on the emoncms device module, which alongside auto-configuration of inputs and feeds provides the option to define control devices starting with the Sonoff S20 WIFI Socket, Martin’s WIFI Relay unit and the OpenEVSE charging station.&lt;/p&gt;
 
-&lt;p&gt;Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary>Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.
+&lt;p&gt;Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.&lt;/p&gt;</content><author><name>Trystan Lea</name></author><summary type="html">Over the last year we have been involved in a project in our local area (Snowdonia, North Wales) called CydYnni – EnergyLocal. The project is at the forefront of making it possible for households to source their electricity directly from local, community-owned renewable sources.
 
 The Bethesda pilot project, How it works
 
@@ -551,7 +580,7 @@ Our role so far has been to develop a web app / energy dashboard so that partici
 
 The main energy dashboard app designed by 1010 and implemented by ourselves can be viewed online here:
 
-https://cydynni.org.uk
+https://dashfwrdd.energylocal.org.uk
 
 
 
@@ -579,48 +608,48 @@ The next stage of the project for us is to improve on this with an in home hub (
 
 This development has driven some of our most recent improvements to the EmonPi/EmonBase, such as the recently launched WIFI Hotspot setup and ongoing development on the emoncms device module, which alongside auto-configuration of inputs and feeds provides the option to define control devices starting with the Sonoff S20 WIFI Socket, Martin’s WIFI Relay unit and the OpenEVSE charging station.
 
-Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.</summary></entry><entry><title>Advances Wales Magazine Article</title><link href="https://blog.openenergymonitor.org/2017/08/advances-article/" rel="alternate" type="text/html" title="Advances Wales Magazine Article" /><published>2017-08-01T00:00:00+00:00</published><updated>2017-08-01T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/advances-article</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/advances-article/">&lt;p&gt;&lt;a href=&quot;https://businesswales.gov.wales/zones/innovation/advances-wales&quot;&gt;Advances Wales&lt;/a&gt; is a quarterly magazine showcasing the latest news, research and developments in science, technology and engineering here in Wales, UK.&lt;/p&gt;
+Over the coming months I will try to blog more on development progress and the technical implementation of the system in addition to insights into the data coming from the project demonstrating local community energy.</summary></entry><entry><title type="html">Advances Wales Magazine Article</title><link href="https://blog.openenergymonitor.org/2017/08/advances-article/" rel="alternate" type="text/html" title="Advances Wales Magazine Article" /><published>2017-08-01T00:00:00+00:00</published><updated>2017-08-01T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/08/advances-article</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/08/advances-article/">&lt;p&gt;&lt;a href=&quot;https://businesswales.gov.wales/zones/innovation/advances-wales&quot;&gt;Advances Wales&lt;/a&gt; is a quarterly magazine showcasing the latest news, research and developments in science, technology and engineering here in Wales, UK.&lt;/p&gt;
 
 &lt;p&gt;In the latest issue (82) we have been lucky enough to have an article featuring OpenEnergyMonitor. It’s well written and mentions a number of exciting developments that we have been working on e.g. CydYnni local energy project. Stay tuned for a blog post coming soon about this project.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://businesswales.gov.wales/sites/business-wales/files/documents/Advances82_English_FINAL.pdf&quot;&gt;Download the full magazine here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/advances-July17.png&quot; alt=&quot;advances artice&quot; /&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Advances Wales is a quarterly magazine showcasing the latest news, research and developments in science, technology and engineering here in Wales, UK.
+&lt;p&gt;&lt;img src=&quot;/images/advances-July17.png&quot; alt=&quot;advances artice&quot; /&gt;&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary type="html">Advances Wales is a quarterly magazine showcasing the latest news, research and developments in science, technology and engineering here in Wales, UK.
 
 In the latest issue (82) we have been lucky enough to have an article featuring OpenEnergyMonitor. It’s well written and mentions a number of exciting developments that we have been working on e.g. CydYnni local energy project. Stay tuned for a blog post coming soon about this project.
 
-Download the full magazine here.</summary></entry><entry><title>Emoncms Android App V2</title><link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/" rel="alternate" type="text/html" title="Emoncms Android App V2" /><published>2017-06-22T00:00:00+00:00</published><updated>2017-06-22T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/">&lt;p&gt;Yesterday we have launched a significant update to the Emoncms Android app.&lt;/p&gt;
+Download the full magazine here.</summary></entry><entry><title type="html">Emoncms Android App V2</title><link href="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/" rel="alternate" type="text/html" title="Emoncms Android App V2" /><published>2017-06-22T00:00:00+00:00</published><updated>2017-06-22T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2/">&lt;p&gt;Yesterday we have launched a significant update to the Emoncms Android app.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/androidv2-1.jpg&quot; alt=&quot;androidv2-1&quot; /&gt; &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.emoncms.myapps&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://emoncms.org/Modules/site/en-play-badge.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;new-features&quot;&gt;New features&lt;/h2&gt;
 
-&lt;h4 id=&quot;multiple-emoncms-accounts&quot;&gt;1. Multiple emoncms accounts:&lt;/h4&gt;
+&lt;h4 id=&quot;1-multiple-emoncms-accounts&quot;&gt;1. Multiple emoncms accounts:&lt;/h4&gt;
 
 &lt;p&gt;Monitor multiple Emoncms accounts, very useful for installers, power users etc.
 It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/androidv2-4.jpg&quot; alt=&quot;androidv2-multiple&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;multiple-myelectric-graphs-per-account&quot;&gt;2. Multiple MyElectric graphs per account:&lt;/h4&gt;
+&lt;h4 id=&quot;2-multiple-myelectric-graphs-per-account&quot;&gt;2. Multiple MyElectric graphs per account:&lt;/h4&gt;
 
 &lt;p&gt;Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/app1.png&quot; alt=&quot;app1&quot; /&gt;&lt;img src=&quot;/images/app2.png&quot; alt=&quot;app2&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;multiple-currency-rates-for-each-myelectric-graph&quot;&gt;3. Multiple currency rates for each MyElectric graph:&lt;/h4&gt;
+&lt;h4 id=&quot;3-multiple-currency-rates-for-each-myelectric-graph&quot;&gt;3. Multiple currency rates for each MyElectric graph:&lt;/h4&gt;
 
 &lt;p&gt;e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/app-cost.png&quot; alt=&quot;app-cost&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;language-translations&quot;&gt;4. Language Translations:&lt;/h4&gt;
+&lt;h4 id=&quot;4-language-translations&quot;&gt;4. Language Translations:&lt;/h4&gt;
 
 &lt;p&gt;French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/app-lang.png&quot; alt=&quot;app-lang&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;chromebook-support&quot;&gt;5. Chromebook support:&lt;/h4&gt;
+&lt;h4 id=&quot;5-chromebook-support&quot;&gt;5. Chromebook support:&lt;/h4&gt;
 
 &lt;p&gt;Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.&lt;/p&gt;
 
@@ -652,7 +681,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 &lt;p&gt;As always the Android app is &lt;a href=&quot;https://github.com/emoncms/AndroidApp&quot;&gt;fully open-source on GithHub&lt;/a&gt;, contributions are most welcome :-)&lt;/p&gt;
 
-&lt;p&gt;The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Yesterday we have launched a significant update to the Emoncms Android app.
+&lt;p&gt;The best place to get involved is our community forum and open issues / pull requests direclty on the GitHub repo.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary type="html">Yesterday we have launched a significant update to the Emoncms Android app.
 
  
 
@@ -685,42 +714,4 @@ French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emon
 
 5. Chromebook support:
 
-Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</summary></entry><entry><title>emonPi Network Setup Wizard</title><link href="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/" rel="alternate" type="text/html" title="emonPi Network Setup Wizard" /><published>2017-06-21T00:00:00+00:00</published><updated>2017-06-21T00:00:00+00:00</updated><id>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard</id><content type="html" xml:base="https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard/">&lt;p&gt;Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi_wifi.png&quot; alt=&quot;emonpi wifi&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We have just made significant progress in streamlining the setup process by enabling the emonPi / emonBase to broadcast a WiFi access-point (AP) on first boot then scan for local WiFi networks and allow the user to connect. The emonPi will then turn off it’s AP and connect to the local network. There is also an option to connect via Ethernet or stand-alone WiFi AP mode when no local network is available.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-network-wizard1.png&quot; alt=&quot;emonpi-network-wizard1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This has now been made possible using the Raspberry Pi 3 which supports WiFi access-point AP mode, &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/tree/master/wifiAP&quot;&gt;some bash scrips&lt;/a&gt; and a new &lt;a href=&quot;https://github.com/openenergymonitor/emonpi/tree/master/emoncms-setup&quot;&gt;emoncms-setup module&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;The new Network Setup Wizard will be included on all new purchased in July 2017 onwards. Existing emonPi’s with a Raspberry Pi 3 can be updated by running Admin &amp;gt; emonPi update in Emoncms. The emonPi will only broadcast a WiFi AP if Ethernet is not connected and no WiFi setup is currently present.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Trystan is also working on making the input-processing setup for new devices easier by adding device template support to the Emoncms Device module. More on this the come…&lt;a href=&quot;https://community.openenergymonitor.org/t/development-devices-inputs-and-feeds-in-emoncms/4281&quot;&gt;see development forum thread&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Read on more screenshots of the emonPi network setup wizard….&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-network-wizard2.png&quot; alt=&quot;emonpi-network-wizard2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-network-wizard3.png&quot; alt=&quot;emonpi-network-wizard3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/emonpi-network-wizard4.png&quot; alt=&quot;emonpi-network-wizard4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://guide.openenergymonitor.org/setup/connect/#1a-connect-to-wifi&quot;&gt;emonPi Setup Guide&lt;/a&gt; has been updated for use with the new Netork Setup Wizard.&lt;/p&gt;</content><author><name>Glyn Hudson</name></author><summary>Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.
-
-
-
-We have just made significant progress in streamlining the setup process by enabling the emonPi / emonBase to broadcast a WiFi access-point (AP) on first boot then scan for local WiFi networks and allow the user to connect. The emonPi will then turn off it’s AP and connect to the local network. There is also an option to connect via Ethernet or stand-alone WiFi AP mode when no local network is available.
-
-
-
-This has now been made possible using the Raspberry Pi 3 which supports WiFi access-point AP mode, some bash scrips and a new emoncms-setup module.
-
-The new Network Setup Wizard will be included on all new purchased in July 2017 onwards. Existing emonPi’s with a Raspberry Pi 3 can be updated by running Admin &amp;gt; emonPi update in Emoncms. The emonPi will only broadcast a WiFi AP if Ethernet is not connected and no WiFi setup is currently present.
-
-Trystan is also working on making the input-processing setup for new devices easier by adding device template support to the Emoncms Device module. More on this the come…see development forum thread.
-
-Read on more screenshots of the emonPi network setup wizard….</summary></entry></feed>
+Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</summary></entry></feed>

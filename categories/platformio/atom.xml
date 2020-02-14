@@ -4,7 +4,7 @@
   <title><![CDATA[Category: platformio | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/platformio/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2019-08-22T13:28:37+00:00</updated>
+  <updated>2020-02-14T18:33:22+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -287,13 +287,13 @@ deploy:
 
 <p>The PlatformIO IDE or Atom IDE is excellent and very easy to use (self explanatory). This guide uses pio via command line as this gives a more hands-on experience to how pio is working.</p>
 
-<h3 id="install-platformio">1. Install PlatformIO</h3>
+<h3 id="1-install-platformio">1. Install PlatformIO</h3>
 
 <p>The easiest way if running Linux is to install use the install script, this installed pio via python pip and installs pip if not present. See <a href="http://docs.platformio.org/en/latest/installation.html#installer-script">PlatformIO installation docs</a>:</p>
 
 <p><code class="highlighter-rouge">$ sudo python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</code></p>
 
-<h3 id="clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
+<h3 id="2-clone-emontx--emonpi-repo">2. Clone emonTx / emonPi repo</h3>
 
 <p>We’ll use the emonTx (V3 discrete sampling) as an example here but the steps are exactly the same for emonPi.</p>
 
@@ -311,7 +311,7 @@ cd emonpi/firmware
 </code></pre>
 </div>
 
-<h3 id="compile-with-platformio">3. Compile with PlatformIO</h3>
+<h3 id="3-compile-with-platformio">3. Compile with PlatformIO</h3>
 
 <p><code class="highlighter-rouge">$ platformio run</code></p>
 
@@ -335,9 +335,9 @@ cd emonpi/firmware
 
 <p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">.piolibdeps</code> folder in the project dir.</p>
 
-<h3 id="upload-using-platformio">3. Upload using PlatformIO</h3>
+<h3 id="3-upload-using-platformio">3. Upload using PlatformIO</h3>
 
-<h4 id="a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
+<h4 id="3a-via-usb-to-uart-programmer-to-emontx">3a. Via USB to UART programmer to emonTx</h4>
 
 <p><code class="highlighter-rouge">$ sudo pio run -t upload</code></p>
 
@@ -349,7 +349,7 @@ cd emonpi/firmware
 
 <p><code class="highlighter-rouge">$ pio device monitor</code></p>
 
-<h3 id="b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
+<h3 id="3b-using-ttyama0-gpio-to-upload-direct-to-emonpi">3b. Using ttyAMA0 GPIO to upload direct to emonPi</h3>
 
 <p>This is where things get very exciting, pio can compile the code directly on a Raspberry Pi. The latest version of pio (due to be released in the next few weeks) will have built in support for the emonPi auto-reset on upload using GPIO4</p>
 
