@@ -21,5 +21,9 @@ Daniel Bates helped design and build the laser-cut stand using Sketchup and Inks
 
 ![Cydynni-1]({{site.image_path}}/cydynni-display-2.jpg)
 
-![Cydynni-1]({{site.image_path}}/cydynni-display-vid.mp4)
+#![Cydynni-1]({{site.image_path}}/cydynni-display-vid.mp4)
+
+{% video {{ site.image_path }}/cydynni-display-vid.mp4 %}
+
+
 
