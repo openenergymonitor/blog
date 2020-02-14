@@ -26,6 +26,7 @@ group :jekyll_plugins do
   gem 'octopress', '~> 3.0.11'
   gem 'octopress-filters'
   gem 'octopress-include-tag'
+  gem 'octopress-video-tag'
 end
 
 gem 'sinatra', '~> 1.4.7'
