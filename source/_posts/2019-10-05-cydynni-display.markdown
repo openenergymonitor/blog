@@ -25,3 +25,5 @@ Daniel Bates helped design and build the laser-cut stand using Sketchup and Inks
   <source src="/images/cydynni-display-vid.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+Here's a [github repo](https://github.com/openenergymonitor/raspi-dashboard-display) with the software and CAD design we used for the display 
