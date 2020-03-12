@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emonCMS | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/emoncms/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-02-14T18:33:22+00:00</updated>
+  <updated>2020-03-12T17:14:18+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -34,6 +34,8 @@
   <source src="https://blog.openenergymonitor.org/images/cydynni-display-vid.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+
+<p>Here’s a <a href="https://github.com/openenergymonitor/raspi-dashboard-display">github repo</a> with the software and CAD design we used for the display</p>
 ]]></content>
   </entry>
   
