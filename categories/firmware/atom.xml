@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firmware | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/firmware/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-03-12T17:14:18+00:00</updated>
+  <updated>2022-04-12T16:12:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -130,7 +130,7 @@ Diagram from <a href="http://blog.squix.org/2016/06/esp8266-continuous-delivery-
   <li>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>. The <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code> file in the repo</a> configures the Travis CI build using platformIO:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>language: python
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: python
 python:
 - '2.7'
 sudo: false
@@ -152,8 +152,7 @@ deploy:
   api_key:
     secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
   file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
@@ -299,17 +298,15 @@ deploy:
 
 <p><strong>emonTx V3</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emontx3`
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emontx3`
 $ cd emontx3/firmware
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>emonPi</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi`
 cd emonpi/firmware
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="3-compile-with-platformio">3. Compile with PlatformIO</h3>
 
@@ -325,12 +322,11 @@ cd emonpi/firmware
 
 <p>e.g.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>lib_deps =
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lib_deps =
   DallasTemperature @3.7.7
   EmonLib
   JeeLib@c057b5f4c0
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Libs version can be defined by github commit ID, version number (git tag) or latest version (no specific version specified.)</p>
 
 <p>The latest version of the libraries are automatically cloned from their native git repos into the <code class="highlighter-rouge">.piolibdeps</code> folder in the project dir.</p>
@@ -355,17 +351,15 @@ cd emonpi/firmware
 
 <p>The emonPi board is defined in <code class="highlighter-rouge">platformio.ini</code> in the <a href="https://github.com/openenergymonitor/emonpi/blob/master/firmware/platformio.ini">emonpi/firmware folder</a>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>board = emonpi
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>board = emonpi
 upload_port = /dev/ttyAMA0
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All that is needed to compile and upload directly on the emonPi is:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/emonpi/firmware
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/emonpi/firmware
 $ sudo pio run -t upload
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Thanks a lot to <a href="https://github.com/ivankravets">Ivan Kravets</a> for helping integrate emonPi into the PlatfomIO ecosystem. <a href="https://github.com/platformio/platformio/commit/c5b5e80de4928cf91be59e675429b520e31d873a">View commit changes</a></em></p>
 

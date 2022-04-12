@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/15/">
+    <link rel="canonical" href="/posts/15/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/15/">
+    <meta property="og:url" content="/posts/15/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,65 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2013/10/aa-battery/">AA Battery Considerations</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-10-18T07:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> Oct 18th 2013"
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>batteries</li>
+      
+        <li>emonTH</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/10/aa-battery/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>The manufacture of batteries is a very energy intensive process often using many types of heavy metals, it makes total sense to use rechargeable batteries where possible and always recycle old batteries. When it comes to low power sensing nodes I’m as guilty as anyone else when it comes to just sticking in some cheap alkaline batteries, always believing that the performance of rechargeable batteries was much lower. This is not the case anymore.</p>
+
+<p>If rechargeable batteries are used (which they should be) the self-discharge rate can be significant. The self-discharge rate of NiMH batteries is high: around 30% per month at room temperature. This problem can be almost eliminated by using low-self discharge NiMH cells such as Eneloop, they have a discharge rate of about 5% per year. If non-rechargeable alkaline batteries are used they have a self-discharge rate of less than 2% per year.</p>
+
+<p><img src="http://1.bp.blogspot.com/-xQFMH8ye2Sg/UmEWYHb3rmI/AAAAAAAAmRo/JVNwB4P1FwY/s640/sd.gif" alt="" /></p>
+
+<p>Rechargable batteries self-discharge graph from batterydata.com</p>
+
+<p>If you care about the environment (which we all should do) we highly recommend the use of Sanyo Eneloop rechargeable AA’s in the emonTH and emonTx. They are a bit more expensive (about £2 each) but over their lifetime (they can be recharged 2100 times!) they will work out cheaper. The Eneloop cells are cadmium free and arrive fully charged and ready to use. Sanyo states that this charge is supplied by their solar PV system in Japan!</p>
+
+<p><img src="http://3.bp.blogspot.com/-Ab76FVPyOF4/UmEbIOMDxDI/AAAAAAAAmR0/0dOljN0n3GQ/s200/eneloop.jpg" alt="" /></p>
+
+<p>An excellent setup (as recommended by JCW of JeeLabs.org) is a spare set of Eneloop AA’s (Apple AA’s are rebranded Eneloops) permanently plugged in an Apple AA charger which he measured using 0W when the batteries are fully charged! This way you always have a set ready to go: <a href="http://jeelabs.org/2010/08/19/new-aa-battery-option/">http://jeelabs.org/2010/08/19/new-aa-battery-option/</a></p>
+
+<p><strong>Update:</strong> I’ve just discovered iGogreen’s Alkaline Rechargeable batteries which claim to hold their charge for 7 years and contain no heavy metals : Mercury, Cadmium, Lead or Nickel. They do fall down for high power draw applications but this is not an issue here, maybe a perfect match for long term low power nodes? They are also cheaper than Eneloops. The only draw back is they they need a special charger, iGo do a reasonably priced nice looking USB charger which will also charge standard NiMH</p>
+
+<p><strong>Update #2:</strong> The iGoGreen rechargable alkaline AA’s tended to leak acid after a couple of years. I would not recomend. They <a href="http://uk.rs-online.com/web/p/aa-rechargeable-batteries/7595533/">seem to have now been discontinued</a></p>
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/10/carboncoop-openenergymonitor-build/">CarbonCoop & OpenEnergyMonitor build weekend, November 16 & 17th</a>
   </h1>
   
@@ -678,7 +737,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/backup/'>backup</a></li>
+        <li>backup</li>
       
     
     </ul>
@@ -718,9 +777,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/backup/'>backup</a></li>
+        <li>backup</li>
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -760,9 +819,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+        <li>emonBase</li>
       
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+        <li>raspberry pi</li>
       
     
     </ul>
@@ -802,9 +861,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -844,7 +903,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+        <li>sustainability</li>
       
     
     </ul>
@@ -884,7 +943,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -924,7 +983,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emontx/'>emonTx</a></li>
+        <li>emonTx</li>
       
     
     </ul>
@@ -964,9 +1023,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+        <li>emonGLCD</li>
       
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+        <li>RFM12</li>
       
     
     </ul>
@@ -983,46 +1042,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     <a href="http://openenergymonitor.org/emon/user/1824">Martin Roberts</a> has developed a fantastic bit of firmware for the emonGLCD to enable it to be used as an RF scanner and signal strength meter on the 433 / 868 Mhz RF band.<br /><br />&nbsp;This makes the emonGLCD running this firmware a useful tool for debugging RF transmission and checking out signal strength.  To run the firmware a small hardware modification is required to the emonGLCD to access the analogue signal strength output signal from the RFM12B.<br /><br />Martin's sketch has been added to the <a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/GLCD_SSM">emonGLCD github repo</a>.<br /><br />Full details including build-guide and discussion can be found on the original&nbsp;<a href="http://openenergymonitor.org/emon/node/2395">forum thread</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-S0m9P9FKx18/UhtmSquXvUI/AAAAAAAAjn8/d7rcJjPtYM0/s1600/glcdssm_intf.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-S0m9P9FKx18/UhtmSquXvUI/AAAAAAAAjn8/d7rcJjPtYM0/s400/glcdssm_intf.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_interface.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="579" src="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_interface.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_inside.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="302" src="http://openenergymonitor.org/emon/sites/default/files/GLCD_SSM_inside.jpg" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/08/notify-on-inactive-feeds/">Notify on inactive feeds</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-08-20T13:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-20 13:18:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/08/notify-on-inactive-feeds/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <div class="separator" style="clear: both; text-align: left;">Here's a simple feature that sends an email whenever emoncms feeds become inactive for more than two hours, designed to stop those instances where you login to emoncms after a month and realise that something went wrong and it hasn't been updating for a while.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s1600/notify.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s640/notify.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The notify control page can be accessed via the Extras menu. It can be disabled or enabled and an email address that is different from you main account email can be used if needed.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">A cron job runs every 2 hours on the server to check if any feeds have become inactive for more than 2 hours but less than 4 hours. This ensures only one email is sent and historical inactivity is ignored.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Notify is now running on emoncms.org, you may want to check that your email address is correct before turning it on.</div><div class="separator" style="clear: both; text-align: left;"><br /></div>To install notify on your raspberrypi or own server see installation details here:<br /><a href="http://github.com/emoncms/notify">http://github.com/emoncms/notify</a><br /><br /><br />
     
   </div>
   </article>
@@ -1050,6 +1069,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1102,12 +1127,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

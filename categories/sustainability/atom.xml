@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sustainability | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/sustainability/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-03-12T17:14:18+00:00</updated>
+  <updated>2022-04-12T16:12:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -166,7 +166,7 @@
 
 <!--more-->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Calculating a households share of real-time wind output
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Calculating a households share of real-time wind output
 
 Between March 2015 and March 2016 the output of UK wind power was on average 2630MW.
 
@@ -183,8 +183,7 @@ wind power available = ( 205W / 2630MW ) x uk wind power output (MW)
 If total UK wind power is 4000MW the estimated amount available in this example for the household is = (205W/2630MW) x 4000MW = 312 Watts.
 
 Over the year the average available wind power for the household will work out to being 205W but for any given moment it could be more or less than this depending on how much power is being generated at that moment.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>With data on household demand, onsite solar and a share of UK wind, we then work out how much backup supply is needed and from this an estimate of household CO2 intensity.</p>
 
@@ -224,13 +223,12 @@ Over the year the average available wind power for the household will work out t
 
 <!--more-->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>As an example the CO2 intensity of combined cycle gas turbines (CCGT) which provide the majority of electricity generated from gas in the UK have a co2 intensity of 360gCO2/kWh.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>As an example the CO2 intensity of combined cycle gas turbines (CCGT) which provide the majority of electricity generated from gas in the UK have a co2 intensity of 360gCO2/kWh.
 
 At this intensity a well installed heat pump that achieves an average COP of 3.0 delivers heat at a CO2 intensity of 129gCO2/kWh heat including 7% grid losses. This provides a significant 44% co2 emissions reduction compared to having an efficient gas boiler which delivers heat at a CO2 intensity of 230gCO2/kWh.
 
 An electric car achieving a real world mountainous north Wales terrain driving efficiency of 3.7 miles per kWh (5.9km/kWh) including charging losses powered by gas electricity has a co2 intensity of 61gCO2/kWh which again provides a significant 44% co2 emissions reduction compared to real world efficient small petrol car co2 emissions of110 gCO2/km based on: 10.6 kgCO2 per gallon [1] and 60mpg (typical of the most efficient small car real world mpg [2].
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><a href="http://www.carbonindependent.org/sources_car.html">[1]</a>
 <a href="http://www.whatcar.com/car-news/real-world-mpg-efficient-small-cars/1214063">[2]</a></p>
 

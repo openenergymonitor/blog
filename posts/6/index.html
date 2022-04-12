@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/6/">
+    <link rel="canonical" href="/posts/6/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/6/">
+    <meta property="og:url" content="/posts/6/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2015/11/interpreting-emoncms-dashboards/">Interpreting Emoncms Dashboards</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-11-04T11:54:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-11-04 11:54:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>emoncms</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/11/interpreting-emoncms-dashboards/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br />The emonPi / emonTx standard install is designed to monitor whole house power consumption. An excellent learning exercise that we recommend everyone undertake soon after installing a whole house energy monitor is to turn off every appliance in the house then slowly turn on each appliance keeping a close eye on the real-time Emoncms dashboard. Walking around the house using a handheld mobile device to display the Emoncms dashboard works great for this. For fastest response we recommend connecting to the local Emoncms running locally on the emonBase / emonPi which will update ever 5s (emonPi default) or 10s (emonTx default). <br /><br />After this exercise you should have a good idea what the trace signature of each of your appliances looks like on the graph. The easiest to identify are the large power consumers e.g kettle 3kW spike and shower 8kW spike. However with a bit of observation it's possible to identify subtler power signatures. Here's an excellent example by posted by <a href="https://twitter.com/Zapaman/status/661867505523236864">@Zapaman</a> showing a Solar PV dashboard annotated to identify his fridge / freezer and central heating pump running over night. It's great to see the solar PV kick in providing more then the demand when the sun hits the panels in the morning :-)<br /><br /><a href="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s1600/interperate_solarPV_dash.png"><img border="0" src="http://3.bp.blogspot.com/-GYvFIQEBn1o/VjnsepD-9gI/AAAAAAABiaw/BJp0MKP_ll0/s640/interperate_solarPV_dash.png" /></a><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/11/ambient-wind-energy-indicator-using/">Ambient Wind Energy Indicator using Node-RED and Blink(1) USB </a>
   </h1>
   
@@ -647,9 +687,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/nodered/'>NodeRed</a></li>
+        <li>NodeRed</li>
       
-        <li><a class='category' href='/categories/display/'>display</a></li>
+        <li>display</li>
       
     
     </ul>
@@ -689,11 +729,11 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/mqtt/'>MQTT</a></li>
+        <li>MQTT</li>
       
-        <li><a class='category' href='/categories/nodered/'>NodeRed</a></li>
+        <li>NodeRed</li>
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -734,9 +774,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/china/'>China</a></li>
+        <li>manufacturing</li>
       
-        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
+        <li>China</li>
       
     
     </ul>
@@ -776,7 +816,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -817,9 +857,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonbase/'>emonBase</a></li>
+        <li>optical pulse</li>
       
-        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
+        <li>emonBase</li>
       
     
     </ul>
@@ -860,7 +900,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -901,9 +941,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+        <li>optical pulse</li>
       
-        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
+        <li>emonTH</li>
       
     
     </ul>
@@ -943,9 +983,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/esp8266/'>ESP8266</a></li>
+        <li>ESP8266</li>
       
-        <li><a class='category' href='/categories/control/'>control</a></li>
+        <li>control</li>
       
     
     </ul>
@@ -985,7 +1025,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+        <li>zerocarbonbritain</li>
       
     
     </ul>
@@ -1002,48 +1042,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     The last zero carbon energy model example in the series investigating the matching between different energy demands and a variable renewable supply reached 89% supply/demand matching with a mixture of solar and wind supply, traditional electricity demand, space heating with heatpumps, electric vehicles with smart charging and two small stores one 7 kWh li-ion store and one 10 kWh heatstore.<br /><br />Blog post: <a href="http://openenergymonitor.blogspot.co.uk/2015/07/open-source-hourly-zero-carbon-energy.html">Open source hourly zero carbon energy model, combining traditional electric, heating and electric vehicle demand.</a><br /><br />How do we achieve that final 10% of supply/demand matching? Is it possible to just scale up the li-ion storage or do we need something else? What is the nature of that final unmet demand and the final storage requirement?<br /><br />One of the good things about having the model written as a program rather than spreadsheet is that its really easy to run the model iteratively for different input values, you can quickly go through hundreds of model runs. You don’t need to manually run the model for each value. <br /><br />The following graph shows how the percentage of supply/demand matching increases as the storage size increases. The python source code for the model used to produce this can be found here: <a href="https://github.com/TrystanLea/zcem/blob/master/python/storagerequirements.py">https://github.com/TrystanLea/zcem/blob/master/python/storagerequirements.py</a><br /><br />In order to capture all of the storage requirement in this analysis the heatstore was removed from the <a href="http://openenergymonitor.blogspot.co.uk/2015/07/open-source-hourly-zero-carbon-energy.html">last model</a> and the EV charging was set to a constant charge profile rather than smart charging. This configuration achieves 78.3% supply/demand matching with no storage, an unmet electricity demand of 13,628 kWh over 10 years out of a total of 62,771 kWh.<br /><br />% Supply/demand matching vs storage size in kWh:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Abx9aCP9W7c/Vb3YfvwKL2I/AAAAAAAATrM/vQvu6kMp3n8/s1600/matchingvsstoresize.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="384" src="http://2.bp.blogspot.com/-Abx9aCP9W7c/Vb3YfvwKL2I/AAAAAAAATrM/vQvu6kMp3n8/s640/matchingvsstoresize.png" width="640" /></a></div>We can see clearly that the degree of supply/demand matching increases very quickly as we add the first kWh's of storage but then the gains taper off quickly requiring orders of magnitude more storage to reach the final 5%.<br /><br />The first 10% of supply/demand matching, bringing us up to 90% needs around 25 kWh of storage. The next 5% up to 95% requires an additional 120 kWh of storage. The final 5% requires 1536 kWh.<br /><br /><b>Note:</b> see added section below for calculations of total storage capacity required if the oversupply is 20% or 30% instead of the 4% here.<br /><br />The first 1.5% of the storage capacity provides 50% of the required supply/demand matching gain.<br /><br />Its interesting to look at what the use of the 1680 kWh store looks like across the 10 year model period:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-nhFBpcMlbbo/Vb3Y0qBKDgI/AAAAAAAATrc/G1vtEdv6ts0/s1600/storeSOC.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="358" src="http://1.bp.blogspot.com/-nhFBpcMlbbo/Vb3Y0qBKDgI/AAAAAAAATrc/G1vtEdv6ts0/s640/storeSOC.png" width="640" /></a></div>The store is used most over winter, where electricity demand is highest due to heatpump space heating. We can see that the winters of 2010 and 2011 where particularly cold and that the extent of the storage requirement in this model is largely driven by these successive harsh winters and a less strong summer. If the modelling had only considered 2002 to 2010 we might have under specified the storage amount needed by half which highlights the importance of modelling over as many years as possible.<br /><br /><b>Utilisation, cycling</b><br /><br />We can see roughly that the full extent of the store is only used once in 10 years and is largely needed to cover just 3.5 months at the start of 2011. Even if the store was half its size it would only be used fully 3 times in 10 years. The extend to which the store is cycled is an important consideration in store choice, both from the perspective of wear and financial payback.<br /><br />The following graph charts annual cycle requirements vs storage size, highlighting how most of the storage requirement is cycled very infrequently. A 25 kWh store delivers the equivalent charge/discharge energy of 30 full cycles a year, 100% depth of discharge (DOD). The next 120 kWh would only be cycled 7.3 times a year. A 625 kWh store would only be cycled twice in a year and the full 1680 kWh store only 0.8 times a year.<br /><br />Cycles per year vs store size:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-p7Wlm4jfR4U/Vb3YqXb0CLI/AAAAAAAATrU/gKPaudwDSM0/s1600/cycles.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="382" src="http://3.bp.blogspot.com/-p7Wlm4jfR4U/Vb3YqXb0CLI/AAAAAAAATrU/gKPaudwDSM0/s640/cycles.png" width="640" /></a></div>The above gives us an initial degree of insight into the nature of the storage requirements and how reaching the final 10% of supply/demand matching requires magnitude more storage than the first 10%.<br /><br />Its important to note that the results above are for a model based on uk climate and weather, it would be worth repeating this kind of modelling for warmer countries where air conditioning that matched solar pv generation was a large component of demand rather than winter heating.<br /><br />The next blog post will look at some of the different storage technologies available and how they are suitable for different segments of the overall storage requirement.<br /><br /><b>Reducing storage requirements by oversupply&nbsp; </b><br />Following the conversation with Dominic Zapman here <a href="https://twitter.com/Zapaman/status/627806828865409024">https://twitter.com/Zapaman/status/627806828865409024</a>, I decided to re-run the model with a higher degree of oversupply - nearer the oversupply level used by ZeroCarbonBritain. The results above are for an oversupply of 4% with 65391 kWh supplied over 10 years for a demand of 62771 kWh. A 1680 kWh store is 27% of the annual demand.<br /><br />If we re-run the model with an oversupply of 20%, 100% supply/demand matching is reached with a 676 kWh store, 11% of annual demand.<br /><br />If the oversupply is 30%, the storage requirement is reduced to 484 kWh, 8% of annual demand.<br /><br />The ZeroCarbonBritain model exports 165 TWh out of the 738 TWh generated which is an oversupply of 22%. A further 180 TWh is used to generate synthetic fuels including power to gas methane storage. A high percentage of this demand will also be oversupply. The long term power to gas storage capacity in ZCB is 60 TWh, delivering on average 14 TWh/year of backup supply covering about 402 TWh of final demand excluding exports. Delivered backup is 3.5% of final demand.<br /><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/07/new-myelectric-app-realtime-power-graph/">New MyElectric Emoncms app, realtime power graph and energy totals</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-07-30T15:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-30 15:26:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/dashboard/'>dashboard</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/07/new-myelectric-app-realtime-power-graph/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><a href="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s1600/newmyelectric.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s400/newmyelectric.png" width="281" /></a><a href="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s1600/SAM_0929.JPG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s400/SAM_0929.JPG" width="300" />&nbsp;</a><br /><br />The MyElectric app has long been needing some work so that it both provides more useful information and also reports the daily kwh data correctly for different timezones and when the app is used as an always on display and the day changes.<br /><br />There is now a new version available that adds a real-time power graph as well as totals for the week, month, year and all time and the daily kwh bar graph as before.<br /><br />To generate the kWh per day graph this version focuses on supporting feeds either created with the "power to kWh" processor or "Wh accumulator" processor rather than the "power to kWh/d" processor and average power feeds. Trying to support each one was leading to quite a lot of bugs in addition to more fundamental issues with time zones present with the power to Kwh/d daily feed approach. <br /><br />The "power to kWh" and "Wh accumulator" processors are both fully supported on the emonPi and emonBase running the low-write image. There's more on how this accumulating watt hour or kWh approach works here: <a href="http://openenergymonitor.org/emon/node/3995">Development: Calculating Wh totals on the emontx</a><br /><br />I now have the new MyElectric app running alongside the MySolarPV app in my home and I'm really quite pleased with the results. The totals at the bottom and average kWh per day for each period gives me most of what data to see at a glance how my electricity consumption is fairing and having this information available on a wall mounted tablet really makes all the difference compared with having to login to emoncms on my computer to see the data.<br /><br />I would like to make it easier to switch in between the different apps, a side swipe would be really nice. I would also like to look into a way to make it possible to download apps from an app repository from within emoncms itself so that new apps could be added without them having to be in the app repository on github, there's quite a bit of work needed to get there thought.<br /><br />
     
   </div>
   </article>
@@ -1071,6 +1069,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1123,12 +1127,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

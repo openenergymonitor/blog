@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/27/">
+    <link rel="canonical" href="/posts/27/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/27/">
+    <meta property="og:url" content="/posts/27/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2012/04/emonglcd-v13-switches-fix/">emonGLCD V1.3 Switches - fix!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2012-04-12T12:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-04-12 12:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>emonGLCD</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2012/04/emonglcd-v13-switches-fix/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    It was mentioned in <a href="http://openenergymonitor.blogspot.co.uk/2012/02/emonglcd-v13-pcb.html">this blog post </a>regarding the current version of the emonGLCD (V1.3) that a hardware error rendered the push switches un-usable. This is not the case any more!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-RfCv8uKzpMw/T4bArjw0Z3I/AAAAAAAAZ_0/6Qk37khJ4aA/s1600/IMG1348.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://1.bp.blogspot.com/-RfCv8uKzpMw/T4bArjw0Z3I/AAAAAAAAZ_0/6Qk37khJ4aA/s320/IMG1348.jpg" width="320" /></a></div><br /><br />It turns out that this error can be fixed in software. The switches can be made to work with no hardware modifications. The <a href="https://github.com/openenergymonitor/emonGLCD/">emonGLCD tester sketch</a> has been updated with the required fix.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-JlrYaGzD0So/T4c_7eKq1uI/AAAAAAAAaAM/IZC87swXDPQ/s1600/glcd_sw2__19976_zoom.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/-JlrYaGzD0So/T4c_7eKq1uI/AAAAAAAAaAM/IZC87swXDPQ/s320/glcd_sw2__19976_zoom.jpg" width="320" /></a></div><br /><br />Here are the details:<br /><br />The push switches are connected ADC 1,2 and 5 (digital 15,16 and 19). When pressed they are pulled low through resistor R5.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-El2msFAJQQ4/T4bAYwmMe0I/AAAAAAAAZ_s/O_C7Eq1g4yQ/s1600/Screenshot+at+2012-04-12+12:43:13.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-El2msFAJQQ4/T4bAYwmMe0I/AAAAAAAAZ_s/O_C7Eq1g4yQ/s320/Screenshot+at+2012-04-12+12:43:13.png" width="283" /></a></div><div class="separator" style="clear: both; text-align: left;">The Atmega328 has internal pull-up resistors (20K) which can be enabled by setting the port as output and doing a high digital write:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"></div><pre style="background-color: white; border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div class="line" id="LC62" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; color: #333333; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 1em; padding-right: 0px; padding-top: 0px;"><br /><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">pinMode</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">(</span><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">switchpin</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">,</span> <span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">INPUT</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">);</span> </div><br /><div class="line" id="LC63" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; color: #333333; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 1em; padding-right: 0px; padding-top: 0px;"><br /><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">digitalWrite</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">(</span><span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">switchpin</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">,</span> <span class="n" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">HIGH</span><span class="p" style="border-bottom-width: 0px; border-color: initial; border-image: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; font: inherit; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">);</span></div><br /></pre>The switches are active low, meaning a logic 0 will be read on digital 15,16 and 19 when the relevant switch is pressed.&nbsp;<div><br />Thanks to forum member <a href="http://openenergymonitor.org/emon/user/859">Drsdre</a> for bringing this elegant fix to our attention. This is a real open-hardware success story!   If you've bought an emonGLCD from us we will send out on request the three switches to be added free of charge. <br /><br />We have created an item for the extra switches in the shop, just click buy (it's free) and quote your original order number: <a href="http://shop.openenergymonitor.com/displays/">http://shop.openenergymonitor.com/displays/</a><br /><br />All emonGLCD kits bought from the shop from now on will include the switches. <br /><br />Happy days. </div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2012/04/open-source-hardware-and-free-rider/">Open source hardware and the free rider dilemna</a>
   </h1>
   
@@ -647,7 +687,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/open-source/'>open source</a></li>
+        <li>open source</li>
       
     
     </ul>
@@ -687,7 +727,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
+        <li>Heat Pump</li>
       
     
     </ul>
@@ -727,7 +767,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/shop/'>shop</a></li>
+        <li>shop</li>
       
     
     </ul>
@@ -767,7 +807,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
+        <li>emonGLCD</li>
       
     
     </ul>
@@ -807,7 +847,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/documentation/'>documentation</a></li>
+        <li>documentation</li>
       
     
     </ul>
@@ -847,13 +887,13 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/email-notifications/'>email notifications</a></li>
+        <li>email notifications</li>
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
-        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
+        <li>energy monitoring</li>
       
-        <li><a class='category' href='/categories/openenergymonitor/'>openenergymonitor</a></li>
+        <li>openenergymonitor</li>
       
     
     </ul>
@@ -893,7 +933,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -933,9 +973,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/community-energy/'>community energy</a></li>
+        <li>community energy</li>
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -975,7 +1015,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -992,46 +1032,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     Hello, my name is Baptiste Gaultier<span class="Apple-style-span" style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 14px; font-weight: bold; white-space: nowrap;">.&nbsp;</span>When I started working on the project of monitoring the energy consumption of <a href="http://www.telecom-bretagne.eu/index.php?lang=en_GB" target="_blank">Telecom Bretagne</a> (an engineering school in Brittany, France), I was looking for products which can measure, store, and track the energy consumption data of a typical university campus.<br /><br />After spending some time researching the available solutions, I found a lot of expensive proprietary products and a project you may have heard of, called openenergymonitor. This project provides a very powerful, web-connected energy monitoring system, and the best part is that it is open-source !<br /><br />I started to work on top of emonTx and emoncms and here are some new features I added to emoncms (the new hardware features will be addressed in a future blog post)&nbsp; :<br /><ul><li><b>Map widget :</b> allows you to see a map with all the sensors used for energy monitoring</li><li><b>Device manager :</b> provides an easy way to add devices on the map widget</li><li><b>Node information widget :</b> allows you to see all information (hostname, IP addresses, device type, power measured...) of a monitoring node</li></ul><br /><b><span style="font-size: large;">Screenshots</span></b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Oip7SvjTItk/TxbYbhp0D2I/AAAAAAAAApM/GI-XQCGa3bU/s1600/Screenshot+emoncms.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="330" src="http://3.bp.blogspot.com/-Oip7SvjTItk/TxbYbhp0D2I/AAAAAAAAApM/GI-XQCGa3bU/s400/Screenshot+emoncms.png" width="400" /></a></div><div style="text-align: center;"><span style="font-size: x-small;"><b>Dashboard with my university campus map</b></span></div><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-y2LQMvjvSKA/TxbY1QyQ-MI/AAAAAAAAApU/rMtGncCPhgA/s1600/Device+manager+screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="362" src="http://1.bp.blogspot.com/-y2LQMvjvSKA/TxbY1QyQ-MI/AAAAAAAAApU/rMtGncCPhgA/s400/Device+manager+screenshot.png" width="400" /></a></div><div style="text-align: center;"><span style="font-size: x-small;"><b>Device manager tab</b></span></div><br /><br />We have made some progress, but we have still a lot of work to do before our goals are met, most notably:<br /><ul><li>Tagging and renaming the devices</li><li>Displaying the energy chart when clicking on a node</li><li>Drag and drop node positioning on a map (device manager)</li><li>Node filtering (depending on power consumption for instance)</li><li>How to use the map widget (documentation)&nbsp;</li></ul>The code has been released on github (I forked couple of days ago) : <a href="https://github.com/bgaultier/emoncms3/tree/devicemanager">https://github.com/bgaultier/emoncms3/tree/devicemanager</a><br /><br />The entire team working on the project at <a href="http://www.telecom-bretagne.eu/index.php?lang=en_GB" target="_blank">Telecom Bretagne</a> is convinced of the great quality of the openenergymonitor project and we hope our work may be useful in any way.<br /><br />Cheers !
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2012/01/emonglcd-getting-time-for-internet/">emonGLCD - getting time for the internet</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2012-01-17T11:36:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2012-01-17 11:36:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emonglcd/'>emonGLCD</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2012/01/emonglcd-getting-time-for-internet/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    The <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> is an open-hardware wireless graphical LCD display based on the&nbsp;ATmega328&nbsp;microcontroller&nbsp;and is Arduino&nbsp;compatible.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/--piGVImV4Jc/TxTIRxzzGRI/AAAAAAAAZO8/u3XS1GuN0gA/s1600/emonGLCD_lab.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/--piGVImV4Jc/TxTIRxzzGRI/AAAAAAAAZO8/u3XS1GuN0gA/s320/emonGLCD_lab.jpg" width="320" /></a></div><br /><br />The emonGLCD works very well as a real-time living room energy monitoring display. For the <a href="http://openenergymonitor.org/emon/emonglcd">emonGLCD</a> to calculate and display how much energy has been used on the current day it must know when the day begins and ends. Therefore it must know the current time.<br /><br />The emonGLCD does not have a hardware RTC but its possible to implement a very accurate clock using the<a href="https://github.com/jcw/rtclib"> Jeelabs software RTC library</a> and a web-connected Nanode RF. In the <a href="http://openenergymonitor.blogspot.com/2012/01/full-web-connected-home-energy.html">OpenEnergyMonitor end-to-end energy monitoring system</a> the emonGLCD is used in conjunction with the <a href="http://openenergymonitor.org/emon/emontx">emonTx</a> (transmitter) and <a href="http://openenergymonitor.org/emon/emonbase">emonBase/NanodeRF </a>which is used to post data&nbsp;on-line&nbsp;to <a href="http://openenergymonitor.org/emon/emoncms">emoncms.</a><br /><br />When data is posted to the emoncms sever with a http request the sever&nbsp;response contains the current time of the sever. We have written a code example to extract this time from the http header reply and pass it via RFM12B wireless to the emonGLCD. The time on the emonGLCD is always correct. Both the emonGLCD and the NanodeRF receive power monitoring data from the emonTx<br /><br />Demo video (single CT sensor system):<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/QeEXKzrEJ6U" width="420"></iframe><br /><br />Demo video (solar PV monitor system):<br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/bGyoscibR04" width="420"></iframe><br /><br />Taking this a step further: when the emonGLCD receives the time from the NanodeRF the emonGLCD&nbsp;transmits&nbsp;back the current room temperature from it's on-board temperature sensor, then the NanodeRF posts this online to emoncms.<br /><br />The Arduino sketch examples are up on github:<br /><br />emonBase/NanodeRF:<br /><a href="https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_singleCT_RTCrelay_GLCDtemp">https://github.com/openenergymonitor/NanodeRF/tree/master/NanodeRF_singleCT_RTCrelay_GLCDtemp</a><br /><br />emonGLCD single CT:<br /><a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_singleCT_AutoTime_TempLog">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_singleCT_AutoTime_TempLog</a><br /><br />emonGLCd solar PV:&nbsp;<a href="https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_solarPV_type_1_and_2">https://github.com/openenergymonitor/EmonGLCD/tree/master/emonGLCD_solarPV_type_1_and_2</a>
     
   </div>
   </article>
@@ -1059,6 +1059,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1111,12 +1117,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

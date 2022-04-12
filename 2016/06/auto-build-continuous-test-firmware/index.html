@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">
+    <link rel="canonical" href="/2016/06/auto-build-continuous-test-firmware/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Part 2/3: Firmware Continuous Test & Build">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/2016/06/auto-build-continuous-test-firmware/">
+    <meta property="og:url" content="/2016/06/auto-build-continuous-test-firmware/">
     <meta property="og:type" content="article">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -649,17 +649,17 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/continuous-testing/'>continuous testing</a></li>
+        <li>platformio</li>
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>travisci</li>
       
-        <li><a class='category' href='/categories/emontx/'>emontx</a></li>
+        <li>firmware</li>
       
-        <li><a class='category' href='/categories/firmware/'>firmware</a></li>
+        <li>emonpi</li>
       
-        <li><a class='category' href='/categories/platformio/'>platformio</a></li>
+        <li>emontx</li>
       
-        <li><a class='category' href='/categories/travisci/'>travisci</a></li>
+        <li>continuous testing</li>
       
     
     </ul>
@@ -710,7 +710,7 @@ $(document).ready(function(){ //alphabetically order list
   <li>Code compilation is generated using platformIO in the same way as when compiling locally, <a href="https://blog.openenergymonitor.org/2016/06/platformio/">See blog post</a>. The <a href="https://github.com/openenergymonitor/emonpi/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code> file in the repo</a> configures the Travis CI build using platformIO:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>language: python
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: python
 python:
 - '2.7'
 sudo: false
@@ -732,8 +732,7 @@ deploy:
   api_key:
     secure: OzNwxsQEVlSj2e4sOqKNYlNXqPqc5myL0nOBtY1FYD+sbxslHMixmlRASWuFMCjHdpFYQST2IuR3UMCPCjfPzMDVCVtsJ8VPd299fgDGzmEnL3P5Z8wCAv1CfHURcfXzFJDM7prevGx9cfz8uAiwIaNOhbTL7kL2GfSatV5PERzr2ytVh6WUj650Rd7bLKKhj8YHOzO9wOBoKDadYDFF99XYQbDDoHj9pAv+OPG76X0kWrdrq/0w26jh7JZaxrwhF/xD7maGaEjLOa/FcXbyZlVy/JIFjyrKp79swzVNSFNox/CbF7e6tzBf3NhZsoQyEchnCrgWw8IB7j/Ja7Ypetn6IG7C5rT/h46rWrZshbVdw7ZBUzhNJIUVLHFBy7hi2hxMw9Bn+oCt0UWLt8SnQnRfAbjw+z3XQ2/6MccUAINKGDqd4fm9M85sN6drpXySeJ/ZyRkdlUN0xsDpARI05mYLLlCutRzlSCkglbsKJr5XM7h7pXHLUQY5dfw9LrA788w25OBoO9U8vCKtoV8UCXWh6og/364CRl9Uih958f1t7kHIvfwLJjwSDFYVxUsyvSFyjfY+pIfuGEXtgIqMZ87nK3O1vAb9udbPErp0q5kJBeks9Df6wVsvjI7O++7YwiSuWlJBD0x45ZV9pxOFLnWb1hetHpPH5kFgBlTDqsY=
   file: "firmware/.pioenvs/emonpi_deploy/firmware.hex"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>If the build fails for whatever reason (syntax error, library error etc) then the green <code class="highlighter-rouge">build passing</code> icon changes to a ominous red <code class="highlighter-rouge">build Failed</code> and we get an alert email. For a full build log example see the <a href="https://travis-ci.org/openenergymonitor/emonpi">emonPi Travis CI build page</a>.</li>
@@ -779,6 +778,12 @@ deploy:
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -831,12 +836,6 @@ deploy:
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/7/">
+    <link rel="canonical" href="/posts/7/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/7/">
+    <meta property="og:url" content="/posts/7/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,48 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2015/07/new-myelectric-app-realtime-power-graph/">New MyElectric Emoncms app, realtime power graph and energy totals</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2015-07-30T15:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-07-30 15:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> two minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>emoncms</li>
+      
+        <li>dashboard</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2015/07/new-myelectric-app-realtime-power-graph/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <br /><a href="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s1600/newmyelectric.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-YHIAud8fvlg/Vbo1wbdWU3I/AAAAAAAATqI/zORntneXFnM/s400/newmyelectric.png" width="281" /></a><a href="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s1600/SAM_0929.JPG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-zX3yeWqv0Ug/Vbo10IpEtBI/AAAAAAAATqQ/lm637JsnEbg/s400/SAM_0929.JPG" width="300" />&nbsp;</a><br /><br />The MyElectric app has long been needing some work so that it both provides more useful information and also reports the daily kwh data correctly for different timezones and when the app is used as an always on display and the day changes.<br /><br />There is now a new version available that adds a real-time power graph as well as totals for the week, month, year and all time and the daily kwh bar graph as before.<br /><br />To generate the kWh per day graph this version focuses on supporting feeds either created with the "power to kWh" processor or "Wh accumulator" processor rather than the "power to kWh/d" processor and average power feeds. Trying to support each one was leading to quite a lot of bugs in addition to more fundamental issues with time zones present with the power to Kwh/d daily feed approach. <br /><br />The "power to kWh" and "Wh accumulator" processors are both fully supported on the emonPi and emonBase running the low-write image. There's more on how this accumulating watt hour or kWh approach works here: <a href="http://openenergymonitor.org/emon/node/3995">Development: Calculating Wh totals on the emontx</a><br /><br />I now have the new MyElectric app running alongside the MySolarPV app in my home and I'm really quite pleased with the results. The totals at the bottom and average kWh per day for each period gives me most of what data to see at a glance how my electricity consumption is fairing and having this information available on a wall mounted tablet really makes all the difference compared with having to login to emoncms on my computer to see the data.<br /><br />I would like to make it easier to switch in between the different apps, a side swipe would be really nice. I would also like to look into a way to make it possible to download apps from an app repository from within emoncms itself so that new apps could be added without them having to be in the app repository on github, there's quite a bit of work needed to get there thought.<br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2015/07/adding-rtc-to-emonpi/">Adding a RTC to the emonPi</a>
   </h1>
   
@@ -647,7 +689,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -688,9 +730,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/embodied-energy/'>embodied energy</a></li>
+        <li>manufacturing</li>
       
-        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
+        <li>embodied energy</li>
       
     
     </ul>
@@ -730,11 +772,11 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/embodied-energy/'>embodied energy</a></li>
+        <li>embodied energy</li>
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>sustainability</li>
       
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -775,7 +817,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+        <li>zerocarbonbritain</li>
       
     
     </ul>
@@ -815,7 +857,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+        <li>zerocarbonbritain</li>
       
     
     </ul>
@@ -855,9 +897,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/dashboard/'>dashboard</a></li>
+        <li>emoncms</li>
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>dashboard</li>
       
     
     </ul>
@@ -928,7 +970,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonth/'>emonTH</a></li>
+        <li>emonTH</li>
       
     
     </ul>
@@ -968,7 +1010,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/zerocarbonbritain/'>zerocarbonbritain</a></li>
+        <li>zerocarbonbritain</li>
       
     
     </ul>
@@ -985,46 +1027,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     The 5th example in the online zero carbon energy modelling tool is where it starts to get more interesting: modelling the supply/demand matching between a variable renewable supply and space heating delivered by heatpumps. The electrification of heating with heatpumps so that heating can be supplied with renewable electricity is one of the key solutions used in ZeroCarbonBritain and <a href="http://withouthotair.com/c21/page_146.shtml.">Sustainable energy without the hot air.</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-XQZc9Wcj3AU/VYfZ3abpxQI/AAAAAAAAS_A/cJgDAe0Sy6Q/s1600/heatingmodel.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="328" src="http://3.bp.blogspot.com/-XQZc9Wcj3AU/VYfZ3abpxQI/AAAAAAAAS_A/cJgDAe0Sy6Q/s640/heatingmodel.png" width="640" /></a></div><br /><b>Online tool:</b> <a href="http://openenergymonitor.org/energymodel">http://openenergymonitor.org/energymodel</a> &gt; navigate to <i>5. Variable supply and space heating demand</i><br /><br />The ZeroCarbonBritain dataset includes weighted daily temperatures for 10 years. This dataset can be combined with the solar dataset and a basic household energy model to create a seasonal heating demand model.<br /><br />Solar gains are an important aspect of space heating. Using <a href="http://github.com/emoncms/MyHomeEnergyPlanner">MyHomeEnergyPlanner</a> (The open source retrofit modelling tool we are developing with <a href="http://carbon.coop/">Carbon Coop</a>) to model a concept low energy house with fabric energy efficiency of 120W/K and a total of 16m2 of window area on a 80m2 (floor area) house with external surface area 206.4m2 the maximum potential annual solar gains where calculated to be 4429 kWh.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-VgSn1d3RZv4/VYfW1wCB3LI/AAAAAAAAS-0/8_nSg_M_FkU/s1600/myhomeneergyplanner.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="342" src="http://3.bp.blogspot.com/-VgSn1d3RZv4/VYfW1wCB3LI/AAAAAAAAS-0/8_nSg_M_FkU/s640/myhomeneergyplanner.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">MyHomeEnergyPlanner: http://github.com/emoncms/MyHomeEnergyPlanner </td></tr></tbody></table>Running a low electricity demand of 2200 kWh a year and taking into account the solar gains. The space heating demand is only 4,247 kWh/year (compared to 13500 kWh/year for a typical house today a 68% space heating energy saving). If that remaining heat demand is supplied by a heatpump the electrical input should be 1,416 kWh/year. <br /><br /><b>Building an hourly space heating model:</b><br /><br />In order to calculate the space heating demand the model first calculates the total heating demand before solar gains and internal gains are taken into account. The space heating demand assumes constant internal temperature target of 18.5C rather than a morning and evening heating period. A further example with a higher internal temperature and variable profile would worth exploring for comparison. (21.0C being the passivhaus internal temperature target and there is an interesting discussion about the role of heating profiles, heatpump performance and demand spikes)<br /><br />The model then subtracts the internal gains (heat given off by appliances/cooking/lights etc) and the heat provided by solar gains through the windows, we use the solar pv capacity factor dataset here to provide our solar irradiance dataset. The amount of solar gain was scaled to match the amount of solar gain calculated in the SAP MyHomeEnergyPlanner tool based on the window orientations and areas – the total available solar gain energy is equivalent of 5.0 kW of solar pv.<br /><br />The model also keeps track of unused solar and internal gains when the internal temperature is already at the target temperature. The assumption at this point is that the excess heat is dumped outside perhaps through increased ventilation.<br /><br />The space heating demand after internal and solar gains are taken into account is then supplied with a heatpump with the simplifying assumption that the COP is constant and the heatpump fully responsive. A more complex model taking into account a degree of thermal mass in the building and the dynamics of the heatpump cross checked with real data would be useful here to check the assumptions taken in order to create an initial simplified model.<br /><br />Running the same fabric energy efficiency, max available solar gains and internal gains through this hourly model gives a space heating demand that is 14% higher than the space heating demand calculated with the SAP based MyHomeEnergyPlanner. The difference may be due to the differences in the way solar gains and internal gains utilisation is calculated in a monthly vs hourly model, further investigation is needed to fully understand the reason for this difference.<br /><br />Model heating demand results:<br /><table class="table"><tbody><tr><td>Total heat demand</td><td>8445 kWh/y</td></tr><tr><td>- Total utilized internal gains:</td><td>2044 kWh/y of 2201 kWh/y</td></tr><tr><td>- Total utilized solar gains:</td><td>1566 kWh/y of 4132 kWh/y</td></tr><tr><td>= Total space heating demand:</td><td>4835 kWh/y</td></tr><tr><td>Total heatpump electricity demand:</td><td>1611 kWh/y</td></tr></tbody></table><br />Running the model for each renewable generation type to investigate the degree of direct supply demand matching we get the following results:<br /><br /><table class="table">    <tbody><tr>        <td></td>        <td style="width: 12%;">Onshore wind</td>        <td style="width: 12%;">Offshore wind</td>        <td style="width: 12%;">Wave</td>        <td style="width: 12%;">Tidal</td>        <td style="width: 12%;">Solar</td>    </tr><tr>        <td>Installed capacity</td>        <td>0.568kW</td><td>0.383kW</td><td>0.651kW</td><td>0.776kW</td><td>1.95kW</td>    </tr><tr>        <td>Percentage of demand<br />supplied directly</td>        <td>51%</td><td>57%</td><td>61%</td><td>43%</td><td>10%</td>     </tr><tr>        <td>Percentage of time demand is<br />more or the same as the supply</td>        <td>59%</td><td>59%</td><td>58%</td><td>54%</td><td>41%</td>     </tr></tbody></table><br />Onshore, Offshore and Wave give quite similar levels of matching. Solar PV supplies the least demand because most of the solar electricity is generated in the summer and most of the heating demand is of course in the winter but also importantly when the sun is shining the heat demand is less due to direct solar gains, the dataset we are using for solar pv generation and solar gains is the same dataset.<br /><br />The online example also explores the effect of adding a very basic thermal store in order to increase the level of supply matching.<br /><br />The source code and datasets for the heating demand model and full supply/heating demand matching simulation is all open source available in both javascript and python.<br /><br />Space heating demand <a href="http://openenergymonitor.org/energymodel/python/varsupply_spaceheatingdemand.py">varsupply_spaceheatingdemand.py</a> <br />Space heating demand with heatstore<a href="http://openenergymonitor.org/energymodel/python/varsupply_spaceheatingdemand_store.py">varsupply_spaceheatingdemand_store.py</a> <br />Full source code: <a href="https://github.com/TrystanLea/zcem">https://github.com/TrystanLea/zcem</a>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2015/06/optical-utility-meter-led-pulse-sensor/">Optical Utility Meter LED Pulse Sensor</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2015-06-19T11:19:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2015-06-19 11:19:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/optical-pulse/'>optical pulse</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2015/06/optical-utility-meter-led-pulse-sensor/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-gPDYR47gDXw/VYP4XG7lgpI/AAAAAAABLK8/rdKGFA3BKzw/s1600/optical_pulse.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="263" src="http://3.bp.blogspot.com/-gPDYR47gDXw/VYP4XG7lgpI/AAAAAAABLK8/rdKGFA3BKzw/s320/optical_pulse.JPG" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Optical Utility Meter LED Pulse Sensor attached to meter via removable sticky pad</td></tr></tbody></table><br />We have just taken delivery of a batch of custom made Optical Utility Meter LED Pulse Sensor units. We're very excited about these new sensors, they will enable the emonPi and emonTx to interface directly with Utility Meters measuring exactly the amount of energy being measured by the utility meter.<br /><br />The Optical Pulse Sensor works by sensing the LED pulse output from utility meters. Each pulse corresponds to a certain amount of energy passing through the meter. The amount of energy each pulse corresponds to depends on the meter. By counting these pulses the meters KWh value can be calculated.<br /><br />Unlike clip-on CT based monitoring pulse counting is measuring exactly what the utility meter is measuring i.e. what you get billed for. The pulse counting cannot provide an instantaneous power reading like CT based can. Where possible we recommend using pulse counting in conjunction with CT monitoring. The emonPi and emonTx can simultaneously perform pulse counting and CT based monitoring.<br /><br />In the future we plan to look at how the pulse counting energy value can be used to calibrate the CT based power calculations.<br /><br />The Optical Pulse sensor will work plug-and-play with emonPi / emonTx connecting via RJ45 socket, older units will require a firmware update. See documentation page for update instructions.<br /><br /><a href="http://openenergymonitor.org/emon/buildingblocks/opticalpulsesensor">Optical Pulse Sensor Documentation Page</a><br /><br /><a href="http://shop.openenergymonitor.com/optical-utility-meter-led-pulse-sensor/">Optical Pulse Sensor&nbsp;is now available to purchase from the OpenEnergyMonitor online shop</a><br /><br />If you have backed us on Kickstarter or have purchased an emonPi from us as a thank you for your support we would like to offer you 20% off the Optical Pulse Sensor, use code&nbsp;PYN5031978E9T at checkout (valid until 1st July 2015).<br /><br /><br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-w_OfopSMeKI/VYP4ZTLDvUI/AAAAAAABLLE/3SL_h8AKwKo/s1600/optical_pulse_emonpi.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="473" src="http://4.bp.blogspot.com/-w_OfopSMeKI/VYP4ZTLDvUI/AAAAAAABLLE/3SL_h8AKwKo/s640/optical_pulse_emonpi.JPG" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Pulse sensor installed &amp; connected to emonPi via RJ45</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/vq5EmMRrOY0/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/vq5EmMRrOY0?feature=player_embedded" width="320"></iframe><br /><div class="separator" style="clear: both; text-align: center;">Green LED on sensor flashes in sync with LED pulse</div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-n-ULDY85GEE/VYP5cqaTqdI/AAAAAAABLLM/urTCz9A46Cw/s1600/IMG_20150618_103617229.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="225" src="http://4.bp.blogspot.com/-n-ULDY85GEE/VYP5cqaTqdI/AAAAAAABLLM/urTCz9A46Cw/s400/IMG_20150618_103617229.jpg" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Big box of pulse sensors arrived today! :-)&nbsp;</td></tr></tbody></table><br />
     
   </div>
   </article>
@@ -1052,6 +1054,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1104,12 +1112,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

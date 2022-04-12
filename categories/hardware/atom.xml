@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hardware | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/hardware/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-03-12T17:14:18+00:00</updated>
+  <updated>2022-04-12T16:12:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chip Shortage & Hardware Development Update]]></title>
+    <link href="https://blog.openenergymonitor.org/2022/04/hardware-development/"/>
+    <updated>2022-04-12T15:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2022/04/hardware-development</id>
+    <content type="html"><![CDATA[<p>It’s been some time since we gave an update on what we are doing and what is coming next. There’s a lot happening behind the scenes. This post will be mostly about hardware but we’ve also moved our office space amongst other things.</p>
+
+<h3 id="chip-shortage">Chip shortage</h3>
+
+<p>Some of you may have noticed that we are out of stock on quite a few key items in the shop at the moment. We have unfortunately been hit by the ongoing chip shortage, affecting the whole of the electronics industry.</p>
+
+<p>The chip shortage seriously affects several key components that we use including the ATmega328 microcontroller, RaspberryPi’s and the chip that we were planning on using for new hardware, the STM32F303. There’s no general availability of these through standard distributors and the lead times from the manufacturers themselves are around a year. The pricing for these components through more speculative distributors are also eye wateringly high, which we don’t think would represent good value if we added this additional cost to our units.</p>
+
+<h3 id="introducing-the-avr-db-microcontroller-range">Introducing the AVR-DB microcontroller range</h3>
+
+<p><img src="/images/hardware22-1.jpg" alt="hardware22-1.jpg" /></p>
+
+<p>The good news however is that after searching around for alternative options we found a new range of microcontrollers in the same AVR family as the ATmega328 that look very promising, both from a feature set perspective providing a welcome upgrade to the capability of our energy monitoring hardware but also on price and availability.</p>
+
+<p>The AVR-DB range is the latest and highest spec 8-bit AVR microcontrollers from Microchip, launched relatively recently in mid-2020.</p>
+
+<p>The <a href="https://www.microchip.com/en-us/product/AVR128DB48">AVR128DB48</a> is of particular interest to us are (with comparison to the current ATmega328 in brackets):</p>
+
+<ul>
+  <li>12-bit ADC (4x improvement)</li>
+  <li>18 channels on the 48 pin version (up from 8)</li>
+  <li>Higher sampling rate potential (~3x)</li>
+  <li>Flash memory up to 128k (4x)</li>
+  <li>All the usual peripheral requirements (SPI, UART, I2C etc)</li>
+  <li>Potentially useful PGA Op amps built in</li>
+  <li>Relatively low cost</li>
+  <li>Availability is relatively good, and we have secured the stock that we need!</li>
+  <li>Wide range of package types &amp; pin counts.</li>
+  <li>Arduino compatible core called <a href="https://github.com/SpenceKonde/DxCore">DxCore</a></li>
+</ul>
+
+<p><img src="/images/hardware22-2.png" alt="hardware22-2.jpg" /></p>
+
+<p>These features provide many of the key benefits that we were hoping to get from using the STM32 range, in particular the 12-bit ADC, larger number of analog channels and a higher sample rate. That said the AVR-DB has still only a single ADC multiplexed to a large number of input pins and so does not allow for simultaneous sampling across voltage and current channels which was a nice feature of the STM32, but it’s also hard to say how much difference that would make in practice and is it worth the higher price of the STM32 chips?</p>
+
+<p>The lack of availability of the STM32 chips mean we don’t have much choice in the short term, but it’s certainly something to consider in the longer term.</p>
+
+<p>A large plus for the AVR-DB range over the STM32 range is compatibility with our existing firmware developed for the ATmega328, In particular Robert Wall’s latest CM (Continuous Sampling) firmware using the native RFM69cw driver code. The modifications to make this firmware work on the AVR-DB is small. The familiarity provided by the hard work of Spece Konde on the DxCore for the Arduino IDE is also a huge plus for us and other open-source contributors. Combining the use of the DxCore with the modified low level commands for continuous sampling in the EmonLibCM library provides the best of both.</p>
+
+<p>We’ve actually gone ahead and ordered, and received enough stock of a combination of AVR128DB48 and AVR128DB32 chips to see us through the next 18-months or so.</p>
+
+<p>We are also well on our way on the design process for using these chips, with successful testing of these chips and new emonTx, emonPi and emonTH board designs in progress.</p>
+
+<p>Ultimately, if all goes well we expect to have the new units in stock in ~3-4 months time, mid to late July 2022. In the meantime, we have more stock of our current emonPi units on the way in a few weeks.</p>
+
+<h3 id="voltage-output-ct-sensors">Voltage output CT sensors</h3>
+
+<p><img src="/images/hardware22-3.jpg" alt="hardware22-3.jpg" /></p>
+
+<p>The new versions of the emonTx and emonPi will feature many of the same improvements that we were intending to implement with the STM32 development, which are in many ways more important than the microcontroller itself for the overall accuracy and general functionality of the system.</p>
+
+<p>The first change is to support 333mV voltage output CT sensors. This is probably the most widely used type of CT sensor. There are many manufacturers, current ranges and accuracy ratings. By switching to this voltage output standard it’s much easier to select the right CT for the application and there’s no need to change the burden resistor on the circuit board to use different CTs.</p>
+
+<h3 id="precision-voltage-sensing">Precision voltage sensing</h3>
+
+<p><img src="/images/hardware22-4.jpg" alt="hardware22-4.jpg" /></p>
+
+<p>The second key change will be to upgrade to using a <a href="https://www.micro-transformer.com/2ma-2ma-voltage-transformer-ZMPT101B.html">ZMPT101</a> precision voltage transformer for higher accuracy AC voltage sensing. The current use of a standard AC output power adapter is the largest source of error in our system, so upgrading this part will provide the greatest gain in measurement accuracy.</p>
+
+<p>The precision voltage sensing unit will be an external unit that plugs into the upgraded emonTx/emonPi and will also include an integrated power supply module so that only a single socket is required. This unit will also have the option of being hard-wired for a fixed installation and full three-phase monitoring.</p>
+
+<h3 id="precision-reference">Precision reference</h3>
+
+<p>The third key change is to use a precision voltage reference chip to increase the accuracy of the ADC conversion.</p>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>Overall with the above combination and careful selection of other components in the system it should be possible to get to a maximum error for an uncalibrated system in the 1-2% range, the realistic error is better still if you applied a monte-carlo analysis of likely component tolerances. This will provide a significant upgrade to the out-of-the-box accuracy of our units.</p>
+
+<hr />
+<p>Over the next set of posts I will outline what’s new on the new hardware designs and then continue to give updates on progress as they are tested, and we get them ready for production.</p>
+
+<p>Here are a couple of pictures of our new office in the meantime. We have a unit in a really nice community building near Llanberis in North Wales, there’s an onsite cafe that does really good food, cakes and coffee, we are nearer the mountains and walking distance from where we live which makes it all a lot more convenient. If you are in the area and would like to drop in to say hi, please get in touch!</p>
+
+<p><img src="/images/hardware22-5.jpg" alt="hardware22-5.jpg" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hardware Developments - Update]]></title>

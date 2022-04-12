@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/">
+    <link rel="canonical" href="/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/">
+    <meta property="og:url" content="/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,121 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2022-04-12T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April 12st 2022
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>hardware</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2022/04/hardware-development/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <p>It’s been some time since we gave an update on what we are doing and what is coming next. There’s a lot happening behind the scenes. This post will be mostly about hardware but we’ve also moved our office space amongst other things.</p>
+
+<h3 id="chip-shortage">Chip shortage</h3>
+
+<p>Some of you may have noticed that we are out of stock on quite a few key items in the shop at the moment. We have unfortunately been hit by the ongoing chip shortage, affecting the whole of the electronics industry.</p>
+
+<p>The chip shortage seriously affects several key components that we use including the ATmega328 microcontroller, RaspberryPi’s and the chip that we were planning on using for new hardware, the STM32F303. There’s no general availability of these through standard distributors and the lead times from the manufacturers themselves are around a year. The pricing for these components through more speculative distributors are also eye wateringly high, which we don’t think would represent good value if we added this additional cost to our units.</p>
+
+<h3 id="introducing-the-avr-db-microcontroller-range">Introducing the AVR-DB microcontroller range</h3>
+
+<p><img src="/images/hardware22-1.jpg" alt="hardware22-1.jpg" /></p>
+
+<p>The good news however is that after searching around for alternative options we found a new range of microcontrollers in the same AVR family as the ATmega328 that look very promising, both from a feature set perspective providing a welcome upgrade to the capability of our energy monitoring hardware but also on price and availability.</p>
+
+<p>The AVR-DB range is the latest and highest spec 8-bit AVR microcontrollers from Microchip, launched relatively recently in mid-2020.</p>
+
+<p>The <a href="https://www.microchip.com/en-us/product/AVR128DB48">AVR128DB48</a> is of particular interest to us are (with comparison to the current ATmega328 in brackets):</p>
+
+<ul>
+  <li>12-bit ADC (4x improvement)</li>
+  <li>18 channels on the 48 pin version (up from 8)</li>
+  <li>Higher sampling rate potential (~3x)</li>
+  <li>Flash memory up to 128k (4x)</li>
+  <li>All the usual peripheral requirements (SPI, UART, I2C etc)</li>
+  <li>Potentially useful PGA Op amps built in</li>
+  <li>Relatively low cost</li>
+  <li>Availability is relatively good, and we have secured the stock that we need!</li>
+  <li>Wide range of package types &amp; pin counts.</li>
+  <li>Arduino compatible core called <a href="https://github.com/SpenceKonde/DxCore">DxCore</a></li>
+</ul>
+
+<p><img src="/images/hardware22-2.png" alt="hardware22-2.jpg" /></p>
+
+<p>These features provide many of the key benefits that we were hoping to get from using the STM32 range, in particular the 12-bit ADC, larger number of analog channels and a higher sample rate. That said the AVR-DB has still only a single ADC multiplexed to a large number of input pins and so does not allow for simultaneous sampling across voltage and current channels which was a nice feature of the STM32, but it’s also hard to say how much difference that would make in practice and is it worth the higher price of the STM32 chips?</p>
+
+<p>The lack of availability of the STM32 chips mean we don’t have much choice in the short term, but it’s certainly something to consider in the longer term.</p>
+
+<p>A large plus for the AVR-DB range over the STM32 range is compatibility with our existing firmware developed for the ATmega328, In particular Robert Wall’s latest CM (Continuous Sampling) firmware using the native RFM69cw driver code. The modifications to make this firmware work on the AVR-DB is small. The familiarity provided by the hard work of Spece Konde on the DxCore for the Arduino IDE is also a huge plus for us and other open-source contributors. Combining the use of the DxCore with the modified low level commands for continuous sampling in the EmonLibCM library provides the best of both.</p>
+
+<p>We’ve actually gone ahead and ordered, and received enough stock of a combination of AVR128DB48 and AVR128DB32 chips to see us through the next 18-months or so.</p>
+
+<p>We are also well on our way on the design process for using these chips, with successful testing of these chips and new emonTx, emonPi and emonTH board designs in progress.</p>
+
+<p>Ultimately, if all goes well we expect to have the new units in stock in ~3-4 months time, mid to late July 2022. In the meantime, we have more stock of our current emonPi units on the way in a few weeks.</p>
+
+<h3 id="voltage-output-ct-sensors">Voltage output CT sensors</h3>
+
+<p><img src="/images/hardware22-3.jpg" alt="hardware22-3.jpg" /></p>
+
+<p>The new versions of the emonTx and emonPi will feature many of the same improvements that we were intending to implement with the STM32 development, which are in many ways more important than the microcontroller itself for the overall accuracy and general functionality of the system.</p>
+
+<p>The first change is to support 333mV voltage output CT sensors. This is probably the most widely used type of CT sensor. There are many manufacturers, current ranges and accuracy ratings. By switching to this voltage output standard it’s much easier to select the right CT for the application and there’s no need to change the burden resistor on the circuit board to use different CTs.</p>
+
+<h3 id="precision-voltage-sensing">Precision voltage sensing</h3>
+
+<p><img src="/images/hardware22-4.jpg" alt="hardware22-4.jpg" /></p>
+
+<p>The second key change will be to upgrade to using a <a href="https://www.micro-transformer.com/2ma-2ma-voltage-transformer-ZMPT101B.html">ZMPT101</a> precision voltage transformer for higher accuracy AC voltage sensing. The current use of a standard AC output power adapter is the largest source of error in our system, so upgrading this part will provide the greatest gain in measurement accuracy.</p>
+
+<p>The precision voltage sensing unit will be an external unit that plugs into the upgraded emonTx/emonPi and will also include an integrated power supply module so that only a single socket is required. This unit will also have the option of being hard-wired for a fixed installation and full three-phase monitoring.</p>
+
+<h3 id="precision-reference">Precision reference</h3>
+
+<p>The third key change is to use a precision voltage reference chip to increase the accuracy of the ADC conversion.</p>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>Overall with the above combination and careful selection of other components in the system it should be possible to get to a maximum error for an uncalibrated system in the 1-2% range, the realistic error is better still if you applied a monte-carlo analysis of likely component tolerances. This will provide a significant upgrade to the out-of-the-box accuracy of our units.</p>
+
+<hr />
+<p>Over the next set of posts I will outline what’s new on the new hardware designs and then continue to give updates on progress as they are tested, and we get them ready for production.</p>
+
+<p>Here are a couple of pictures of our new office in the meantime. We have a unit in a really nice community building near Llanberis in North Wales, there’s an onsite cafe that does really good food, cakes and coffee, we are nearer the mountains and walking distance from where we live which makes it all a lot more convenient. If you are in the area and would like to drop in to say hi, please get in touch!</p>
+
+<p><img src="/images/hardware22-5.jpg" alt="hardware22-5.jpg" /></p>
+
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2019/10/cydynni-display/">Cydynni emonCMS dashboard on display</a>
   </h1>
   
@@ -647,7 +762,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emonCMS</a></li>
+        <li>emonCMS</li>
       
     
     </ul>
@@ -705,7 +820,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emondc/'>emonDC</a></li>
+        <li>emonDC</li>
       
     
     </ul>
@@ -778,7 +893,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/development/'>development</a></li>
+        <li>development</li>
       
     
     </ul>
@@ -824,7 +939,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -870,7 +985,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -926,7 +1041,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emonpi/'>emonpi</a></li>
+        <li>emonpi</li>
       
     
     </ul>
@@ -984,7 +1099,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/iotawatt/'>iotawatt</a></li>
+        <li>iotawatt</li>
       
     
     </ul>
@@ -1165,87 +1280,6 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
   </article>
   <hr>
   
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2017-06-22T00:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> June 22nd 2017
-    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
-    <span><i class='icon-time'></i> two minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/android/'>android</a></li>
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2017/06/emoncms-android-app-v2/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
-
-<p><img src="/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
-
-<h2 id="new-features">New features</h2>
-
-<h4 id="1-multiple-emoncms-accounts">1. Multiple emoncms accounts:</h4>
-
-<p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
-It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
-
-<p><img src="/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
-
-<h4 id="2-multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
-
-<p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
-
-<p><img src="/images/app1.png" alt="app1" /><img src="/images/app2.png" alt="app2" /></p>
-
-<h4 id="3-multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
-
-<p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
-
-<p><img src="/images/app-cost.png" alt="app-cost" /></p>
-
-<h4 id="4-language-translations">4. Language Translations:</h4>
-
-<p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
-
-<p><img src="/images/app-lang.png" alt="app-lang" /></p>
-
-<h4 id="5-chromebook-support">5. Chromebook support:</h4>
-
-<p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
-
-<p><img src="/images/androidv2-4.png" alt="androidv2-4" /></p>
-
-
-    
-      <a class="btn pull-right" href="/2017/06/emoncms-android-app-v2/#read-more">Read on &rarr;</a>
-    
-  </div>
-  </article>
-  <hr>
-  
 
   <div class="pagination">
     
@@ -1266,6 +1300,12 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1318,12 +1358,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

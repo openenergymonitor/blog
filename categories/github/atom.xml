@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/categories/github/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-03-12T17:14:18+00:00</updated>
+  <updated>2022-04-12T16:12:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -48,13 +48,12 @@ If the submodule gets an update, the submodule will not get updated in the repo 
 
 <p>To obtain the submodules the repo must be Git cloned (not zip downloaded) then once the repo has been cloned a couple of extra steps are required to import the submodules. Here is an example for cloning the emonPi repo in pull in the sub modules:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/openenergymonitor/emonpi
 $ cd emonpi
 $ git submodule update
 $ git submodule init
 $ git submodule update
-</code></pre>
-</div>
+</code></pre></div></div>
 ]]></content>
   </entry>
   

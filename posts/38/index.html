@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/38/">
+    <link rel="canonical" href="/posts/38/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/38/">
+    <meta property="og:url" content="/posts/38/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,37 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2009/06/non-invasive-current-sensing-method/">Non invasive current sensing method</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2009-06-06T13:26:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2009-06-06 13:26:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> four minutes reading time</span> <br>
+     <br>
+    
+      <a class='comments'
+         href="/2009/06/non-invasive-current-sensing-method/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    Last year I went out and bought an<a href="http://www.efergy.com/home.html"> efergy energy monitor</a> that measures whole house electricity use. It and many other such devices use a sensor called a current transformer to measure the current flowing through the live wire. You just clip it on to the live wire as it enters your house. No meddling with mains wiring required. The picture below shows the efergy sensor that I have clipped in to in this case the neutral wire (live or neutral makes no difference) entering the power strip.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/SipxOYkLCoI/AAAAAAAAATI/yWPxxbWvGG8/s1600-h/clip.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 320px; height: 240px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/SipxOYkLCoI/AAAAAAAAATI/yWPxxbWvGG8/s320/clip.JPG" alt="" id="BLOGGER_PHOTO_ID_5344208399754791554" border="0" /></a><br />A current transformer works in a similar way to a normal transformer. The primary coil in this case is the mains wire. Opening the sensor up you can see the secondary coil wrapped around the other side of the transformer core.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/SipxkOr7R5I/AAAAAAAAATQ/-QHtIUQhLgs/s1600-h/inner.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 320px; height: 240px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/SipxkOr7R5I/AAAAAAAAATQ/-QHtIUQhLgs/s320/inner.JPG" alt="" id="BLOGGER_PHOTO_ID_5344208775060080530" border="0" /></a><br />I found<a href="http://www.google.co.uk/url?sa=t&amp;source=web&amp;ct=res&amp;cd=1&amp;url=http%3A%2F%2Fwww.allegromicro.com%2Fen%2FProducts%2FDesign%2Fcurrent_sensing%2Fbsp_v1_52.pdf&amp;ei=u9EoSoPYOIfSjAeQ9IX0Cg&amp;usg=AFQjCNHmMNxg7xTviGPMqC_gITqrKytozw&amp;sig2=6WimvsLOzjxMBKurBF70lQ"> this paper</a> which is about hall sensors but there is an overview of current transformers there too. Their description of how a current transformer works:<br /><br /><span style="font-style: italic;">“The primary current (AC) will generate a magnetic field that is coupled into a secondary coil by Faraday’s Law. The magnitude of the secondary current is proportional to the number of turns in the coil, which is typically as high as >1000. The secondary current is then sensed through a sense resistor to convert the output into a voltage. ”</span><br /><br />The next step is to convert this voltage in to a form usable by the Arduino. The analog inputs on the arduino require a voltage in the range of 0 to 5V and so the voltage needs to be biased by 2.5V and should not have an amplitude of greater than +-2.5V.<br /><br />There's probably an easier and cheaper way to do this but the HCPL -7520 chip used in the <a href="http://openenergymonitor.org/emon/node/2">invasive   current sensor</a> does the job simply and is what I had on hand. The isolation provided by the chip isn't required in this case and so Vcc1 and Vcc2 can be supplied by the same source. Here's a picture of the circuit and the schematic.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/Sipye5fYY6I/AAAAAAAAATY/31woQInKQas/s1600-h/circuit.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 320px; height: 240px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/Sipye5fYY6I/AAAAAAAAATY/31woQInKQas/s320/circuit.JPG" alt="" id="BLOGGER_PHOTO_ID_5344209782982599586" border="0" /></a><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_Yqa3j9ZhET8/SipyezON7SI/AAAAAAAAATg/BO0cqwPPW8Q/s1600-h/Non-Invasive-s.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 320px; height: 191px;" src="http://1.bp.blogspot.com/_Yqa3j9ZhET8/SipyezON7SI/AAAAAAAAATg/BO0cqwPPW8Q/s320/Non-Invasive-s.png" alt="" id="BLOGGER_PHOTO_ID_5344209781299997986" border="0" /></a>To find a suitable value for the sense resistor I connected up the above circuit to Arduino analog input 0 and the invasive current sensor to input 1 allowing comparison of both waveforms using a slightly modified <a href="http://openenergymonitor.org/emon/node/3">power sampler program</a>. I know that the current waveform from the invasive current sensing method is correct and so it is possible to calibrate the non invasive method by matching the both waveforms. The voltage across the sense resistor is proportional its resistance multiplied by the current flowing through it and so by trying different values for the sense resistor it is possible to match both waveforms. The closest fixed value resistor I could find that gave matching waveforms was 22Ohms. The current waveforms from both methods match quite nicely:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_Yqa3j9ZhET8/Sipy5R9OjFI/AAAAAAAAATo/2nbnGdiHxwQ/s1600-h/match1s.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 320px; height: 179px;" src="http://4.bp.blogspot.com/_Yqa3j9ZhET8/Sipy5R9OjFI/AAAAAAAAATo/2nbnGdiHxwQ/s320/match1s.png" alt="" id="BLOGGER_PHOTO_ID_5344210236226833490" border="0" /></a><br />The graph show the current waveform with a laptop connected. The invasive current measurement is 0.5A rms and the non-invasive method gives 0.445A rms which is quite close, with a potentiometer with a range of about 50 Ohms the sense resistor value could be tuned and the result improved.<br /><br />So that's current done but to get a value for power we also need a voltage measurement. Unless its possible to infer the voltage waveform from the current waveform, devices like the efergy energy monitor can only be measuring current. So how do we get a power measurement? Apparent power is calculated as the rms voltage x rms current, to read more about power measurment have a look <a href="http://openenergymonitor.org/emon/theory">here</a>. The rms voltage is nearly always in the uk 230V however the rms current varies as the load is changed. The current transformer method can measure rms current and so we can calculate a value for apparent power with this method.<br /><br />My efergy energy monitor however has stopped working (maybe after I tried to work out how it worked by taking it apart) and so I cant compare the results. If I get it to work again, I will post up the results. However the results do agree with the invasive current sensing method and so should be good :)
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2009/06/welcome/">Welcome!</a>
   </h1>
   
@@ -680,6 +711,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -732,12 +769,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

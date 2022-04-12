@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/18/">
+    <link rel="canonical" href="/posts/18/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/18/">
+    <meta property="og:url" content="/posts/18/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,52 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2013/06/emonth-prototype/">emonTH Prototype </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-06-24T08:57:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-24 08:57:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Glyn Hudson</span> <br>
+    <span><i class='icon-time'></i> three minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>Building Energy Modelling</li>
+      
+        <li>temperature</li>
+      
+        <li>emonTH</li>
+      
+        <li>humidity</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/06/emonth-prototype/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    I'm currently working on a little unit called the emonTH, a remote temperature and humidity monitoring node. We wanted a tidy looking, easy to deploy little unit for monitoring the environmental conditions in various rooms of our houses. The temperature and humidity data gathered can be fed into emoncms and used for <a href="http://openenergymonitor.blogspot.co.uk/search/label/Building%20Energy%20Modelling">building energy modelling</a>, heating system optimisation etc.<br /><br />The design so far has got options for DS18B20 temperature sensor or DHT22 sensor for humidity &amp; temperature. External sensors can be connected via terminal block (not soldered in on prototype). The enclosure can be wall mountable. The unit will be battery powered with option for mini-usb power. We have estimated around 6-9 months battery. I hope we might be able to get a year or so battery life with optimization and slowing down the readings to once every few min.<br /><div><br /></div><div>I'm currently testing prototype #1.&nbsp;</div><div><br /></div><div>To keep power consumption down the ATmega328 microcontroller is put to sleep in-between reading and the sensors are powered from digital outputs and are turned off altogether in between readings, this should stop any self heating effects (see <a href="http://openenergymonitor.org/emon/node/2484#comment-13108">forum thread</a>), I'm planning to do some accuracy testing on prototype soon.</div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-bbtjnWvcv4o/UcNKNyQh0-I/AAAAAAAAe2w/aWQ1Pm4-xTU/s1600/2013-06-12+09.08.36.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://3.bp.blogspot.com/-bbtjnWvcv4o/UcNKNyQh0-I/AAAAAAAAe2w/aWQ1Pm4-xTU/s320/2013-06-12+09.08.36.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH first prototype with DTH22 and DS18B20</td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-G-IkJdFn8uU/UcNKOb7yI7I/AAAAAAAAe20/GcGRXoEM5Hc/s1600/2013-06-12+09.07.50.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="http://4.bp.blogspot.com/-G-IkJdFn8uU/UcNKOb7yI7I/AAAAAAAAe20/GcGRXoEM5Hc/s320/2013-06-12+09.07.50.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">emonTH enclosure</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">As with other the other OpenEnergyMonitor hardware the emonTH has got an ATmega328 with the Arduino bootloader so it's nice and easy to modify and upload new the code (sketches). For the wireless there is an RFM12B module to be compatible with our other hardware (RFM12Pi base station etc). Again, as with all our other hardware units the schematic and CAD filed will be open-sourced.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="" style="clear: both; text-align: left;">The emonTH uses a little module from <a href="http://shop.ciseco.co.uk/about-us/">Ciseco</a> called <a href="http://shop.ciseco.co.uk/rf-328-bare-arduino-atmega-328-compatible-micro-board-rfu-328/">RFu328</a>. This unit is an ATmega328 plus a radio RFM12B or <a href="http://shop.ciseco.co.uk/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328/">SRF</a> in the same small form factor as an Xbee. We decided to use the RFu328 partly because it's nice and small and makes manufacture easier for us and party since it allows to to easily swap between using the RFM12B radio or the SRF while keeping the flexibly and ease of use of the ATmega328 with Arduino Uno serial bootloader.&nbsp;</div><div class="" style="clear: both; text-align: left;"><br /></div><div><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://openmicros.org/images/RFu-328/RF%C2%B5-328-RFM12-Resistors.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="150" src="http://openmicros.org/images/RFu-328/RF%C2%B5-328-RFM12-Resistors.JPG" width="200" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFu328 with RFM12B</td></tr></tbody></table><br /><div>The little red circle on the image above indicates the only hardware charge required when using an RFM12B radio on the RFu328. The SMT resistor is rotated routed 90 degrees swapping over Dig 1 SRF UART (Tx ) to Dig3 (INT 1) to be used as the RFM12B SPI interrupt. The RFu328 with the RFM12B requires a modified JeeLib Arduino library called <a href="https://github.com/openenergymonitor/RFu_jeelib">RFu_JeeLib</a>.<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="298" src="http://cdn2.bigcommerce.com/server3700/8d73a/products/221/images/457/IMG_5389__35236.1352109163.1280.1280.JPG" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">RFu328 with SRF &amp; Chip Antenna</td></tr></tbody></table></div>
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/06/building-energy-modelling-ventilation/">Building Energy Modelling: Ventilation and infiltration</a>
   </h1>
   
@@ -647,7 +693,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
     
     </ul>
@@ -687,7 +733,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
     
     </ul>
@@ -727,9 +773,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
-        <li><a class='category' href='/categories/sap-2012/'>SAP 2012</a></li>
+        <li>SAP 2012</li>
       
     
     </ul>
@@ -769,9 +815,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/energy-monitoring/'>energy monitoring</a></li>
+        <li>sustainability</li>
       
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+        <li>energy monitoring</li>
       
     
     </ul>
@@ -811,7 +857,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
     
     </ul>
@@ -851,7 +897,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/building-energy-modelling/'>Building Energy Modelling</a></li>
+        <li>Building Energy Modelling</li>
       
     
     </ul>
@@ -891,7 +937,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+        <li>sustainability</li>
       
     
     </ul>
@@ -931,7 +977,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/air-quality-egg/'>Air Quality Egg</a></li>
+        <li>Air Quality Egg</li>
       
     
     </ul>
@@ -971,7 +1017,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -988,46 +1034,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     <br /><div style="margin-bottom: 0cm;">The most direct representation of power data is power over time which is what we get if we simply log the power values transmitted from a monitor.  With this we can see what our power consumption or power generation looks like throughout a day, you can see the relative magnitude of different loads, identify visually different appliances from kettle's to LED&nbsp;light bulbs.</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-pVwxv1iYDHc/UbWl2mW8CtI/AAAAAAAACp0/BowLPfaHiaI/s1600/realtimepowerdata.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="275" src="http://4.bp.blogspot.com/-pVwxv1iYDHc/UbWl2mW8CtI/AAAAAAAACp0/BowLPfaHiaI/s640/realtimepowerdata.png" width="640" /></a></td></tr><tr><td class="tr-caption">The power vs time visualisation can be found under the Vis tab in emoncms by selecting the rawdata visualisation.</td></tr></tbody></table><div style="margin-bottom: 0cm;">Its a useful visual tool and with a little extra stats overlayed on the graph such as how many kwh are  contained in the window being viewed and the average power you can start to do things like calculate roughly how much energy individual appliances use such as a fridge or a particular evenings immersion heater use.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Beyond the basic power vs time graph we can gain more information by processing the incoming power data into kwh per day data. kwh per day data can be calculated as either the average power in watts for a day x 0.024 or the sum of the time spent at different powers divided by the energy in 1 kwh. A graph of kwh per day vs time makes it easy to compare one day against another and see trends over months or years.</div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-dJHKrtPOmqs/UbWmDU3HFoI/AAAAAAAACp8/dNmlIyznDVE/s1600/kwhddata.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://3.bp.blogspot.com/-dJHKrtPOmqs/UbWmDU3HFoI/AAAAAAAACp8/dNmlIyznDVE/s640/kwhddata.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">The daily visualisation can be found under the Vis tab in emoncms by selecting the bargraph visualisation.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">That's pretty good but we can extract more information from the power data if we process the power data to record the energy used at different power levels in a particular day, how much energy is used at 100W, 200W or 3000W. This is what the histogram input processor does in emoncms. The following graph shows the result of recording energy used at different power levels with a 25W resolution over 7 months from my own house. The spike at 2.5kW is an electric heater which we used a lot throughout the winter, the 3.5kW spike is the immersion heater and 0-500W is lights, laptops, hifi etc.</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-XTKqi4OoA04/UbWmPv8ozAI/AAAAAAAACqE/odjmArEnBvs/s1600/detailedhistogram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="276" src="http://2.bp.blogspot.com/-XTKqi4OoA04/UbWmPv8ozAI/AAAAAAAACqE/odjmArEnBvs/s640/detailedhistogram.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: left;"><b>Note: </b>The histogram visualisation can be found under the Vis tab by selecting histgraph. The default histogram has smaller resolution bars at higher power levels, i need to add an option for higher detailed histogram data calculation in the input process model to make this easier to achieve. To produce the graph above I&nbsp;actual&nbsp;converted the power data feed to histogram data using a conversion module that can be found <a href="https://github.com/emoncms/feedconvert">here</a>. The code that produces the histogram as data is coming in can be found on lines 543 to 608 in the <a href="http://process_model.php/">process_model.php</a>.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">The histogram data can also be visualised within the kwh per day type graph so that we can see how a particular days energy consumption breaks down into energy used at less than say 1kw, energy used between 1 and 3 kW and 3kW up but then also easily compare one day to the next:</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-W9ab4J6RzzE/UbWmaCVzmPI/AAAAAAAACqM/Qd9blj7h1FM/s1600/colhistogram.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="248" src="http://4.bp.blogspot.com/-W9ab4J6RzzE/UbWmaCVzmPI/AAAAAAAACqM/Qd9blj7h1FM/s400/colhistogram.png" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">From the emoncms report module.</td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">For me, what I want to get out of monitoring my electricity consumption is to first understand how I use electricity and then work out what definite actions I can take to reduce any my electricity consumption and then be able to confirm that those actions did indeed produce the expected result. After all optimisations are done, Id like the monitor and reporting tools to help keep me informed that I am maintaining an optimum electricity use level overtime, that it does not creep up again.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To answer these questions  directly I found I needed one other thing that goes hand in hand with the monitoring and visualisations above, I needed a rough model of my electricity consumption that breaks electricity consumption down on a per appliance basis. Any actions that we take are on an per appliance basis and so we really need a per appliance level of&nbsp;specificity.&nbsp; In the absence of per appliance monitoring or working <a href="http://openenergymonitor.org/emon/buildingblocks/appliance-inference">applianceinference </a>which would be the ultimate solution, this can be done with a simple model where a list of all the appliances in a house is entered manually including how many watts they use (which the energy monitor can be used to find out) and roughly how many hours per day they are used. This produces an estimate for how much electricity is used in a day, what the baseload should be and how much energy is consumed at different powers which can then be cross checked with the actual monitored data, the model can then be adjusted until the values align.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The<a href="https://github.com/emoncms/report"> reporting module</a> in emoncms bring all this together on one page, the screen below shows the monitored data and model for the openenergymonitor lab and the small cottage next door:</div><div style="margin-bottom: 0cm;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-yHfVXBfcvWg/UbWmtMkigWI/AAAAAAAACqU/4r5H2W8V_4Y/s1600/report.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="http://2.bp.blogspot.com/-yHfVXBfcvWg/UbWmtMkigWI/AAAAAAAACqU/4r5H2W8V_4Y/s640/report.png" width="403" /></a></td></tr><tr><td class="tr-caption">You can find the reporting module in emoncms.org by clicking on Extras and then report. For local installations install the report module from github <a href="https://github.com/emoncms/report">here</a></td></tr></tbody></table><div style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">To align the model to the monitored data its a matter of aligning the model pie chart to the monitored data pie chart. In our case electricity consumption is highly variable day to day, month to month so the model can only apply to either the average of the days in the selected view or a single particular day, its informative to adjust the model for different times of the year.&nbsp;Once the model aligns well, its then possible to experiment with changing the appliances in the model and how many hours they are used for to see what effect that might have on total daily consumption.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The conclusion of our electricity consumption investigation is that we could save 5-10% by changing all CFL's to LED's and turning standby items off at the plug (especially the hifi and soldering iron station), continuing to optimise kettle use and immersion heater is also super important as leaving a 2800W kettle on for an extra minute uses as much as a 6W LED left on for 7-8 hours and so can easily remove any savings achieved by turning lights off.&nbsp;</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To significantly reduce electricity consumption further we would need to change the heating system and to take a whole house view: improve the building fabric performance by increasing insulation levels, reducing draughts and improving solar gain in order to reduce heating demand in the first place which is where recent work on temperature sensing, building energy modelling, the SAP calculator comes in but I will come back to that in further blog posts.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It would be nice to add additional tabs to the report module so that current and projected consumption levels can be easily compared, Id also like to add a feature to send a regular report email that keeps me updated on my week to week electricity consumption so that I can get at a glance information that minimises the effort I need to go to to see how I'm doing.</div>
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/06/emontx-shield-smt-with-new-layout-in/">Emontx Shield SMT with new layout in development</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-06-06T08:58:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-06-06 08:58:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/06/emontx-shield-smt-with-new-layout-in/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <br /><div style="margin-bottom: 0cm;">Several weeks ago we got an email with a series of pictures showing the problem that the emontx shield does not stack well with many of the base boards and other shields it may be used in conjunction with.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">It got me thinking about different ways the shield could be arranged that would make it stack better with a variety of different boards. The main idea I had was to move the AC-AC Adapter and CT inputs over to the other side of the PCB away from the side the Ethernet and USB sockets are usually located on most of the Arduino boards and the NanodeRF. The second idea was to mount these sockets on the underside of the PCB which allows for a really thin profile NanodeRF + EmonTx shield stack which I think is pretty neat if a little unconventional. Here's the concept drawing:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s1600/emontxhield_concept.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="135" src="http://1.bp.blogspot.com/-ebSgZTNiTfQ/UbBM01WOocI/AAAAAAAACpM/o9PdnM3zn_M/s400/emontxhield_concept.jpg" width="400" /></a></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">As you may be aware I have not really ventured into PCB design much before (I usually work on software) but its been something I wanted to do for a while so I thought Id have a go at the emontx shield redesign as its one of the simplest layouts. With Glyn's helpful guidance I started by loading the existing&nbsp;schematic&nbsp;and board files for the through hole emontx shield in eagle, I then ripped up all the existing PCB tracks, rearranged the components in different layouts and&nbsp;switched&nbsp;the resistors and capacitors over to SMT packages. Here's a screenshot of the resultant board design:</div><div style="margin-bottom: 0cm;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s1600/board.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="305" src="http://3.bp.blogspot.com/-XGmRf3-FXA8/UbBNCmP3KqI/AAAAAAAACpU/zM5G-Bgo7ow/s400/board.png" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div style="margin-bottom: 0cm;">I spend most of my dev time writing lines of code which becomes a visual output in a second step, PCB design is a different experience as its all&nbsp;immediately&nbsp;visual, dragging and dropping pcb tracks, trying to see if this track that way or another in its place looks neater, its a nice change. If your intrigued to have a go I'd recommend installing eagle, loading up one of the board designs that are all up on solderpad and experiment with routing tracks, maybe adding/removing a temperature sensor.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">The PCB's arrived on Tuesday, I built it up and have started to test it, so far everything seems to be working, energy monitoring part, RFM12, Led, DS18B20 temperature sensor, Arduino Uno, Arduino Duemilanove. Next I will test the NanodeRF and Id also like to test an Arduino official Ethernet shield.  </div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s1600/emontxshieldsmt_01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="210" src="http://1.bp.blogspot.com/-w5udfxyOmRo/UbBNfsmIzUI/AAAAAAAACpc/Clmgc4ezTSU/s400/emontxshieldsmt_01.jpg" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s1600/emontxshieldsmt_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275" src="http://3.bp.blogspot.com/-4-C2YEWW5YQ/UbBNiYu1VSI/AAAAAAAACpk/bRTI26DWHhM/s400/emontxshieldsmt_02.jpg" width="400" /></a></div><div style="margin-bottom: 0cm;"><br /></div><div align="CENTER" style="margin-bottom: 0cm;"></div><div align="CENTER" style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Things to improve</b></div><div style="margin-bottom: 0cm;">There is a very slight misalignment on the ISP header that needs fixing although it still stacks together fine and Glyn pointed out that the option to choose different SS (SEL) and IRQ pins for the RFM12 could be achieved using a manual jumper rather than solderable pads. Id also like to add a terminal for the DS18B20 on the edge of the board for neater connection of temperature sensor strings.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Once these are fixed we will get a run of boards made, it will probably be another month or two at least until its in the shop as these things take time.  </div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><b>Open Hardware Schematics and Board files</b></div><div style="margin-bottom: 0cm;">All available on solderpad here:</div><div style="margin-bottom: 0cm;"><a href="http://solderpad.com/trystanlea/emontx-shield-smt/">http://solderpad.com/trystanlea/emontx-shield-smt/</a></div>
     
   </div>
   </article>
@@ -1055,6 +1061,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1107,12 +1119,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

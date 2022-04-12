@@ -1,0 +1,870 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Chip Shortage & Hardware Development Update - Blog | OpenEnergyMonitor</title>
+    <meta name="author" content="Glyn Hudson">
+    <meta name="description" content="OpenEnergyMonitor Blog">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="/2022/04/hardware-development/">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="Chip Shortage & Hardware Development Update">
+    <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
+    <meta property="og:url" content="/2022/04/hardware-development/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@openenergymon">
+    
+    <meta name="twitter:title" content="Chip Shortage & Hardware Development Update">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+	<link rel="apple-touch-icon" href="/images/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/images/favicon-144.png">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:light,bold&amp;subset=Latin" rel="stylesheet"> <!-- Ubuntu font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+<style>
+
+@font-face {
+  font-family: "oemFont";
+  src: url(/font/Ubuntu-OEM-Light.ttf)
+}
+
+html, body {
+  margin: 0; height: 100vh;
+}
+
+html {
+  min-height: 100vh;
+}
+
+html, body {
+  word-wrap: break-word;
+  font-family: "oemFont", sans-serif;
+}
+
+a:visited, .a:hover, a:focus, a {
+  color: #44b3e2;
+}
+
+.meta.clearfix {
+  overflow-x: hidden;
+}
+
+.communityWrapper {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  height: 42px;
+}
+
+@media (min-width: 1080px) {
+  .communityWrapper {
+  width: 1080px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .oemWrap {
+  display: none;
+  }
+}
+
+.fa-navicon {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 42px;
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  padding-left: 12px;
+  z-index: 9997;
+}
+
+@media screen and (max-width: 1079px) {
+  .fa-navicon {
+  display: inline-block;
+  }
+}
+
+.titleHolder {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #44b3e2;
+  overflow: hidden;
+  -webkit-box-shadow: 0 -2px 4px 2px #000;
+  -moz-box-shadow: 0 -2px 4px 2px #000;
+  box-shadow: 0 -2px 4px 2px #000;
+}
+
+.titleIcon {
+  position: absolute;
+  height: 42px;
+  padding: 0 0 0 7px;
+  text-align: center;
+  line-height: 42px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+  .titleIcon i {
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+.thisTitle {
+  position: absolute;
+  box-sizing: border-box;
+  left: 42px;
+  right: 0;
+  height: 42px;
+  padding: 5px 0 5px 0;
+  text-align: left;
+  color: #ffffff;
+  line-height: normal;
+  vertical-align: top;
+}
+
+  .thisTitle a {
+    position: absolute;
+    top: 0;
+    color: #ffffff;
+  }
+
+@media screen and (max-width: 1079px) {
+  .titleIcon {
+    left: auto;
+    right: 0;
+    padding: 0 7px 0 0;
+  }
+
+  .thisTitle {
+    right: 42px;
+    left: 0;
+    text-align: right;
+  }
+
+    .thisTitle a {
+      padding-right: 0;
+    }
+}
+
+.thisTitle-top {
+  top: 0;
+  height: 60%;
+  font-size: 18px;
+}
+
+.thisTitle-bottom {
+  bottom: 0;
+  height: 40%;
+  font-size: 12px;
+}
+
+.navigation {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  margin-right: 6px;
+  height: 42px;
+  min-width: 774px;
+  overflow: visible;
+  padding-right: 7px;
+  z-index: 20;
+  box-sizing: content-box;
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation {
+  position: relative;
+  float: right;
+  display: inline-block;
+  margin: 0;
+  }
+}
+
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: block;
+}
+
+.navigation ul li {
+  float: left;
+  background-color: #44b3e2;
+}
+
+.navigation ul li a {
+  display: block;
+  line-height: 42px;
+  font-family: "oemFont", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+}
+
+.menuFreeze {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Navigation on smaller screens... */
+
+@media screen and (max-width: 1079px) {
+.navigation {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin: 0;
+  width: 0;
+  font-size: 20px;
+  background-color: #44b3e2;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  min-width: 0;
+  padding-right: 0;
+  z-index: 99999999;
+}
+
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .navigation ul li a {
+    box-sizing: border-box;
+    font-family: "oemFont", sans-serif;
+    font-size: 20px;
+    display: block;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+    height: 12.5vh;
+    line-height: 12.5vh;
+    min-width: 180px;
+    text-align: left;
+  }
+
+  .navigation ul li .fa {
+    min-width: 25px;
+  }
+}
+
+@media (max-width: 1079px) and (min-height: 550px) {
+  .navigation ul li a {
+    height: 68.75px;
+    line-height: 68.75px;
+  }
+}
+
+@media (max-width: 1079px) and (max-height: 200px) {
+  .navigation ul li a {
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation ul li:nth-child(1) {
+    width: 88px;
+  }
+  .navigation ul li:nth-child(2) {
+    width: 86px;
+  }
+  .navigation ul li:nth-child(3) {
+    width: 92px;
+  }
+  .navigation ul li:nth-child(4) {
+    width: 123px;
+  }
+  .navigation ul li:nth-child(5) {
+    width: 133px;
+  }
+  .navigation ul li:nth-child(6) {
+    width: 76px;
+  }
+  .navigation ul li:nth-child(7) {
+    width: 80px;
+  }
+  .navigation ul li:nth-child(8) {
+    width: 96px;
+  }
+}
+
+.blackOut {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  z-index:9998;
+}
+
+.actoemLink {
+  background-color: #368fb4 !important;
+}
+
+.actoemLink a {
+  color: #ffffff !important;
+}
+
+.searchBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  z-index: 9999999999999;
+}
+
+.searchBox form {
+  margin: auto;
+}
+
+.searchBox input[type=submit] {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #44b3e2;
+  color: #fff;
+  border: none;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.searchBox input[type=submit]:hover {
+  background-color: #77c8ea;
+}
+
+.searchBox input[type=text] {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+}
+
+.searchText {
+  width: 0;
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.fa {
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
+}
+
+</style>
+
+<body >
+
+
+
+
+<div class="titleHolder">
+  <div class="communityWrapper">
+    <i class="fa fa-navicon"></i>
+    <a href="/">
+      <div class="titleIcon">
+				<i aria-hidden="true" class="fa fa-bullhorn"></i>
+			</div>
+			<div class="thisTitle">
+			  <div class="thisTitle-top">
+        		<b>Blog</b>
+				</div>
+				<div class="thisTitle-bottom">
+          Open<b>EnergyMonitor</b>
+				</div>
+			</div>
+		</a>
+    <div id="siteLinks" class="navigation">
+      <ul>
+        <li title="the homepage of OpenEnergyMonitor">
+          <a href="https://openenergymonitor.org">
+            <i class="fa fa-home" aria-hidden="true"></i><span class="navname">&nbsp;Home</span>
+          </a>
+        </li>
+        <li title="a user guide for the OpenEnergyMonitor system">
+          <a href="https://guide.openenergymonitor.org">
+            <i class="fa fa-book" aria-hidden="true"></i><span class="navname">&nbsp;Guide</span>
+          </a>
+        </li>
+        <li title="general information about energy monitoring, diversion and sustainability">
+          <a href="https://learn.openenergymonitor.org">
+            <i class="fa fa-mortar-board" aria-hidden="true"></i><span class="navname">&nbsp;Learn</span>
+          </a>
+        </li>
+        <li title="a definitive list of resources for OpenEnergyMonitor hardware">
+          <a href="https://guide.openenergymonitor.org/technical/resources/">
+            <i class="fa fa-list-alt" aria-hidden="true"></i><span class="navname">&nbsp;Resources</span>
+          </a>
+        </li>
+        <li title="the openenergymonitor forum">
+          <a href="https://community.openenergymonitor.org">
+            <i class="fa fa-comments" aria-hidden="true"></i><span class="navname">&nbsp;Community</span>
+          </a>
+        </li>
+        <li title="you are here: keep up with new developments at OpenEnergyMonitor" class="actoemLink">
+          <a href="https://blog.openenergymonitor.org">
+            <i class="fa fa-bullhorn" aria-hidden="true"></i><span class="navname">&nbsp;Blog</span>
+          </a>
+        </li>
+        <li title="the official OpenEnergyMonitor online store">
+          <a href="https://shop.openenergymonitor.com">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="navname">&nbsp;Shop</span>
+          </a>
+        </li>
+				<li title="search for something on OpenEnergyMonitor">
+					<a class="searchIcon">
+					    <i aria-hidden="true" class="fa fa-search"></i><span class="navname">&nbsp;Search</span>
+				  </a>
+				</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="searchBox">
+  <form target="_blank" id="searchform" action="https://www.google.com/cse">
+    <div>
+      <input type="hidden" name="cx" value="006198118389747886812:_nmxikw563w" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="text" class="searchText" value="" name="q" id="q" autocomplete="off" />
+      <input type="submit" id="searchsubmit" name="sa" value="Search" />
+    </div>
+  </form>
+</div>
+<div class="blackOut"></div>
+<div style="position:relative;width:100%;top:0;height:20px"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+<script>
+  var _gaq=[['_setAccount','UA-10321170-4'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+<script>
+  var disqus_shortname = 'openenergymonitor';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'https://blog.openenergymonitor.org/2022/04/hardware-development/';
+    var disqus_url = 'https://blog.openenergymonitor.org/2022/04/hardware-development/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'openenergymonitor',
+      count: 5,
+      skip_forks: true,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+<script>
+
+var closeStatus = false;
+
+function openButton() {
+  $("html, body").addClass("menuFreeze");
+  $(".blackOut").show();
+  $(".navigation").show();
+  $(".navigation").animate({ width:'180' },"0.5s");
+}
+
+$(".fa-navicon").click(function() {
+  openButton();
+  closeStatus = true;
+});
+
+function closeButton() {
+  $("html, body").removeClass("menuFreeze");
+  $(".blackOut").hide();
+  $(".navigation").animate({ width:'0' },"0.5s");
+}
+
+$(".blackOut").click(function() {
+  closeButton();
+  closeStatus = false;
+});
+
+$(document).ready(function(){
+  $("table").wrap("<div style='max-width:100%;overflow-x:auto'></div>");
+});
+
+$(window).resize(function(){
+  if ($(window).width() > 1079 && closeStatus == true) {
+    if (!$("html").hasClass("mobile-device")) {
+      closeButton();
+      closeStatus = false;
+    }
+  }
+});
+
+$(".searchIcon").click(function() {
+   $(".searchBox").css("display","flex");
+   $(".searchText").animate({width: "200px"});
+   $(".searchText").focus();
+   $("html, body").addClass("menuFreeze");
+});
+$(".searchBox").click(function() {
+   $(".searchBox").css("display","none");
+   $(".searchText").blur();
+   $(".searchText").css("width","0");
+   closeButton();
+});
+$(".searchBox form").click( function(event) {
+   event.stopPropagation();
+});
+
+$(document).ready(function(){ //alphabetically order list
+  var ls, x, switchState, z, switchMe;
+  ls = document.getElementById("ub202");
+  switchState = true;
+  while (switchState) {
+    switchState = false;
+    z = ls.getElementsByTagName("LI");
+    for (x = 0; x < (z.length - 1); x++) {
+      switchMe = false;
+      if (z[x].innerHTML.toLowerCase() > z[x + 1].innerHTML.toLowerCase()) {
+        switchMe= true;
+        break;
+      }
+    }
+    if (switchMe) {
+      z[x].parentNode.insertBefore(z[x + 1], z[x]);
+      switchState = true;
+    }
+  }
+});
+
+</script>
+
+<div class="grid-wrapper">
+  <div class="grid grid-center">
+    
+    <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+    
+
+      <article class="post">
+  <div class='edit-github'><a href='https://github.com/openenergymonitor/blog/tree/master/source/_posts/2022-04-12-hardware-development.markdown'>Edit on GitHub</a></div>
+<div class='edit-github'><a href='http://prose.io/#openenergymonitor/blog/edit/master/source/_posts/2022-04-12-hardware-development.markdown'>Edit on GitHub Prose</a></div>
+  
+  <header>
+  
+  <h1 class="title indent">Chip Shortage & Hardware Development Update</h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2022-04-12T15:00:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> April 12st 2022
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> six minutes reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>hardware</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2022/04/hardware-development/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <p>It’s been some time since we gave an update on what we are doing and what is coming next. There’s a lot happening behind the scenes. This post will be mostly about hardware but we’ve also moved our office space amongst other things.</p>
+
+<h3 id="chip-shortage">Chip shortage</h3>
+
+<p>Some of you may have noticed that we are out of stock on quite a few key items in the shop at the moment. We have unfortunately been hit by the ongoing chip shortage, affecting the whole of the electronics industry.</p>
+
+<p>The chip shortage seriously affects several key components that we use including the ATmega328 microcontroller, RaspberryPi’s and the chip that we were planning on using for new hardware, the STM32F303. There’s no general availability of these through standard distributors and the lead times from the manufacturers themselves are around a year. The pricing for these components through more speculative distributors are also eye wateringly high, which we don’t think would represent good value if we added this additional cost to our units.</p>
+
+<h3 id="introducing-the-avr-db-microcontroller-range">Introducing the AVR-DB microcontroller range</h3>
+
+<p><img src="/images/hardware22-1.jpg" alt="hardware22-1.jpg" /></p>
+
+<p>The good news however is that after searching around for alternative options we found a new range of microcontrollers in the same AVR family as the ATmega328 that look very promising, both from a feature set perspective providing a welcome upgrade to the capability of our energy monitoring hardware but also on price and availability.</p>
+
+<p>The AVR-DB range is the latest and highest spec 8-bit AVR microcontrollers from Microchip, launched relatively recently in mid-2020.</p>
+
+<p>The <a href="https://www.microchip.com/en-us/product/AVR128DB48">AVR128DB48</a> is of particular interest to us are (with comparison to the current ATmega328 in brackets):</p>
+
+<ul>
+  <li>12-bit ADC (4x improvement)</li>
+  <li>18 channels on the 48 pin version (up from 8)</li>
+  <li>Higher sampling rate potential (~3x)</li>
+  <li>Flash memory up to 128k (4x)</li>
+  <li>All the usual peripheral requirements (SPI, UART, I2C etc)</li>
+  <li>Potentially useful PGA Op amps built in</li>
+  <li>Relatively low cost</li>
+  <li>Availability is relatively good, and we have secured the stock that we need!</li>
+  <li>Wide range of package types &amp; pin counts.</li>
+  <li>Arduino compatible core called <a href="https://github.com/SpenceKonde/DxCore">DxCore</a></li>
+</ul>
+
+<p><img src="/images/hardware22-2.png" alt="hardware22-2.jpg" /></p>
+
+<p>These features provide many of the key benefits that we were hoping to get from using the STM32 range, in particular the 12-bit ADC, larger number of analog channels and a higher sample rate. That said the AVR-DB has still only a single ADC multiplexed to a large number of input pins and so does not allow for simultaneous sampling across voltage and current channels which was a nice feature of the STM32, but it’s also hard to say how much difference that would make in practice and is it worth the higher price of the STM32 chips?</p>
+
+<p>The lack of availability of the STM32 chips mean we don’t have much choice in the short term, but it’s certainly something to consider in the longer term.</p>
+
+<p>A large plus for the AVR-DB range over the STM32 range is compatibility with our existing firmware developed for the ATmega328, In particular Robert Wall’s latest CM (Continuous Sampling) firmware using the native RFM69cw driver code. The modifications to make this firmware work on the AVR-DB is small. The familiarity provided by the hard work of Spece Konde on the DxCore for the Arduino IDE is also a huge plus for us and other open-source contributors. Combining the use of the DxCore with the modified low level commands for continuous sampling in the EmonLibCM library provides the best of both.</p>
+
+<p>We’ve actually gone ahead and ordered, and received enough stock of a combination of AVR128DB48 and AVR128DB32 chips to see us through the next 18-months or so.</p>
+
+<p>We are also well on our way on the design process for using these chips, with successful testing of these chips and new emonTx, emonPi and emonTH board designs in progress.</p>
+
+<p>Ultimately, if all goes well we expect to have the new units in stock in ~3-4 months time, mid to late July 2022. In the meantime, we have more stock of our current emonPi units on the way in a few weeks.</p>
+
+<h3 id="voltage-output-ct-sensors">Voltage output CT sensors</h3>
+
+<p><img src="/images/hardware22-3.jpg" alt="hardware22-3.jpg" /></p>
+
+<p>The new versions of the emonTx and emonPi will feature many of the same improvements that we were intending to implement with the STM32 development, which are in many ways more important than the microcontroller itself for the overall accuracy and general functionality of the system.</p>
+
+<p>The first change is to support 333mV voltage output CT sensors. This is probably the most widely used type of CT sensor. There are many manufacturers, current ranges and accuracy ratings. By switching to this voltage output standard it’s much easier to select the right CT for the application and there’s no need to change the burden resistor on the circuit board to use different CTs.</p>
+
+<h3 id="precision-voltage-sensing">Precision voltage sensing</h3>
+
+<p><img src="/images/hardware22-4.jpg" alt="hardware22-4.jpg" /></p>
+
+<p>The second key change will be to upgrade to using a <a href="https://www.micro-transformer.com/2ma-2ma-voltage-transformer-ZMPT101B.html">ZMPT101</a> precision voltage transformer for higher accuracy AC voltage sensing. The current use of a standard AC output power adapter is the largest source of error in our system, so upgrading this part will provide the greatest gain in measurement accuracy.</p>
+
+<p>The precision voltage sensing unit will be an external unit that plugs into the upgraded emonTx/emonPi and will also include an integrated power supply module so that only a single socket is required. This unit will also have the option of being hard-wired for a fixed installation and full three-phase monitoring.</p>
+
+<h3 id="precision-reference">Precision reference</h3>
+
+<p>The third key change is to use a precision voltage reference chip to increase the accuracy of the ADC conversion.</p>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>Overall with the above combination and careful selection of other components in the system it should be possible to get to a maximum error for an uncalibrated system in the 1-2% range, the realistic error is better still if you applied a monte-carlo analysis of likely component tolerances. This will provide a significant upgrade to the out-of-the-box accuracy of our units.</p>
+
+<hr />
+<p>Over the next set of posts I will outline what’s new on the new hardware designs and then continue to give updates on progress as they are tested, and we get them ready for production.</p>
+
+<p>Here are a couple of pictures of our new office in the meantime. We have a unit in a really nice community building near Llanberis in North Wales, there’s an onsite cafe that does really good food, cakes and coffee, we are nearer the mountains and walking distance from where we live which makes it all a lot more convenient. If you are in the area and would like to drop in to say hi, please get in touch!</p>
+
+<p><img src="/images/hardware22-5.jpg" alt="hardware22-5.jpg" /></p>
+
+      <b>To engage in discussion regarding this post, please post on our <a href="http://community.openenergymonitor.org">Community Forum</a></b>.
+    <br>
+</article>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+</section>
+
+
+
+    </div>
+
+    
+    <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+      <div class="grid">
+
+ 
+ <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      
+    
+      
+        <li class="post">
+          <a href="/2019/10/cydynni-display/">Cydynni emonCMS dashboard on display</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2019/05/emondc/">Introducing emonDC</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/11/2018-dev-update/">2018 Development Review</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/11/demand-side-response/">Demand Side Response Development</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/01/emoncms-theme/">Emoncms Blue Theme</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2018/01/emonpi-remote-access/">emonPi Remote Access with Dataplicity</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/10/iotawatt/">Introducing IoTaWatt</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/08/cydynni-energylocal/">CydYnni – Energy Local, community hydro smart grid</a>
+        </li>
+      
+    
+      
+        <li class="post">
+          <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
+        </li>
+      
+    
+  </ul>
+</section>
+  
+  
+</div>
+    </aside>
+    
+  </div>
+</div>
+
+<footer>
+  <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <div class="copyright">
+
+  <a rel="me" href='https://twitter.com/openenergymon'><i class="icon-twitter"></i></a>
+  <a rel="me" href='https://github.com/openenergymonitor/guide'><i class="icon-github"></i></a>
+  <a rel="me" href='https://blog.openenergymonitor.org/feed.xml'><i class="icon-rss"></i></a>
+
+  <div class="credit" style="text-align:center;">
+    Website powered by <a href='http://jekyllrb.com/'>Jekyll</a> and <a href='https://github.com/coogie/oscailte'>Oscalite</a>.<br />
+    Hosted by <a href='https://pages.github.com/'>GitHub</a> and served by <a href='https://cloudflare.com'>CloudFlare</a>.
+  </div>
+<!--
+<div class="searchtool">
+
+
+<form action="https://encrypted.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.openenergymonitor.org" />
+    <input class="search" id="search" type="text" name="q" results="0" placeholder="Search..." />
+  </fieldset>
+</form>
+
+
+</div> -->
+</div>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+</body>
+</html>

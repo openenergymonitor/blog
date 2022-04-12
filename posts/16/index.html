@@ -12,12 +12,12 @@
     <meta name="description" content="OpenEnergyMonitor Blog">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://blog.openenergymonitor.org/posts/16/">
+    <link rel="canonical" href="/posts/16/">
 
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="Blog | OpenEnergyMonitor">
     <meta property="og:site_name" content="Blog | OpenEnergyMonitor">
-    <meta property="og:url" content="https://blog.openenergymonitor.org/posts/16/">
+    <meta property="og:url" content="/posts/16/">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://guide.openenergymonitor.org/images/favicon-192x192.png">
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
+    <link href="" rel="alternate" title="Blog | OpenEnergyMonitor" type="application/atom+xml">
     <link rel='shortcut icon' href='/images/favicon.ico' />
     <link rel='icon' type='image/png' href='/images/favicon-192x192.png' sizes='192x192' />
 
@@ -633,6 +633,46 @@ $(document).ready(function(){ //alphabetically order list
     <header>
   
   <h1 class="beta">
+    <a href="/2013/08/notify-on-inactive-feeds/">Notify on inactive feeds</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    <time datetime="2013-08-20T13:18:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-08-20 13:18:00 +0000
+    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
+    <span><i class='icon-time'></i> 1 minute reading time</span> <br>
+    <span>
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>emoncms</li>
+      
+    
+    </ul>
+  </span> <br>
+    
+      <a class='comments'
+         href="/2013/08/notify-on-inactive-feeds/#disqus_thread"
+         >Comments</a>
+    
+  </div>
+  
+</header>
+
+
+  <div class="entry-content clearfix">
+    <div class="separator" style="clear: both; text-align: left;">Here's a simple feature that sends an email whenever emoncms feeds become inactive for more than two hours, designed to stop those instances where you login to emoncms after a month and realise that something went wrong and it hasn't been updating for a while.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s1600/notify.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="182" src="http://2.bp.blogspot.com/-SDlvNa2ke2Y/UhNjgMlbYrI/AAAAAAAACwI/4wTYyUem-R4/s640/notify.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The notify control page can be accessed via the Extras menu. It can be disabled or enabled and an email address that is different from you main account email can be used if needed.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">A cron job runs every 2 hours on the server to check if any feeds have become inactive for more than 2 hours but less than 4 hours. This ensures only one email is sent and historical inactivity is ignored.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Notify is now running on emoncms.org, you may want to check that your email address is correct before turning it on.</div><div class="separator" style="clear: both; text-align: left;"><br /></div>To install notify on your raspberrypi or own server see installation details here:<br /><a href="http://github.com/emoncms/notify">http://github.com/emoncms/notify</a><br /><br /><br />
+    
+  </div>
+  </article>
+  <hr>
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/2013/08/pcb-manufacturer-meeting/">PCB Manufacturer Meeting</a>
   </h1>
   
@@ -647,7 +687,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/pcb/'>pcb</a></li>
+        <li>pcb</li>
       
     
     </ul>
@@ -687,9 +727,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/manufacturing/'>manufacturing</a></li>
+        <li>manufacturing</li>
       
-        <li><a class='category' href='/categories/sustainability/'>sustainability</a></li>
+        <li>sustainability</li>
       
     
     </ul>
@@ -729,7 +769,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -769,7 +809,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
     
     </ul>
@@ -809,9 +849,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
+        <li>emoncms</li>
       
-        <li><a class='category' href='/categories/raspberry-pi/'>raspberry pi</a></li>
+        <li>raspberry pi</li>
       
     
     </ul>
@@ -851,7 +891,7 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/emontxshield/'>emonTxShield</a></li>
+        <li>emonTxShield</li>
       
     
     </ul>
@@ -891,9 +931,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/heat-pump/'>Heat Pump</a></li>
+        <li>showcase</li>
       
-        <li><a class='category' href='/categories/showcase/'>showcase</a></li>
+        <li>Heat Pump</li>
       
     
     </ul>
@@ -933,9 +973,9 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+        <li>SRF</li>
       
-        <li><a class='category' href='/categories/srf/'>SRF</a></li>
+        <li>RFM12</li>
       
     
     </ul>
@@ -976,11 +1016,11 @@ $(document).ready(function(){ //alphabetically order list
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/oscilloscope/'>Oscilloscope</a></li>
+        <li>Oscilloscope</li>
       
-        <li><a class='category' href='/categories/rfm12/'>RFM12</a></li>
+        <li>RFM12</li>
       
-        <li><a class='category' href='/categories/measurement/'>measurement</a></li>
+        <li>measurement</li>
       
     
     </ul>
@@ -997,46 +1037,6 @@ $(document).ready(function(){ //alphabetically order list
 
   <div class="entry-content clearfix">
     We have finally taken the plunge and have upgraded our measurement facilitates.<br /><br />The main (and most costly!) acquisition has been a <a href="http://www.rigolna.com/products/digital-oscilloscopes/ds2000/ds2072/">Rigol DS2072</a> 70Mhz digital scope.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-O0bLEbR2Dxk/Ue_e12XYj8I/AAAAAAAAiRk/J0iAmtXxU-k/s1600/20130724_144511.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-O0bLEbR2Dxk/Ue_e12XYj8I/AAAAAAAAiRk/J0iAmtXxU-k/s320/20130724_144511.jpg" height="240" width="320" /></a></div><br /><br />We also upgraded our old cheapo multimeter to a more accurate model which as well as the usual multimeter functions can measure AC power and frequency and has a USB link (<a href="http://www.uni-trend.com/UT71e.html">Uni-T UT71E</a>) and to complete the setup a variable DC voltage and current bench top power supply (<a href="http://www.rapidonline.com/electrical-power/psu-0-3a-0-30v-lcd-display-85-1856">Rapid HY3003D</a>).<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-qdD2mX5qPKE/UfDc8wRQiuI/AAAAAAAAiSs/Ia_VsaRzutI/s1600/20130724_144441.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-qdD2mX5qPKE/UfDc8wRQiuI/AAAAAAAAiSs/Ia_VsaRzutI/s320/20130724_144441.jpg" height="240" width="320" /></a></div>Test setup</td></tr><tr><td class="tr-caption" style="text-align: center;"><br /></td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://images.batronix.com/products/multimeter/uni-t/UT71E-PowerAdapter-420-284.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://images.batronix.com/products/multimeter/uni-t/UT71E-PowerAdapter-420-284.jpg" height="216" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Uni-T UT71E True RMS 40K count multimeter</td></tr></tbody></table><br />I thought an interesting investigation and a good starting point for getting to grips with the scope would be to measure the power consumption during an RFM12B transmission.<br /><br />With the standard passive probes the scope only measures voltage so a 10R 0.25W shunt resistor was used in series and the voltage drop measured over this. A 10R resistor works nicely since the voltage drop can easily be converted into current by dividing by 10 which is done by the probe which is 10:1 passive probe. Any other value could be used and the conversion to current done in software on the scope. The units for current (A) can be set on the scope. The shut resistor must be connected on the GND side of the circuit as to make one side of the resistor 0V or else use differential probes (or two standard probes with some clever settings on the scope).<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s1600/scope_connection.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-b4wYbIOje_A/Ul1TP5UF_WI/AAAAAAAAmIA/RmSSr9aFlKc/s320/scope_connection.jpg" height="319" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Scope probe connection, measuring voltage drop across a 10R resistor</td></tr></tbody></table><br />The maximum current which a shunt resistor of a particular power rating can handle can be calculated with Imax = sqrt( Pmax / R). <br /><br />A 0.25W 1R shunt resistor can handle up to 500mA <br />A 0.25W 10R resistor can handle up to 158mA <br />A 0.25W 100R resistor can handle up to 50mA <br /><br />All measurements were taken with a 3.3V supply voltage using and <a href="http://shop.ciseco.co.uk/rf-328-bare-arduino-atmega-328-compatible-micro-board-rfu-328/">RFu328</a> on a prototype <a href="http://openenergymonitor.blogspot.co.uk/search/label/emonTx">emonTx V3</a>. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-7PDzO5pDi0c/Ue_bWiSDLII/AAAAAAAAiQ0/_8jLqj6Ci8c/s1600/Newfile1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-7PDzO5pDi0c/Ue_bWiSDLII/AAAAAAAAiQ0/_8jLqj6Ci8c/s640/Newfile1.png" height="384" width="640" />&nbsp;</a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">These traces show the ATmega328 coming out of sleep then transmitting 4 integers. Transmission of 4 integers takes 3ms during which the current draw alternates between 23-28mA for 3ms.&nbsp; &nbsp; </div><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><img border="0" src="http://1.bp.blogspot.com/-2gQlbGV87bg/Ue_bWsnnJwI/AAAAAAAAiRA/S5ekHzm1ytI/s640/Newfile2.png" height="384" style="margin-left: auto; margin-right: auto;" width="640" /></td></tr><tr><td class="tr-caption" style="text-align: center;">Testing the scope's capabilities using the waveform zoom function</td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">The built in measurement functions on the scope are pretty amazing, these of the sort of measurements it's possible to obtain for a particular signal.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-VQf8x8eMQVQ/Ue_eE11s-jI/AAAAAAAAiRc/-zH_t-PfQaU/s1600/DS2_QuickPrint1.bmp" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-VQf8x8eMQVQ/Ue_eE11s-jI/AAAAAAAAiRc/-zH_t-PfQaU/s640/DS2_QuickPrint1.bmp" height="384" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">&nbsp; </div><div class="separator" style="clear: both; text-align: left;">We intend to eventually setup a proper AC power test rig. In the meantime I intend to continue playing with more of the scopes functions, I've only scratched the surface so far. I'm particularly interested in hooking it up to my laptop for further data processing. The scope has both USB and Ethernet connectivity and an open standard protocol. As well as the software bundled with the scope which look pretty decent but is only for windows a quick google shows that much of the work has already been done to import the data from the scope on Linux. </div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">The EEVblog review of the Rigol scope give more of an idea of it's full capability:&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/gAY1GQEjrfc" width="420"></iframe> <br /><div class="separator" style="clear: both; text-align: left;">http://www.eevblog.com/forum/testgear/first-impressions-and-review-of-the-rigol-ds2072-ds2000-series-dso/ </div><div class="separator" style="clear: both; text-align: left;"><br /></div>http://www.eevblog.com/forum/projects/software-tips-and-tricks-for-rigol-ds200040006000-ultravision-dsos/<br /><div class="separator" style="clear: both; text-align: left;">I hear it's also possible to perform a light software hack to convert the scope to 100Mhz :-)&nbsp; http://hackaday.com/2013/07/02/unlocking-a-rigol-scope-once-again/</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><br /></div><br />
-    
-  </div>
-  </article>
-  <hr>
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/2013/07/emoncms-powered-by-timestore/">Emoncms powered by timestore</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    <time datetime="2013-07-22T15:29:00+00:00" pubdate data-updated="true"><i class="icon-calendar"></i> 2013-07-22 15:29:00 +0000
-    <span class="byline author vcard"><i class='icon-user'></i> Trystan Lea</span> <br>
-    <span><i class='icon-time'></i> three minutes reading time</span> <br>
-    <span>
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/emoncms/'>emoncms</a></li>
-      
-    
-    </ul>
-  </span> <br>
-    
-      <a class='comments'
-         href="/2013/07/emoncms-powered-by-timestore/#disqus_thread"
-         >Comments</a>
-    
-  </div>
-  
-</header>
-
-
-  <div class="entry-content clearfix">
-    <span style="font-size: small;">I've been making some good progress with a timestore powered version of emoncms, its available on github here:&nbsp;</span><a href="https://github.com/emoncms/emoncms/tree/timestore">https://github.com/emoncms/emoncms/tree/timestore</a>. The basics now work, its not ready for stable switchover, but if your interested in experimenting, its good to go for trying out. There are instructions for installation in the github repo readme.<br /><br />To recap: timestore is time-series database designed specifically for time-series data developed by Mike Stirling.<br /><div><br /></div><div><a href="https://github.com/emoncms/emoncms/blob/timestore/mikestirling.co.uk/redmine/projects/timestore">mikestirling.co.uk/redmine/projects/timestore</a><br /><br />Benefits include:</div><div><br /><b>Faster Query speeds</b></div><div>With timestore feed data query requests are about 10x faster (2700ms using mysql vs 210ms using timestore). The initial benchmarks I mentioned in previous blog posts show timestore request time to be around 45ms so I still need to investigate the slightly slower performance which may be on the emoncms end rather than timestore.<br /><br /><b>Reduced Disk use</b></div><div>Disk use is much smaller, A test feed stored in an indexed mysql table used 170mb, stored using timestore which does not need an index and is based on a fixed time interval the same feed used 42mb of disk space.<br /><br /><b>In-built averaging</b></div><div>Timestore also has an additional benefit of using averaged layers which ensures that requested data is representative of the window of time each datapoint covers.<br /><br /><br /><div style="margin-bottom: 0cm;"><span style="font-size: small;">Due to the integration of averaging in timestore there are significant implications for input processing and visualisations. Rather than compute kwh/d data from power data in an emoncms input process this can now be moved to timestore by querying timestore for average power in a day and converting this value to kwh/d by multiplying the average power by 0.024.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-size: small;">This means we no longer have two feeds one for kwh/d data and another for power data which changes the way many of the visualisations need to work. Visualisations such as simple zoomer need to query the same feed at different average levels.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;"><span style="font-size: small;">To fully integrate timestore in emoncms and reach a similar level of input process and visualisation options is a big task. To simplify things, the current release has cut down functionality with only a few input processes and visualisations.</span></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">To create feeds with a fixed datapoint interval I added an interval selector to the input processing configure input page:</div><div style="margin-bottom: 0cm;"><span style="font-size: small;"><br /></span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-8VArGMQWjog/Ue1HEs96egI/AAAAAAAACuc/32XQ8amhR9E/s1600/timestore_inputproc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="203" src="http://2.bp.blogspot.com/-8VArGMQWjog/Ue1HEs96egI/AAAAAAAACuc/32XQ8amhR9E/s640/timestore_inputproc.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;">The data point interval is displayed as a field in feeds page:</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-phDBIAYLJ2Y/Ue1HH18aSBI/AAAAAAAACuk/1Qjjuh8R5Og/s1600/timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="444" src="http://3.bp.blogspot.com/-phDBIAYLJ2Y/Ue1HH18aSBI/AAAAAAAACuk/1Qjjuh8R5Og/s640/timestore.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: left;">Example of timestore working displaying solar production here over the last few hours:</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-AK5in_foEVw/Ue1HLN4OH6I/AAAAAAAACus/s5SwzOhkVC0/s1600/rawdata_timestore.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="342" src="http://2.bp.blogspot.com/-AK5in_foEVw/Ue1HLN4OH6I/AAAAAAAACus/s5SwzOhkVC0/s640/rawdata_timestore.png" width="640" /></a></div><div style="margin-bottom: 0cm;">Try it out following the instructions here for installation on a raspberrypi:</div><div style="margin-bottom: 0cm;"><a href="https://github.com/emoncms/emoncms/tree/timestore">https://github.com/emoncms/emoncms/tree/timestore</a></div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Next I intend to test the histogram datatype, ensure that works ok. The input processors for plus, minus, divide and multiply by another input also need looking at and then the more complex kwhd to power feed type zoomer visualisations. If a timestore version of emoncms is useful for you and your interested in helping to get it working well, I would be glad to have your help.</div><div style="margin-bottom: 0cm;"><br /></div><div style="margin-bottom: 0cm;">Blog posts on emoncms data storage for further context:<br /><a href="http://openenergymonitor.blogspot.co.uk/2013/06/timestore-timeseries-database.html">http://openenergymonitor.blogspot.co.uk/2013/06/timestore-timeseries-database.html</a><br /><a href="http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html">http://openenergymonitor.blogspot.co.uk/2013/06/rethinking-data-input-and-storage-core.html</a><br /><a href="http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html">http://openenergymonitor.blogspot.co.uk/2013/07/more-direct-file-storage-research.html</a></div></div>
     
   </div>
   </article>
@@ -1064,6 +1064,12 @@ $(document).ready(function(){ //alphabetically order list
  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
   <h1 class="title delta">Recent Posts</h1>
   <ul class="divided">
+    
+      
+        <li class="post">
+          <a href="/2022/04/hardware-development/">Chip Shortage & Hardware Development Update</a>
+        </li>
+      
     
       
         <li class="post">
@@ -1116,12 +1122,6 @@ $(document).ready(function(){ //alphabetically order list
       
         <li class="post">
           <a href="/2017/08/advances-article/">Advances Wales Magazine Article</a>
-        </li>
-      
-    
-      
-        <li class="post">
-          <a href="/2017/06/emoncms-android-app-v2/">Emoncms Android App V2</a>
         </li>
       
     

@@ -4,7 +4,7 @@
   <title><![CDATA[Blog | OpenEnergyMonitor]]></title>
   <link href="https://blog.openenergymonitor.org/atom.xml" rel="self"/>
   <link href="https://blog.openenergymonitor.org/"/>
-  <updated>2020-03-12T17:14:18+00:00</updated>
+  <updated>2022-04-12T16:12:50+00:00</updated>
   <id>https://blog.openenergymonitor.org/</id>
   <author>
     <name><![CDATA[Glyn Hudson]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chip Shortage & Hardware Development Update]]></title>
+    <link href="https://blog.openenergymonitor.org/2022/04/hardware-development/"/>
+    <updated>2022-04-12T15:00:00+00:00</updated>
+    <id>https://blog.openenergymonitor.org/2022/04/hardware-development</id>
+    <content type="html"><![CDATA[<p>It’s been some time since we gave an update on what we are doing and what is coming next. There’s a lot happening behind the scenes. This post will be mostly about hardware but we’ve also moved our office space amongst other things.</p>
+
+<h3 id="chip-shortage">Chip shortage</h3>
+
+<p>Some of you may have noticed that we are out of stock on quite a few key items in the shop at the moment. We have unfortunately been hit by the ongoing chip shortage, affecting the whole of the electronics industry.</p>
+
+<p>The chip shortage seriously affects several key components that we use including the ATmega328 microcontroller, RaspberryPi’s and the chip that we were planning on using for new hardware, the STM32F303. There’s no general availability of these through standard distributors and the lead times from the manufacturers themselves are around a year. The pricing for these components through more speculative distributors are also eye wateringly high, which we don’t think would represent good value if we added this additional cost to our units.</p>
+
+<h3 id="introducing-the-avr-db-microcontroller-range">Introducing the AVR-DB microcontroller range</h3>
+
+<p><img src="/images/hardware22-1.jpg" alt="hardware22-1.jpg" /></p>
+
+<p>The good news however is that after searching around for alternative options we found a new range of microcontrollers in the same AVR family as the ATmega328 that look very promising, both from a feature set perspective providing a welcome upgrade to the capability of our energy monitoring hardware but also on price and availability.</p>
+
+<p>The AVR-DB range is the latest and highest spec 8-bit AVR microcontrollers from Microchip, launched relatively recently in mid-2020.</p>
+
+<p>The <a href="https://www.microchip.com/en-us/product/AVR128DB48">AVR128DB48</a> is of particular interest to us are (with comparison to the current ATmega328 in brackets):</p>
+
+<ul>
+  <li>12-bit ADC (4x improvement)</li>
+  <li>18 channels on the 48 pin version (up from 8)</li>
+  <li>Higher sampling rate potential (~3x)</li>
+  <li>Flash memory up to 128k (4x)</li>
+  <li>All the usual peripheral requirements (SPI, UART, I2C etc)</li>
+  <li>Potentially useful PGA Op amps built in</li>
+  <li>Relatively low cost</li>
+  <li>Availability is relatively good, and we have secured the stock that we need!</li>
+  <li>Wide range of package types &amp; pin counts.</li>
+  <li>Arduino compatible core called <a href="https://github.com/SpenceKonde/DxCore">DxCore</a></li>
+</ul>
+
+<p><img src="/images/hardware22-2.png" alt="hardware22-2.jpg" /></p>
+
+<p>These features provide many of the key benefits that we were hoping to get from using the STM32 range, in particular the 12-bit ADC, larger number of analog channels and a higher sample rate. That said the AVR-DB has still only a single ADC multiplexed to a large number of input pins and so does not allow for simultaneous sampling across voltage and current channels which was a nice feature of the STM32, but it’s also hard to say how much difference that would make in practice and is it worth the higher price of the STM32 chips?</p>
+
+<p>The lack of availability of the STM32 chips mean we don’t have much choice in the short term, but it’s certainly something to consider in the longer term.</p>
+
+<p>A large plus for the AVR-DB range over the STM32 range is compatibility with our existing firmware developed for the ATmega328, In particular Robert Wall’s latest CM (Continuous Sampling) firmware using the native RFM69cw driver code. The modifications to make this firmware work on the AVR-DB is small. The familiarity provided by the hard work of Spece Konde on the DxCore for the Arduino IDE is also a huge plus for us and other open-source contributors. Combining the use of the DxCore with the modified low level commands for continuous sampling in the EmonLibCM library provides the best of both.</p>
+
+<p>We’ve actually gone ahead and ordered, and received enough stock of a combination of AVR128DB48 and AVR128DB32 chips to see us through the next 18-months or so.</p>
+
+<p>We are also well on our way on the design process for using these chips, with successful testing of these chips and new emonTx, emonPi and emonTH board designs in progress.</p>
+
+<p>Ultimately, if all goes well we expect to have the new units in stock in ~3-4 months time, mid to late July 2022. In the meantime, we have more stock of our current emonPi units on the way in a few weeks.</p>
+
+<h3 id="voltage-output-ct-sensors">Voltage output CT sensors</h3>
+
+<p><img src="/images/hardware22-3.jpg" alt="hardware22-3.jpg" /></p>
+
+<p>The new versions of the emonTx and emonPi will feature many of the same improvements that we were intending to implement with the STM32 development, which are in many ways more important than the microcontroller itself for the overall accuracy and general functionality of the system.</p>
+
+<p>The first change is to support 333mV voltage output CT sensors. This is probably the most widely used type of CT sensor. There are many manufacturers, current ranges and accuracy ratings. By switching to this voltage output standard it’s much easier to select the right CT for the application and there’s no need to change the burden resistor on the circuit board to use different CTs.</p>
+
+<h3 id="precision-voltage-sensing">Precision voltage sensing</h3>
+
+<p><img src="/images/hardware22-4.jpg" alt="hardware22-4.jpg" /></p>
+
+<p>The second key change will be to upgrade to using a <a href="https://www.micro-transformer.com/2ma-2ma-voltage-transformer-ZMPT101B.html">ZMPT101</a> precision voltage transformer for higher accuracy AC voltage sensing. The current use of a standard AC output power adapter is the largest source of error in our system, so upgrading this part will provide the greatest gain in measurement accuracy.</p>
+
+<p>The precision voltage sensing unit will be an external unit that plugs into the upgraded emonTx/emonPi and will also include an integrated power supply module so that only a single socket is required. This unit will also have the option of being hard-wired for a fixed installation and full three-phase monitoring.</p>
+
+<h3 id="precision-reference">Precision reference</h3>
+
+<p>The third key change is to use a precision voltage reference chip to increase the accuracy of the ADC conversion.</p>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>Overall with the above combination and careful selection of other components in the system it should be possible to get to a maximum error for an uncalibrated system in the 1-2% range, the realistic error is better still if you applied a monte-carlo analysis of likely component tolerances. This will provide a significant upgrade to the out-of-the-box accuracy of our units.</p>
+
+<hr />
+<p>Over the next set of posts I will outline what’s new on the new hardware designs and then continue to give updates on progress as they are tested, and we get them ready for production.</p>
+
+<p>Here are a couple of pictures of our new office in the meantime. We have a unit in a really nice community building near Llanberis in North Wales, there’s an onsite cafe that does really good food, cakes and coffee, we are nearer the mountains and walking distance from where we live which makes it all a lot more convenient. If you are in the area and would like to drop in to say hi, please get in touch!</p>
+
+<p><img src="/images/hardware22-5.jpg" alt="hardware22-5.jpg" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cydynni emonCMS dashboard on display]]></title>
@@ -22,16 +105,16 @@
 
 <p>The shop is based in Bethesda, North Wales, and serves as an information point on the community energy project, to celebrate it’s recent success.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-3-shopfront.jpg" alt="Cydynni-1" /></p>
+<p><img src="/images/cydynni-display-3-shopfront.jpg" alt="Cydynni-1" /></p>
 
 <p>Daniel Bates helped design and build the laser-cut stand using Sketchup and Inkscape, having the 6mm plywood laser cut with the help of John at the Bangor University FabLab.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-1.jpg" alt="Cydynni-1" /></p>
+<p><img src="/images/cydynni-display-1.jpg" alt="Cydynni-1" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/cydynni-display-2.jpg" alt="Cydynni-1" /></p>
+<p><img src="/images/cydynni-display-2.jpg" alt="Cydynni-1" /></p>
 
 <video width="600" controls="">
-  <source src="https://blog.openenergymonitor.org/images/cydynni-display-vid.mp4" type="video/mp4" />
+  <source src="/images/cydynni-display-vid.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
@@ -49,7 +132,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
 
 <p>emonDC development kits are now available in the <a href="https://shop.openenergymonitor.com/emondc/">OpenEnergyMonitor Store</a>.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonDC_system.jpg" alt="Example System Schematic" /></p>
+<p><img src="/images/emonDC_system.jpg" alt="Example System Schematic" /></p>
 
 <h2 id="target-uses">Target Uses</h2>
 
@@ -79,7 +162,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
 
 <p>Also, it can function as an independent unit, self-powered using an onboard buck voltage converter powered from a measurement channel. Data can be stored locally to a MicroSD card, keeping time with an on-board RTC and coin-cell. RFM69 based radio transmission is possible through a RFM69Pi module. For accuracy, the voltage sensing resistors and other reference voltage resistors are through hole, for easier modification, ensuring the option of very high resolution at low voltages. The I2C ports can connect control boards for power management, GPIO expander modules, or can forward data to a charge controller module. Skipping wireless transmission altogether, a standard 6-pin UART header is available.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/shoot1clear_insideDisplay.jpg" alt="inside" /></p>
+<p><img src="/images/shoot1clear_insideDisplay.jpg" alt="inside" /></p>
 
 <h2 id="hardware-options">Hardware Options</h2>
 
@@ -104,7 +187,7 @@ The main board in development is emonDCduo, a dual-channel DC monitor, WiFi enab
 
 <p>The firmware is based on emonESP, and detailed instructions on compiling and uploading the firmware can be found in the <a href="https://github.com/openenergymonitor/EmonESP">emonESP documentation</a>.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonesp_dcmod.png" alt="inside" /></p>
+<p><img src="/images/emonesp_dcmod.png" alt="inside" /></p>
 
 <h2 id="other-customisation">Other Customisation</h2>
 
@@ -227,7 +310,7 @@ Forum post: <a href="https://community.openenergymonitor.org/t/v9-9-0-migrating-
     <link href="https://blog.openenergymonitor.org/2018/11/demand-side-response/"/>
     <updated>2018-11-08T18:48:00+00:00</updated>
     <id>https://blog.openenergymonitor.org/2018/11/demand-side-response</id>
-    <content type="html"><![CDATA[<p><img src="https://blog.openenergymonitor.org/images/emonevse-solarpv.jpeg" alt="openevse leaf" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/emonevse-solarpv.jpeg" alt="openevse leaf" /></p>
 
 <p>Demand side response (DSR) has been a OpenEnergyMonitor project interest for some time (e.g PV diversion) but has only made its way into a product more recently with our work on the <a href="https://guide.openenergymonitor.org/integrations/ev-charging/">OpenEVSE charging station</a>. The OpenEVSE already implements real-time DSR, this post outlines how we are working on improving on this by integrating the forecasting and scheduling approaches being developed as part of our involvement in the <a href="https://community.openenergymonitor.org/t/cydynni-energylocal-community-hydro-smart-grid-blog-post/4762">EnergyLocal project</a>.</p>
 
@@ -358,17 +441,17 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p>Feed view in Standard, Blue and Sun theme:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/feed-emoncms-theme.png" alt="" /></p>
+<p><img src="/images/feed-emoncms-theme.png" alt="" /></p>
 
 <!--more-->
 
 <p>Login box in Blue, Standard and Sun theme:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/login-emoncms-theme.png" alt="" /></p>
+<p><img src="/images/login-emoncms-theme.png" alt="" /></p>
 
 <p>MyElectric dashboard app in box in Standard, Blue, and Sun theme:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/he-emoncms-theme.png" alt="" /></p>
+<p><img src="/images/he-emoncms-theme.png" alt="" /></p>
 
 <p>For questions and discussion see <a href="https://community.openenergymonitor.org/t/blue-theme-set-as-default-in-v9-8-28/6388">Emoncms Blue Theme Forum Topic</a></p>
 
@@ -390,11 +473,11 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p><a href="https://www.dataplicity.com">Dataplicity</a> offers a easy to setup web-service service to enable secure remote access (SSH/HTTPS) to RaspberryPi devices. The free tier allows free access to a single RaspberryPi device.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/1-dataplicity.png" alt="1-dataplicity" /></p>
+<p><img src="/images/1-dataplicity.png" alt="1-dataplicity" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/5-dataplicity.png" alt="5-dataplicity" /></p>
+<p><img src="/images/5-dataplicity.png" alt="5-dataplicity" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/6-dataplicity.png" alt="6-dataplicity" /></p>
+<p><img src="/images/6-dataplicity.png" alt="6-dataplicity" /></p>
 
 <p>Follow the steps on the <a href="https://guide.openenergymonitor.org/setup/remote-access/">Remote Access page of our User Guide</a> to setup Dataplicity on an emonPi.</p>
 
@@ -414,13 +497,13 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p>IoTaWatt is fully open-source and has been developed by Bob Lemaire <a href="https://community.openenergymonitor.org/u/overeasy/">@overeasy</a> in partnership with OpenEnergyMonitor.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/iotawatt-1.jpg" alt="IoTaWatt" /></p>
+<p><img src="/images/iotawatt-1.jpg" alt="IoTaWatt" /></p>
 
 <p><a class="btn pull-right" href="http://shop.openenergymonitor.com/iotawatt-wifi-connected-14-channel-electricity-monitor/">View in Shop → </a><a class="btn pull-left" href="https://guide.openenergymonitor.org/setup/iotawatt/">Setup IoTaWatt</a><br /></p>
 
 <h2 id="hardware">Hardware</h2>
 
-<p><img src="https://blog.openenergymonitor.org/images/iotawatt-2.jpg" alt="IoTaWatt" /></p>
+<p><img src="/images/iotawatt-2.jpg" alt="IoTaWatt" /></p>
 
 <p>The IoTaWatt uses the WiFi enabled ESP8266 (ESP-12S) microprocessor. The ESP8266 is mounted using NodeMCU adaptor, the decision was made to use the NodeMCU form-factor to allow flexibility for customisation and future upgrades e.g ESP32.</p>
 
@@ -430,7 +513,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <h2 id="firmware">Firmware</h2>
 
-<p><img src="https://blog.openenergymonitor.org/images/iota-config.png" alt="IoTaWatt" /></p>
+<p><img src="/images/iota-config.png" alt="IoTaWatt" /></p>
 
 <p>The IoTaWatt is configured via a web interface served directly from the IoTaWatt ESP8266. See <a href="http://iotawatt.com">IoTaWatt.com</a> for a live demo of the interface.</p>
 
@@ -514,7 +597,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p><a href="https://dashfwrdd.energylocal.org.uk/">https://dashfwrdd.energylocal.org.uk</a></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/cydynni-app.png" alt="cydynni-app.png" /></p>
+<p><img src="/images/cydynni-app.png" alt="cydynni-app.png" /></p>
 
 <p>The source code for the app is open source and available on github here:</p>
 
@@ -524,7 +607,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p><a href="https://dev.cydynni.org.uk">https://dev.cydynni.org.uk</a></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/cydynni-history.png" alt="cydynni-history.png" /></p>
+<p><img src="/images/cydynni-history.png" alt="cydynni-history.png" /></p>
 
 <p>From the start of January the hydro supplied 57% of the electricity consumption of the participating households. You can really see how the available hydro generation decays usually over about a week after a significant rain event and the extent of the oversupply when it is raining.</p>
 
@@ -555,7 +638,7 @@ A limitation with the last approach where solar was not enough to complete the c
 
 <p><a href="https://businesswales.gov.wales/sites/business-wales/files/documents/Advances82_English_FINAL.pdf">Download the full magazine here</a>.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/advances-July17.png" alt="advances artice" /></p>
+<p><img src="/images/advances-July17.png" alt="advances artice" /></p>
 ]]></content>
   </entry>
   
@@ -566,7 +649,7 @@ A limitation with the last approach where solar was not enough to complete the c
     <id>https://blog.openenergymonitor.org/2017/06/emoncms-android-app-v2</id>
     <content type="html"><![CDATA[<p>Yesterday we have launched a significant update to the Emoncms Android app.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
+<p><img src="/images/androidv2-1.jpg" alt="androidv2-1" /> <a href="https://play.google.com/store/apps/details?id=org.emoncms.myapps"><img alt="Get it on Google Play" src="https://emoncms.org/Modules/site/en-play-badge.png" /></a></p>
 
 <h2 id="new-features">New features</h2>
 
@@ -575,31 +658,31 @@ A limitation with the last approach where solar was not enough to complete the c
 <p>Monitor multiple Emoncms accounts, very useful for installers, power users etc.
 It’s also possible for these accounts to be on different Emoncms servers e.g. emoncms.org, emonPi, emonBase, yourawesomeserver.com etc. Additional account are easily added to the app using the built in QR code scanner and scanning the QR code on the ‘Account’ section of Emoncms.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
+<p><img src="/images/androidv2-4.jpg" alt="androidv2-multiple" /></p>
 
 <h4 id="2-multiple-myelectric-graphs-per-account">2. Multiple MyElectric graphs per account:</h4>
 
 <p>Useful to monitor more than one power feed: e.g. House consumption, Heat Pump consumption, Solar PV production, EV charging etc.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/app1.png" alt="app1" /><img src="https://blog.openenergymonitor.org/images/app2.png" alt="app2" /></p>
+<p><img src="/images/app1.png" alt="app1" /><img src="/images/app2.png" alt="app2" /></p>
 
 <h4 id="3-multiple-currency-rates-for-each-myelectric-graph">3. Multiple currency rates for each MyElectric graph:</h4>
 
 <p>e.g day rate / night rate, Economy7, solar PV FIT, hydro etc.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/app-cost.png" alt="app-cost" /></p>
+<p><img src="/images/app-cost.png" alt="app-cost" /></p>
 
 <h4 id="4-language-translations">4. Language Translations:</h4>
 
 <p>French, German, Dutch, Italien and Spanish all rank among the top 5 for the Emoncms app in terms of active installs. We have now added the full native language support they deserve. Thanks a lot to the community for helping to proof and beta test. See bottom of this post for how to get involved.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/app-lang.png" alt="app-lang" /></p>
+<p><img src="/images/app-lang.png" alt="app-lang" /></p>
 
 <h4 id="5-chromebook-support">5. Chromebook support:</h4>
 
 <p>Many Chromebooks can now run native android apps, the Emoncms app works great on a Chromebook. It’s much quicker to load than the web version and does not require a login each time.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/androidv2-4.png" alt="androidv2-4" /></p>
+<p><img src="/images/androidv2-4.png" alt="androidv2-4" /></p>
 
 <!--more-->
 
@@ -638,11 +721,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     <id>https://blog.openenergymonitor.org/2017/06/emonpi-network-setup-wizard</id>
     <content type="html"><![CDATA[<p>Ever since we launched the emonPi we have always wanted to make the first time setup process as easy as possible for new users.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonpi_wifi.png" alt="emonpi wifi" /></p>
+<p><img src="/images/emonpi_wifi.png" alt="emonpi wifi" /></p>
 
 <p>We have just made significant progress in streamlining the setup process by enabling the emonPi / emonBase to broadcast a WiFi access-point (AP) on first boot then scan for local WiFi networks and allow the user to connect. The emonPi will then turn off it’s AP and connect to the local network. There is also an option to connect via Ethernet or stand-alone WiFi AP mode when no local network is available.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-network-wizard1.png" alt="emonpi-network-wizard1" /></p>
+<p><img src="/images/emonpi-network-wizard1.png" alt="emonpi-network-wizard1" /></p>
 
 <p>This has now been made possible using the Raspberry Pi 3 which supports WiFi access-point AP mode, <a href="https://github.com/openenergymonitor/emonpi/tree/master/wifiAP">some bash scrips</a> and a new <a href="https://github.com/openenergymonitor/emonpi/tree/master/emoncms-setup">emoncms-setup module</a>.</p>
 
@@ -654,11 +737,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <!--more-->
 
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-network-wizard2.png" alt="emonpi-network-wizard2" /></p>
+<p><img src="/images/emonpi-network-wizard2.png" alt="emonpi-network-wizard2" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-network-wizard3.png" alt="emonpi-network-wizard3" /></p>
+<p><img src="/images/emonpi-network-wizard3.png" alt="emonpi-network-wizard3" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonpi-network-wizard4.png" alt="emonpi-network-wizard4" /></p>
+<p><img src="/images/emonpi-network-wizard4.png" alt="emonpi-network-wizard4" /></p>
 
 <p>The <a href="https://guide.openenergymonitor.org/setup/connect/#1a-connect-to-wifi">emonPi Setup Guide</a> has been updated for use with the new Netork Setup Wizard.</p>
 ]]></content>
@@ -677,7 +760,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The Raspberry Pi as been an integral part of the development of the OpenEnergyMonitor system. We make extensive use of the Raspberry Pi in our emonPi and emonBase units. The Raspberry Pi Foundation has always been a big insperation to use, therefore we are honoured to get a little mention on their blog.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/raspi-blog.png" alt="raspi-blog" /></p>
+<p><img src="/images/raspi-blog.png" alt="raspi-blog" /></p>
 ]]></content>
   </entry>
   
@@ -735,7 +818,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>I have also recently enjoyed using the redesigned Emoncms Apps module which have just bee released on <a href="https://emoncms.org">Emoncms.org</a>. It’s now possible to have more than one MyElectric or MySolarPV ‘app’ per Emoncms account and Economy 7 split time of use tariffs are now spported (see <a href="https://community.openenergymonitor.org/t/new-version-of-the-emoncms-apps-module/3900/3">forum thread</a>):</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/myelectric-e7.png" alt="myelectric-e7.png" /></p>
+<p><img src="/images/myelectric-e7.png" alt="myelectric-e7.png" /></p>
 
 <h2 id="control">Control</h2>
 
@@ -743,7 +826,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>To control my gas central heating boiler I use an <a href="https://guide.openenergymonitor.org/integrations/mqtt-relay/">MQTT WiFi relay</a> which also has a built in thermostat and scheduler, although I don’t use these features, I just control directly via MQTT. The WiFi Relay has been very reliable, it’s been used daily for the past two years in my home and never once required a reboot.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/mqtt-relay-overview.png" alt="mqtt-relay-overview.png" /></p>
+<p><img src="/images/mqtt-relay-overview.png" alt="mqtt-relay-overview.png" /></p>
 
 <h3 id="plug-sockets-lights">Plug sockets (lights)</h3>
 
@@ -751,7 +834,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The emonPi can control LightWave RF devices directly via MQTT if an RF OOk modules is fitted. See <a href="https://guide.openenergymonitor.org/integrations/lightwaverf">LightWave RF emonPi User Guide</a>.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/lightwave-rf-diagram.png" alt="lightwave-rf-diagram.png" /></p>
+<p><img src="/images/lightwave-rf-diagram.png" alt="lightwave-rf-diagram.png" /></p>
 
 <p>LightWave RF devices are not perfect, the OOK RF protocol is simplistic, unsecure, occasionally unreliable and state feedback is not available. I am considering swithcing to <a href="https://www.itead.cc/smart-socket.html">ESp8266 based Sonoff plug</a> with third party <a href="https://github.com/arendst/Sonoff-Tasmota">MQTT firmware</a> or <a href="https://github.com/openenergymonitor/emonesp">EmonESP</a> firmware.</p>
 
@@ -759,11 +842,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>For the past few years I have been using OpenHAB as the control interface. <a href="https://guide.openenergymonitor.org/integrations/openhab">OpenHAB is pre-loaded onto the emonPi emonSD pre-built image</a>. I am yet to upgrade to OpenHAB V2.0, it looks very nice. However, V1.8 has been very reliable and fits my needs. I use the OpenHAB Android app to access the interface quickly from my phone:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/open-hab-home.png" alt="open-hab-home.png" /><img src="https://blog.openenergymonitor.org/images/open-hab-all.png" alt="open-hab-all.png" /></p>
+<p><img src="/images/open-hab-home.png" alt="open-hab-home.png" /><img src="/images/open-hab-all.png" alt="open-hab-all.png" /></p>
 
 <p>OpenHAB also <a href="https://apps.getpebble.com/en_US/application/5542604d45bf334314000098?section=watchapps">integrates with my Pebble smartwatch</a> which makes it super easy to turn on/off the heating while out and about:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openhab-pebble.jpg" alt="openhab-pebble" /></p>
+<p><img src="/images/openhab-pebble.jpg" alt="openhab-pebble" /></p>
 
 <p>A while back (early 2016) I dabbled with <a href="http://home-assistant.io/">HomeAssistant</a>, (<a href="https://blog.openenergymonitor.org/2016/04/Home-Assistant/">see blog post</a>). I was quite impressed, I have been following the project and it looks like it’s matured to be an excellent home automation platform. Quit possibly a rival to OpenHAB.</p>
 
@@ -779,11 +862,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>Device config using ha-bridge webpage GUI:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/ha-bridge-device-config.png" alt="ha-bridge-device-config.png" /></p>
+<p><img src="/images/ha-bridge-device-config.png" alt="ha-bridge-device-config.png" /></p>
 
 <p>Google Home app setup:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/google-home-app.png" alt="google-home-app.png" /></p>
+<p><img src="/images/google-home-app.png" alt="google-home-app.png" /></p>
 
 <h2 id="integration--automation">Integration &amp; Automation</h2>
 
@@ -810,7 +893,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>Carlos has been working for <a href="http://carbon.coop/">CarbonCoop</a> over the last year and a half on <a href="(http://myhome.emoncms.org)">MyHomeEnergyPlanner</a> – an open source household energy assessment tool based on SAP 2012 – a monthly domestic energy model.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
+<p><img src="/images/myhomeenergyplanner2.png" alt="MyHomeEnergyPlanner" /></p>
 
 <p>MyHomeEnergyPlanner started as a collaboration between OpenEnergyMonitor and CarbonCoop but this latest version and active work on it over the last year and a half is all down to Carlos and CarbonCoop.</p>
 
@@ -851,7 +934,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     <id>https://blog.openenergymonitor.org/2017/02/learn-sustainable-energy</id>
     <content type="html"><![CDATA[<p>Over the years we have done a fair bit of work that explores sustainable energy documented to a varying degree on the site. The <a href="https://learn.openenergymonitor.org/sustainable-energy/energy/introduction">Sustainable Energy section of Learn</a> brings all of this together in one place that’s easier to find and navigate as well as extending it with further improvements to the energy modelling tools, discussion and analysis.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/learn-laptop.png" alt="New Front Page" /></p>
+<p><img src="/images/learn-laptop.png" alt="New Front Page" /></p>
 
 <p>It starts with a brief introduction and energy 101, which outlines the energy consumption of the average UK household and a quick run through the main demand and supply side solutions used by the <a href="http://zerocarbonbritain.org/">ZeroCarbonBritain</a> scenario:</p>
 
@@ -892,11 +975,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p><strong>Screenshot: Snowdonia household energy study:</strong></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy.png" alt="New Front Page" /></p>
+<p><img src="/images/learn-sustainable-energy.png" alt="New Front Page" /></p>
 
 <p><strong>Screenshot: 10 year hourly energy model</strong></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy-zcem.png" alt="New Front Page" /></p>
+<p><img src="/images/learn-sustainable-energy-zcem.png" alt="New Front Page" /></p>
 
 <p>If you have any question’s about this work please feel free to email me on trystan dot lea at openenergymonitor.org.</p>
 ]]></content>
@@ -909,7 +992,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     <id>https://blog.openenergymonitor.org/2017/01/new-home-page-and-learn</id>
     <content type="html"><![CDATA[<p>As you may well have noticed we have recently launched a new <a href="https://openenergymonitor.org">front page</a> for OpenEnergyMonitor and a common navigation bar theme across all our sites. We have also launched a new website called <a href="https://learn.openenergymonitor.org">Learn</a> to replace the <a href="https://openenergymonitor.org/emon/buildingblocks">Building Blocks section</a> of the old site. All URL’s directed to building blocks should re-direct automatically to the relevant Learn page.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/home-page-devices.png" alt="devices" /></p>
+<p><img src="/images/home-page-devices.png" alt="devices" /></p>
 
 <p>A key aim behind the redesign was to bring our interest and driving motivation of working towards sustainable energy and zero carbon more to the fore of the project. Energy Monitoring is a tool to help us understand our use of energy, and our motivation for starting the project was to understand our use of energy at home in relation to the wider context of what needs to be done if we are to get off fossil fuels and build a zero carbon energy system - We hope this update better reflects this interest.</p>
 
@@ -927,15 +1010,15 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p><strong><a href="https://openenergymonitor.org">https://openenergymonitor.org</a></strong></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/new-oem-site.png" alt="New Front Page" /></p>
+<p><img src="/images/new-oem-site.png" alt="New Front Page" /></p>
 
 <h3 id="learn-website">Learn Website:</h3>
 
 <p><strong><a href="https://learn.openenergymonitor.org">https://learn.openenergymonitor.org</a></strong></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/learn-sustainable-energy.png" alt="Learn: Sustainable Energy" /></p>
+<p><img src="/images/learn-sustainable-energy.png" alt="Learn: Sustainable Energy" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/mobile-learn.png" alt="1" /> <img src="https://blog.openenergymonitor.org/images/ct-sensors-phone.png" alt="2" /></p>
+<p><img src="/images/mobile-learn.png" alt="1" /> <img src="/images/ct-sensors-phone.png" alt="2" /></p>
 ]]></content>
   </entry>
   
@@ -954,9 +1037,9 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <hr />
 
-<p><img src="https://blog.openenergymonitor.org/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
+<p><img src="/images/leaf-openevse.jpg" alt="openevse leaf" /></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build9.jpg" alt="openevse build9" /></p>
+<p><img src="/images/openevse-build9.jpg" alt="openevse build9" /></p>
 
 <p><em>Note: this review is my account of using the OpenEVSE in the UK (240V single-phase AC), see OpenEVSE website for official build guides</em></p>
 
@@ -975,7 +1058,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>Nissan LEAF charging from solar PV on a frosty morning:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
+<p><img src="/images/nissan-leaf-solar-pv.jpg" alt="nissan-leaf-solar-pv" /></p>
 
 <!--more-->
 
@@ -1018,19 +1101,19 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The hardware inside the unit is split into two main components which are physically separated: a high voltage and high current relay and a low voltage control electronics which is the microcontroller (ATmega328p) ‘brains’ of the unit. My unit contained an OpenEVSE Plus V4 control unit <a href="https://www.openevse.com/files/OpenEVSE_Plus_v4.pdf">see Datasheet</a>:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build5.jpg" alt="openevse build5" /></p>
+<p><img src="/images/openevse-build5.jpg" alt="openevse build5" /></p>
 
 <p>Rear PCB showing ATmega328p on the OpenEVSE Plus V4 controller:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build7.jpg" alt="openevse build7" /></p>
+<p><img src="/images/openevse-build7.jpg" alt="openevse build7" /></p>
 
 <p>Build progress: charge controller, ground busbar, relay, LCD and mode button fixed into enclosure</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build2.jpg" alt="openevse build2" /></p>
+<p><img src="/images/openevse-build2.jpg" alt="openevse build2" /></p>
 
 <p>The finished build: WiFi ESP8266 module is visible on the top left.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build3.jpg" alt="openevse build3" /></p>
+<p><img src="/images/openevse-build3.jpg" alt="openevse build3" /></p>
 
 <h3 id="installation">Installation</h3>
 
@@ -1044,7 +1127,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>Here is a photo of the unit charging my Nissan LEAF @ 26A. At this charge rate my 6.6Kw charge (24Kwh battery) Nissan LEAF will charge from flat in about 4hrs:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-front.jpg" alt="openevse-front" /></p>
+<p><img src="/images/openevse-front.jpg" alt="openevse-front" /></p>
 
 <p>Here’s a demo of the basic features of the unit:</p>
 
@@ -1056,7 +1139,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The Wifi kit (ESP8266) enables data logging from the OpenEVSE unit to a custom Emoncms server <a href="http://data.openevse.com">data.openevse.com</a> via a local Wifi connection. The Wifi kit also allows remote control (see RAPI commands below).</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build-emoncms.png" alt="openevse build4" /></p>
+<p><img src="/images/openevse-build-emoncms.png" alt="openevse build4" /></p>
 
 <h3 id="remote-control-via-rapi-commands">Remote Control (via RAPI commands)</h3>
 
@@ -1070,7 +1153,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p><code class="highlighter-rouge">$SC13</code> will set the current charge current to 13A. The screen shot on the right below illustrates issuing the <code class="highlighter-rouge">$SC 13</code> RAPI command into the OpenEVSE local web page interface (served from ESP8266). The screenshot on the left shows the effect of reduction in charge rate as monitored by emonPi displayed using Emoncms:</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/openevse-build6.png" alt="openevse build6" /></p>
+<p><img src="/images/openevse-build6.png" alt="openevse build6" /></p>
 
 <p>Rapi commands can also be issued directly via a single HTTP request. Eg. the same rapi command to set charging rate to 13A:</p>
 
@@ -1124,11 +1207,11 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 
 <p>The emonTH V2 features a Silicon Labs <strong><a href="https://www.silabs.com/Support%20Documents%2FTechnicalDocs%2FSi7021-A20.pdf">Si7021</a></strong> temperature and humidity sensor instead of the <a href="http://shop.openenergymonitor.com/dht22-temperature-humidity-sensor-am2302/">DHT22 sensor</a>. The Si7021 is more accurate and significantly (2000 times!) lower power then the DHT22. This will result in an increase in the emonTH battery life; from 10 months to several years (at least two years). The Si7021 is also <em>much</em> smaller than the DHT22.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonth2.jpg" alt="emonTH V2" /></p>
+<p><img src="/images/emonth2.jpg" alt="emonTH V2" /></p>
 
 <p><em>The Si7021 sensor can be seen in the top right-hand corner of the PCB. The white film on top of the sensor is a dust film and should not be removed. The dust film is factory fitted and will protect the sensor from dust and air contaminants.</em></p>
 
-<p><img src="https://blog.openenergymonitor.org/images/emonth_green.png" alt="emonTH image" /></p>
+<p><img src="/images/emonth_green.png" alt="emonTH image" /></p>
 
 <p><strong><a href="https://shop.openenergymonitor.com/emonth-temperature-humidity-node/">The emonTH V2 is now shipping via our online shop</a></strong></p>
 
@@ -1175,7 +1258,7 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
     <id>https://blog.openenergymonitor.org/2016/09/summer-placement</id>
     <content type="html"><![CDATA[<p>Hi! My name is Eben I’ve been working with OpenEnergyMonitor for the past 10 weeks as part of a summer placement organised by <a href="http://www.arloesigwyneddwledig.com/">Arloesi Gwynedd Wledig</a>; a local project aimed at highlighting the local tech sector employment opportunities on <a href="http://parcmenai.co.uk/">Parc Menai</a> the business park where we are located in North Wales, and the difficulties that they face, as well as the great perks of living in such a beautiful area.</p>
 
-<p><img src="https://blog.openenergymonitor.org/images/eben.jpg" alt="image" /></p>
+<p><img src="/images/eben.jpg" alt="image" /></p>
 
 <p>The scheme organised placements for four students in four seperate tech companies in Parc Menai. Here is a video with highlights the whole 10 week scheme:</p>
 
@@ -1226,39 +1309,6 @@ It’s also possible for these accounts to be on different Emoncms servers e.g. 
 <p>There also will soon be footage of the Dennis Ferranti factory we visited, I will post it here as soon as it arrives!
 Thanks for reading!</p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[EcoHome Lab: From Monitoring to Control]]></title>
-    <link href="https://blog.openenergymonitor.org/2016/08/ecohomelab-control/"/>
-    <updated>2016-08-12T18:00:00+00:00</updated>
-    <id>https://blog.openenergymonitor.org/2016/08/ecohomelab-control</id>
-    <content type="html"><![CDATA[<p>Last night I attended <a href="https://www.meetup.com/Eco-Home-Lab-Manchester/events/230714252/">EcoHomeLab meetup</a> in Manchester organised by the <a href="http://carbon.coop/">CarbonCoop</a>.</p>
-
-<blockquote>
-  <p>EcoHomeLab monthly meetups at <a href="https://madlab.org.uk/">MadLab</a> brings householders and green-technologists together to take control of home energy use and generation.</p>
-</blockquote>
-
-<p>It was great fun to catch up with regular faces as well as meet many new interesting people.</p>
-
-<p>I gave a short presentation overview of our efforts as OpenEnergyMonitor to make it as easy as possible for people to get started with energy monitoring and control (home automation) with a sustainability / energy saving focus.</p>
-
-<p>I presented the recent work we have been doing to integrate platforms such as MQTT, Node-RED and openHAB ready-installed and pre-configured on the emonPi, our RaspberryPi based energy monitoring platform. These additional platforms run alongside Emoncms on the emonPi.</p>
-
-<p><strong>See the <a href="http://guide.openenergymonitor.org/integrations/">Integrations section of our user guide for more info</a></strong></p>
-
-<p>Here are copy of my slides from the event:</p>
-
-<iframe src="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/embed?start=false&amp;loop=false&amp;delayms=10000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%;"></iframe>
-
-<ul>
-  <li>
-    <p><a class="attachment" href="https://community.openenergymonitor.org/uploads/default/original/2X/1/1a55b8c172086f743b1b0abe1d01d7c10963d88c.pdf">Download in PDF format</a> (6.8 MB)</p>
-  </li>
-  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/pub?start=false&amp;loop=false&amp;delayms=3000">View in HTML (hosted from Google Slides)</a></li>
-  <li><a href="https://docs.google.com/presentation/d/1qSaxiB2tAgMe3ehQ08E9_r340y9HgHUOYvyUvsHd55I/edit?usp=sharing">View in full Google Slides format (with clickable hyperlinks &amp; selectable text)</a></li>
-</ul>
 ]]></content>
   </entry>
   
