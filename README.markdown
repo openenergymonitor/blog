@@ -10,7 +10,7 @@ Using all the shiny new toys: powered by Jekyll and the Oscalite theme. Hosted b
 
 | Command | Action |
 |---|---|
-| `rake preview` | Generate & Preview site on [http://localhost:4001](http://127.0.0.1:4001)
+| `rake preview` | Generate & Preview site on [http://localhost:4002](http://127.0.0.1:4002)
 | `rake generate` | Generates static html in `/public`
 | `rake deploy` | Deploys site to `gh-pages` branch
 | `rake deploy rsync` | Deploys site via rsync over SSH

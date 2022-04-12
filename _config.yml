@@ -17,8 +17,8 @@ description: OpenEnergyMonitor Blog
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
-subscribe_email: support@openenergymonitor.zendesk.com
+#subscribe_rss: /atom.xml
+#subscribe_email: support@openenergymonitor.zendesk.com
 # RSS feeds can list your email address if you like
 email: support@openenergymonitor.zendesk.com
 
@@ -66,9 +66,9 @@ highlighter: rouge
 
 gems:
   - jekyll-time-to-read
-  - octopress-filters
+#  - octopress-filters
   - octopress-include-tag
-  - jekyll-feed
+#  - jekyll-feed
 
 paginate: 10          # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
