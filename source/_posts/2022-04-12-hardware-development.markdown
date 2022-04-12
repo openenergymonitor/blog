@@ -85,3 +85,5 @@ Over the next set of posts I will outline what’s new on the new hardware desig
 Here are a couple of pictures of our new office in the meantime. We have a unit in a really nice community building near Llanberis in North Wales, there's an onsite cafe that does really good food, cakes and coffee, we are nearer the mountains and walking distance from where we live which makes it all a lot more convenient. If you are in the area and would like to drop in to say hi, please get in touch!
 
 ![hardware22-5.jpg]({{site.image_path}}/hardware22-5.jpg)
+
+To join in the discussion, see this thread on our community forums: [https://community.openenergymonitor.org/t/avr-db-emontx-v4-new-hardware-in-progress/20209](https://community.openenergymonitor.org/t/avr-db-emontx-v4-new-hardware-in-progress/20209)
